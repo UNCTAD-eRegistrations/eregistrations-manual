@@ -129,6 +129,16 @@ description: "eRegistrations Manual - F. Roles (Original pages 97-116)"
     E-signature integration in roles needs verification.
     New role type options or permissions may exist.
 
+
+<!-- Live BPA Screenshot: live-roles -->
+<div class="live-screenshot" markdown>
+
+![Roles - Processing roles and workflow configuration](../screenshots/live-roles.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [F. Roles](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-roles -->
+
 ## Role definition and types
 
 A role is a necessary action by a public institution for a registration to be processed. There are 2 types of roles: Human role (a person reviews the file, adds information, and approves, rejects or sends back the file; various types including review role and processing role) and BOT role (automatic processing role performed by a BOT).

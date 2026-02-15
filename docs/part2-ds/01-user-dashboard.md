@@ -38,6 +38,18 @@ description: "eRegistrations Manual - A. The user dashboard (Original pages p.13
 !!! info "Update Summary (5 changes detected)"
     5 changes detected: Header/menu bar may have UI theme updates, shopping cart integration on dashboard, status display colors and filters may have changed, My Applications table may show additional columns or layout changes, overall DS UI theme may have been refreshed.
 
+
+<!-- Live BPA Screenshot: live-user-dashboard -->
+<div class="live-screenshot" markdown>
+
+![User Dashboard - The applicant-facing interface (accessible via "Ver servicio")](../screenshots/live-user-dashboard.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [A. User Dashboard](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
+*The Display System is the public-facing side. Click "Ver servicio" in the BPA to preview it.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-user-dashboard -->
+
 ## DS definition
 
 The user site or the Display System is the user dashboard.

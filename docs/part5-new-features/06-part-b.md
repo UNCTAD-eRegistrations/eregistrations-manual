@@ -13,6 +13,18 @@ description: "eRegistrations Manual - Part B (Processing)"
     The MCP tools include componentaction_get_system_actions endpoint which lists built-in system button actions available for form components.
     8 blocks identified.
 
+
+<!-- Live BPA Screenshot: live-part-b -->
+<div class="live-screenshot" markdown>
+
+![Part B (Processing) - Operator processing screen configuration](../screenshots/live-part-b.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [Part B (Processing)](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }*
+*Part B configuration is done within the roles/processing section.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-part-b -->
+
 ## Overview of Part B (Processing)
 
 !!! success "New Feature"

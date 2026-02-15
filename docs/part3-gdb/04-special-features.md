@@ -72,6 +72,18 @@ description: "eRegistrations Manual - B.5. Special features (Original pages p.17
     ID format tags and triggers may have new options.
     Some features may have minor improvements but the documented functionality is accurate.
 
+
+<!-- Live BPA Screenshot: live-gdb-special -->
+<div class="live-screenshot" markdown>
+
+![GDB - Special features (search, filters, export)](../screenshots/live-gdb-special.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [B.5. Special Features](https://gdb.cuba.eregistrations.org){ target=_blank }*
+*Special features are part of the GDB system.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-gdb-special -->
+
 ## a) Change format of ID
 
 Click DB Structure, click settings cog on ID column. Advanced Settings, Triggers tab. Configure with available tags: Short name, Index no, Index no by database code, Current year, End of number current year.

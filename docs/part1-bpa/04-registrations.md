@@ -79,6 +79,16 @@ description: "eRegistrations Manual - C. Registration(s) (Original pages 14-25)"
     Registration activation is a confirmed feature.
     Adding registrations to services is unchanged.
 
+
+<!-- Live BPA Screenshot: live-registrations -->
+<div class="live-screenshot" markdown>
+
+![Registrations - Registration configuration for Permisos eventuales](../screenshots/live-registrations.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [C. Registrations](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-registrations -->
+
 ## Registration definition
 
 Registrations are at the core of the eRegistrations system. A registration is any type of authorization (license, permit, registration number, clearance, certificate, etc.) issued by a government institution, for which an applicant will usually need to provide data, documents and fee.

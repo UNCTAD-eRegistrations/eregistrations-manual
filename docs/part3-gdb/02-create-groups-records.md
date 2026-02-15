@@ -77,6 +77,18 @@ description: "eRegistrations Manual - B.1-3. Create database, Groups, Add record
     Database diagram visualization may have improvements.
     Link between databases feature is unchanged.
 
+
+<!-- Live BPA Screenshot: live-gdb-create -->
+<div class="live-screenshot" markdown>
+
+![GDB - Creating databases, groups and records](../screenshots/live-gdb-create.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [B.1-3. Create DB, Groups & Records](https://gdb.cuba.eregistrations.org){ target=_blank }*
+*Database creation is managed in the GDB system at gdb.cuba.eregistrations.org.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-gdb-create -->
+
 ## B.1. Create a database
 
 To create a database, click on the hamburger button, then click 'create new database'. Enter institution name under Title, enter short name (without spaces). Version starts at 1.0.

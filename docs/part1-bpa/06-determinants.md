@@ -30,6 +30,18 @@ description: "eRegistrations Manual - D.2. Determinants (Original pages p.28-31)
     The effects/behaviours system adds a new layer of component-determinant interaction beyond simple show/hide.
     Operators have been expanded (CONTAINS, STARTS_WITH, ENDS_WITH for text; GREATER_THAN, LESS_THAN comparisons for numeric).
 
+
+<!-- Live BPA Screenshot: live-determinants -->
+<div class="live-screenshot" markdown>
+
+![Determinants - Form with determinant panel visible on the right](../screenshots/live-determinants.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [D.2. Determinants](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+*Determinants panel is visible on the right side of the applicant form*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-determinants -->
+
 ## Determinant definition
 
 A determinant is a filter allowing to take into account the particular case of each applicant in a service. It determines/triggers: if an applicant is subject to a registration and/or what requirements the applicant must provide to register (data, documents, fees).

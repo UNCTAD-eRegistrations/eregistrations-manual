@@ -18,6 +18,16 @@ description: "eRegistrations Manual - D.1. The Guide (Original pages p.27-28)"
     Shopping cart alternative may have evolved.
     The form_get API confirms guide as a distinct form_type, validating its continued existence as a separate entity.
 
+
+<!-- Live BPA Screenshot: live-guide -->
+<div class="live-screenshot" markdown>
+
+![The Guide - Guide form configuration](../screenshots/live-guide.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [D.1. The Guide](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/guide-form){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-guide -->
+
 ## Guide purpose
 
 Questions can be created in the guide to help determine, for each specific user, which documents, fees and data are required.

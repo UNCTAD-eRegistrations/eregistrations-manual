@@ -31,6 +31,16 @@ description: "eRegistrations Manual - A. Description of the entry page (Original
     The Effects system and component behaviours are new concepts that may surface in the side menu.
     Auto-update toggle and FE/BE/DS buttons are core infrastructure elements likely unchanged.
 
+
+<!-- Live BPA Screenshot: live-entry-page -->
+<div class="live-screenshot" markdown>
+
+![BPA Entry Page - Instance bar, side menu, and workspace](../screenshots/live-entry-page.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [A. Entry Page](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-entry-page -->
+
 ## BPA entry page structure - 3 sections
 
 ![BPA Entry Page](../screenshots/bpa-services-list.png)

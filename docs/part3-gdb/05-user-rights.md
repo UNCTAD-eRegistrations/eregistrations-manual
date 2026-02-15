@@ -48,6 +48,18 @@ description: "eRegistrations Manual - B.6. User rights in GDB (Original pages p.
     Keycloak integration may have evolved with new import features or SSO improvements.
     Toggle behavior (GREEN/GREY/YELLOW) is unchanged.
 
+
+<!-- Live BPA Screenshot: live-gdb-rights -->
+<div class="live-screenshot" markdown>
+
+![GDB - User rights and permissions](../screenshots/live-gdb-rights.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [B.6. User Rights](https://gdb.cuba.eregistrations.org){ target=_blank }*
+*User rights for GDB are managed within that system.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-gdb-rights -->
+
 ## User rights overview
 
 User rights management enables admin users to grant or take away rights and privileges to other users.

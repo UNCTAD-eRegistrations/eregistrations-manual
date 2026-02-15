@@ -52,6 +52,18 @@ description: "eRegistrations Manual - C. Operators processing pages (Original pa
 !!! info "Update Summary (6 changes detected)"
     6 changes detected: Part B system actions integration in processing, e-signature verification capability for operators, effects system may alter processing behavior, file list page may have UI updates, processing page may show new tabs or features, clearing old files functionality needs verification.
 
+
+<!-- Live BPA Screenshot: live-operators-processing -->
+<div class="live-screenshot" markdown>
+
+![Operators Processing - Workflow and role processing screens](../screenshots/live-operators-processing.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [C. Operators Processing](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }*
+*Operators process applications through the roles/workflow defined in the BPA.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-operators-processing -->
+
 ## Processing pages overview
 
 Processing pages are what operators of the institutions which offer registrations in a service see. As a super administrator, you can access the operators' processing pages from the display system (through Part B).

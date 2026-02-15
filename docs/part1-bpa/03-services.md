@@ -30,6 +30,16 @@ description: "eRegistrations Manual - B. Services"
 !!! info "Update Summary (7 changes detected)"
     7 changes detected: Import/copy service functionality added, service groups feature is new, micro-publish added to publish flow, service bar has additional buttons, archive workflow may have UI changes, service activation toggle unchanged, SmartLink feature is new.
 
+
+<!-- Live BPA Screenshot: live-services-list -->
+<div class="live-screenshot" markdown>
+
+![Services List - All configured services grouped by category](../screenshots/live-services-list.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [B. Services](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-services-list -->
+
 ![Services List](../screenshots/bpa-services-list.png)
 *The Services page showing grouped services with Import and Add buttons, version numbers, and publish dates.*
 

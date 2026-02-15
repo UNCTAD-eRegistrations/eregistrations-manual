@@ -13,6 +13,18 @@ description: "eRegistrations Manual - SmartLink"
     The MCP tools include a serviceregistration_link endpoint suggesting service-registration linkage is part of the infrastructure.
     6 blocks identified, mostly needing verification due to limited concrete information.
 
+
+<!-- Live BPA Screenshot: live-smartlink -->
+<div class="live-screenshot" markdown>
+
+![SmartLink - Dynamic registration linking and data sharing](../screenshots/live-smartlink.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [SmartLink](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }*
+*SmartLink connects registrations for data reuse across services.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-smartlink -->
+
 ## Overview of SmartLink
 
 !!! question "Needs Verification"

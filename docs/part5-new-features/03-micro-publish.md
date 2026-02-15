@@ -15,6 +15,18 @@ description: "eRegistrations Manual - Micro-publish"
     The MCP service_publish tool does not expose micro-publish granularity, suggesting the feature may be UI-only or use different API endpoints.
     6 blocks identified, most needing verification.
 
+
+<!-- Live BPA Screenshot: live-micro-publish -->
+<div class="live-screenshot" markdown>
+
+![Micro-publish - Granular publishing of individual changes](../screenshots/live-micro-publish.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [Micro-publish](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration){ target=_blank }*
+*Micro-publish is enabled in service settings and accessible from the publish button.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-micro-publish -->
+
 ## Overview of Micro-publish
 
 !!! success "New Feature"

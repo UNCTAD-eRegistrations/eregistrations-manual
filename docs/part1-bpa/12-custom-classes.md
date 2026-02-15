@@ -99,6 +99,18 @@ description: "eRegistrations Manual - D.8. Custom classes (Original pages 64-77)
     Some new custom classes may have been added since the manual was written.
     The Effects system (activate/deactivate/show/hide/enable/disable) is a new platform feature that may interact with or partially replace certain custom class behaviors.
 
+
+<!-- Live BPA Screenshot: live-custom-classes -->
+<div class="live-screenshot" markdown>
+
+![Custom Classes - CSS styling options in the form builder](../screenshots/live-custom-classes.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [D.8. Custom Classes](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+*Custom classes are applied via component settings in the form builder*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-custom-classes -->
+
 ## Custom class introduction
 
 Custom class is a feature that can be applied to the fields in the forms. It is used for customizing fields (in terms of spacing, alignment, color, size, etc.) or to deploy a function to a particular field. Depending on the type of fields, different options to customize will be available for selection.

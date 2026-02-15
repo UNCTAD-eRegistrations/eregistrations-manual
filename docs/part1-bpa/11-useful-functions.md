@@ -146,6 +146,18 @@ description: "eRegistrations Manual - D.7. Focus on some useful functions (Origi
     The component actions system (visible in the API) suggests button actions may have new BOT-related options beyond what was documented.
     The effects system may offer new ways to control field behavior that could be documented as useful functions.
 
+
+<!-- Live BPA Screenshot: live-useful-functions -->
+<div class="live-screenshot" markdown>
+
+![Useful Functions - Advanced form builder features (validations, conditions)](../screenshots/live-useful-functions.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [D.7. Useful Functions](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+*Useful functions are accessible within the form builder component settings*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-useful-functions -->
+
 ## a. Copy value of a field to another (prefilling a field)
 
 This tool is useful because the applicant does not have to provide the same details repeatedly. To copy value from another field: Edit text field/number field, Data, under 'copy value from', choose the element from the drop down, Save. The order of elements is Name of the page, Block and Field. If the field configuration has the copy value setting, it will be indicated by the letter 'C' in blue color. CVF works only between fields of the same type.

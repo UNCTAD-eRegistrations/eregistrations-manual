@@ -45,6 +45,18 @@ description: "eRegistrations Manual - Statistics - A. Overview + B. Types of sta
     Filter options may have expanded.
     Export capabilities may have improved.
 
+
+<!-- Live BPA Screenshot: live-statistics -->
+<div class="live-screenshot" markdown>
+
+![Statistics - Platform analytics and reporting](../screenshots/live-statistics.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [Statistics](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
+*Statistics are generated from service data and processing history.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-statistics -->
+
 ## A. Overview
 
 Statistics module is a tool for registered users to see statistical information about files and processes in eRegistrations system. It can also present KPI (Key Performance Indicators) for managers. Panel at top enables switching between types of statistics, changing language or logging out. Every type of statistics has its own set of filters and tools.

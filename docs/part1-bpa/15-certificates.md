@@ -66,6 +66,16 @@ description: "eRegistrations Manual - G. Certificates (Original pages 117-124)"
     The MCP tools reveal a 'print document' system (print_document_list, print_document_create, print_document_component_add/update/remove/move, print_document_sort, print_document_templates, print_document_history, print_document_revert) which may represent a newer or additional certificate management approach.
     E-signature on certificates needs verification.
 
+
+<!-- Live BPA Screenshot: live-certificates -->
+<div class="live-screenshot" markdown>
+
+![Certificates - Print document templates and certificate builder](../screenshots/live-certificates.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [G. Certificates](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/templates/certificates){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-certificates -->
+
 ## 1. Build certificates - Two methods
 
 Templates/certificates for electronic results can be built in two ways: 1) Through certificate builder on the left hand side bar of user level 2, 2) Through the registration.

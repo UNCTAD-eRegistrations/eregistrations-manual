@@ -85,6 +85,16 @@ description: "eRegistrations Manual - E. BOT builder (Original pages 77-96)"
     The Part B system actions concept is mentioned in the manual text.
     New BOT categories and potential mapping UI improvements need verification.
 
+
+<!-- Live BPA Screenshot: live-bot-builder -->
+<div class="live-screenshot" markdown>
+
+![BOT Builder - Data bots and external service integrations](../screenshots/live-bot-builder.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [E. BOT Builder](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/actions/bots){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-bot-builder -->
+
 ## BOT definition and types
 
 A BOT is an automated action performed by the system. There are two types of BOTs: data BOT (to exchange data between an eRegistration service and an external system like a GDB database) and document BOT (to display a document on the screen or upload it to the user file).

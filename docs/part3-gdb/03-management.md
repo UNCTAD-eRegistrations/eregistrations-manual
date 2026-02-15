@@ -72,6 +72,18 @@ description: "eRegistrations Manual - B.4. Database management (Original pages p
     Filters and columns functionality is stable.
     DB Structure management is stable.
 
+
+<!-- Live BPA Screenshot: live-gdb-management -->
+<div class="live-screenshot" markdown>
+
+![GDB - Database management and administration](../screenshots/live-gdb-management.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [B.4. Database Management](https://gdb.cuba.eregistrations.org){ target=_blank }*
+*Database management is handled in the GDB system.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-gdb-management -->
+
 ## Database management menu
 
 The 'tools on' button displays the database management menu: Version, creation date, administrator login.

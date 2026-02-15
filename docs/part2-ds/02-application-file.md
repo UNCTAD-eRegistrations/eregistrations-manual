@@ -22,6 +22,18 @@ description: "eRegistrations Manual - B. Application file (DS) (Original pages p
 !!! info "Update Summary (4 changes detected)"
     4 changes detected: Shopping cart is now explicitly an alternative to the Guide with expanded functionality, e-signature may appear on the Send page, UI theme changes affect all DS pages, overall application file flow structure remains the same.
 
+
+<!-- Live BPA Screenshot: live-application-file -->
+<div class="live-screenshot" markdown>
+
+![Application File - How the applicant form appears to end users](../screenshots/live-application-file.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [B. Application File](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+*The applicant sees this form after starting a new application in the Display System.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-application-file -->
+
 ## 1. Guide
 
 Answers provided in the Guide will help determine, for each specific user, which documents, fees and data are required.

@@ -14,6 +14,18 @@ description: "eRegistrations Manual - E-signature"
     No direct MCP tool endpoints for e-signature were found, suggesting it may be implemented as a form component configuration or external integration.
     7 blocks identified, all needing verification due to limited concrete information.
 
+
+<!-- Live BPA Screenshot: live-e-signature -->
+<div class="live-screenshot" markdown>
+
+![E-signature - Digital signature integration for forms](../screenshots/live-e-signature.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [E-signature](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration){ target=_blank }*
+*E-signature is configured in service settings.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-e-signature -->
+
 ## Overview of E-signature
 
 !!! question "Needs Verification"

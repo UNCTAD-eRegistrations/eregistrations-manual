@@ -14,6 +14,18 @@ description: "eRegistrations Manual - Effects System"
     MCP tool signatures confirm the existence of effect_create, effect_delete, componentbehaviour_list, componentbehaviour_get, and componentbehaviour_get_by_component endpoints.
     8 blocks identified, all new or needing verification.
 
+
+<!-- Live BPA Screenshot: live-effects-system -->
+<div class="live-screenshot" markdown>
+
+![Effects System - Extended component behaviors beyond show/hide](../screenshots/live-effects-system.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [Effects System](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+*The Effects system is accessible via component settings in the form builder.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-effects-system -->
+
 ## Overview of the Effects System
 
 !!! success "New Feature"

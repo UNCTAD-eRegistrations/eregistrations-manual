@@ -12,6 +12,18 @@ description: "eRegistrations Manual - Card-style Radios"
     This may be implemented as a new custom class, a new radio display mode in the form builder, or a new component type.
     5 blocks identified, all needing verification.
 
+
+<!-- Live BPA Screenshot: live-card-radios -->
+<div class="live-screenshot" markdown>
+
+![Card-style Radios - Enhanced radio button display as selection cards](../screenshots/live-card-radios.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [Card-style Radios](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+*Card-style radios are a display option for radio components in the form builder.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-card-radios -->
+
 ## Overview of Card-style Radios
 
 !!! question "Needs Verification"

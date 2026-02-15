@@ -12,6 +12,18 @@ description: "eRegistrations Manual - Collapsible Fields"
     This may include new collapsible modes, default collapsed/expanded states, and collapsible behavior triggered by determinants or effects.
     5 blocks identified, mostly needing verification.
 
+
+<!-- Live BPA Screenshot: live-collapsible-fields -->
+<div class="live-screenshot" markdown>
+
+![Collapsible Fields - Expandable/collapsible form sections](../screenshots/live-collapsible-fields.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [Collapsible Fields](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+*Collapsible fields are configured as a display option in the form builder.*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-collapsible-fields -->
+
 ## Overview of Collapsible Fields
 
 !!! success "New Feature"

@@ -20,6 +20,16 @@ description: "eRegistrations Manual - D.6. Send File (Original pages p.46)"
     However, the e-signature feature is a major addition to the Send page that is entirely absent from the July 2025 manual.
     A new subsection documenting e-signature configuration and behavior on the Send page is needed.
 
+
+<!-- Live BPA Screenshot: live-send-file -->
+<div class="live-screenshot" markdown>
+
+![Send File - File submission configuration](../screenshots/live-send-file.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [D.6. Send File](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/sendfile){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-send-file -->
+
 ## Declaration and signature page description
 
 This is the declaration and signature page. It can be developed the same way you develop the form.

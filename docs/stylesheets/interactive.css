@@ -311,6 +311,31 @@
   font-style: italic;
 }
 
+/* ═══ Live BPA Screenshots ═══ */
+.live-screenshot {
+  margin: 1.5rem 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.live-screenshot img {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #e2e8f0;
+}
+.live-screenshot em {
+  display: block;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  color: #64748b;
+  background: #f8fafc;
+}
+.live-screenshot em a {
+  color: #0057b8;
+  font-weight: 600;
+}
+
 /* ═══ Responsive ═══ */
 @media (max-width: 768px) {
   #live-panel { width: 100%; }

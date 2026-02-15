@@ -24,6 +24,18 @@ description: "eRegistrations Manual - A. Public part (Original pages p.153-154)"
 !!! info "Update Summary (1 changes detected)"
     1 change detected: GDB public interface may have minor UI updates but the core structure (header bar, hamburger menu, database list, status button, add record button) is largely stable.
 
+
+<!-- Live BPA Screenshot: live-gdb-public -->
+<div class="live-screenshot" markdown>
+
+![Generic Database (GDB) - Public-facing data portal](../screenshots/live-gdb-public.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [A. Public Part](https://gdb.cuba.eregistrations.org){ target=_blank }*
+*The GDB is a separate system at gdb.cuba.eregistrations.org (requires separate login).*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-gdb-public -->
+
 ## GDB description
 
 GDB is a system to create and administer a professional database easily, without programming. Databases created with GDB can exchange data electronically with eRegistrations and any other external system through Web services.

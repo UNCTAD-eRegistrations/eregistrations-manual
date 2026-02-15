@@ -51,6 +51,18 @@ description: "eRegistrations Manual - H. Tables (Original pages 125-132)"
     The MCP tools reveal a 'classification' system (classification_list, classification_create, classification_update, classification_delete, classification_export_csv, classification_apply_country_codes) that may relate to or extend the catalog system.
     Import/export may have improvements.
 
+
+<!-- Live BPA Screenshot: live-tables -->
+<div class="live-screenshot" markdown>
+
+![Tables - Classification tables are managed at the service level](../screenshots/live-tables.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [H. Tables](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
+*Tables/Classifications are accessible from within service configuration*
+
+
+</div>
+<!-- /Live BPA Screenshot: live-tables -->
+
 ## Tables overview and three types
 
 Tables is a list of catalogs in the system. Three types: 1. Service catalogs (or simply tables) - group all elements created in services, 2. Cross-tables - see elements linked to each registration, 3. Instance catalogs - catalogs used by all services in one instance.

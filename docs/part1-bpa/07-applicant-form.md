@@ -84,6 +84,16 @@ description: "eRegistrations Manual - D.3. Applicant form (Original pages p.32-4
     Tabs may have new features.
     The form supports 4 form types (applicant, guide, send_file, payment) confirming the original architecture.
 
+
+<!-- Live BPA Screenshot: live-applicant-form -->
+<div class="live-screenshot" markdown>
+
+![Applicant Form - Drag-and-drop form builder](../screenshots/live-applicant-form.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [D.3. Applicant Form](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-applicant-form -->
+
 ## Form builder overview
 
 This is the section in the application file where the applicant will provide the required data. The form can be developed and customized in any format based on an analysis of the data.

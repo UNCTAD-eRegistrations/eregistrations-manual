@@ -33,6 +33,16 @@ description: "eRegistrations Manual - I. Settings (Original pages p.133-137)"
     However, the settings area has likely expanded with new toggles and configuration options added since July 2025 (e.g., e-signature settings, micro-publish options, form version controls, new display system toggles).
     Individual setting items need verification against the current platform state.
 
+
+<!-- Live BPA Screenshot: live-settings -->
+<div class="live-screenshot" markdown>
+
+![Settings - Instance and service settings](../screenshots/live-settings.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [I. Settings](https://bpa.cuba.eregistrations.org/settings){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-settings -->
+
 ![Settings Page](../screenshots/bpa-settings.png)
 *The Settings page showing instance configuration: website name, logo, favicon, footer, theme, and categories.*
 

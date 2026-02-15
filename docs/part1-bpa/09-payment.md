@@ -24,6 +24,16 @@ description: "eRegistrations Manual - D.5. Payment (Original pages p.44-45)"
     The payments tab, Agency Code and Account Head ID field tags, Payment Providers custom component, online/manual payment radio options, and show decimals toggle are all still present and function as documented.
     There may be additional payment provider integrations or configuration options added since July 2025, but the basic setup process is unchanged.
 
+
+<!-- Live BPA Screenshot: live-payment -->
+<div class="live-screenshot" markdown>
+
+![Payment - Payment/costs configuration](../screenshots/live-payment.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [D.5. Payment](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/payment){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-payment -->
+
 ## Payments tab
 
 The Payments tab is available in the service configuration and provides the interface for setting up payment functionality for a service.

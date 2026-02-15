@@ -11,6 +11,16 @@ description: "eRegistrations Manual - Introduction (Original pages p.5)"
     The terminology (public site, DS, BPA) is still current.
     Minor additions could mention newer capabilities (e-signature, advanced workflows) but the introduction is intentionally high-level and does not require significant revision.
 
+
+<!-- Live BPA Screenshot: live-introduction -->
+<div class="live-screenshot" markdown>
+
+![BPA Overview - The Business Process Administration interface](../screenshots/live-introduction.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [Introduction](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
+
+</div>
+<!-- /Live BPA Screenshot: live-introduction -->
+
 ## Manual purpose statement
 
 The purpose of this user manual is to provide an overview of the main functions and features of the eRegistrations system and to explain how to create online services.
