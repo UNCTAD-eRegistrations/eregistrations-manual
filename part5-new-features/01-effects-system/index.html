@@ -1929,7 +1929,9 @@ MCP tool signatures confirm the existence of effect_create, effect_delete, compo
 - Each component behaviour can contain one or more 'effects'.
 - Each effect links one or more determinants to the component and specifies what should happen when the determinant conditions are met.</p>
 <!-- Screenshot needed: Overview screenshot showing where the Effects system is accessed in the BPA interface, likely within the component edit modal or a dedicated section. -->
-<p><em>Screenshot: Overview screenshot showing where the Effects system is accessed in the BPA interface, likely within the component edit modal or a dedicated section.</em></p>
+
+<p><strong>Real-world example — "Permisos eventuales" service:</strong>
+This service has <strong>64 component behaviours</strong> defined across its forms. Nearly every one of these behaviours carries exactly 1 effect (effect_count: 1), demonstrating that the typical pattern is a one-to-one mapping between a behaviour and its effect. One behaviour has 0 effects, indicating a behaviour record can exist as a placeholder before an effect is attached. The 64 behaviours span a wide range of component types including blocks, columns, tabs, fieldsets, and individual interactive elements.</p>
 <hr />
 <h2 id="effect-types">Effect Types<a class="headerlink" href="#effect-types" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
@@ -1945,7 +1947,35 @@ MCP tool signatures confirm the existence of effect_create, effect_delete, compo
 - disable: Disables a component (makes it read-only) when the determinant conditions are met.</p>
 <p>Each effect also has an effect_value (a boolean) that determines the polarity of the effect.</p>
 <!-- Screenshot needed: Screenshot of the effect type selection dropdown or interface showing all available effect types (activate, deactivate, show, hide, enable, disable). -->
-<p><em>Screenshot: Screenshot of the effect type selection dropdown or interface showing all available effect types (activate, deactivate, show, hide, enable, disable).</em></p>
+
+<p>These six types fall into three functional pairs that control different aspects of a component:</p>
+<table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Effect types</th>
+<th>What they control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Visibility</strong></td>
+<td><code>show</code> / <code>hide</code></td>
+<td>Whether the component is visible on the form</td>
+</tr>
+<tr>
+<td><strong>Activation</strong></td>
+<td><code>activate</code> / <code>deactivate</code></td>
+<td>Whether the component is active in the workflow</td>
+</tr>
+<tr>
+<td><strong>Interactivity</strong></td>
+<td><code>enable</code> / <code>disable</code></td>
+<td>Whether the user can interact with or edit the component</td>
+</tr>
+</tbody>
+</table>
+<p>In the "Permisos eventuales" service, effects are used to conditionally show or hide entire blocks (such as <code>applicantBlock9</code> — "Provea aqui la fundamentacion") and to activate or deactivate tabs (such as <code>applicantTabsFacultades</code>) depending on determinant conditions. This allows the form to adapt dynamically based on the applicant's answers.</p>
 <hr />
 <h2 id="creating-an-effect">Creating an Effect<a class="headerlink" href="#creating-an-effect" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
@@ -1961,7 +1991,16 @@ MCP tool signatures confirm the existence of effect_create, effect_delete, compo
 6. Save the effect.</p>
 <p>When an effect is created, the system generates a behaviour record for the component (if one does not already exist) and attaches the effect to it. The system returns a behaviour_id, effect_id, and an audit_id for tracking the change.</p>
 <!-- Screenshot needed: Step-by-step screenshots of creating an effect: selecting the component, choosing determinants, selecting logic (AND/OR), choosing effect type, and saving. -->
-<p><em>Screenshot: Step-by-step screenshots of creating an effect: selecting the component, choosing determinants, selecting logic (AND/OR), choosing effect type, and saving.</em></p>
+
+<p><strong>Concrete example:</strong> To make the block <code>applicantBlock9</code> ("Provea aqui la fundamentacion") appear only when a specific condition is met, you would:</p>
+<ol>
+<li>Set the component key to <code>applicantBlock9</code>.</li>
+<li>Select the determinant(s) that represent the condition (for example, a determinant that checks whether the applicant selected a particular permit type).</li>
+<li>Set the logic to <code>AND</code> if multiple determinants must all be true simultaneously.</li>
+<li>Set the effect type to <code>show</code> and the effect value to <code>true</code>.</li>
+<li>Save — the system creates a component behaviour for <code>applicantBlock9</code> with one effect attached.</li>
+</ol>
+<p>After saving, the behaviour list for the service will show <code>applicantBlock9</code> with <code>effect_count: 1</code>.</p>
 <hr />
 <h2 id="determinant-logic-and-vs-or">Determinant Logic: AND vs OR<a class="headerlink" href="#determinant-logic-and-vs-or" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
@@ -1973,7 +2012,9 @@ MCP tool signatures confirm the existence of effect_create, effect_delete, compo
 - OR logic: The effect triggers if any one of the referenced determinants has its condition met.</p>
 <p>This allows for complex conditional behaviors. For example, you could create an effect that shows a field only when both the applicant type is 'company' AND the registration type is 'new registration' (AND logic), or create an effect that disables a field when either the application is in 'draft' status OR the user has selected 'not applicable' (OR logic).</p>
 <!-- Screenshot needed: Screenshot showing the logic selector (AND/OR) when creating an effect with multiple determinants. -->
-<p><em>Screenshot: Screenshot showing the logic selector (AND/OR) when creating an effect with multiple determinants.</em></p>
+
+<p><strong>How this works in practice — "Permisos eventuales":</strong>
+Consider the component <code>datosComplementariosContinuar</code>. A behaviour on this component might use AND logic to combine two determinants: one checking that a required classification has been selected, and another checking that supplementary data fields have been filled. Only when both conditions are satisfied does the "Continue" button become active, preventing the applicant from advancing before providing all required information. The sibling component <code>datosComplementariosContinuar2</code> can use the same pattern for a different step in the form.</p>
 <hr />
 <h2 id="component-behaviours">Component Behaviours<a class="headerlink" href="#component-behaviours" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
@@ -1988,7 +2029,96 @@ MCP tool signatures confirm the existence of effect_create, effect_delete, compo
 - A list of effects, each containing its own determinants and property effects.</p>
 <p>You can list all component behaviours for a service to see which components have effects configured, along with the effect count for each. You can also retrieve the behaviour for a specific component by its key.</p>
 <!-- Screenshot needed: Screenshot showing the component behaviours list for a service, displaying which components have behaviours and their effect counts. -->
-<p><em>Screenshot: Screenshot showing the component behaviours list for a service, displaying which components have behaviours and their effect counts.</em></p>
+
+<p><strong>"Permisos eventuales" — Component behaviour inventory (64 total):</strong></p>
+<p>The table below shows a representative selection of the 64 component behaviours in this service. Nearly all have exactly 1 effect; one has 0 effects.</p>
+<table>
+<thead>
+<tr>
+<th>Component key</th>
+<th>Description</th>
+<th style="text-align: center;">effect_count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>applicantBlock9</code></td>
+<td>"Provea aqui la fundamentacion" — conditional justification block</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>applicantBlock3</code></td>
+<td>"Datos de contacto" — contact data block</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>applicantBlock5</code></td>
+<td>"Contadores" — counters block</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>applicantcolumns2</code></td>
+<td>Column layout component in the applicant form</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>applicantcolumns5</code></td>
+<td>Column layout component in the applicant form</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>applicantTabsFacultades</code></td>
+<td>Tabs component for "Facultades" (permissions/authorities)</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>datosComplementariosContinuar</code></td>
+<td>"Continue" action in supplementary data section</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>datosComplementariosContinuar2</code></td>
+<td>Second "Continue" action in supplementary data</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>datosComplementariosContent</code></td>
+<td>Content container for supplementary data</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>solicitudDescargarElFichero</code></td>
+<td>"Download the file" action on the application</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>solicitudBlock2</code></td>
+<td>Block within the application step</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>revisionTabsNuevasSolicitudes</code></td>
+<td>Tabs for "New applications" in the review step</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>revisionFieldSet2</code></td>
+<td>Fieldset in the review step</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><code>permisoFirmadoNoSeHanObtenidoDatosVerifiqueElServicioWeb</code></td>
+<td>Message: "Data not obtained — verify web service"</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td><em>(+ 50 more behaviours)</em></td>
+<td>Various blocks, columns, tabs, fields, and actions</td>
+<td style="text-align: center;">1 each (one has 0)</td>
+</tr>
+</tbody>
+</table>
+<p>This inventory shows that effects are used throughout the entire service lifecycle — from the applicant form (<code>applicantBlock*</code>, <code>applicantcolumns*</code>, <code>applicantTabsFacultades</code>), through supplementary data collection (<code>datosComplementarios*</code>), to the application step (<code>solicitud*</code>), the review step (<code>revision*</code>), and the final signed-permit step (<code>permisoFirmado*</code>).</p>
 <hr />
 <h2 id="deleting-an-effect">Deleting an Effect<a class="headerlink" href="#deleting-an-effect" title="Permanent link">&para;</a></h2>
 <div class="admonition success">
@@ -1998,7 +2128,8 @@ MCP tool signatures confirm the existence of effect_create, effect_delete, compo
 <p>To delete an effect, you need the behaviour_id of the behaviour containing the effect. Deleting a behaviour removes it and all its associated effects from the component.</p>
 <p>The delete operation is audited and returns confirmation of the deletion along with details of the deleted behaviour and an audit_id.</p>
 <!-- Screenshot needed: Screenshot showing the delete action for an effect or behaviour, including any confirmation dialog. -->
-<p><em>Screenshot: Screenshot showing the delete action for an effect or behaviour, including any confirmation dialog.</em></p>
+
+<p><strong>Important:</strong> Because deletion operates at the behaviour level, removing a behaviour deletes all effects attached to that component. In a service like "Permisos eventuales" where most behaviours contain exactly 1 effect, this distinction rarely matters. However, if a component has a behaviour with multiple effects, deleting the behaviour removes all of them at once. To remove only one effect from a multi-effect behaviour, the behaviour would need to be recreated with only the desired effects.</p>
 <hr />
 <h2 id="relationship-between-effects-and-determinants">Relationship between Effects and Determinants<a class="headerlink" href="#relationship-between-effects-and-determinants" title="Permanent link">&para;</a></h2>
 <div class="admonition question">
@@ -2007,6 +2138,14 @@ MCP tool signatures confirm the existence of effect_create, effect_delete, compo
 </div>
 <p>The Effects system works in conjunction with the existing Determinants system (documented in section D.2 of the manual). Determinants define conditions based on field values, while Effects define what happens when those conditions are met. The Effects system uses JSONLogic internally for determinant evaluation.</p>
 <p>It is likely that the existing determinant show/hide behavior described in section D.2 coexists with the newer Effects system. The original determinant-based show/hide may still work for simple cases, while the Effects system provides more advanced options. The exact relationship and whether the Effects system supersedes or complements the older approach needs to be verified.</p>
+<p><strong>Summary of the relationship:</strong></p>
+<div class="highlight"><pre><span></span><code>Determinant (condition)          Effect (action)
+─────────────────────    +    ─────────────────────
+&quot;If permit type = X&quot;     →    show applicantBlock9
+&quot;If status = draft&quot;      →    disable solicitudDescargarElFichero
+&quot;If classification = Y&quot;  →    activate applicantTabsFacultades
+</code></pre></div>
+<p>Determinants answer the question "when?", and effects answer the question "what happens?". The component behaviour is the glue that binds them together for a specific component. In the "Permisos eventuales" service, all 64 component behaviours follow this pattern — each one links at least one determinant to an effect on a target component.</p>
 <hr />
 <h2 id="effects-system-ui-location-in-bpa">Effects System UI Location in BPA<a class="headerlink" href="#effects-system-ui-location-in-bpa" title="Permanent link">&para;</a></h2>
 <div class="admonition question">
