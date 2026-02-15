@@ -345,10 +345,10 @@ async def capture_all():
         try:
             if full_url != last_url:
                 await page.goto(full_url, wait_until='domcontentloaded', timeout=45000)
-                await asyncio.sleep(3)
                 last_url = full_url
-            else:
-                await asyncio.sleep(0.5)  # Same page, just take screenshot
+
+            # Wait 10 seconds for Angular to fully render all components
+            await asyncio.sleep(10)
 
             # Take viewport screenshot
             await page.screenshot(path=img_path, full_page=False)
