@@ -243,6 +243,37 @@ This feature may have been enhanced with AI-based extraction capabilities, impro
 
 ---
 
+!!! example "Message templates in the Cuba VUCE"
+    The platform has **21 email message templates**. Messages are triggered by role status changes.
+
+    **Messages for *Permisos eventuales***:
+
+    | Message | Trigger |
+    |---------|---------|
+    | **Correcciones requeridas en su solicitud de {{requested-registrations}}** | Solicitud &rarr; SEND BACK TO CORRECTIONS |
+    | **Su solicitud de {{requested-registrations}} no ha sido aceptada** | Solicitud &rarr; REJECTED |
+    | **Cancelar Permiso Eventual** | Permiso eventual &rarr; CANCELLED |
+    | **Permiso eventual aprobado y disponible para descarga** | Permiso eventual &rarr; FILE VALIDATED |
+    | **Permiso eventual emitido -- ingrese para completar los datos de ejecucion** | Permiso eventual &rarr; ISSUED |
+
+    **Messages for other services**:
+
+    | Message | Service | Trigger |
+    |---------|---------|---------|
+    | **Solicitud recibida** | Acreditaciones | On submission |
+    | **Su acreditacion en la VUCE esta lista** | Acreditaciones | On validation |
+    | **Solicitud aprobada** | Acreditaciones / Autorizaciones | On approval |
+    | **Corregir solicitud Permiso Fitosanitario** | Permiso Fitosanitario | Send back for corrections |
+    | **Emision de Permiso Fitosanitario** | Permiso Fitosanitario | Issuance notification |
+    | **Emitir Permiso Zoosanitario** | Permiso Zoosanitario | Issuance notification |
+    | Additional 10 messages | Various services | Correction, rejection, and approval notifications |
+
+    **Template variables**: Messages use placeholders like `{{applicantfullname}}`, `{{applicantusername}}`, `{{requested-registrations}}`, `{{company-name}}`, `{{listing-value}}`, `{{data.field-key}}`, `{{license-url_...}}`, and `{{data.rejection-reasons}}` to personalize content.
+
+    **Message triggers**: Each message is linked to a specific role + status combination (e.g., "Permisos eventuales: Solicitud - FILE VALIDATED", "Permisos eventuales: Revision - SEND BACK TO CORRECTIONS"). All 21 messages use the **EMAIL** channel.
+
+---
+
 ## Potential new useful functions
 
 !!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"

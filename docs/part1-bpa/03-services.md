@@ -67,6 +67,62 @@ A new service can be created by clicking on the 'Add' button. Additionally, serv
 
 <!-- Screenshot needed: Services list showing Add button, and Import/Copy options if available in toolbar -->
 
+!!! example "Services in the Cuba VUCE platform"
+    The Cuba platform has **36 services** organized into categories:
+
+    **Trade permits and registrations** (core public-facing services):
+
+    | # | Service name | Description |
+    |---|-------------|-------------|
+    | 1 | **Permisos eventuales** | Temporary import/export permits |
+    | 2 | **Registro de clientes y proveedores** | Registration of clients and suppliers |
+    | 3 | **Acreditaciones** | Accreditations for trade operators |
+    | 4 | **Certificado de aprobacion del Modelo Instrumentos de medicion** | Type-approval certificate for measuring instruments |
+    | 5 | **Permiso fitosanitario** | Phytosanitary (plant health) permit |
+    | 6 | **Registro de importadores y exportadores de servicios** | Registry of service importers and exporters |
+    | 7 | **Autorizaciones para importar-exportar** | Import/export authorizations |
+    | 8 | **Homologacion de equipos de uso final de energia electrica** | Homologation of end-use electrical energy equipment |
+    | 9 | **Permiso Zoosanitario de importacion** | Zoosanitary (animal health) import permit |
+    | 10 | **Registro de Sustancias sometidas a Fiscalizacion** | Registry of controlled/regulated substances |
+    | 11 | **Permisos de equipos de uso final de energia electrica** | Permits for end-use electrical energy equipment |
+    | 12 | **Registro Sanitario INHEM** | INHEM sanitary registration |
+    | 13 | **Registros Zoosanitarios del CENASA** | CENASA zoosanitary registrations |
+    | 14 | **Registro de Sucursales** | Branch office registration |
+    | 15 | **Certificado de aprobacion de modelo para instrumentos de medicion** | Model-approval certificate for measuring instruments |
+    | 16 | **Certificado sanitario de exportacion** | Sanitary export certificate |
+    | 17 | **Licencia Sanitaria del CECMED** | CECMED sanitary license (medicines/medical devices) |
+    | 18 | **Licencia de Seguridad ambiental y nuclear** | Environmental and nuclear safety license |
+    | 19 | **Permiso de Sustancias sometidas a Fiscalizacion** | Permit for controlled/regulated substances |
+    | 20 | **Bitacora** | Logbook / activity journal |
+    | 21 | **Consulta de Certificados emitidos** | Query issued certificates |
+    | 22 | **Certificado de importacion para donativos medicos** | Import certificate for medical donations |
+    | 23 | **Certificado de origen** | Certificate of origin |
+
+    **Administrative services** (operator-facing):
+
+    | # | Service name | Description |
+    |---|-------------|-------------|
+    | 24 | **Administracion clientes y proveedores** | Client and supplier administration |
+    | 25 | **Administracion VUCE** | VUCE platform administration |
+    | 26 | **Consultar Registros INHEM** | Query INHEM registrations |
+    | 27 | **Administrar Permisos Fitosanitarios** | Manage phytosanitary permits |
+    | 28 | **Administrar Registro INHEM** | Manage INHEM registrations |
+
+    **Test/development services**:
+
+    | # | Service name | Description |
+    |---|-------------|-------------|
+    | 29 | Servicio Template de Prueba | Test template service |
+    | 30 | Servicio test | Generic test service |
+    | 31 | TestNP2025 | Developer test service |
+    | 32 | My Dashboard - copy | Dashboard copy (testing) |
+    | 33 | Permiso Fitosanitario - copy | Phytosanitary permit copy (testing) |
+    | 34 | new service to merge - copy | Merge test copy |
+    | 35 | Permisos eventuales - GDB SACLAP | Eventual permits with GDB SACLAP integration |
+    | 36 | Documentacion: Listar datos desde GDB... | Documentation: List data from GDB |
+
+    This real-world example illustrates how a single eRegistrations instance can host dozens of services spanning multiple government agencies and regulatory domains -- from phytosanitary permits (agriculture) to sanitary licenses (health) to certificates of origin (trade).
+
 ---
 
 ## Service activation toggle

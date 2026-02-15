@@ -89,6 +89,15 @@ description: "eRegistrations Manual - C. Registration(s) (Original pages 14-25)"
 </div>
 <!-- /Live BPA Screenshot: live-registrations -->
 
+!!! example "Registration in *Permisos eventuales*"
+    The *Permisos eventuales* service has **1 registration**:
+
+    | Registration | Owner | Mandatory | Doc Requirements |
+    |-------------|-------|-----------|-----------------|
+    | **Permiso eventual** | Alina Isasi | Yes (selected by default) | 0 (uses form file uploads) |
+
+    This is a simple single-registration service. More complex services (like *Autorizaciones para importar-exportar*) can have multiple registrations with determinant-based selection logic.
+
 ## Registration definition
 
 Registrations are at the core of the eRegistrations system. A registration is any type of authorization (license, permit, registration number, clearance, certificate, etc.) issued by a government institution, for which an applicant will usually need to provide data, documents and fee.

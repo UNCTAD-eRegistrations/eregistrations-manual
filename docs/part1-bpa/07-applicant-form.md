@@ -230,6 +230,44 @@ An e-signature field may have been added as a new field type, allowing applicant
 
 ---
 
+!!! example "Applicant form structure in *Permisos eventuales* (Cuba)"
+    The applicant form for the **Permisos eventuales** service has **140 components** organized in blocks, illustrating how the container and field types described above come together in a real service.
+
+    **Component type breakdown**:
+
+    | Type | Count | Examples |
+    |------|-------|----------|
+    | Panel (block) | 13 | "Datos de la operacion", "Productos", "Datos de contacto", "Confirmar", "Datos ocultos" |
+    | Columns | 18 | Layout containers for side-by-side fields |
+    | Textfield | ~30 | "Proveedor extranjero", "Cliente nacional", "Elaborado por", "Telefono", "Email", "Descripcion", "Numero de contrato" |
+    | Select | ~15 | "Tipo de operacion", "Condicion de la operacion", "Pais de origen", "Pais de embarque", "Pais de destino", "Capitulo", "Subpartidas" |
+    | Number | ~12 | "Cantidad", "Valor", "Valor total", "Cantidad de embarques", "Contador eventuales" |
+    | Content | 7 | Decorative/instructional HTML blocks |
+    | Datetime | 4 | "Fecha de expiracion", "Fecha de la solicitud", "Fecha del ultimo embarque", "Valido hasta" |
+    | Fieldset | 4 | "Datos de la operacion", "Field Set" (x3) |
+    | Button | 4 | "Enviar", "Cambiar empresa", "Porque no vienen datos", "Descargar carta" |
+    | Datagrid | 3 | "Lista de productos nuevos" (8 child columns), "Productos autorizados" (7 children), "Productos modificados" (6 children) |
+    | Radio | 3 | "Empresa del Mariel", "Status llega de la bitacora", "Que quiere hacer?" |
+    | File | 2 | "Documento que avale la fundamentacion", "Subir la Carta emitida por la Oficina de la ZED Mariel" |
+    | Checkbox | 2 | "Confirmo la exactitud de la informacion declarada", "Forma de gestion no Estatal" |
+    | Tabs | 1 | "Permiso existente" with 2 tabs: "Operacion previamente autorizada", "Modificaciones solicitadas" |
+    | Textarea | 1 | "Fundamentacion" |
+
+    **Form layout (top-level blocks)**:
+
+    1. **Su empresa seleccionada** -- Company info display
+    2. **Datos de la operacion** -- Operation type, countries, foreign supplier, national client
+    3. **Productos** -- Datagrid with producto / subpartida / descripcion / UM / valor / cantidad
+    4. **Permiso existente** *(tabs)* -- 2 tabs for viewing previously authorized operations and requested modifications
+    5. **Provea aqui la fundamentacion** -- Textarea + file upload + ZED Mariel letter upload
+    6. **Datos de contacto** -- Elaborado por, telefono, email
+    7. **Confirmar** -- Checkbox confirmation ("Confirmo la exactitud de la informacion declarada")
+    8. **Datos ocultos** -- Hidden fields (counters, status flags, triggers)
+
+    This form demonstrates most of the component types available in the form builder: panels for grouping, columns for layout, datagrids for repeatable product rows, tabs for organizing related permit data, and a mix of field types (text, select, number, date, file, radio, checkbox) for capturing structured trade-permit information.
+
+---
+
 ## Common properties - Help toggle
 
 Help toggle (tooltips).

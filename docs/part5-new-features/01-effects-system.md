@@ -162,6 +162,30 @@ The table below shows a representative selection of the 64 component behaviours 
 
 This inventory shows that effects are used throughout the entire service lifecycle — from the applicant form (`applicantBlock*`, `applicantcolumns*`, `applicantTabsFacultades`), through supplementary data collection (`datosComplementarios*`), to the application step (`solicitud*`), the review step (`revision*`), and the final signed-permit step (`permisoFirmado*`).
 
+!!! example "Component behaviours in *Permisos eventuales*"
+    The service has **64 component behaviours** — rules that control how form components react to determinant conditions.
+
+    **Behaviours with identified targets**:
+
+    | Component | Description | Effects |
+    |-----------|-------------|---------|
+    | `applicantBlock9` | "Provea aqui la fundamentacion" block | 1 effect (show/hide based on condition) |
+    | `applicantBlock3` | "Datos de contacto" block | 1 effect (show/hide based on condition) |
+    | `applicantBlock5` | "Contadores" block | 1 effect (show/hide based on condition) |
+    | `applicantcolumns2` | Columns container | 1 effect (layout visibility) |
+    | `applicantcolumns5` | Columns containing ZED Mariel fields | 1 effect (show when ZED Mariel applies) |
+    | `applicantTabsFacultades` | "Permiso existente" tabs | 1 effect (show when modifying existing permit) |
+    | `revisionFieldSet2` | Revision role fieldset | 0 effects (deactivated or placeholder) |
+    | `revisionTabsNuevasSolicitudes` | Revision role tabs | 1 effect (controls review workflow visibility) |
+    | `permisoFirmadoNoSeHanObtenidoDatosVerifiqueElServicioWeb` | Error display field | 1 effect (show on web service failure) |
+    | `datosComplementariosContinuar` | Continue button (step 1) | 1 effect (enable when conditions met) |
+    | `datosComplementariosContinuar2` | Continue button (step 2) | 1 effect (enable when conditions met) |
+    | `solicitudDescargarElFichero` | Download file button | 1 effect (enable when file is ready) |
+    | `solicitudBlock2` | Solicitud role block | 1 effect (show/hide based on condition) |
+    | `datosComplementariosContent` | Datos complementarios content | 1 effect (show/hide based on condition) |
+
+    Most behaviours (48 of 64) target components without a stored `component_key` — these are older behaviours where the key is resolved at runtime.
+
 ---
 
 ## Deleting an Effect

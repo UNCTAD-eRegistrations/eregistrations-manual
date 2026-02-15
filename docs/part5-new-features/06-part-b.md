@@ -58,6 +58,19 @@ The list of available system actions can be viewed through the system actions in
 
 <!-- Screenshot needed: Screenshot listing the available Part B system actions with their names and categories. -->
 
+!!! example "Part B system actions"
+    The platform provides **22 built-in system actions** organized in 5 categories:
+
+    | Category | Count | Actions | Purpose |
+    |----------|-------|---------|---------|
+    | **Processing** | 4 | `fileValidated`, `fileDecline`, `fileReject`, `cancelFile` | Approve, decline, reject, or cancel applications |
+    | **Print** | 3 | `printEntirePartAButton`, `printApplicantGuide`, `printApplicantFile` | Generate printable views of the application, guide, or full file |
+    | **Applicant** | 5 | `start_kyc`, `saveData`, `saveSENDPAGE`, `saveDOCUMENT`, `savePAYMENTPAGE`, `saveA5` | Handle applicant-side save and submit operations |
+    | **Navigation** | 3 | `goToNextPage`, `goToPreviousPage`, `validateCurrentTab` | Navigate between form pages and validate current tab |
+    | **Other** | 7 | `saveGUIDE`, `revisionFileValidated`, `revisionFileReject`, `revisionFileDecline`, `registerAndApply`, `sendBack` | Guide saving, revision processing, registration, and send-back |
+
+    System actions are referenced by their ID when configuring component actions (using their `id` as the `bot_id` in `componentaction_save`). They are built into the platform and **do not appear in the BOT list**.
+
 ---
 
 ## Part B System Buttons
