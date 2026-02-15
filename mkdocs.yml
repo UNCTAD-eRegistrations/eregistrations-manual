@@ -58,6 +58,12 @@ markdown_extensions:
   - toc:
       permalink: true
 
+extra_css:
+  - stylesheets/interactive.css
+
+extra_javascript:
+  - javascripts/interactive.js
+
 extra:
   generator: false
   social:
