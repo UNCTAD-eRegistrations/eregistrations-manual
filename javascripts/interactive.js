@@ -94,9 +94,6 @@
     toolbar.id = 'interactive-toolbar';
     toolbar.innerHTML = `
       <div class="it-bar">
-        <button class="it-btn it-btn-live" onclick="window.__manual.togglePreview()" title="Open live BPA preview">
-          <span class="it-icon">📺</span> Live Preview
-        </button>
         <button class="it-btn it-btn-help" onclick="window.__manual.openInBPA()" title="Open this help inside the BPA">
           <span class="it-icon">🔗</span> Open in BPA
         </button>
