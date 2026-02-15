@@ -5,6 +5,36 @@ description: "eRegistrations Manual - A. The user dashboard (Original pages p.13
 
 # A. The user dashboard
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-ds-user-dashboard-01.png](../screenshots/pdf-ds-user-dashboard-01.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-02.png](../screenshots/pdf-ds-user-dashboard-02.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-03.png](../screenshots/pdf-ds-user-dashboard-03.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-04.png](../screenshots/pdf-ds-user-dashboard-04.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-05.png](../screenshots/pdf-ds-user-dashboard-05.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-06.png](../screenshots/pdf-ds-user-dashboard-06.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-07.png](../screenshots/pdf-ds-user-dashboard-07.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-08.png](../screenshots/pdf-ds-user-dashboard-08.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-09.png](../screenshots/pdf-ds-user-dashboard-09.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-10.png](../screenshots/pdf-ds-user-dashboard-10.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-11.png](../screenshots/pdf-ds-user-dashboard-11.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-12.png](../screenshots/pdf-ds-user-dashboard-12.png){ loading=lazy }
+
+    ![pdf-ds-user-dashboard-13.png](../screenshots/pdf-ds-user-dashboard-13.png){ loading=lazy }
+
+
 !!! info "Update Summary (5 changes detected)"
     5 changes detected: Header/menu bar may have UI theme updates, shopping cart integration on dashboard, status display colors and filters may have changed, My Applications table may show additional columns or layout changes, overall DS UI theme may have been refreshed.
 

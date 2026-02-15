@@ -5,6 +5,72 @@ description: "eRegistrations Manual - C. Registration(s) (Original pages 14-25)"
 
 # C. Registration(s)
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-registrations-01.png](../screenshots/pdf-bpa-registrations-01.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-02.png](../screenshots/pdf-bpa-registrations-02.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-03.png](../screenshots/pdf-bpa-registrations-03.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-04.png](../screenshots/pdf-bpa-registrations-04.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-05.png](../screenshots/pdf-bpa-registrations-05.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-06.png](../screenshots/pdf-bpa-registrations-06.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-07.png](../screenshots/pdf-bpa-registrations-07.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-08.png](../screenshots/pdf-bpa-registrations-08.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-09.png](../screenshots/pdf-bpa-registrations-09.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-10.png](../screenshots/pdf-bpa-registrations-10.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-11.png](../screenshots/pdf-bpa-registrations-11.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-12.png](../screenshots/pdf-bpa-registrations-12.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-13.png](../screenshots/pdf-bpa-registrations-13.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-14.png](../screenshots/pdf-bpa-registrations-14.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-15.png](../screenshots/pdf-bpa-registrations-15.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-16.png](../screenshots/pdf-bpa-registrations-16.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-17.png](../screenshots/pdf-bpa-registrations-17.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-18.png](../screenshots/pdf-bpa-registrations-18.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-19.png](../screenshots/pdf-bpa-registrations-19.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-20.png](../screenshots/pdf-bpa-registrations-20.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-21.png](../screenshots/pdf-bpa-registrations-21.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-22.png](../screenshots/pdf-bpa-registrations-22.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-23.png](../screenshots/pdf-bpa-registrations-23.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-24.png](../screenshots/pdf-bpa-registrations-24.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-25.png](../screenshots/pdf-bpa-registrations-25.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-26.png](../screenshots/pdf-bpa-registrations-26.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-27.png](../screenshots/pdf-bpa-registrations-27.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-28.png](../screenshots/pdf-bpa-registrations-28.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-29.png](../screenshots/pdf-bpa-registrations-29.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-30.png](../screenshots/pdf-bpa-registrations-30.png){ loading=lazy }
+
+    ![pdf-bpa-registrations-31.png](../screenshots/pdf-bpa-registrations-31.png){ loading=lazy }
+
+
 !!! info "Update Summary (5 changes detected)"
     5 items identified: Registration structure is core and stable.
     The creation workflow (name, short name, result P/D, documents U/S/M, fees fixed/formula, institution, units) remains unchanged.

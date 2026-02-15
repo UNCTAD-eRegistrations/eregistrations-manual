@@ -5,6 +5,20 @@ description: "eRegistrations Manual - D.5. Payment (Original pages p.44-45)"
 
 # D.5. Payment
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-payment-01.png](../screenshots/pdf-bpa-payment-01.png){ loading=lazy }
+
+    ![pdf-bpa-payment-02.png](../screenshots/pdf-bpa-payment-02.png){ loading=lazy }
+
+    ![pdf-bpa-payment-03.png](../screenshots/pdf-bpa-payment-03.png){ loading=lazy }
+
+    ![pdf-bpa-payment-04.png](../screenshots/pdf-bpa-payment-04.png){ loading=lazy }
+
+    ![pdf-bpa-payment-05.png](../screenshots/pdf-bpa-payment-05.png){ loading=lazy }
+
+
 !!! info "Update Summary (1 changes detected)"
     The Payment section core workflow remains accurate.
     The payments tab, Agency Code and Account Head ID field tags, Payment Providers custom component, online/manual payment radio options, and show decimals toggle are all still present and function as documented.

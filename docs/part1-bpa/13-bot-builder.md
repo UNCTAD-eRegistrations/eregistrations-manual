@@ -5,6 +5,78 @@ description: "eRegistrations Manual - E. BOT builder (Original pages 77-96)"
 
 # E. BOT builder
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-bot-builder-01.png](../screenshots/pdf-bpa-bot-builder-01.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-02.png](../screenshots/pdf-bpa-bot-builder-02.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-03.png](../screenshots/pdf-bpa-bot-builder-03.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-04.png](../screenshots/pdf-bpa-bot-builder-04.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-05.png](../screenshots/pdf-bpa-bot-builder-05.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-06.png](../screenshots/pdf-bpa-bot-builder-06.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-07.png](../screenshots/pdf-bpa-bot-builder-07.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-08.png](../screenshots/pdf-bpa-bot-builder-08.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-09.png](../screenshots/pdf-bpa-bot-builder-09.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-10.png](../screenshots/pdf-bpa-bot-builder-10.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-11.png](../screenshots/pdf-bpa-bot-builder-11.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-12.png](../screenshots/pdf-bpa-bot-builder-12.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-13.png](../screenshots/pdf-bpa-bot-builder-13.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-14.png](../screenshots/pdf-bpa-bot-builder-14.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-15.png](../screenshots/pdf-bpa-bot-builder-15.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-16.png](../screenshots/pdf-bpa-bot-builder-16.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-17.png](../screenshots/pdf-bpa-bot-builder-17.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-18.png](../screenshots/pdf-bpa-bot-builder-18.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-19.png](../screenshots/pdf-bpa-bot-builder-19.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-20.png](../screenshots/pdf-bpa-bot-builder-20.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-21.png](../screenshots/pdf-bpa-bot-builder-21.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-22.png](../screenshots/pdf-bpa-bot-builder-22.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-23.png](../screenshots/pdf-bpa-bot-builder-23.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-24.png](../screenshots/pdf-bpa-bot-builder-24.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-25.png](../screenshots/pdf-bpa-bot-builder-25.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-26.png](../screenshots/pdf-bpa-bot-builder-26.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-27.png](../screenshots/pdf-bpa-bot-builder-27.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-28.png](../screenshots/pdf-bpa-bot-builder-28.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-29.png](../screenshots/pdf-bpa-bot-builder-29.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-30.png](../screenshots/pdf-bpa-bot-builder-30.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-31.png](../screenshots/pdf-bpa-bot-builder-31.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-32.png](../screenshots/pdf-bpa-bot-builder-32.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-33.png](../screenshots/pdf-bpa-bot-builder-33.png){ loading=lazy }
+
+    ![pdf-bpa-bot-builder-34.png](../screenshots/pdf-bpa-bot-builder-34.png){ loading=lazy }
+
+
 !!! info "Update Summary (6 changes detected)"
     6 items identified: BOT type definitions and creation workflows are largely unchanged.
     Data BOT categories have expanded beyond just 'Create' to include read, update, list, exist, log, and other (confirmed via MCP tool muleservice_discover).

@@ -5,6 +5,68 @@ description: "eRegistrations Manual - B.5. Special features (Original pages p.17
 
 # B.5. Special features
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-gdb-special-features-01.png](../screenshots/pdf-gdb-special-features-01.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-02.png](../screenshots/pdf-gdb-special-features-02.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-03.png](../screenshots/pdf-gdb-special-features-03.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-04.png](../screenshots/pdf-gdb-special-features-04.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-05.png](../screenshots/pdf-gdb-special-features-05.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-06.png](../screenshots/pdf-gdb-special-features-06.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-07.png](../screenshots/pdf-gdb-special-features-07.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-08.png](../screenshots/pdf-gdb-special-features-08.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-09.png](../screenshots/pdf-gdb-special-features-09.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-10.png](../screenshots/pdf-gdb-special-features-10.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-11.png](../screenshots/pdf-gdb-special-features-11.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-12.png](../screenshots/pdf-gdb-special-features-12.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-13.png](../screenshots/pdf-gdb-special-features-13.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-14.png](../screenshots/pdf-gdb-special-features-14.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-15.png](../screenshots/pdf-gdb-special-features-15.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-16.png](../screenshots/pdf-gdb-special-features-16.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-17.png](../screenshots/pdf-gdb-special-features-17.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-18.png](../screenshots/pdf-gdb-special-features-18.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-19.png](../screenshots/pdf-gdb-special-features-19.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-20.png](../screenshots/pdf-gdb-special-features-20.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-21.png](../screenshots/pdf-gdb-special-features-21.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-22.png](../screenshots/pdf-gdb-special-features-22.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-23.png](../screenshots/pdf-gdb-special-features-23.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-24.png](../screenshots/pdf-gdb-special-features-24.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-25.png](../screenshots/pdf-gdb-special-features-25.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-26.png](../screenshots/pdf-gdb-special-features-26.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-27.png](../screenshots/pdf-gdb-special-features-27.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-28.png](../screenshots/pdf-gdb-special-features-28.png){ loading=lazy }
+
+    ![pdf-gdb-special-features-29.png](../screenshots/pdf-gdb-special-features-29.png){ loading=lazy }
+
+
 !!! info "Update Summary (2 changes detected)"
     2 changes detected: Special features are largely stable.
     ID format tags and triggers may have new options.

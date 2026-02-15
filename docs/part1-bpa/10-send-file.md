@@ -5,6 +5,14 @@ description: "eRegistrations Manual - D.6. Send File (Original pages p.46)"
 
 # D.6. Send File
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-send-file-01.png](../screenshots/pdf-bpa-send-file-01.png){ loading=lazy }
+
+    ![pdf-bpa-send-file-02.png](../screenshots/pdf-bpa-send-file-02.png){ loading=lazy }
+
+
 !!! info "Update Summary (2 changes detected)"
     The Send File section has the most significant gap of the sections analyzed.
     The original content correctly describes the declaration and signature page as a customizable form page using the 'I Swear' custom component.

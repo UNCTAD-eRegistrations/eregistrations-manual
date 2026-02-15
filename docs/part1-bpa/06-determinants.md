@@ -5,6 +5,22 @@ description: "eRegistrations Manual - D.2. Determinants (Original pages p.28-31)
 
 # D.2. Determinants
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-determinants-01.png](../screenshots/pdf-bpa-determinants-01.png){ loading=lazy }
+
+    ![pdf-bpa-determinants-02.png](../screenshots/pdf-bpa-determinants-02.png){ loading=lazy }
+
+    ![pdf-bpa-determinants-03.png](../screenshots/pdf-bpa-determinants-03.png){ loading=lazy }
+
+    ![pdf-bpa-determinants-04.png](../screenshots/pdf-bpa-determinants-04.png){ loading=lazy }
+
+    ![pdf-bpa-determinants-05.png](../screenshots/pdf-bpa-determinants-05.png){ loading=lazy }
+
+    ![pdf-bpa-determinants-06.png](../screenshots/pdf-bpa-determinants-06.png){ loading=lazy }
+
+
 !!! info "Update Summary (6 changes detected)"
     6 changes detected: The determinant type system has been significantly expanded.
     The original manual describes determinants generically ('Determinant based on field value').

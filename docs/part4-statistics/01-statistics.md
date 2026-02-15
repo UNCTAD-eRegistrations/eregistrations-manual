@@ -5,6 +5,40 @@ description: "eRegistrations Manual - Statistics - A. Overview + B. Types of sta
 
 # Statistics - A. Overview + B. Types of statistics
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-statistics-01.png](../screenshots/pdf-statistics-01.png){ loading=lazy }
+
+    ![pdf-statistics-02.png](../screenshots/pdf-statistics-02.png){ loading=lazy }
+
+    ![pdf-statistics-03.png](../screenshots/pdf-statistics-03.png){ loading=lazy }
+
+    ![pdf-statistics-04.png](../screenshots/pdf-statistics-04.png){ loading=lazy }
+
+    ![pdf-statistics-05.png](../screenshots/pdf-statistics-05.png){ loading=lazy }
+
+    ![pdf-statistics-06.png](../screenshots/pdf-statistics-06.png){ loading=lazy }
+
+    ![pdf-statistics-07.png](../screenshots/pdf-statistics-07.png){ loading=lazy }
+
+    ![pdf-statistics-08.png](../screenshots/pdf-statistics-08.png){ loading=lazy }
+
+    ![pdf-statistics-09.png](../screenshots/pdf-statistics-09.png){ loading=lazy }
+
+    ![pdf-statistics-10.png](../screenshots/pdf-statistics-10.png){ loading=lazy }
+
+    ![pdf-statistics-11.png](../screenshots/pdf-statistics-11.png){ loading=lazy }
+
+    ![pdf-statistics-12.png](../screenshots/pdf-statistics-12.png){ loading=lazy }
+
+    ![pdf-statistics-13.png](../screenshots/pdf-statistics-13.png){ loading=lazy }
+
+    ![pdf-statistics-14.png](../screenshots/pdf-statistics-14.png){ loading=lazy }
+
+    ![pdf-statistics-15.png](../screenshots/pdf-statistics-15.png){ loading=lazy }
+
+
 !!! info "Update Summary (3 changes detected)"
     3 changes detected: Statistics module core functionality is stable.
     New report types or dashboard improvements may exist.

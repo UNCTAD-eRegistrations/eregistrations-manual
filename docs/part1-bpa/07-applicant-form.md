@@ -5,6 +5,74 @@ description: "eRegistrations Manual - D.3. Applicant form (Original pages p.32-4
 
 # D.3. Applicant form
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-applicant-form-01.png](../screenshots/pdf-bpa-applicant-form-01.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-02.png](../screenshots/pdf-bpa-applicant-form-02.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-03.png](../screenshots/pdf-bpa-applicant-form-03.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-04.png](../screenshots/pdf-bpa-applicant-form-04.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-05.png](../screenshots/pdf-bpa-applicant-form-05.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-06.png](../screenshots/pdf-bpa-applicant-form-06.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-07.png](../screenshots/pdf-bpa-applicant-form-07.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-08.png](../screenshots/pdf-bpa-applicant-form-08.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-09.png](../screenshots/pdf-bpa-applicant-form-09.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-10.png](../screenshots/pdf-bpa-applicant-form-10.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-11.png](../screenshots/pdf-bpa-applicant-form-11.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-12.png](../screenshots/pdf-bpa-applicant-form-12.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-13.png](../screenshots/pdf-bpa-applicant-form-13.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-14.png](../screenshots/pdf-bpa-applicant-form-14.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-15.png](../screenshots/pdf-bpa-applicant-form-15.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-16.png](../screenshots/pdf-bpa-applicant-form-16.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-17.png](../screenshots/pdf-bpa-applicant-form-17.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-18.png](../screenshots/pdf-bpa-applicant-form-18.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-19.png](../screenshots/pdf-bpa-applicant-form-19.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-20.png](../screenshots/pdf-bpa-applicant-form-20.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-21.png](../screenshots/pdf-bpa-applicant-form-21.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-22.png](../screenshots/pdf-bpa-applicant-form-22.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-23.png](../screenshots/pdf-bpa-applicant-form-23.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-24.png](../screenshots/pdf-bpa-applicant-form-24.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-25.png](../screenshots/pdf-bpa-applicant-form-25.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-26.png](../screenshots/pdf-bpa-applicant-form-26.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-27.png](../screenshots/pdf-bpa-applicant-form-27.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-28.png](../screenshots/pdf-bpa-applicant-form-28.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-29.png](../screenshots/pdf-bpa-applicant-form-29.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-30.png](../screenshots/pdf-bpa-applicant-form-30.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-31.png](../screenshots/pdf-bpa-applicant-form-31.png){ loading=lazy }
+
+    ![pdf-bpa-applicant-form-32.png](../screenshots/pdf-bpa-applicant-form-32.png){ loading=lazy }
+
+
 !!! info "Update Summary (8 changes detected)"
     8 changes detected: Container types (Block, Table, Columns, Field set, Edit grid, Data grid, Tabs) are stable.
     The form builder's drag-and-drop architecture is unchanged.

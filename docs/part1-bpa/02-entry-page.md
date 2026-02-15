@@ -5,6 +5,26 @@ description: "eRegistrations Manual - A. Description of the entry page (Original
 
 # A. Description of the entry page
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-entry-page-01.png](../screenshots/pdf-bpa-entry-page-01.png){ loading=lazy }
+
+    ![pdf-bpa-entry-page-02.png](../screenshots/pdf-bpa-entry-page-02.png){ loading=lazy }
+
+    ![pdf-bpa-entry-page-03.png](../screenshots/pdf-bpa-entry-page-03.png){ loading=lazy }
+
+    ![pdf-bpa-entry-page-04.png](../screenshots/pdf-bpa-entry-page-04.png){ loading=lazy }
+
+    ![pdf-bpa-entry-page-05.png](../screenshots/pdf-bpa-entry-page-05.png){ loading=lazy }
+
+    ![pdf-bpa-entry-page-06.png](../screenshots/pdf-bpa-entry-page-06.png){ loading=lazy }
+
+    ![pdf-bpa-entry-page-07.png](../screenshots/pdf-bpa-entry-page-07.png){ loading=lazy }
+
+    ![pdf-bpa-entry-page-08.png](../screenshots/pdf-bpa-entry-page-08.png){ loading=lazy }
+
+
 !!! info "Update Summary (4 changes detected)"
     4 changes detected: Instance bar may have additional elements beyond what was documented.
     Side menu has gained new items at user level 2 (e.g., Print Documents/Notifications).

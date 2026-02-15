@@ -5,6 +5,46 @@ description: "eRegistrations Manual - H. Tables (Original pages 125-132)"
 
 # H. Tables
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-tables-01.png](../screenshots/pdf-bpa-tables-01.png){ loading=lazy }
+
+    ![pdf-bpa-tables-02.png](../screenshots/pdf-bpa-tables-02.png){ loading=lazy }
+
+    ![pdf-bpa-tables-03.png](../screenshots/pdf-bpa-tables-03.png){ loading=lazy }
+
+    ![pdf-bpa-tables-04.png](../screenshots/pdf-bpa-tables-04.png){ loading=lazy }
+
+    ![pdf-bpa-tables-05.png](../screenshots/pdf-bpa-tables-05.png){ loading=lazy }
+
+    ![pdf-bpa-tables-06.png](../screenshots/pdf-bpa-tables-06.png){ loading=lazy }
+
+    ![pdf-bpa-tables-07.png](../screenshots/pdf-bpa-tables-07.png){ loading=lazy }
+
+    ![pdf-bpa-tables-08.png](../screenshots/pdf-bpa-tables-08.png){ loading=lazy }
+
+    ![pdf-bpa-tables-09.png](../screenshots/pdf-bpa-tables-09.png){ loading=lazy }
+
+    ![pdf-bpa-tables-10.png](../screenshots/pdf-bpa-tables-10.png){ loading=lazy }
+
+    ![pdf-bpa-tables-11.png](../screenshots/pdf-bpa-tables-11.png){ loading=lazy }
+
+    ![pdf-bpa-tables-12.png](../screenshots/pdf-bpa-tables-12.png){ loading=lazy }
+
+    ![pdf-bpa-tables-13.png](../screenshots/pdf-bpa-tables-13.png){ loading=lazy }
+
+    ![pdf-bpa-tables-14.png](../screenshots/pdf-bpa-tables-14.png){ loading=lazy }
+
+    ![pdf-bpa-tables-15.png](../screenshots/pdf-bpa-tables-15.png){ loading=lazy }
+
+    ![pdf-bpa-tables-16.png](../screenshots/pdf-bpa-tables-16.png){ loading=lazy }
+
+    ![pdf-bpa-tables-17.png](../screenshots/pdf-bpa-tables-17.png){ loading=lazy }
+
+    ![pdf-bpa-tables-18.png](../screenshots/pdf-bpa-tables-18.png){ loading=lazy }
+
+
 !!! info "Update Summary (5 changes detected)"
     5 items identified: The three types of catalogs (service, cross-tables, instance) remain unchanged.
     Catalog creation, subcatalogs, GDB-based catalogs, import/export with templates, groups, and document rejection reasons are all accurately documented.

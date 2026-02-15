@@ -5,6 +5,14 @@ description: "eRegistrations Manual - D.4. Documents (Original pages p.43)"
 
 # D.4. Documents
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-documents-01.png](../screenshots/pdf-bpa-documents-01.png){ loading=lazy }
+
+    ![pdf-bpa-documents-02.png](../screenshots/pdf-bpa-documents-02.png){ loading=lazy }
+
+
 ## Documents tab toggle
 
 The Documents tab can be enabled or disabled for a service. When enabled, it provides a dedicated tab where applicants can see required documents and upload them.

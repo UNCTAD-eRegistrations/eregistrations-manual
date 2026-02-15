@@ -5,6 +5,14 @@ description: "eRegistrations Manual - D.1. The Guide (Original pages p.27-28)"
 
 # D.1. The Guide
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-guide-01.png](../screenshots/pdf-bpa-guide-01.png){ loading=lazy }
+
+    ![pdf-bpa-guide-02.png](../screenshots/pdf-bpa-guide-02.png){ loading=lazy }
+
+
 !!! info "Update Summary (2 changes detected)"
     2 changes detected: Guide core functionality (Description, Form, Status, toggle) is unchanged.
     Shopping cart alternative may have evolved.

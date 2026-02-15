@@ -5,6 +5,22 @@ description: "eRegistrations Manual - A. Public part (Original pages p.153-154)"
 
 # A. Public part
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-gdb-public-part-01.png](../screenshots/pdf-gdb-public-part-01.png){ loading=lazy }
+
+    ![pdf-gdb-public-part-02.png](../screenshots/pdf-gdb-public-part-02.png){ loading=lazy }
+
+    ![pdf-gdb-public-part-03.png](../screenshots/pdf-gdb-public-part-03.png){ loading=lazy }
+
+    ![pdf-gdb-public-part-04.png](../screenshots/pdf-gdb-public-part-04.png){ loading=lazy }
+
+    ![pdf-gdb-public-part-05.png](../screenshots/pdf-gdb-public-part-05.png){ loading=lazy }
+
+    ![pdf-gdb-public-part-06.png](../screenshots/pdf-gdb-public-part-06.png){ loading=lazy }
+
+
 !!! info "Update Summary (1 changes detected)"
     1 change detected: GDB public interface may have minor UI updates but the core structure (header bar, hamburger menu, database list, status button, add record button) is largely stable.
 

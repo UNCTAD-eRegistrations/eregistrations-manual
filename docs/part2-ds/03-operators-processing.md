@@ -5,6 +5,50 @@ description: "eRegistrations Manual - C. Operators processing pages (Original pa
 
 # C. Operators processing pages
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-ds-operators-processing-01.png](../screenshots/pdf-ds-operators-processing-01.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-02.png](../screenshots/pdf-ds-operators-processing-02.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-03.png](../screenshots/pdf-ds-operators-processing-03.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-04.png](../screenshots/pdf-ds-operators-processing-04.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-05.png](../screenshots/pdf-ds-operators-processing-05.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-06.png](../screenshots/pdf-ds-operators-processing-06.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-07.png](../screenshots/pdf-ds-operators-processing-07.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-08.png](../screenshots/pdf-ds-operators-processing-08.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-09.png](../screenshots/pdf-ds-operators-processing-09.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-10.png](../screenshots/pdf-ds-operators-processing-10.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-11.png](../screenshots/pdf-ds-operators-processing-11.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-12.png](../screenshots/pdf-ds-operators-processing-12.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-13.png](../screenshots/pdf-ds-operators-processing-13.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-14.png](../screenshots/pdf-ds-operators-processing-14.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-15.png](../screenshots/pdf-ds-operators-processing-15.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-16.png](../screenshots/pdf-ds-operators-processing-16.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-17.png](../screenshots/pdf-ds-operators-processing-17.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-18.png](../screenshots/pdf-ds-operators-processing-18.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-19.png](../screenshots/pdf-ds-operators-processing-19.png){ loading=lazy }
+
+    ![pdf-ds-operators-processing-20.png](../screenshots/pdf-ds-operators-processing-20.png){ loading=lazy }
+
+
 !!! info "Update Summary (6 changes detected)"
     6 changes detected: Part B system actions integration in processing, e-signature verification capability for operators, effects system may alter processing behavior, file list page may have UI updates, processing page may show new tabs or features, clearing old files functionality needs verification.
 

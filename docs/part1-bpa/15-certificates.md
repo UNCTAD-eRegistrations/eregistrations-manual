@@ -5,6 +5,60 @@ description: "eRegistrations Manual - G. Certificates (Original pages 117-124)"
 
 # G. Certificates
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-certificates-01.png](../screenshots/pdf-bpa-certificates-01.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-02.png](../screenshots/pdf-bpa-certificates-02.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-03.png](../screenshots/pdf-bpa-certificates-03.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-04.png](../screenshots/pdf-bpa-certificates-04.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-05.png](../screenshots/pdf-bpa-certificates-05.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-06.png](../screenshots/pdf-bpa-certificates-06.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-07.png](../screenshots/pdf-bpa-certificates-07.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-08.png](../screenshots/pdf-bpa-certificates-08.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-09.png](../screenshots/pdf-bpa-certificates-09.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-10.png](../screenshots/pdf-bpa-certificates-10.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-11.png](../screenshots/pdf-bpa-certificates-11.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-12.png](../screenshots/pdf-bpa-certificates-12.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-13.png](../screenshots/pdf-bpa-certificates-13.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-14.png](../screenshots/pdf-bpa-certificates-14.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-15.png](../screenshots/pdf-bpa-certificates-15.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-16.png](../screenshots/pdf-bpa-certificates-16.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-17.png](../screenshots/pdf-bpa-certificates-17.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-18.png](../screenshots/pdf-bpa-certificates-18.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-19.png](../screenshots/pdf-bpa-certificates-19.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-20.png](../screenshots/pdf-bpa-certificates-20.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-21.png](../screenshots/pdf-bpa-certificates-21.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-22.png](../screenshots/pdf-bpa-certificates-22.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-23.png](../screenshots/pdf-bpa-certificates-23.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-24.png](../screenshots/pdf-bpa-certificates-24.png){ loading=lazy }
+
+    ![pdf-bpa-certificates-25.png](../screenshots/pdf-bpa-certificates-25.png){ loading=lazy }
+
+
 !!! info "Update Summary (6 changes detected)"
     6 items identified: The two methods for building certificates (certificate builder and through registration) remain unchanged.
     QR code component is unchanged.

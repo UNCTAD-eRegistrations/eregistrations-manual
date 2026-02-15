@@ -5,6 +5,28 @@ description: "eRegistrations Manual - B. Services"
 
 # B. Services
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-services-01.png](../screenshots/pdf-bpa-services-01.png){ loading=lazy }
+
+    ![pdf-bpa-services-02.png](../screenshots/pdf-bpa-services-02.png){ loading=lazy }
+
+    ![pdf-bpa-services-03.png](../screenshots/pdf-bpa-services-03.png){ loading=lazy }
+
+    ![pdf-bpa-services-04.png](../screenshots/pdf-bpa-services-04.png){ loading=lazy }
+
+    ![pdf-bpa-services-05.png](../screenshots/pdf-bpa-services-05.png){ loading=lazy }
+
+    ![pdf-bpa-services-06.png](../screenshots/pdf-bpa-services-06.png){ loading=lazy }
+
+    ![pdf-bpa-services-07.png](../screenshots/pdf-bpa-services-07.png){ loading=lazy }
+
+    ![pdf-bpa-services-08.png](../screenshots/pdf-bpa-services-08.png){ loading=lazy }
+
+    ![pdf-bpa-services-09.png](../screenshots/pdf-bpa-services-09.png){ loading=lazy }
+
+
 !!! info "Update Summary (7 changes detected)"
     7 changes detected: Import/copy service functionality added, service groups feature is new, micro-publish added to publish flow, service bar has additional buttons, archive workflow may have UI changes, service activation toggle unchanged, SmartLink feature is new.
 

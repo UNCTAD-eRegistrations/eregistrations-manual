@@ -5,6 +5,138 @@ description: "eRegistrations Manual - D.7. Focus on some useful functions (Origi
 
 # D.7. Focus on some useful functions
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-useful-functions-01.png](../screenshots/pdf-bpa-useful-functions-01.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-02.png](../screenshots/pdf-bpa-useful-functions-02.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-03.png](../screenshots/pdf-bpa-useful-functions-03.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-04.png](../screenshots/pdf-bpa-useful-functions-04.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-05.png](../screenshots/pdf-bpa-useful-functions-05.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-06.png](../screenshots/pdf-bpa-useful-functions-06.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-07.png](../screenshots/pdf-bpa-useful-functions-07.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-08.png](../screenshots/pdf-bpa-useful-functions-08.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-09.png](../screenshots/pdf-bpa-useful-functions-09.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-10.png](../screenshots/pdf-bpa-useful-functions-10.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-11.png](../screenshots/pdf-bpa-useful-functions-11.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-12.png](../screenshots/pdf-bpa-useful-functions-12.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-13.png](../screenshots/pdf-bpa-useful-functions-13.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-14.png](../screenshots/pdf-bpa-useful-functions-14.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-15.png](../screenshots/pdf-bpa-useful-functions-15.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-16.png](../screenshots/pdf-bpa-useful-functions-16.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-17.png](../screenshots/pdf-bpa-useful-functions-17.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-18.png](../screenshots/pdf-bpa-useful-functions-18.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-19.png](../screenshots/pdf-bpa-useful-functions-19.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-20.png](../screenshots/pdf-bpa-useful-functions-20.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-21.png](../screenshots/pdf-bpa-useful-functions-21.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-22.png](../screenshots/pdf-bpa-useful-functions-22.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-23.png](../screenshots/pdf-bpa-useful-functions-23.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-24.png](../screenshots/pdf-bpa-useful-functions-24.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-25.png](../screenshots/pdf-bpa-useful-functions-25.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-26.png](../screenshots/pdf-bpa-useful-functions-26.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-27.png](../screenshots/pdf-bpa-useful-functions-27.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-28.png](../screenshots/pdf-bpa-useful-functions-28.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-29.png](../screenshots/pdf-bpa-useful-functions-29.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-30.png](../screenshots/pdf-bpa-useful-functions-30.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-31.png](../screenshots/pdf-bpa-useful-functions-31.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-32.png](../screenshots/pdf-bpa-useful-functions-32.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-33.png](../screenshots/pdf-bpa-useful-functions-33.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-34.png](../screenshots/pdf-bpa-useful-functions-34.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-35.png](../screenshots/pdf-bpa-useful-functions-35.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-36.png](../screenshots/pdf-bpa-useful-functions-36.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-37.png](../screenshots/pdf-bpa-useful-functions-37.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-38.png](../screenshots/pdf-bpa-useful-functions-38.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-39.png](../screenshots/pdf-bpa-useful-functions-39.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-40.png](../screenshots/pdf-bpa-useful-functions-40.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-41.png](../screenshots/pdf-bpa-useful-functions-41.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-42.png](../screenshots/pdf-bpa-useful-functions-42.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-43.png](../screenshots/pdf-bpa-useful-functions-43.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-44.png](../screenshots/pdf-bpa-useful-functions-44.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-45.png](../screenshots/pdf-bpa-useful-functions-45.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-46.png](../screenshots/pdf-bpa-useful-functions-46.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-47.png](../screenshots/pdf-bpa-useful-functions-47.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-48.png](../screenshots/pdf-bpa-useful-functions-48.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-49.png](../screenshots/pdf-bpa-useful-functions-49.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-50.png](../screenshots/pdf-bpa-useful-functions-50.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-51.png](../screenshots/pdf-bpa-useful-functions-51.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-52.png](../screenshots/pdf-bpa-useful-functions-52.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-53.png](../screenshots/pdf-bpa-useful-functions-53.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-54.png](../screenshots/pdf-bpa-useful-functions-54.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-55.png](../screenshots/pdf-bpa-useful-functions-55.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-56.png](../screenshots/pdf-bpa-useful-functions-56.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-57.png](../screenshots/pdf-bpa-useful-functions-57.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-58.png](../screenshots/pdf-bpa-useful-functions-58.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-59.png](../screenshots/pdf-bpa-useful-functions-59.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-60.png](../screenshots/pdf-bpa-useful-functions-60.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-61.png](../screenshots/pdf-bpa-useful-functions-61.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-62.png](../screenshots/pdf-bpa-useful-functions-62.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-63.png](../screenshots/pdf-bpa-useful-functions-63.png){ loading=lazy }
+
+    ![pdf-bpa-useful-functions-64.png](../screenshots/pdf-bpa-useful-functions-64.png){ loading=lazy }
+
+
 !!! info "Update Summary (5 changes detected)"
     5 changes detected: Copy value (CVF) functionality is stable and unchanged.
     Field tags are stable.

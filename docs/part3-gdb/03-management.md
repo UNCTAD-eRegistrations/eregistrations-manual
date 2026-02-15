@@ -5,6 +5,66 @@ description: "eRegistrations Manual - B.4. Database management (Original pages p
 
 # B.4. Database management
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-gdb-management-01.png](../screenshots/pdf-gdb-management-01.png){ loading=lazy }
+
+    ![pdf-gdb-management-02.png](../screenshots/pdf-gdb-management-02.png){ loading=lazy }
+
+    ![pdf-gdb-management-03.png](../screenshots/pdf-gdb-management-03.png){ loading=lazy }
+
+    ![pdf-gdb-management-04.png](../screenshots/pdf-gdb-management-04.png){ loading=lazy }
+
+    ![pdf-gdb-management-05.png](../screenshots/pdf-gdb-management-05.png){ loading=lazy }
+
+    ![pdf-gdb-management-06.png](../screenshots/pdf-gdb-management-06.png){ loading=lazy }
+
+    ![pdf-gdb-management-07.png](../screenshots/pdf-gdb-management-07.png){ loading=lazy }
+
+    ![pdf-gdb-management-08.png](../screenshots/pdf-gdb-management-08.png){ loading=lazy }
+
+    ![pdf-gdb-management-09.png](../screenshots/pdf-gdb-management-09.png){ loading=lazy }
+
+    ![pdf-gdb-management-10.png](../screenshots/pdf-gdb-management-10.png){ loading=lazy }
+
+    ![pdf-gdb-management-11.png](../screenshots/pdf-gdb-management-11.png){ loading=lazy }
+
+    ![pdf-gdb-management-12.png](../screenshots/pdf-gdb-management-12.png){ loading=lazy }
+
+    ![pdf-gdb-management-13.png](../screenshots/pdf-gdb-management-13.png){ loading=lazy }
+
+    ![pdf-gdb-management-14.png](../screenshots/pdf-gdb-management-14.png){ loading=lazy }
+
+    ![pdf-gdb-management-15.png](../screenshots/pdf-gdb-management-15.png){ loading=lazy }
+
+    ![pdf-gdb-management-16.png](../screenshots/pdf-gdb-management-16.png){ loading=lazy }
+
+    ![pdf-gdb-management-17.png](../screenshots/pdf-gdb-management-17.png){ loading=lazy }
+
+    ![pdf-gdb-management-18.png](../screenshots/pdf-gdb-management-18.png){ loading=lazy }
+
+    ![pdf-gdb-management-19.png](../screenshots/pdf-gdb-management-19.png){ loading=lazy }
+
+    ![pdf-gdb-management-20.png](../screenshots/pdf-gdb-management-20.png){ loading=lazy }
+
+    ![pdf-gdb-management-21.png](../screenshots/pdf-gdb-management-21.png){ loading=lazy }
+
+    ![pdf-gdb-management-22.png](../screenshots/pdf-gdb-management-22.png){ loading=lazy }
+
+    ![pdf-gdb-management-23.png](../screenshots/pdf-gdb-management-23.png){ loading=lazy }
+
+    ![pdf-gdb-management-24.png](../screenshots/pdf-gdb-management-24.png){ loading=lazy }
+
+    ![pdf-gdb-management-25.png](../screenshots/pdf-gdb-management-25.png){ loading=lazy }
+
+    ![pdf-gdb-management-26.png](../screenshots/pdf-gdb-management-26.png){ loading=lazy }
+
+    ![pdf-gdb-management-27.png](../screenshots/pdf-gdb-management-27.png){ loading=lazy }
+
+    ![pdf-gdb-management-28.png](../screenshots/pdf-gdb-management-28.png){ loading=lazy }
+
+
 !!! info "Update Summary (5 changes detected)"
     5 changes detected: API types list may have expanded beyond the 9 documented types.
     Views feature may have new options.

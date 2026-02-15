@@ -5,6 +5,20 @@ description: "eRegistrations Manual - B. Application file (DS) (Original pages p
 
 # B. Application file (DS)
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-ds-application-file-01.png](../screenshots/pdf-ds-application-file-01.png){ loading=lazy }
+
+    ![pdf-ds-application-file-02.png](../screenshots/pdf-ds-application-file-02.png){ loading=lazy }
+
+    ![pdf-ds-application-file-03.png](../screenshots/pdf-ds-application-file-03.png){ loading=lazy }
+
+    ![pdf-ds-application-file-04.png](../screenshots/pdf-ds-application-file-04.png){ loading=lazy }
+
+    ![pdf-ds-application-file-05.png](../screenshots/pdf-ds-application-file-05.png){ loading=lazy }
+
+
 !!! info "Update Summary (4 changes detected)"
     4 changes detected: Shopping cart is now explicitly an alternative to the Guide with expanded functionality, e-signature may appear on the Send page, UI theme changes affect all DS pages, overall application file flow structure remains the same.
 

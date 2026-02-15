@@ -5,6 +5,120 @@ description: "eRegistrations Manual - F. Roles (Original pages 97-116)"
 
 # F. Roles
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-roles-01.png](../screenshots/pdf-bpa-roles-01.png){ loading=lazy }
+
+    ![pdf-bpa-roles-02.png](../screenshots/pdf-bpa-roles-02.png){ loading=lazy }
+
+    ![pdf-bpa-roles-03.png](../screenshots/pdf-bpa-roles-03.png){ loading=lazy }
+
+    ![pdf-bpa-roles-04.png](../screenshots/pdf-bpa-roles-04.png){ loading=lazy }
+
+    ![pdf-bpa-roles-05.png](../screenshots/pdf-bpa-roles-05.png){ loading=lazy }
+
+    ![pdf-bpa-roles-06.png](../screenshots/pdf-bpa-roles-06.png){ loading=lazy }
+
+    ![pdf-bpa-roles-07.png](../screenshots/pdf-bpa-roles-07.png){ loading=lazy }
+
+    ![pdf-bpa-roles-08.png](../screenshots/pdf-bpa-roles-08.png){ loading=lazy }
+
+    ![pdf-bpa-roles-09.png](../screenshots/pdf-bpa-roles-09.png){ loading=lazy }
+
+    ![pdf-bpa-roles-10.png](../screenshots/pdf-bpa-roles-10.png){ loading=lazy }
+
+    ![pdf-bpa-roles-11.png](../screenshots/pdf-bpa-roles-11.png){ loading=lazy }
+
+    ![pdf-bpa-roles-12.png](../screenshots/pdf-bpa-roles-12.png){ loading=lazy }
+
+    ![pdf-bpa-roles-13.png](../screenshots/pdf-bpa-roles-13.png){ loading=lazy }
+
+    ![pdf-bpa-roles-14.png](../screenshots/pdf-bpa-roles-14.png){ loading=lazy }
+
+    ![pdf-bpa-roles-15.png](../screenshots/pdf-bpa-roles-15.png){ loading=lazy }
+
+    ![pdf-bpa-roles-16.png](../screenshots/pdf-bpa-roles-16.png){ loading=lazy }
+
+    ![pdf-bpa-roles-17.png](../screenshots/pdf-bpa-roles-17.png){ loading=lazy }
+
+    ![pdf-bpa-roles-18.png](../screenshots/pdf-bpa-roles-18.png){ loading=lazy }
+
+    ![pdf-bpa-roles-19.png](../screenshots/pdf-bpa-roles-19.png){ loading=lazy }
+
+    ![pdf-bpa-roles-20.png](../screenshots/pdf-bpa-roles-20.png){ loading=lazy }
+
+    ![pdf-bpa-roles-21.png](../screenshots/pdf-bpa-roles-21.png){ loading=lazy }
+
+    ![pdf-bpa-roles-22.png](../screenshots/pdf-bpa-roles-22.png){ loading=lazy }
+
+    ![pdf-bpa-roles-23.png](../screenshots/pdf-bpa-roles-23.png){ loading=lazy }
+
+    ![pdf-bpa-roles-24.png](../screenshots/pdf-bpa-roles-24.png){ loading=lazy }
+
+    ![pdf-bpa-roles-25.png](../screenshots/pdf-bpa-roles-25.png){ loading=lazy }
+
+    ![pdf-bpa-roles-26.png](../screenshots/pdf-bpa-roles-26.png){ loading=lazy }
+
+    ![pdf-bpa-roles-27.png](../screenshots/pdf-bpa-roles-27.png){ loading=lazy }
+
+    ![pdf-bpa-roles-28.png](../screenshots/pdf-bpa-roles-28.png){ loading=lazy }
+
+    ![pdf-bpa-roles-29.png](../screenshots/pdf-bpa-roles-29.png){ loading=lazy }
+
+    ![pdf-bpa-roles-30.png](../screenshots/pdf-bpa-roles-30.png){ loading=lazy }
+
+    ![pdf-bpa-roles-31.png](../screenshots/pdf-bpa-roles-31.png){ loading=lazy }
+
+    ![pdf-bpa-roles-32.png](../screenshots/pdf-bpa-roles-32.png){ loading=lazy }
+
+    ![pdf-bpa-roles-33.png](../screenshots/pdf-bpa-roles-33.png){ loading=lazy }
+
+    ![pdf-bpa-roles-34.png](../screenshots/pdf-bpa-roles-34.png){ loading=lazy }
+
+    ![pdf-bpa-roles-35.png](../screenshots/pdf-bpa-roles-35.png){ loading=lazy }
+
+    ![pdf-bpa-roles-36.png](../screenshots/pdf-bpa-roles-36.png){ loading=lazy }
+
+    ![pdf-bpa-roles-37.png](../screenshots/pdf-bpa-roles-37.png){ loading=lazy }
+
+    ![pdf-bpa-roles-38.png](../screenshots/pdf-bpa-roles-38.png){ loading=lazy }
+
+    ![pdf-bpa-roles-39.png](../screenshots/pdf-bpa-roles-39.png){ loading=lazy }
+
+    ![pdf-bpa-roles-40.png](../screenshots/pdf-bpa-roles-40.png){ loading=lazy }
+
+    ![pdf-bpa-roles-41.png](../screenshots/pdf-bpa-roles-41.png){ loading=lazy }
+
+    ![pdf-bpa-roles-42.png](../screenshots/pdf-bpa-roles-42.png){ loading=lazy }
+
+    ![pdf-bpa-roles-43.png](../screenshots/pdf-bpa-roles-43.png){ loading=lazy }
+
+    ![pdf-bpa-roles-44.png](../screenshots/pdf-bpa-roles-44.png){ loading=lazy }
+
+    ![pdf-bpa-roles-45.png](../screenshots/pdf-bpa-roles-45.png){ loading=lazy }
+
+    ![pdf-bpa-roles-46.png](../screenshots/pdf-bpa-roles-46.png){ loading=lazy }
+
+    ![pdf-bpa-roles-47.png](../screenshots/pdf-bpa-roles-47.png){ loading=lazy }
+
+    ![pdf-bpa-roles-48.png](../screenshots/pdf-bpa-roles-48.png){ loading=lazy }
+
+    ![pdf-bpa-roles-49.png](../screenshots/pdf-bpa-roles-49.png){ loading=lazy }
+
+    ![pdf-bpa-roles-50.png](../screenshots/pdf-bpa-roles-50.png){ loading=lazy }
+
+    ![pdf-bpa-roles-51.png](../screenshots/pdf-bpa-roles-51.png){ loading=lazy }
+
+    ![pdf-bpa-roles-52.png](../screenshots/pdf-bpa-roles-52.png){ loading=lazy }
+
+    ![pdf-bpa-roles-53.png](../screenshots/pdf-bpa-roles-53.png){ loading=lazy }
+
+    ![pdf-bpa-roles-54.png](../screenshots/pdf-bpa-roles-54.png){ loading=lazy }
+
+    ![pdf-bpa-roles-55.png](../screenshots/pdf-bpa-roles-55.png){ loading=lazy }
+
+
 !!! info "Update Summary (8 changes detected)"
     8 items identified: Core role concepts (human/BOT, 4 statuses, description/form/status tabs, moustache templates) remain unchanged.
     Part B system actions are already referenced in the manual text.

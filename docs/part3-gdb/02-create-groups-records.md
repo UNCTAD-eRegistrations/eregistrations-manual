@@ -5,6 +5,72 @@ description: "eRegistrations Manual - B.1-3. Create database, Groups, Add record
 
 # B.1-3. Create database, Groups, Add record
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-gdb-create-groups-records-01.png](../screenshots/pdf-gdb-create-groups-records-01.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-02.png](../screenshots/pdf-gdb-create-groups-records-02.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-03.png](../screenshots/pdf-gdb-create-groups-records-03.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-04.png](../screenshots/pdf-gdb-create-groups-records-04.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-05.png](../screenshots/pdf-gdb-create-groups-records-05.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-06.png](../screenshots/pdf-gdb-create-groups-records-06.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-07.png](../screenshots/pdf-gdb-create-groups-records-07.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-08.png](../screenshots/pdf-gdb-create-groups-records-08.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-09.png](../screenshots/pdf-gdb-create-groups-records-09.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-10.png](../screenshots/pdf-gdb-create-groups-records-10.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-11.png](../screenshots/pdf-gdb-create-groups-records-11.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-12.png](../screenshots/pdf-gdb-create-groups-records-12.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-13.png](../screenshots/pdf-gdb-create-groups-records-13.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-14.png](../screenshots/pdf-gdb-create-groups-records-14.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-15.png](../screenshots/pdf-gdb-create-groups-records-15.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-16.png](../screenshots/pdf-gdb-create-groups-records-16.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-17.png](../screenshots/pdf-gdb-create-groups-records-17.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-18.png](../screenshots/pdf-gdb-create-groups-records-18.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-19.png](../screenshots/pdf-gdb-create-groups-records-19.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-20.png](../screenshots/pdf-gdb-create-groups-records-20.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-21.png](../screenshots/pdf-gdb-create-groups-records-21.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-22.png](../screenshots/pdf-gdb-create-groups-records-22.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-23.png](../screenshots/pdf-gdb-create-groups-records-23.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-24.png](../screenshots/pdf-gdb-create-groups-records-24.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-25.png](../screenshots/pdf-gdb-create-groups-records-25.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-26.png](../screenshots/pdf-gdb-create-groups-records-26.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-27.png](../screenshots/pdf-gdb-create-groups-records-27.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-28.png](../screenshots/pdf-gdb-create-groups-records-28.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-29.png](../screenshots/pdf-gdb-create-groups-records-29.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-30.png](../screenshots/pdf-gdb-create-groups-records-30.png){ loading=lazy }
+
+    ![pdf-gdb-create-groups-records-31.png](../screenshots/pdf-gdb-create-groups-records-31.png){ loading=lazy }
+
+
 !!! info "Update Summary (3 changes detected)"
     3 changes detected: Core GDB creation and record management functionality is stable.
     Field type dropdown may include new types.

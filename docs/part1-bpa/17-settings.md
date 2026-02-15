@@ -5,6 +5,28 @@ description: "eRegistrations Manual - I. Settings (Original pages p.133-137)"
 
 # I. Settings
 
+
+<!-- PDF Screenshots -->
+??? example "Original Manual Screenshots"
+    ![pdf-bpa-settings-01.png](../screenshots/pdf-bpa-settings-01.png){ loading=lazy }
+
+    ![pdf-bpa-settings-02.png](../screenshots/pdf-bpa-settings-02.png){ loading=lazy }
+
+    ![pdf-bpa-settings-03.png](../screenshots/pdf-bpa-settings-03.png){ loading=lazy }
+
+    ![pdf-bpa-settings-04.png](../screenshots/pdf-bpa-settings-04.png){ loading=lazy }
+
+    ![pdf-bpa-settings-05.png](../screenshots/pdf-bpa-settings-05.png){ loading=lazy }
+
+    ![pdf-bpa-settings-06.png](../screenshots/pdf-bpa-settings-06.png){ loading=lazy }
+
+    ![pdf-bpa-settings-07.png](../screenshots/pdf-bpa-settings-07.png){ loading=lazy }
+
+    ![pdf-bpa-settings-08.png](../screenshots/pdf-bpa-settings-08.png){ loading=lazy }
+
+    ![pdf-bpa-settings-09.png](../screenshots/pdf-bpa-settings-09.png){ loading=lazy }
+
+
 !!! info "Update Summary (7 changes detected)"
     The Settings section structure (Instance Settings and Service Settings) remains valid.
     Core items like logo, language, currencies, footer messages, translations, and logout are still present.
