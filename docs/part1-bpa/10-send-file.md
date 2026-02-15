@@ -58,7 +58,7 @@ Note: The exact configuration steps, supported signature types, and any prerequi
 
 ## E-signature configuration details
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/sendfile){ target=_blank }"
     While it is confirmed that e-signature is a new feature affecting the Send page, the exact configuration workflow and available options need to be verified against the live platform by a subject matter expert. This verification is critical to ensure accurate documentation.
 
 The specific configuration steps for e-signature on the Send page need to be documented. This includes: how to enable e-signature for a service, what component or toggle activates it, what signature providers are supported, and what the applicant experience looks like.

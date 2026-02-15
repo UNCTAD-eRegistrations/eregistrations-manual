@@ -58,7 +58,7 @@ The user site or the Display System is the user dashboard.
 
 ## 1. For new users - Header and menu bar
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The header layout with logo, home, login, register buttons, and language selector is a standard DS pattern. However, the DS has undergone UI theme changes since July 2025. The exact visual appearance, button styling, and layout of the header may have changed. The core elements (logo, login, register, language) are likely still present but their visual presentation needs verification.
 
 The header and menu bar consists of: The home button (national logo), home button, login button, register button. Choice of language. The home page displays all available online services.
@@ -85,7 +85,7 @@ The home page displays all available online services.
 
 ## 2. For logged in users - Menu bar
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The logged-in user menu bar elements are core DS functionality. However, UI theme changes may have altered the layout or added new elements. The exact arrangement and visual styling needs verification on the current platform.
 
 Menu bar consists of: home button and My Account page, name of user, choice of language.
@@ -136,7 +136,7 @@ Application history: click on a service to see stages.
 
 ## Application status colors
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The status color system is a core DS feature. However, the specific colors used and the status filter UI at the bottom of the page may have been updated as part of UI theme changes. The exact color mapping (which color means which status) and the filter button layout need verification on the current platform.
 
 Application status shown by different colors. Status filters available at bottom.
@@ -147,7 +147,7 @@ Application status shown by different colors. Status filters available at bottom
 
 ## Shopping cart integration on dashboard
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The shopping cart is mentioned in the original manual as an alternative to the Guide (in the BPA settings and DS application file sections). Its visibility on the main dashboard or services list -- as opposed to only within an active application -- needs verification. The manual's settings section mentions a 'Shopping cart' toggle under service settings, suggesting it is a per-service option. Whether and how it appears on the user dashboard itself (before entering a service) needs to be confirmed.
 
 The shopping cart feature, as an alternative to the Guide, may be visible or accessible from the user dashboard when starting a new application. The shopping cart shows a summary of registrations, fees, and required documents.
@@ -156,7 +156,7 @@ The shopping cart feature, as an alternative to the Guide, may be visible or acc
 
 ## Overall DS UI theme changes
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The BPA service settings mention a 'UI theme' option. Since the platform has had approximately 9,600 commits since the manual was written, the DS visual theme may have been refreshed. All DS screenshots likely need to be recaptured to reflect the current visual appearance, even if the underlying functionality has not changed. A human reviewer should compare the current DS appearance against the manual screenshots to determine which need updating.
 
 The DS (Display System) may have undergone visual theme updates since July 2025, including changes to fonts, colors, button styles, spacing, and overall layout. The BPA service settings include a 'UI theme' option that controls the DS appearance.

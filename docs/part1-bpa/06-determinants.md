@@ -21,22 +21,23 @@ description: "eRegistrations Manual - D.2. Determinants (Original pages p.28-31)
     ![pdf-bpa-determinants-06.png](../screenshots/pdf-bpa-determinants-06.png){ loading=lazy }
 
 
-!!! info "Update Summary (6 changes detected)"
-    6 changes detected: The determinant type system has been significantly expanded.
-    The original manual describes determinants generically ('Determinant based on field value').
-    The API now reveals 7 distinct typed determinants: text, select, numeric, boolean, date, classification, and grid.
-    Classification determinants are entirely new (support ALL/ANY/NONE subjects for multi-select evaluation).
-    Grid determinants are new.
-    The effects/behaviours system adds a new layer of component-determinant interaction beyond simple show/hide.
-    Operators have been expanded (CONTAINS, STARTS_WITH, ENDS_WITH for text; GREATER_THAN, LESS_THAN comparisons for numeric).
+!!! info "Update Summary (6 changes detected) — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
+    The determinant type system has been significantly expanded from the original manual:
+
+    1. **7 typed determinants** (was 1 generic type): text, select/radio, numeric, boolean, date, classification, grid
+    2. **Classification determinants** — new type with ALL/ANY/NONE multi-select evaluation
+    3. **Grid determinants** — new type for conditions based on data grid content
+    4. **Expanded operators** — text: CONTAINS, STARTS_WITH, ENDS_WITH; numeric: GREATER_THAN, LESS_THAN comparisons
+    5. **Effects system** — component behaviours beyond simple show/hide (see [Effects System](../part5-new-features/01-effects-system.md))
+    6. **40 determinants** currently configured in *Permisos eventuales* service
 
 
 <!-- Live BPA Screenshot: live-determinants -->
 <div class="live-screenshot" markdown>
 
-![Determinants - Form with determinant panel visible on the right](../screenshots/live-determinants.png){ loading=lazy }
+![Determinants - Manage determinants drawer with condition rules](../screenshots/live-determinants.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [D.2. Determinants](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
-*Determinants panel is visible on the right side of the applicant form*
+*Click the "D" icon on any form component to open the determinants panel*
 
 
 </div>
@@ -52,8 +53,6 @@ A determinant is a filter allowing to take into account the particular case of e
 
 For each registration, an analyst must be able to report/input in the rule engine, in clear language, rules defining who/what are the subjects of the registration. Options: 1) The registration is mandatory to all, 2) The registration is mandatory to specific subjects, 3) The registration is optional to all, 4) The registration is optional to specific subjects. Specific subjects can be defined through determinants or a combination of determinants combined by 'AND' and 'OR' operators.
 
-<!-- Verify screenshot: Registration determinant options panel -- verify visual appearance. -->
-
 ---
 
 ## 2.2. Determinants of the requirements - role and purpose
@@ -64,55 +63,73 @@ Determinants play a very important role in the application file. They allow to s
 
 ## Creating a determinant - determinant types
 
-!!! warning "Modified"
-    The original manual described a single generic determinant type ('Determinant based on field value'). The current API reveals 7 distinct typed determinants, each with specific operators and configuration options. This is a significant expansion. The API tools explicitly show: textdeterminant_create (with EQUAL, NOT_EQUAL, CONTAINS, STARTS_WITH, ENDS_WITH operators), selectdeterminant_create (EQUAL, NOT_EQUAL), numericdeterminant_create (EQUAL, NOT_EQUAL, GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL), booleandeterminant_create (True/False), datedeterminant_create, classificationdeterminant_create (EQUAL, NOT_EQUAL with ALL/ANY/NONE subjects), and griddeterminant_create. The creation workflow (gear icon, Determinant tab, Add) is likely the same, but the type selection now shows these specific options.
-
 To create a determinant on a block, click on the edit button (gear icon). A slider will open. Click on the Determinant tab, Add. Insert name of determinant, choose the determinant type. The platform supports the following determinant types:
 
-1. **Text determinant**: Evaluates text field values. Operators: EQUAL, NOT_EQUAL, CONTAINS, STARTS_WITH, ENDS_WITH. Can be used with an empty value to check if a field is empty/not empty.
-2. **Select determinant**: Evaluates select/dropdown field values. Operators: EQUAL, NOT_EQUAL.
-3. **Numeric determinant**: Evaluates number field values. Operators: EQUAL, NOT_EQUAL, GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL.
-4. **Boolean determinant**: Evaluates checkbox/toggle values. Checks if a boolean field is True or False.
-5. **Date determinant**: Evaluates date/time field values.
-6. **Classification determinant**: Evaluates catalog/classification field values. Operators: EQUAL, NOT_EQUAL. Supports multi-select evaluation with subject modes: ALL, ANY, NONE.
-7. **Grid determinant**: Evaluates grid component values.
+### 1. Text determinant
 
-Select the relevant field, choose the relevant predicate/operator, select value or choose comparison field, save.
+Evaluates text field values. Operators: `EQUAL`, `NOT_EQUAL`, `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`. Can be used with an empty value to check if a field is empty/not empty.
+
+!!! example "Real examples from *Permisos eventuales*"
+    - **"Fundamentación != empty"** — field `applicantFundamentacion`, operator `NOT_EQUAL`, value `""` (empty). Shows a section only when the applicant has provided a justification text.
+    - **"cliente extranjero != empty"** — field `applicantClienteExtranjero`, operator `NOT_EQUAL`, value `""`. Shows foreign client fields only when data is present.
+    - **"Funciono la descarga = true"** — field `aprobarStatusDeLaDescarga`, operator `EQUAL`, value `"true"`. Controls workflow based on download status.
+
+### 2. Select / Radio determinant
+
+Evaluates select, dropdown, or radio button field values. Operators: `EQUAL`, `NOT_EQUAL`.
+
+!!! example "Real examples from *Permisos eventuales*"
+    - **"Que necesita = nuevo permiso"** — field `applicantQueQuiereHacer`, value `"registrarNuevo"`. Shows the "new permit" workflow when the applicant selects they need a new permit.
+    - **"Que necesita = modificar permiso existente"** — same field, value `"modificarExistente"`. Shows the "modify existing permit" workflow instead.
+    - **"EMPRESA pertenece Zona Mariel"** — field `applicantPermisoEventual2`, value `"true"`. Shows additional fields for companies in the Mariel Special Zone.
+    - **"Quiere = Cancelar Operación"** vs **"Quiere = Realizar Operación"** — field `datosComplementariosRadio`, with different values. Controls which processing path to follow.
+
+### 3. Numeric determinant
+
+Evaluates number field values. Operators: `EQUAL`, `NOT_EQUAL`, `GREATER_THAN`, `LESS_THAN`, `GREATER_THAN_OR_EQUAL`, `LESS_THAN_OR_EQUAL`.
+
+!!! example "Real examples from *Permisos eventuales*"
+    - **"Cantidad de productos modificados > 0"** — field `revisionCantidadProductosModificadosAprobados`, operator `GREATER_THAN`, value `0`. Shows the modified products section only when there are products to review.
+    - **"Contador productos nuevos > 0"** — field `applicantContadorProductosNuevos`, operator `GREATER_THAN`, value `0`. Shows the new products section only when new products exist.
+
+### 4. Boolean determinant
+
+Evaluates checkbox/toggle values. Checks if a boolean field is `True` or `False`.
+
+!!! example "Real examples from *Permisos eventuales*"
+    - **"Confirmo la exactitud = SI (formulario parte A)"** — field `applicantCheckbox2`, value `true`. Enables the submit button only after the applicant confirms data accuracy.
+    - **"Form is valid"** — field `isFormValid`, value `true`. Controls whether submission-related actions are available.
+    - **"User is logged in"** — field `is_submit_allowed`, value `true`. Gates functionality that requires authentication.
+
+### 5. Date determinant
+
+Evaluates date/time field values. Can check for specific dates or empty dates.
+
+**Special case — Empty date field**: Create a determinant with a selected date time field with predicate `=` or `!=` without selecting any date. This allows checking whether a date has been filled in or left empty.
+
+### 6. Classification determinant
+
+Evaluates catalog/classification field values. Operators: `EQUAL`, `NOT_EQUAL`. Supports multi-select evaluation with subject modes: `ALL`, `ANY`, `NONE`.
+
+!!! example "Real examples from *Permisos eventuales*"
+    This service uses **12 classification determinants** to control form layout based on the type of trade operation:
+
+    - **"Operación = exportar (nuevos - parte A)"** — field `applicantTipoDeOperacion2`, operator `EQUAL`. Shows export-specific fields for new product entries.
+    - **"Operación = importar (nuevos - parte A)"** — same field, different classification value. Shows import-specific fields instead.
+    - The pattern repeats for different form sections: *nuevos parte A*, *nuevos parte B*, *modificados parte A*, *modificados parte B*, *a modificar parte A*, *nuevos aprobados parte B*, etc.
+
+    This demonstrates how classification determinants adapt a single form to handle both import and export workflows, across multiple form sections (Part A for applicant, Part B for reviewer).
+
+### 7. Grid determinant
+
+Evaluates grid component values. Used with edit grids or data grids to create conditions based on repeatable row data.
+
+!!! example "Real examples from *Permisos eventuales*"
+    - **"Aprobado nuevo"** — field `revisionDataGridNuevosParteB`. Controls visibility of sections based on whether the reviewer's grid of approved new items has data.
+    - **"Selecionar = SI (Parte A - existentes)"** — field `applicantDataGridNuevonuevo3`. Controls visibility based on grid selections.
 
 ??? note "Original manual text"
     To create a determinant on a block, click on the edit button (gear icon). A slider will open. Click on the Determinant tab, Add. Insert name of determinant, choose 'Determinant based on field value' under determinant type, select the relevant field, choose the relevant predicate, select value or choose comparison field, save.
-
-<!-- Screenshot needed: Determinant creation form showing the expanded type dropdown with all 7 determinant types. Also show the operator options for each type. -->
-*Screenshot: Determinant creation form showing the expanded type dropdown with all 7 determinant types. Also show the operator options for each type.*
-
----
-
-## Classification determinant (new type)
-
-!!! success "New Feature"
-    Classification determinants are entirely new. The classificationdeterminant_create API tool shows parameters: service_id, name, target_form_field_key, classification_field (UUID), operator (EQUAL/NOT_EQUAL), and subject (ALL/ANY/NONE). This type bridges the determinant system with the classification catalog system, enabling powerful multi-select conditional logic that was not possible with the original generic determinant approach.
-
-Classification determinants are a new determinant type that evaluates catalog/classification field values. They support:
-- A classification_field parameter (catalog field UUID) to specify which catalog to evaluate against
-- Operators: EQUAL, NOT_EQUAL
-- Subject modes for multi-select evaluation: ALL (all selected values must match), ANY (at least one selected value must match), NONE (no selected value should match)
-
-This is particularly useful for services where applicants select from classification catalogs (e.g., economic activity codes, product categories) and the form needs to adapt based on the classification chosen.
-
-<!-- Screenshot needed: Classification determinant creation form showing the classification field selection, operator choice, and ALL/ANY/NONE subject selector. -->
-*Screenshot: Classification determinant creation form showing the classification field selection, operator choice, and ALL/ANY/NONE subject selector.*
-
----
-
-## Grid determinant (new type)
-
-!!! success "New Feature"
-    The griddeterminant_create API tool confirms grid determinants as a distinct type. The original manual did not mention the ability to create determinants based on grid component values. The exact parameters and configuration options for grid determinants need verification.
-
-Grid determinants allow creating conditions based on values within grid components (edit grids or data grids). This enables conditional logic based on data entered in repeatable grid rows.
-
-<!-- Screenshot needed: Grid determinant creation form showing configuration options. -->
-*Screenshot: Grid determinant creation form showing configuration options.*
 
 ---
 
@@ -120,52 +137,35 @@ Grid determinants allow creating conditions based on values within grid componen
 
 Once created, select and drop the determinant on the right panel under selected determinants, select the behavior of the component (show/hide when determinant condition is true), General Save.
 
-<!-- Verify screenshot: Drag and drop determinant application panel -- verify visual appearance. -->
-
 ---
 
 ## D indicator in orange
 
-If the field configuration has a determinant, it will be indicated by the letter 'D' in orange color. If there is more than one determinant, the icon will have a dot in the top right corner.
-
-<!-- Verify screenshot: D indicator on a component -- verify orange color and dot indicator for multiples. -->
-
----
-
-## Special case - Empty date field determinant
-
-Special cases of Determinants: Empty date field determinant - create a determinant with a selected date time field with predicate '=' or '!=' without selecting any date.
-
-<!-- Verify screenshot: Empty date determinant configuration -- verify same approach works. -->
+If the field configuration has a determinant, it will be indicated by the letter **D** in orange color. If there is more than one determinant, the icon will have a dot in the top right corner. Click the D icon to view and edit the determinant conditions for that component.
 
 ---
 
 ## Effects and component behaviours system
 
-!!! success "New Feature"
-    The componentbehaviour and effect API tools (componentbehaviour_list, componentbehaviour_get, componentbehaviour_get_by_component, effect_create, effect_delete) indicate a sophisticated effects system that extends determinant functionality. This system allows multiple effects per component, each driven by determinant conditions, going beyond the original binary show/hide behavior documented in the manual. The exact UI representation and configuration workflow need verification.
+The platform includes a component behaviours and effects system that extends determinant capabilities beyond simple show/hide. Component behaviours allow configuring multiple effects on a component, each driven by one or more determinants. Effects can control properties such as visibility, required status, disabled state, and other component attributes. This provides more granular control than the original show/hide mechanism.
 
-The platform now includes a component behaviours and effects system that extends determinant capabilities beyond simple show/hide. Component behaviours allow configuring multiple effects on a component, each driven by one or more determinants. Effects can control properties such as visibility, required status, disabled state, and other component attributes. This provides more granular control than the original show/hide mechanism.
-
-<!-- Screenshot needed: Component behaviour configuration showing effects, determinant associations, and property controls beyond show/hide. -->
-*Screenshot: Component behaviour configuration showing effects, determinant associations, and property controls beyond show/hide.*
+See [Effects System](../part5-new-features/01-effects-system.md) for detailed documentation.
 
 ---
 
-## Determinant search and reuse capabilities
+## Determinant summary for *Permisos eventuales*
 
-!!! question "Needs Verification"
-    The determinant_search API tool shows search capabilities (name_pattern, determinant_type, operator, target_field_key filters). This suggests the BPA UI may have a determinant search/discovery interface that helps analysts find and reuse existing determinants rather than creating duplicates. The exact UI for this needs verification.
+This service currently has **40 determinants** across all types:
 
-The platform now supports searching and discovering existing determinants within a service, promoting reuse and consistency. Determinants can be searched by name pattern, type, operator, and target field key.
+| Type | Count | Example |
+|------|-------|---------|
+| Radio/Select | 14 | "Que necesita = nuevo permiso" |
+| Classification | 12 | "Operación = exportar (nuevos - parte A)" |
+| Text | 5 | "Fundamentación != empty" |
+| Boolean | 5 | "Confirmo la exactitud = SI" |
+| Numeric | 2 | "Cantidad de productos modificados > 0" |
+| Grid | 2 | "Aprobado nuevo" |
 
----
-
-## Text determinant condition_logic and json_condition
-
-!!! question "Needs Verification"
-    The textdeterminant_create and selectdeterminant_create API tools include optional condition_logic and json_condition parameters. These suggest support for advanced conditional expressions (possibly JSONLogic-based). Whether this is exposed in the BPA UI needs verification.
-
-Text and select determinants support optional condition_logic and json_condition parameters, enabling more complex conditional expressions beyond simple field-value comparisons.
+This demonstrates a realistic distribution: radio/select and classification determinants are the most common, used to branch the form into different workflows. Boolean and text determinants handle validation gates and field presence checks. Numeric and grid determinants handle count-based and table-based conditions.
 
 ---

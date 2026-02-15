@@ -27,7 +27,7 @@ description: "eRegistrations Manual - SmartLink"
 
 ## Overview of SmartLink
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
     SmartLink is identified as a new feature in the manual update plan. The MCP tools include a 'serviceregistration_link' endpoint that links services to registrations, which may be part of the SmartLink infrastructure. However, the exact scope and definition of 'SmartLink' as a user-facing feature needs verification. It is unclear whether SmartLink is a specific named feature in the BPA UI or an umbrella term for service-linking capabilities.
 
 SmartLink is a feature in eRegistrations that enables linking between services, allowing data sharing and workflow coordination across multiple services within the same instance. When services are linked through SmartLink, data entered in one service can flow to another service, and workflow steps can be coordinated across service boundaries.
@@ -38,7 +38,7 @@ SmartLink may extend or complement the Internal BOT functionality that already e
 
 ## SmartLink vs Internal BOT for Cross-Service Data Transfer
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
     The original manual clearly documents Internal BOTs for cross-service data transfer. SmartLink is a newer feature whose relationship to Internal BOTs is not clear from the available information. A human reviewer should determine whether SmartLink replaces, extends, or is unrelated to Internal BOTs.
 
 The original manual documents Internal BOTs (section E, BOT builder) as the mechanism for copying data between services. An Internal BOT can be configured to 'paste data from current service form to another form in a different service' by changing the receiving service in the mapping page.
@@ -54,7 +54,7 @@ The exact relationship between SmartLink and Internal BOTs needs to be verified.
 
 ## Service-Registration Linking
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
     The MCP tools include a 'serviceregistration_link' endpoint that takes a service_id and registration_id, suggesting that service-registration linking is a supported operation. However, it is not clear whether this is part of SmartLink or a general platform capability. The current manual documents adding registrations to services (section C) but does not mention linking registrations across services.
 
 The platform supports linking services to registrations through a dedicated mechanism. This allows a registration created under one service to be associated with or accessible from another service. This may be a component of the SmartLink feature or a separate capability.
@@ -65,7 +65,7 @@ The linking operation connects a service with a registration, enabling the regis
 
 ## SmartLink Configuration Workflow
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
     The configuration workflow is speculative based on the general concept of service linking. No MCP tool or existing documentation provides the specific UI steps. A human reviewer must document the actual workflow by accessing the BPA.
 
 The SmartLink configuration workflow likely involves:
@@ -82,7 +82,7 @@ The exact steps, UI location, and available options need verification on the liv
 
 ## SmartLink Data Sharing Capabilities
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
     The data sharing capabilities are speculative based on what would be useful in a multi-service context. The actual capabilities may be more limited or more extensive. A human reviewer should verify what data types can be shared through SmartLink.
 
 SmartLink may enable sharing of the following types of data between linked services:
@@ -98,7 +98,7 @@ The exact types of data that can be shared and any restrictions on data sharing 
 
 ## SmartLink UI Location in BPA
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
     Without access to the live BPA UI, the exact location of SmartLink cannot be determined. The MCP tools do not describe UI navigation. A human reviewer should identify where SmartLink is accessed in the BPA.
 
 SmartLink may be accessible from one or more of the following locations in the BPA:

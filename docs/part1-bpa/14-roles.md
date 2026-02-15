@@ -147,7 +147,7 @@ A role is a necessary action by a public institution for a registration to be pr
 
 ## 1. Create human roles
 
-!!! warning "Modified"
+!!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The MCP tool role_create confirms two additional fields for human roles: allow_to_confirm_payments and allow_access_to_financial_reports. These are permissions that can be set during role creation to control what operators in this role can do. The basic creation workflow is otherwise unchanged.
 
 Click on Processing (Roles) tab. Click 'add'. 'Human role' is selected by default. Activate 'Is start role in process flow' if first role. Select Role Type. Activate 'Visible for applicant'. Enter name and short name. Additional options may include: 'Allow to confirm payments' and 'Allow access to financial reports'. Create.
@@ -198,7 +198,7 @@ Revision role obliges operator to verify and validate documents and data before 
 
 ## Effects system interaction with roles
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The Effects system (confirmed via MCP tools) allows creating effects that link determinants to components with various effect types. This could be used in role forms to dynamically show/hide/enable/disable fields based on conditions. A human reviewer should determine if effects are used in role forms and if this warrants documentation in the Roles section.
 
 The Effects system (activate/deactivate/show/hide/enable/disable) is a new platform feature that may interact with role form components, allowing determinant-driven behavior on processing forms.
@@ -207,7 +207,7 @@ The Effects system (activate/deactivate/show/hide/enable/disable) is a new platf
 
 ## E-signature integration in roles
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The MANUAL-UPDATE-PLAN.md mentions e-signature as a new platform feature. It may be relevant to the roles section if operators can apply e-signatures during processing. This needs verification on a live instance.
 
 E-signature may be integrated into the role processing workflow, allowing operators to digitally sign documents or approvals during processing.
@@ -216,7 +216,7 @@ E-signature may be integrated into the role processing workflow, allowing operat
 
 ## New role permissions and options
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The MCP tools confirm that roles have permission fields for payment confirmation and financial reports access. The original manual does not appear to document these specific permissions. A human reviewer should verify where these toggles appear in the role creation slider and document them.
 
 The MCP tool role_create shows fields: allow_to_confirm_payments (payment permission for UserRole) and allow_access_to_financial_reports (reports permission for UserRole). These may not be documented in the original manual.
@@ -228,7 +228,7 @@ The MCP tool role_create shows fields: allow_to_confirm_payments (payment permis
 
 ## Part B system actions in roles
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     Part B system actions are mentioned in the manual text (in the BOT builder section) but not extensively documented. The MCP tool componentaction_get_system_actions suggests that system actions are a first-class concept in the platform. A reviewer should verify what Part B system actions are available and whether they need dedicated documentation.
 
 Part B system actions are mentioned in the BOT builder section of the original manual as exceptions that must always be last in action sequences. The full scope and configuration of Part B system actions may warrant additional documentation.

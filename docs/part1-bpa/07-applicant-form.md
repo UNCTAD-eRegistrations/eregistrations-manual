@@ -114,7 +114,7 @@ Blocks separate/segregate the different types of information. Blocks are collaps
 
 ## Containers - Block collapsible enhancements
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The update plan document mentions 'collapsible fields' as a new feature added to the platform. This suggests the collapsible behavior may have been extended beyond blocks to other component types, or blocks may have gained additional collapsible configuration options. This needs verification on a live instance.
 
 Block collapsible behavior may have been enhanced with features such as default collapsed state, animation options, or conditional collapse based on determinants. The MANUAL-UPDATE-PLAN mentions 'collapsible fields' as a new feature.
@@ -173,7 +173,7 @@ Tabs: can make the form more organized. Can be displayed as a side menu (vertica
 
 ## Containers - Tabs new features
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The update plan mentions 'Tabs may have new features'. The effects/behaviours system (componentbehaviour_get_by_component) could enable determinant-driven tab visibility. However, the specific enhancements need verification on a live instance.
 
 Tabs may have gained new features such as conditional tab visibility (driven by determinants), tab validation indicators, or dynamic tab creation. The effects/behaviours system may allow determinant-driven tab control.
@@ -198,7 +198,7 @@ Sub Catalog.
 
 ## Fields - Button with actions
 
-!!! warning "Modified"
+!!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The button action types (event, custom, open link, open service) remain, but the platform has added a structured component actions system. The componentaction_get_by_component, componentaction_save, componentaction_get_system_actions API tools indicate that button actions are now managed through a more formal framework, including system-level predefined actions. The original four action types likely still exist, but the system for assigning and managing actions has been expanded.
 
 Button (various actions: event, custom, open link, open service and data in new tab). The platform now has a structured component actions system. Buttons can have BOT actions assigned through the component actions framework, and system-predefined actions are available. Actions can be viewed and managed per-component.
@@ -225,7 +225,7 @@ Card-style radios are a new radio button presentation style that displays radio 
 
 ## Fields - E-signature field
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The MANUAL-UPDATE-PLAN mentions 'e-signature' as a new feature. Whether it manifests as a new field type in the form builder, a custom component, or a separate system needs verification. E-signature is listed alongside other new features like SmartLink and micro-publish.
 
 An e-signature field may have been added as a new field type, allowing applicants to provide electronic signatures within the form. This could be used in the Send File page or other declaration sections.
@@ -258,7 +258,7 @@ Hide Label toggle, Placeholder, Tooltip, Prefix and Suffix, Disabled toggle, Hid
 
 ## Common properties - potential new properties
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     Given the platform's evolution, new field properties may have been added. The effects system and print document builder suggest properties that may be visible in the field configuration UI. However, without live system inspection, the exact current property list cannot be confirmed.
 
 New common properties may have been added, such as:

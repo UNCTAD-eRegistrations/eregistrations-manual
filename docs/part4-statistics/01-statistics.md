@@ -115,7 +115,7 @@ Provides rejection reasons for files processed and rejected or sent back for cor
 
 ## New statistics types or reports
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The statistics module currently documents 6 types of statistics (Roles, Certificates issued, Operators, Times per Role, Times per operator, Rejection reasons). Additional report types may have been added to the platform. The statistics navigation panel should be verified to confirm the complete list of available statistics types.
 
 The statistics module may have added new types of statistics or reporting capabilities since July 2025. For example, new report types could cover application completion rates, average processing times across services, or user registration trends.
@@ -124,7 +124,7 @@ The statistics module may have added new types of statistics or reporting capabi
 
 ## Enhanced filter and export options
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     While the documented filters and export options (Excel, PDF) are likely still present, new filter options or export formats may have been added. For example, there could be new date range presets, additional grouping options, or new export formats (CSV, API access). Each statistics type's filter panel should be compared against the manual to identify any additions.
 
 Individual statistics types may have received enhanced filter options or additional export formats since July 2025.

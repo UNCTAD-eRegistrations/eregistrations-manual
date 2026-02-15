@@ -106,7 +106,7 @@ The QR technology merges the physical world with the digital world. Signatures a
 
 ## Print document system
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/templates/certificates){ target=_blank }"
     The MCP tools expose a 'print document' system that appears to be a comprehensive document management interface with component-level editing, history tracking, sorting, and template management. This is separate from the simple certificate builder documented in the manual. It may be a newer or more advanced approach to certificate/document management. A human reviewer should verify: (1) Is the print document system a replacement for or addition to the certificate builder? (2) Is it visible in the BPA side menu? (3) What is the relationship between 'print documents' and 'certificates'?
 
 The MCP tools reveal a comprehensive 'print document' system with operations: print_document_list, print_document_get, print_document_component_get, print_document_templates, print_document_history, print_document_create, print_document_update, print_document_delete, print_document_component_add/update/remove/move, print_document_sort, print_document_revert. This may represent an evolution of the certificate builder or an additional system for managing printable documents.
@@ -118,7 +118,7 @@ The MCP tools reveal a comprehensive 'print document' system with operations: pr
 
 ## E-signature on certificates
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/templates/certificates){ target=_blank }"
     E-signature is mentioned as a new platform feature. It could be relevant to certificates if digital signatures can be embedded in generated documents. This needs verification on a live instance. The QR code section currently mentions that 'signatures and other authentications are replaced by QR codes' -- if e-signature is now available, this statement may need updating.
 
 E-signature capability may have been added to certificates, allowing digital signatures to be applied to generated documents.
@@ -127,7 +127,7 @@ E-signature capability may have been added to certificates, allowing digital sig
 
 ## Certificate builder UI changes
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/templates/certificates){ target=_blank }"
     With ~9,600 commits since the manual, the certificate builder UI may have been enhanced. The print_document_history and print_document_revert MCP tools suggest version control features that may now exist for certificates. A reviewer should check the current certificate builder for any new features.
 
 The certificate builder interface may have received UI improvements since the manual was written.

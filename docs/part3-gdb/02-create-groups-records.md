@@ -103,7 +103,7 @@ Create the DB structure adding fields and blocks by clicking on the '+' symbol. 
 
 ## Field type dropdown - possible new types
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     The field type dropdown is a core GDB feature. While the standard types (text, number, block, date, catalog) are certainly still present, the platform may have introduced new field types. A review of the current field type dropdown is recommended to ensure all available types are documented.
 
 The field type dropdown includes standard types: text, number, block, date, catalog, etc. Additional field types may have been added to the platform since July 2025.
@@ -132,7 +132,7 @@ Groups can be edited after creation.
 
 ## Database diagram
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     The database diagram visualization is a GDB feature that may have received improvements over time. The core functionality (showing database relationships, zoom, drag and drop) is likely the same, but visual improvements or additional navigation/layout features may have been added. The exact current appearance should be verified.
 
 Visualization of how different databases within the same group relate to each other. Click on group name then diagram icon. All databases shown as blocks with relationship lines. Zoom with mouse scroll, rearrange with drag and drop. Navigation icons for layout.

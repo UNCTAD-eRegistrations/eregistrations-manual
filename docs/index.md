@@ -67,11 +67,11 @@ The platform has received significant updates. Key new features include:
 
 This manual was last fully updated in 2024. The current update (February 2026) incorporates changes from approximately 9,600 platform commits. Changes are marked throughout with:
 
-!!! warning "Modified"
+!!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     Content that has been updated from the original manual.
 
 !!! success "New Feature"
     Content documenting entirely new platform capabilities.
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     Content that requires human verification on a live instance.

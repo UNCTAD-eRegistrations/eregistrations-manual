@@ -89,7 +89,7 @@ Catalogs used by all services in one instance (list of countries, cities, compan
 
 ## Classification system
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The MCP tools expose a classification system that appears to be a data source or catalog management feature. classification_export_csv suggests the ability to export classification data. classification_apply_country_codes suggests a country-code standardization feature. A human reviewer should determine: (1) Is the classification system visible in the Tables section or elsewhere in the BPA? (2) Is it an evolution of the catalog system or a separate concept? (3) Does it need its own documentation section?
 
 The MCP tools reveal a 'classification' system with operations: classification_list, classification_get, classification_create, classification_update, classification_delete, classification_export_csv, classification_apply_country_codes. This may relate to or extend the catalog/tables system.
@@ -101,7 +101,7 @@ The MCP tools reveal a 'classification' system with operations: classification_l
 
 ## Catalog import/export improvements
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The classification_export_csv tool suggests that CSV export is available for catalog data. The import template system (XLS format with levels, parents, and translations) documented in the manual may have been enhanced. A reviewer should verify the current import/export options.
 
 The catalog import/export functionality may have received improvements since the manual was written, including CSV export capability and additional import formats.
@@ -112,7 +112,7 @@ The catalog import/export functionality may have received improvements since the
 
 ## GDB-based catalog enhancements
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The original manual documents GDB-based catalogs with system source selection, database selection, and column mapping. With platform evolution, this functionality may have been enhanced. A reviewer should check the current GDB-based catalog creation workflow.
 
 GDB-based catalogs (catalogs populated from GDB data) may have received improvements in how they reference databases, handle versioning, or display values.

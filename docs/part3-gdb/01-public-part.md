@@ -66,7 +66,7 @@ The sub menu displays the name of the database. The 'add record' button and edit
 
 ## Minor UI changes
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     GDB is a mature and stable system. While the platform has had many updates, the GDB public interface tends to receive fewer visual changes compared to the DS. However, given the time elapsed since the manual was written, minor visual differences in styling or icons are possible. A visual comparison of the current GDB interface against the manual screenshots is recommended.
 
 The GDB public interface may have minor visual updates (styling, spacing, icons) but the overall structure and functionality remain the same.

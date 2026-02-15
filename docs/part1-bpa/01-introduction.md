@@ -51,7 +51,7 @@ Online services are visible on the 'public site', also called 'user site' or 'DS
 
 ## Potential mention of newer platform capabilities
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The introduction does not mention e-signature, advanced workflow capabilities, or other features added since July 2025. Since the introduction is meant to be a high-level overview, it may be acceptable as-is, but a subject matter expert should confirm whether any new top-level capabilities warrant mention here.
 
 The introduction may benefit from a brief mention of newer platform capabilities such as e-signature support, advanced workflow features, or other significant additions made after July 2025. However, since the introduction is intentionally high-level, this should be verified with stakeholders before adding.

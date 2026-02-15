@@ -167,7 +167,7 @@ Payment form component and I-swear component.
 
 ## Card-style radio class (potentially new)
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The MANUAL-UPDATE-PLAN.md mentions 'card-style radios' as a new platform feature. This could be a new custom class (similar to Radio Switch) that transforms radio groups into card-style selectable elements. This needs verification on a live instance to confirm whether it exists as a custom class and what it is called.
 
 A card-style radio class may have been added to the platform, allowing radio button groups to display as selectable cards rather than traditional radio buttons. This would be an appearance-changing custom class.
@@ -179,7 +179,7 @@ A card-style radio class may have been added to the platform, allowing radio but
 
 ## New custom classes added since July 2025
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     With ~9,600 commits since the manual was written, there is a reasonable probability that new custom classes have been added. However, without access to a live BPA instance to verify the current dropdown options, these cannot be specifically identified. A human reviewer should check the custom class dropdown on a current instance to confirm the complete list.
 
 Additional custom classes may have been added to the platform in the approximately 9,600 commits since the manual was written. Categories that may have new entries include appearance classes, spacing classes, and certificate layout classes.
@@ -191,7 +191,7 @@ Additional custom classes may have been added to the platform in the approximate
 
 ## Effects system relationship to custom classes
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The Effects system is confirmed to exist in the platform (MCP tool effect_create supports effect_type: activate/deactivate/show/hide/enable/disable). While effects operate differently from custom classes (effects are determinant-driven behaviors vs. custom classes being static styling), there may be documentation needed to explain when to use effects vs. custom classes like 'Hide'. A human reviewer should determine if this relationship warrants mention in the custom classes section or should be documented separately.
 
 The Effects system (confirmed via MCP tools to support activate/deactivate/show/hide/enable/disable effect types) is a new platform feature that may partially overlap with or complement custom class functionality for showing/hiding components.

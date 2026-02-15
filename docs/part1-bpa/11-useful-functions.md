@@ -184,7 +184,7 @@ Field tags are like bookmarks. We can put the same tag to various fields. It is 
 
 ## c. Field tags - potential new tags
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The field tags list may have grown as new features were added to the platform. The exact current list of available field tags needs to be verified on a live instance by examining the field tags dropdown.
 
 Additional field tags may have been added since the manual was written. The Payment section references agencyCode and accountHeadId tags. Other system-level tags may exist for integration with new features such as e-signature, classification lookups, or inter-service data sharing.
@@ -195,7 +195,7 @@ Additional field tags may have been added since the manual was written. The Paym
 
 ## d. Use formula with examples - function list
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The formula builder's function list was comprehensive at the time of writing. However, given the platform's evolution (~9,600 commits), new formula functions may have been added. The exact current list needs to be verified by examining the formula builder's function dropdown on a live instance. Common additions might include string functions, conditional logic functions, or new date/time functions.
 
 Types of functions available in the formula builder: maxValue, round, Ceil, Floor, Roundup hundred/thousands/hundred thousands, Subtract days/months/years, Add days/months/years, Override year, Override date, Days difference, Weeks difference, Months difference, Years difference, Business days, Working hours, Working time, Penalty months, formatDateDD-MM-YYYY, Grid row counter, Extract Value From Grid.
@@ -232,7 +232,7 @@ Used for restricting certain words in a text field. Click on Validation tab, cli
 
 ## g. Extract data from documents
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The document data extraction feature is described at a high level in the manual. Given the platform's evolution and the industry trend toward AI-based document processing, this feature may have been significantly enhanced. However, without live system verification, the exact current state cannot be confirmed. The basic workflow (select document, create model, upload example) likely remains the foundation, but the extraction capabilities may be more advanced.
 
 Used to extract data from documents and putting them automatically onto the form. Under a registration, select the document, open edit modal, create model document, upload an example document. The data extractor lists data available for extraction.
@@ -245,7 +245,7 @@ This feature may have been enhanced with AI-based extraction capabilities, impro
 
 ## Potential new useful functions
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The API reveals several systems (component actions, system actions, effects) that may represent new useful functions worth documenting. However, their exact role and whether they belong in this section (vs. other sections) needs verification. Some may be documented elsewhere in the manual or may be platform-internal features not exposed to end users.
 
 The platform may have added new useful functions that are not documented in this section. Potential additions include:

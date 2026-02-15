@@ -80,7 +80,7 @@ Search an existing user from the list of registered users.
 
 ## Import user from CAS/Keycloak
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     The CAS/Keycloak user import feature is documented and likely still works the same way. However, Keycloak integration may have evolved since July 2025 -- for example, there may be new import options, batch import capabilities, or changes to how Keycloak IDs are handled. The basic workflow (import from identity provider) is likely the same, but specific details should be verified.
 
 Create a new user: Must be registered in CAS/KC first. Import by clicking icon next to search field, enter user ID. Users can be imported from CAS or Keycloak identity providers.
@@ -127,7 +127,7 @@ GREEN=fully authorised, GREY=not authorised, YELLOW=partially authorised. Parent
 
 ## Keycloak integration evolution
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     Keycloak is the identity management system used by eRegistrations. While the basic import workflow is likely the same, Keycloak itself receives updates and the eRegistrations integration may have been enhanced. Any new Keycloak-related features or changes to the authentication/authorization workflow should be verified with the platform team.
 
 Keycloak integration for user management may have evolved since July 2025, potentially including new SSO features, improved user synchronization, or changes to how user identities are managed across the platform.

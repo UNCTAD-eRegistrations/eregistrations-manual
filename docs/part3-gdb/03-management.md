@@ -110,7 +110,7 @@ Reports tab for creating/viewing reports.
 
 ## Import data
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     The import functionality is core GDB feature. However, the supported import formats and options may have expanded. The current import dialog should be verified to ensure all available formats and options are documented.
 
 Import data from external files/databases.
@@ -121,7 +121,7 @@ Import data from external files/databases.
 
 ## Export data
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     The export formats documented (JSON, XLS, CSV) are the standard set. Additional export formats may have been added. The current export dialog should be verified to confirm available formats.
 
 Export data in JSON, XLS, CSV formats.
@@ -144,7 +144,7 @@ Delete data button (irreversible).
 
 ## a) Views
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     Views are a mature GDB feature. The core workflow (create, filter, select fields, publish) is likely the same. However, views may have gained new features such as additional filter options, improved multi-database views, new embed options, or enhanced URL/sharing capabilities. The current views interface should be verified for any additions.
 
 Subset of GDB displaying selected data defined by filters. Create view by clicking Views tab, '+' button, enter name, add filters, drag fields to 'view fields'. Publish for visibility. Complex views involving multiple databases possible through linked databases.
@@ -155,7 +155,7 @@ Subset of GDB displaying selected data defined by filters. Create view by clicki
 
 ## b) APIs
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     The manual documents 9 API types: Create, Create-entries, Read, List, Update, Listen, Update-entries, Exists, Delete. This is a comprehensive list but additional API types may have been added to the platform since July 2025. The API dashboard with its statistics, versioning, and visibility toggle are mature features. A review of the current API type dropdown is recommended to confirm whether new types exist.
 
 Tool for web services enabling data exchange between DS and GDB. API types: Create, Create-entries, Read, List, Update, Listen, Update-entries, Exists, Delete. Dashboard shows creation date, name, URL, usage counts. APIs versioned per database version. Visibility toggle controls BPA availability.

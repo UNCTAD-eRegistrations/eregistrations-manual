@@ -46,7 +46,7 @@ The basic block collapsible toggle (documented in section D.3) remains the found
 
 ## Block Collapsible Toggle (Enhanced)
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The original manual documents the basic collapsible toggle for blocks. Enhanced options like default state, icon position, and state persistence are common in form builders and may have been added. A reviewer should check the current block configuration options for any enhancements.
 
 The block collapsible toggle, documented in the original manual, may have been enhanced with additional options:
@@ -65,7 +65,7 @@ The basic toggle (enable/disable collapsible) remains available under the Genera
 
 ## Field-level Collapsible Behavior
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The original manual documents Field Set as a container that 'groups the fields of the same category of data together' but does not mention collapsible behavior for field sets. Edit Grids and Data Grids are documented as repeating containers. Whether these now support collapsible behavior is unknown. A reviewer should check each container type for collapsible options.
 
 Beyond block-level collapsing, the platform may support collapsible behavior for individual fields or field groups:
@@ -80,7 +80,7 @@ The exact scope of field-level collapsible behavior needs verification.
 
 ## Conditional Collapsible Behavior
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The Effects system supports activate/deactivate/show/hide/enable/disable effect types. Collapse/expand may be an additional behavior type or may be achieved through the existing show/hide mechanism. The integration between collapsible behavior and determinants/effects needs verification.
 
 The collapsible state of blocks or fields may be controllable through determinants or the Effects system:
@@ -95,7 +95,7 @@ For example, a block of additional fields could start collapsed and automaticall
 
 ## Collapsible Behavior in Custom Classes
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The original manual's custom classes section does not mention collapsible-related classes, but the platform may have added them. Custom classes are the standard mechanism for adding visual behaviors in eRegistrations. A reviewer should check the custom classes dropdown for any collapsible-related options.
 
 Collapsible behavior may be achievable or modified through custom classes. The custom classes section (D.8) documents numerous appearance and spacing classes, and a 'collapsible' custom class or variant may exist.

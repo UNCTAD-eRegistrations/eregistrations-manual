@@ -94,7 +94,7 @@ User level 1 and 2 is a toggle button that minimizes and expands display of elem
 
 ## Instance bar - potential additional elements
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     Given significant platform development (~9,600 commits since the manual was written), the instance bar may have acquired new elements. The audit system and notification system tools are present in the API, suggesting these features might have UI presence in the header. However, this cannot be confirmed without visual inspection of a live instance.
 
 The instance bar may contain additional elements not present in the July 2025 manual, such as notification indicators, environment labels (dev/staging/production), or audit/history shortcuts.
@@ -106,7 +106,7 @@ The instance bar may contain additional elements not present in the July 2025 ma
 
 ## Side menu - User level 2 items
 
-!!! warning "Modified"
+!!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The API reveals tools for print_document, notification, and message management, indicating these are first-class platform concepts with their own management interfaces. These would logically appear in the side menu at User Level 2. The original manual only mentioned Tables and Certificate builder as User Level 2 items.
 
 User level 2: Displays more elements, including Tables, Certificate builder, Print Documents, Notifications, and Messages. Print Documents allows creating and managing document templates for certificates and other outputs. Notifications enables configuration of system notifications. Messages allows managing message templates.

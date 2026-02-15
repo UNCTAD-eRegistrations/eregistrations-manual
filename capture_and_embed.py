@@ -72,9 +72,10 @@ SECTION_MAP = [
         'id': 'live-determinants',
         'md': 'part1-bpa/06-determinants.md',
         'path': f'/services/{SERVICE_ID}/forms/applicant-form',
-        'desc': 'Determinants - Form with determinant panel visible on the right',
+        'desc': 'Determinants - Manage determinants drawer with condition rules',
         'section_title': 'D.2. Determinants',
-        'note': 'Determinants panel is visible on the right side of the applicant form',
+        'note': 'Click the "D" icon on any form component to open the determinants panel',
+        'post_action': 'open_determinants',
     },
     {
         'id': 'live-applicant-form',
@@ -299,6 +300,47 @@ SECTION_MAP = [
     },
 ]
 
+# ═══ Post-navigation actions ═══
+
+async def run_post_action(page, action):
+    """Run a post-navigation action to set up the page for screenshot."""
+    if action == 'open_determinants':
+        await open_determinants_drawer(page)
+    else:
+        print(f"  WARN: Unknown post_action '{action}'")
+
+
+async def open_determinants_drawer(page):
+    """Click a 'D' configuration button on a form component to open the determinants drawer."""
+    try:
+        # Find all visible "D" buttons (component-configuration-button)
+        d_buttons = page.locator('span.component-configuration-button')
+        count = await d_buttons.count()
+        if count == 0:
+            # Try broader selector
+            d_buttons = page.locator('span.btn-xxs:has-text("D")')
+            count = await d_buttons.count()
+
+        if count > 0:
+            # Click the first visible "D" button
+            for i in range(count):
+                btn = d_buttons.nth(i)
+                if await btn.is_visible():
+                    await btn.click()
+                    print(f"(clicked D button)", end=' ', flush=True)
+                    # Wait for drawer to open
+                    await asyncio.sleep(3)
+                    # Verify drawer opened (lost 'hidden' class)
+                    drawer = page.locator('.drawer-layer-right:not(.hidden)')
+                    if await drawer.count() > 0:
+                        print(f"(drawer open)", end=' ', flush=True)
+                    break
+        else:
+            print(f"(no D buttons found)", end=' ', flush=True)
+    except Exception as e:
+        print(f"(determinants action failed: {str(e)[:60]})", end=' ', flush=True)
+
+
 # ═══ Capture phase ═══
 
 async def capture_all():
@@ -350,11 +392,22 @@ async def capture_all():
             # Wait 10 seconds for Angular to fully render all components
             await asyncio.sleep(10)
 
+            # Run post-navigation actions if defined
+            post_action = section.get('post_action')
+            if post_action:
+                await run_post_action(page, post_action)
+                await asyncio.sleep(5)
+
             # Take viewport screenshot
             await page.screenshot(path=img_path, full_page=False)
             size_kb = os.path.getsize(img_path) // 1024
             print(f"OK ({size_kb} KB)")
             results.append({'id': sid, 'success': True, 'url': page.url, 'size_kb': size_kb})
+
+            # If a post_action was used, force re-navigation next time
+            # to reset page state (close modals/drawers)
+            if post_action:
+                last_url = None
         except Exception as e:
             print(f"FAILED: {str(e)[:80]}")
             results.append({'id': sid, 'success': False, 'error': str(e)})

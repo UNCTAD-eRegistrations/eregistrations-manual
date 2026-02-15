@@ -135,7 +135,7 @@ Click on service name. Click 'Add'. A slider opens. Enter registration name, cli
 
 ## Registration activation
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
     The MCP tool registration_activate exists, which suggests registrations have an activation state similar to services. The original manual does not mention activating/deactivating individual registrations. A human reviewer should verify if this toggle exists in the UI and document it if so.
 
 The MCP tools include a registration_activate operation, suggesting that registrations can be activated or deactivated independently.
@@ -144,7 +144,7 @@ The MCP tools include a registration_activate operation, suggesting that registr
 
 ## Document requirement global management
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
     The MCP tools show a two-level system: global requirements (requirement_list) and document requirements linked to registrations (documentrequirement_create/update/delete). The manual documents the creation of document requirements directly under registrations. The global requirement system may provide reusable document type definitions across services. A reviewer should verify if the UI reflects this two-level system.
 
 The MCP tools include requirement_list (global document type definitions), documentrequirement_list/create/update/delete (linking requirements to registrations). This may represent a more structured approach to managing document requirements.
@@ -155,7 +155,7 @@ The MCP tools include requirement_list (global document type definitions), docum
 
 ## Formula fee enhancements
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
     The manual documents basic formula creation with drag-and-drop variables and arithmetic symbols. The formula builder documented in section D.7 has many functions (maxValue, round, Ceil, Floor, date operations, etc.) that can also apply to fee formulas. A reviewer should verify if the fee formula builder has the same full set of functions as the form formula builder.
 
 The formula fee builder may have been enhanced with additional functions or a more capable formula editor.

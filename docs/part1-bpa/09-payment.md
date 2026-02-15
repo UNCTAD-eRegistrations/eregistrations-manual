@@ -66,7 +66,7 @@ The show decimals toggle controls whether decimal places are displayed in paymen
 
 ## Additional payment providers or integration options
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/payment){ target=_blank }"
     The payment ecosystem evolves and new payment provider integrations or configuration options may have been added to the platform. The current list of supported providers and any new configuration options should be verified against the live platform.
 
 New payment provider integrations or additional configuration options may have been added since July 2025.

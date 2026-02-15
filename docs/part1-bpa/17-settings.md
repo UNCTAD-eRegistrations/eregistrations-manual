@@ -66,7 +66,7 @@ Footer messages can be configured to display custom text at the bottom of the pu
 
 ## Instance Settings - Display System Options
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/settings){ target=_blank }"
     New display system toggles may have been added since July 2025. The exact list of current toggles should be verified against the live platform to determine if new options need to be documented.
 
 Display system options control various aspects of how the public site behaves and appears. The original manual documents the toggles available as of July 2025.
@@ -96,7 +96,7 @@ Service-level settings include configuration of pages, buttons, and fields that 
 
 ## Service Settings - Service Options toggles
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/settings){ target=_blank }"
     New service option toggles may have been added since July 2025 (e.g., e-signature enable/disable, micro-publish settings, form version options). The current list of available toggles should be verified against the live platform.
 
 Service Options provides toggles that control service-level behavior. The original manual documents the toggles available as of July 2025.
@@ -126,7 +126,7 @@ The Databases section in service settings provides access to database-related co
 
 ## Potential new settings sections or categories
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/settings){ target=_blank }"
     The settings area may contain entirely new sections or categories not documented in the July 2025 manual. A comprehensive review of the current settings interface is recommended to identify any new top-level items.
 
 New settings sections or categories may have been added to either Instance Settings or Service Settings since July 2025.
@@ -135,7 +135,7 @@ New settings sections or categories may have been added to either Instance Setti
 
 ## E-signature related settings
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/settings){ target=_blank }"
     Since e-signature is a significant new feature, there are likely associated settings that need to be documented. The exact location and nature of these settings should be verified against the platform.
 
 E-signature functionality may require new settings at either the instance or service level for configuration of signature providers, certificate authorities, or signature appearance options.
@@ -144,7 +144,7 @@ E-signature functionality may require new settings at either the instance or ser
 
 ## Micro-publish related settings
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/settings){ target=_blank }"
     If micro-publish is a newer capability, it may have added settings or toggles in the service settings area. This should be verified against the platform.
 
 Micro-publish functionality may have introduced new settings or modified existing publish-related settings.

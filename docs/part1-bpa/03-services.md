@@ -57,7 +57,7 @@ A registration is any authorization (certificate, permit, clearance, document) i
 
 ## 1. Create a service
 
-!!! warning "Modified"
+!!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The platform now supports importing services from other instances and copying existing services. This is a significant addition that was not in the original manual. The Import functionality allows replication of service configurations between instances, and Copy allows duplicating a service within the same instance.
 
 A new service can be created by clicking on the 'Add' button. Additionally, services can be imported from another instance or copied from an existing service within the same instance using the 'Import' or 'Copy' functionality. Then a slider opens, where you can type the name of the service and click save.
@@ -100,7 +100,7 @@ Once a service has been created, one or more registrations must be created and a
 
 ## 2. The Service bar
 
-!!! warning "Modified"
+!!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The publish flow has been enhanced with micro-publish capability. Micro-publish allows analysts to publish only specific changes (e.g., just form changes, just role changes) rather than republishing the entire service. This is a significant workflow improvement. The exact UI for this needs verification.
 
 This is the service bar, just below the instance (blue) bar. This appears when you click on a service from the list of services in the work space.
@@ -129,7 +129,7 @@ The service bar consists of:
 
 ## Micro-publish details
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     Micro-publish is known to exist in the platform but the exact UI workflow, button placement, and options need to be verified on a live instance. The manual should document how to access micro-publish and what options are available.
 
 Micro-publish is a feature that allows publishing only specific parts of a service (e.g., form changes, role configuration changes) rather than republishing the entire service. This can speed up the publish process and reduce risk of unintended changes being published.
@@ -153,7 +153,7 @@ Services can be organized into groups for better management. When there are many
 
 ## Import/Copy Service
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     The Import and Copy service features are known to exist in the platform. Import is particularly useful when setting up new country instances based on existing configurations. The exact location of these buttons (toolbar, context menu, or service settings) and the workflow details need to be verified on a live instance.
 
 Services can be imported from other eRegistrations instances or copied within the same instance. Import allows replicating a complete service configuration (forms, roles, BOTs, certificates) from one instance to another. Copy creates a duplicate of an existing service within the same instance.
@@ -165,7 +165,7 @@ Services can be imported from other eRegistrations instances or copied within th
 
 ## SmartLink
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
     SmartLink is mentioned in the plan as a new feature. It may or may not be directly visible in the Services section. Its exact placement in the BPA UI and relationship to the services list needs to be verified. It may belong in a different section of the manual.
 
 SmartLink is a feature that allows creating links between services, enabling data sharing and workflow coordination across multiple services.

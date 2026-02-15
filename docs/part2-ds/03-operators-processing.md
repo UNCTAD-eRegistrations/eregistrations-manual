@@ -72,7 +72,7 @@ Processing pages are what operators of the institutions which offer registration
 
 ## 1. The file list page - Status filters
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The file list page with status filters, service/role dropdowns, and calendar filter is a core processing feature. The underlying functionality is likely the same but the visual presentation may have changed with UI theme updates. The exact layout of filters and status buttons should be verified.
 
 The list of files filtered by status (pending, approved, rejected, sent back for corrections) is displayed. The drop down list displays all services. Select the service, then select the role from the first dropdown. Calendar icon allows viewing applications submitted at a certain day/time range. The first screen displays all pending files by default.
@@ -115,7 +115,7 @@ Processing role: Form/action developed by analyst. Operator can generate action 
 
 ## Part B system actions
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The BPA service settings mention 'enabling BPA system buttons in Part B' under the Buttons options in Pages/buttons/fields settings. This suggests that Part B (the operator's processing interface) can now display system action buttons that were previously only available in the BPA. The exact nature, appearance, and functionality of these Part B system actions needs verification on the current platform. This could be a significant addition to the operator's processing workflow.
 
 Part B may now include system action buttons that can be enabled via BPA service settings. These buttons allow operators to perform additional system-level actions during processing, such as triggering BOTs, generating documents, or executing automated workflows directly from the processing page.
@@ -127,7 +127,7 @@ Part B may now include system action buttons that can be enabled via BPA service
 
 ## E-signature verification in processing
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     E-signature is a known new platform feature. If applicants can e-sign their applications on the Send page, it follows that operators would need to see and verify this signature during processing. However, the exact implementation -- whether there is a dedicated signature verification panel, a status indicator, or integration with the documents revision tab -- is not confirmed and needs verification on the current platform.
 
 Operators may now be able to verify e-signatures on submitted applications during the processing stage. If applicants use e-signature on the Send page, operators should be able to see and verify the signature status.
@@ -136,7 +136,7 @@ Operators may now be able to verify e-signatures on submitted applications durin
 
 ## Effects system in processing
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The effects system is mentioned as a new platform feature (in the MANUAL-UPDATE-PLAN.md). Effects allow creating automated reactions to events in the system. In the context of operator processing, effects could be triggered by status changes (approval, rejection, send-back). However, whether effects are visible to operators during processing or are purely backend automation is unknown. The exact relationship between effects and the processing page UI needs verification.
 
 The effects system may influence operator processing by automatically triggering actions based on operator decisions. For example, when an operator approves or rejects a file, effects may automatically trigger BOTs, send notifications, or update database records.

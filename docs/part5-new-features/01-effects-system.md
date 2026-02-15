@@ -135,7 +135,7 @@ The delete operation is audited and returns confirmation of the deletion along w
 
 ## Relationship between Effects and Determinants
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The componentbehaviour_get tool returns effects with 'parsed JSONLogic determinants', confirming that Effects use JSONLogic internally. The relationship between the basic determinant show/hide in section D.2 and the Effects system needs clarification. It is possible that the Effects system is the underlying mechanism for determinants, or that they are parallel systems. A human reviewer should verify this on the live platform.
 
 The Effects system works in conjunction with the existing Determinants system (documented in section D.2 of the manual). Determinants define conditions based on field values, while Effects define what happens when those conditions are met. The Effects system uses JSONLogic internally for determinant evaluation.
@@ -146,7 +146,7 @@ It is likely that the existing determinant show/hide behavior described in secti
 
 ## Effects System UI Location in BPA
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The MCP tools provide API-level access to effects but do not describe the BPA user interface. The UI could be integrated into the existing component edit workflow or could be a separate section. A human reviewer should document the exact navigation path to access the Effects configuration.
 
 The Effects system is likely accessible through one or more of the following locations in the BPA:

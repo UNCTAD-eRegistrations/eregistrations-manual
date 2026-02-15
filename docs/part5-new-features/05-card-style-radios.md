@@ -26,7 +26,7 @@ description: "eRegistrations Manual - Card-style Radios"
 
 ## Overview of Card-style Radios
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     Card-style radios are identified as a new feature in the manual update plan. The original manual documents several radio-related custom classes including 'Radio Switch' (section D.8 - Appearance changing classes) but does not mention card-style display. The exact implementation mechanism needs verification.
 
 Card-style radios are a new UI pattern in eRegistrations that displays radio button options as visual cards rather than traditional radio button circles with labels. Each option appears as a distinct card, potentially with an icon, title, and description, providing a more visual and user-friendly selection interface.
@@ -45,7 +45,7 @@ The original manual documents the 'Radio Switch' custom class which changes radi
 
 ## Implementing Card-style Radios
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The implementation mechanism is not confirmed. The custom class approach is most consistent with how eRegistrations handles visual variations (the manual documents numerous custom classes for different visual effects). However, it could also be a component property or a new component type. A human reviewer should verify the implementation.
 
 Card-style radios may be implemented through one of the following mechanisms:
@@ -65,7 +65,7 @@ The implementation mechanism determines how analysts configure card-style radios
 
 ## Card-style Radio Appearance and Customization
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The visual appearance and customization options are speculative based on common card-radio patterns in web applications. The actual appearance in eRegistrations may be more limited or have different options. A reviewer should capture screenshots of card-style radios in various configurations.
 
 Card-style radios likely display each option as a card element that may include:
@@ -89,7 +89,7 @@ The exact customization options available need verification.
 
 ## Card-style Radios in the Guide
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The Guide is a natural use case for card-style radios because it involves clear choice-making. However, whether card-style radios are specifically designed for or restricted to the Guide needs verification. They may be available for any radio component in any form.
 
 Card-style radios may be particularly useful in the Guide section of the application file, where applicants answer questions to determine their registration requirements. The card layout can make guide questions more intuitive by providing visual cards for each option.
@@ -103,7 +103,7 @@ For example, a guide question asking 'What type of registration do you need?' co
 
 ## Relationship to Existing Custom Classes
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
     The relationship to existing custom classes determines where card-style radios should be documented in the manual. If it is a custom class, it belongs in section D.8. If it is a new component or display mode, it may belong in section D.3 (Applicant form) or as a standalone section. A reviewer should determine the correct categorization.
 
 The original manual documents the following appearance-changing custom classes that affect radio and selection components:

@@ -64,7 +64,7 @@ The list of available system actions can be viewed through the system actions in
 
 ## Part B System Buttons
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The original manual's Settings section mentions 'enabling BPA system buttons in Part B' as a toggle under 'Buttons' in 'Pages, buttons and fields'. The Roles section describes statuses (0=pending, 1=passed, 2=send back, 3=rejected) which correspond to button actions. The exact list of system buttons and their behavior needs verification.
 
 Part B system buttons are pre-defined buttons that can be enabled for operator processing forms. The service settings (section I) mention 'enabling BPA system buttons in Part B' as a toggle option.
@@ -86,7 +86,7 @@ These buttons are distinct from custom buttons created by the analyst in the for
 
 ## Component Actions in Part B
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     Component actions are confirmed by the MCP tool definitions: componentaction_save takes service_id, component_key, and an actions array with support for bot_id, bot_ids (multi-bot), sort_order, parallel, mandatory, json_determinants, multiple_bot, and multiple_field_key. The original manual describes BOT actions on buttons, fields, and blocks (section E) but does not detail all the configuration options revealed by the MCP tool definitions. Some of these features may be specific to Part B processing forms.
 
 Component actions define how BOTs and system actions are linked to form components in Part B. Each form component (button, field, or block) can have actions attached to it that execute when the component is interacted with or rendered.
@@ -128,7 +128,7 @@ The visibility is typically controlled through the block or field configuration,
 
 ## Part B Print Functionality
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The original manual's Settings section mentions 'show print buttons on Guide and Part B' as a toggle option. The exact print capabilities available in Part B need to be documented. The print functionality likely uses the print document templates described in the MCP tools (print_document_list, print_document_get, etc.).
 
 The service settings mention 'show print buttons on Part B' as a configuration option. When enabled, operators can print application data, documents, or certificates directly from the processing page.
@@ -147,7 +147,7 @@ The print button appearance and behavior need verification.
 
 ## Processing Role Form in Part B
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The original manual describes processing role forms in section F (Roles) and II.C (DS Operators processing pages). This block consolidates that information for the Part B section. The form builder capabilities for Part B may have expanded since the original manual. A reviewer should verify if there are new component types or features available specifically for Part B forms.
 
 Each processing role (human role) has a form that defines what the operator sees and can do. This form is built in the BPA using the same form builder as the applicant form, but it serves a different purpose.
@@ -168,7 +168,7 @@ The form is configured under the 'Form' tab of each role in the Roles section (s
 
 ## Part B Data Revision Features
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
     The original manual describes revision roles (section F.3) with documents revision and data revision tabs, and mentions 'revision by field' in service settings. There may have been enhancements to the data revision capabilities. A reviewer should verify the current state of Part B data revision features.
 
 Part B includes data revision capabilities where operators can review applicant-submitted data field by field. The original manual mentions 'revision by field' as a service setting toggle and describes the revision role workflow.

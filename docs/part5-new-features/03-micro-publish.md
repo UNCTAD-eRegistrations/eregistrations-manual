@@ -47,7 +47,7 @@ Micro-publish is accessed through the 'publish service' button on the service ba
 
 ## Micro-publish Options
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration){ target=_blank }"
     The specific components available for micro-publish are speculative based on the service structure documented in the manual. The actual options presented in the micro-publish UI need to be verified on the live platform. The MCP service_publish tool does not expose micro-publish granularity, suggesting the feature may have its own UI workflow.
 
 When using micro-publish, the analyst can likely select from the following publishable components:
@@ -67,7 +67,7 @@ Each component may show an indicator of whether it has unpublished changes, help
 
 ## Micro-publish Workflow
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration){ target=_blank }"
     The exact workflow is not confirmed. It could be a manual selection process or an automatic change-detection-based process. A human reviewer should test the publish workflow on the live BPA to document the exact steps.
 
 The micro-publish workflow likely involves:
@@ -87,7 +87,7 @@ Alternatively, micro-publish may be automatic -- the system may detect what has 
 
 ## Publish History and Micro-publish
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration){ target=_blank }"
     The original manual mentions 'Publish history' as a tab in service settings but does not describe its contents in detail. Micro-publish likely enhanced the publish history to show more granular information. The exact format of publish history entries needs verification.
 
 The service settings section includes a 'Publish history' tab (documented in section I of the manual). With micro-publish, the publish history likely shows more granular entries, indicating which specific parts of the service were published in each operation rather than just recording a full-service publish.
@@ -105,7 +105,7 @@ Publish history entries for micro-publish operations may include:
 
 ## Full Publish vs Micro-publish
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration){ target=_blank }"
     It is standard practice to maintain backward compatibility with full publish while adding micro-publish. However, the exact UI presentation of both options needs verification. It is possible that micro-publish replaced the full publish entirely, or that both options are presented side by side.
 
 After the introduction of micro-publish, the original full-service publish capability likely still exists as an option. Analysts may be able to choose between:
@@ -118,7 +118,7 @@ The full publish may serve as a 'safety net' when the analyst wants to ensure al
 
 ## Micro-publish Error Handling
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration){ target=_blank }"
     Micro-publish introduces complexity around component dependencies. The system likely has some form of dependency checking, but the exact behavior is unknown. A reviewer should test edge cases like publishing a form that references an unpublished determinant.
 
 When a micro-publish operation encounters issues, the system likely provides feedback about:

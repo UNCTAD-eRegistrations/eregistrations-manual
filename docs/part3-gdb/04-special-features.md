@@ -92,7 +92,7 @@ Click DB Structure, click settings cog on ID column. Advanced Settings, Triggers
 
 ## ID format tags - possible new tags
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     The ID format tag list is specific and may have been expanded. New tags could have been added for additional formatting options (e.g., month, custom prefix, sequential numbering variations). The current tag dropdown should be verified to confirm the complete list.
 
 The documented tags are: Short name, Index no, Index no by database code, Current year, End of number current year. Additional tags may have been added to the platform.
@@ -163,7 +163,7 @@ How to configure database file field to accept multiple files: Open DB structure
 
 ## Possible new special features
 
-!!! question "Needs Verification"
+!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
     GDB special features is a collection of various configuration options and tips. While the documented features are all likely still valid, new special features or configuration options may have been added. A comprehensive review of the current GDB settings and advanced options is recommended to identify any undocumented features.
 
 Additional special features or GDB triggers may have been added to the platform since July 2025.
