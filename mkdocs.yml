@@ -1,0 +1,109 @@
+site_name: eRegistrations User Manual
+site_description: Official user manual for the eRegistrations no-code platform
+site_url: https://eregistrations.org/manual/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: DM Sans
+    code: JetBrains Mono
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - search.share
+    - content.tabs.link
+    - toc.follow
+  icon:
+    logo: material/file-document
+    repo: fontawesome/brands/github
+
+plugins:
+  - search:
+      lang:
+        - en
+        - es
+        - fr
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://eregistrations.org
+
+nav:
+  - Home: index.md
+  - Part I - Administrative Site (BPA):
+    - Introduction: part1-bpa/01-introduction.md
+    - A. Entry Page: part1-bpa/02-entry-page.md
+    - B. Services: part1-bpa/03-services.md
+    - C. Registrations: part1-bpa/04-registrations.md
+    - D. Application File:
+      - D.1. The Guide: part1-bpa/05-guide.md
+      - D.2. Determinants: part1-bpa/06-determinants.md
+      - D.3. Applicant Form: part1-bpa/07-applicant-form.md
+      - D.4. Documents: part1-bpa/08-documents.md
+      - D.5. Payment: part1-bpa/09-payment.md
+      - D.6. Send File: part1-bpa/10-send-file.md
+      - D.7. Useful Functions: part1-bpa/11-useful-functions.md
+      - D.8. Custom Classes: part1-bpa/12-custom-classes.md
+    - E. BOT Builder: part1-bpa/13-bot-builder.md
+    - F. Roles: part1-bpa/14-roles.md
+    - G. Certificates: part1-bpa/15-certificates.md
+    - H. Tables: part1-bpa/16-tables.md
+    - I. Settings: part1-bpa/17-settings.md
+  - Part II - Display System (DS):
+    - A. User Dashboard: part2-ds/01-user-dashboard.md
+    - B. Application File: part2-ds/02-application-file.md
+    - C. Operators Processing: part2-ds/03-operators-processing.md
+  - Part III - Generic Database (GDB):
+    - A. Public Part: part3-gdb/01-public-part.md
+    - B.1-3. Create DB, Groups & Records: part3-gdb/02-create-groups-records.md
+    - B.4. Database Management: part3-gdb/03-management.md
+    - B.5. Special Features: part3-gdb/04-special-features.md
+    - B.6. User Rights: part3-gdb/05-user-rights.md
+  - Part IV - Statistics:
+    - Statistics: part4-statistics/01-statistics.md
+  - New Features:
+    - Effects System: part5-new-features/01-effects-system.md
+    - SmartLink: part5-new-features/02-smartlink.md
+    - Micro-publish: part5-new-features/03-micro-publish.md
+    - E-signature: part5-new-features/04-e-signature.md
+    - Card-style Radios: part5-new-features/05-card-style-radios.md
+    - Part B (Processing): part5-new-features/06-part-b.md
+    - Collapsible Fields: part5-new-features/07-collapsible-fields.md

@@ -1,0 +1,82 @@
+---
+title: "B.1-3. Create database, Groups, Add record"
+description: "eRegistrations Manual - B.1-3. Create database, Groups, Add record (Original pages p.155-165)"
+---
+
+# B.1-3. Create database, Groups, Add record
+
+!!! info "Update Summary (3 changes detected)"
+    3 changes detected: Core GDB creation and record management functionality is stable.
+    Field type dropdown may include new types.
+    Database diagram visualization may have improvements.
+    Link between databases feature is unchanged.
+
+## B.1. Create a database
+
+To create a database, click on the hamburger button, then click 'create new database'. Enter institution name under Title, enter short name (without spaces). Version starts at 1.0.
+
+---
+
+## DB structure creation
+
+Create the DB structure adding fields and blocks by clicking on the '+' symbol. 'ID' appears by default as the first field. Click on the dropdown to select field type (text, number, block, date, catalog, etc.). Note: field type should be same as in BPA.
+
+---
+
+## Field type dropdown - possible new types
+
+!!! question "Needs Verification"
+    The field type dropdown is a core GDB feature. While the standard types (text, number, block, date, catalog) are certainly still present, the platform may have introduced new field types. A review of the current field type dropdown is recommended to ensure all available types are documented.
+
+The field type dropdown includes standard types: text, number, block, date, catalog, etc. Additional field types may have been added to the platform since July 2025.
+
+<!-- Verify screenshot: Field type dropdown -- verify if new field types have been added beyond the documented ones -->
+
+---
+
+## Simple view and reordering
+
+Use blocks to group records/fields together. Click 'simple view' to view basic components. Use the symbol in front to change order by dragging. Publish to save and see changes in public part.
+
+---
+
+## B.2. Create database groups
+
+To create a database group, click hamburger button, then 'create new group'. Enter name, optionally upload a logo. Databases can be created within groups or dragged into groups.
+
+---
+
+## Edit Group
+
+Groups can be edited after creation.
+
+---
+
+## Database diagram
+
+!!! question "Needs Verification"
+    The database diagram visualization is a GDB feature that may have received improvements over time. The core functionality (showing database relationships, zoom, drag and drop) is likely the same, but visual improvements or additional navigation/layout features may have been added. The exact current appearance should be verified.
+
+Visualization of how different databases within the same group relate to each other. Click on group name then diagram icon. All databases shown as blocks with relationship lines. Zoom with mouse scroll, rearrange with drag and drop. Navigation icons for layout.
+
+<!-- Verify screenshot: Database diagram -- verify current visual appearance and any new navigation or layout features -->
+
+---
+
+## Creating links between databases
+
+Click DB structure, click Settings for a field, switch toggle 'Link to other DBs' on, select database and field to link. 'L' icon indicates linked field.
+
+---
+
+## B.3. Add record
+
+To add a record, click 'Add record' button on sub menu. A slider opens. Enter all data, Save. The slider can be expanded or minimized by dragging the border. Records can be edited or deleted.
+
+---
+
+## Field history
+
+Click on a record to see details. History icon appears next to every field. Shows date of change, user who made change, type of action, initial value, new value. Block container history shows times table for tracing value changes by date.
+
+---
