@@ -41,7 +41,6 @@ This provides two key benefits:
 Micro-publish is accessed through the 'publish service' button on the service bar, which now provides options for granular publishing in addition to the traditional full-service publish.
 
 <!-- Screenshot needed: Screenshot of the micro-publish interface, likely a dialog or dropdown that appears when clicking the publish button, showing the options for selecting which parts to publish. -->
-*Screenshot: Screenshot of the micro-publish interface, likely a dialog or dropdown that appears when clicking the publish button, showing the options for selecting which parts to publish.*
 
 ---
 
@@ -61,7 +60,6 @@ When using micro-publish, the analyst can likely select from the following publi
 Each component may show an indicator of whether it has unpublished changes, helping the analyst identify what needs to be published.
 
 <!-- Screenshot needed: Screenshot showing the list of publishable components with change indicators in the micro-publish dialog. -->
-*Screenshot: Screenshot showing the list of publishable components with change indicators in the micro-publish dialog.*
 
 ---
 
@@ -81,7 +79,6 @@ The micro-publish workflow likely involves:
 Alternatively, micro-publish may be automatic -- the system may detect what has changed since the last publish and only publish those changes, without requiring manual selection.
 
 <!-- Screenshot needed: Step-by-step screenshots of the micro-publish workflow from clicking publish to completion. -->
-*Screenshot: Step-by-step screenshots of the micro-publish workflow from clicking publish to completion.*
 
 ---
 
@@ -99,7 +96,6 @@ Publish history entries for micro-publish operations may include:
 - Whether it was a full publish or a micro-publish
 
 <!-- Screenshot needed: Screenshot of the publish history showing micro-publish entries with component-level detail. -->
-*Screenshot: Screenshot of the publish history showing micro-publish entries with component-level detail.*
 
 ---
 

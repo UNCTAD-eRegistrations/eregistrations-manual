@@ -207,7 +207,6 @@ Button (various actions: event, custom, open link, open service and data in new 
     Button (various actions: event, custom, open link, open service and data in new tab).
 
 <!-- Screenshot needed: Button action configuration showing available action types, including any new system actions and the component actions framework. -->
-*Screenshot: Button action configuration showing available action types, including any new system actions and the component actions framework.*
 
 ---
 
@@ -219,7 +218,6 @@ Button (various actions: event, custom, open link, open service and data in new 
 Card-style radios are a new radio button presentation style that displays radio options as visual cards rather than traditional radio buttons. This provides a more user-friendly interface for selection-based questions, particularly useful in guides and forms where visual distinction between options improves usability.
 
 <!-- Screenshot needed: Card-style radio buttons showing the card presentation of radio options, and how to configure them. -->
-*Screenshot: Card-style radio buttons showing the card presentation of radio options, and how to configure them.*
 
 ---
 

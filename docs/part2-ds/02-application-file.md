@@ -85,7 +85,6 @@ Payment tab will appear only if there is a payment in the process.
 The confirmation page usually consists of a set of terms and conditions that the applicant needs to abide by. The Send page may now include e-signature functionality, allowing applicants to digitally sign their application before submission.
 
 <!-- Screenshot needed: Send page in DS -- verify if e-signature functionality is present and capture its appearance -->
-*Screenshot: Send page in DS -- verify if e-signature functionality is present and capture its appearance*
 
 ---
 
@@ -97,6 +96,5 @@ The confirmation page usually consists of a set of terms and conditions that the
 All application file pages (Guide, Form, Documents, Payment, Send) may have received visual updates as part of DS UI theme changes.
 
 <!-- Screenshot needed: All application file page screenshots should be compared against current platform appearance -->
-*Screenshot: All application file page screenshots should be compared against current platform appearance*
 
 ---

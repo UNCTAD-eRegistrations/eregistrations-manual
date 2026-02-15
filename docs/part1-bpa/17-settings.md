@@ -72,7 +72,6 @@ Footer messages can be configured to display custom text at the bottom of the pu
 Display system options control various aspects of how the public site behaves and appears. The original manual documents the toggles available as of July 2025.
 
 <!-- Screenshot needed: Screenshot of the display system options panel -- needs to be recaptured if new toggles have been added. -->
-*Screenshot: Screenshot of the display system options panel -- needs to be recaptured if new toggles have been added.*
 
 ---
 
@@ -102,7 +101,6 @@ Service-level settings include configuration of pages, buttons, and fields that 
 Service Options provides toggles that control service-level behavior. The original manual documents the toggles available as of July 2025.
 
 <!-- Screenshot needed: Screenshot of the Service Options panel -- needs to be recaptured to show any new toggles. -->
-*Screenshot: Screenshot of the Service Options panel -- needs to be recaptured to show any new toggles.*
 
 ---
 

@@ -66,7 +66,6 @@ A new service can be created by clicking on the 'Add' button. Additionally, serv
     A new service can be created by clicking on the 'add' button. Then a slider opens, where you can type the name of the service and click save.
 
 <!-- Screenshot needed: Services list showing Add button, and Import/Copy options if available in toolbar -->
-*Screenshot: Services list showing Add button, and Import/Copy options if available in toolbar*
 
 ---
 
@@ -123,7 +122,6 @@ The service bar consists of:
     - Service settings icon
 
 <!-- Screenshot needed: Service bar showing all buttons including any new micro-publish UI elements -->
-*Screenshot: Service bar showing all buttons including any new micro-publish UI elements*
 
 ---
 
@@ -135,7 +133,6 @@ The service bar consists of:
 Micro-publish is a feature that allows publishing only specific parts of a service (e.g., form changes, role configuration changes) rather than republishing the entire service. This can speed up the publish process and reduce risk of unintended changes being published.
 
 <!-- Screenshot needed: Micro-publish dialog or dropdown showing publish options -->
-*Screenshot: Micro-publish dialog or dropdown showing publish options*
 
 ---
 
@@ -147,7 +144,6 @@ Micro-publish is a feature that allows publishing only specific parts of a servi
 Services can be organized into groups for better management. When there are many services in an instance, groups help categorize and organize them. Groups appear in the services list view and can be collapsed or expanded.
 
 <!-- Screenshot needed: Services list showing service groups collapsed and expanded -->
-*Screenshot: Services list showing service groups collapsed and expanded*
 
 ---
 
@@ -159,7 +155,6 @@ Services can be organized into groups for better management. When there are many
 Services can be imported from other eRegistrations instances or copied within the same instance. Import allows replicating a complete service configuration (forms, roles, BOTs, certificates) from one instance to another. Copy creates a duplicate of an existing service within the same instance.
 
 <!-- Screenshot needed: Import/Copy service dialog or buttons in the services list -->
-*Screenshot: Import/Copy service dialog or buttons in the services list*
 
 ---
 

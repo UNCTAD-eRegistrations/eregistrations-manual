@@ -106,13 +106,71 @@ The QR technology merges the physical world with the digital world. Signatures a
 
 ## Print document system
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/templates/certificates){ target=_blank }"
-    The MCP tools expose a 'print document' system that appears to be a comprehensive document management interface with component-level editing, history tracking, sorting, and template management. This is separate from the simple certificate builder documented in the manual. It may be a newer or more advanced approach to certificate/document management. A human reviewer should verify: (1) Is the print document system a replacement for or addition to the certificate builder? (2) Is it visible in the BPA side menu? (3) What is the relationship between 'print documents' and 'certificates'?
+Print documents are the certificate/document templates that the platform generates as PDF output for applicants. Each service can have one or more print documents, and each print document is built with the same form-builder approach used for application forms -- panels, columns, text fields, data grids, select fields, QR codes, and content blocks.
 
-The MCP tools reveal a comprehensive 'print document' system with operations: print_document_list, print_document_get, print_document_component_get, print_document_templates, print_document_history, print_document_create, print_document_update, print_document_delete, print_document_component_add/update/remove/move, print_document_sort, print_document_revert. This may represent an evolution of the certificate builder or an additional system for managing printable documents.
+Print documents are managed through the BPA API with operations for listing, creating, updating, deleting, adding/removing/moving components, sorting, and version history with revert capability.
 
-<!-- Screenshot needed: Print document system interface if it exists as a separate BPA feature. -->
-*Screenshot: Print document system interface if it exists as a separate BPA feature.*
+!!! example "Print documents in *Permisos eventuales*"
+    The *Permisos eventuales* service has **2 print documents**:
+
+    | # | Name | Active | External | Sort order |
+    |---|------|--------|----------|------------|
+    | 1 | **Permiso eventual** | Yes | No | 0 |
+    | 2 | **Carta para ZEDMariel** | Yes | No | 0 |
+
+    **"Permiso eventual"** -- the main permit certificate (58 components). Built as an A4-style document containing:
+
+    - MINCEX logo, certificate title, and **QR code** for authenticity verification
+    - Application data: solicitante, fecha de solicitud, fecha de autorizacion
+    - Operation details: tipo de operacion, regimen especial, tipo de solicitud, numero de solicitud, numero de aprobacion
+    - Trade parties: origen, embarque, proveedor extranjero, cliente nacional, destino, proveedor nacional, cliente extranjero
+    - **"Productos autorizados"** data grid: subpartida, producto, descripcion, cantidad, valor, capitulo 10
+    - **"Productos adicionales"** data grid: subpartida adicional, producto, descripcion, cantidad, valor, capitulo 20
+    - Fundamentacion (justification text area)
+    - Execution data: numero de contrato, numero de factura, numero de donacion, cantidad de embarques, fecha del ultimo embarque
+    - Permit data: nombres, apellidos, fecha de autorizacion, fecha de expiracion
+
+    **"Carta para ZEDMariel"** -- a supplementary letter for the ZED Mariel special economic zone (25 components). Contains:
+
+    - Header content and **QR code**
+    - Fecha de solicitud
+    - Operation details: tipo de operacion, regimen especial
+    - Trade parties: origen, destino, embarque, proveedor extranjero, cliente nacional
+    - **"Productos autorizados"** data grid: subpartida, descripcion, cantidad, valor
+    - Fundamentacion and solicitante
+
+---
+
+## Certificate generation workflow
+
+Certificates are generated through a coordinated chain of internal bots and document bots. The workflow for the *Permisos eventuales* service illustrates how the pieces fit together.
+
+!!! example "Certificate workflow in *Permisos eventuales*"
+    **Step 1 -- Approval**: The operator approves the permit in the "Permiso eventual" processing role (Part B).
+
+    **Step 2 -- Data copy via internal bot**: The internal bot **"Interno - Certificado de NUEVO permiso eventual"** (`bot_type: internal`) copies the approved data from the Part B revision role into the certificate template fields. Its description reads: *"Este bot guarda los datos del certificado desde la parte B rol revision al certificado."*
+
+    **Step 3 -- PDF generation and upload**: The document bot **"Cargar el certificado"** generates the PDF. This bot uses the `generic-pdf-generator` external service with category `document_generate_upload_display` -- meaning it generates the PDF, uploads it to the applicant's file, and displays it.
+
+    **Step 4 -- Applicant download**: The applicant can view and download the certificate via the document bot **"Mostrar certificado de permiso eventual"**, which uses `generic-pdf-display` with category `document_generate_and_display`.
+
+    **ZED Mariel letter**: For operations involving the Mariel Special Economic Zone, the document bot **"Carta ZEDmariel"** generates and displays the ZED Mariel letter using `generic-pdf-display` with category `document_generate_and_display`.
+
+### Document bots for certificates
+
+The three document bots involved in certificate delivery for *Permisos eventuales*:
+
+| Bot name | Type | GDB service | Category | Purpose |
+|----------|------|-------------|----------|---------|
+| **Cargar el certificado** | document | `generic-pdf-generator` | generate, upload, display | Generates the permit PDF, uploads it to the file, and displays it |
+| **Mostrar certificado de permiso eventual** | document | `generic-pdf-display` | generate and display | Shows the permit PDF to the applicant for download |
+| **Carta ZEDmariel** | document | `generic-pdf-display` | generate and display | Generates and displays the ZED Mariel letter |
+
+The supporting internal bot:
+
+| Bot name | Type | Description |
+|----------|------|-------------|
+| **Interno - Certificado de NUEVO permiso eventual** | internal | Copies certificate data from Part B revision role to the print document template |
 
 ---
 
@@ -130,7 +188,7 @@ E-signature capability may have been added to certificates, allowing digital sig
 !!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/templates/certificates){ target=_blank }"
     With ~9,600 commits since the manual, the certificate builder UI may have been enhanced. The print_document_history and print_document_revert MCP tools suggest version control features that may now exist for certificates. A reviewer should check the current certificate builder for any new features.
 
-The certificate builder interface may have received UI improvements since the manual was written.
+The certificate builder interface may have received UI improvements since the manual was written. The API exposes print_document_history and print_document_revert operations, indicating that version control is now available for print document templates.
 
 <!-- Verify screenshot: Current certificate builder to check for new features like version history, templates, or component management improvements. -->
 

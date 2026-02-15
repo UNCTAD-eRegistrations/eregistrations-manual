@@ -95,7 +95,6 @@ Catalogs used by all services in one instance (list of countries, cities, compan
 The MCP tools reveal a 'classification' system with operations: classification_list, classification_get, classification_create, classification_update, classification_delete, classification_export_csv, classification_apply_country_codes. This may relate to or extend the catalog/tables system.
 
 <!-- Screenshot needed: Classification system interface if visible in BPA. -->
-*Screenshot: Classification system interface if visible in BPA.*
 
 ---
 

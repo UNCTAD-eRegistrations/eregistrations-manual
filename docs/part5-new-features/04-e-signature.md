@@ -105,7 +105,6 @@ With e-signature enabled, the Send page may include:
 The existing 'I Swear' component may work alongside or be replaced by the e-signature component.
 
 <!-- Screenshot needed: Screenshot of the Send page with e-signature enabled, showing how the signature interface appears to the applicant. -->
-*Screenshot: Screenshot of the Send page with e-signature enabled, showing how the signature interface appears to the applicant.*
 
 ---
 

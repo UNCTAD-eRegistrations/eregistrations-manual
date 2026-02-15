@@ -40,7 +40,6 @@ Enhanced collapsible functionality may extend this capability to:
 The basic block collapsible toggle (documented in section D.3) remains the foundation of this feature.
 
 <!-- Screenshot needed: Screenshots showing the various collapsible behaviors: block collapsible, field-level collapsible (if available), and different collapsed/expanded states. -->
-*Screenshot: Screenshots showing the various collapsible behaviors: block collapsible, field-level collapsible (if available), and different collapsed/expanded states.*
 
 ---
 
@@ -59,7 +58,6 @@ The block collapsible toggle, documented in the original manual, may have been e
 The basic toggle (enable/disable collapsible) remains available under the General tab of the block configuration.
 
 <!-- Screenshot needed: Screenshot of the block configuration showing the collapsible toggle and any additional collapsible options that may have been added. -->
-*Screenshot: Screenshot of the block configuration showing the collapsible toggle and any additional collapsible options that may have been added.*
 
 ---
 

@@ -173,7 +173,6 @@ Payment form component and I-swear component.
 A card-style radio class may have been added to the platform, allowing radio button groups to display as selectable cards rather than traditional radio buttons. This would be an appearance-changing custom class.
 
 <!-- Screenshot needed: Card-style radio custom class example showing radio buttons displayed as selectable cards. -->
-*Screenshot: Card-style radio custom class example showing radio buttons displayed as selectable cards.*
 
 ---
 
@@ -185,7 +184,6 @@ A card-style radio class may have been added to the platform, allowing radio but
 Additional custom classes may have been added to the platform in the approximately 9,600 commits since the manual was written. Categories that may have new entries include appearance classes, spacing classes, and certificate layout classes.
 
 <!-- Screenshot needed: Full custom class dropdown list from current BPA to identify any new classes not in the manual. -->
-*Screenshot: Full custom class dropdown list from current BPA to identify any new classes not in the manual.*
 
 ---
 

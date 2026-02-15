@@ -39,7 +39,6 @@ This pattern is particularly useful for:
 The original manual documents the 'Radio Switch' custom class which changes radio buttons into a switch-like appearance. Card-style radios are a further evolution of radio button display options.
 
 <!-- Screenshot needed: Screenshot showing card-style radios in use on a form, comparing the visual appearance with traditional radio buttons. -->
-*Screenshot: Screenshot showing card-style radios in use on a form, comparing the visual appearance with traditional radio buttons.*
 
 ---
 
@@ -59,7 +58,6 @@ Card-style radios may be implemented through one of the following mechanisms:
 The implementation mechanism determines how analysts configure card-style radios in the BPA.
 
 <!-- Screenshot needed: Screenshot showing how card-style radios are configured in the BPA form builder -- whether through custom class, display mode, or component type. -->
-*Screenshot: Screenshot showing how card-style radios are configured in the BPA form builder -- whether through custom class, display mode, or component type.*
 
 ---
 
@@ -83,7 +81,6 @@ Customization options may include:
 The exact customization options available need verification.
 
 <!-- Screenshot needed: Screenshots showing card-style radios with different configurations: with icons, different sizes, different layouts, and in selected/unselected states. -->
-*Screenshot: Screenshots showing card-style radios with different configurations: with icons, different sizes, different layouts, and in selected/unselected states.*
 
 ---
 
@@ -97,7 +94,6 @@ Card-style radios may be particularly useful in the Guide section of the applica
 For example, a guide question asking 'What type of registration do you need?' could display options as cards with icons representing each registration type, rather than a simple radio button list.
 
 <!-- Screenshot needed: Screenshot of card-style radios used in a Guide question, showing how the card layout improves the question presentation. -->
-*Screenshot: Screenshot of card-style radios used in a Guide question, showing how the card layout improves the question presentation.*
 
 ---
 

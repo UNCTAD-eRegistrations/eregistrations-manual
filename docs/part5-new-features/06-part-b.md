@@ -42,7 +42,6 @@ Part B encompasses:
 Part B is configured through the Roles section (section F) of the BPA and is accessed by operators through the Display System (DS).
 
 <!-- Screenshot needed: Overview screenshot of the Part B interface as seen by an operator, showing the main layout and navigation elements. -->
-*Screenshot: Overview screenshot of the Part B interface as seen by an operator, showing the main layout and navigation elements.*
 
 ---
 
@@ -58,7 +57,6 @@ System actions are available for form components and can be assigned to buttons,
 The list of available system actions can be viewed through the system actions interface. Each action has an ID, name, and category.
 
 <!-- Screenshot needed: Screenshot listing the available Part B system actions with their names and categories. -->
-*Screenshot: Screenshot listing the available Part B system actions with their names and categories.*
 
 ---
 
@@ -80,7 +78,6 @@ System buttons may include:
 These buttons are distinct from custom buttons created by the analyst in the form builder. They provide standardized processing functionality with built-in workflow logic.
 
 <!-- Screenshot needed: Screenshot of the Part B system buttons as they appear to the operator, and the settings toggle for enabling them. -->
-*Screenshot: Screenshot of the Part B system buttons as they appear to the operator, and the settings toggle for enabling them.*
 
 ---
 
@@ -103,7 +100,6 @@ Component actions support:
 Actions are configured per component and are specific to the service.
 
 <!-- Screenshot needed: Screenshot of the component action configuration interface showing options for BOT linking, parallel execution, and determinant conditions. -->
-*Screenshot: Screenshot of the component action configuration interface showing options for BOT linking, parallel execution, and determinant conditions.*
 
 ---
 
@@ -122,7 +118,6 @@ This means:
 The visibility is typically controlled through the block or field configuration, where the analyst can specify which part the component belongs to.
 
 <!-- Screenshot needed: Screenshot showing the Part A/Part B visibility toggle for a block or field in the form builder, and the corresponding service settings option. -->
-*Screenshot: Screenshot showing the Part A/Part B visibility toggle for a block or field in the form builder, and the corresponding service settings option.*
 
 ---
 
@@ -141,7 +136,6 @@ Print functionality in Part B may include:
 The print button appearance and behavior need verification.
 
 <!-- Screenshot needed: Screenshot of the print button in Part B and the resulting print dialog or preview. -->
-*Screenshot: Screenshot of the print button in Part B and the resulting print dialog or preview.*
 
 ---
 
@@ -162,7 +156,6 @@ The processing role form in Part B can include:
 The form is configured under the 'Form' tab of each role in the Roles section (section F).
 
 <!-- Screenshot needed: Screenshot of a processing role form being built in the BPA, showing the available components and configuration options for Part B. -->
-*Screenshot: Screenshot of a processing role form being built in the BPA, showing the available components and configuration options for Part B.*
 
 ---
 
@@ -182,6 +175,5 @@ Enhanced data revision features in Part B may include:
 The data revision features and any enhancements since the original manual need verification.
 
 <!-- Screenshot needed: Screenshot of the Part B data revision interface showing field-by-field verification. -->
-*Screenshot: Screenshot of the Part B data revision interface showing field-by-field verification.*
 
 ---

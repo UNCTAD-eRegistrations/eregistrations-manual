@@ -162,6 +162,5 @@ The shopping cart feature, as an alternative to the Guide, may be visible or acc
 The DS (Display System) may have undergone visual theme updates since July 2025, including changes to fonts, colors, button styles, spacing, and overall layout. The BPA service settings include a 'UI theme' option that controls the DS appearance.
 
 <!-- Screenshot needed: All DS screenshots in this section should be compared against the current platform to check for UI theme changes -->
-*Screenshot: All DS screenshots in this section should be compared against the current platform to check for UI theme changes*
 
 ---

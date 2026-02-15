@@ -121,7 +121,6 @@ Processing role: Form/action developed by analyst. Operator can generate action 
 Part B may now include system action buttons that can be enabled via BPA service settings. These buttons allow operators to perform additional system-level actions during processing, such as triggering BOTs, generating documents, or executing automated workflows directly from the processing page.
 
 <!-- Screenshot needed: Part B system actions -- capture any system action buttons visible in the processing page if they exist -->
-*Screenshot: Part B system actions -- capture any system action buttons visible in the processing page if they exist*
 
 ---
 

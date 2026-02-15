@@ -100,7 +100,6 @@ User level 1 and 2 is a toggle button that minimizes and expands display of elem
 The instance bar may contain additional elements not present in the July 2025 manual, such as notification indicators, environment labels (dev/staging/production), or audit/history shortcuts.
 
 <!-- Screenshot needed: Full instance bar screenshot showing all current elements - compare with original to identify any additions. -->
-*Screenshot: Full instance bar screenshot showing all current elements - compare with original to identify any additions.*
 
 ---
 
@@ -115,7 +114,6 @@ User level 2: Displays more elements, including Tables, Certificate builder, Pri
     User level 2: Displays more elements, including Tables and Certificate builder.
 
 <!-- Screenshot needed: Side menu at User Level 2 showing all available menu items, including any new entries beyond Tables and Certificate builder. -->
-*Screenshot: Side menu at User Level 2 showing all available menu items, including any new entries beyond Tables and Certificate builder.*
 
 ---
 

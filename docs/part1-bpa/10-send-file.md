@@ -52,7 +52,6 @@ The Send page now supports e-signature functionality, allowing applicants to dig
 Note: The exact configuration steps, supported signature types, and any prerequisites for enabling e-signature should be documented based on the current platform implementation.
 
 <!-- Screenshot needed: New screenshots needed: (1) The e-signature component on the Send page as seen in the BPA form builder, (2) The e-signature interface as seen by the applicant on the public site, (3) Any e-signature configuration options in the component properties or service settings. -->
-*Screenshot: New screenshots needed: (1) The e-signature component on the Send page as seen in the BPA form builder, (2) The e-signature interface as seen by the applicant on the public site, (3) Any e-signature configuration options in the component properties or service settings.*
 
 ---
 
