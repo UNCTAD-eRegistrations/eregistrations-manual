@@ -2119,6 +2119,93 @@ Consider the component <code>datosComplementariosContinuar</code>. A behaviour o
 </tbody>
 </table>
 <p>This inventory shows that effects are used throughout the entire service lifecycle — from the applicant form (<code>applicantBlock*</code>, <code>applicantcolumns*</code>, <code>applicantTabsFacultades</code>), through supplementary data collection (<code>datosComplementarios*</code>), to the application step (<code>solicitud*</code>), the review step (<code>revision*</code>), and the final signed-permit step (<code>permisoFirmado*</code>).</p>
+<div class="admonition example">
+<p class="admonition-title">Component behaviours in <em>Permisos eventuales</em></p>
+<p>The service has <strong>64 component behaviours</strong> — rules that control how form components react to determinant conditions.</p>
+<p><strong>Behaviours with identified targets</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Effects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>applicantBlock9</code></td>
+<td>"Provea aqui la fundamentacion" block</td>
+<td>1 effect (show/hide based on condition)</td>
+</tr>
+<tr>
+<td><code>applicantBlock3</code></td>
+<td>"Datos de contacto" block</td>
+<td>1 effect (show/hide based on condition)</td>
+</tr>
+<tr>
+<td><code>applicantBlock5</code></td>
+<td>"Contadores" block</td>
+<td>1 effect (show/hide based on condition)</td>
+</tr>
+<tr>
+<td><code>applicantcolumns2</code></td>
+<td>Columns container</td>
+<td>1 effect (layout visibility)</td>
+</tr>
+<tr>
+<td><code>applicantcolumns5</code></td>
+<td>Columns containing ZED Mariel fields</td>
+<td>1 effect (show when ZED Mariel applies)</td>
+</tr>
+<tr>
+<td><code>applicantTabsFacultades</code></td>
+<td>"Permiso existente" tabs</td>
+<td>1 effect (show when modifying existing permit)</td>
+</tr>
+<tr>
+<td><code>revisionFieldSet2</code></td>
+<td>Revision role fieldset</td>
+<td>0 effects (deactivated or placeholder)</td>
+</tr>
+<tr>
+<td><code>revisionTabsNuevasSolicitudes</code></td>
+<td>Revision role tabs</td>
+<td>1 effect (controls review workflow visibility)</td>
+</tr>
+<tr>
+<td><code>permisoFirmadoNoSeHanObtenidoDatosVerifiqueElServicioWeb</code></td>
+<td>Error display field</td>
+<td>1 effect (show on web service failure)</td>
+</tr>
+<tr>
+<td><code>datosComplementariosContinuar</code></td>
+<td>Continue button (step 1)</td>
+<td>1 effect (enable when conditions met)</td>
+</tr>
+<tr>
+<td><code>datosComplementariosContinuar2</code></td>
+<td>Continue button (step 2)</td>
+<td>1 effect (enable when conditions met)</td>
+</tr>
+<tr>
+<td><code>solicitudDescargarElFichero</code></td>
+<td>Download file button</td>
+<td>1 effect (enable when file is ready)</td>
+</tr>
+<tr>
+<td><code>solicitudBlock2</code></td>
+<td>Solicitud role block</td>
+<td>1 effect (show/hide based on condition)</td>
+</tr>
+<tr>
+<td><code>datosComplementariosContent</code></td>
+<td>Datos complementarios content</td>
+<td>1 effect (show/hide based on condition)</td>
+</tr>
+</tbody>
+</table>
+<p>Most behaviours (48 of 64) target components without a stored <code>component_key</code> — these are older behaviours where the key is resolved at runtime.</p>
+</div>
 <hr />
 <h2 id="deleting-an-effect">Deleting an Effect<a class="headerlink" href="#deleting-an-effect" title="Permanent link">&para;</a></h2>
 <div class="admonition success">

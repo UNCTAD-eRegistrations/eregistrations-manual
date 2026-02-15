@@ -2089,6 +2089,91 @@ The effects system may offer new ways to control field behavior that could be do
 <!-- Verify screenshot: Document data extraction interface -- verify current workflow and any new AI-based features. -->
 
 <hr />
+<div class="admonition example">
+<p class="admonition-title">Message templates in the Cuba VUCE</p>
+<p>The platform has <strong>21 email message templates</strong>. Messages are triggered by role status changes.</p>
+<p><strong>Messages for <em>Permisos eventuales</em></strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Correcciones requeridas en su solicitud de {{requested-registrations}}</strong></td>
+<td>Solicitud &rarr; SEND BACK TO CORRECTIONS</td>
+</tr>
+<tr>
+<td><strong>Su solicitud de {{requested-registrations}} no ha sido aceptada</strong></td>
+<td>Solicitud &rarr; REJECTED</td>
+</tr>
+<tr>
+<td><strong>Cancelar Permiso Eventual</strong></td>
+<td>Permiso eventual &rarr; CANCELLED</td>
+</tr>
+<tr>
+<td><strong>Permiso eventual aprobado y disponible para descarga</strong></td>
+<td>Permiso eventual &rarr; FILE VALIDATED</td>
+</tr>
+<tr>
+<td><strong>Permiso eventual emitido -- ingrese para completar los datos de ejecucion</strong></td>
+<td>Permiso eventual &rarr; ISSUED</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Messages for other services</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Message</th>
+<th>Service</th>
+<th>Trigger</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Solicitud recibida</strong></td>
+<td>Acreditaciones</td>
+<td>On submission</td>
+</tr>
+<tr>
+<td><strong>Su acreditacion en la VUCE esta lista</strong></td>
+<td>Acreditaciones</td>
+<td>On validation</td>
+</tr>
+<tr>
+<td><strong>Solicitud aprobada</strong></td>
+<td>Acreditaciones / Autorizaciones</td>
+<td>On approval</td>
+</tr>
+<tr>
+<td><strong>Corregir solicitud Permiso Fitosanitario</strong></td>
+<td>Permiso Fitosanitario</td>
+<td>Send back for corrections</td>
+</tr>
+<tr>
+<td><strong>Emision de Permiso Fitosanitario</strong></td>
+<td>Permiso Fitosanitario</td>
+<td>Issuance notification</td>
+</tr>
+<tr>
+<td><strong>Emitir Permiso Zoosanitario</strong></td>
+<td>Permiso Zoosanitario</td>
+<td>Issuance notification</td>
+</tr>
+<tr>
+<td>Additional 10 messages</td>
+<td>Various services</td>
+<td>Correction, rejection, and approval notifications</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Template variables</strong>: Messages use placeholders like <code>{{applicantfullname}}</code>, <code>{{applicantusername}}</code>, <code>{{requested-registrations}}</code>, <code>{{company-name}}</code>, <code>{{listing-value}}</code>, <code>{{data.field-key}}</code>, <code>{{license-url_...}}</code>, and <code>{{data.rejection-reasons}}</code> to personalize content.</p>
+<p><strong>Message triggers</strong>: Each message is linked to a specific role + status combination (e.g., "Permisos eventuales: Solicitud - FILE VALIDATED", "Permisos eventuales: Revision - SEND BACK TO CORRECTIONS"). All 21 messages use the <strong>EMAIL</strong> channel.</p>
+</div>
+<hr />
 <h2 id="potential-new-useful-functions">Potential new useful functions<a class="headerlink" href="#potential-new-useful-functions" title="Permanent link">&para;</a></h2>
 <div class="admonition question">
 <p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>

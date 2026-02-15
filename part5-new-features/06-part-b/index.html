@@ -1943,6 +1943,53 @@ The MCP tools include componentaction_get_system_actions endpoint which lists bu
 <p>The list of available system actions can be viewed through the system actions interface. Each action has an ID, name, and category.</p>
 <!-- Screenshot needed: Screenshot listing the available Part B system actions with their names and categories. -->
 
+<div class="admonition example">
+<p class="admonition-title">Part B system actions</p>
+<p>The platform provides <strong>22 built-in system actions</strong> organized in 5 categories:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Count</th>
+<th>Actions</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Processing</strong></td>
+<td>4</td>
+<td><code>fileValidated</code>, <code>fileDecline</code>, <code>fileReject</code>, <code>cancelFile</code></td>
+<td>Approve, decline, reject, or cancel applications</td>
+</tr>
+<tr>
+<td><strong>Print</strong></td>
+<td>3</td>
+<td><code>printEntirePartAButton</code>, <code>printApplicantGuide</code>, <code>printApplicantFile</code></td>
+<td>Generate printable views of the application, guide, or full file</td>
+</tr>
+<tr>
+<td><strong>Applicant</strong></td>
+<td>5</td>
+<td><code>start_kyc</code>, <code>saveData</code>, <code>saveSENDPAGE</code>, <code>saveDOCUMENT</code>, <code>savePAYMENTPAGE</code>, <code>saveA5</code></td>
+<td>Handle applicant-side save and submit operations</td>
+</tr>
+<tr>
+<td><strong>Navigation</strong></td>
+<td>3</td>
+<td><code>goToNextPage</code>, <code>goToPreviousPage</code>, <code>validateCurrentTab</code></td>
+<td>Navigate between form pages and validate current tab</td>
+</tr>
+<tr>
+<td><strong>Other</strong></td>
+<td>7</td>
+<td><code>saveGUIDE</code>, <code>revisionFileValidated</code>, <code>revisionFileReject</code>, <code>revisionFileDecline</code>, <code>registerAndApply</code>, <code>sendBack</code></td>
+<td>Guide saving, revision processing, registration, and send-back</td>
+</tr>
+</tbody>
+</table>
+<p>System actions are referenced by their ID when configuring component actions (using their <code>id</code> as the <code>bot_id</code> in <code>componentaction_save</code>). They are built into the platform and <strong>do not appear in the BOT list</strong>.</p>
+</div>
 <hr />
 <h2 id="part-b-system-buttons">Part B System Buttons<a class="headerlink" href="#part-b-system-buttons" title="Permanent link">&para;</a></h2>
 <div class="admonition question">

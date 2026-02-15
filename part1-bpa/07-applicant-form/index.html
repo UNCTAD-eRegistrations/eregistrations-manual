@@ -2293,6 +2293,110 @@ The form supports 4 form types (applicant, guide, send_file, payment) confirming
 </div>
 <p>An e-signature field may have been added as a new field type, allowing applicants to provide electronic signatures within the form. This could be used in the Send File page or other declaration sections.</p>
 <hr />
+<div class="admonition example">
+<p class="admonition-title">Applicant form structure in <em>Permisos eventuales</em> (Cuba)</p>
+<p>The applicant form for the <strong>Permisos eventuales</strong> service has <strong>140 components</strong> organized in blocks, illustrating how the container and field types described above come together in a real service.</p>
+<p><strong>Component type breakdown</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Count</th>
+<th>Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Panel (block)</td>
+<td>13</td>
+<td>"Datos de la operacion", "Productos", "Datos de contacto", "Confirmar", "Datos ocultos"</td>
+</tr>
+<tr>
+<td>Columns</td>
+<td>18</td>
+<td>Layout containers for side-by-side fields</td>
+</tr>
+<tr>
+<td>Textfield</td>
+<td>~30</td>
+<td>"Proveedor extranjero", "Cliente nacional", "Elaborado por", "Telefono", "Email", "Descripcion", "Numero de contrato"</td>
+</tr>
+<tr>
+<td>Select</td>
+<td>~15</td>
+<td>"Tipo de operacion", "Condicion de la operacion", "Pais de origen", "Pais de embarque", "Pais de destino", "Capitulo", "Subpartidas"</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>~12</td>
+<td>"Cantidad", "Valor", "Valor total", "Cantidad de embarques", "Contador eventuales"</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>7</td>
+<td>Decorative/instructional HTML blocks</td>
+</tr>
+<tr>
+<td>Datetime</td>
+<td>4</td>
+<td>"Fecha de expiracion", "Fecha de la solicitud", "Fecha del ultimo embarque", "Valido hasta"</td>
+</tr>
+<tr>
+<td>Fieldset</td>
+<td>4</td>
+<td>"Datos de la operacion", "Field Set" (x3)</td>
+</tr>
+<tr>
+<td>Button</td>
+<td>4</td>
+<td>"Enviar", "Cambiar empresa", "Porque no vienen datos", "Descargar carta"</td>
+</tr>
+<tr>
+<td>Datagrid</td>
+<td>3</td>
+<td>"Lista de productos nuevos" (8 child columns), "Productos autorizados" (7 children), "Productos modificados" (6 children)</td>
+</tr>
+<tr>
+<td>Radio</td>
+<td>3</td>
+<td>"Empresa del Mariel", "Status llega de la bitacora", "Que quiere hacer?"</td>
+</tr>
+<tr>
+<td>File</td>
+<td>2</td>
+<td>"Documento que avale la fundamentacion", "Subir la Carta emitida por la Oficina de la ZED Mariel"</td>
+</tr>
+<tr>
+<td>Checkbox</td>
+<td>2</td>
+<td>"Confirmo la exactitud de la informacion declarada", "Forma de gestion no Estatal"</td>
+</tr>
+<tr>
+<td>Tabs</td>
+<td>1</td>
+<td>"Permiso existente" with 2 tabs: "Operacion previamente autorizada", "Modificaciones solicitadas"</td>
+</tr>
+<tr>
+<td>Textarea</td>
+<td>1</td>
+<td>"Fundamentacion"</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Form layout (top-level blocks)</strong>:</p>
+<ol>
+<li><strong>Su empresa seleccionada</strong> -- Company info display</li>
+<li><strong>Datos de la operacion</strong> -- Operation type, countries, foreign supplier, national client</li>
+<li><strong>Productos</strong> -- Datagrid with producto / subpartida / descripcion / UM / valor / cantidad</li>
+<li><strong>Permiso existente</strong> <em>(tabs)</em> -- 2 tabs for viewing previously authorized operations and requested modifications</li>
+<li><strong>Provea aqui la fundamentacion</strong> -- Textarea + file upload + ZED Mariel letter upload</li>
+<li><strong>Datos de contacto</strong> -- Elaborado por, telefono, email</li>
+<li><strong>Confirmar</strong> -- Checkbox confirmation ("Confirmo la exactitud de la informacion declarada")</li>
+<li><strong>Datos ocultos</strong> -- Hidden fields (counters, status flags, triggers)</li>
+</ol>
+<p>This form demonstrates most of the component types available in the form builder: panels for grouping, columns for layout, datagrids for repeatable product rows, tabs for organizing related permit data, and a mix of field types (text, select, number, date, file, radio, checkbox) for capturing structured trade-permit information.</p>
+</div>
+<hr />
 <h2 id="common-properties-help-toggle">Common properties - Help toggle<a class="headerlink" href="#common-properties-help-toggle" title="Permanent link">&para;</a></h2>
 <p>Help toggle (tooltips).</p>
 <!-- Verify screenshot: Help toggle -- verify appearance. -->
