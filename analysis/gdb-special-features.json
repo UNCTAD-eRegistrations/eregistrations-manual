@@ -1,0 +1,128 @@
+{
+  "section_id": "gdb-special-features",
+  "title": "B.5. Special features",
+  "part": "III. GDB",
+  "page_range": "p.175-182",
+  "analyzed_at": "2026-02-15T14:00:00Z",
+  "change_summary": "2 changes detected: Special features are largely stable. ID format tags and triggers may have new options. Some features may have minor improvements but the documented functionality is accurate.",
+  "change_count": 2,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "a) Change format of ID",
+      "content": "Click DB Structure, click settings cog on ID column. Advanced Settings, Triggers tab. Configure with available tags: Short name, Index no, Index no by database code, Current year, End of number current year.",
+      "original_content": "Click DB Structure, click settings cog on ID column. Advanced Settings, Triggers tab. Configure with available tags: Short name, Index no, Index no by database code, Current year, End of number current year.",
+      "explanation": "The ID format configuration with its tag system is a mature GDB feature. The workflow (settings cog, advanced settings, triggers tab) has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "ID format tags - possible new tags",
+      "content": "The documented tags are: Short name, Index no, Index no by database code, Current year, End of number current year. Additional tags may have been added to the platform.",
+      "original_content": "Tags available: Short name, Index no, Index no by database code, Current year, End of number current year.",
+      "explanation": "The ID format tag list is specific and may have been expanded. New tags could have been added for additional formatting options (e.g., month, custom prefix, sequential numbering variations). The current tag dropdown should be verified to confirm the complete list.",
+      "screenshot_status": "verify",
+      "screenshot_description": "ID format tags dropdown -- verify if new tags have been added"
+    },
+    {
+      "type": "unchanged",
+      "title": "b) Show catalog key in database structure",
+      "content": "Click Settings, activate 'Show key and value' toggle.",
+      "original_content": "Click Settings, activate 'Show key and value' toggle.",
+      "explanation": "The catalog key display toggle is a simple feature that has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "c) Migrate data between databases",
+      "content": "Open target table, click 'Import Data', Database tab, Create. Select source database, drag and drop column labels to map data, click Migrate.",
+      "original_content": "Open target table, click 'Import Data', Database tab, Create. Select source database, drag and drop column labels to map data, click Migrate.",
+      "explanation": "The data migration workflow between databases has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "d) Import data to other database on trigger",
+      "content": "Import data to other database on trigger.",
+      "original_content": "Import data to other database on trigger.",
+      "explanation": "The trigger-based import feature remains available.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "e) Setting readonly field property",
+      "content": "Setting readonly field property on GDB.",
+      "original_content": "Setting readonly field property on GDB.",
+      "explanation": "The readonly field property setting has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "f) Pattern label (regex)",
+      "content": "How to apply pattern label (regex using) on GDB.",
+      "original_content": "How to apply pattern label (regex using) on GDB.",
+      "explanation": "The regex pattern label feature has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "g) Listing value in edit grids",
+      "content": "How to add listing value in GDB edit grids.",
+      "original_content": "How to add listing value in GDB edit grids.",
+      "explanation": "The listing value feature in edit grids has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "h) Compare databases",
+      "content": "How to compare two databases.",
+      "original_content": "How to compare two databases.",
+      "explanation": "The database comparison feature has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "i) Textfield to select",
+      "content": "How to make a textfield into a select predefined values field.",
+      "original_content": "How to make a textfield into a select predefined values field.",
+      "explanation": "The textfield-to-select conversion feature has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "j) Limit document type",
+      "content": "Where to limit the document type accepted by the file field.",
+      "original_content": "Where to limit the document type accepted by the file field.",
+      "explanation": "The document type limitation feature has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "k) Multiple files",
+      "content": "How to configure database file field to accept multiple files: Open DB structure, add file field, open advance settings, Base settings tab, activate Multiple toggle, publish.",
+      "original_content": "How to configure database file field to accept multiple files: Open DB structure, add file field, open advance settings, Base settings tab, activate Multiple toggle, publish.",
+      "explanation": "The multiple files configuration (advance settings, Base settings tab, Multiple toggle) has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "Possible new special features",
+      "content": "Additional special features or GDB triggers may have been added to the platform since July 2025.",
+      "original_content": null,
+      "explanation": "GDB special features is a collection of various configuration options and tips. While the documented features are all likely still valid, new special features or configuration options may have been added. A comprehensive review of the current GDB settings and advanced options is recommended to identify any undocumented features.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Review current GDB advanced settings for any new special features not documented in the manual"
+    }
+  ]
+}

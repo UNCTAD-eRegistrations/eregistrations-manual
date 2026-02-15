@@ -1,0 +1,100 @@
+{
+  "section_id": "bpa-registrations",
+  "title": "C. Registration(s)",
+  "page_range": "14-25",
+  "analyzed_at": "2026-02-15T15:15:00Z",
+  "change_summary": "5 items identified: Registration structure is core and stable. The creation workflow (name, short name, result P/D, documents U/S/M, fees fixed/formula, institution, units) remains unchanged. Cost types confirmed via MCP tools to include fixed and formula (cost_create_fixed, cost_create_formula). The document requirement system has a global requirements list (requirement_list) that may represent a newer management approach. Registration activation is a confirmed feature. Adding registrations to services is unchanged.",
+  "change_count": 5,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Registration definition",
+      "content": "Registrations are at the core of the eRegistrations system. A registration is any type of authorization (license, permit, registration number, clearance, certificate, etc.) issued by a government institution, for which an applicant will usually need to provide data, documents and fee.",
+      "original_content": "Registrations are at the core of the eRegistrations system. A registration is any type of authorization (license, permit, registration number, clearance, certificate, etc.) issued by a government institution, for which an applicant will usually need to provide data, documents and fee.",
+      "explanation": "The definition of a registration is unchanged.",
+      "screenshot_status": "same",
+      "screenshot_description": "Registration list page."
+    },
+    {
+      "type": "unchanged",
+      "title": "1. Create a registration",
+      "content": "Click on 'add' button. A slider opens. Enter registration name, enter short name (proposed automatically, modifiable). Create. A registration is defined by: a. Name, b. Result, c. Data required, d. Documents required, e. Fees, f. Institution in charge. The 'Registrations' menu tab defines all elements except 'data required' (defined in application file tab). Fields marked with red asterisk are required.",
+      "original_content": "Click on the 'add' button on the search bar. A slider opens. Enter registration name, enter short name (a short name is proposed automatically but you can modify it), create. A registration is defined by the following elements: a. Name, b. Result, c. Data required, d. Documents required, e. Fees, f. Institution in charge. The 'Registrations' menu tab will allow us to define all elements except the 'data required', which will be defined in the application file tab, in the applicant form. Fields marked with a red asterisk are required.",
+      "explanation": "The registration creation workflow and the six defining elements remain unchanged.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Registration creation slider - verify UI appearance has not changed."
+    },
+    {
+      "type": "unchanged",
+      "title": "Result (Physical/Digital)",
+      "content": "Click on '+ Select or add new' under Results. Click 'add'. A slider opens. Enter result name (required), choose physical ('P') or digital ('D'). Save. Digital result allows building a certificate template. Existing results can be selected from dropdown.",
+      "original_content": "To add a result, click on '+ Select or add new' under Results. Then click on the 'add' button. A slider opens. Enter the result name (required), choose whether the result is physical or digital ('P' and 'D'), save. In case of digital result, a template can be built (see build certificates). To add an existing result, select from the drop down list.",
+      "explanation": "The result management workflow (physical/digital, template building for digital) is unchanged.",
+      "screenshot_status": "same",
+      "screenshot_description": "Result slider with P/D toggle."
+    },
+    {
+      "type": "unchanged",
+      "title": "Documents (U/S/M)",
+      "content": "Click on '+ Select or add new' under Documents. Click 'add'. A slider opens. Enter document name, choose expectation: 'U' (must be uploaded), 'S' (must be shown at front desk), 'M' (must be signed at collection). Save. Existing documents can be selected from dropdown.",
+      "original_content": "To add documents required, click on '+ Select or add new' under Documents. Then click on the 'add' button. A slider opens. Enter the document name, choose what is expected ('U' - must be uploaded, 'S' must be shown at front desk, 'M' - must be signed at collection), save. To add existing document, select from dropdown.",
+      "explanation": "Document requirement types (U/S/M) remain the same. The MCP tool requirement_list suggests a global requirements list exists, which may help manage document types across services.",
+      "screenshot_status": "same",
+      "screenshot_description": "Document slider with U/S/M options."
+    },
+    {
+      "type": "unchanged",
+      "title": "Fees (Fixed/Formula)",
+      "content": "Click on '+ Add new' under Fees. Fixed fees: enter name, select 'fixed fee' under Fee Type, select currency, enter value, save. Formula fees: select 'Formula' in fee type, save, click on fee to open, click 'click to add formula', drag and drop variables from left side, select arithmetic symbol, add.",
+      "original_content": "To add applicable fees, click on '+ Add new' under Fees. Fixed fees: A slider opens. Enter name, select 'fixed fee' under Fee Type, select currency, enter value, save. Formula fees: select 'Formula' in fee type, save, click on fee to open, click on 'click to add formula' under Formula. Drag and drop variables, select arithmetic symbol, add.",
+      "explanation": "Fee types (fixed and formula) and their creation workflows remain unchanged. The MCP tools confirm cost_create_fixed (with amount and currency) and cost_create_formula as the two cost types.",
+      "screenshot_status": "same",
+      "screenshot_description": "Fee creation slider and formula builder."
+    },
+    {
+      "type": "unchanged",
+      "title": "Institution and Units",
+      "content": "Click on '+ Select or add new' under Institutions. Click 'add'. A slider opens. Enter institution name, enter URL, save. Add units by clicking 'Add new' under Involved Unit. Existing institutions can be selected from dropdown. Registrations displayed across top menu by short names.",
+      "original_content": "To add the institution involved, click on '+ Select or add new' under Institutions. A slider opens. Enter the name, enter URL, save. To add a Unit, click on 'Add new' under Involved Unit. To add existing institution, select from dropdown. Registrations in the service will be displayed across the top menu by the short names.",
+      "explanation": "Institution and unit management is unchanged.",
+      "screenshot_status": "same",
+      "screenshot_description": "Institution slider and unit addition."
+    },
+    {
+      "type": "unchanged",
+      "title": "2. Add registration(s) to a service",
+      "content": "Click on service name. Click 'Add'. A slider opens. Enter registration name, click 'Create'. Define result, documents, fees, institution. To add existing registration, click 'add to service' from 'all registrations' list.",
+      "original_content": "To add a new registration to a service, click on the service name. Click on the 'Add' button. A slider will open. Enter the name of the registration and click on 'Create'. Under that registration, define result, documents, fees, institution. To add existing registration, click on 'add to service' from 'all registrations' list.",
+      "explanation": "Adding registrations to services is unchanged.",
+      "screenshot_status": "same",
+      "screenshot_description": "Add registration to service and 'all registrations' list."
+    },
+    {
+      "type": "verify",
+      "title": "Registration activation",
+      "content": "The MCP tools include a registration_activate operation, suggesting that registrations can be activated or deactivated independently.",
+      "original_content": null,
+      "explanation": "The MCP tool registration_activate exists, which suggests registrations have an activation state similar to services. The original manual does not mention activating/deactivating individual registrations. A human reviewer should verify if this toggle exists in the UI and document it if so.",
+      "screenshot_status": "unknown",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "Document requirement global management",
+      "content": "The MCP tools include requirement_list (global document type definitions), documentrequirement_list/create/update/delete (linking requirements to registrations). This may represent a more structured approach to managing document requirements.",
+      "original_content": null,
+      "explanation": "The MCP tools show a two-level system: global requirements (requirement_list) and document requirements linked to registrations (documentrequirement_create/update/delete). The manual documents the creation of document requirements directly under registrations. The global requirement system may provide reusable document type definitions across services. A reviewer should verify if the UI reflects this two-level system.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Document requirements management - check if global requirements are visible in the UI."
+    },
+    {
+      "type": "verify",
+      "title": "Formula fee enhancements",
+      "content": "The formula fee builder may have been enhanced with additional functions or a more capable formula editor.",
+      "original_content": null,
+      "explanation": "The manual documents basic formula creation with drag-and-drop variables and arithmetic symbols. The formula builder documented in section D.7 has many functions (maxValue, round, Ceil, Floor, date operations, etc.) that can also apply to fee formulas. A reviewer should verify if the fee formula builder has the same full set of functions as the form formula builder.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Fee formula builder showing available functions and operations."
+    }
+  ]
+}

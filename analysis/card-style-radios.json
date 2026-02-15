@@ -1,0 +1,54 @@
+{
+  "section_id": "card-style-radios",
+  "title": "Card-style Radios",
+  "analyzed_at": "2026-02-15T16:40:00Z",
+  "change_summary": "Entirely new section. Card-style radios are a new UI pattern for radio buttons that displays options as visual cards rather than traditional radio buttons. The original manual documents the 'Radio Switch' custom class (section D.8) which changes radio button appearance, but card-style radios appear to be a further evolution providing a more visual selection interface. This may be implemented as a new custom class, a new radio display mode in the form builder, or a new component type. 5 blocks identified, all needing verification.",
+  "change_count": 5,
+  "blocks": [
+    {
+      "type": "verify",
+      "title": "Overview of Card-style Radios",
+      "content": "Card-style radios are a new UI pattern in eRegistrations that displays radio button options as visual cards rather than traditional radio button circles with labels. Each option appears as a distinct card, potentially with an icon, title, and description, providing a more visual and user-friendly selection interface.\n\nThis pattern is particularly useful for:\n- Guide questions where the applicant needs to make a clear choice between visually distinct options.\n- Service type selection where each option has a unique visual identity.\n- Any scenario where the visual card layout improves comprehension of the available options.\n\nThe original manual documents the 'Radio Switch' custom class which changes radio buttons into a switch-like appearance. Card-style radios are a further evolution of radio button display options.",
+      "original_content": null,
+      "explanation": "Card-style radios are identified as a new feature in the manual update plan. The original manual documents several radio-related custom classes including 'Radio Switch' (section D.8 - Appearance changing classes) but does not mention card-style display. The exact implementation mechanism needs verification.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Screenshot showing card-style radios in use on a form, comparing the visual appearance with traditional radio buttons."
+    },
+    {
+      "type": "verify",
+      "title": "Implementing Card-style Radios",
+      "content": "Card-style radios may be implemented through one of the following mechanisms:\n\n1. Custom class: A new custom class (e.g., 'card-radio' or 'radio-card') applied to a radio component through the Custom Class field in the component edit modal. This would follow the same pattern as the existing 'Radio Switch' custom class.\n\n2. New display mode: A new display mode option in the radio component configuration, alongside existing layout options.\n\n3. New component type: A dedicated 'Card Radio' component in the form builder, separate from the standard radio component.\n\nThe implementation mechanism determines how analysts configure card-style radios in the BPA.",
+      "original_content": null,
+      "explanation": "The implementation mechanism is not confirmed. The custom class approach is most consistent with how eRegistrations handles visual variations (the manual documents numerous custom classes for different visual effects). However, it could also be a component property or a new component type. A human reviewer should verify the implementation.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Screenshot showing how card-style radios are configured in the BPA form builder -- whether through custom class, display mode, or component type."
+    },
+    {
+      "type": "verify",
+      "title": "Card-style Radio Appearance and Customization",
+      "content": "Card-style radios likely display each option as a card element that may include:\n- An icon or image representing the option.\n- The option label/title displayed prominently.\n- An optional description or subtitle.\n- A visual selection indicator (highlighted border, checkmark, or color change when selected).\n\nCustomization options may include:\n- Card size (small, medium, large).\n- Card layout (horizontal row, grid, or vertical stack).\n- Icon or image support.\n- Color theming.\n\nThe exact customization options available need verification.",
+      "original_content": null,
+      "explanation": "The visual appearance and customization options are speculative based on common card-radio patterns in web applications. The actual appearance in eRegistrations may be more limited or have different options. A reviewer should capture screenshots of card-style radios in various configurations.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Screenshots showing card-style radios with different configurations: with icons, different sizes, different layouts, and in selected/unselected states."
+    },
+    {
+      "type": "verify",
+      "title": "Card-style Radios in the Guide",
+      "content": "Card-style radios may be particularly useful in the Guide section of the application file, where applicants answer questions to determine their registration requirements. The card layout can make guide questions more intuitive by providing visual cards for each option.\n\nFor example, a guide question asking 'What type of registration do you need?' could display options as cards with icons representing each registration type, rather than a simple radio button list.",
+      "original_content": null,
+      "explanation": "The Guide is a natural use case for card-style radios because it involves clear choice-making. However, whether card-style radios are specifically designed for or restricted to the Guide needs verification. They may be available for any radio component in any form.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Screenshot of card-style radios used in a Guide question, showing how the card layout improves the question presentation."
+    },
+    {
+      "type": "verify",
+      "title": "Relationship to Existing Custom Classes",
+      "content": "The original manual documents the following appearance-changing custom classes that affect radio and selection components:\n- Radio Switch: Changes radio buttons into a switch-like appearance.\n- Search results list: Changes the display of select/radio options.\n\nCard-style radios may be:\n- An addition to this list of custom classes (e.g., 'radio-card' class).\n- A replacement for Radio Switch with more advanced visual options.\n- An entirely separate feature unrelated to custom classes.\n\nIf it is a custom class, it would be documented in section D.8 (Custom classes) rather than as a standalone section. The appropriate location in the manual depends on the implementation.",
+      "original_content": null,
+      "explanation": "The relationship to existing custom classes determines where card-style radios should be documented in the manual. If it is a custom class, it belongs in section D.8. If it is a new component or display mode, it may belong in section D.3 (Applicant form) or as a standalone section. A reviewer should determine the correct categorization.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Screenshot showing where card-style radios are configured -- custom class dropdown, component properties, or elsewhere."
+    }
+  ]
+}

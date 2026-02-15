@@ -1,0 +1,181 @@
+{
+  "section_id": "bpa-applicant-form",
+  "title": "D.3. Applicant form",
+  "page_range": "p.32-42",
+  "analyzed_at": "2026-02-15T14:40:00Z",
+  "change_summary": "8 changes detected: Container types (Block, Table, Columns, Field set, Edit grid, Data grid, Tabs) are stable. The form builder's drag-and-drop architecture is unchanged. New field types may exist (e-signature, card-style radios). Collapsible blocks may have enhanced behavior. Button actions have a more structured system via component actions API. Common properties are largely stable. The form_component_add API confirms the same structural paradigm (parent_key, column_index, row_index, cell_index). Tabs may have new features. The form supports 4 form types (applicant, guide, send_file, payment) confirming the original architecture.",
+  "change_count": 8,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Form builder overview",
+      "content": "This is the section in the application file where the applicant will provide the required data. The form can be developed and customized in any format based on an analysis of the data.\n\nTo create a form, drag and drop any type of required field component from the menu bar into the space below it.",
+      "original_content": "This is the section in the application file where the applicant will provide the required data. The form can be developed and customized in any format based on an analysis of the data.\n\nTo create a form, drag and drop any type of required field component from the menu bar into the space below it.",
+      "explanation": "The fundamental form builder paradigm -- drag and drop components from a menu into the workspace -- is unchanged. The form_component_add API confirms the same structural approach with parent_key for nesting, position for ordering, and column_index/row_index/cell_index for table/column placement.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Form builder overview -- verify drag and drop interface appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Containers - Block",
+      "content": "Blocks separate/segregate the different types of information. Blocks are collapsible. If you do not want your blocks to collapse, disable the 'collapsible' toggle under the general tab.",
+      "original_content": "Blocks separate/segregate the different types of information. Blocks are collapsible. If you do not want your blocks to collapse, disable the 'collapsible' toggle under the general tab.",
+      "explanation": "Blocks remain the primary container type for organizing form sections. The collapsible toggle is a standard block property.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Block container with collapsible toggle -- verify visual appearance."
+    },
+    {
+      "type": "verify",
+      "title": "Containers - Block collapsible enhancements",
+      "content": "Block collapsible behavior may have been enhanced with features such as default collapsed state, animation options, or conditional collapse based on determinants. The MANUAL-UPDATE-PLAN mentions 'collapsible fields' as a new feature.",
+      "original_content": null,
+      "explanation": "The update plan document mentions 'collapsible fields' as a new feature added to the platform. This suggests the collapsible behavior may have been extended beyond blocks to other component types, or blocks may have gained additional collapsible configuration options. This needs verification on a live instance.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Block collapsible configuration -- check for any new options beyond the simple toggle."
+    },
+    {
+      "type": "unchanged",
+      "title": "Containers - Table",
+      "content": "Table: drag and drop the table component inside the block. Indicate the number of rows and columns.",
+      "original_content": "Table: drag and drop the table component inside the block. Indicate the number of rows and columns.",
+      "explanation": "Tables remain a standard container type. The form_component_add API confirms row_index and cell_index parameters for table placement, consistent with the documented behavior.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Table component configuration -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Containers - Columns",
+      "content": "Columns: will help align the fields. Only up to 12 units are fitted in one row (e.g., 6+6, 4+4+4, 3+3+3+3).",
+      "original_content": "Columns: will help align the fields. Only up to 12 units are fitted in one row (e.g., 6+6, 4+4+4, 3+3+3+3).",
+      "explanation": "The 12-unit column grid system is a standard form.io layout pattern based on Bootstrap's grid. This is unchanged. The form_component_add API confirms column_index parameter for column placement.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Columns component with 12-unit grid -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Containers - Field set",
+      "content": "Field set: groups the fields of the same category of data together.",
+      "original_content": "Field set: groups the fields of the same category of data together.",
+      "explanation": "Field sets remain a standard grouping container.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Field set component -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Containers - Edit grid",
+      "content": "Edit grid: enables replication of the same set of fields within it, and addition of multiple data for the same set of fields. The label can be hidden by activating 'Hide Label' toggle.",
+      "original_content": "Edit grid: enables replication of the same set of fields within it, and addition of multiple data for the same set of fields. The label can be hidden by activating 'Hide Label' toggle.",
+      "explanation": "Edit grids remain a core container for repeatable data entry. The Hide Label toggle is a standard property.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Edit grid component -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Containers - Data grid",
+      "content": "Data grid: very much like an edit grid.",
+      "original_content": "Data grid: very much like an edit grid.",
+      "explanation": "Data grids remain similar to edit grids. Both support repeatable data entry.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Data grid component -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Containers - Tabs",
+      "content": "Tabs: can make the form more organized. Can be displayed as a side menu (vertical layout). Structure can be nested.",
+      "original_content": "Tabs: can make the form more organized. Can be displayed as a side menu (vertical layout). Structure can be nested.",
+      "explanation": "Tabs with vertical layout and nesting capabilities remain a standard container type.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Tabs component with vertical layout option -- verify visual appearance."
+    },
+    {
+      "type": "verify",
+      "title": "Containers - Tabs new features",
+      "content": "Tabs may have gained new features such as conditional tab visibility (driven by determinants), tab validation indicators, or dynamic tab creation. The effects/behaviours system may allow determinant-driven tab control.",
+      "original_content": null,
+      "explanation": "The update plan mentions 'Tabs may have new features'. The effects/behaviours system (componentbehaviour_get_by_component) could enable determinant-driven tab visibility. However, the specific enhancements need verification on a live instance.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Tabs configuration showing any new options beyond vertical layout and nesting."
+    },
+    {
+      "type": "unchanged",
+      "title": "Fields - Catalog (dropdown)",
+      "content": "Catalog (drop-down menu).",
+      "original_content": "Catalog (drop-down menu).",
+      "explanation": "Catalog fields (dropdowns) remain a core field type. The classification system tools in the API extend catalog functionality, but the basic catalog field type is unchanged.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Catalog field -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Fields - Sub Catalog",
+      "content": "Sub Catalog.",
+      "original_content": "Sub Catalog.",
+      "explanation": "Sub catalogs remain a standard field type for dependent/cascading dropdowns.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Sub catalog field -- verify visual appearance."
+    },
+    {
+      "type": "modified",
+      "title": "Fields - Button with actions",
+      "content": "Button (various actions: event, custom, open link, open service and data in new tab). The platform now has a structured component actions system. Buttons can have BOT actions assigned through the component actions framework, and system-predefined actions are available. Actions can be viewed and managed per-component.",
+      "original_content": "Button (various actions: event, custom, open link, open service and data in new tab).",
+      "explanation": "The button action types (event, custom, open link, open service) remain, but the platform has added a structured component actions system. The componentaction_get_by_component, componentaction_save, componentaction_get_system_actions API tools indicate that button actions are now managed through a more formal framework, including system-level predefined actions. The original four action types likely still exist, but the system for assigning and managing actions has been expanded.",
+      "screenshot_status": "needs_update",
+      "screenshot_description": "Button action configuration showing available action types, including any new system actions and the component actions framework."
+    },
+    {
+      "type": "added",
+      "title": "Fields - Card-style radios",
+      "content": "Card-style radios are a new radio button presentation style that displays radio options as visual cards rather than traditional radio buttons. This provides a more user-friendly interface for selection-based questions, particularly useful in guides and forms where visual distinction between options improves usability.",
+      "original_content": null,
+      "explanation": "The MANUAL-UPDATE-PLAN explicitly mentions 'card-style radios' as a new feature added to the platform. This is a visual enhancement to the radio button field type. The exact configuration (custom class, separate component type, or radio property) needs verification.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Card-style radio buttons showing the card presentation of radio options, and how to configure them."
+    },
+    {
+      "type": "verify",
+      "title": "Fields - E-signature field",
+      "content": "An e-signature field may have been added as a new field type, allowing applicants to provide electronic signatures within the form. This could be used in the Send File page or other declaration sections.",
+      "original_content": null,
+      "explanation": "The MANUAL-UPDATE-PLAN mentions 'e-signature' as a new feature. Whether it manifests as a new field type in the form builder, a custom component, or a separate system needs verification. E-signature is listed alongside other new features like SmartLink and micro-publish.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "E-signature field or component if it exists in the form builder."
+    },
+    {
+      "type": "unchanged",
+      "title": "Common properties - Help toggle",
+      "content": "Help toggle (tooltips).",
+      "original_content": "Help toggle (tooltips).",
+      "explanation": "Help tooltips remain a standard field property.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Help toggle -- verify appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Common properties - Advanced toggle",
+      "content": "Advanced toggle (additional features).",
+      "original_content": "Advanced toggle (additional features).",
+      "explanation": "The Advanced toggle for accessing additional field configuration options remains.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Advanced toggle -- verify appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Common properties - standard toggles and options",
+      "content": "Hide Label toggle, Placeholder, Tooltip, Prefix and Suffix, Disabled toggle, Hidden toggle, Reusable toggle, Listing value toggle, Allow Spellcheck, Searchable.",
+      "original_content": "Hide Label toggle, Placeholder, Tooltip, Prefix and Suffix, Disabled toggle, Hidden toggle, Reusable toggle, Listing value toggle, Allow Spellcheck, Searchable.",
+      "explanation": "The standard common properties (Hide Label, Placeholder, Tooltip, Prefix/Suffix, Disabled, Hidden, Reusable, Listing value, Allow Spellcheck, Searchable) are stable form.io-based field properties that remain available.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Common properties panel -- verify all listed options are still present and check for any new additions."
+    },
+    {
+      "type": "verify",
+      "title": "Common properties - potential new properties",
+      "content": "New common properties may have been added, such as:\n- Determinant-aware properties driven by the effects/behaviours system\n- Properties related to the print document builder (print visibility, print formatting)\n- Properties for inter-service data sharing\n- Properties for field-level permissions or restrictions",
+      "original_content": null,
+      "explanation": "Given the platform's evolution, new field properties may have been added. The effects system and print document builder suggest properties that may be visible in the field configuration UI. However, without live system inspection, the exact current property list cannot be confirmed.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Field configuration panels showing any new properties not in the original list."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "section_id": "gdb-public-part",
+  "title": "A. Public part",
+  "part": "III. GDB",
+  "page_range": "p.153-154",
+  "analyzed_at": "2026-02-15T14:00:00Z",
+  "change_summary": "1 change detected: GDB public interface may have minor UI updates but the core structure (header bar, hamburger menu, database list, status button, add record button) is largely stable.",
+  "change_count": 1,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "GDB description",
+      "content": "GDB is a system to create and administer a professional database easily, without programming. Databases created with GDB can exchange data electronically with eRegistrations and any other external system through Web services.",
+      "original_content": "GDB is a system to create and administer a professional database easily, without programming. Databases created with GDB can exchange data electronically with eRegistrations and any other external system through Web services.",
+      "explanation": "The core description of GDB as a no-code database system with web service capabilities has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Public and admin parts",
+      "content": "GDB is composed of a public part (where we see the databases created and their content) and an admin part.",
+      "original_content": "GDB is composed of a public part (where we see the databases created and their content) and an admin part.",
+      "explanation": "The division of GDB into public and admin parts remains the same.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Header bar components",
+      "content": "The header bar consists of: Hamburger button (displays list of databases, 'create new database' and 'create new group' buttons), Name of database currently displayed, Status button (version and last updated date), Language, Logged in user.",
+      "original_content": "The header bar consists of: Hamburger button (displays list of databases, 'create new database' and 'create new group' buttons), Name of database currently displayed, Status button (version and last updated date), Language, Logged in user.",
+      "explanation": "The header bar components are core GDB navigation elements that have not changed in structure.",
+      "screenshot_status": "verify",
+      "screenshot_description": "GDB header bar -- verify visual appearance is still the same"
+    },
+    {
+      "type": "unchanged",
+      "title": "Sub menu and record controls",
+      "content": "The sub menu displays the name of the database. The 'add record' button and edit/delete icons are visible only to authorized users.",
+      "original_content": "The sub menu displays the name of the database. The 'add record' button and edit/delete icons are visible only to authorized users.",
+      "explanation": "The sub menu with database name and record control buttons (add/edit/delete) visible based on user permissions is core GDB functionality.",
+      "screenshot_status": "verify",
+      "screenshot_description": "GDB sub menu with add record button -- verify current appearance"
+    },
+    {
+      "type": "verify",
+      "title": "Minor UI changes",
+      "content": "The GDB public interface may have minor visual updates (styling, spacing, icons) but the overall structure and functionality remain the same.",
+      "original_content": null,
+      "explanation": "GDB is a mature and stable system. While the platform has had many updates, the GDB public interface tends to receive fewer visual changes compared to the DS. However, given the time elapsed since the manual was written, minor visual differences in styling or icons are possible. A visual comparison of the current GDB interface against the manual screenshots is recommended.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Compare current GDB public interface against all screenshots in this section"
+    }
+  ]
+}

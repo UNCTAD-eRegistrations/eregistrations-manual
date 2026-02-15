@@ -1,0 +1,64 @@
+{
+  "section_id": "bpa-payment",
+  "title": "D.5. Payment",
+  "page_range": "p.44-45",
+  "analyzed_at": "2026-02-15T00:00:00Z",
+  "change_summary": "The Payment section core workflow remains accurate. The payments tab, Agency Code and Account Head ID field tags, Payment Providers custom component, online/manual payment radio options, and show decimals toggle are all still present and function as documented. There may be additional payment provider integrations or configuration options added since July 2025, but the basic setup process is unchanged.",
+  "change_count": 1,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Payments tab",
+      "content": "The Payments tab is available in the service configuration and provides the interface for setting up payment functionality for a service.",
+      "original_content": "The Payments tab is part of the service configuration.",
+      "explanation": "The Payments tab is still present and serves the same purpose.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of the Payments tab in service configuration."
+    },
+    {
+      "type": "unchanged",
+      "title": "Agency Code and Account Head ID field tags",
+      "content": "The Agency Code and Account Head ID are configured as field tags on payment-related fields. These tags identify the payment destination for processing.",
+      "original_content": "Agency Code and Account Head ID field tags are used to configure payment fields.",
+      "explanation": "The field tag mechanism for Agency Code and Account Head ID has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot showing the Agency Code and Account Head ID field tag configuration."
+    },
+    {
+      "type": "unchanged",
+      "title": "Payment Providers custom component",
+      "content": "The Payment Providers custom component is available under the Custom Components tab and can be added to the payment page to enable payment provider selection.",
+      "original_content": "Payment Providers custom component is available under Custom Components tab.",
+      "explanation": "The Payment Providers custom component is still available and functions the same way.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of the Payment Providers custom component in the Custom Components tab."
+    },
+    {
+      "type": "unchanged",
+      "title": "Online/manual payment radio options",
+      "content": "Radio buttons allow the applicant to choose between online payment and manual payment options when both are available.",
+      "original_content": "Online/manual payment radios allow selection between payment methods.",
+      "explanation": "The online/manual payment radio options are still present and function as described.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot showing online/manual payment radio buttons on the payment page."
+    },
+    {
+      "type": "unchanged",
+      "title": "Show decimals toggle",
+      "content": "The show decimals toggle controls whether decimal places are displayed in payment amounts.",
+      "original_content": "Show decimals toggle controls decimal display in payment amounts.",
+      "explanation": "The show decimals toggle is still present and functions as documented.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot showing the show decimals toggle."
+    },
+    {
+      "type": "verify",
+      "title": "Additional payment providers or integration options",
+      "content": "New payment provider integrations or additional configuration options may have been added since July 2025.",
+      "original_content": null,
+      "explanation": "The payment ecosystem evolves and new payment provider integrations or configuration options may have been added to the platform. The current list of supported providers and any new configuration options should be verified against the live platform.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "If new payment providers have been added, screenshots of the updated payment provider selection and any new configuration panels would be needed."
+    }
+  ]
+}

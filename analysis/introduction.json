@@ -1,0 +1,55 @@
+{
+  "section_id": "introduction",
+  "title": "Introduction",
+  "page_range": "p.5",
+  "analyzed_at": "2026-02-15T00:00:00Z",
+  "change_summary": "The introduction remains largely accurate. The core description of eRegistrations as a no-code platform and the basic applicant-operator-certificate flow are unchanged. The terminology (public site, DS, BPA) is still current. Minor additions could mention newer capabilities (e-signature, advanced workflows) but the introduction is intentionally high-level and does not require significant revision.",
+  "change_count": 1,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Manual purpose statement",
+      "content": "The purpose of this user manual is to provide an overview of the main functions and features of the eRegistrations system and to explain how to create online services.",
+      "original_content": "The purpose of this user manual is to provide an overview of the main functions and features of the eRegistrations system and to explain how to create online services.",
+      "explanation": "The stated purpose of the manual remains accurate and does not require any changes.",
+      "screenshot_status": "same",
+      "screenshot_description": "No screenshot associated with this text block."
+    },
+    {
+      "type": "unchanged",
+      "title": "No-code platform description",
+      "content": "eRegistrations is a no-code development platform allowing to create online services without programming.",
+      "original_content": "eRegistrations is a no-code development platform allowing to create online services without programming.",
+      "explanation": "The core identity of eRegistrations as a no-code platform has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": "No screenshot associated with this text block."
+    },
+    {
+      "type": "unchanged",
+      "title": "Online service flow description",
+      "content": "An online service is a succession of online screens and actions through which:\n- an applicant can fill a form, upload documents, pay and send his request (application file)\n- one or more operators can review the file and approve or reject an application (processing)\n- The applicant data is sent to an online registry\n- A registration certificate is issued",
+      "original_content": "An online service is a succession of online screens and actions through which:\n- an applicant can fill a form, upload documents, pay and send his request (application file)\n- one or more operators can review the file and approve or reject an application (processing)\n- The applicant data is sent to an online registry\n- A registration certificate is issued",
+      "explanation": "The high-level flow description (form, documents, payment, send, processing, certificate) is still accurate. While newer features like e-signature have been added to certain steps, this summary-level description remains correct as-is.",
+      "screenshot_status": "same",
+      "screenshot_description": "No screenshot associated with this text block."
+    },
+    {
+      "type": "unchanged",
+      "title": "Public site and administrative site terminology",
+      "content": "Online services are visible on the 'public site', also called 'user site' or 'DS' (Display System). They are created through an 'administrative site', also called 'BPA' (Business Process Analyzer).",
+      "original_content": "Online services are visible on the 'public site', also called 'user site' or 'DS' (Display System). They are created through an 'administrative site', also called 'BPA' (Business Process Analyzer).",
+      "explanation": "The terminology for the public-facing site (DS/Display System) and the administrative backend (BPA/Business Process Analyzer) is still in active use across all deployments.",
+      "screenshot_status": "same",
+      "screenshot_description": "No screenshot associated with this text block."
+    },
+    {
+      "type": "verify",
+      "title": "Potential mention of newer platform capabilities",
+      "content": "The introduction may benefit from a brief mention of newer platform capabilities such as e-signature support, advanced workflow features, or other significant additions made after July 2025. However, since the introduction is intentionally high-level, this should be verified with stakeholders before adding.",
+      "original_content": null,
+      "explanation": "The introduction does not mention e-signature, advanced workflow capabilities, or other features added since July 2025. Since the introduction is meant to be a high-level overview, it may be acceptable as-is, but a subject matter expert should confirm whether any new top-level capabilities warrant mention here.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "If any new high-level platform diagram or overview screenshot exists, it may need to be evaluated for inclusion."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "section_id": "bpa-services",
+  "title": "B. Services",
+  "analyzed_at": "2026-02-15T10:30:00Z",
+  "change_summary": "7 changes detected: Import/copy service functionality added, service groups feature is new, micro-publish added to publish flow, service bar has additional buttons, archive workflow may have UI changes, service activation toggle unchanged, SmartLink feature is new.",
+  "change_count": 7,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Definition of Service",
+      "content": "A service is a succession of screens allowing the applicant to obtain one or more registrations.",
+      "original_content": "A service is a succession of screens allowing the applicant to obtain one or more registrations.",
+      "explanation": null,
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Definition of Registration",
+      "content": "A registration is any authorization (certificate, permit, clearance, document) issued by a government agency that an applicant wants to obtain.",
+      "original_content": "A registration is any authorization (certificate, permit, clearance, document) issued by a government agency that an applicant wants to obtain.",
+      "explanation": null,
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "modified",
+      "title": "1. Create a service",
+      "content": "A new service can be created by clicking on the 'Add' button. Additionally, services can be imported from another instance or copied from an existing service within the same instance using the 'Import' or 'Copy' functionality. Then a slider opens, where you can type the name of the service and click save.",
+      "original_content": "A new service can be created by clicking on the 'add' button. Then a slider opens, where you can type the name of the service and click save.",
+      "explanation": "The platform now supports importing services from other instances and copying existing services. This is a significant addition that was not in the original manual. The Import functionality allows replication of service configurations between instances, and Copy allows duplicating a service within the same instance.",
+      "screenshot_status": "needs_update",
+      "screenshot_description": "Services list showing Add button, and Import/Copy options if available in toolbar"
+    },
+    {
+      "type": "unchanged",
+      "title": "Service activation toggle",
+      "content": "To activate the service, click on the toggle next to the service name. Green indicates that the service is active. Inactive services will not be available on the public interface.",
+      "original_content": "To activate the service, click on the toggle next to the service name. Green indicates that the service is active. Inactive services will not be available on the public interface.",
+      "explanation": null,
+      "screenshot_status": "verify",
+      "screenshot_description": "Service toggle - verify visual appearance hasn't changed"
+    },
+    {
+      "type": "unchanged",
+      "title": "Archive/Unarchive service",
+      "content": "An inactive service can be archived in the system by clicking on the archive button. Archived services can be restored by clicking on 'archived services' and clicking on the unarchive button.",
+      "original_content": "An inactive service can be archived in the system by clicking on the archive button. Archived services can be restored by clicking on 'archived services' and clicking on the unarchive button.",
+      "explanation": null,
+      "screenshot_status": "verify",
+      "screenshot_description": "Archive/unarchive buttons - verify visual appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "Remove service",
+      "content": "A service can be removed from the system by clicking on the cross.",
+      "original_content": "A service can be removed from the system by clicking on the cross.",
+      "explanation": null,
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Post-creation note",
+      "content": "Once a service has been created, one or more registrations must be created and assigned to the service.",
+      "original_content": "Once a service has been created, one or more registrations must be created and assigned to the service.",
+      "explanation": null,
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "modified",
+      "title": "2. The Service bar",
+      "content": "This is the service bar, just below the instance (blue) bar. This appears when you click on a service from the list of services in the work space.\n\nThe service bar consists of:\n- The name of the service, that can be edited by clicking on the edit button next to it\n- The 'preview service' button: this displays the application file as seen from the user interface\n- The 'publish service' button: when a service is published, it becomes available on the public interface. Every time a change is made in the BPA that needs to be reflected on the public interface (DS), the service has to be (re)published. The publish flow now supports micro-publish, which allows publishing only specific changes rather than the entire service.\n- The 'see service' button: This opens the service in the public interface (DS), in a new tab\n- Service settings icon",
+      "original_content": "This is the service bar, just below the instance (blue) bar. This appears when you click on a service from the list of services in the work space.\n\nThe service bar consists of:\n- The name of the service, that can be edited by clicking on the edit button next to it\n- The 'preview service' button: this displays the application file as seen from the user interface\n- The 'publish service' button: when a service is published, it becomes available on the public interface. Every time a change is made in the BPA that needs to be reflected on the public interface (DS), the service has to be (re)published.\n- The 'see service' button. This opens the service in the public interface (DS), in a new tab\n- Service settings icon",
+      "explanation": "The publish flow has been enhanced with micro-publish capability. Micro-publish allows analysts to publish only specific changes (e.g., just form changes, just role changes) rather than republishing the entire service. This is a significant workflow improvement. The exact UI for this needs verification.",
+      "screenshot_status": "needs_update",
+      "screenshot_description": "Service bar showing all buttons including any new micro-publish UI elements"
+    },
+    {
+      "type": "verify",
+      "title": "Micro-publish details",
+      "content": "Micro-publish is a feature that allows publishing only specific parts of a service (e.g., form changes, role configuration changes) rather than republishing the entire service. This can speed up the publish process and reduce risk of unintended changes being published.",
+      "original_content": null,
+      "explanation": "Micro-publish is known to exist in the platform but the exact UI workflow, button placement, and options need to be verified on a live instance. The manual should document how to access micro-publish and what options are available.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Micro-publish dialog or dropdown showing publish options"
+    },
+    {
+      "type": "added",
+      "title": "Service Groups",
+      "content": "Services can be organized into groups for better management. When there are many services in an instance, groups help categorize and organize them. Groups appear in the services list view and can be collapsed or expanded.",
+      "original_content": null,
+      "explanation": "Service groups is a feature that was added to the platform after the original manual was written. It allows organizing services into logical groups (e.g., by ministry, by type of registration). This needs verification on the current platform to confirm the exact UI and workflow.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Services list showing service groups collapsed and expanded"
+    },
+    {
+      "type": "verify",
+      "title": "Import/Copy Service",
+      "content": "Services can be imported from other eRegistrations instances or copied within the same instance. Import allows replicating a complete service configuration (forms, roles, BOTs, certificates) from one instance to another. Copy creates a duplicate of an existing service within the same instance.",
+      "original_content": null,
+      "explanation": "The Import and Copy service features are known to exist in the platform. Import is particularly useful when setting up new country instances based on existing configurations. The exact location of these buttons (toolbar, context menu, or service settings) and the workflow details need to be verified on a live instance.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Import/Copy service dialog or buttons in the services list"
+    },
+    {
+      "type": "verify",
+      "title": "SmartLink",
+      "content": "SmartLink is a feature that allows creating links between services, enabling data sharing and workflow coordination across multiple services.",
+      "original_content": null,
+      "explanation": "SmartLink is mentioned in the plan as a new feature. It may or may not be directly visible in the Services section. Its exact placement in the BPA UI and relationship to the services list needs to be verified. It may belong in a different section of the manual.",
+      "screenshot_status": "unknown",
+      "screenshot_description": null
+    }
+  ]
+}

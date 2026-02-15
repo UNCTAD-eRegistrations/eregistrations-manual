@@ -1,0 +1,128 @@
+{
+  "section_id": "ds-user-dashboard",
+  "title": "A. The user dashboard",
+  "part": "II. DS",
+  "page_range": "p.137-142",
+  "analyzed_at": "2026-02-15T14:00:00Z",
+  "change_summary": "5 changes detected: Header/menu bar may have UI theme updates, shopping cart integration on dashboard, status display colors and filters may have changed, My Applications table may show additional columns or layout changes, overall DS UI theme may have been refreshed.",
+  "change_count": 5,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "DS definition",
+      "content": "The user site or the Display System is the user dashboard.",
+      "original_content": "The user site or the Display System is the user dashboard.",
+      "explanation": "The core definition of DS as the user-facing dashboard remains accurate.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "1. For new users - Header and menu bar",
+      "content": "The header and menu bar consists of: The home button (national logo), home button, login button, register button. Choice of language. The home page displays all available online services.",
+      "original_content": "The header and menu bar consists of: The home button (national logo), home button, login button, register button. Choice of language. The home page displays all available online services.",
+      "explanation": "The header layout with logo, home, login, register buttons, and language selector is a standard DS pattern. However, the DS has undergone UI theme changes since July 2025. The exact visual appearance, button styling, and layout of the header may have changed. The core elements (logo, login, register, language) are likely still present but their visual presentation needs verification.",
+      "screenshot_status": "verify",
+      "screenshot_description": "DS header bar for new (non-logged-in) users showing logo, home, login, register buttons, and language selector -- verify current visual appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "Registration / Create account flow",
+      "content": "When the user clicks register, the create account page will be displayed. User provides information and clicks RegisterForAccount. Verification email will be sent.",
+      "original_content": "When the user clicks register, the create account page will be displayed. User provides information and clicks RegisterForAccount. Verification email will be sent.",
+      "explanation": "The account creation flow (register, fill form, verification email) is a core authentication workflow that remains the same. The backend uses CAS/Keycloak which has not changed this flow.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Create account page -- verify visual appearance has not changed significantly"
+    },
+    {
+      "type": "unchanged",
+      "title": "Home page services list",
+      "content": "The home page displays all available online services.",
+      "original_content": "The home page displays all available online services.",
+      "explanation": "The home page still displays available services. The list format and how services are presented is a core DS function.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Home page services list -- verify if card layout or list format has changed"
+    },
+    {
+      "type": "verify",
+      "title": "2. For logged in users - Menu bar",
+      "content": "Menu bar consists of: home button and My Account page, name of user, choice of language.",
+      "original_content": "Menu bar consists of: home button and My Account page, name of user, choice of language.",
+      "explanation": "The logged-in user menu bar elements are core DS functionality. However, UI theme changes may have altered the layout or added new elements. The exact arrangement and visual styling needs verification on the current platform.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Logged-in user menu bar -- verify current layout, buttons, and visual styling"
+    },
+    {
+      "type": "unchanged",
+      "title": "My Applications tab",
+      "content": "The Home button/My Account page displays: My Applications tab (list of applications saved/submitted). Under My Applications: service name, business name, date started, date submitted, status, certificates (can be printed from dashboard).",
+      "original_content": "The Home button/My Account page displays: My Applications tab (list of applications saved/submitted). Under My Applications: service name, business name, date started, date submitted, status, certificates (can be printed from dashboard).",
+      "explanation": "The My Applications tab with its core columns (service name, business name, dates, status, certificates) is fundamental DS functionality. The data presented and the ability to print certificates from the dashboard remain the same.",
+      "screenshot_status": "verify",
+      "screenshot_description": "My Applications tab showing applications table with columns -- verify if additional columns or layout changes exist"
+    },
+    {
+      "type": "unchanged",
+      "title": "My Documents tab",
+      "content": "My Documents tab displays documents submitted by the user.",
+      "original_content": "My Documents tab (documents submitted).",
+      "explanation": "The My Documents tab is a standard DS feature that remains available.",
+      "screenshot_status": "verify",
+      "screenshot_description": "My Documents tab -- verify visual appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "My Messages tab",
+      "content": "My Messages tab displays messages from administrations/processing roles.",
+      "original_content": "My Messages tab (messages from administrations/processing roles).",
+      "explanation": "The My Messages tab is a standard DS feature that remains available for displaying messages from operators to applicants.",
+      "screenshot_status": "verify",
+      "screenshot_description": "My Messages tab -- verify visual appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "Filter function",
+      "content": "Filter: search for specific application by service or business name.",
+      "original_content": "Filter: search for specific application by service or business name.",
+      "explanation": "The filter function for searching applications remains a standard DS feature.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Filter function on My Applications -- verify if additional filter options have been added"
+    },
+    {
+      "type": "unchanged",
+      "title": "Application history",
+      "content": "Application history: click on a service to see stages.",
+      "original_content": "Application history: click on a service to see stages.",
+      "explanation": "The ability to view application history and processing stages is a core DS feature.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Application history view -- verify current visual presentation"
+    },
+    {
+      "type": "verify",
+      "title": "Application status colors",
+      "content": "Application status shown by different colors. Status filters available at bottom.",
+      "original_content": "Application status shown by different colors. Status filters available at bottom.",
+      "explanation": "The status color system is a core DS feature. However, the specific colors used and the status filter UI at the bottom of the page may have been updated as part of UI theme changes. The exact color mapping (which color means which status) and the filter button layout need verification on the current platform.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Status colors and status filter buttons -- verify current color scheme and filter button layout"
+    },
+    {
+      "type": "verify",
+      "title": "Shopping cart integration on dashboard",
+      "content": "The shopping cart feature, as an alternative to the Guide, may be visible or accessible from the user dashboard when starting a new application. The shopping cart shows a summary of registrations, fees, and required documents.",
+      "original_content": null,
+      "explanation": "The shopping cart is mentioned in the original manual as an alternative to the Guide (in the BPA settings and DS application file sections). Its visibility on the main dashboard or services list -- as opposed to only within an active application -- needs verification. The manual's settings section mentions a 'Shopping cart' toggle under service settings, suggesting it is a per-service option. Whether and how it appears on the user dashboard itself (before entering a service) needs to be confirmed.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Verify if shopping cart is visible on the dashboard or only within an active application file"
+    },
+    {
+      "type": "verify",
+      "title": "Overall DS UI theme changes",
+      "content": "The DS (Display System) may have undergone visual theme updates since July 2025, including changes to fonts, colors, button styles, spacing, and overall layout. The BPA service settings include a 'UI theme' option that controls the DS appearance.",
+      "original_content": null,
+      "explanation": "The BPA service settings mention a 'UI theme' option. Since the platform has had approximately 9,600 commits since the manual was written, the DS visual theme may have been refreshed. All DS screenshots likely need to be recaptured to reflect the current visual appearance, even if the underlying functionality has not changed. A human reviewer should compare the current DS appearance against the manual screenshots to determine which need updating.",
+      "screenshot_status": "needs_update",
+      "screenshot_description": "All DS screenshots in this section should be compared against the current platform to check for UI theme changes"
+    }
+  ]
+}

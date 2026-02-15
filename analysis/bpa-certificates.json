@@ -1,0 +1,73 @@
+{
+  "section_id": "bpa-certificates",
+  "title": "G. Certificates",
+  "page_range": "117-124",
+  "analyzed_at": "2026-02-15T14:45:00Z",
+  "change_summary": "6 items identified: The two methods for building certificates (certificate builder and through registration) remain unchanged. QR code component is unchanged. The Print Page A4 styling system is already documented in D.8 Custom classes. The MCP tools reveal a 'print document' system (print_document_list, print_document_create, print_document_component_add/update/remove/move, print_document_sort, print_document_templates, print_document_history, print_document_revert) which may represent a newer or additional certificate management approach. E-signature on certificates needs verification.",
+  "change_count": 6,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "1. Build certificates - Two methods",
+      "content": "Templates/certificates for electronic results can be built in two ways: 1) Through certificate builder on the left hand side bar of user level 2, 2) Through the registration.",
+      "original_content": "Templates/ certificates for electronic results can be built on the system in two ways: 1) through certificate builder that appears on the left hand side bar of user level 2, 2) through the registration.",
+      "explanation": "The two methods for building certificates remain the primary approaches documented in the manual.",
+      "screenshot_status": "same",
+      "screenshot_description": "Certificate builder side menu item and registration digital result button."
+    },
+    {
+      "type": "unchanged",
+      "title": "1a. Creating certificate through certificate builder",
+      "content": "Click on 'Certificate' on the side menu under user level 2. Click on 'Add' to add a new certificate template. A slider opens. Enter name, Create. Certificate appears in list. Click on certificate name to configure. Form builder page appears. Other certificates for the service appear on top menu. Click on 'cert.form' tab to build the certificate.",
+      "original_content": "Click on 'Certificate' on the side menu under user level 2. Click on 'Add' to add a new certificate template. A slider will open. Add name of the certificate, Create. The certificate will be added in the list of templates in the service. To configure, click on certificate name. The form builder page will appear. Other certificates appear on the top menu. Click on the 'cert.form' tab to build the certificate.",
+      "explanation": "The certificate builder workflow is accurately documented.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Certificate builder side menu, creation slider, and form builder page - verify UI has not changed."
+    },
+    {
+      "type": "unchanged",
+      "title": "1b. Creating certificate through registration",
+      "content": "Choose the registration. Click on 'Digital result' (green button). Activate the digital result button. Scroll down and click on 'create template'. Enter name. The certificate form can be built just like the application form. Values for text fields can be copied from application file or processing role through edit text field, data, copy value from. Value of expiration date can be fixed from the 'data' tab.",
+      "original_content": "Choose the registration. Click on 'Digital result' represented by the green button. A slider will open. Activate the digital result button. Scroll down and click on 'create template'. Add new template. Enter name. The certificate form can be built just like the application form. Value for text fields can be copied from the application file or processing role through edit text field, data, copy value from. Value of expiration date can be fixed from the 'data' tab.",
+      "explanation": "The registration-based certificate creation workflow is accurately documented.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Digital result button, create template slider, and certificate form builder."
+    },
+    {
+      "type": "unchanged",
+      "title": "2. Add QR Code",
+      "content": "The QR technology merges the physical world with the digital world. Signatures and other authentications are replaced by QR codes. They manifest the legitimacy of a document. To add QR code on a template, drag and drop the 'QR code' from the Custom Component tab on the template.",
+      "original_content": "The QR technology merges the physical world with the digital world. Signatures and other authentications are replaced by QR codes. They manifest the legitimacy of a document. They contain all the information of the document. To add QR code on a template, drag and drop the 'QR code' from the Customs Component tab on the template.",
+      "explanation": "QR code functionality is accurately documented. The drag-and-drop from Custom Component tab remains the same.",
+      "screenshot_status": "same",
+      "screenshot_description": "QR code component in custom components and on certificate template."
+    },
+    {
+      "type": "verify",
+      "title": "Print document system",
+      "content": "The MCP tools reveal a comprehensive 'print document' system with operations: print_document_list, print_document_get, print_document_component_get, print_document_templates, print_document_history, print_document_create, print_document_update, print_document_delete, print_document_component_add/update/remove/move, print_document_sort, print_document_revert. This may represent an evolution of the certificate builder or an additional system for managing printable documents.",
+      "original_content": null,
+      "explanation": "The MCP tools expose a 'print document' system that appears to be a comprehensive document management interface with component-level editing, history tracking, sorting, and template management. This is separate from the simple certificate builder documented in the manual. It may be a newer or more advanced approach to certificate/document management. A human reviewer should verify: (1) Is the print document system a replacement for or addition to the certificate builder? (2) Is it visible in the BPA side menu? (3) What is the relationship between 'print documents' and 'certificates'?",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Print document system interface if it exists as a separate BPA feature."
+    },
+    {
+      "type": "verify",
+      "title": "E-signature on certificates",
+      "content": "E-signature capability may have been added to certificates, allowing digital signatures to be applied to generated documents.",
+      "original_content": null,
+      "explanation": "E-signature is mentioned as a new platform feature. It could be relevant to certificates if digital signatures can be embedded in generated documents. This needs verification on a live instance. The QR code section currently mentions that 'signatures and other authentications are replaced by QR codes' -- if e-signature is now available, this statement may need updating.",
+      "screenshot_status": "unknown",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "Certificate builder UI changes",
+      "content": "The certificate builder interface may have received UI improvements since the manual was written.",
+      "original_content": null,
+      "explanation": "With ~9,600 commits since the manual, the certificate builder UI may have been enhanced. The print_document_history and print_document_revert MCP tools suggest version control features that may now exist for certificates. A reviewer should check the current certificate builder for any new features.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Current certificate builder to check for new features like version history, templates, or component management improvements."
+    }
+  ]
+}

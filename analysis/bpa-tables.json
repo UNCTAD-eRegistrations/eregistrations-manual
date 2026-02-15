@@ -1,0 +1,73 @@
+{
+  "section_id": "bpa-tables",
+  "title": "H. Tables",
+  "page_range": "125-132",
+  "analyzed_at": "2026-02-15T15:00:00Z",
+  "change_summary": "5 items identified: The three types of catalogs (service, cross-tables, instance) remain unchanged. Catalog creation, subcatalogs, GDB-based catalogs, import/export with templates, groups, and document rejection reasons are all accurately documented. The MCP tools reveal a 'classification' system (classification_list, classification_create, classification_update, classification_delete, classification_export_csv, classification_apply_country_codes) that may relate to or extend the catalog system. Import/export may have improvements.",
+  "change_count": 5,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Tables overview and three types",
+      "content": "Tables is a list of catalogs in the system. Three types: 1. Service catalogs (or simply tables) - group all elements created in services, 2. Cross-tables - see elements linked to each registration, 3. Instance catalogs - catalogs used by all services in one instance.",
+      "original_content": "Tables is a list of catalogs in the system. There are three types of tables/catalogs: 1. Service catalogs (or simply tables), 2. Cross-tables, 3. Instance catalogs. Service catalogs and cross-tables show data of elements related to only one service. Instance catalogs show catalogs of elements that can be applied to all services in one instance.",
+      "explanation": "The three-type catalog structure and its organization remains unchanged.",
+      "screenshot_status": "same",
+      "screenshot_description": "Tables overview page showing the three catalog types."
+    },
+    {
+      "type": "unchanged",
+      "title": "1. Tables/Service catalogs",
+      "content": "Service catalogs group by nature all elements created in services (data fields, fees, documents, institutions, units, determinants, questions, etc.). The number within brackets indicates the number of elements available.",
+      "original_content": "Tables/service catalogs: they group by nature all the elements created in the services (data fields, fees, documents, institutions, units, determinants, questions, etc.). The number within the brackets indicate the number of elements available to a service.",
+      "explanation": "Service catalogs functionality is accurately documented.",
+      "screenshot_status": "same",
+      "screenshot_description": "Service catalogs list with element counts."
+    },
+    {
+      "type": "unchanged",
+      "title": "2. Cross-tables",
+      "content": "Cross-tables show elements linked to each registration (data/registrations, documents/registrations, fees/registrations, roles/registration, etc.).",
+      "original_content": "Cross-tables: it is a way to see the elements linked to each registration (data/registrations, documents/registrations, fees/registrations, roles/registration, etc.).",
+      "explanation": "Cross-tables functionality is accurately documented.",
+      "screenshot_status": "same",
+      "screenshot_description": "Cross-tables view with registration links."
+    },
+    {
+      "type": "unchanged",
+      "title": "3. Instance catalogs",
+      "content": "Catalogs used by all services in one instance (list of countries, cities, company types, economic activities, etc.). Includes: a) How to create a catalog (BPA instance catalog with add/create, add values up to 500 characters, subcatalogs, GDB-based catalogs), b) How to import a catalog with subcatalogs and/or multiple translations (upload items modal with template download, XLS format with level, parent, and language columns), Groups (segregate catalog items into categories, usable as determinants), c) Document rejection reasons (for revision role).",
+      "original_content": "Instance catalogs: catalogs used by all services in one instance (countries, cities, company types, economic activities). a) Create catalog: click add, type name, create. Add values (up to 500 characters), subcatalogs, GDB-based catalogs. b) Import with subcatalogs and translations: upload items modal, download template, modify, import. File structure: value column, level column, parent column, translation columns. Groups: segregate items into categories, usable as determinants. c) Document rejection reasons: create/add reasons for operators' processing page.",
+      "explanation": "Instance catalogs, catalog creation, import/export with templates, groups, and document rejection reasons are all comprehensively documented in the original manual.",
+      "screenshot_status": "same",
+      "screenshot_description": "Catalog creation, import modal, groups interface, and document rejection reasons."
+    },
+    {
+      "type": "verify",
+      "title": "Classification system",
+      "content": "The MCP tools reveal a 'classification' system with operations: classification_list, classification_get, classification_create, classification_update, classification_delete, classification_export_csv, classification_apply_country_codes. This may relate to or extend the catalog/tables system.",
+      "original_content": null,
+      "explanation": "The MCP tools expose a classification system that appears to be a data source or catalog management feature. classification_export_csv suggests the ability to export classification data. classification_apply_country_codes suggests a country-code standardization feature. A human reviewer should determine: (1) Is the classification system visible in the Tables section or elsewhere in the BPA? (2) Is it an evolution of the catalog system or a separate concept? (3) Does it need its own documentation section?",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Classification system interface if visible in BPA."
+    },
+    {
+      "type": "verify",
+      "title": "Catalog import/export improvements",
+      "content": "The catalog import/export functionality may have received improvements since the manual was written, including CSV export capability and additional import formats.",
+      "original_content": null,
+      "explanation": "The classification_export_csv tool suggests that CSV export is available for catalog data. The import template system (XLS format with levels, parents, and translations) documented in the manual may have been enhanced. A reviewer should verify the current import/export options.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Current import/export modal showing all available formats and options."
+    },
+    {
+      "type": "verify",
+      "title": "GDB-based catalog enhancements",
+      "content": "GDB-based catalogs (catalogs populated from GDB data) may have received improvements in how they reference databases, handle versioning, or display values.",
+      "original_content": null,
+      "explanation": "The original manual documents GDB-based catalogs with system source selection, database selection, and column mapping. With platform evolution, this functionality may have been enhanced. A reviewer should check the current GDB-based catalog creation workflow.",
+      "screenshot_status": "verify",
+      "screenshot_description": "GDB-based catalog creation showing system source, database, and column selection."
+    }
+  ]
+}

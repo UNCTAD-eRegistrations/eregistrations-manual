@@ -1,0 +1,101 @@
+{
+  "section_id": "ds-operators-processing",
+  "title": "C. Operators processing pages",
+  "part": "II. DS",
+  "page_range": "p.145-151",
+  "analyzed_at": "2026-02-15T14:00:00Z",
+  "change_summary": "6 changes detected: Part B system actions integration in processing, e-signature verification capability for operators, effects system may alter processing behavior, file list page may have UI updates, processing page may show new tabs or features, clearing old files functionality needs verification.",
+  "change_count": 6,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Processing pages overview",
+      "content": "Processing pages are what operators of the institutions which offer registrations in a service see. As a super administrator, you can access the operators' processing pages from the display system (through Part B).",
+      "original_content": "Processing pages are what operators of the institutions which offer registrations in a service see. As a super administrator, you can access the operators' processing pages from the display system (through Part B).",
+      "explanation": "The fundamental description of processing pages and their accessibility remains accurate.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "1. The file list page - Status filters",
+      "content": "The list of files filtered by status (pending, approved, rejected, sent back for corrections) is displayed. The drop down list displays all services. Select the service, then select the role from the first dropdown. Calendar icon allows viewing applications submitted at a certain day/time range. The first screen displays all pending files by default.",
+      "original_content": "The list of files filtered by status (pending, approved, rejected, sent back for corrections) is displayed. The drop down list displays all services. Select the service, then select the role from the first dropdown. Calendar icon allows viewing applications submitted at a certain day/time range. The first screen displays all pending files by default.",
+      "explanation": "The file list page with status filters, service/role dropdowns, and calendar filter is a core processing feature. The underlying functionality is likely the same but the visual presentation may have changed with UI theme updates. The exact layout of filters and status buttons should be verified.",
+      "screenshot_status": "verify",
+      "screenshot_description": "File list page showing status filters, service dropdown, role dropdown, calendar filter -- verify current layout and appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "File list sub menu",
+      "content": "Sub menu: Status of file, Business name, Date of receipt, status of registrations, operator in charge. Status filter on bottom corner with different colors. Other filters: all files, validated, sent back, rejected.",
+      "original_content": "Sub menu: Status of file, Business name, Date of receipt, status of registrations, operator in charge. Status filter on bottom corner with different colors. Other filters: all files, validated, sent back, rejected.",
+      "explanation": "The file list sub menu columns and filter options are core processing functionality.",
+      "screenshot_status": "verify",
+      "screenshot_description": "File list sub menu columns and status filter colors -- verify current appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "2. The processing page - Application details and history",
+      "content": "This is the 2nd screen of the operator's role. The top part displays application details (zip folder of documents) and application history.",
+      "original_content": "This is the 2nd screen of the operator's role. The top part displays application details (zip folder of documents) and application history.",
+      "explanation": "The processing page layout with application details at the top and history section remains a core feature.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Processing page top section with application details and history -- verify current layout"
+    },
+    {
+      "type": "unchanged",
+      "title": "a) Revision role",
+      "content": "Revision role: Requires operator to verify documents and data. If operator chooses 'NO' under documents revision, field appears for rejection reason. Documents revision tab shows uploaded documents on left, data and requirements on right. Data revision tab displays all components.",
+      "original_content": "Revision role: Requires operator to verify documents and data. If operator chooses 'NO' under documents revision, field appears for rejection reason. Documents revision tab shows uploaded documents on left, data and requirements on right. Data revision tab displays all components.",
+      "explanation": "The revision role with its documents revision and data revision tabs remains the same in concept. The two-tab structure (documents/data) is core processing functionality.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Revision role with documents revision and data revision tabs -- verify current appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "b) Processing role",
+      "content": "Processing role: Form/action developed by analyst. Operator can generate action (display/upload certificate). Validate, reject, or send back the application. Documents tab shows uploaded documents and certificates. Data tab shows all BPA application file components.",
+      "original_content": "Processing role: Form/action developed by analyst. Operator can generate action (display/upload certificate). Validate, reject, or send back the application. Documents tab shows uploaded documents and certificates. Data tab shows all BPA application file components.",
+      "explanation": "The processing role with its form, action buttons (validate/reject/send back), and documents/data tabs remains core functionality.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Processing role showing form, action buttons, documents tab, data tab -- verify current appearance"
+    },
+    {
+      "type": "verify",
+      "title": "Part B system actions",
+      "content": "Part B may now include system action buttons that can be enabled via BPA service settings. These buttons allow operators to perform additional system-level actions during processing, such as triggering BOTs, generating documents, or executing automated workflows directly from the processing page.",
+      "original_content": null,
+      "explanation": "The BPA service settings mention 'enabling BPA system buttons in Part B' under the Buttons options in Pages/buttons/fields settings. This suggests that Part B (the operator's processing interface) can now display system action buttons that were previously only available in the BPA. The exact nature, appearance, and functionality of these Part B system actions needs verification on the current platform. This could be a significant addition to the operator's processing workflow.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Part B system actions -- capture any system action buttons visible in the processing page if they exist"
+    },
+    {
+      "type": "verify",
+      "title": "E-signature verification in processing",
+      "content": "Operators may now be able to verify e-signatures on submitted applications during the processing stage. If applicants use e-signature on the Send page, operators should be able to see and verify the signature status.",
+      "original_content": null,
+      "explanation": "E-signature is a known new platform feature. If applicants can e-sign their applications on the Send page, it follows that operators would need to see and verify this signature during processing. However, the exact implementation -- whether there is a dedicated signature verification panel, a status indicator, or integration with the documents revision tab -- is not confirmed and needs verification on the current platform.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "E-signature verification in operator processing -- verify if and how signature verification appears in the processing page"
+    },
+    {
+      "type": "verify",
+      "title": "Effects system in processing",
+      "content": "The effects system may influence operator processing by automatically triggering actions based on operator decisions. For example, when an operator approves or rejects a file, effects may automatically trigger BOTs, send notifications, or update database records.",
+      "original_content": null,
+      "explanation": "The effects system is mentioned as a new platform feature (in the MANUAL-UPDATE-PLAN.md). Effects allow creating automated reactions to events in the system. In the context of operator processing, effects could be triggered by status changes (approval, rejection, send-back). However, whether effects are visible to operators during processing or are purely backend automation is unknown. The exact relationship between effects and the processing page UI needs verification.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Verify if any effects-related UI elements appear on the operator processing page"
+    },
+    {
+      "type": "unchanged",
+      "title": "3. Clearing old files from the service",
+      "content": "The section on clearing old files from the service describes the process for removing outdated application files.",
+      "original_content": "3. Clearing old file from the service",
+      "explanation": "The ability to clear old files from a service is a maintenance feature that is likely still present.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Clearing old files -- verify the feature is still present and accessible in the same location"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "section_id": "collapsible-fields",
+  "title": "Collapsible Fields",
+  "analyzed_at": "2026-02-15T17:00:00Z",
+  "change_summary": "Enhanced documentation for collapsible functionality. The original manual documents block collapsible toggle in section D.3 (Applicant form): 'Blocks are collapsible. If you do not want your blocks to collapse, disable the collapsible toggle under the general tab.' This new section documents enhanced collapsible behaviors that may extend beyond basic block collapsing to include individual fields, groups of fields, field sets, and more granular collapsible controls. This may include new collapsible modes, default collapsed/expanded states, and collapsible behavior triggered by determinants or effects. 5 blocks identified, mostly needing verification.",
+  "change_count": 5,
+  "blocks": [
+    {
+      "type": "added",
+      "title": "Overview of Collapsible Fields",
+      "content": "The collapsible functionality in eRegistrations allows form sections to be collapsed and expanded by the user, reducing visual clutter and improving form navigation. The original manual documents block-level collapsing, where entire blocks can be toggled between collapsed and expanded states.\n\nEnhanced collapsible functionality may extend this capability to:\n- Individual fields or groups of fields within a block.\n- Field sets with collapsible headers.\n- Nested collapsible sections (collapsible elements inside other collapsible elements).\n- Collapsible behavior controlled by determinants or effects (auto-collapse/expand based on conditions).\n\nThe basic block collapsible toggle (documented in section D.3) remains the foundation of this feature.",
+      "original_content": null,
+      "explanation": "The original manual explicitly documents block collapsible: 'Blocks are collapsible. If you do not want your blocks to collapse, disable the collapsible toggle under the general tab.' This new section expands on that foundation with enhanced collapsible capabilities that may have been added to the platform. The exact enhancements need verification.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Screenshots showing the various collapsible behaviors: block collapsible, field-level collapsible (if available), and different collapsed/expanded states."
+    },
+    {
+      "type": "verify",
+      "title": "Block Collapsible Toggle (Enhanced)",
+      "content": "The block collapsible toggle, documented in the original manual, may have been enhanced with additional options:\n\n- Default state: Configuration for whether the block starts collapsed or expanded when the form loads.\n- Collapsible icon position: Where the collapse/expand control appears (header left, header right, etc.).\n- Collapse animation: Whether the collapse/expand transition is animated.\n- Remember state: Whether the collapsed/expanded state is remembered when the user navigates away and returns.\n\nThe basic toggle (enable/disable collapsible) remains available under the General tab of the block configuration.",
+      "original_content": null,
+      "explanation": "The original manual documents the basic collapsible toggle for blocks. Enhanced options like default state, icon position, and state persistence are common in form builders and may have been added. A reviewer should check the current block configuration options for any enhancements.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Screenshot of the block configuration showing the collapsible toggle and any additional collapsible options that may have been added."
+    },
+    {
+      "type": "verify",
+      "title": "Field-level Collapsible Behavior",
+      "content": "Beyond block-level collapsing, the platform may support collapsible behavior for individual fields or field groups:\n\n- Field sets with collapsible headers: The Field Set container (documented in section D.3) may now support a collapsible toggle similar to blocks.\n- Collapsible panels within blocks: Sub-sections within a block that can be independently collapsed.\n- Collapsible edit grids: Edit grid rows or sections that can be collapsed to show only summary data.\n\nThe exact scope of field-level collapsible behavior needs verification.",
+      "original_content": null,
+      "explanation": "The original manual documents Field Set as a container that 'groups the fields of the same category of data together' but does not mention collapsible behavior for field sets. Edit Grids and Data Grids are documented as repeating containers. Whether these now support collapsible behavior is unknown. A reviewer should check each container type for collapsible options.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Screenshots of field-level collapsible behavior if available: collapsible field sets, collapsible panels, collapsible edit grid sections."
+    },
+    {
+      "type": "verify",
+      "title": "Conditional Collapsible Behavior",
+      "content": "The collapsible state of blocks or fields may be controllable through determinants or the Effects system:\n\n- A determinant condition could automatically collapse or expand a section based on the applicant's input.\n- The Effects system (if used) could include 'collapse' and 'expand' as effect types applied to blocks.\n- This would allow dynamic form behavior where sections collapse or expand as the user fills in the form.\n\nFor example, a block of additional fields could start collapsed and automatically expand when the user selects 'Yes' to a relevant question.",
+      "original_content": null,
+      "explanation": "The Effects system supports activate/deactivate/show/hide/enable/disable effect types. Collapse/expand may be an additional behavior type or may be achieved through the existing show/hide mechanism. The integration between collapsible behavior and determinants/effects needs verification.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Screenshot showing conditional collapsible behavior configuration, if it exists -- linking a determinant to a collapse/expand action."
+    },
+    {
+      "type": "verify",
+      "title": "Collapsible Behavior in Custom Classes",
+      "content": "Collapsible behavior may be achievable or modified through custom classes. The custom classes section (D.8) documents numerous appearance and spacing classes, and a 'collapsible' custom class or variant may exist.\n\nPossible custom classes related to collapsible behavior:\n- Start collapsed: A class that makes a component start in the collapsed state.\n- No collapse: A class that prevents collapsing (alternative to the toggle).\n- Collapse with summary: A class that shows a summary of the contained data when collapsed.\n\nThe existence and names of collapsible-related custom classes need verification.",
+      "original_content": null,
+      "explanation": "The original manual's custom classes section does not mention collapsible-related classes, but the platform may have added them. Custom classes are the standard mechanism for adding visual behaviors in eRegistrations. A reviewer should check the custom classes dropdown for any collapsible-related options.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Screenshot of any collapsible-related custom classes in the custom class dropdown or documentation."
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "section_id": "gdb-create-groups-records",
+  "title": "B.1-3. Create database, Groups, Add record",
+  "part": "III. GDB",
+  "page_range": "p.155-165",
+  "analyzed_at": "2026-02-15T14:00:00Z",
+  "change_summary": "3 changes detected: Core GDB creation and record management functionality is stable. Field type dropdown may include new types. Database diagram visualization may have improvements. Link between databases feature is unchanged.",
+  "change_count": 3,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "B.1. Create a database",
+      "content": "To create a database, click on the hamburger button, then click 'create new database'. Enter institution name under Title, enter short name (without spaces). Version starts at 1.0.",
+      "original_content": "To create a database, click on the hamburger button, then click 'create new database'. Enter institution name under Title, enter short name (without spaces). Version starts at 1.0.",
+      "explanation": "The database creation workflow (hamburger menu, create new database, title, short name, version) has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "DB structure creation",
+      "content": "Create the DB structure adding fields and blocks by clicking on the '+' symbol. 'ID' appears by default as the first field. Click on the dropdown to select field type (text, number, block, date, catalog, etc.). Note: field type should be same as in BPA.",
+      "original_content": "Create the DB structure adding fields and blocks by clicking on the '+' symbol. 'ID' appears by default as the first field. Click on the dropdown to select field type (text, number, block, date, catalog, etc.). Note: field type should be same as in BPA.",
+      "explanation": "The core DB structure creation process (adding fields via '+', default ID field, field type dropdown) remains the same.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "Field type dropdown - possible new types",
+      "content": "The field type dropdown includes standard types: text, number, block, date, catalog, etc. Additional field types may have been added to the platform since July 2025.",
+      "original_content": "Click on the dropdown to select field type (text, number, block, date, catalog, etc.).",
+      "explanation": "The field type dropdown is a core GDB feature. While the standard types (text, number, block, date, catalog) are certainly still present, the platform may have introduced new field types. A review of the current field type dropdown is recommended to ensure all available types are documented.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Field type dropdown -- verify if new field types have been added beyond the documented ones"
+    },
+    {
+      "type": "unchanged",
+      "title": "Simple view and reordering",
+      "content": "Use blocks to group records/fields together. Click 'simple view' to view basic components. Use the symbol in front to change order by dragging. Publish to save and see changes in public part.",
+      "original_content": "Use blocks to group records/fields together. Click 'simple view' to view basic components. Use the symbol in front to change order by dragging. Publish to save and see changes in public part.",
+      "explanation": "The simple view toggle, drag-to-reorder, and publish workflow are core GDB features.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "B.2. Create database groups",
+      "content": "To create a database group, click hamburger button, then 'create new group'. Enter name, optionally upload a logo. Databases can be created within groups or dragged into groups.",
+      "original_content": "To create a database group, click hamburger button, then 'create new group'. Enter name, optionally upload a logo. Databases can be created within groups or dragged into groups.",
+      "explanation": "Database group creation workflow has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Edit Group",
+      "content": "Groups can be edited after creation.",
+      "original_content": "a) Edit Group",
+      "explanation": "Group editing remains available.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "Database diagram",
+      "content": "Visualization of how different databases within the same group relate to each other. Click on group name then diagram icon. All databases shown as blocks with relationship lines. Zoom with mouse scroll, rearrange with drag and drop. Navigation icons for layout.",
+      "original_content": "Visualization of how different databases within the same group relate to each other. Click on group name then diagram icon. All databases shown as blocks with relationship lines. Zoom with mouse scroll, rearrange with drag and drop. Navigation icons for layout.",
+      "explanation": "The database diagram visualization is a GDB feature that may have received improvements over time. The core functionality (showing database relationships, zoom, drag and drop) is likely the same, but visual improvements or additional navigation/layout features may have been added. The exact current appearance should be verified.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Database diagram -- verify current visual appearance and any new navigation or layout features"
+    },
+    {
+      "type": "unchanged",
+      "title": "Creating links between databases",
+      "content": "Click DB structure, click Settings for a field, switch toggle 'Link to other DBs' on, select database and field to link. 'L' icon indicates linked field.",
+      "original_content": "Click DB structure, click Settings for a field, switch toggle 'Link to other DBs' on, select database and field to link. 'L' icon indicates linked field.",
+      "explanation": "The database linking feature (Link to other DBs toggle, L icon indicator) is core GDB functionality that has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "B.3. Add record",
+      "content": "To add a record, click 'Add record' button on sub menu. A slider opens. Enter all data, Save. The slider can be expanded or minimized by dragging the border. Records can be edited or deleted.",
+      "original_content": "To add a record, click 'Add record' button on sub menu. A slider opens. Enter all data, Save. The slider can be expanded or minimized by dragging the border. Records can be edited or deleted.",
+      "explanation": "The record creation workflow (add button, slider, expand/minimize, edit/delete) has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Field history",
+      "content": "Click on a record to see details. History icon appears next to every field. Shows date of change, user who made change, type of action, initial value, new value. Block container history shows times table for tracing value changes by date.",
+      "original_content": "Click on a record to see details. History icon appears next to every field. Shows date of change, user who made change, type of action, initial value, new value. Block container history shows times table for tracing value changes by date.",
+      "explanation": "The field history feature with its audit trail (date, user, action, values) is a mature GDB feature.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    }
+  ]
+}

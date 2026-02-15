@@ -1,0 +1,92 @@
+{
+  "section_id": "statistics",
+  "title": "Statistics - A. Overview + B. Types of statistics",
+  "part": "IV. Statistics",
+  "page_range": "p.189-193",
+  "analyzed_at": "2026-02-15T14:00:00Z",
+  "change_summary": "3 changes detected: Statistics module core functionality is stable. New report types or dashboard improvements may exist. Filter options may have expanded. Export capabilities may have improved.",
+  "change_count": 3,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "A. Overview",
+      "content": "Statistics module is a tool for registered users to see statistical information about files and processes in eRegistrations system. It can also present KPI (Key Performance Indicators) for managers. Panel at top enables switching between types of statistics, changing language or logging out. Every type of statistics has its own set of filters and tools.",
+      "original_content": "Statistics module is a tool for registered users to see statistical information about files and processes in eRegistrations system. It can also present KPI (Key Performance Indicators) for managers. Panel at top enables switching between types of statistics, changing language or logging out. Every type of statistics has its own set of filters and tools.",
+      "explanation": "The statistics module overview, its purpose, and the top panel navigation remain accurate.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Statistics entry view and top panel -- verify current appearance and navigation options"
+    },
+    {
+      "type": "unchanged",
+      "title": "1. Roles statistics",
+      "content": "Purpose: provide information about the number of files that obtained a specific status in a given service role for a defined period of time. Filters: Filter empty rows, Show inactive services, Date field (calendar for period selection), Service filter, Registration filter, Status filter. Data can be broken down into days/weeks/months/years. Export to excel or PDF.",
+      "original_content": "Purpose: provide information about the number of files that obtained a specific status in a given service role for a defined period of time. Filters: Filter empty rows, Show inactive services, Date field (calendar for period selection), Service filter, Registration filter, Status filter. Data can be broken down into days/weeks/months/years. Export to excel or PDF.",
+      "explanation": "The Roles statistics type with its comprehensive filter set and export options is core statistics functionality.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Roles statistics view -- verify current appearance and filter options"
+    },
+    {
+      "type": "unchanged",
+      "title": "2. Certificates issued",
+      "content": "Purpose: provide information about the number of certificates generated for a given service within a period. Filters: Certificates filter (lists certificate across services).",
+      "original_content": "Purpose: provide information about the number of certificates generated for a given service within a period. Filters: Certificates filter (lists certificate across services).",
+      "explanation": "The Certificates issued statistics type with its certificate filter remains the same.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Certificates issued view -- verify current appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "3. Operators",
+      "content": "Purpose: provide information on specific operator activity - number of files processed through a role, broken down into statuses (Processed, Approved, Sent back, Rejected). Filters: Operator filter (type-ahead input), Roles filter.",
+      "original_content": "Purpose: provide information on specific operator activity - number of files processed through a role, broken down into statuses (Processed, Approved, Sent back, Rejected). Filters: Operator filter (type-ahead input), Roles filter.",
+      "explanation": "The Operators statistics type with its status breakdown and filters remains the same.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Operators statistics view -- verify current appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "4. Times per Role",
+      "content": "Purpose: information about how much time the file spent in a given role. Shows average, minimum and maximum time for processed files.",
+      "original_content": "Purpose: information about how much time the file spent in a given role. Shows average, minimum and maximum time for processed files.",
+      "explanation": "The Times per Role statistics type with its time metrics (avg/min/max) remains the same.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Times per Role view -- verify current appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "5. Times per operator",
+      "content": "Purpose: how much time every operator spent processing files in a given role. Shows average, minimum and maximum time.",
+      "original_content": "Purpose: how much time every operator spent processing files in a given role. Shows average, minimum and maximum time.",
+      "explanation": "The Times per operator statistics type remains the same.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Times per operator view -- verify current appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "6. Rejection reasons",
+      "content": "Provides rejection reasons for files processed and rejected or sent back for correction in Part B revision role. Filter by service name and Status (2-Sent back, 3-Rejected). Dashboard shows: rejection reason, status code, operator, role name, date of rejection.",
+      "original_content": "Provides rejection reasons for files processed and rejected or sent back for correction in Part B revision role. Filter by service name and Status (2-Sent back, 3-Rejected). Dashboard shows: rejection reason, status code, operator, role name, date of rejection.",
+      "explanation": "The Rejection reasons statistics type with its filters and dashboard columns remains the same.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Rejection reasons dashboard -- verify current appearance"
+    },
+    {
+      "type": "verify",
+      "title": "New statistics types or reports",
+      "content": "The statistics module may have added new types of statistics or reporting capabilities since July 2025. For example, new report types could cover application completion rates, average processing times across services, or user registration trends.",
+      "original_content": null,
+      "explanation": "The statistics module currently documents 6 types of statistics (Roles, Certificates issued, Operators, Times per Role, Times per operator, Rejection reasons). Additional report types may have been added to the platform. The statistics navigation panel should be verified to confirm the complete list of available statistics types.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Statistics navigation panel -- verify if new statistics types have been added beyond the 6 documented"
+    },
+    {
+      "type": "verify",
+      "title": "Enhanced filter and export options",
+      "content": "Individual statistics types may have received enhanced filter options or additional export formats since July 2025.",
+      "original_content": null,
+      "explanation": "While the documented filters and export options (Excel, PDF) are likely still present, new filter options or export formats may have been added. For example, there could be new date range presets, additional grouping options, or new export formats (CSV, API access). Each statistics type's filter panel should be compared against the manual to identify any additions.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Verify filter panels for each statistics type for any new filter options or export formats"
+    }
+  ]
+}

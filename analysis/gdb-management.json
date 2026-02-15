@@ -1,0 +1,119 @@
+{
+  "section_id": "gdb-management",
+  "title": "B.4. Database management",
+  "part": "III. GDB",
+  "page_range": "p.164-174",
+  "analyzed_at": "2026-02-15T14:00:00Z",
+  "change_summary": "5 changes detected: API types list may have expanded beyond the 9 documented types. Views feature may have new options. Import/export formats may have changed. Filters and columns functionality is stable. DB Structure management is stable.",
+  "change_count": 5,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Database management menu",
+      "content": "The 'tools on' button displays the database management menu: Version, creation date, administrator login.",
+      "original_content": "The 'tools on' button displays the database management menu: Version, creation date, administrator login.",
+      "explanation": "The tools on button and management menu header information remain the same.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Filters",
+      "content": "Filters allow selective data viewing. Complex filters available for nested conditions.",
+      "original_content": "Filters allow selective data viewing. Complex filters available for nested conditions.",
+      "explanation": "The filter system (simple and complex/nested) is core GDB functionality that has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Columns",
+      "content": "Columns tab displays selected data.",
+      "original_content": "Columns tab displays selected data.",
+      "explanation": "The columns tab for selecting displayed data remains the same.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Reports",
+      "content": "Reports tab for creating/viewing reports.",
+      "original_content": "Reports tab for creating/viewing reports.",
+      "explanation": "The reports feature remains available.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "Import data",
+      "content": "Import data from external files/databases.",
+      "original_content": "Import data from external files/databases.",
+      "explanation": "The import functionality is core GDB feature. However, the supported import formats and options may have expanded. The current import dialog should be verified to ensure all available formats and options are documented.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Import data dialog -- verify current supported formats and import options"
+    },
+    {
+      "type": "verify",
+      "title": "Export data",
+      "content": "Export data in JSON, XLS, CSV formats.",
+      "original_content": "Export data in JSON, XLS, CSV formats.",
+      "explanation": "The export formats documented (JSON, XLS, CSV) are the standard set. Additional export formats may have been added. The current export dialog should be verified to confirm available formats.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Export data dialog -- verify current supported formats"
+    },
+    {
+      "type": "unchanged",
+      "title": "Log",
+      "content": "Log displays change history.",
+      "original_content": "Log displays change history.",
+      "explanation": "The log feature for viewing change history is core GDB functionality.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "unchanged",
+      "title": "Delete data",
+      "content": "Delete data button (irreversible).",
+      "original_content": "Delete data button (irreversible).",
+      "explanation": "The delete data functionality remains the same with its irreversible nature.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    },
+    {
+      "type": "verify",
+      "title": "a) Views",
+      "content": "Subset of GDB displaying selected data defined by filters. Create view by clicking Views tab, '+' button, enter name, add filters, drag fields to 'view fields'. Publish for visibility. Complex views involving multiple databases possible through linked databases.",
+      "original_content": "Subset of GDB displaying selected data defined by filters. Create view by clicking Views tab, '+' button, enter name, add filters, drag fields to 'view fields'. Publish for visibility. Complex views involving multiple databases possible through linked databases.",
+      "explanation": "Views are a mature GDB feature. The core workflow (create, filter, select fields, publish) is likely the same. However, views may have gained new features such as additional filter options, improved multi-database views, new embed options, or enhanced URL/sharing capabilities. The current views interface should be verified for any additions.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Views creation and configuration -- verify if new features or options have been added"
+    },
+    {
+      "type": "verify",
+      "title": "b) APIs",
+      "content": "Tool for web services enabling data exchange between DS and GDB. API types: Create, Create-entries, Read, List, Update, Listen, Update-entries, Exists, Delete. Dashboard shows creation date, name, URL, usage counts. APIs versioned per database version. Visibility toggle controls BPA availability.",
+      "original_content": "Tool for web services enabling data exchange between DS and GDB. API types: Create, Create-entries, Read, List, Update, Listen, Update-entries, Exists, Delete. Dashboard shows creation date, name, URL, usage counts. APIs versioned per database version. Visibility toggle controls BPA availability.",
+      "explanation": "The manual documents 9 API types: Create, Create-entries, Read, List, Update, Listen, Update-entries, Exists, Delete. This is a comprehensive list but additional API types may have been added to the platform since July 2025. The API dashboard with its statistics, versioning, and visibility toggle are mature features. A review of the current API type dropdown is recommended to confirm whether new types exist.",
+      "screenshot_status": "verify",
+      "screenshot_description": "API creation -- verify the current list of available API types and whether new ones have been added beyond the 9 documented"
+    },
+    {
+      "type": "unchanged",
+      "title": "API Dashboard",
+      "content": "Dashboard shows creation date, name, URL, usage counts. Statistics visualization available. Copy URL button and visibility toggle for BPA availability. Delete API button available.",
+      "original_content": "Dashboard shows creation date, name, URL, usage counts. APIs versioned per database version. Visibility toggle controls BPA availability.",
+      "explanation": "The API dashboard with its information display, statistics, and controls is mature GDB functionality.",
+      "screenshot_status": "verify",
+      "screenshot_description": "API dashboard -- verify current appearance and any new dashboard features"
+    },
+    {
+      "type": "unchanged",
+      "title": "c) DB Structure",
+      "content": "Modify database structure. Duplicate database. Add/delete/reorder fields. Version updates on save. Publish and remap in BPA required.",
+      "original_content": "Modify database structure. Duplicate database. Add/delete/reorder fields. Version updates on save. Publish and remap in BPA required.",
+      "explanation": "The DB structure management workflow (modify, duplicate, version, publish, remap) is core GDB functionality.",
+      "screenshot_status": "same",
+      "screenshot_description": null
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "section_id": "bpa-documents",
+  "title": "D.4. Documents",
+  "page_range": "p.43",
+  "analyzed_at": "2026-02-15T00:00:00Z",
+  "change_summary": "The Documents section remains largely unchanged. The core workflow of enabling the documents tab and linking file upload components to required documents via the Data tab Requirement dropdown is still accurate. No significant new functionality has been identified for this section.",
+  "change_count": 0,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Documents tab toggle",
+      "content": "The Documents tab can be enabled or disabled for a service. When enabled, it provides a dedicated tab where applicants can see required documents and upload them.",
+      "original_content": "The Documents tab toggle allows enabling or disabling the documents section of a service.",
+      "explanation": "The documents tab toggle functionality has not changed. It still operates the same way to show or hide the documents section.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of the Documents tab toggle in the service configuration."
+    },
+    {
+      "type": "unchanged",
+      "title": "Linking file upload components to required documents",
+      "content": "File upload components are linked to required documents through the Data tab. In the Data tab of a file upload component, the Requirement dropdown allows selecting which required document the upload is associated with.",
+      "original_content": "File upload components are linked to required documents via the Data tab Requirement dropdown.",
+      "explanation": "The workflow for linking upload components to document requirements using the Data tab Requirement dropdown remains the same.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of the Data tab showing the Requirement dropdown for a file upload component."
+    }
+  ]
+}

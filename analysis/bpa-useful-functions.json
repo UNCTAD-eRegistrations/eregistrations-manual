@@ -1,0 +1,100 @@
+{
+  "section_id": "bpa-useful-functions",
+  "title": "D.7. Focus on some useful functions",
+  "page_range": "p.47-63",
+  "analyzed_at": "2026-02-15T14:30:00Z",
+  "change_summary": "5 changes detected: Copy value (CVF) functionality is stable and unchanged. Field tags are stable. Formula functions may have expanded beyond the documented list. Input mask and blacklist are stable validation features. Extract data from documents may have AI-based improvements. The component actions system (visible in the API) suggests button actions may have new BOT-related options beyond what was documented. The effects system may offer new ways to control field behavior that could be documented as useful functions.",
+  "change_count": 5,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "a. Copy value of a field to another (prefilling a field)",
+      "content": "This tool is useful because the applicant does not have to provide the same details repeatedly. To copy value from another field: Edit text field/number field, Data, under 'copy value from', choose the element from the drop down, Save. The order of elements is Name of the page, Block and Field. If the field configuration has the copy value setting, it will be indicated by the letter 'C' in blue color. CVF works only between fields of the same type.",
+      "original_content": "This tool is useful because the applicant does not have to provide the same details repeatedly. To copy value from another field: Edit text field/number field, Data, under 'copy value from', choose the element from the drop down, Save. The order of elements is Name of the page, Block and Field. If the field configuration has the copy value setting, it will be indicated by the letter 'C' in blue color. CVF works only between fields of the same type.",
+      "explanation": "Copy Value From (CVF) is a core data-sharing mechanism in eRegistrations. The workflow (edit field, Data tab, select source) and the blue C indicator are stable platform conventions. The same-type restriction is a fundamental constraint.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Copy value from dropdown and C indicator -- verify visual appearance is unchanged."
+    },
+    {
+      "type": "unchanged",
+      "title": "b. Copy edit grid values to another edit grid using copy value from",
+      "content": "To set it up we need two edit grids - source and destination. In the destination edit grid, specify from which edit grid the data will be copied. You can also use a determinant in the destination edit grid copy value from tab.",
+      "original_content": "To set it up we need two edit grids - source and destination. In the destination edit grid, specify from which edit grid the data will be copied. You can also use a determinant in the destination edit grid copy value from tab.",
+      "explanation": "Edit grid CVF is a specialized case of the copy value mechanism. The source/destination grid pattern and determinant integration are stable features.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Edit grid copy value from configuration -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "c. Field tags",
+      "content": "Field tags are like bookmarks. We can put the same tag to various fields. It is used for concatenation of different fields. Listing-value: enables the name of the company under 'My Applications' on the user dashboard visible.",
+      "original_content": "Field tags are like bookmarks. We can put the same tag to various fields. It is used for concatenation of different fields. Listing-value: enables the name of the company under 'My Applications' on the user dashboard visible.",
+      "explanation": "Field tags remain a core mechanism for field identification and cross-referencing. The listing-value tag for dashboard display is a well-established feature. Additional field tags may exist (e.g., agencyCode, accountHeadId mentioned in the Payment section), but the concept and workflow are unchanged.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Field tags dropdown -- verify visual appearance and available tags."
+    },
+    {
+      "type": "verify",
+      "title": "c. Field tags - potential new tags",
+      "content": "Additional field tags may have been added since the manual was written. The Payment section references agencyCode and accountHeadId tags. Other system-level tags may exist for integration with new features such as e-signature, classification lookups, or inter-service data sharing.",
+      "original_content": null,
+      "explanation": "The field tags list may have grown as new features were added to the platform. The exact current list of available field tags needs to be verified on a live instance by examining the field tags dropdown.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Complete field tags dropdown showing all currently available tags."
+    },
+    {
+      "type": "verify",
+      "title": "d. Use formula with examples - function list",
+      "content": "Types of functions available in the formula builder: maxValue, round, Ceil, Floor, Roundup hundred/thousands/hundred thousands, Subtract days/months/years, Add days/months/years, Override year, Override date, Days difference, Weeks difference, Months difference, Years difference, Business days, Working hours, Working time, Penalty months, formatDateDD-MM-YYYY, Grid row counter, Extract Value From Grid.\n\nAdditional formula functions may have been added since the manual was written. The formula builder is a frequently enhanced component and may include new mathematical, date, or string manipulation functions.",
+      "original_content": "Types of functions available in the formula builder: maxValue, round, Ceil, Floor, Roundup hundred/thousands/hundred thousands, Subtract days/months/years, Add days/months/years, Override year, Override date, Days difference, Weeks difference, Months difference, Years difference, Business days, Working hours, Working time, Penalty months, formatDateDD-MM-YYYY, Grid row counter, Extract Value From Grid.",
+      "explanation": "The formula builder's function list was comprehensive at the time of writing. However, given the platform's evolution (~9,600 commits), new formula functions may have been added. The exact current list needs to be verified by examining the formula builder's function dropdown on a live instance. Common additions might include string functions, conditional logic functions, or new date/time functions.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Formula builder function dropdown -- capture complete current list and compare with documented list."
+    },
+    {
+      "type": "unchanged",
+      "title": "d. Formula examples - adding years and date difference",
+      "content": "Examples: 1) Adding years to a date using addYears function. 2) Subtracting two dates using daysDifference function.",
+      "original_content": "Examples: 1) Adding years to a date using addYears function. 2) Subtracting two dates using daysDifference function.",
+      "explanation": "The specific examples (addYears, daysDifference) demonstrate stable formula functions that remain valid.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Formula examples -- verify visual appearance of formula builder."
+    },
+    {
+      "type": "unchanged",
+      "title": "e. Input mask",
+      "content": "Used in text field component to auto validate characters. Input mask is under 'Validation' tab under 'Basic validation'. Use '9' for digits, 'A'/'a' for letters, '*' for alphanumeric. Multiple masks can be enabled.",
+      "original_content": "Used in text field component to auto validate characters. Input mask is under 'Validation' tab under 'Basic validation'. Use '9' for digits, 'A'/'a' for letters, '*' for alphanumeric. Multiple masks can be enabled.",
+      "explanation": "Input masks are a standard form.io validation feature. The mask syntax (9/A/a/*) and the location under Validation tab are stable.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Input mask configuration -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "f. Blacklist",
+      "content": "Used for restricting certain words in a text field. Click on Validation tab, click on Blacklist option. Options: Case sensitive, Exact match, Word match.",
+      "original_content": "Used for restricting certain words in a text field. Click on Validation tab, click on Blacklist option. Options: Case sensitive, Exact match, Word match.",
+      "explanation": "The blacklist validation feature with its three matching options (case sensitive, exact match, word match) is a stable validation feature.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Blacklist configuration -- verify visual appearance and options."
+    },
+    {
+      "type": "verify",
+      "title": "g. Extract data from documents",
+      "content": "Used to extract data from documents and putting them automatically onto the form. Under a registration, select the document, open edit modal, create model document, upload an example document. The data extractor lists data available for extraction.\n\nThis feature may have been enhanced with AI-based extraction capabilities, improved accuracy, or support for additional document types. OCR and machine learning improvements in the platform may have expanded what can be automatically extracted.",
+      "original_content": "Used to extract data from documents and putting them automatically onto the form. Under a registration, select the document, open edit modal, create model document, upload an example document. The data extractor lists data available for extraction.",
+      "explanation": "The document data extraction feature is described at a high level in the manual. Given the platform's evolution and the industry trend toward AI-based document processing, this feature may have been significantly enhanced. However, without live system verification, the exact current state cannot be confirmed. The basic workflow (select document, create model, upload example) likely remains the foundation, but the extraction capabilities may be more advanced.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Document data extraction interface -- verify current workflow and any new AI-based features."
+    },
+    {
+      "type": "verify",
+      "title": "Potential new useful functions",
+      "content": "The platform may have added new useful functions that are not documented in this section. Potential additions include:\n- Component actions system: The API shows component actions (componentaction_get, componentaction_save, componentaction_get_system_actions) suggesting a more structured approach to button and field actions.\n- System actions: The componentaction_get_system_actions tool suggests predefined system-level actions available for components.\n- Effects system: The effects/behaviours system may offer new ways to dynamically control field properties.\n- Print document integration: Direct integration with the print document builder may be a new useful function.",
+      "original_content": null,
+      "explanation": "The API reveals several systems (component actions, system actions, effects) that may represent new useful functions worth documenting. However, their exact role and whether they belong in this section (vs. other sections) needs verification. Some may be documented elsewhere in the manual or may be platform-internal features not exposed to end users.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Any new useful functions not covered in the original section."
+    }
+  ]
+}

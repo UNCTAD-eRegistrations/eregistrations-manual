@@ -1,0 +1,136 @@
+{
+  "section_id": "bpa-settings",
+  "title": "I. Settings",
+  "page_range": "p.133-137",
+  "analyzed_at": "2026-02-15T00:00:00Z",
+  "change_summary": "The Settings section structure (Instance Settings and Service Settings) remains valid. Core items like logo, language, currencies, footer messages, translations, and logout are still present. However, the settings area has likely expanded with new toggles and configuration options added since July 2025 (e.g., e-signature settings, micro-publish options, form version controls, new display system toggles). Individual setting items need verification against the current platform state.",
+  "change_count": 7,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Instance Settings - Logo",
+      "content": "The instance logo can be configured in the Settings area. This allows administrators to upload or change the logo displayed on the public site.",
+      "original_content": "Instance settings include configuration of the logo displayed on the platform.",
+      "explanation": "Logo configuration in instance settings has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of the logo upload area in instance settings."
+    },
+    {
+      "type": "unchanged",
+      "title": "Instance Settings - Language and Currencies",
+      "content": "Language and currency settings allow administrators to configure the default language and available currencies for the instance.",
+      "original_content": "Instance settings include language and currencies configuration.",
+      "explanation": "Language and currency configuration options remain in the same location and function the same way.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of language and currency settings."
+    },
+    {
+      "type": "unchanged",
+      "title": "Instance Settings - Footer Messages",
+      "content": "Footer messages can be configured to display custom text at the bottom of the public site pages.",
+      "original_content": "Footer messages configuration is part of instance settings.",
+      "explanation": "Footer message configuration has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of footer message configuration."
+    },
+    {
+      "type": "verify",
+      "title": "Instance Settings - Display System Options",
+      "content": "Display system options control various aspects of how the public site behaves and appears. The original manual documents the toggles available as of July 2025.",
+      "original_content": "Display system options are configurable within instance settings.",
+      "explanation": "New display system toggles may have been added since July 2025. The exact list of current toggles should be verified against the live platform to determine if new options need to be documented.",
+      "screenshot_status": "needs_update",
+      "screenshot_description": "Screenshot of the display system options panel -- needs to be recaptured if new toggles have been added."
+    },
+    {
+      "type": "unchanged",
+      "title": "Translations",
+      "content": "The Translations section allows administrators to manage text translations for the platform interface and service content.",
+      "original_content": "Translations management is available in the Settings area.",
+      "explanation": "The translation management feature remains in the same location and operates the same way.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of the translations interface."
+    },
+    {
+      "type": "unchanged",
+      "title": "Log out",
+      "content": "The Log out option is available in the Settings area to end the current administrator session.",
+      "original_content": "Log out is available in the Settings area.",
+      "explanation": "Logout functionality has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": "No dedicated screenshot needed for logout."
+    },
+    {
+      "type": "unchanged",
+      "title": "Service Settings - Pages/buttons/fields",
+      "content": "Service-level settings include configuration of pages, buttons, and fields that control the service behavior and appearance.",
+      "original_content": "Service settings include Pages/buttons/fields configuration.",
+      "explanation": "The pages/buttons/fields configuration section within service settings remains present and functionally the same.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of pages/buttons/fields settings."
+    },
+    {
+      "type": "verify",
+      "title": "Service Settings - Service Options toggles",
+      "content": "Service Options provides toggles that control service-level behavior. The original manual documents the toggles available as of July 2025.",
+      "original_content": "Service Options is a section within service settings containing various toggles.",
+      "explanation": "New service option toggles may have been added since July 2025 (e.g., e-signature enable/disable, micro-publish settings, form version options). The current list of available toggles should be verified against the live platform.",
+      "screenshot_status": "needs_update",
+      "screenshot_description": "Screenshot of the Service Options panel -- needs to be recaptured to show any new toggles."
+    },
+    {
+      "type": "unchanged",
+      "title": "Service Settings - Publish History",
+      "content": "Publish history shows a log of when the service was published and by whom.",
+      "original_content": "Publish history is available in service settings.",
+      "explanation": "Publish history functionality has not changed.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of publish history."
+    },
+    {
+      "type": "unchanged",
+      "title": "Service Settings - Export Service",
+      "content": "The Export service feature allows administrators to export the service configuration.",
+      "original_content": "Export service is available in service settings.",
+      "explanation": "Service export functionality remains available and operates the same way.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of export service option."
+    },
+    {
+      "type": "unchanged",
+      "title": "Service Settings - Databases",
+      "content": "The Databases section in service settings provides access to database-related configuration.",
+      "original_content": "Databases is a section within service settings.",
+      "explanation": "Database settings section remains present and functionally the same.",
+      "screenshot_status": "same",
+      "screenshot_description": "Screenshot of databases section in service settings."
+    },
+    {
+      "type": "verify",
+      "title": "Potential new settings sections or categories",
+      "content": "New settings sections or categories may have been added to either Instance Settings or Service Settings since July 2025.",
+      "original_content": null,
+      "explanation": "The settings area may contain entirely new sections or categories not documented in the July 2025 manual. A comprehensive review of the current settings interface is recommended to identify any new top-level items.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Full screenshots of both Instance Settings and Service Settings navigation should be compared against the manual."
+    },
+    {
+      "type": "verify",
+      "title": "E-signature related settings",
+      "content": "E-signature functionality may require new settings at either the instance or service level for configuration of signature providers, certificate authorities, or signature appearance options.",
+      "original_content": null,
+      "explanation": "Since e-signature is a significant new feature, there are likely associated settings that need to be documented. The exact location and nature of these settings should be verified against the platform.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Screenshots of any e-signature configuration panels in settings would be needed."
+    },
+    {
+      "type": "verify",
+      "title": "Micro-publish related settings",
+      "content": "Micro-publish functionality may have introduced new settings or modified existing publish-related settings.",
+      "original_content": null,
+      "explanation": "If micro-publish is a newer capability, it may have added settings or toggles in the service settings area. This should be verified against the platform.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Screenshots of any micro-publish settings would be needed if they exist."
+    }
+  ]
+}

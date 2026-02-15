@@ -1,0 +1,109 @@
+{
+  "section_id": "bpa-custom-classes",
+  "title": "D.8. Custom classes",
+  "page_range": "64-77",
+  "analyzed_at": "2026-02-15T14:00:00Z",
+  "change_summary": "5 items identified: The core custom class system and its categories (Appearance, Spacing, Datagrid, Button, Certificate, Other) remain structurally unchanged from the manual. The 'List bullet check' class is documented in the raw text but was not listed in the original bullet-point summary. Card-style radio class may be new and needs verification. The certificate Print Page A4 system documented in the manual is already comprehensive. Some new custom classes may have been added since the manual was written. The Effects system (activate/deactivate/show/hide/enable/disable) is a new platform feature that may interact with or partially replace certain custom class behaviors.",
+  "change_count": 5,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Custom class introduction",
+      "content": "Custom class is a feature that can be applied to the fields in the forms. It is used for customizing fields (in terms of spacing, alignment, color, size, etc.) or to deploy a function to a particular field. Depending on the type of fields, different options to customize will be available for selection.",
+      "original_content": "Custom class is a feature that can be applied to the fields in the forms. It is used for customizing fields (in terms of spacing, alignment, color, size, etc.) or to deploy a function to a particular field. Depending on the type of fields, different options to customize will be available for selection.",
+      "explanation": "The fundamental description of custom classes and how to add them (open edit modal, toggle advanced, select custom class) remains accurate.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Custom class dropdown in the edit modal - verify that the dropdown UI appearance has not changed."
+    },
+    {
+      "type": "unchanged",
+      "title": "1. Appearance changing classes",
+      "content": "List of classes: Value like label, Field + Button, Hide, Text right, Align value to right, Highlight block, Background (Blue, Gray, Green, Orange, Red), Fill background, Default notice, Radio Switch, Search results list. Also includes List bullet check (replaces bullets in an unordered list with a check icon).",
+      "original_content": "List of classes: Value like label, Field + Button, Hide, Text right, Align value to right, Highlight block, Background (Blue, Gray, Green, Orange, Red), Fill background, Default notice, Radio Switch, Search results list.",
+      "explanation": "The appearance classes list in the manual body text includes all the classes mentioned in the original summary. The raw text also documents 'List bullet check' which replaces bullets with check icons. The description of each class (Value like label showing field value as label, Field+Button for adjacent button/field layout, background color inheritance warning, etc.) remains accurate. The compatibility matrix tables are also documented.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Screenshots showing each appearance class effect - verify that visual appearance has not changed in current platform version."
+    },
+    {
+      "type": "unchanged",
+      "title": "2. Spacing and alignment classes",
+      "content": "List of classes: Remove top space, Space top (label space), Top space / Top space (2X) / Top space (3X), Remove top inner space, Vertical align top/center/bottom, Full height.",
+      "original_content": "List of classes: Remove top space, Space top (label space), Top space / Top space (2X) / Top space (3X), Remove top inner space, Vertical align top/center/bottom, Full height.",
+      "explanation": "All spacing and alignment classes documented in the manual remain the same. Descriptions of each class (Remove top space removes default component top space, Space top creates label-equivalent space, Vertical align works in columns and datagrids, Full height sets 100% available height) are still accurate. The compatibility matrix shows which component types support each class.",
+      "screenshot_status": "same",
+      "screenshot_description": "Spacing class examples and compatibility matrix."
+    },
+    {
+      "type": "unchanged",
+      "title": "3. Datagrid related classes",
+      "content": "List of classes: Datagrid footer, Add/Remove disabled, Datagrid Condensed, Has footer, Width (width5 through width100 in steps of 5), Datagrid Hide Column Label.",
+      "original_content": "List of classes: Datagrid footer, Add/Remove disabled, Datagrid Condensed, Has footer, Width, Datagrid Hide Column Label.",
+      "explanation": "All datagrid-related classes remain documented and accurate. The relationship between classes (e.g., Datagrid footer requires Has footer on the datagrid above, Add/Remove disabled also requires Has footer) is correctly documented. Width accepts values from width5 to width100 in steps of 5.",
+      "screenshot_status": "same",
+      "screenshot_description": "Datagrid footer example, width class example, and compatibility matrix."
+    },
+    {
+      "type": "unchanged",
+      "title": "4. Custom classes for Button",
+      "content": "List of classes: Field + Button, Orange/Blue/Green/Red, Disable on success, Show cog during form submit, Light color, Outline button.",
+      "original_content": "List of classes: Field + Button, Orange/Blue/Green/Red, Disable on success, Show cog during form submit, Light color, Outline button.",
+      "explanation": "All button custom classes remain as documented. The descriptions (Field+Button for adjacent button/field layout with columns, color classes for button coloring, Disable on success preventing re-click after success, Show cog showing loading icon, Light color for lighter shade with black font, Outline button for border-only style) are still accurate. The note about combining Light color with Outline for a more subtle appearance is also documented.",
+      "screenshot_status": "same",
+      "screenshot_description": "Button class examples including color variants and outline style."
+    },
+    {
+      "type": "unchanged",
+      "title": "5. Certificate layout classes - New styles (Print Page A4 system)",
+      "content": "New certificate styles: Print Page A4, Print text center/right/left, Print center vertical, Print Page top/bottom/horizontal margin small/medium/large (12mm/24mm/36mm), Print corner top/bottom left/right, Print watermark, Print footer distance small/medium/large, Print non latin text, Print color light/dark/brand, Print space xsmall(2mm)/small(4mm)/medium(8mm)/large(12mm)/xlarge(16mm), Print value small(10pt)/large(14pt), Print label small(8pt)/large(10pt).",
+      "original_content": "New certificate styles: Print Page A4, Print text center, Print text right, Print text left, Print center vertical, Print Page top margin small, Print Page top margin medium, Print Page top margin large, Print Page bottom margin small/medium/large, Print Page horizontal margin small/medium/large, Print corner top left, Print corner top right, Print corner bottom left, Print corner bottom right, Print watermark, Print footer distance small/medium/large, Print non latin text, Print color light, Print color dark, Print color brand, Print space xsmall/small/medium/large/xlarge, Print value small/large, Print label small/large.",
+      "explanation": "The new Print Page A4 certificate styling system is comprehensively documented in the original manual with exact pixel/mm/pt values. This is a complete styling framework already present in the July 2025 manual. The system uses blocks with Print Page A4 class as page containers, with margin, corner, watermark, footer, spacing, color, and text size utility classes.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Certificate style examples - verify that no new Print classes have been added since the manual was written."
+    },
+    {
+      "type": "unchanged",
+      "title": "5. Certificate layout classes - Old styles",
+      "content": "Old certificate styles: print-big-field, print-small-field, (Print) Highlight Value, (Print) Certificate, (Print) Document Section, (Print) Documents last section, (Print) Terms and conditions, (Print) Certificate header, (Print) Certificate document title, (Print) Certificate footer.",
+      "original_content": "Old certificate styles: Print-big-field, Print-small-field, (Print) Highlight Value, (Print) Certificate, (Print) Document Section, (Print) Documents last section, (Print) Terms and conditions, (Print) Certificate header, (Print) Certificate document title, (Print) Certificate footer.",
+      "explanation": "The old certificate styles are documented in the manual and still exist for backward compatibility. The new Print Page A4 system is the recommended approach for new certificates, but old styles continue to work for existing certificates.",
+      "screenshot_status": "same",
+      "screenshot_description": "Old certificate style examples."
+    },
+    {
+      "type": "unchanged",
+      "title": "6. Other custom classes",
+      "content": "Payment form component and I-swear component.",
+      "original_content": "Payment form component and I-swear component.",
+      "explanation": "The Payment form component (added by default to payment page blocks) and I-swear component (for the I Swear declaration component in Send page) remain as documented.",
+      "screenshot_status": "same",
+      "screenshot_description": "No significant visual changes expected."
+    },
+    {
+      "type": "verify",
+      "title": "Card-style radio class (potentially new)",
+      "content": "A card-style radio class may have been added to the platform, allowing radio button groups to display as selectable cards rather than traditional radio buttons. This would be an appearance-changing custom class.",
+      "original_content": null,
+      "explanation": "The MANUAL-UPDATE-PLAN.md mentions 'card-style radios' as a new platform feature. This could be a new custom class (similar to Radio Switch) that transforms radio groups into card-style selectable elements. This needs verification on a live instance to confirm whether it exists as a custom class and what it is called.",
+      "screenshot_status": "needs_new",
+      "screenshot_description": "Card-style radio custom class example showing radio buttons displayed as selectable cards."
+    },
+    {
+      "type": "verify",
+      "title": "New custom classes added since July 2025",
+      "content": "Additional custom classes may have been added to the platform in the approximately 9,600 commits since the manual was written. Categories that may have new entries include appearance classes, spacing classes, and certificate layout classes.",
+      "original_content": null,
+      "explanation": "With ~9,600 commits since the manual was written, there is a reasonable probability that new custom classes have been added. However, without access to a live BPA instance to verify the current dropdown options, these cannot be specifically identified. A human reviewer should check the custom class dropdown on a current instance to confirm the complete list.",
+      "screenshot_status": "needs_update",
+      "screenshot_description": "Full custom class dropdown list from current BPA to identify any new classes not in the manual."
+    },
+    {
+      "type": "verify",
+      "title": "Effects system relationship to custom classes",
+      "content": "The Effects system (confirmed via MCP tools to support activate/deactivate/show/hide/enable/disable effect types) is a new platform feature that may partially overlap with or complement custom class functionality for showing/hiding components.",
+      "original_content": null,
+      "explanation": "The Effects system is confirmed to exist in the platform (MCP tool effect_create supports effect_type: activate/deactivate/show/hide/enable/disable). While effects operate differently from custom classes (effects are determinant-driven behaviors vs. custom classes being static styling), there may be documentation needed to explain when to use effects vs. custom classes like 'Hide'. A human reviewer should determine if this relationship warrants mention in the custom classes section or should be documented separately.",
+      "screenshot_status": "unknown",
+      "screenshot_description": null
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "section_id": "ds-application-file",
+  "title": "B. Application file (DS)",
+  "part": "II. DS",
+  "page_range": "p.143-144",
+  "analyzed_at": "2026-02-15T14:00:00Z",
+  "change_summary": "4 changes detected: Shopping cart is now explicitly an alternative to the Guide with expanded functionality, e-signature may appear on the Send page, UI theme changes affect all DS pages, overall application file flow structure remains the same.",
+  "change_count": 4,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "1. Guide",
+      "content": "Answers provided in the Guide will help determine, for each specific user, which documents, fees and data are required.",
+      "original_content": "Answers provided in the Guide will help determine, for each specific user, which documents, fees and data are required.",
+      "explanation": "The Guide page's purpose and function remain the same. It is still used to ask questions that determine which registrations, documents, fees, and data are required.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Guide page in DS -- verify current visual appearance"
+    },
+    {
+      "type": "verify",
+      "title": "Shopping cart as alternative to Guide",
+      "content": "Shopping cart: Alternative to the Guide, improved version. Shows summary of registrations, how much to pay and what documents to upload. Accessible on all pages. The shopping cart is enabled via a toggle in service settings and replaces the Guide page for services that use it.",
+      "original_content": "Shopping cart: Alternative to the Guide, improved version. Shows summary of registrations, how much to pay and what documents to upload. Accessible on all pages.",
+      "explanation": "The shopping cart was already mentioned in the July 2025 manual as an alternative to the Guide. However, its exact current state, visual appearance, and behavior may have evolved. The shopping cart toggle exists in BPA service settings. Whether the shopping cart has gained new functionality (such as better registration selection, improved summary display, or integration with new payment features) needs verification. The existing description may be accurate but the visual presentation likely changed with UI theme updates.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Shopping cart view in DS -- verify current appearance and features, especially if it has been enhanced since July 2025"
+    },
+    {
+      "type": "unchanged",
+      "title": "2. Applicant form",
+      "content": "This is where the applicant provides all the relevant data that pertains to his objective.",
+      "original_content": "This is where the applicant provides all the relevant data that pertains to his objective.",
+      "explanation": "The applicant form page's purpose and description remain accurate.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Applicant form page in DS -- verify current visual appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "3. Documents",
+      "content": "This is the documents upload page. This tab will appear only if documents need to be uploaded.",
+      "original_content": "This is the documents upload page. This tab will appear only if documents need to be uploaded.",
+      "explanation": "The Documents upload page behavior (appearing only when documents are required) remains the same.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Documents upload page in DS -- verify current visual appearance"
+    },
+    {
+      "type": "unchanged",
+      "title": "4. Payment",
+      "content": "Payment tab will appear only if there is a payment in the process.",
+      "original_content": "Payment tab will appear only if there is a payment in the process.",
+      "explanation": "The Payment page behavior (appearing only when payment is required) remains the same.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Payment page in DS -- verify current visual appearance"
+    },
+    {
+      "type": "verify",
+      "title": "5. Send page - E-signature",
+      "content": "The confirmation page usually consists of a set of terms and conditions that the applicant needs to abide by. The Send page may now include e-signature functionality, allowing applicants to digitally sign their application before submission.",
+      "original_content": "The confirmation page usually consists of a set of terms and conditions that the applicant needs to abide by.",
+      "explanation": "E-signature is a known new platform feature. The Send page (declaration and signature page) is the natural location for e-signature functionality in the applicant workflow. The BPA side has an 'I Swear' component for the Send page, and e-signature may extend or complement this. However, the exact implementation -- whether e-signature is an additional step, replaces the 'I Swear' checkbox, or is optional -- needs verification on the current platform. This is a significant potential addition to the Send page.",
+      "screenshot_status": "needs_update",
+      "screenshot_description": "Send page in DS -- verify if e-signature functionality is present and capture its appearance"
+    },
+    {
+      "type": "verify",
+      "title": "UI theme changes across application file pages",
+      "content": "All application file pages (Guide, Form, Documents, Payment, Send) may have received visual updates as part of DS UI theme changes.",
+      "original_content": null,
+      "explanation": "The DS has likely undergone visual theme updates since July 2025. The BPA service settings include a 'UI theme' option. All screenshots of application file pages should be verified against the current platform to determine if visual updates are needed. The functional behavior is likely the same, but the visual presentation may differ.",
+      "screenshot_status": "needs_update",
+      "screenshot_description": "All application file page screenshots should be compared against current platform appearance"
+    }
+  ]
+}

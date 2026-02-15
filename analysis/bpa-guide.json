@@ -1,0 +1,64 @@
+{
+  "section_id": "bpa-guide",
+  "title": "D.1. The Guide",
+  "page_range": "p.27-28",
+  "analyzed_at": "2026-02-15T14:10:00Z",
+  "change_summary": "2 changes detected: Guide core functionality (Description, Form, Status, toggle) is unchanged. Shopping cart alternative may have evolved. The form_get API confirms guide as a distinct form_type, validating its continued existence as a separate entity.",
+  "change_count": 2,
+  "blocks": [
+    {
+      "type": "unchanged",
+      "title": "Guide purpose",
+      "content": "Questions can be created in the guide to help determine, for each specific user, which documents, fees and data are required.",
+      "original_content": "Questions can be created in the guide to help determine, for each specific user, which documents, fees and data are required.",
+      "explanation": "The guide's fundamental purpose -- determining user-specific requirements through questions -- is unchanged. The form_get API explicitly supports form_type='guide', confirming the Guide remains a distinct form type in the platform.",
+      "screenshot_status": "same",
+      "screenshot_description": "No change expected to the guide purpose description."
+    },
+    {
+      "type": "unchanged",
+      "title": "Guide three elements",
+      "content": "The guide is defined by three elements: Description (name of the guide question), Form (where guide questions are developed and linked to the requirements and/or application form using determinants), Status.",
+      "original_content": "The guide is defined by three elements: Description (name of the guide question), Form (where guide questions are developed and linked to the requirements and/or application form using determinants), Status.",
+      "explanation": "The three-element structure (Description, Form, Status) is a standard pattern used across the platform for defining application file pages. This structure is consistent and unchanged.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Guide tabs showing Description, Form, Status -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Guide toggle activation",
+      "content": "If your service has a Guide, activate the guide toggle.",
+      "original_content": "If your service has a Guide, activate the guide toggle.",
+      "explanation": "The guide toggle is the standard mechanism for enabling/disabling application file pages. This pattern is used consistently throughout the platform and remains unchanged.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Guide toggle -- verify visual appearance."
+    },
+    {
+      "type": "unchanged",
+      "title": "Creating guide questions",
+      "content": "To create a question in the Guide, click on the 'Guide' tab in the Application File. Under the 'Form' tab, create questions using the form components that will filter the data, requirements and fees for specific users' case.",
+      "original_content": "To create a question in the Guide, click on the 'Guide' tab in the Application File. Under the 'Form' tab, create questions using the form components that will filter the data, requirements and fees for specific users' case.",
+      "explanation": "The workflow for creating guide questions remains the same: navigate to Guide tab, use Form tab, and build using form components. The form builder is the same shared component used across all form types.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Guide Form tab with form builder -- verify visual appearance."
+    },
+    {
+      "type": "verify",
+      "title": "Shopping cart alternative",
+      "content": "Alternative to the guide: the shopping cart. The shopping cart allows applicants to select registrations directly rather than answering filtering questions. It may have been enhanced with additional features such as registration previews, cost summaries, or document requirement displays.",
+      "original_content": "Alternative to the guide: the shopping cart.",
+      "explanation": "The shopping cart is mentioned briefly in the original manual as an alternative to the guide. Given the platform's evolution, the shopping cart may have gained additional capabilities. The service settings reference 'Shopping cart' as a configurable option. However, the exact current state of shopping cart features cannot be confirmed without live system inspection.",
+      "screenshot_status": "verify",
+      "screenshot_description": "Shopping cart interface -- verify current appearance and any new features."
+    },
+    {
+      "type": "verify",
+      "title": "Potential new guide features",
+      "content": "The guide may have gained new capabilities such as conditional branching improvements, integration with the effects/behaviours system for dynamic form behavior, or enhanced determinant support. The component behaviours system (visible in the API) may apply to guide components.",
+      "original_content": null,
+      "explanation": "The componentbehaviour tools in the API suggest a more sophisticated system for controlling component behavior based on determinants. This effects system may apply to guide components, potentially offering more advanced conditional logic than what was documented in the original manual. This needs verification.",
+      "screenshot_status": "unknown",
+      "screenshot_description": "Any new guide-specific features or enhanced conditional logic UI."
+    }
+  ]
+}

@@ -1,0 +1,2053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>eRegistrations Manual — Review Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue: #0057b8;
+  --blue-deep: #003d82;
+  --blue-light: #e8f2fc;
+  --blue-subtle: #f0f7ff;
+  --green: #16794a;
+  --green-light: #e6f7ed;
+  --green-bg: #d1fae5;
+  --green-dark: #0d5c36;
+  --orange: #c2610c;
+  --orange-light: #fef3e2;
+  --red: #b91c1c;
+  --red-light: #fee2e2;
+  --red-bg: #fecaca;
+  --yellow: #eab308;
+  --yellow-bg: #fef9c3;
+  --purple: #7c3aed;
+  --purple-light: #ede9fe;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  --bg: #ffffff;
+  --sidebar-w: 290px;
+  --topbar-h: 56px;
+  --font: 'DM Sans', -apple-system, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font); color: var(--gray-800); background: var(--gray-50); overflow: hidden; height: 100vh; }
+
+/* ═══ Layout ═══ */
+.app { display: flex; height: 100vh; }
+
+/* ═══ Sidebar ═══ */
+.sidebar {
+  width: var(--sidebar-w); min-width: var(--sidebar-w);
+  background: var(--bg);
+  border-right: 1px solid var(--gray-200);
+  display: flex; flex-direction: column;
+  height: 100vh;
+}
+.sidebar-header {
+  padding: 0.85rem 1rem;
+  background: var(--gray-900);
+  color: white;
+  flex-shrink: 0;
+}
+.sidebar-header .title { font-weight: 700; font-size: 0.9rem; letter-spacing: -0.01em; }
+.sidebar-header .subtitle { font-weight: 400; opacity: 0.55; font-size: 0.72rem; margin-top: 0.15rem; }
+
+.sidebar-stats {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--gray-200);
+  flex-shrink: 0;
+}
+.stat-cell {
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--gray-500);
+  border-right: 1px solid var(--gray-100);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-cell .num { font-size: 1.15rem; font-weight: 700; display: block; margin-bottom: 0.1rem; font-family: var(--mono); }
+.stat-cell.pending .num { color: var(--orange); }
+.stat-cell.review .num { color: var(--blue); }
+.stat-cell.approved .num { color: var(--green); }
+.stat-cell.total .num { color: var(--gray-700); }
+
+.sidebar-filter {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--gray-200);
+  flex-shrink: 0;
+}
+.filter-pills {
+  display: flex; gap: 0.3rem; flex-wrap: wrap;
+}
+.filter-pill {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.68rem;
+  border-radius: 10px;
+  border: 1px solid var(--gray-200);
+  background: var(--bg);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.15s;
+  font-family: var(--font);
+}
+.filter-pill:hover { background: var(--gray-100); }
+.filter-pill.active { background: var(--gray-800); color: white; border-color: var(--gray-800); }
+
+.sidebar-sections {
+  flex: 1; overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-300) transparent;
+}
+
+.section-group { border-bottom: 1px solid var(--gray-100); }
+.group-title {
+  padding: 0.45rem 0.75rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-400);
+  background: var(--gray-50);
+  position: sticky; top: 0;
+  z-index: 1;
+  cursor: pointer;
+  user-select: none;
+  display: flex; align-items: center; gap: 0.4rem;
+}
+.group-title .arrow { transition: transform 0.2s; font-size: 0.55rem; }
+.group-title.collapsed .arrow { transform: rotate(-90deg); }
+
+.section-item {
+  display: flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 0.75rem 0.4rem 1.2rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--gray-50);
+  transition: all 0.12s;
+  position: relative;
+}
+.section-item:hover { background: var(--blue-subtle); }
+.section-item.active {
+  background: var(--blue-light);
+  font-weight: 600;
+}
+.section-item.active::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0;
+  width: 3px; background: var(--blue);
+}
+.section-item.hidden { display: none; }
+
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-pending { background: var(--gray-300); }
+.dot-in-review { background: var(--blue); }
+.dot-approved { background: var(--green); }
+.dot-needs-changes { background: var(--orange); }
+.dot-draft { background: var(--purple); }
+
+.section-item .label { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.badge {
+  font-size: 0.6rem; padding: 0.1rem 0.35rem;
+  border-radius: 8px; font-weight: 700;
+  flex-shrink: 0; font-family: var(--mono);
+}
+.badge-changes { background: var(--yellow-bg); color: #92400e; }
+.badge-new { background: var(--green-bg); color: var(--green); }
+.badge-ok { background: var(--green-light); color: var(--green); }
+
+/* ═══ Main ═══ */
+.main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+
+.topbar {
+  height: var(--topbar-h);
+  background: var(--bg);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 0 1.25rem;
+  display: flex; align-items: center; gap: 1rem;
+  flex-shrink: 0;
+}
+.topbar-left { display: flex; flex-direction: column; gap: 0.1rem; }
+.topbar-path { color: var(--gray-400); font-size: 0.72rem; font-weight: 500; }
+.topbar-title { font-size: 1rem; font-weight: 700; color: var(--gray-900); letter-spacing: -0.02em; }
+
+.view-toggle {
+  display: flex; border: 1px solid var(--gray-200);
+  border-radius: 6px; overflow: hidden; margin-left: 1rem;
+}
+.view-btn {
+  padding: 0.3rem 0.65rem; font-size: 0.72rem;
+  border: none; background: var(--bg);
+  cursor: pointer; font-weight: 600;
+  border-right: 1px solid var(--gray-200);
+  font-family: var(--font); color: var(--gray-600);
+  transition: all 0.12s;
+}
+.view-btn:last-child { border-right: none; }
+.view-btn:hover { background: var(--gray-50); }
+.view-btn.active { background: var(--gray-800); color: white; }
+
+.topbar-actions { margin-left: auto; display: flex; gap: 0.4rem; align-items: center; }
+
+.btn {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--bg);
+  transition: all 0.12s;
+  font-family: var(--font);
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--gray-50); }
+.btn-approve { background: var(--green); color: white; border-color: var(--green); }
+.btn-approve:hover { background: var(--green-dark); }
+.btn-reject { color: var(--red); border-color: var(--red); }
+.btn-reject:hover { background: var(--red-light); }
+.btn-export { color: var(--purple); border-color: var(--purple); }
+.btn-export:hover { background: var(--purple-light); }
+.btn-nav {
+  width: 32px; height: 32px; padding: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 6px; font-size: 0.85rem;
+}
+
+.separator { width: 1px; height: 24px; background: var(--gray-200); }
+
+/* ═══ Content ═══ */
+.content-scroll {
+  flex: 1; overflow-y: auto; padding: 1.25rem;
+  scrollbar-width: thin; scrollbar-color: var(--gray-300) transparent;
+}
+.content { max-width: 880px; }
+
+/* Diff blocks */
+.diff-block {
+  background: var(--bg);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.15s;
+}
+.diff-block:hover { box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+
+.diff-header {
+  padding: 0.55rem 0.85rem;
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.82rem; font-weight: 600;
+}
+.change-tag {
+  font-size: 0.62rem; padding: 0.12rem 0.45rem;
+  border-radius: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.03em;
+}
+.tag-unchanged { background: var(--gray-100); color: var(--gray-500); }
+.tag-modified { background: var(--yellow-bg); color: #92400e; }
+.tag-added { background: var(--green-bg); color: var(--green); }
+.tag-removed { background: var(--red-bg); color: var(--red); }
+.tag-verify { background: var(--purple-light); color: var(--purple); }
+
+.diff-body { padding: 0.85rem; font-size: 0.88rem; line-height: 1.72; }
+.diff-body p { margin-bottom: 0.6rem; }
+.diff-body p:last-child { margin-bottom: 0; }
+
+.hl-changed { background: #fef08a; padding: 0.08rem 0.15rem; border-radius: 2px; }
+.hl-added { background: #bbf7d0; padding: 0.08rem 0.15rem; border-radius: 2px; }
+.hl-removed { background: var(--red-bg); padding: 0.08rem 0.15rem; border-radius: 2px; text-decoration: line-through; color: var(--red); }
+
+.screenshot-box {
+  background: var(--gray-50);
+  border: 2px dashed var(--gray-300);
+  border-radius: 6px;
+  padding: 1.2rem;
+  text-align: center;
+  color: var(--gray-500);
+  margin: 0.6rem 0;
+  font-size: 0.82rem;
+}
+.screenshot-box.new-shot { border-color: var(--green); background: #f0fdf4; color: var(--green); }
+.screenshot-box.old-shot { border-color: var(--orange); background: var(--orange-light); color: var(--orange); }
+.screenshot-box code { font-family: var(--mono); font-size: 0.75rem; background: rgba(0,0,0,0.06); padding: 0.15rem 0.4rem; border-radius: 3px; }
+
+.diff-body table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.84rem; margin: 0.6rem 0;
+}
+.diff-body th, .diff-body td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--gray-200);
+  text-align: left;
+}
+.diff-body th { font-weight: 600; background: var(--gray-50); font-size: 0.78rem; color: var(--gray-600); }
+.diff-body tr.row-new { background: #f0fdf4; }
+
+/* Side-by-side view */
+.side-by-side { display: grid; grid-template-columns: 1fr 1fr; }
+.side-panel { padding: 0.85rem; font-size: 0.84rem; line-height: 1.65; }
+.side-panel:first-child { border-right: 1px solid var(--gray-200); }
+.side-label {
+  font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; margin-bottom: 0.4rem;
+  padding-bottom: 0.25rem; border-bottom: 1px solid var(--gray-200);
+}
+.side-label.old { color: var(--red); }
+.side-label.new { color: var(--green); }
+
+/* Review box */
+.review-box {
+  background: var(--bg);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.25rem;
+}
+.review-box h3 { font-size: 0.85rem; margin-bottom: 0.5rem; color: var(--gray-700); }
+.review-box textarea {
+  width: 100%; padding: 0.55rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  font-family: var(--font);
+  font-size: 0.84rem;
+  min-height: 70px;
+  resize: vertical;
+  transition: border-color 0.15s;
+}
+.review-box textarea:focus { outline: none; border-color: var(--blue); }
+.review-actions { margin-top: 0.6rem; display: flex; gap: 0.4rem; }
+
+/* Legend */
+.legend {
+  margin-top: 1.5rem; padding: 0.75rem;
+  background: var(--bg); border-radius: 8px;
+  border: 1px solid var(--gray-200);
+  font-size: 0.78rem; color: var(--gray-500);
+  display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center;
+}
+
+/* Welcome screen */
+.welcome { text-align: center; padding: 5rem 2rem; }
+.welcome-icon { font-size: 3rem; margin-bottom: 1rem; opacity: 0.3; }
+.welcome h2 { font-size: 1.2rem; color: var(--gray-800); margin-bottom: 0.4rem; }
+.welcome p { color: var(--gray-500); max-width: 420px; margin: 0 auto; line-height: 1.6; font-size: 0.9rem; }
+
+/* Export modal */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(15,23,42,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: none; align-items: center; justify-content: center;
+}
+.modal-overlay.show { display: flex; }
+.modal {
+  background: var(--bg);
+  border-radius: 12px;
+  width: 560px; max-height: 80vh;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.modal-header {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.modal-header h2 { font-size: 1rem; }
+.modal-close {
+  width: 28px; height: 28px; border: none; background: none;
+  cursor: pointer; font-size: 1.2rem; color: var(--gray-400);
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+}
+.modal-close:hover { background: var(--gray-100); color: var(--gray-700); }
+.modal-body { padding: 1.25rem; overflow-y: auto; flex: 1; }
+.modal-footer {
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--gray-200);
+  display: flex; gap: 0.5rem; justify-content: flex-end;
+}
+
+.export-preview {
+  background: var(--gray-900); color: #e2e8f0;
+  padding: 1rem; border-radius: 6px;
+  font-family: var(--mono); font-size: 0.75rem;
+  line-height: 1.6; max-height: 350px; overflow-y: auto;
+  white-space: pre-wrap; word-break: break-word;
+  scrollbar-width: thin; scrollbar-color: var(--gray-600) transparent;
+}
+
+.export-options { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.export-opt {
+  flex: 1; padding: 0.75rem;
+  border: 2px solid var(--gray-200);
+  border-radius: 8px; cursor: pointer;
+  text-align: center; transition: all 0.15s;
+  background: var(--bg); font-family: var(--font);
+}
+.export-opt:hover { border-color: var(--gray-400); }
+.export-opt.selected { border-color: var(--blue); background: var(--blue-light); }
+.export-opt .icon { font-size: 1.3rem; margin-bottom: 0.2rem; }
+.export-opt .name { font-size: 0.82rem; font-weight: 700; }
+.export-opt .desc { font-size: 0.7rem; color: var(--gray-500); margin-top: 0.1rem; }
+
+/* Toast */
+.toast-container { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200; display: flex; flex-direction: column; gap: 0.5rem; }
+.toast {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  animation: toastIn 0.3s ease, toastOut 0.3s ease 2.7s forwards;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.toast-success { background: var(--green); color: white; }
+.toast-info { background: var(--gray-800); color: white; }
+.toast-warn { background: var(--orange); color: white; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes toastOut { from { opacity: 1; } to { opacity: 0; transform: translateY(-5px); } }
+
+/* Progress bar */
+.progress-bar {
+  height: 3px; background: var(--gray-100);
+  flex-shrink: 0;
+}
+.progress-fill {
+  height: 100%; background: linear-gradient(90deg, var(--green), #34d399);
+  transition: width 0.4s ease;
+}
+
+/* Keyboard hint */
+.kbd {
+  display: inline-block; padding: 0.1rem 0.3rem;
+  background: var(--gray-100); border: 1px solid var(--gray-300);
+  border-radius: 3px; font-family: var(--mono); font-size: 0.65rem;
+  color: var(--gray-600); line-height: 1;
+}
+
+/* ═══ History Panel ═══ */
+.history-panel {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 360px; background: var(--bg);
+  border-left: 1px solid var(--gray-200);
+  box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+  z-index: 50;
+  display: flex; flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+}
+.history-panel.open { transform: translateX(0); }
+
+.history-header {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.history-header h3 { font-size: 0.92rem; display: flex; align-items: center; gap: 0.4rem; }
+.history-header .count {
+  font-size: 0.68rem; font-family: var(--mono);
+  background: var(--gray-100); color: var(--gray-600);
+  padding: 0.1rem 0.4rem; border-radius: 8px;
+}
+
+.history-list {
+  flex: 1; overflow-y: auto; padding: 0.5rem;
+  scrollbar-width: thin; scrollbar-color: var(--gray-300) transparent;
+}
+
+.version-item {
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--gray-100);
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+  transition: all 0.12s;
+  position: relative;
+}
+.version-item:hover { border-color: var(--gray-300); background: var(--gray-50); }
+.version-item.current { border-color: var(--blue); background: var(--blue-subtle); }
+
+.version-item .v-top {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+.version-item .v-number {
+  font-family: var(--mono); font-size: 0.72rem;
+  font-weight: 700; color: var(--gray-700);
+  background: var(--gray-100); padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+.version-item.current .v-number { background: var(--blue); color: white; }
+
+.version-item .v-action {
+  font-size: 0.72rem; font-weight: 600;
+}
+.v-action.act-created { color: var(--blue); }
+.v-action.act-approved { color: var(--green); }
+.v-action.act-flagged { color: var(--orange); }
+.v-action.act-restored { color: var(--purple); }
+.v-action.act-edited { color: var(--gray-600); }
+
+.version-item .v-time {
+  font-size: 0.68rem; color: var(--gray-400);
+  margin-left: auto; font-family: var(--mono);
+}
+
+.version-item .v-note {
+  font-size: 0.72rem; color: var(--gray-500);
+  margin-top: 0.15rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+.version-actions {
+  display: none; gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+.version-item:hover .version-actions { display: flex; }
+.version-item.current .version-actions { display: none; }
+
+.v-btn {
+  font-size: 0.68rem; padding: 0.15rem 0.45rem;
+  border: 1px solid var(--gray-300); border-radius: 4px;
+  background: var(--bg); cursor: pointer; font-family: var(--font);
+  font-weight: 600; transition: all 0.1s;
+}
+.v-btn:hover { background: var(--gray-100); }
+.v-btn-restore { color: var(--blue); border-color: var(--blue); }
+.v-btn-restore:hover { background: var(--blue-light); }
+.v-btn-compare { color: var(--purple); border-color: var(--purple); }
+.v-btn-compare:hover { background: var(--purple-light); }
+
+.history-empty {
+  text-align: center; padding: 3rem 1rem;
+  color: var(--gray-400); font-size: 0.85rem;
+}
+
+/* Last updated in sidebar */
+.section-item .updated-ago {
+  font-size: 0.58rem; color: var(--gray-400);
+  font-family: var(--mono);
+  flex-shrink: 0;
+}
+
+/* Version info bar under topbar */
+.version-bar {
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-100);
+  padding: 0.3rem 1.25rem;
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  display: flex; align-items: center; gap: 0.75rem;
+  flex-shrink: 0;
+}
+.version-bar .vb-item { display: flex; align-items: center; gap: 0.25rem; }
+.version-bar .vb-label { font-weight: 600; color: var(--gray-400); }
+
+/* Compare modal additions */
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.compare-col h4 { font-size: 0.8rem; margin-bottom: 0.5rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--gray-200); }
+.compare-col .compare-content {
+  font-size: 0.78rem; line-height: 1.6;
+  background: var(--gray-50); padding: 0.75rem;
+  border-radius: 6px; max-height: 300px; overflow-y: auto;
+}
+
+/* ═══ Instance Selector ═══ */
+.instance-bar {
+  padding: 0.45rem 0.75rem;
+  background: var(--gray-800);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex; align-items: center; gap: 0.5rem;
+  flex-shrink: 0;
+}
+.instance-select {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white; font-family: var(--font);
+  font-size: 0.75rem; padding: 0.25rem 0.5rem;
+  border-radius: 4px; cursor: pointer;
+  flex: 1;
+}
+.instance-select option { color: var(--gray-800); background: white; }
+.instance-btn {
+  background: none; border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.6); font-size: 0.72rem;
+  padding: 0.2rem 0.4rem; border-radius: 4px;
+  cursor: pointer; font-family: var(--font);
+}
+.instance-btn:hover { color: white; border-color: rgba(255,255,255,0.4); }
+
+/* ═══ Language bar ═══ */
+.lang-bar {
+  display: flex; align-items: center; gap: 0.35rem;
+  margin-left: 0.5rem;
+}
+.lang-chip {
+  font-size: 0.65rem; padding: 0.15rem 0.4rem;
+  border-radius: 10px; font-weight: 700;
+  cursor: pointer; transition: all 0.12s;
+  border: 1px solid var(--gray-200);
+  background: var(--bg); color: var(--gray-600);
+  font-family: var(--mono); text-transform: uppercase;
+}
+.lang-chip:hover { border-color: var(--blue); color: var(--blue); }
+.lang-chip.active { background: var(--blue); color: white; border-color: var(--blue); }
+.lang-chip.has-translation { background: var(--green-light); color: var(--green); border-color: var(--green); }
+.lang-chip.has-translation.active { background: var(--green); color: white; }
+.lang-chip.translating {
+  animation: pulse 1.2s ease-in-out infinite;
+  border-color: var(--purple); color: var(--purple);
+}
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+/* ═══ Translation Panel ═══ */
+.translate-panel {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: 420px; background: var(--bg);
+  border-left: 1px solid var(--gray-200);
+  box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+  z-index: 50;
+  display: flex; flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+}
+.translate-panel.open { transform: translateX(0); }
+
+.translate-header {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.translate-header h3 { font-size: 0.92rem; display: flex; align-items: center; gap: 0.4rem; }
+
+.translate-controls {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  display: flex; flex-direction: column; gap: 0.5rem;
+  flex-shrink: 0;
+}
+.translate-lang-grid {
+  display: flex; flex-wrap: wrap; gap: 0.3rem;
+}
+.translate-lang-btn {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.75rem; font-weight: 600;
+  border: 1px solid var(--gray-200);
+  border-radius: 6px; cursor: pointer;
+  background: var(--bg); font-family: var(--font);
+  transition: all 0.12s;
+  display: flex; align-items: center; gap: 0.3rem;
+}
+.translate-lang-btn:hover { border-color: var(--blue); }
+.translate-lang-btn.done { border-color: var(--green); background: var(--green-light); }
+.translate-lang-btn.active { border-color: var(--blue); background: var(--blue-light); }
+.translate-lang-btn .flag { font-size: 1rem; }
+
+.translate-body {
+  flex: 1; overflow-y: auto; padding: 0.75rem;
+  scrollbar-width: thin;
+}
+.translate-block {
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--gray-100);
+  border-radius: 6px; overflow: hidden;
+}
+.translate-block-header {
+  font-size: 0.72rem; font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-600);
+}
+.translate-block-source {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.78rem; line-height: 1.5;
+  color: var(--gray-500);
+  border-bottom: 1px solid var(--gray-100);
+  max-height: 80px; overflow-y: auto;
+}
+.translate-block-target {
+  padding: 0.5rem 0.6rem;
+  font-size: 0.82rem; line-height: 1.6;
+  min-height: 40px;
+}
+.translate-block-target.empty { color: var(--gray-400); font-style: italic; }
+
+.translate-actions {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--gray-200);
+  display: flex; gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.ai-badge {
+  display: inline-flex; align-items: center; gap: 0.2rem;
+  font-size: 0.6rem; font-weight: 700;
+  color: var(--purple); background: var(--purple-light);
+  padding: 0.1rem 0.35rem; border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="title">eRegistrations Manual</div>
+      <div class="subtitle">AI-native documentation tool</div>
+    </div>
+    <div class="instance-bar">
+      <select class="instance-select" id="instanceSelect" onchange="switchInstance(this.value)">
+      </select>
+      <button class="instance-btn" onclick="openInstanceConfig()" title="Configure instances">⚙</button>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 0%"></div></div>
+    <div class="sidebar-stats" id="stats"></div>
+    <div class="sidebar-filter">
+      <div class="filter-pills" id="filterPills"></div>
+    </div>
+    <div class="sidebar-sections" id="sectionList"></div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar" id="topbar">
+      <div class="topbar-left">
+        <div class="topbar-path" id="sectionPath">Select a section</div>
+        <div class="topbar-title" id="sectionTitle">—</div>
+      </div>
+      <div class="view-toggle" id="viewToggle" style="display:none">
+        <button class="view-btn active" data-view="changes">Changes</button>
+        <button class="view-btn" data-view="sidebyside">Side by side</button>
+        <button class="view-btn" data-view="clean">Clean</button>
+      </div>
+      <div class="topbar-actions" id="topbarActions" style="display:none">
+        <div class="lang-bar" id="langBar"></div>
+        <span class="separator"></span>
+        <button class="btn btn-export" onclick="openExportModal()">↓ Export</button>
+        <button class="btn" onclick="toggleTranslate()" style="color:var(--purple)">🌐 Translate</button>
+        <button class="btn" onclick="toggleHistory()" style="color:var(--gray-600)">📜 History</button>
+        <span class="separator"></span>
+        <button class="btn btn-nav" onclick="navigateSection(-1)" title="Previous (←)">‹</button>
+        <button class="btn btn-nav" onclick="navigateSection(1)" title="Next (→)">›</button>
+        <span class="separator"></span>
+        <button class="btn btn-reject" onclick="flagSection()">⚠ Flag</button>
+        <button class="btn btn-approve" onclick="approveSection()">✓ Approve</button>
+      </div>
+    </div>
+    <div class="version-bar" id="versionBar" style="display:none">
+      <div class="vb-item"><span class="vb-label">Version:</span> <span id="vbVersion">—</span></div>
+      <div class="vb-item"><span class="vb-label">Last updated:</span> <span id="vbUpdated">—</span></div>
+      <div class="vb-item"><span class="vb-label">By:</span> <span id="vbAuthor">—</span></div>
+    </div>
+
+    <div class="content-scroll" id="contentScroll">
+      <div class="content" id="content">
+        <div class="welcome">
+          <div class="welcome-icon">📋</div>
+          <h2>Manual Review Tool</h2>
+          <p>Select a section from the sidebar to review. AI agents generate each section with change markers — you validate, translate, and approve. Works with any eRegistrations instance.</p>
+          <div style="margin-top:1.5rem; font-size:0.78rem; color:var(--gray-400)">
+            <kbd class="kbd">←</kbd> <kbd class="kbd">→</kbd> navigate &nbsp;
+            <kbd class="kbd">A</kbd> approve &nbsp;
+            <kbd class="kbd">F</kbd> flag &nbsp;
+            <kbd class="kbd">E</kbd> export &nbsp;
+            <kbd class="kbd">H</kbd> history &nbsp;
+            <kbd class="kbd">T</kbd> translate
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Export Modal -->
+<div class="modal-overlay" id="exportModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="exportTitle">Export Section</h2>
+      <button class="modal-close" onclick="closeExportModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="export-options" id="exportOptions">
+        <div class="export-opt selected" data-format="md" onclick="selectExportFormat('md')">
+          <div class="icon">📝</div>
+          <div class="name">Markdown</div>
+          <div class="desc">Obsidian-compatible</div>
+        </div>
+        <div class="export-opt" data-format="html-clean" onclick="selectExportFormat('html-clean')">
+          <div class="icon">🌐</div>
+          <div class="name">Clean HTML</div>
+          <div class="desc">No change markers</div>
+        </div>
+        <div class="export-opt" data-format="html-diff" onclick="selectExportFormat('html-diff')">
+          <div class="icon">🔀</div>
+          <div class="name">Diff HTML</div>
+          <div class="desc">With change markers</div>
+        </div>
+      </div>
+      <div class="export-preview" id="exportPreview"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeExportModal()">Cancel</button>
+      <button class="btn" style="background:var(--gray-800);color:white;border-color:var(--gray-800)" onclick="copyExport()">Copy to clipboard</button>
+      <button class="btn" style="background:var(--blue);color:white;border-color:var(--blue)" onclick="downloadExport()">Download file</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast-container" id="toasts"></div>
+
+<!-- History Panel (slide-out) -->
+<div class="history-panel" id="historyPanel">
+  <div class="history-header">
+    <h3>📜 Version History <span class="count" id="versionCount">0</span></h3>
+    <button class="modal-close" onclick="closeHistory()">×</button>
+  </div>
+  <div class="history-list" id="historyList">
+    <div class="history-empty">No versions yet.<br>Versions are created when sections are generated, approved, or flagged.</div>
+  </div>
+</div>
+
+<!-- Compare Modal -->
+<div class="modal-overlay" id="compareModal">
+  <div class="modal" style="width:720px">
+    <div class="modal-header">
+      <h2 id="compareTitle">Compare Versions</h2>
+      <button class="modal-close" onclick="closeCompare()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="compare-grid" id="compareGrid"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeCompare()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- Instance Config Modal -->
+<div class="modal-overlay" id="instanceModal">
+  <div class="modal" style="width:500px">
+    <div class="modal-header">
+      <h2>Instance Configuration</h2>
+      <button class="modal-close" onclick="closeInstanceConfig()">×</button>
+    </div>
+    <div class="modal-body">
+      <div style="font-size:0.82rem;color:var(--gray-600);margin-bottom:1rem">
+        Configure eRegistrations instances. Each instance can have its own manual with independent section content, translations, and review status.
+      </div>
+      <div id="instanceList" style="margin-bottom:1rem"></div>
+      <div style="display:flex;gap:0.5rem;align-items:end">
+        <div style="flex:1">
+          <label style="font-size:0.72rem;font-weight:600;color:var(--gray-500);display:block;margin-bottom:0.2rem">Instance name</label>
+          <input id="newInstanceName" placeholder="e.g., Jamaica Gateway" style="width:100%;padding:0.4rem 0.6rem;border:1px solid var(--gray-200);border-radius:6px;font-family:var(--font);font-size:0.82rem">
+        </div>
+        <div>
+          <label style="font-size:0.72rem;font-weight:600;color:var(--gray-500);display:block;margin-bottom:0.2rem">BPA URL</label>
+          <input id="newInstanceUrl" placeholder="https://bpa.jam.eregistrations.org" style="width:100%;padding:0.4rem 0.6rem;border:1px solid var(--gray-200);border-radius:6px;font-family:var(--font);font-size:0.82rem">
+        </div>
+        <button class="btn" style="background:var(--gray-800);color:white;border-color:var(--gray-800);flex-shrink:0" onclick="addInstance()">+ Add</button>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn" onclick="closeInstanceConfig()">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- Translation Panel (slide-out) -->
+<div class="translate-panel" id="translatePanel">
+  <div class="translate-header">
+    <h3>🌐 Translate Section <span class="ai-badge">✦ AI</span></h3>
+    <button class="modal-close" onclick="closeTranslate()">×</button>
+  </div>
+  <div class="translate-controls">
+    <div style="font-size:0.72rem;font-weight:600;color:var(--gray-500);margin-bottom:0.15rem">Target language</div>
+    <div class="translate-lang-grid" id="translateLangGrid"></div>
+  </div>
+  <div class="translate-body" id="translateBody">
+    <div class="history-empty">Select a language to translate this section.</div>
+  </div>
+  <div class="translate-actions">
+    <button class="btn" style="background:var(--purple);color:white;border-color:var(--purple);flex:1" onclick="runTranslation()" id="translateBtn">
+      ✦ Translate with AI
+    </button>
+    <button class="btn" onclick="exportTranslation()" style="flex-shrink:0">↓ Export</button>
+  </div>
+</div>
+
+<script src="analysis/sections_inline.js"></script>
+<script>
+// ═══════════════════════════════════════════════════════════
+// DATA — Loaded from analysis/sections.json (with inline fallback)
+// ═══════════════════════════════════════════════════════════
+
+let SECTIONS = [];
+
+const PART_TO_GROUP = {
+  'I. BPA': 'I. Administrative Site (BPA)',
+  'II. DS': 'II. Display System (DS)',
+  'III. GDB': 'III. Generic Database (GDB)',
+  'IV. Statistics': 'IV. Statistics',
+  'V. New Features': 'New Features',
+};
+
+function convertScreenshotInfo(block) {
+  const ss = block.screenshot_status;
+  const desc = block.screenshot_description;
+  if (!ss || ss === 'same') return null;
+  if (ss === 'needs_update') return { type: 'both', oldDesc: desc || '', newPath: '' };
+  if (ss === 'needs_new') return { type: 'new', path: '', desc: desc || '' };
+  if (ss === 'verify') return { type: 'verify', desc: desc || '' };
+  if (ss === 'unknown') return { type: 'unknown', desc: desc || '' };
+  return null;
+}
+
+function convertAnalysisData(data) {
+  return data.sections.map(s => {
+    const part = s.part || 'V. New Features';
+    const group = PART_TO_GROUP[part] || part;
+    const isNew = part === 'V. New Features';
+    const shortGroup = group.includes('(') ? group.split('(')[0].trim() : group;
+
+    return {
+      id: s.section_id,
+      group: group,
+      title: s.title,
+      path: shortGroup + ' \u2192 ' + s.title,
+      pages: (s.page_range || 'new').replace('p.', ''),
+      status: isNew ? 'draft' : 'pending',
+      changes: s.change_count || 0,
+      changeSummary: s.change_summary || '',
+      isNew: isNew || undefined,
+      blocks: (s.blocks || []).map(b => {
+        const result = { type: b.type, title: b.title };
+        if (b.type === 'unchanged') {
+          result.oldText = b.content || b.original_content || '';
+          result.newText = null;
+        } else if (b.type === 'modified') {
+          result.oldText = b.original_content || '';
+          result.newText = b.content || '';
+        } else if (b.type === 'added') {
+          result.oldText = null;
+          result.newText = b.content || '';
+        } else if (b.type === 'removed') {
+          result.oldText = b.original_content || '';
+          result.newText = null;
+        } else if (b.type === 'verify') {
+          result.oldText = b.original_content || null;
+          result.newText = b.content || '';
+        }
+        if (b.explanation) result.explanation = b.explanation;
+        const ss = convertScreenshotInfo(b);
+        if (ss) result.screenshot = ss;
+        return result;
+      }),
+    };
+  });
+}
+
+async function loadSections() {
+  // Try fetch first (works when served via HTTP)
+  try {
+    const resp = await fetch('analysis/sections.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    SECTIONS = convertAnalysisData(data);
+    console.log('Loaded', SECTIONS.length, 'sections from analysis/sections.json');
+    return;
+  } catch(e) {
+    console.warn('fetch() failed:', e.message, '— trying inline data fallback');
+  }
+  // Fallback: use INLINE_DATA loaded via <script src="analysis/sections_inline.js">
+  if (typeof INLINE_DATA !== 'undefined' && INLINE_DATA && INLINE_DATA.sections) {
+    SECTIONS = convertAnalysisData(INLINE_DATA);
+    console.log('Loaded', SECTIONS.length, 'sections from INLINE_DATA fallback');
+    return;
+  }
+  console.error('No data source available');
+  SECTIONS = [];
+}
+
+// ═══════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════
+
+let currentSection = null;
+let currentView = 'changes';
+let currentFilter = 'all';
+let exportFormat = 'md';
+let notes = {}; // sectionId → note text
+let versions = {}; // sectionId → [ { version, timestamp, action, author, status, blocks, notes } ]
+
+// State is restored in init() after data loads
+
+function saveState() {
+  const statuses = {};
+  const lastUpdated = {};
+  SECTIONS.forEach(s => {
+    statuses[s.id] = s.status;
+    if (s.lastUpdated) lastUpdated[s.id] = s.lastUpdated;
+  });
+  localStorage.setItem('eR_review_state', JSON.stringify({ statuses, notes, versions, lastUpdated }));
+}
+
+// ═══════════════════════════════════════════════════════════
+// VERSION MANAGEMENT
+// ═══════════════════════════════════════════════════════════
+
+function createSnapshot(sectionId, action, author = 'reviewer') {
+  const s = SECTIONS.find(x => x.id === sectionId);
+  if (!s) return;
+
+  if (!versions[sectionId]) versions[sectionId] = [];
+  const vNum = versions[sectionId].length + 1;
+  const now = new Date().toISOString();
+
+  versions[sectionId].push({
+    version: vNum,
+    timestamp: now,
+    action: action,     // 'created' | 'approved' | 'flagged' | 'restored' | 'edited'
+    author: author,     // 'agent' | 'reviewer' | 'system'
+    status: s.status,
+    blocks: JSON.parse(JSON.stringify(s.blocks)),
+    notes: notes[sectionId] || '',
+    changes: s.changes,
+  });
+
+  s.lastUpdated = now;
+  saveState();
+  return vNum;
+}
+
+function restoreVersion(sectionId, versionNum) {
+  const hist = versions[sectionId];
+  if (!hist) return;
+  const snapshot = hist.find(v => v.version === versionNum);
+  if (!snapshot) return;
+
+  const s = SECTIONS.find(x => x.id === sectionId);
+  if (!s) return;
+
+  // Create a snapshot of current state BEFORE restoring
+  createSnapshot(sectionId, 'restored', 'reviewer');
+
+  // Restore
+  s.blocks = JSON.parse(JSON.stringify(snapshot.blocks));
+  s.status = snapshot.status;
+  s.changes = snapshot.changes;
+  notes[sectionId] = snapshot.notes;
+
+  saveState();
+  renderStats();
+  renderSections();
+  renderContent();
+  renderHistory();
+  toast(`Restored to v${versionNum}`, 'info');
+}
+
+function getVersions(sectionId) {
+  return (versions[sectionId] || []).slice().reverse(); // newest first
+}
+
+function getCurrentVersion(sectionId) {
+  const hist = versions[sectionId];
+  return hist ? hist.length : 0;
+}
+
+function timeAgo(isoStr) {
+  if (!isoStr) return '';
+  const now = new Date();
+  const then = new Date(isoStr);
+  const diffMs = now - then;
+  const diffMin = Math.floor(diffMs / 60000);
+  const diffHr = Math.floor(diffMs / 3600000);
+  const diffDay = Math.floor(diffMs / 86400000);
+
+  if (diffMin < 1) return 'just now';
+  if (diffMin < 60) return `${diffMin}m ago`;
+  if (diffHr < 24) return `${diffHr}h ago`;
+  if (diffDay < 7) return `${diffDay}d ago`;
+  return then.toLocaleDateString('en', { month: 'short', day: 'numeric' });
+}
+
+function formatTimestamp(isoStr) {
+  if (!isoStr) return '—';
+  const d = new Date(isoStr);
+  return d.toLocaleString('en', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+}
+
+// ═══════════════════════════════════════════════════════════
+// HISTORY PANEL
+// ═══════════════════════════════════════════════════════════
+
+function toggleHistory() {
+  document.getElementById('translatePanel').classList.remove('open');
+  document.getElementById('historyPanel').classList.toggle('open');
+  if (document.getElementById('historyPanel').classList.contains('open')) renderHistory();
+}
+
+function closeHistory() {
+  document.getElementById('historyPanel').classList.remove('open');
+}
+
+function renderHistory() {
+  if (!currentSection) return;
+  const hist = getVersions(currentSection.id);
+  const currentV = getCurrentVersion(currentSection.id);
+
+  document.getElementById('versionCount').textContent = hist.length;
+
+  if (hist.length === 0) {
+    document.getElementById('historyList').innerHTML = `
+      <div class="history-empty">No versions yet.<br>Versions are created when sections are generated, approved, or flagged.</div>`;
+    return;
+  }
+
+  const actionLabels = {
+    created: 'Agent generated', approved: 'Approved',
+    flagged: 'Flagged for changes', restored: 'Restored from backup',
+    edited: 'Content edited'
+  };
+  const actionClasses = {
+    created: 'act-created', approved: 'act-approved',
+    flagged: 'act-flagged', restored: 'act-restored',
+    edited: 'act-edited'
+  };
+
+  let html = '';
+  hist.forEach((v, i) => {
+    const isCurrent = v.version === currentV;
+    html += `
+      <div class="version-item ${isCurrent ? 'current' : ''}">
+        <div class="v-top">
+          <span class="v-number">v${v.version}</span>
+          <span class="v-action ${actionClasses[v.action] || ''}">${actionLabels[v.action] || v.action}</span>
+          <span class="v-time">${timeAgo(v.timestamp)}</span>
+        </div>
+        ${v.notes ? `<div class="v-note">💬 ${v.notes.substring(0, 80)}${v.notes.length > 80 ? '…' : ''}</div>` : ''}
+        <div class="version-actions">
+          <button class="v-btn v-btn-restore" onclick="restoreVersion('${currentSection.id}', ${v.version})">↩ Restore</button>
+          ${i < hist.length - 1 ? `<button class="v-btn v-btn-compare" onclick="compareVersions('${currentSection.id}', ${v.version}, ${hist[i+1]?.version || v.version})">⇄ Compare</button>` : ''}
+        </div>
+      </div>`;
+  });
+
+  document.getElementById('historyList').innerHTML = html;
+}
+
+function compareVersions(sectionId, vA, vB) {
+  const hist = versions[sectionId] || [];
+  const snapA = hist.find(v => v.version === vA);
+  const snapB = hist.find(v => v.version === vB);
+  if (!snapA || !snapB) return;
+
+  document.getElementById('compareTitle').textContent = `Compare v${vB} → v${vA}`;
+
+  let html = `
+    <div class="compare-col">
+      <h4 style="color:var(--red)">v${vB} — ${formatTimestamp(snapB.timestamp)}</h4>
+      <div class="compare-content">${snapB.blocks.map(b => `<p><strong>${b.title}</strong> [${b.type}]</p><p>${stripTags(b.newText || b.oldText || '—')}</p>`).join('<hr style="margin:0.5rem 0;border:none;border-top:1px solid var(--gray-200)">')}</div>
+    </div>
+    <div class="compare-col">
+      <h4 style="color:var(--green)">v${vA} — ${formatTimestamp(snapA.timestamp)}</h4>
+      <div class="compare-content">${snapA.blocks.map(b => `<p><strong>${b.title}</strong> [${b.type}]</p><p>${stripTags(b.newText || b.oldText || '—')}</p>`).join('<hr style="margin:0.5rem 0;border:none;border-top:1px solid var(--gray-200)">')}</div>
+    </div>`;
+
+  document.getElementById('compareGrid').innerHTML = html;
+  document.getElementById('compareModal').classList.add('show');
+}
+
+function closeCompare() {
+  document.getElementById('compareModal').classList.remove('show');
+}
+
+// ═══════════════════════════════════════════════════════════
+// VERSION BAR (under topbar)
+// ═══════════════════════════════════════════════════════════
+
+function updateVersionBar() {
+  if (!currentSection) return;
+  const sid = currentSection.id;
+  const v = getCurrentVersion(sid);
+  const hist = versions[sid] || [];
+  const latest = hist.length > 0 ? hist[hist.length - 1] : null;
+
+  if (v === 0) {
+    document.getElementById('versionBar').style.display = 'none';
+    return;
+  }
+
+  document.getElementById('versionBar').style.display = 'flex';
+  document.getElementById('vbVersion').textContent = `v${v}`;
+  document.getElementById('vbUpdated').textContent = latest ? formatTimestamp(latest.timestamp) : '—';
+  document.getElementById('vbAuthor').textContent = latest ? latest.author : '—';
+}
+
+// ═══════════════════════════════════════════════════════════
+// RENDER — Sidebar
+// ═══════════════════════════════════════════════════════════
+
+function renderStats() {
+  const counts = { pending: 0, 'in-review': 0, approved: 0, total: SECTIONS.length };
+  SECTIONS.forEach(s => {
+    if (s.status === 'pending' || s.status === 'draft') counts.pending++;
+    else if (s.status === 'in-review' || s.status === 'needs-changes') counts['in-review']++;
+    else if (s.status === 'approved') counts.approved++;
+  });
+  document.getElementById('stats').innerHTML = `
+    <div class="stat-cell pending"><span class="num">${counts.pending}</span>Pending</div>
+    <div class="stat-cell review"><span class="num">${counts['in-review']}</span>Review</div>
+    <div class="stat-cell approved"><span class="num">${counts.approved}</span>Done</div>
+    <div class="stat-cell total"><span class="num">${counts.total}</span>Total</div>
+  `;
+  const pct = Math.round((counts.approved / counts.total) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+function renderFilters() {
+  const filters = [
+    { key: 'all', label: 'All' },
+    { key: 'pending', label: 'Pending' },
+    { key: 'in-review', label: 'In review' },
+    { key: 'approved', label: 'Approved' },
+    { key: 'has-changes', label: 'Has changes' },
+  ];
+  document.getElementById('filterPills').innerHTML = filters.map(f =>
+    `<button class="filter-pill ${currentFilter === f.key ? 'active' : ''}" onclick="setFilter('${f.key}')">${f.label}</button>`
+  ).join('');
+}
+
+function setFilter(f) {
+  currentFilter = f;
+  renderFilters();
+  renderSections();
+}
+
+function renderSections() {
+  const groups = {};
+  SECTIONS.forEach(s => {
+    if (!groups[s.group]) groups[s.group] = [];
+    groups[s.group].push(s);
+  });
+
+  let html = '';
+  for (const [group, items] of Object.entries(groups)) {
+    html += `<div class="section-group"><div class="group-title"><span class="arrow">▼</span> ${group}</div>`;
+    items.forEach(s => {
+      let hidden = false;
+      if (currentFilter === 'pending' && s.status !== 'pending' && s.status !== 'draft') hidden = true;
+      if (currentFilter === 'in-review' && s.status !== 'in-review' && s.status !== 'needs-changes') hidden = true;
+      if (currentFilter === 'approved' && s.status !== 'approved') hidden = true;
+      if (currentFilter === 'has-changes' && s.changes === 0) hidden = true;
+
+      const isActive = currentSection && currentSection.id === s.id;
+      const dotClass = `dot-${s.status}`;
+      let badge = '';
+      if (s.status === 'approved') badge = '<span class="badge badge-ok">✓</span>';
+      else if (s.isNew) badge = '<span class="badge badge-new">NEW</span>';
+      else if (s.changes > 0) badge = `<span class="badge badge-changes">${s.changes}</span>`;
+
+      html += `<div class="section-item ${isActive ? 'active' : ''} ${hidden ? 'hidden' : ''}" onclick="selectSection('${s.id}')">
+        <span class="dot ${dotClass}"></span>
+        <span class="label">${s.title}</span>
+        ${s.lastUpdated ? `<span class="updated-ago">${timeAgo(s.lastUpdated)}</span>` : ''}
+        ${badge}
+      </div>`;
+    });
+    html += '</div>';
+  }
+  document.getElementById('sectionList').innerHTML = html;
+}
+
+// ═══════════════════════════════════════════════════════════
+// RENDER — Content
+// ═══════════════════════════════════════════════════════════
+
+function selectSection(id) {
+  currentSection = SECTIONS.find(s => s.id === id);
+  if (!currentSection) return;
+  document.getElementById('sectionPath').textContent = currentSection.path;
+  document.getElementById('sectionTitle').textContent = currentSection.title;
+  document.getElementById('viewToggle').style.display = 'flex';
+  document.getElementById('topbarActions').style.display = 'flex';
+  updateVersionBar();
+  renderContent();
+  renderSections();
+  if (document.getElementById('historyPanel').classList.contains('open')) renderHistory();
+  document.getElementById('contentScroll').scrollTop = 0;
+}
+
+function renderContent() {
+  const s = currentSection;
+  if (!s) return;
+
+  if (s.blocks.length === 0) {
+    document.getElementById('content').innerHTML = `
+      <div class="welcome" style="padding:3rem">
+        <div class="welcome-icon">${s.status === 'draft' ? '🆕' : '⏳'}</div>
+        <h2>${s.title}</h2>
+        <p>${s.status === 'draft'
+          ? 'This is a new section not in the original manual. Agent will generate content from scratch.'
+          : `This section (pages ${s.pages}) has not been processed yet. Run the agent to generate the updated content.`}</p>
+        <div style="margin-top:1rem;font-size:0.82rem;color:var(--gray-500)">
+          Status: <strong>${s.status}</strong>
+          ${s.changes > 0 ? ` · ${s.changes} expected changes` : ''}
+        </div>
+      </div>`;
+    return;
+  }
+
+  let html = '';
+  if (s.changeSummary && currentView !== 'clean') {
+    html += `<div style="padding:0.65rem 0.85rem;background:var(--blue-light);border:1px solid var(--blue);border-radius:8px;margin-bottom:1rem;font-size:0.82rem;color:var(--blue-deep);line-height:1.55"><strong>Change summary:</strong> ${s.changeSummary}</div>`;
+  }
+  s.blocks.forEach(block => {
+    const text = currentView === 'clean'
+      ? stripHighlights(block.newText || block.oldText)
+      : (block.newText || block.oldText);
+
+    const tagClass = {
+      'unchanged': 'tag-unchanged', 'modified': 'tag-modified',
+      'added': 'tag-added', 'removed': 'tag-removed', 'verify': 'tag-verify'
+    }[block.type] || 'tag-unchanged';
+    const tagLabel = block.type.toUpperCase();
+
+    html += `<div class="diff-block">`;
+    html += `<div class="diff-header"><span class="change-tag ${tagClass}">${tagLabel}</span>${block.title}</div>`;
+
+    if (currentView === 'sidebyside' && block.type === 'modified') {
+      html += `<div class="side-by-side">
+        <div class="side-panel"><div class="side-label old">Original (manual)</div>${formatText(block.oldText)}</div>
+        <div class="side-panel"><div class="side-label new">Updated</div>${formatText(block.newText)}</div>
+      </div>`;
+      if (block.explanation) {
+        html += `<div class="diff-body" style="border-top:1px solid var(--gray-200);background:var(--gray-50);font-size:0.82rem;color:var(--gray-600)"><strong>Why:</strong> ${block.explanation}</div>`;
+      }
+    } else {
+      html += `<div class="diff-body">${formatText(text)}`;
+      if (block.explanation && block.type !== 'unchanged') {
+        html += `<div style="margin-top:0.6rem;padding:0.5rem 0.65rem;background:var(--gray-50);border-radius:4px;font-size:0.8rem;color:var(--gray-600);border-left:3px solid var(--gray-300)"><strong>Analysis:</strong> ${block.explanation}</div>`;
+      }
+      if (block.screenshot) html += renderScreenshot(block.screenshot);
+      html += `</div>`;
+    }
+    html += `</div>`;
+  });
+
+  // Review box
+  html += `
+    <div class="review-box">
+      <h3>📝 Reviewer Notes</h3>
+      <textarea id="reviewNotes" placeholder="Add notes for this section..."
+        oninput="saveNotes()">${notes[s.id] || ''}</textarea>
+      <div class="review-actions">
+        <button class="btn btn-approve" onclick="approveSection()">✓ Approve</button>
+        <button class="btn btn-reject" onclick="flagSection()">✗ Request Changes</button>
+        <button class="btn" onclick="navigateSection(1)">⏭ Skip</button>
+      </div>
+    </div>`;
+
+  // Legend
+  html += `
+    <div class="legend">
+      <strong>Legend:</strong>
+      <span><span class="change-tag tag-unchanged">UNCHANGED</span> Same as manual</span>
+      <span><span class="change-tag tag-modified">MODIFIED</span> Updated</span>
+      <span><span class="change-tag tag-added">ADDED</span> New content</span>
+      <span><span class="change-tag tag-removed">REMOVED</span> Obsolete</span>
+      <span><span class="change-tag tag-verify">VERIFY</span> Needs check</span>
+    </div>`;
+
+  document.getElementById('content').innerHTML = html;
+}
+
+function formatText(text) {
+  if (!text) return '<em style="color:var(--gray-400)">No content</em>';
+  return text.split('\n').filter(l => l.trim()).map(line => {
+    if (line.match(/^\d+\.\s/)) return `<p style="margin-left:1rem">${line}</p>`;
+    if (line.match(/^•\s/)) return `<p style="margin-left:1rem">${line}</p>`;
+    return `<p>${line}</p>`;
+  }).join('');
+}
+
+function stripHighlights(text) {
+  if (!text) return '';
+  return text.replace(/<span class="hl-\w+">/g, '').replace(/<\/span>/g, '');
+}
+
+function renderScreenshot(ss) {
+  if (ss.type === 'new') {
+    return `<div class="screenshot-box new-shot">📸 NEW SCREENSHOT NEEDED<br><em>${ss.desc || ss.path || ''}</em></div>`;
+  } else if (ss.type === 'both') {
+    return `<div class="screenshot-box old-shot">📸 NEEDS UPDATE: ${ss.oldDesc}<br><em>Current screenshot needs replacement</em></div>`;
+  } else if (ss.type === 'verify') {
+    return `<div class="screenshot-box" style="border-color:var(--purple);color:var(--purple);background:var(--purple-light)">🔍 VERIFY SCREENSHOT<br><em>${ss.desc || ''}</em></div>`;
+  } else if (ss.type === 'unknown') {
+    return `<div class="screenshot-box">❓ SCREENSHOT STATUS UNKNOWN<br><em>${ss.desc || 'Needs investigation'}</em></div>`;
+  }
+  return '';
+}
+
+// ═══════════════════════════════════════════════════════════
+// ACTIONS
+// ═══════════════════════════════════════════════════════════
+
+function approveSection() {
+  if (!currentSection) return;
+  currentSection.status = 'approved';
+  createSnapshot(currentSection.id, 'approved', 'reviewer');
+  renderStats(); renderSections(); updateVersionBar();
+  if (document.getElementById('historyPanel').classList.contains('open')) renderHistory();
+  toast('Section approved — v' + getCurrentVersion(currentSection.id) + ' saved', 'success');
+}
+
+function flagSection() {
+  if (!currentSection) return;
+  currentSection.status = 'needs-changes';
+  createSnapshot(currentSection.id, 'flagged', 'reviewer');
+  renderStats(); renderSections(); updateVersionBar();
+  if (document.getElementById('historyPanel').classList.contains('open')) renderHistory();
+  toast('Section flagged — v' + getCurrentVersion(currentSection.id) + ' saved', 'warn');
+}
+
+function saveNotes() {
+  if (!currentSection) return;
+  notes[currentSection.id] = document.getElementById('reviewNotes')?.value || '';
+  saveState();
+}
+
+function navigateSection(dir) {
+  if (!currentSection) { selectSection(SECTIONS[0].id); return; }
+  const idx = SECTIONS.findIndex(s => s.id === currentSection.id);
+  const next = idx + dir;
+  if (next >= 0 && next < SECTIONS.length) selectSection(SECTIONS[next].id);
+}
+
+// View toggle
+document.getElementById('viewToggle').addEventListener('click', e => {
+  const btn = e.target.closest('.view-btn');
+  if (!btn) return;
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentView = btn.dataset.view;
+  renderContent();
+});
+
+// ═══════════════════════════════════════════════════════════
+// EXPORT
+// ═══════════════════════════════════════════════════════════
+
+function openExportModal() {
+  if (!currentSection) return;
+  document.getElementById('exportModal').classList.add('show');
+  document.getElementById('exportTitle').textContent = `Export: ${currentSection.title}`;
+  updateExportPreview();
+}
+
+function closeExportModal() {
+  document.getElementById('exportModal').classList.remove('show');
+}
+
+function selectExportFormat(fmt) {
+  exportFormat = fmt;
+  document.querySelectorAll('.export-opt').forEach(o => o.classList.toggle('selected', o.dataset.format === fmt));
+  updateExportPreview();
+}
+
+function updateExportPreview() {
+  const s = currentSection;
+  if (!s) return;
+  let output = '';
+
+  if (exportFormat === 'md') {
+    output = exportToMD(s);
+  } else if (exportFormat === 'html-clean') {
+    output = exportToCleanHTML(s);
+  } else {
+    output = exportToDiffHTML(s);
+  }
+  document.getElementById('exportPreview').textContent = output;
+}
+
+function exportToMD(s) {
+  const v = getCurrentVersion(s.id);
+  const hist = versions[s.id] || [];
+  const latest = hist.length > 0 ? hist[hist.length - 1] : null;
+  let md = `---\nsection_id: ${s.id}\ntitle: "${s.title}"\nstatus: ${s.status}\npages_original: "${s.pages}"\nversion: ${v}\nlast_updated: "${latest ? latest.timestamp : new Date().toISOString()}"\nlast_author: "${latest ? latest.author : 'unknown'}"\n---\n\n# ${s.title}\n\n`;
+
+  s.blocks.forEach(block => {
+    const text = stripTags(block.newText || block.oldText || '');
+
+    if (block.type === 'unchanged') {
+      md += `## ${block.title}\n\n${text}\n\n`;
+    } else if (block.type === 'modified') {
+      md += `## ${block.title}\n\n> [!changed] Modified\n> Content updated from original manual.\n\n${text}\n\n`;
+    } else if (block.type === 'added') {
+      md += `## ${block.title}\n\n> [!new] New Feature\n> This content is new.\n\n${text}\n\n`;
+    } else if (block.type === 'removed') {
+      md += `## ${block.title}\n\n> [!removed] Removed\n> ~~${text}~~\n\n`;
+    } else if (block.type === 'verify') {
+      md += `## ${block.title}\n\n> [!verify] TODO: Verify\n> ${text}\n\n`;
+    }
+
+    if (block.screenshot) {
+      const path = block.screenshot.path || block.screenshot.newPath;
+      if (path) md += `![[${path.split('/').pop()}]]\n\n`;
+    }
+  });
+
+  if (notes[s.id]) {
+    md += `---\n\n**Reviewer notes:** ${notes[s.id]}\n`;
+  }
+  return md;
+}
+
+function exportToCleanHTML(s) {
+  let html = `<section id="${s.id}">\n<h2>${s.title}</h2>\n\n`;
+  s.blocks.forEach(block => {
+    if (block.type === 'removed') return;
+    const text = stripTags(block.newText || block.oldText || '');
+    html += `<h3>${block.title}</h3>\n`;
+    text.split('\n').filter(l => l.trim()).forEach(line => {
+      html += `<p>${line}</p>\n`;
+    });
+    if (block.screenshot) {
+      const path = block.screenshot.path || block.screenshot.newPath;
+      if (path) html += `<figure><img src="${path}" alt="${block.title}"></figure>\n`;
+    }
+    html += '\n';
+  });
+  html += '</section>';
+  return html;
+}
+
+function exportToDiffHTML(s) {
+  let html = `<!-- Section: ${s.title} | Status: ${s.status} | Changes: ${s.changes} -->\n`;
+  s.blocks.forEach(block => {
+    const text = block.newText || block.oldText || '';
+    html += `<div class="diff-section" data-status="${block.type}">\n`;
+    html += `  <div class="diff-header"><span class="change-type ${block.type}">${block.type.toUpperCase()}</span> ${block.title}</div>\n`;
+    html += `  <div class="diff-body">\n`;
+    text.split('\n').filter(l => l.trim()).forEach(line => {
+      html += `    <p>${line}</p>\n`;
+    });
+    html += `  </div>\n</div>\n\n`;
+  });
+  return html;
+}
+
+function stripTags(html) {
+  return html.replace(/<[^>]+>/g, '');
+}
+
+function copyExport() {
+  const text = document.getElementById('exportPreview').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    toast('Copied to clipboard', 'success');
+    closeExportModal();
+  });
+}
+
+function downloadExport() {
+  const text = document.getElementById('exportPreview').textContent;
+  const ext = exportFormat === 'md' ? 'md' : 'html';
+  const fname = `${currentSection.id}.${ext}`;
+  const blob = new Blob([text], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = fname;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast(`Downloaded ${fname}`, 'info');
+  closeExportModal();
+}
+
+// ═══════════════════════════════════════════════════════════
+// INSTANCE MANAGEMENT
+// ═══════════════════════════════════════════════════════════
+
+const DEFAULT_INSTANCES = [
+  { id: 'els', name: 'El Salvador (dev)', url: 'https://bpa.dev.els.eregistrations.org', isDefault: true },
+  { id: 'jam', name: 'Jamaica Gateway', url: 'https://bpa.jam.eregistrations.org' },
+  { id: 'cub', name: 'Cuba VUCE', url: 'https://bpa.cub.eregistrations.org' },
+  { id: 'col', name: 'Colombia ROE', url: 'https://bpa.col.eregistrations.org' },
+];
+
+let instances = [];
+let currentInstanceId = 'els';
+
+function loadInstances() {
+  try {
+    const saved = JSON.parse(localStorage.getItem('eR_instances') || 'null');
+    instances = saved || [...DEFAULT_INSTANCES];
+    const savedCurrent = localStorage.getItem('eR_current_instance');
+    if (savedCurrent) currentInstanceId = savedCurrent;
+  } catch(e) {
+    instances = [...DEFAULT_INSTANCES];
+  }
+  renderInstanceSelect();
+}
+
+function saveInstances() {
+  localStorage.setItem('eR_instances', JSON.stringify(instances));
+  localStorage.setItem('eR_current_instance', currentInstanceId);
+}
+
+function renderInstanceSelect() {
+  const sel = document.getElementById('instanceSelect');
+  sel.innerHTML = instances.map(inst =>
+    `<option value="${inst.id}" ${inst.id === currentInstanceId ? 'selected' : ''}>${inst.name}</option>`
+  ).join('');
+}
+
+function switchInstance(id) {
+  currentInstanceId = id;
+  saveInstances();
+  toast(`Switched to ${instances.find(i => i.id === id)?.name}`, 'info');
+  // In production: load section data for this instance
+}
+
+function openInstanceConfig() {
+  document.getElementById('instanceModal').classList.add('show');
+  renderInstanceList();
+}
+
+function closeInstanceConfig() {
+  document.getElementById('instanceModal').classList.remove('show');
+}
+
+function renderInstanceList() {
+  const el = document.getElementById('instanceList');
+  el.innerHTML = instances.map((inst, i) => `
+    <div style="display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0.6rem;border:1px solid var(--gray-100);border-radius:6px;margin-bottom:0.4rem;font-size:0.82rem">
+      <span style="font-weight:600;flex:1">${inst.name}</span>
+      <code style="font-size:0.7rem;color:var(--gray-400);font-family:var(--mono)">${inst.url || '—'}</code>
+      ${inst.isDefault ? '<span style="font-size:0.65rem;color:var(--gray-400)">default</span>' :
+        `<button class="v-btn" onclick="removeInstance(${i})" style="color:var(--red);border-color:var(--red)">✕</button>`}
+    </div>
+  `).join('');
+}
+
+function addInstance() {
+  const name = document.getElementById('newInstanceName').value.trim();
+  const url = document.getElementById('newInstanceUrl').value.trim();
+  if (!name) return;
+  const id = name.toLowerCase().replace(/[^a-z0-9]/g, '-').substring(0, 12);
+  instances.push({ id, name, url });
+  saveInstances();
+  renderInstanceSelect();
+  renderInstanceList();
+  document.getElementById('newInstanceName').value = '';
+  document.getElementById('newInstanceUrl').value = '';
+  toast(`Instance "${name}" added`, 'success');
+}
+
+function removeInstance(idx) {
+  const inst = instances[idx];
+  if (inst.isDefault) return;
+  instances.splice(idx, 1);
+  if (currentInstanceId === inst.id) currentInstanceId = instances[0].id;
+  saveInstances();
+  renderInstanceSelect();
+  renderInstanceList();
+}
+
+// ═══════════════════════════════════════════════════════════
+// LANGUAGES & TRANSLATION
+// ═══════════════════════════════════════════════════════════
+
+const LANGUAGES = [
+  { code: 'en', name: 'English', flag: '🇬🇧', isSource: true },
+  { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'fr', name: 'Français', flag: '🇫🇷' },
+  { code: 'pt', name: 'Português', flag: '🇧🇷' },
+  { code: 'ar', name: 'العربية', flag: '🇸🇦' },
+  { code: 'zh', name: '中文', flag: '🇨🇳' },
+  { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+];
+
+let currentLang = 'en';
+let translations = {}; // { sectionId: { langCode: { blocks: [...], timestamp, status } } }
+let activeTrLang = 'es'; // selected in translate panel
+
+// Load translations
+try {
+  const saved = JSON.parse(localStorage.getItem('eR_translations') || '{}');
+  if (saved) translations = saved;
+} catch(e) {}
+
+function saveTranslations() {
+  localStorage.setItem('eR_translations', JSON.stringify(translations));
+}
+
+function renderLangBar() {
+  const el = document.getElementById('langBar');
+  if (!currentSection) { el.innerHTML = ''; return; }
+  const sid = currentSection.id;
+  const tr = translations[sid] || {};
+
+  el.innerHTML = LANGUAGES.map(lang => {
+    let cls = 'lang-chip';
+    if (lang.code === currentLang) cls += ' active';
+    else if (tr[lang.code]?.status === 'done') cls += ' has-translation';
+    else if (tr[lang.code]?.status === 'translating') cls += ' translating';
+    return `<span class="${cls}" onclick="switchLang('${lang.code}')" title="${lang.name}">${lang.flag} ${lang.code.toUpperCase()}</span>`;
+  }).join('');
+}
+
+function switchLang(code) {
+  const lang = LANGUAGES.find(l => l.code === code);
+  if (!lang) return;
+
+  if (lang.isSource) {
+    currentLang = code;
+    renderLangBar();
+    renderContent();
+    return;
+  }
+
+  // Check if translation exists
+  const sid = currentSection?.id;
+  if (!sid) return;
+  const tr = translations[sid]?.[code];
+
+  if (tr?.status === 'done') {
+    currentLang = code;
+    renderLangBar();
+    renderContent();
+  } else {
+    // Open translate panel with this language selected
+    activeTrLang = code;
+    openTranslate();
+  }
+}
+
+function renderTranslateLangGrid() {
+  const el = document.getElementById('translateLangGrid');
+  const sid = currentSection?.id;
+  const tr = sid ? (translations[sid] || {}) : {};
+
+  el.innerHTML = LANGUAGES.filter(l => !l.isSource).map(lang => {
+    let cls = 'translate-lang-btn';
+    if (lang.code === activeTrLang) cls += ' active';
+    if (tr[lang.code]?.status === 'done') cls += ' done';
+    return `<button class="${cls}" onclick="selectTrLang('${lang.code}')">
+      <span class="flag">${lang.flag}</span> ${lang.name}
+      ${tr[lang.code]?.status === 'done' ? ' ✓' : ''}
+    </button>`;
+  }).join('');
+}
+
+function selectTrLang(code) {
+  activeTrLang = code;
+  renderTranslateLangGrid();
+  renderTranslateBody();
+}
+
+function toggleTranslate() {
+  const panel = document.getElementById('translatePanel');
+  // Close history if open
+  document.getElementById('historyPanel').classList.remove('open');
+  panel.classList.toggle('open');
+  if (panel.classList.contains('open')) {
+    renderTranslateLangGrid();
+    renderTranslateBody();
+  }
+}
+
+function openTranslate() {
+  document.getElementById('historyPanel').classList.remove('open');
+  document.getElementById('translatePanel').classList.add('open');
+  renderTranslateLangGrid();
+  renderTranslateBody();
+}
+
+function closeTranslate() {
+  document.getElementById('translatePanel').classList.remove('open');
+}
+
+function renderTranslateBody() {
+  const sid = currentSection?.id;
+  if (!sid) return;
+  const s = currentSection;
+  const tr = translations[sid]?.[activeTrLang];
+  const langName = LANGUAGES.find(l => l.code === activeTrLang)?.name || activeTrLang;
+
+  if (!s.blocks.length) {
+    document.getElementById('translateBody').innerHTML = `
+      <div class="history-empty">No content to translate.<br>Generate section content first.</div>`;
+    return;
+  }
+
+  let html = '';
+  s.blocks.forEach((block, i) => {
+    const sourceText = stripTags(block.newText || block.oldText || '');
+    const targetText = tr?.blocks?.[i] || '';
+
+    html += `
+      <div class="translate-block">
+        <div class="translate-block-header">${block.title} · ${block.type}</div>
+        <div class="translate-block-source">${sourceText.substring(0, 200)}${sourceText.length > 200 ? '…' : ''}</div>
+        <div class="translate-block-target ${targetText ? '' : 'empty'}" id="trBlock${i}">
+          ${targetText || `Click "Translate with AI" to generate ${langName} translation`}
+        </div>
+      </div>`;
+  });
+
+  document.getElementById('translateBody').innerHTML = html;
+
+  // Update button state
+  const btn = document.getElementById('translateBtn');
+  if (tr?.status === 'done') {
+    btn.innerHTML = '✦ Re-translate';
+  } else {
+    btn.innerHTML = `✦ Translate to ${langName}`;
+  }
+}
+
+async function runTranslation() {
+  const sid = currentSection?.id;
+  if (!sid || !currentSection.blocks.length) return;
+
+  const langName = LANGUAGES.find(l => l.code === activeTrLang)?.name || activeTrLang;
+  const btn = document.getElementById('translateBtn');
+  btn.innerHTML = '⟳ Translating…';
+  btn.disabled = true;
+
+  // Mark as translating in lang bar
+  if (!translations[sid]) translations[sid] = {};
+  translations[sid][activeTrLang] = { status: 'translating', blocks: [], timestamp: null };
+  renderLangBar();
+
+  // Build content to translate
+  const sourceBlocks = currentSection.blocks.map(b => ({
+    title: b.title,
+    text: stripTags(b.newText || b.oldText || '')
+  }));
+
+  const prompt = `Translate the following eRegistrations user manual section to ${langName} (${activeTrLang}).
+
+RULES:
+- Translate the content text, keep technical terms in English when commonly used (BPA, DS, GDB, BOT, API, URL)
+- Keep proper names unchanged (eRegistrations, Form.io, SmartLink)
+- Maintain the same technical precision
+- Return ONLY a JSON array of translated texts, one per block, in the same order
+
+SOURCE BLOCKS:
+${JSON.stringify(sourceBlocks, null, 2)}
+
+Return JSON array: ["translated block 1", "translated block 2", ...]`;
+
+  try {
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        model: "claude-sonnet-4-20250514",
+        max_tokens: 4000,
+        messages: [{ role: "user", content: prompt }]
+      })
+    });
+
+    const data = await response.json();
+    const text = data.content?.map(c => c.text || '').join('') || '';
+
+    // Parse JSON response
+    let translatedBlocks;
+    try {
+      const jsonStr = text.replace(/```json|```/g, '').trim();
+      translatedBlocks = JSON.parse(jsonStr);
+    } catch(e) {
+      // Fallback: split by obvious boundaries
+      translatedBlocks = currentSection.blocks.map(() => text);
+    }
+
+    // Save translation
+    translations[sid][activeTrLang] = {
+      status: 'done',
+      blocks: translatedBlocks,
+      timestamp: new Date().toISOString(),
+    };
+    saveTranslations();
+
+    renderLangBar();
+    renderTranslateLangGrid();
+    renderTranslateBody();
+    toast(`Translated to ${langName}`, 'success');
+
+  } catch(err) {
+    translations[sid][activeTrLang] = { status: 'error', blocks: [], timestamp: null };
+    renderLangBar();
+    toast(`Translation failed: ${err.message}`, 'warn');
+  }
+
+  btn.innerHTML = `✦ Translate to ${langName}`;
+  btn.disabled = false;
+}
+
+function exportTranslation() {
+  const sid = currentSection?.id;
+  if (!sid) return;
+  const tr = translations[sid]?.[activeTrLang];
+  if (!tr?.blocks?.length) { toast('No translation to export', 'warn'); return; }
+
+  const langName = LANGUAGES.find(l => l.code === activeTrLang)?.name || activeTrLang;
+  let md = `---\nsection_id: ${sid}\ntitle: "${currentSection.title}"\nlanguage: ${activeTrLang}\ntranslated_at: "${tr.timestamp}"\n---\n\n# ${currentSection.title} (${langName})\n\n`;
+
+  currentSection.blocks.forEach((block, i) => {
+    md += `## ${block.title}\n\n${tr.blocks[i] || ''}\n\n`;
+  });
+
+  const blob = new Blob([md], { type: 'text/plain' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${sid}.${activeTrLang}.md`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast(`Downloaded ${sid}.${activeTrLang}.md`, 'info');
+}
+
+// ═══════════════════════════════════════════════════════════
+// UPDATE renderContent to support translations
+// ═══════════════════════════════════════════════════════════
+
+const _origRenderContent = renderContent;
+
+// Override renderContent to handle translated content display
+function renderContentWithLang() {
+  if (!currentSection) return;
+  if (currentLang === 'en') {
+    _origRenderContent();
+    renderLangBar();
+    return;
+  }
+  const sid = currentSection.id;
+  const tr = translations[sid]?.[currentLang];
+  if (!tr?.blocks?.length) { _origRenderContent(); renderLangBar(); return; }
+
+  const langName = LANGUAGES.find(l => l.code === currentLang)?.name || currentLang;
+  let html = `<div style="padding:0.5rem 0.75rem;background:var(--purple-light);border-radius:6px;margin-bottom:1rem;font-size:0.78rem;display:flex;align-items:center;gap:0.5rem">
+    <span class="ai-badge">✦ AI</span>
+    Viewing ${langName} translation · ${timeAgo(tr.timestamp)}
+    <button class="v-btn" onclick="switchLang('en')" style="margin-left:auto">View English</button>
+  </div>`;
+
+  currentSection.blocks.forEach((block, i) => {
+    const text = tr.blocks[i] || stripTags(block.newText || block.oldText || '');
+    html += `<div class="diff-block">
+      <div class="diff-header"><span class="change-tag tag-unchanged">${langName.toUpperCase()}</span>${block.title}</div>
+      <div class="diff-body">${formatText(text)}</div>
+    </div>`;
+  });
+  document.getElementById('content').innerHTML = html;
+  renderLangBar();
+}
+
+renderContent = renderContentWithLang;
+
+function toast(msg, type = 'info') {
+  const el = document.createElement('div');
+  el.className = `toast toast-${type}`;
+  el.textContent = msg;
+  document.getElementById('toasts').appendChild(el);
+  setTimeout(() => el.remove(), 3200);
+}
+
+// ═══════════════════════════════════════════════════════════
+// KEYBOARD
+// ═══════════════════════════════════════════════════════════
+
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowRight') navigateSection(1);
+  if (e.key === 'ArrowLeft') navigateSection(-1);
+  if (e.key === 'a' || e.key === 'A') approveSection();
+  if (e.key === 'f' || e.key === 'F') flagSection();
+  if (e.key === 'e' || e.key === 'E') openExportModal();
+  if (e.key === 'h' || e.key === 'H') toggleHistory();
+  if (e.key === 't' || e.key === 'T') toggleTranslate();
+  if (e.key === 'Escape') { closeExportModal(); closeHistory(); closeCompare(); closeTranslate(); closeInstanceConfig(); }
+});
+
+// ═══════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════
+
+async function init() {
+  // Load analysis data
+  await loadSections();
+
+  // If no sections loaded, show a message
+  if (SECTIONS.length === 0) {
+    document.getElementById('content').innerHTML = `
+      <div class="welcome">
+        <div class="welcome-icon">⚠️</div>
+        <h2>No data loaded</h2>
+        <p>Could not load section data. Make sure the <code>analysis/</code> directory is in the same folder as this HTML file, containing <code>sections.json</code> and/or <code>sections_inline.js</code>.</p>
+      </div>`;
+  }
+
+  // Restore persisted state
+  try {
+    const saved = JSON.parse(localStorage.getItem('eR_review_state') || '{}');
+    if (saved.statuses) {
+      SECTIONS.forEach(s => { if (saved.statuses[s.id]) s.status = saved.statuses[s.id]; });
+    }
+    if (saved.notes) notes = saved.notes;
+    if (saved.versions) versions = saved.versions;
+    if (saved.lastUpdated) {
+      SECTIONS.forEach(s => { if (saved.lastUpdated[s.id]) s.lastUpdated = saved.lastUpdated[s.id]; });
+    }
+  } catch(e) {}
+
+  // Seed initial version for all sections with content
+  SECTIONS.forEach(s => {
+    if (s.blocks.length > 0 && (!versions[s.id] || versions[s.id].length === 0)) {
+      versions[s.id] = [{
+        version: 1,
+        timestamp: new Date().toISOString(),
+        action: 'created',
+        author: 'agent',
+        status: s.status,
+        blocks: JSON.parse(JSON.stringify(s.blocks)),
+        notes: '',
+        changes: s.changes,
+      }];
+      s.lastUpdated = versions[s.id][0].timestamp;
+    }
+  });
+  saveState();
+
+  loadInstances();
+  renderStats();
+  renderFilters();
+  renderSections();
+}
+
+init();
+</script>
+</body>
+</html>
