@@ -150,9 +150,9 @@ description: "eRegistrations Manual - D.7. Focus on some useful functions (Origi
 <!-- Live BPA Screenshot: live-useful-functions -->
 <div class="live-screenshot" markdown>
 
-![Useful Functions - Advanced form builder features (validations, conditions)](../screenshots/live-useful-functions.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [D.7. Useful Functions](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
-*Useful functions are accessible within the form builder component settings*
+![Useful Functions - Message templates and email notifications](../screenshots/live-useful-functions.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [D.7. Useful Functions](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/templates/messages){ target=_blank }*
+*Message templates are configured under Templates > Messages in the BPA*
 
 
 </div>

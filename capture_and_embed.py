@@ -108,10 +108,10 @@ SECTION_MAP = [
     {
         'id': 'live-useful-functions',
         'md': 'part1-bpa/11-useful-functions.md',
-        'path': f'/services/{SERVICE_ID}/forms/applicant-form',
-        'desc': 'Useful Functions - Advanced form builder features (validations, conditions)',
+        'path': f'/services/{SERVICE_ID}/templates/messages',
+        'desc': 'Useful Functions - Message templates and email notifications',
         'section_title': 'D.7. Useful Functions',
-        'note': 'Useful functions are accessible within the form builder component settings',
+        'note': 'Message templates are configured under Templates > Messages in the BPA',
     },
     {
         'id': 'live-custom-classes',
@@ -120,6 +120,7 @@ SECTION_MAP = [
         'desc': 'Custom Classes - CSS styling options in the form builder',
         'section_title': 'D.8. Custom Classes',
         'note': 'Custom classes are applied via component settings in the form builder',
+        'post_action': 'open_component_edit',
     },
     {
         'id': 'live-bot-builder',
@@ -148,7 +149,8 @@ SECTION_MAP = [
         'path': '/services',
         'desc': 'Tables - Classification tables are managed at the service level',
         'section_title': 'H. Tables',
-        'note': 'Tables/Classifications are accessible from within service configuration',
+        'note': 'Tables/Classifications are accessible from within service configuration.',
+        'post_action': 'scroll_page_down',
     },
     {
         'id': 'live-settings',
@@ -174,6 +176,7 @@ SECTION_MAP = [
         'desc': 'Application File - How the applicant form appears to end users',
         'section_title': 'B. Application File',
         'note': 'The applicant sees this form after starting a new application in the Display System.',
+        'post_action': 'scroll_page_down',
     },
     {
         'id': 'live-operators-processing',
@@ -182,6 +185,7 @@ SECTION_MAP = [
         'desc': 'Operators Processing - Workflow and role processing screens',
         'section_title': 'C. Operators Processing',
         'note': 'Operators process applications through the roles/workflow defined in the BPA.',
+        'post_action': 'click_into_role',
     },
 
     # ──── Part 3 - Generic Database (GDB) ────
@@ -245,10 +249,10 @@ SECTION_MAP = [
     {
         'id': 'live-effects-system',
         'md': 'part5-new-features/01-effects-system.md',
-        'path': f'/services/{SERVICE_ID}/forms/applicant-form',
-        'desc': 'Effects System - Extended component behaviors beyond show/hide',
+        'path': f'/services/{SERVICE_ID}/templates/notifications',
+        'desc': 'Effects System - Notification templates and component behaviours',
         'section_title': 'Effects System',
-        'note': 'The Effects system is accessible via component settings in the form builder.',
+        'note': 'The Effects system controls component behaviours via determinant-driven rules.',
     },
     {
         'id': 'live-smartlink',
@@ -273,6 +277,7 @@ SECTION_MAP = [
         'desc': 'E-signature - Digital signature integration for forms',
         'section_title': 'E-signature',
         'note': 'E-signature is configured in service settings.',
+        'post_action': 'scroll_page_down',
     },
     {
         'id': 'live-card-radios',
@@ -281,6 +286,7 @@ SECTION_MAP = [
         'desc': 'Card-style Radios - Enhanced radio button display as selection cards',
         'section_title': 'Card-style Radios',
         'note': 'Card-style radios are a display option for radio components in the form builder.',
+        'post_action': 'scroll_page_middle',
     },
     {
         'id': 'live-part-b',
@@ -289,6 +295,7 @@ SECTION_MAP = [
         'desc': 'Part B (Processing) - Operator processing screen configuration',
         'section_title': 'Part B (Processing)',
         'note': 'Part B configuration is done within the roles/processing section.',
+        'post_action': 'click_role_solicitud',
     },
     {
         'id': 'live-collapsible-fields',
@@ -297,6 +304,7 @@ SECTION_MAP = [
         'desc': 'Collapsible Fields - Expandable/collapsible form sections',
         'section_title': 'Collapsible Fields',
         'note': 'Collapsible fields are configured as a display option in the form builder.',
+        'post_action': 'scroll_page_down',
     },
 ]
 
@@ -304,8 +312,18 @@ SECTION_MAP = [
 
 async def run_post_action(page, action):
     """Run a post-navigation action to set up the page for screenshot."""
-    if action == 'open_determinants':
-        await open_determinants_drawer(page)
+    actions = {
+        'open_determinants': open_determinants_drawer,
+        'open_component_edit': open_component_edit,
+        'click_into_role': click_into_role,
+        'click_role_solicitud': click_role_solicitud,
+        'scroll_page_down': scroll_page_down,
+        'scroll_page_middle': scroll_page_middle,
+        'click_registration_detail': click_registration_detail,
+    }
+    handler = actions.get(action)
+    if handler:
+        await handler(page)
     else:
         print(f"  WARN: Unknown post_action '{action}'")
 
@@ -339,6 +357,143 @@ async def open_determinants_drawer(page):
             print(f"(no D buttons found)", end=' ', flush=True)
     except Exception as e:
         print(f"(determinants action failed: {str(e)[:60]})", end=' ', flush=True)
+
+
+async def open_component_edit(page):
+    """Click on 'Otros Componentes' or 'Componentes Especiales' tab in the form builder to show different component types."""
+    try:
+        # Try clicking a different toolbar tab to show different component palette
+        tabs_to_try = [
+            'text=Otros Componentes',
+            'text=Componentes Especiales',
+            'text=Other Components',
+            'text=Special Components',
+        ]
+        for tab_sel in tabs_to_try:
+            tab = page.locator(tab_sel)
+            if await tab.count() > 0 and await tab.first.is_visible():
+                await tab.first.click()
+                print(f"(clicked '{tab_sel}')", end=' ', flush=True)
+                await asyncio.sleep(2)
+                return
+
+        # Fallback: scroll down on the form builder to show different form components
+        await page.evaluate('window.scrollTo(0, document.body.scrollHeight * 0.6)')
+        print("(scrolled to 60%)", end=' ', flush=True)
+        await asyncio.sleep(2)
+    except Exception as e:
+        print(f"(component edit failed: {str(e)[:60]})", end=' ', flush=True)
+
+
+async def click_into_role(page):
+    """Click on the first processing role to show its detail/form view."""
+    try:
+        strategies = [
+            'a:has-text("Revisión")',
+            'a:has-text("Revision")',
+            'a:has-text("Aprobación")',
+            'table td a',
+            '.list-group-item a',
+            'a[href*="role"]',
+        ]
+        for selector in strategies:
+            links = page.locator(selector)
+            count = await links.count()
+            if count > 0:
+                for i in range(count):
+                    link = links.nth(i)
+                    if await link.is_visible():
+                        text = await link.text_content()
+                        await link.click()
+                        print(f"(clicked role '{text.strip()[:20]}')", end=' ', flush=True)
+                        await asyncio.sleep(5)
+                        return
+        print("(no role links found)", end=' ', flush=True)
+    except Exception as e:
+        print(f"(click role failed: {str(e)[:60]})", end=' ', flush=True)
+
+
+async def click_role_solicitud(page):
+    """Click on the 'Solicitud' role to show its Part B form configuration."""
+    try:
+        strategies = [
+            'a:has-text("Solicitud")',
+            'a:has-text("solicitud")',
+            'a:has-text("Operador")',
+            'a:has-text("Aprobación")',
+        ]
+        for selector in strategies:
+            links = page.locator(selector)
+            count = await links.count()
+            if count > 0:
+                for i in range(count):
+                    link = links.nth(i)
+                    if await link.is_visible():
+                        text = await link.text_content()
+                        await link.click()
+                        print(f"(clicked '{text.strip()[:20]}' role)", end=' ', flush=True)
+                        await asyncio.sleep(5)
+                        return
+
+        # Fallback: click last role link
+        all_links = page.locator('table a, .list-group a')
+        count = await all_links.count()
+        if count > 1:
+            link = all_links.nth(count - 1)
+            if await link.is_visible():
+                await link.click()
+                print("(clicked last role)", end=' ', flush=True)
+                await asyncio.sleep(5)
+                return
+        print("(no Solicitud role found)", end=' ', flush=True)
+    except Exception as e:
+        print(f"(click Solicitud failed: {str(e)[:60]})", end=' ', flush=True)
+
+
+async def scroll_page_down(page):
+    """Scroll down to show different content on the page."""
+    try:
+        await page.evaluate('window.scrollBy(0, 500)')
+        print("(scrolled down 500px)", end=' ', flush=True)
+        await asyncio.sleep(2)
+    except Exception as e:
+        print(f"(scroll failed: {str(e)[:60]})", end=' ', flush=True)
+
+
+async def scroll_page_middle(page):
+    """Scroll to the middle of the page content."""
+    try:
+        await page.evaluate('window.scrollTo(0, document.body.scrollHeight / 3)')
+        print("(scrolled to middle)", end=' ', flush=True)
+        await asyncio.sleep(2)
+    except Exception as e:
+        print(f"(scroll middle failed: {str(e)[:60]})", end=' ', flush=True)
+
+
+async def click_registration_detail(page):
+    """Click on a registration name to show its detail view."""
+    try:
+        strategies = [
+            'a:has-text("Permiso eventual")',
+            'a:has-text("Permiso")',
+            'table td a',
+            '.list-group-item a',
+        ]
+        for selector in strategies:
+            links = page.locator(selector)
+            count = await links.count()
+            if count > 0:
+                for i in range(count):
+                    link = links.nth(i)
+                    if await link.is_visible():
+                        text = await link.text_content()
+                        await link.click()
+                        print(f"(clicked registration '{text.strip()[:25]}')", end=' ', flush=True)
+                        await asyncio.sleep(5)
+                        return
+        print("(no registration links found)", end=' ', flush=True)
+    except Exception as e:
+        print(f"(click registration failed: {str(e)[:60]})", end=' ', flush=True)
 
 
 # ═══ Capture phase ═══
@@ -386,6 +541,10 @@ async def capture_all():
 
         try:
             if full_url != last_url:
+                # After a post_action (last_url=None), clear page state first
+                if last_url is None:
+                    await page.goto('about:blank')
+                    await asyncio.sleep(1)
                 await page.goto(full_url, wait_until='domcontentloaded', timeout=45000)
                 last_url = full_url
 

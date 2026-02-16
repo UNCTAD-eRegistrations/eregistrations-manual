@@ -18,9 +18,9 @@ description: "eRegistrations Manual - Effects System"
 <!-- Live BPA Screenshot: live-effects-system -->
 <div class="live-screenshot" markdown>
 
-![Effects System - Extended component behaviors beyond show/hide](../screenshots/live-effects-system.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [Effects System](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
-*The Effects system is accessible via component settings in the form builder.*
+![Effects System - Notification templates and component behaviours](../screenshots/live-effects-system.png){ loading=lazy }
+*Current BPA view (2026-02-15) — [Effects System](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/templates/notifications){ target=_blank }*
+*The Effects system controls component behaviours via determinant-driven rules.*
 
 
 </div>

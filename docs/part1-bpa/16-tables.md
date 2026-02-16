@@ -57,7 +57,7 @@ description: "eRegistrations Manual - H. Tables (Original pages 125-132)"
 
 ![Tables - Classification tables are managed at the service level](../screenshots/live-tables.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [H. Tables](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
-*Tables/Classifications are accessible from within service configuration*
+*Tables/Classifications are accessible from within service configuration.*
 
 
 </div>
