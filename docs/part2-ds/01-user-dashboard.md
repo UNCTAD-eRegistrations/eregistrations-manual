@@ -6,45 +6,42 @@ description: "eRegistrations Manual - A. The user dashboard (Original pages p.13
 # A. The user dashboard
 
 
-<!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
- ![pdf-ds-user-dashboard-01.png](./screenshots/pdf-ds-user-dashboard-01.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-01.png](../screenshots/pdf-ds-user-dashboard-01.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-02.png](./screenshots/pdf-ds-user-dashboard-02.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-02.png](../screenshots/pdf-ds-user-dashboard-02.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-03.png](./screenshots/pdf-ds-user-dashboard-03.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-03.png](../screenshots/pdf-ds-user-dashboard-03.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-04.png](./screenshots/pdf-ds-user-dashboard-04.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-04.png](../screenshots/pdf-ds-user-dashboard-04.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-05.png](./screenshots/pdf-ds-user-dashboard-05.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-05.png](../screenshots/pdf-ds-user-dashboard-05.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-06.png](./screenshots/pdf-ds-user-dashboard-06.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-06.png](../screenshots/pdf-ds-user-dashboard-06.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-07.png](./screenshots/pdf-ds-user-dashboard-07.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-07.png](../screenshots/pdf-ds-user-dashboard-07.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-08.png](./screenshots/pdf-ds-user-dashboard-08.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-08.png](../screenshots/pdf-ds-user-dashboard-08.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-09.png](./screenshots/pdf-ds-user-dashboard-09.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-09.png](../screenshots/pdf-ds-user-dashboard-09.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-10.png](./screenshots/pdf-ds-user-dashboard-10.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-10.png](../screenshots/pdf-ds-user-dashboard-10.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-11.png](./screenshots/pdf-ds-user-dashboard-11.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-11.png](../screenshots/pdf-ds-user-dashboard-11.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-12.png](./screenshots/pdf-ds-user-dashboard-12.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-12.png](../screenshots/pdf-ds-user-dashboard-12.png){ loading=lazy }
 
- ![pdf-ds-user-dashboard-13.png](./screenshots/pdf-ds-user-dashboard-13.png){ loading=lazy }
+    ![pdf-ds-user-dashboard-13.png](../screenshots/pdf-ds-user-dashboard-13.png){ loading=lazy }
 
 
-<!-- Live BPA Screenshot: live-user-dashboard -->
 <div class="live-screenshot" markdown>
 
-![User Dashboard - The applicant-facing interface (accessible via "Ver servicio")](./screenshots/live-user-dashboard.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [A. User Dashboard](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
+![User Dashboard - The applicant-facing interface (accessible via "Ver servicio")](../screenshots/live-user-dashboard.png){ loading=lazy }
+*Current BPA view — A. User Dashboard*
 *The Display System is the public-facing side. Click "Ver servicio" in the BPA to preview it.*
 
 
 </div>
-<!-- /Live BPA Screenshot: live-user-dashboard -->
 
 ## DS definition
 
@@ -57,7 +54,6 @@ The user site or the Display System is the user dashboard.
 
 The header and menu bar consists of: The home button (national logo), home button, login button, register button. Choice of language. The home page displays all available online services.
 
-<!-- Verify screenshot: DS header bar for new (non-logged-in) users showing logo, home, login, register buttons, and language selector -- verify current visual appearance -->
 
 ---
 
@@ -65,7 +61,6 @@ The header and menu bar consists of: The home button (national logo), home butto
 
 When the user clicks register, the create account page will be displayed. User provides information and clicks RegisterForAccount. Verification email will be sent.
 
-<!-- Verify screenshot: Create account page -- verify visual appearance has not changed significantly -->
 
 ---
 
@@ -73,7 +68,6 @@ When the user clicks register, the create account page will be displayed. User p
 
 The home page displays all available online services.
 
-<!-- Verify screenshot: Home page services list -- verify if card layout or list format has changed -->
 
 ---
 
@@ -82,7 +76,6 @@ The home page displays all available online services.
 
 Menu bar consists of: home button and My Account page, name of user, choice of language.
 
-<!-- Verify screenshot: Logged-in user menu bar -- verify current layout, buttons, and visual styling -->
 
 ---
 
@@ -90,7 +83,6 @@ Menu bar consists of: home button and My Account page, name of user, choice of l
 
 The Home button/My Account page displays: My Applications tab (list of applications saved/submitted). Under My Applications: service name, business name, date started, date submitted, status, certificates (can be printed from dashboard).
 
-<!-- Verify screenshot: My Applications tab showing applications table with columns -- verify if additional columns or layout changes exist -->
 
 ---
 
@@ -98,7 +90,6 @@ The Home button/My Account page displays: My Applications tab (list of applicati
 
 My Documents tab displays documents submitted by the user.
 
-<!-- Verify screenshot: My Documents tab -- verify visual appearance -->
 
 ---
 
@@ -106,7 +97,6 @@ My Documents tab displays documents submitted by the user.
 
 My Messages tab displays messages from administrations/processing roles.
 
-<!-- Verify screenshot: My Messages tab -- verify visual appearance -->
 
 ---
 
@@ -114,7 +104,6 @@ My Messages tab displays messages from administrations/processing roles.
 
 Filter: search for specific application by service or business name.
 
-<!-- Verify screenshot: Filter function on My Applications -- verify if additional filter options have been added -->
 
 ---
 
@@ -122,7 +111,6 @@ Filter: search for specific application by service or business name.
 
 Application history: click on a service to see stages.
 
-<!-- Verify screenshot: Application history view -- verify current visual presentation -->
 
 ---
 
@@ -131,7 +119,6 @@ Application history: click on a service to see stages.
 
 Application status shown by different colors. Status filters available at bottom.
 
-<!-- Verify screenshot: Status colors and status filter buttons -- verify current color scheme and filter button layout -->
 
 ---
 
@@ -147,6 +134,5 @@ The shopping cart feature, as an alternative to the Guide, may be visible or acc
 
 The DS (Display System) may have undergone visual theme updates since July 2025, including changes to fonts, colors, button styles, spacing, and overall layout. The BPA service settings include a 'UI theme' option that controls the DS appearance.
 
-<!-- Screenshot needed: All DS screenshots in this section should be compared against the current platform to check for UI theme changes -->
 
 ---

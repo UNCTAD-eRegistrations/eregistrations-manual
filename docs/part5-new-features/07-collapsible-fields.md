@@ -6,16 +6,14 @@ description: "eRegistrations Manual - Collapsible Fields"
 # Collapsible Fields
 
 
-<!-- Live BPA Screenshot: live-collapsible-fields -->
 <div class="live-screenshot" markdown>
 
-![Collapsible Fields - Expandable/collapsible form sections](./screenshots/live-collapsible-fields.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [Collapsible Fields](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+![Collapsible Fields - Expandable/collapsible form sections](../screenshots/live-collapsible-fields.png){ loading=lazy }
+*Current BPA view — Collapsible Fields*
 *Collapsible fields are configured as a display option in the form builder.*
 
 
 </div>
-<!-- /Live BPA Screenshot: live-collapsible-fields -->
 
 ## Overview of Collapsible Fields
 
@@ -28,7 +26,6 @@ Enhanced collapsible functionality may extend this capability to:
 
 The basic block collapsible toggle (documented in section D.3) remains the foundation of this feature.
 
-<!-- Screenshot needed: Screenshots showing the various collapsible behaviors: block collapsible, field-level collapsible (if available), and different collapsed/expanded states. -->
 
 ---
 
@@ -42,7 +39,6 @@ The basic block collapsible toggle (documented in section D.3) remains the found
 
 The basic toggle (enable/disable collapsible) remains available under the General tab of the block configuration.
 
-<!-- Screenshot needed: Screenshot of the block configuration showing the collapsible toggle and any additional collapsible options that may have been added. -->
 
 ---
 
@@ -55,6 +51,7 @@ Beyond block-level collapsing, the platform may support collapsible behavior for
 - Collapsible panels within blocks: Sub-sections within a block that can be independently collapsed.
 - Collapsible edit grids: Edit grid rows or sections that can be collapsed to show only summary data.
 
+The exact scope of field-level collapsible behavior needs verification.
 
 ---
 

@@ -6,59 +6,56 @@ description: "eRegistrations Manual - C. Operators processing pages (Original pa
 # C. Operators processing pages
 
 
-<!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
- ![pdf-ds-operators-processing-01.png](./screenshots/pdf-ds-operators-processing-01.png){ loading=lazy }
+    ![pdf-ds-operators-processing-01.png](../screenshots/pdf-ds-operators-processing-01.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-02.png](./screenshots/pdf-ds-operators-processing-02.png){ loading=lazy }
+    ![pdf-ds-operators-processing-02.png](../screenshots/pdf-ds-operators-processing-02.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-03.png](./screenshots/pdf-ds-operators-processing-03.png){ loading=lazy }
+    ![pdf-ds-operators-processing-03.png](../screenshots/pdf-ds-operators-processing-03.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-04.png](./screenshots/pdf-ds-operators-processing-04.png){ loading=lazy }
+    ![pdf-ds-operators-processing-04.png](../screenshots/pdf-ds-operators-processing-04.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-05.png](./screenshots/pdf-ds-operators-processing-05.png){ loading=lazy }
+    ![pdf-ds-operators-processing-05.png](../screenshots/pdf-ds-operators-processing-05.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-06.png](./screenshots/pdf-ds-operators-processing-06.png){ loading=lazy }
+    ![pdf-ds-operators-processing-06.png](../screenshots/pdf-ds-operators-processing-06.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-07.png](./screenshots/pdf-ds-operators-processing-07.png){ loading=lazy }
+    ![pdf-ds-operators-processing-07.png](../screenshots/pdf-ds-operators-processing-07.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-08.png](./screenshots/pdf-ds-operators-processing-08.png){ loading=lazy }
+    ![pdf-ds-operators-processing-08.png](../screenshots/pdf-ds-operators-processing-08.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-09.png](./screenshots/pdf-ds-operators-processing-09.png){ loading=lazy }
+    ![pdf-ds-operators-processing-09.png](../screenshots/pdf-ds-operators-processing-09.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-10.png](./screenshots/pdf-ds-operators-processing-10.png){ loading=lazy }
+    ![pdf-ds-operators-processing-10.png](../screenshots/pdf-ds-operators-processing-10.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-11.png](./screenshots/pdf-ds-operators-processing-11.png){ loading=lazy }
+    ![pdf-ds-operators-processing-11.png](../screenshots/pdf-ds-operators-processing-11.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-12.png](./screenshots/pdf-ds-operators-processing-12.png){ loading=lazy }
+    ![pdf-ds-operators-processing-12.png](../screenshots/pdf-ds-operators-processing-12.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-13.png](./screenshots/pdf-ds-operators-processing-13.png){ loading=lazy }
+    ![pdf-ds-operators-processing-13.png](../screenshots/pdf-ds-operators-processing-13.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-14.png](./screenshots/pdf-ds-operators-processing-14.png){ loading=lazy }
+    ![pdf-ds-operators-processing-14.png](../screenshots/pdf-ds-operators-processing-14.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-15.png](./screenshots/pdf-ds-operators-processing-15.png){ loading=lazy }
+    ![pdf-ds-operators-processing-15.png](../screenshots/pdf-ds-operators-processing-15.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-16.png](./screenshots/pdf-ds-operators-processing-16.png){ loading=lazy }
+    ![pdf-ds-operators-processing-16.png](../screenshots/pdf-ds-operators-processing-16.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-17.png](./screenshots/pdf-ds-operators-processing-17.png){ loading=lazy }
+    ![pdf-ds-operators-processing-17.png](../screenshots/pdf-ds-operators-processing-17.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-18.png](./screenshots/pdf-ds-operators-processing-18.png){ loading=lazy }
+    ![pdf-ds-operators-processing-18.png](../screenshots/pdf-ds-operators-processing-18.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-19.png](./screenshots/pdf-ds-operators-processing-19.png){ loading=lazy }
+    ![pdf-ds-operators-processing-19.png](../screenshots/pdf-ds-operators-processing-19.png){ loading=lazy }
 
- ![pdf-ds-operators-processing-20.png](./screenshots/pdf-ds-operators-processing-20.png){ loading=lazy }
+    ![pdf-ds-operators-processing-20.png](../screenshots/pdf-ds-operators-processing-20.png){ loading=lazy }
 
 
-<!-- Live BPA Screenshot: live-operators-processing -->
 <div class="live-screenshot" markdown>
 
-![Operators Processing - Workflow and role processing screens](./screenshots/live-operators-processing.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [C. Operators Processing](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }*
+![Operators Processing - Workflow and role processing screens](../screenshots/live-operators-processing.png){ loading=lazy }
+*Current BPA view — C. Operators Processing*
 *Operators process applications through the roles/workflow defined in the BPA.*
 
 
 </div>
-<!-- /Live BPA Screenshot: live-operators-processing -->
 
 ## Processing pages overview
 
@@ -71,7 +68,6 @@ Processing pages are what operators of the institutions which offer registration
 
 The list of files filtered by status (pending, approved, rejected, sent back for corrections) is displayed. The drop down list displays all services. Select the service, then select the role from the first dropdown. Calendar icon allows viewing applications submitted at a certain day/time range. The first screen displays all pending files by default.
 
-<!-- Verify screenshot: File list page showing status filters, service dropdown, role dropdown, calendar filter -- verify current layout and appearance -->
 
 ---
 
@@ -79,7 +75,6 @@ The list of files filtered by status (pending, approved, rejected, sent back for
 
 Sub menu: Status of file, Business name, Date of receipt, status of registrations, operator in charge. Status filter on bottom corner with different colors. Other filters: all files, validated, sent back, rejected.
 
-<!-- Verify screenshot: File list sub menu columns and status filter colors -- verify current appearance -->
 
 ---
 
@@ -87,7 +82,6 @@ Sub menu: Status of file, Business name, Date of receipt, status of registration
 
 This is the 2nd screen of the operator's role. The top part displays application details (zip folder of documents) and application history.
 
-<!-- Verify screenshot: Processing page top section with application details and history -- verify current layout -->
 
 ---
 
@@ -95,7 +89,6 @@ This is the 2nd screen of the operator's role. The top part displays application
 
 Revision role: Requires operator to verify documents and data. If operator chooses 'NO' under documents revision, field appears for rejection reason. Documents revision tab shows uploaded documents on left, data and requirements on right. Data revision tab displays all components.
 
-<!-- Verify screenshot: Revision role with documents revision and data revision tabs -- verify current appearance -->
 
 ---
 
@@ -103,7 +96,6 @@ Revision role: Requires operator to verify documents and data. If operator choos
 
 Processing role: Form/action developed by analyst. Operator can generate action (display/upload certificate). Validate, reject, or send back the application. Documents tab shows uploaded documents and certificates. Data tab shows all BPA application file components.
 
-<!-- Verify screenshot: Processing role showing form, action buttons, documents tab, data tab -- verify current appearance -->
 
 ---
 
@@ -112,7 +104,6 @@ Processing role: Form/action developed by analyst. Operator can generate action 
 
 Part B may now include system action buttons that can be enabled via BPA service settings. These buttons allow operators to perform additional system-level actions during processing, such as triggering BOTs, generating documents, or executing automated workflows directly from the processing page.
 
-<!-- Screenshot needed: Part B system actions -- capture any system action buttons visible in the processing page if they exist -->
 
 ---
 
@@ -134,6 +125,5 @@ The effects system may influence operator processing by automatically triggering
 
 The section on clearing old files from the service describes the process for removing outdated application files.
 
-<!-- Verify screenshot: Clearing old files -- verify the feature is still present and accessible in the same location -->
 
 ---

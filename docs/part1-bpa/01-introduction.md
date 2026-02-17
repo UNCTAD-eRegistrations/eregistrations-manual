@@ -6,14 +6,12 @@ description: "eRegistrations Manual - Introduction (Original pages p.5)"
 # Introduction
 
 
-<!-- Live BPA Screenshot: live-introduction -->
 <div class="live-screenshot" markdown>
 
-![BPA Overview - The Business Process Administration interface](./screenshots/live-introduction.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [Introduction](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
+![BPA Overview - The Business Process Administration interface](../screenshots/live-introduction.png){ loading=lazy }
+*Current BPA view — Introduction*
 
 </div>
-<!-- /Live BPA Screenshot: live-introduction -->
 
 ## Manual purpose statement
 

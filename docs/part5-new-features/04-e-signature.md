@@ -6,16 +6,14 @@ description: "eRegistrations Manual - E-signature"
 # E-signature
 
 
-<!-- Live BPA Screenshot: live-e-signature -->
 <div class="live-screenshot" markdown>
 
-![E-signature - Digital signature integration for forms](./screenshots/live-e-signature.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [E-signature](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration){ target=_blank }*
+![E-signature - Digital signature integration for forms](../screenshots/live-e-signature.png){ loading=lazy }
+*Current BPA view — E-signature*
 *E-signature is configured in service settings.*
 
 
 </div>
-<!-- /Live BPA Screenshot: live-e-signature -->
 
 ## Overview of E-signature
 
@@ -41,6 +39,7 @@ To configure e-signature for a service, the analyst likely needs to:
 4. Set up the e-signature provider integration (if using an external provider).
 5. Configure the signature validation rules and appearance.
 
+The exact configuration steps and UI location need verification.
 
 ---
 
@@ -84,7 +83,6 @@ With e-signature enabled, the Send page may include:
 
 The existing 'I Swear' component may work alongside or be replaced by the e-signature component.
 
-<!-- Screenshot needed: Screenshot of the Send page with e-signature enabled, showing how the signature interface appears to the applicant. -->
 
 ---
 

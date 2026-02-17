@@ -6,55 +6,52 @@ description: "eRegistrations Manual - H. Tables (Original pages 125-132)"
 # H. Tables
 
 
-<!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
- ![pdf-bpa-tables-01.png](./screenshots/pdf-bpa-tables-01.png){ loading=lazy }
+    ![pdf-bpa-tables-01.png](../screenshots/pdf-bpa-tables-01.png){ loading=lazy }
 
- ![pdf-bpa-tables-02.png](./screenshots/pdf-bpa-tables-02.png){ loading=lazy }
+    ![pdf-bpa-tables-02.png](../screenshots/pdf-bpa-tables-02.png){ loading=lazy }
 
- ![pdf-bpa-tables-03.png](./screenshots/pdf-bpa-tables-03.png){ loading=lazy }
+    ![pdf-bpa-tables-03.png](../screenshots/pdf-bpa-tables-03.png){ loading=lazy }
 
- ![pdf-bpa-tables-04.png](./screenshots/pdf-bpa-tables-04.png){ loading=lazy }
+    ![pdf-bpa-tables-04.png](../screenshots/pdf-bpa-tables-04.png){ loading=lazy }
 
- ![pdf-bpa-tables-05.png](./screenshots/pdf-bpa-tables-05.png){ loading=lazy }
+    ![pdf-bpa-tables-05.png](../screenshots/pdf-bpa-tables-05.png){ loading=lazy }
 
- ![pdf-bpa-tables-06.png](./screenshots/pdf-bpa-tables-06.png){ loading=lazy }
+    ![pdf-bpa-tables-06.png](../screenshots/pdf-bpa-tables-06.png){ loading=lazy }
 
- ![pdf-bpa-tables-07.png](./screenshots/pdf-bpa-tables-07.png){ loading=lazy }
+    ![pdf-bpa-tables-07.png](../screenshots/pdf-bpa-tables-07.png){ loading=lazy }
 
- ![pdf-bpa-tables-08.png](./screenshots/pdf-bpa-tables-08.png){ loading=lazy }
+    ![pdf-bpa-tables-08.png](../screenshots/pdf-bpa-tables-08.png){ loading=lazy }
 
- ![pdf-bpa-tables-09.png](./screenshots/pdf-bpa-tables-09.png){ loading=lazy }
+    ![pdf-bpa-tables-09.png](../screenshots/pdf-bpa-tables-09.png){ loading=lazy }
 
- ![pdf-bpa-tables-10.png](./screenshots/pdf-bpa-tables-10.png){ loading=lazy }
+    ![pdf-bpa-tables-10.png](../screenshots/pdf-bpa-tables-10.png){ loading=lazy }
 
- ![pdf-bpa-tables-11.png](./screenshots/pdf-bpa-tables-11.png){ loading=lazy }
+    ![pdf-bpa-tables-11.png](../screenshots/pdf-bpa-tables-11.png){ loading=lazy }
 
- ![pdf-bpa-tables-12.png](./screenshots/pdf-bpa-tables-12.png){ loading=lazy }
+    ![pdf-bpa-tables-12.png](../screenshots/pdf-bpa-tables-12.png){ loading=lazy }
 
- ![pdf-bpa-tables-13.png](./screenshots/pdf-bpa-tables-13.png){ loading=lazy }
+    ![pdf-bpa-tables-13.png](../screenshots/pdf-bpa-tables-13.png){ loading=lazy }
 
- ![pdf-bpa-tables-14.png](./screenshots/pdf-bpa-tables-14.png){ loading=lazy }
+    ![pdf-bpa-tables-14.png](../screenshots/pdf-bpa-tables-14.png){ loading=lazy }
 
- ![pdf-bpa-tables-15.png](./screenshots/pdf-bpa-tables-15.png){ loading=lazy }
+    ![pdf-bpa-tables-15.png](../screenshots/pdf-bpa-tables-15.png){ loading=lazy }
 
- ![pdf-bpa-tables-16.png](./screenshots/pdf-bpa-tables-16.png){ loading=lazy }
+    ![pdf-bpa-tables-16.png](../screenshots/pdf-bpa-tables-16.png){ loading=lazy }
 
- ![pdf-bpa-tables-17.png](./screenshots/pdf-bpa-tables-17.png){ loading=lazy }
+    ![pdf-bpa-tables-17.png](../screenshots/pdf-bpa-tables-17.png){ loading=lazy }
 
- ![pdf-bpa-tables-18.png](./screenshots/pdf-bpa-tables-18.png){ loading=lazy }
+    ![pdf-bpa-tables-18.png](../screenshots/pdf-bpa-tables-18.png){ loading=lazy }
 
 
-<!-- Live BPA Screenshot: live-tables -->
 <div class="live-screenshot" markdown>
 
-![Tables - Classification tables are managed at the service level](./screenshots/live-tables.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [H. Tables](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
+![Tables - Classification tables are managed at the service level](../screenshots/live-tables.png){ loading=lazy }
+*Current BPA view — H. Tables*
 *Tables/Classifications are accessible from within service configuration.*
 
 
 </div>
-<!-- /Live BPA Screenshot: live-tables -->
 
 ## Tables overview and three types
 
@@ -82,7 +79,7 @@ Catalogs used by all services in one instance (list of countries, cities, compan
 
 ## Classification system
 
-Tables in eRegistrations are backed by a classification system that organizes catalog data (dropdown options, reference lists, etc.) into reusable structures. Classifications can be created, updated, exported as CSV, and shared across services. Each classification has entries with labels and values, and supports custom keys and custom ordering.
+Tables in eRegistrations are backed by a classification system that organizes catalog data (dropdown options, reference lists, etc.) into reusable structures. Classifications can be created, updated, exported as CSV, and shared across services.
 
 ---
 
@@ -91,7 +88,6 @@ Tables in eRegistrations are backed by a classification system that organizes ca
 
 The catalog import/export functionality may have received improvements since the manual was written, including CSV export capability and additional import formats.
 
-<!-- Verify screenshot: Current import/export modal showing all available formats and options. -->
 
 ---
 
@@ -100,6 +96,5 @@ The catalog import/export functionality may have received improvements since the
 
 GDB-based catalogs (catalogs populated from GDB data) may have received improvements in how they reference databases, handle versioning, or display values.
 
-<!-- Verify screenshot: GDB-based catalog creation showing system source, database, and column selection. -->
 
 ---

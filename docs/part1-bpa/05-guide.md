@@ -6,21 +6,18 @@ description: "eRegistrations Manual - D.1. The Guide (Original pages p.27-28)"
 # D.1. The Guide
 
 
-<!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
- ![pdf-bpa-guide-01.png](./screenshots/pdf-bpa-guide-01.png){ loading=lazy }
+    ![pdf-bpa-guide-01.png](../screenshots/pdf-bpa-guide-01.png){ loading=lazy }
 
- ![pdf-bpa-guide-02.png](./screenshots/pdf-bpa-guide-02.png){ loading=lazy }
+    ![pdf-bpa-guide-02.png](../screenshots/pdf-bpa-guide-02.png){ loading=lazy }
 
 
-<!-- Live BPA Screenshot: live-guide -->
 <div class="live-screenshot" markdown>
 
-![The Guide - Guide form configuration](./screenshots/live-guide.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [D.1. The Guide](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/guide-form){ target=_blank }*
+![The Guide - Guide form configuration](../screenshots/live-guide.png){ loading=lazy }
+*Current BPA view — D.1. The Guide*
 
 </div>
-<!-- /Live BPA Screenshot: live-guide -->
 
 ## Guide purpose
 
@@ -32,7 +29,6 @@ Questions can be created in the guide to help determine, for each specific user,
 
 The guide is defined by three elements: Description (name of the guide question), Form (where guide questions are developed and linked to the requirements and/or application form using determinants), Status.
 
-<!-- Verify screenshot: Guide tabs showing Description, Form, Status -- verify visual appearance. -->
 
 ---
 
@@ -40,7 +36,6 @@ The guide is defined by three elements: Description (name of the guide question)
 
 If your service has a Guide, activate the guide toggle.
 
-<!-- Verify screenshot: Guide toggle -- verify visual appearance. -->
 
 ---
 
@@ -48,7 +43,6 @@ If your service has a Guide, activate the guide toggle.
 
 To create a question in the Guide, click on the 'Guide' tab in the Application File. Under the 'Form' tab, create questions using the form components that will filter the data, requirements and fees for specific users' case.
 
-<!-- Verify screenshot: Guide Form tab with form builder -- verify visual appearance. -->
 
 ---
 
@@ -57,7 +51,6 @@ To create a question in the Guide, click on the 'Guide' tab in the Application F
 
 Alternative to the guide: the shopping cart. The shopping cart allows applicants to select registrations directly rather than answering filtering questions. It may have been enhanced with additional features such as registration previews, cost summaries, or document requirement displays.
 
-<!-- Verify screenshot: Shopping cart interface -- verify current appearance and any new features. -->
 
 ---
 

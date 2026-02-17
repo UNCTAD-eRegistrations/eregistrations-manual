@@ -6,88 +6,77 @@ description: "eRegistrations Manual - C. Registration(s) (Original pages 14-25)"
 # C. Registration(s)
 
 
-<!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
- ![pdf-bpa-registrations-01.png](./screenshots/pdf-bpa-registrations-01.png){ loading=lazy }
+    ![pdf-bpa-registrations-01.png](../screenshots/pdf-bpa-registrations-01.png){ loading=lazy }
 
- ![pdf-bpa-registrations-02.png](./screenshots/pdf-bpa-registrations-02.png){ loading=lazy }
+    ![pdf-bpa-registrations-02.png](../screenshots/pdf-bpa-registrations-02.png){ loading=lazy }
 
- ![pdf-bpa-registrations-03.png](./screenshots/pdf-bpa-registrations-03.png){ loading=lazy }
+    ![pdf-bpa-registrations-03.png](../screenshots/pdf-bpa-registrations-03.png){ loading=lazy }
 
- ![pdf-bpa-registrations-04.png](./screenshots/pdf-bpa-registrations-04.png){ loading=lazy }
+    ![pdf-bpa-registrations-04.png](../screenshots/pdf-bpa-registrations-04.png){ loading=lazy }
 
- ![pdf-bpa-registrations-05.png](./screenshots/pdf-bpa-registrations-05.png){ loading=lazy }
+    ![pdf-bpa-registrations-05.png](../screenshots/pdf-bpa-registrations-05.png){ loading=lazy }
 
- ![pdf-bpa-registrations-06.png](./screenshots/pdf-bpa-registrations-06.png){ loading=lazy }
+    ![pdf-bpa-registrations-06.png](../screenshots/pdf-bpa-registrations-06.png){ loading=lazy }
 
- ![pdf-bpa-registrations-07.png](./screenshots/pdf-bpa-registrations-07.png){ loading=lazy }
+    ![pdf-bpa-registrations-07.png](../screenshots/pdf-bpa-registrations-07.png){ loading=lazy }
 
- ![pdf-bpa-registrations-08.png](./screenshots/pdf-bpa-registrations-08.png){ loading=lazy }
+    ![pdf-bpa-registrations-08.png](../screenshots/pdf-bpa-registrations-08.png){ loading=lazy }
 
- ![pdf-bpa-registrations-09.png](./screenshots/pdf-bpa-registrations-09.png){ loading=lazy }
+    ![pdf-bpa-registrations-09.png](../screenshots/pdf-bpa-registrations-09.png){ loading=lazy }
 
- ![pdf-bpa-registrations-10.png](./screenshots/pdf-bpa-registrations-10.png){ loading=lazy }
+    ![pdf-bpa-registrations-10.png](../screenshots/pdf-bpa-registrations-10.png){ loading=lazy }
 
- ![pdf-bpa-registrations-11.png](./screenshots/pdf-bpa-registrations-11.png){ loading=lazy }
+    ![pdf-bpa-registrations-11.png](../screenshots/pdf-bpa-registrations-11.png){ loading=lazy }
 
- ![pdf-bpa-registrations-12.png](./screenshots/pdf-bpa-registrations-12.png){ loading=lazy }
+    ![pdf-bpa-registrations-12.png](../screenshots/pdf-bpa-registrations-12.png){ loading=lazy }
 
- ![pdf-bpa-registrations-13.png](./screenshots/pdf-bpa-registrations-13.png){ loading=lazy }
+    ![pdf-bpa-registrations-13.png](../screenshots/pdf-bpa-registrations-13.png){ loading=lazy }
 
- ![pdf-bpa-registrations-14.png](./screenshots/pdf-bpa-registrations-14.png){ loading=lazy }
+    ![pdf-bpa-registrations-14.png](../screenshots/pdf-bpa-registrations-14.png){ loading=lazy }
 
- ![pdf-bpa-registrations-15.png](./screenshots/pdf-bpa-registrations-15.png){ loading=lazy }
+    ![pdf-bpa-registrations-15.png](../screenshots/pdf-bpa-registrations-15.png){ loading=lazy }
 
- ![pdf-bpa-registrations-16.png](./screenshots/pdf-bpa-registrations-16.png){ loading=lazy }
+    ![pdf-bpa-registrations-16.png](../screenshots/pdf-bpa-registrations-16.png){ loading=lazy }
 
- ![pdf-bpa-registrations-17.png](./screenshots/pdf-bpa-registrations-17.png){ loading=lazy }
+    ![pdf-bpa-registrations-17.png](../screenshots/pdf-bpa-registrations-17.png){ loading=lazy }
 
- ![pdf-bpa-registrations-18.png](./screenshots/pdf-bpa-registrations-18.png){ loading=lazy }
+    ![pdf-bpa-registrations-18.png](../screenshots/pdf-bpa-registrations-18.png){ loading=lazy }
 
- ![pdf-bpa-registrations-19.png](./screenshots/pdf-bpa-registrations-19.png){ loading=lazy }
+    ![pdf-bpa-registrations-19.png](../screenshots/pdf-bpa-registrations-19.png){ loading=lazy }
 
- ![pdf-bpa-registrations-20.png](./screenshots/pdf-bpa-registrations-20.png){ loading=lazy }
+    ![pdf-bpa-registrations-20.png](../screenshots/pdf-bpa-registrations-20.png){ loading=lazy }
 
- ![pdf-bpa-registrations-21.png](./screenshots/pdf-bpa-registrations-21.png){ loading=lazy }
+    ![pdf-bpa-registrations-21.png](../screenshots/pdf-bpa-registrations-21.png){ loading=lazy }
 
- ![pdf-bpa-registrations-22.png](./screenshots/pdf-bpa-registrations-22.png){ loading=lazy }
+    ![pdf-bpa-registrations-22.png](../screenshots/pdf-bpa-registrations-22.png){ loading=lazy }
 
- ![pdf-bpa-registrations-23.png](./screenshots/pdf-bpa-registrations-23.png){ loading=lazy }
+    ![pdf-bpa-registrations-23.png](../screenshots/pdf-bpa-registrations-23.png){ loading=lazy }
 
- ![pdf-bpa-registrations-24.png](./screenshots/pdf-bpa-registrations-24.png){ loading=lazy }
+    ![pdf-bpa-registrations-24.png](../screenshots/pdf-bpa-registrations-24.png){ loading=lazy }
 
- ![pdf-bpa-registrations-25.png](./screenshots/pdf-bpa-registrations-25.png){ loading=lazy }
+    ![pdf-bpa-registrations-25.png](../screenshots/pdf-bpa-registrations-25.png){ loading=lazy }
 
- ![pdf-bpa-registrations-26.png](./screenshots/pdf-bpa-registrations-26.png){ loading=lazy }
+    ![pdf-bpa-registrations-26.png](../screenshots/pdf-bpa-registrations-26.png){ loading=lazy }
 
- ![pdf-bpa-registrations-27.png](./screenshots/pdf-bpa-registrations-27.png){ loading=lazy }
+    ![pdf-bpa-registrations-27.png](../screenshots/pdf-bpa-registrations-27.png){ loading=lazy }
 
- ![pdf-bpa-registrations-28.png](./screenshots/pdf-bpa-registrations-28.png){ loading=lazy }
+    ![pdf-bpa-registrations-28.png](../screenshots/pdf-bpa-registrations-28.png){ loading=lazy }
 
- ![pdf-bpa-registrations-29.png](./screenshots/pdf-bpa-registrations-29.png){ loading=lazy }
+    ![pdf-bpa-registrations-29.png](../screenshots/pdf-bpa-registrations-29.png){ loading=lazy }
 
- ![pdf-bpa-registrations-30.png](./screenshots/pdf-bpa-registrations-30.png){ loading=lazy }
+    ![pdf-bpa-registrations-30.png](../screenshots/pdf-bpa-registrations-30.png){ loading=lazy }
 
- ![pdf-bpa-registrations-31.png](./screenshots/pdf-bpa-registrations-31.png){ loading=lazy }
+    ![pdf-bpa-registrations-31.png](../screenshots/pdf-bpa-registrations-31.png){ loading=lazy }
 
 
-<!-- Live BPA Screenshot: live-registrations -->
 <div class="live-screenshot" markdown>
 
-![Registrations - Registration configuration for Permisos eventuales](./screenshots/live-registrations.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [C. Registrations](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }*
+![Registrations - Registration configuration](../screenshots/live-registrations.png){ loading=lazy }
+*Current BPA view — C. Registrations*
 
 </div>
-<!-- /Live BPA Screenshot: live-registrations -->
 
-!!! example "Registration in *Permisos eventuales*"
- The *Permisos eventuales* service has **1 registration**:
-
- | Registration | Owner | Mandatory | Doc Requirements |
- |-------------|-------|-----------|-----------------|
- | **Permiso eventual** | Alina Isasi | Yes (selected by default) | 0 (uses form file uploads) |
-
- This is a simple single-registration service. More complex services (like *Autorizaciones para importar-exportar*) can have multiple registrations with determinant-based selection logic.
 
 ## Registration definition
 
@@ -99,7 +88,6 @@ Registrations are at the core of the eRegistrations system. A registration is an
 
 Click on 'add' button. A slider opens. Enter registration name, enter short name (proposed automatically, modifiable). Create. A registration is defined by: a. Name, b. Result, c. Data required, d. Documents required, e. Fees, f. Institution in charge. The 'Registrations' menu tab defines all elements except 'data required' (defined in application file tab). Fields marked with red asterisk are required.
 
-<!-- Verify screenshot: Registration creation slider - verify UI appearance has not changed. -->
 
 ---
 
@@ -150,6 +138,5 @@ Document requirements can be managed at two levels: globally (reusable document 
 
 The formula fee builder may have been enhanced with additional functions or a more capable formula editor.
 
-<!-- Verify screenshot: Fee formula builder showing available functions and operations. -->
 
 ---

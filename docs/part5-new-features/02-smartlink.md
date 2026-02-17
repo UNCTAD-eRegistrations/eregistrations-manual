@@ -6,16 +6,14 @@ description: "eRegistrations Manual - SmartLink"
 # SmartLink
 
 
-<!-- Live BPA Screenshot: live-smartlink -->
 <div class="live-screenshot" markdown>
 
-![SmartLink - Dynamic registration linking and data sharing](./screenshots/live-smartlink.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [SmartLink](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }*
+![SmartLink - Dynamic registration linking and data sharing](../screenshots/live-smartlink.png){ loading=lazy }
+*Current BPA view — SmartLink*
 *SmartLink connects registrations for data reuse across services.*
 
 
 </div>
-<!-- /Live BPA Screenshot: live-smartlink -->
 
 ## Overview of SmartLink
 
@@ -34,6 +32,7 @@ SmartLink may be:
 2. A replacement or evolution of the Internal BOT cross-service functionality.
 3. A UI layer on top of Internal BOTs that makes cross-service linking easier to configure.
 
+The exact relationship between SmartLink and Internal BOTs needs to be verified.
 
 ---
 
@@ -57,6 +56,7 @@ The SmartLink configuration workflow likely involves:
 5. Optionally defining conditions under which the link is active.
 6. Saving and publishing the link configuration.
 
+The exact steps, UI location, and available options need verification on the live platform.
 
 ---
 
@@ -70,6 +70,7 @@ SmartLink may enable sharing of the following types of data between linked servi
 - Application status and workflow state
 - Fee payment information
 
+The exact types of data that can be shared and any restrictions on data sharing need verification.
 
 ---
 
@@ -82,5 +83,6 @@ SmartLink may be accessible from one or more of the following locations in the B
 - Through the registration configuration interface.
 - As part of the BOT builder interface.
 
+The exact location and navigation path need to be verified on the live platform.
 
 ---

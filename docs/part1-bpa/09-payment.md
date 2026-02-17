@@ -6,27 +6,24 @@ description: "eRegistrations Manual - D.5. Payment (Original pages p.44-45)"
 # D.5. Payment
 
 
-<!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
- ![pdf-bpa-payment-01.png](./screenshots/pdf-bpa-payment-01.png){ loading=lazy }
+    ![pdf-bpa-payment-01.png](../screenshots/pdf-bpa-payment-01.png){ loading=lazy }
 
- ![pdf-bpa-payment-02.png](./screenshots/pdf-bpa-payment-02.png){ loading=lazy }
+    ![pdf-bpa-payment-02.png](../screenshots/pdf-bpa-payment-02.png){ loading=lazy }
 
- ![pdf-bpa-payment-03.png](./screenshots/pdf-bpa-payment-03.png){ loading=lazy }
+    ![pdf-bpa-payment-03.png](../screenshots/pdf-bpa-payment-03.png){ loading=lazy }
 
- ![pdf-bpa-payment-04.png](./screenshots/pdf-bpa-payment-04.png){ loading=lazy }
+    ![pdf-bpa-payment-04.png](../screenshots/pdf-bpa-payment-04.png){ loading=lazy }
 
- ![pdf-bpa-payment-05.png](./screenshots/pdf-bpa-payment-05.png){ loading=lazy }
+    ![pdf-bpa-payment-05.png](../screenshots/pdf-bpa-payment-05.png){ loading=lazy }
 
 
-<!-- Live BPA Screenshot: live-payment -->
 <div class="live-screenshot" markdown>
 
-![Payment - Payment/costs configuration](./screenshots/live-payment.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [D.5. Payment](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/payment){ target=_blank }*
+![Payment - Payment/costs configuration](../screenshots/live-payment.png){ loading=lazy }
+*Current BPA view — D.5. Payment*
 
 </div>
-<!-- /Live BPA Screenshot: live-payment -->
 
 ## Payments tab
 

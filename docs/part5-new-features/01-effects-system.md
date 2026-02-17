@@ -6,16 +6,14 @@ description: "eRegistrations Manual - Effects System"
 # Effects System
 
 
-<!-- Live BPA Screenshot: live-effects-system -->
 <div class="live-screenshot" markdown>
 
-![Effects System - Notification templates and component behaviours](./screenshots/live-effects-system.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [Effects System](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/templates/notifications){ target=_blank }*
+![Effects System - Notification templates and component behaviours](../screenshots/live-effects-system.png){ loading=lazy }
+*Current BPA view — Effects System*
 *The Effects system controls component behaviours via determinant-driven rules.*
 
 
 </div>
-<!-- /Live BPA Screenshot: live-effects-system -->
 
 ## Overview of the Effects System
 
@@ -27,9 +25,7 @@ Effects work through a layered structure:
 - Each component behaviour can contain one or more 'effects'.
 - Each effect links one or more determinants to the component and specifies what should happen when the determinant conditions are met.
 
-<!-- Screenshot needed: Overview screenshot showing where the Effects system is accessed in the BPA interface, likely within the component edit modal or a dedicated section. -->
 
-**Real-world example — "Permisos eventuales" service:**
 This service has **64 component behaviours** defined across its forms. Nearly every one of these behaviours carries exactly 1 effect (effect_count: 1), demonstrating that the typical pattern is a one-to-one mapping between a behaviour and its effect. One behaviour has 0 effects, indicating a behaviour record can exist as a placeholder before an effect is attached. The 64 behaviours span a wide range of component types including blocks, columns, tabs, fieldsets, and individual interactive elements.
 
 ---
@@ -47,7 +43,6 @@ The following effect types are available when creating an effect:
 
 Each effect also has an effect_value (a boolean) that determines the polarity of the effect.
 
-<!-- Screenshot needed: Screenshot of the effect type selection dropdown or interface showing all available effect types (activate, deactivate, show, hide, enable, disable). -->
 
 These six types fall into three functional pairs that control different aspects of a component:
 
@@ -57,7 +52,6 @@ These six types fall into three functional pairs that control different aspects 
 | **Activation** | `activate` / `deactivate` | Whether the component is active in the workflow |
 | **Interactivity** | `enable` / `disable` | Whether the user can interact with or edit the component |
 
-In the "Permisos eventuales" service, effects are used to conditionally show or hide entire blocks (such as `applicantBlock9` — "Provea aqui la fundamentacion") and to activate or deactivate tabs (such as `applicantTabsFacultades`) depending on determinant conditions. This allows the form to adapt dynamically based on the applicant's answers.
 
 ---
 
@@ -74,7 +68,6 @@ To create an effect on a form component:
 
 When an effect is created, the system generates a behaviour record for the component (if one does not already exist) and attaches the effect to it. The system returns a behaviour_id, effect_id, and an audit_id for tracking the change.
 
-<!-- Screenshot needed: Step-by-step screenshots of creating an effect: selecting the component, choosing determinants, selecting logic (AND/OR), choosing effect type, and saving. -->
 
 **Concrete example:** To make the block `applicantBlock9` ("Provea aqui la fundamentacion") appear only when a specific condition is met, you would:
 
@@ -97,9 +90,7 @@ When an effect references multiple determinants, the logic parameter determines 
 
 This allows for complex conditional behaviors. For example, you could create an effect that shows a field only when both the applicant type is 'company' AND the registration type is 'new registration' (AND logic), or create an effect that disables a field when either the application is in 'draft' status OR the user has selected 'not applicable' (OR logic).
 
-<!-- Screenshot needed: Screenshot showing the logic selector (AND/OR) when creating an effect with multiple determinants. -->
 
-**How this works in practice — "Permisos eventuales":**
 Consider the component `datosComplementariosContinuar`. A behaviour on this component might use AND logic to combine two determinants: one checking that a required classification has been selected, and another checking that supplementary data fields have been filled. Only when both conditions are satisfied does the "Continue" button become active, preventing the applicant from advancing before providing all required information. The sibling component `datosComplementariosContinuar2` can use the same pattern for a different step in the form.
 
 ---
@@ -117,9 +108,6 @@ A component behaviour includes:
 
 You can list all component behaviours for a service to see which components have effects configured, along with the effect count for each. You can also retrieve the behaviour for a specific component by its key.
 
-<!-- Screenshot needed: Screenshot showing the component behaviours list for a service, displaying which components have behaviours and their effect counts. -->
-
-**"Permisos eventuales" — Component behaviour inventory (64 total):**
 
 The table below shows a representative selection of the 64 component behaviours in this service. Nearly all have exactly 1 effect; one has 0 effects.
 
@@ -143,29 +131,6 @@ The table below shows a representative selection of the 64 component behaviours 
 
 This inventory shows that effects are used throughout the entire service lifecycle — from the applicant form (`applicantBlock*`, `applicantcolumns*`, `applicantTabsFacultades`), through supplementary data collection (`datosComplementarios*`), to the application step (`solicitud*`), the review step (`revision*`), and the final signed-permit step (`permisoFirmado*`).
 
-!!! example "Component behaviours in *Permisos eventuales*"
- The service has **64 component behaviours** — rules that control how form components react to determinant conditions.
-
- **Behaviours with identified targets**:
-
- | Component | Description | Effects |
- |-----------|-------------|---------|
- | `applicantBlock9` | "Provea aqui la fundamentacion" block | 1 effect (show/hide based on condition) |
- | `applicantBlock3` | "Datos de contacto" block | 1 effect (show/hide based on condition) |
- | `applicantBlock5` | "Contadores" block | 1 effect (show/hide based on condition) |
- | `applicantcolumns2` | Columns container | 1 effect (layout visibility) |
- | `applicantcolumns5` | Columns containing ZED Mariel fields | 1 effect (show when ZED Mariel applies) |
- | `applicantTabsFacultades` | "Permiso existente" tabs | 1 effect (show when modifying existing permit) |
- | `revisionFieldSet2` | Revision role fieldset | 0 effects (deactivated or placeholder) |
- | `revisionTabsNuevasSolicitudes` | Revision role tabs | 1 effect (controls review workflow visibility) |
- | `permisoFirmadoNoSeHanObtenidoDatosVerifiqueElServicioWeb` | Error display field | 1 effect (show on web service failure) |
- | `datosComplementariosContinuar` | Continue button (step 1) | 1 effect (enable when conditions met) |
- | `datosComplementariosContinuar2` | Continue button (step 2) | 1 effect (enable when conditions met) |
- | `solicitudDescargarElFichero` | Download file button | 1 effect (enable when file is ready) |
- | `solicitudBlock2` | Solicitud role block | 1 effect (show/hide based on condition) |
- | `datosComplementariosContent` | Datos complementarios content | 1 effect (show/hide based on condition) |
-
- Most behaviours (48 of 64) target components without a stored `component_key` — these are older behaviours where the key is resolved at runtime.
 
 ---
 
@@ -176,27 +141,24 @@ To delete an effect, you need the behaviour_id of the behaviour containing the e
 
 The delete operation is audited and returns confirmation of the deletion along with details of the deleted behaviour and an audit_id.
 
-<!-- Screenshot needed: Screenshot showing the delete action for an effect or behaviour, including any confirmation dialog. -->
-
-**Important:** Because deletion operates at the behaviour level, removing a behaviour deletes all effects attached to that component. In a service like "Permisos eventuales" where most behaviours contain exactly 1 effect, this distinction rarely matters. However, if a component has a behaviour with multiple effects, deleting the behaviour removes all of them at once. To remove only one effect from a multi-effect behaviour, the behaviour would need to be recreated with only the desired effects.
 
 ---
 
 ## Relationship between Effects and Determinants
 
 
-It is likely that the existing determinant show/hide behavior described in section D.2 coexists with the newer Effects system. The original determinant-based show/hide may still work for simple cases, while the Effects system provides more advanced options.
+It is likely that the existing determinant show/hide behavior described in section D.2 coexists with the newer Effects system. The original determinant-based show/hide may still work for simple cases, while the Effects system provides more advanced options. The exact relationship and whether the Effects system supersedes or complements the older approach needs to be verified.
+
 **Summary of the relationship:**
 
 ```
-Determinant (condition) Effect (action)
-───────────────────── + ─────────────────────
-"If permit type = X" → show applicantBlock9
-"If status = draft" → disable solicitudDescargarElFichero
-"If classification = Y" → activate applicantTabsFacultades
+Determinant (condition)          Effect (action)
+─────────────────────    +    ─────────────────────
+"If permit type = X"     →    show applicantBlock9
+"If status = draft"      →    disable solicitudDescargarElFichero
+"If classification = Y"  →    activate applicantTabsFacultades
 ```
 
-Determinants answer the question "when?", and effects answer the question "what happens?". The component behaviour is the glue that binds them together for a specific component. In the "Permisos eventuales" service, all 64 component behaviours follow this pattern — each one links at least one determinant to an effect on a target component.
 
 ---
 
@@ -208,5 +170,6 @@ The Effects system is likely accessible through one or more of the following loc
 - As a dedicated section in the side menu for managing all effects across the service.
 - Through the component's gear/edit icon, similar to how determinants are currently configured.
 
+The exact UI location, navigation path, and visual appearance of the Effects configuration interface need to be verified on the live platform.
 
 ---

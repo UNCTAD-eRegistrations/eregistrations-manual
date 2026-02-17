@@ -8,7 +8,7 @@
 
   // ═══ BPA URL Mapping ═══
   // Maps section paths to BPA page URLs
-  const BPA_BASE = 'https://bpa.cuba.eregistrations.org';
+  const BPA_BASE = '';
 
   const SECTION_URLS = {
     '02-entry-page':       '/services',

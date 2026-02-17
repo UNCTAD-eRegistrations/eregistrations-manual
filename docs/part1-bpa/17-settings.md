@@ -6,37 +6,34 @@ description: "eRegistrations Manual - I. Settings (Original pages p.133-137)"
 # I. Settings
 
 
-<!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
- ![pdf-bpa-settings-01.png](./screenshots/pdf-bpa-settings-01.png){ loading=lazy }
+    ![pdf-bpa-settings-01.png](../screenshots/pdf-bpa-settings-01.png){ loading=lazy }
 
- ![pdf-bpa-settings-02.png](./screenshots/pdf-bpa-settings-02.png){ loading=lazy }
+    ![pdf-bpa-settings-02.png](../screenshots/pdf-bpa-settings-02.png){ loading=lazy }
 
- ![pdf-bpa-settings-03.png](./screenshots/pdf-bpa-settings-03.png){ loading=lazy }
+    ![pdf-bpa-settings-03.png](../screenshots/pdf-bpa-settings-03.png){ loading=lazy }
 
- ![pdf-bpa-settings-04.png](./screenshots/pdf-bpa-settings-04.png){ loading=lazy }
+    ![pdf-bpa-settings-04.png](../screenshots/pdf-bpa-settings-04.png){ loading=lazy }
 
- ![pdf-bpa-settings-05.png](./screenshots/pdf-bpa-settings-05.png){ loading=lazy }
+    ![pdf-bpa-settings-05.png](../screenshots/pdf-bpa-settings-05.png){ loading=lazy }
 
- ![pdf-bpa-settings-06.png](./screenshots/pdf-bpa-settings-06.png){ loading=lazy }
+    ![pdf-bpa-settings-06.png](../screenshots/pdf-bpa-settings-06.png){ loading=lazy }
 
- ![pdf-bpa-settings-07.png](./screenshots/pdf-bpa-settings-07.png){ loading=lazy }
+    ![pdf-bpa-settings-07.png](../screenshots/pdf-bpa-settings-07.png){ loading=lazy }
 
- ![pdf-bpa-settings-08.png](./screenshots/pdf-bpa-settings-08.png){ loading=lazy }
+    ![pdf-bpa-settings-08.png](../screenshots/pdf-bpa-settings-08.png){ loading=lazy }
 
- ![pdf-bpa-settings-09.png](./screenshots/pdf-bpa-settings-09.png){ loading=lazy }
+    ![pdf-bpa-settings-09.png](../screenshots/pdf-bpa-settings-09.png){ loading=lazy }
 
 
-<!-- Live BPA Screenshot: live-settings -->
 <div class="live-screenshot" markdown>
 
-![Settings - Instance and service settings](./screenshots/live-settings.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [I. Settings](https://bpa.cuba.eregistrations.org/settings){ target=_blank }*
+![Settings - Instance and service settings](../screenshots/live-settings.png){ loading=lazy }
+*Current BPA view — I. Settings*
 
 </div>
-<!-- /Live BPA Screenshot: live-settings -->
 
-![Settings Page](./screenshots/bpa-settings.png)
+![Settings Page](../screenshots/bpa-settings.png)
 *The Settings page showing instance configuration: website name, logo, favicon, footer, theme, and categories.*
 
 ## Instance Settings - Logo

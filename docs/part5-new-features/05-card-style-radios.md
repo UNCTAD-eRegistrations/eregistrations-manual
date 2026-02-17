@@ -6,16 +6,14 @@ description: "eRegistrations Manual - Card-style Radios"
 # Card-style Radios
 
 
-<!-- Live BPA Screenshot: live-card-radios -->
 <div class="live-screenshot" markdown>
 
-![Card-style Radios - Enhanced radio button display as selection cards](./screenshots/live-card-radios.png){ loading=lazy }
-*Current BPA view (2026-02-15) — [Card-style Radios](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
+![Card-style Radios - Enhanced radio button display as selection cards](../screenshots/live-card-radios.png){ loading=lazy }
+*Current BPA view — Card-style Radios*
 *Card-style radios are a display option for radio components in the form builder.*
 
 
 </div>
-<!-- /Live BPA Screenshot: live-card-radios -->
 
 ## Overview of Card-style Radios
 
@@ -27,8 +25,6 @@ This pattern is particularly useful for:
 - Service type selection where each option has a unique visual identity.
 - Any scenario where the visual card layout improves comprehension of the available options.
 
-
-<!-- Screenshot needed: Screenshot showing card-style radios in use on a form, comparing the visual appearance with traditional radio buttons. -->
 
 ---
 
@@ -45,7 +41,6 @@ Card-style radios may be implemented through one of the following mechanisms:
 
 The implementation mechanism determines how analysts configure card-style radios in the BPA.
 
-<!-- Screenshot needed: Screenshot showing how card-style radios are configured in the BPA form builder -- whether through custom class, display mode, or component type. -->
 
 ---
 
@@ -64,8 +59,8 @@ Customization options may include:
 - Icon or image support.
 - Color theming.
 
+The exact customization options available need verification.
 
-<!-- Screenshot needed: Screenshots showing card-style radios with different configurations: with icons, different sizes, different layouts, and in selected/unselected states. -->
 
 ---
 
@@ -76,7 +71,6 @@ Card-style radios may be particularly useful in the Guide section of the applica
 
 For example, a guide question asking 'What type of registration do you need?' could display options as cards with icons representing each registration type, rather than a simple radio button list.
 
-<!-- Screenshot needed: Screenshot of card-style radios used in a Guide question, showing how the card layout improves the question presentation. -->
 
 ---
 
