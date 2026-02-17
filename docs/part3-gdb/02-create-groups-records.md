@@ -8,80 +8,73 @@ description: "eRegistrations Manual - B.1-3. Create database, Groups, Add record
 
 <!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
-    ![pdf-gdb-create-groups-records-01.png](../screenshots/pdf-gdb-create-groups-records-01.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-01.png](./screenshots/pdf-gdb-create-groups-records-01.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-02.png](../screenshots/pdf-gdb-create-groups-records-02.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-02.png](./screenshots/pdf-gdb-create-groups-records-02.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-03.png](../screenshots/pdf-gdb-create-groups-records-03.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-03.png](./screenshots/pdf-gdb-create-groups-records-03.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-04.png](../screenshots/pdf-gdb-create-groups-records-04.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-04.png](./screenshots/pdf-gdb-create-groups-records-04.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-05.png](../screenshots/pdf-gdb-create-groups-records-05.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-05.png](./screenshots/pdf-gdb-create-groups-records-05.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-06.png](../screenshots/pdf-gdb-create-groups-records-06.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-06.png](./screenshots/pdf-gdb-create-groups-records-06.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-07.png](../screenshots/pdf-gdb-create-groups-records-07.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-07.png](./screenshots/pdf-gdb-create-groups-records-07.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-08.png](../screenshots/pdf-gdb-create-groups-records-08.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-08.png](./screenshots/pdf-gdb-create-groups-records-08.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-09.png](../screenshots/pdf-gdb-create-groups-records-09.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-09.png](./screenshots/pdf-gdb-create-groups-records-09.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-10.png](../screenshots/pdf-gdb-create-groups-records-10.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-10.png](./screenshots/pdf-gdb-create-groups-records-10.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-11.png](../screenshots/pdf-gdb-create-groups-records-11.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-11.png](./screenshots/pdf-gdb-create-groups-records-11.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-12.png](../screenshots/pdf-gdb-create-groups-records-12.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-12.png](./screenshots/pdf-gdb-create-groups-records-12.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-13.png](../screenshots/pdf-gdb-create-groups-records-13.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-13.png](./screenshots/pdf-gdb-create-groups-records-13.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-14.png](../screenshots/pdf-gdb-create-groups-records-14.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-14.png](./screenshots/pdf-gdb-create-groups-records-14.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-15.png](../screenshots/pdf-gdb-create-groups-records-15.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-15.png](./screenshots/pdf-gdb-create-groups-records-15.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-16.png](../screenshots/pdf-gdb-create-groups-records-16.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-16.png](./screenshots/pdf-gdb-create-groups-records-16.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-17.png](../screenshots/pdf-gdb-create-groups-records-17.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-17.png](./screenshots/pdf-gdb-create-groups-records-17.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-18.png](../screenshots/pdf-gdb-create-groups-records-18.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-18.png](./screenshots/pdf-gdb-create-groups-records-18.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-19.png](../screenshots/pdf-gdb-create-groups-records-19.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-19.png](./screenshots/pdf-gdb-create-groups-records-19.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-20.png](../screenshots/pdf-gdb-create-groups-records-20.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-20.png](./screenshots/pdf-gdb-create-groups-records-20.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-21.png](../screenshots/pdf-gdb-create-groups-records-21.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-21.png](./screenshots/pdf-gdb-create-groups-records-21.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-22.png](../screenshots/pdf-gdb-create-groups-records-22.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-22.png](./screenshots/pdf-gdb-create-groups-records-22.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-23.png](../screenshots/pdf-gdb-create-groups-records-23.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-23.png](./screenshots/pdf-gdb-create-groups-records-23.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-24.png](../screenshots/pdf-gdb-create-groups-records-24.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-24.png](./screenshots/pdf-gdb-create-groups-records-24.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-25.png](../screenshots/pdf-gdb-create-groups-records-25.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-25.png](./screenshots/pdf-gdb-create-groups-records-25.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-26.png](../screenshots/pdf-gdb-create-groups-records-26.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-26.png](./screenshots/pdf-gdb-create-groups-records-26.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-27.png](../screenshots/pdf-gdb-create-groups-records-27.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-27.png](./screenshots/pdf-gdb-create-groups-records-27.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-28.png](../screenshots/pdf-gdb-create-groups-records-28.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-28.png](./screenshots/pdf-gdb-create-groups-records-28.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-29.png](../screenshots/pdf-gdb-create-groups-records-29.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-29.png](./screenshots/pdf-gdb-create-groups-records-29.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-30.png](../screenshots/pdf-gdb-create-groups-records-30.png){ loading=lazy }
+ ![pdf-gdb-create-groups-records-30.png](./screenshots/pdf-gdb-create-groups-records-30.png){ loading=lazy }
 
-    ![pdf-gdb-create-groups-records-31.png](../screenshots/pdf-gdb-create-groups-records-31.png){ loading=lazy }
-
-
-!!! info "Update Summary (3 changes detected)"
-    3 changes detected: Core GDB creation and record management functionality is stable.
-    Field type dropdown may include new types.
-    Database diagram visualization may have improvements.
-    Link between databases feature is unchanged.
+ ![pdf-gdb-create-groups-records-31.png](./screenshots/pdf-gdb-create-groups-records-31.png){ loading=lazy }
 
 
 <!-- Live BPA Screenshot: live-gdb-create -->
 <div class="live-screenshot" markdown>
 
-![GDB - Creating databases, groups and records](../screenshots/live-gdb-create.png){ loading=lazy }
+![GDB - Creating databases, groups and records](./screenshots/live-gdb-create.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [B.1-3. Create DB, Groups & Records](https://gdb.cuba.eregistrations.org){ target=_blank }*
 *Database creation is managed in the GDB system at gdb.cuba.eregistrations.org.*
 
@@ -103,8 +96,6 @@ Create the DB structure adding fields and blocks by clicking on the '+' symbol. 
 
 ## Field type dropdown - possible new types
 
-!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
-    The field type dropdown is a core GDB feature. While the standard types (text, number, block, date, catalog) are certainly still present, the platform may have introduced new field types. A review of the current field type dropdown is recommended to ensure all available types are documented.
 
 The field type dropdown includes standard types: text, number, block, date, catalog, etc. Additional field types may have been added to the platform since July 2025.
 
@@ -132,8 +123,6 @@ Groups can be edited after creation.
 
 ## Database diagram
 
-!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
-    The database diagram visualization is a GDB feature that may have received improvements over time. The core functionality (showing database relationships, zoom, drag and drop) is likely the same, but visual improvements or additional navigation/layout features may have been added. The exact current appearance should be verified.
 
 Visualization of how different databases within the same group relate to each other. Click on group name then diagram icon. All databases shown as blocks with relationship lines. Zoom with mouse scroll, rearrange with drag and drop. Navigation icons for layout.
 

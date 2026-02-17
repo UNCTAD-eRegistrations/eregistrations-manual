@@ -8,51 +8,45 @@ description: "eRegistrations Manual - B.6. User rights in GDB (Original pages p.
 
 <!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
-    ![pdf-gdb-user-rights-01.png](../screenshots/pdf-gdb-user-rights-01.png){ loading=lazy }
+ ![pdf-gdb-user-rights-01.png](./screenshots/pdf-gdb-user-rights-01.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-02.png](../screenshots/pdf-gdb-user-rights-02.png){ loading=lazy }
+ ![pdf-gdb-user-rights-02.png](./screenshots/pdf-gdb-user-rights-02.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-03.png](../screenshots/pdf-gdb-user-rights-03.png){ loading=lazy }
+ ![pdf-gdb-user-rights-03.png](./screenshots/pdf-gdb-user-rights-03.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-04.png](../screenshots/pdf-gdb-user-rights-04.png){ loading=lazy }
+ ![pdf-gdb-user-rights-04.png](./screenshots/pdf-gdb-user-rights-04.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-05.png](../screenshots/pdf-gdb-user-rights-05.png){ loading=lazy }
+ ![pdf-gdb-user-rights-05.png](./screenshots/pdf-gdb-user-rights-05.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-06.png](../screenshots/pdf-gdb-user-rights-06.png){ loading=lazy }
+ ![pdf-gdb-user-rights-06.png](./screenshots/pdf-gdb-user-rights-06.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-07.png](../screenshots/pdf-gdb-user-rights-07.png){ loading=lazy }
+ ![pdf-gdb-user-rights-07.png](./screenshots/pdf-gdb-user-rights-07.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-08.png](../screenshots/pdf-gdb-user-rights-08.png){ loading=lazy }
+ ![pdf-gdb-user-rights-08.png](./screenshots/pdf-gdb-user-rights-08.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-09.png](../screenshots/pdf-gdb-user-rights-09.png){ loading=lazy }
+ ![pdf-gdb-user-rights-09.png](./screenshots/pdf-gdb-user-rights-09.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-10.png](../screenshots/pdf-gdb-user-rights-10.png){ loading=lazy }
+ ![pdf-gdb-user-rights-10.png](./screenshots/pdf-gdb-user-rights-10.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-11.png](../screenshots/pdf-gdb-user-rights-11.png){ loading=lazy }
+ ![pdf-gdb-user-rights-11.png](./screenshots/pdf-gdb-user-rights-11.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-12.png](../screenshots/pdf-gdb-user-rights-12.png){ loading=lazy }
+ ![pdf-gdb-user-rights-12.png](./screenshots/pdf-gdb-user-rights-12.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-13.png](../screenshots/pdf-gdb-user-rights-13.png){ loading=lazy }
+ ![pdf-gdb-user-rights-13.png](./screenshots/pdf-gdb-user-rights-13.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-14.png](../screenshots/pdf-gdb-user-rights-14.png){ loading=lazy }
+ ![pdf-gdb-user-rights-14.png](./screenshots/pdf-gdb-user-rights-14.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-15.png](../screenshots/pdf-gdb-user-rights-15.png){ loading=lazy }
+ ![pdf-gdb-user-rights-15.png](./screenshots/pdf-gdb-user-rights-15.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-16.png](../screenshots/pdf-gdb-user-rights-16.png){ loading=lazy }
+ ![pdf-gdb-user-rights-16.png](./screenshots/pdf-gdb-user-rights-16.png){ loading=lazy }
 
-    ![pdf-gdb-user-rights-17.png](../screenshots/pdf-gdb-user-rights-17.png){ loading=lazy }
-
-
-!!! info "Update Summary (2 changes detected)"
-    2 changes detected: Rights system is mature and stable.
-    Keycloak integration may have evolved with new import features or SSO improvements.
-    Toggle behavior (GREEN/GREY/YELLOW) is unchanged.
+ ![pdf-gdb-user-rights-17.png](./screenshots/pdf-gdb-user-rights-17.png){ loading=lazy }
 
 
 <!-- Live BPA Screenshot: live-gdb-rights -->
 <div class="live-screenshot" markdown>
 
-![GDB - User rights and permissions](../screenshots/live-gdb-rights.png){ loading=lazy }
+![GDB - User rights and permissions](./screenshots/live-gdb-rights.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [B.6. User Rights](https://gdb.cuba.eregistrations.org){ target=_blank }*
 *User rights for GDB are managed within that system.*
 
@@ -80,8 +74,6 @@ Search an existing user from the list of registered users.
 
 ## Import user from CAS/Keycloak
 
-!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
-    The CAS/Keycloak user import feature is documented and likely still works the same way. However, Keycloak integration may have evolved since July 2025 -- for example, there may be new import options, batch import capabilities, or changes to how Keycloak IDs are handled. The basic workflow (import from identity provider) is likely the same, but specific details should be verified.
 
 Create a new user: Must be registered in CAS/KC first. Import by clicking icon next to search field, enter user ID. Users can be imported from CAS or Keycloak identity providers.
 
@@ -127,8 +119,6 @@ GREEN=fully authorised, GREY=not authorised, YELLOW=partially authorised. Parent
 
 ## Keycloak integration evolution
 
-!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
-    Keycloak is the identity management system used by eRegistrations. While the basic import workflow is likely the same, Keycloak itself receives updates and the eRegistrations integration may have been enhanced. Any new Keycloak-related features or changes to the authentication/authorization workflow should be verified with the platform team.
 
 Keycloak integration for user management may have evolved since July 2025, potentially including new SSO features, improved user synchronization, or changes to how user identities are managed across the platform.
 

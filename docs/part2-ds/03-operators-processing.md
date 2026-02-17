@@ -8,55 +8,51 @@ description: "eRegistrations Manual - C. Operators processing pages (Original pa
 
 <!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
-    ![pdf-ds-operators-processing-01.png](../screenshots/pdf-ds-operators-processing-01.png){ loading=lazy }
+ ![pdf-ds-operators-processing-01.png](./screenshots/pdf-ds-operators-processing-01.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-02.png](../screenshots/pdf-ds-operators-processing-02.png){ loading=lazy }
+ ![pdf-ds-operators-processing-02.png](./screenshots/pdf-ds-operators-processing-02.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-03.png](../screenshots/pdf-ds-operators-processing-03.png){ loading=lazy }
+ ![pdf-ds-operators-processing-03.png](./screenshots/pdf-ds-operators-processing-03.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-04.png](../screenshots/pdf-ds-operators-processing-04.png){ loading=lazy }
+ ![pdf-ds-operators-processing-04.png](./screenshots/pdf-ds-operators-processing-04.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-05.png](../screenshots/pdf-ds-operators-processing-05.png){ loading=lazy }
+ ![pdf-ds-operators-processing-05.png](./screenshots/pdf-ds-operators-processing-05.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-06.png](../screenshots/pdf-ds-operators-processing-06.png){ loading=lazy }
+ ![pdf-ds-operators-processing-06.png](./screenshots/pdf-ds-operators-processing-06.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-07.png](../screenshots/pdf-ds-operators-processing-07.png){ loading=lazy }
+ ![pdf-ds-operators-processing-07.png](./screenshots/pdf-ds-operators-processing-07.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-08.png](../screenshots/pdf-ds-operators-processing-08.png){ loading=lazy }
+ ![pdf-ds-operators-processing-08.png](./screenshots/pdf-ds-operators-processing-08.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-09.png](../screenshots/pdf-ds-operators-processing-09.png){ loading=lazy }
+ ![pdf-ds-operators-processing-09.png](./screenshots/pdf-ds-operators-processing-09.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-10.png](../screenshots/pdf-ds-operators-processing-10.png){ loading=lazy }
+ ![pdf-ds-operators-processing-10.png](./screenshots/pdf-ds-operators-processing-10.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-11.png](../screenshots/pdf-ds-operators-processing-11.png){ loading=lazy }
+ ![pdf-ds-operators-processing-11.png](./screenshots/pdf-ds-operators-processing-11.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-12.png](../screenshots/pdf-ds-operators-processing-12.png){ loading=lazy }
+ ![pdf-ds-operators-processing-12.png](./screenshots/pdf-ds-operators-processing-12.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-13.png](../screenshots/pdf-ds-operators-processing-13.png){ loading=lazy }
+ ![pdf-ds-operators-processing-13.png](./screenshots/pdf-ds-operators-processing-13.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-14.png](../screenshots/pdf-ds-operators-processing-14.png){ loading=lazy }
+ ![pdf-ds-operators-processing-14.png](./screenshots/pdf-ds-operators-processing-14.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-15.png](../screenshots/pdf-ds-operators-processing-15.png){ loading=lazy }
+ ![pdf-ds-operators-processing-15.png](./screenshots/pdf-ds-operators-processing-15.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-16.png](../screenshots/pdf-ds-operators-processing-16.png){ loading=lazy }
+ ![pdf-ds-operators-processing-16.png](./screenshots/pdf-ds-operators-processing-16.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-17.png](../screenshots/pdf-ds-operators-processing-17.png){ loading=lazy }
+ ![pdf-ds-operators-processing-17.png](./screenshots/pdf-ds-operators-processing-17.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-18.png](../screenshots/pdf-ds-operators-processing-18.png){ loading=lazy }
+ ![pdf-ds-operators-processing-18.png](./screenshots/pdf-ds-operators-processing-18.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-19.png](../screenshots/pdf-ds-operators-processing-19.png){ loading=lazy }
+ ![pdf-ds-operators-processing-19.png](./screenshots/pdf-ds-operators-processing-19.png){ loading=lazy }
 
-    ![pdf-ds-operators-processing-20.png](../screenshots/pdf-ds-operators-processing-20.png){ loading=lazy }
-
-
-!!! info "Update Summary (6 changes detected)"
-    6 changes detected: Part B system actions integration in processing, e-signature verification capability for operators, effects system may alter processing behavior, file list page may have UI updates, processing page may show new tabs or features, clearing old files functionality needs verification.
+ ![pdf-ds-operators-processing-20.png](./screenshots/pdf-ds-operators-processing-20.png){ loading=lazy }
 
 
 <!-- Live BPA Screenshot: live-operators-processing -->
 <div class="live-screenshot" markdown>
 
-![Operators Processing - Workflow and role processing screens](../screenshots/live-operators-processing.png){ loading=lazy }
+![Operators Processing - Workflow and role processing screens](./screenshots/live-operators-processing.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [C. Operators Processing](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }*
 *Operators process applications through the roles/workflow defined in the BPA.*
 
@@ -72,8 +68,6 @@ Processing pages are what operators of the institutions which offer registration
 
 ## 1. The file list page - Status filters
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
-    The file list page with status filters, service/role dropdowns, and calendar filter is a core processing feature. The underlying functionality is likely the same but the visual presentation may have changed with UI theme updates. The exact layout of filters and status buttons should be verified.
 
 The list of files filtered by status (pending, approved, rejected, sent back for corrections) is displayed. The drop down list displays all services. Select the service, then select the role from the first dropdown. Calendar icon allows viewing applications submitted at a certain day/time range. The first screen displays all pending files by default.
 
@@ -115,8 +109,6 @@ Processing role: Form/action developed by analyst. Operator can generate action 
 
 ## Part B system actions
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
-    The BPA service settings mention 'enabling BPA system buttons in Part B' under the Buttons options in Pages/buttons/fields settings. This suggests that Part B (the operator's processing interface) can now display system action buttons that were previously only available in the BPA. The exact nature, appearance, and functionality of these Part B system actions needs verification on the current platform. This could be a significant addition to the operator's processing workflow.
 
 Part B may now include system action buttons that can be enabled via BPA service settings. These buttons allow operators to perform additional system-level actions during processing, such as triggering BOTs, generating documents, or executing automated workflows directly from the processing page.
 
@@ -126,8 +118,6 @@ Part B may now include system action buttons that can be enabled via BPA service
 
 ## E-signature verification in processing
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
-    E-signature is a known new platform feature. If applicants can e-sign their applications on the Send page, it follows that operators would need to see and verify this signature during processing. However, the exact implementation -- whether there is a dedicated signature verification panel, a status indicator, or integration with the documents revision tab -- is not confirmed and needs verification on the current platform.
 
 Operators may now be able to verify e-signatures on submitted applications during the processing stage. If applicants use e-signature on the Send page, operators should be able to see and verify the signature status.
 
@@ -135,8 +125,6 @@ Operators may now be able to verify e-signatures on submitted applications durin
 
 ## Effects system in processing
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles){ target=_blank }"
-    The effects system is mentioned as a new platform feature (in the MANUAL-UPDATE-PLAN.md). Effects allow creating automated reactions to events in the system. In the context of operator processing, effects could be triggered by status changes (approval, rejection, send-back). However, whether effects are visible to operators during processing or are purely backend automation is unknown. The exact relationship between effects and the processing page UI needs verification.
 
 The effects system may influence operator processing by automatically triggering actions based on operator decisions. For example, when an operator approves or rejects a file, effects may automatically trigger BOTs, send notifications, or update database records.
 

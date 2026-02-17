@@ -8,34 +8,27 @@ description: "eRegistrations Manual - A. Description of the entry page (Original
 
 <!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
-    ![pdf-bpa-entry-page-01.png](../screenshots/pdf-bpa-entry-page-01.png){ loading=lazy }
+ ![pdf-bpa-entry-page-01.png](./screenshots/pdf-bpa-entry-page-01.png){ loading=lazy }
 
-    ![pdf-bpa-entry-page-02.png](../screenshots/pdf-bpa-entry-page-02.png){ loading=lazy }
+ ![pdf-bpa-entry-page-02.png](./screenshots/pdf-bpa-entry-page-02.png){ loading=lazy }
 
-    ![pdf-bpa-entry-page-03.png](../screenshots/pdf-bpa-entry-page-03.png){ loading=lazy }
+ ![pdf-bpa-entry-page-03.png](./screenshots/pdf-bpa-entry-page-03.png){ loading=lazy }
 
-    ![pdf-bpa-entry-page-04.png](../screenshots/pdf-bpa-entry-page-04.png){ loading=lazy }
+ ![pdf-bpa-entry-page-04.png](./screenshots/pdf-bpa-entry-page-04.png){ loading=lazy }
 
-    ![pdf-bpa-entry-page-05.png](../screenshots/pdf-bpa-entry-page-05.png){ loading=lazy }
+ ![pdf-bpa-entry-page-05.png](./screenshots/pdf-bpa-entry-page-05.png){ loading=lazy }
 
-    ![pdf-bpa-entry-page-06.png](../screenshots/pdf-bpa-entry-page-06.png){ loading=lazy }
+ ![pdf-bpa-entry-page-06.png](./screenshots/pdf-bpa-entry-page-06.png){ loading=lazy }
 
-    ![pdf-bpa-entry-page-07.png](../screenshots/pdf-bpa-entry-page-07.png){ loading=lazy }
+ ![pdf-bpa-entry-page-07.png](./screenshots/pdf-bpa-entry-page-07.png){ loading=lazy }
 
-    ![pdf-bpa-entry-page-08.png](../screenshots/pdf-bpa-entry-page-08.png){ loading=lazy }
-
-
-!!! info "Update Summary (4 changes detected)"
-    4 changes detected: Instance bar may have additional elements beyond what was documented.
-    Side menu has gained new items at user level 2 (e.g., Print Documents/Notifications).
-    The Effects system and component behaviours are new concepts that may surface in the side menu.
-    Auto-update toggle and FE/BE/DS buttons are core infrastructure elements likely unchanged.
+ ![pdf-bpa-entry-page-08.png](./screenshots/pdf-bpa-entry-page-08.png){ loading=lazy }
 
 
 <!-- Live BPA Screenshot: live-entry-page -->
 <div class="live-screenshot" markdown>
 
-![BPA Entry Page - Instance bar, side menu, and workspace](../screenshots/live-entry-page.png){ loading=lazy }
+![BPA Entry Page - Instance bar, side menu, and workspace](./screenshots/live-entry-page.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [A. Entry Page](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
 
 </div>
@@ -43,7 +36,7 @@ description: "eRegistrations Manual - A. Description of the entry page (Original
 
 ## BPA entry page structure - 3 sections
 
-![BPA Entry Page](../screenshots/bpa-services-list.png)
+![BPA Entry Page](./screenshots/bpa-services-list.png)
 *The BPA entry page showing the three main sections: header/instance bar (top), side menu (left), and workspace (center).*
 
 The BPA entry page has 3 main sections:
@@ -94,8 +87,6 @@ User level 1 and 2 is a toggle button that minimizes and expands display of elem
 
 ## Instance bar - potential additional elements
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    Given significant platform development (~9,600 commits since the manual was written), the instance bar may have acquired new elements. The audit system and notification system tools are present in the API, suggesting these features might have UI presence in the header. However, this cannot be confirmed without visual inspection of a live instance.
 
 The instance bar may contain additional elements not present in the July 2025 manual, such as notification indicators, environment labels (dev/staging/production), or audit/history shortcuts.
 
@@ -106,12 +97,11 @@ The instance bar may contain additional elements not present in the July 2025 ma
 ## Side menu - User level 2 items
 
 !!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    The API reveals tools for print_document, notification, and message management, indicating these are first-class platform concepts with their own management interfaces. These would logically appear in the side menu at User Level 2. The original manual only mentioned Tables and Certificate builder as User Level 2 items.
 
 User level 2: Displays more elements, including Tables, Certificate builder, Print Documents, Notifications, and Messages. Print Documents allows creating and managing document templates for certificates and other outputs. Notifications enables configuration of system notifications. Messages allows managing message templates.
 
 ??? note "Original manual text"
-    User level 2: Displays more elements, including Tables and Certificate builder.
+ User level 2: Displays more elements, including Tables and Certificate builder.
 
 <!-- Screenshot needed: Side menu at User Level 2 showing all available menu items, including any new entries beyond Tables and Certificate builder. -->
 

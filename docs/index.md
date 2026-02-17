@@ -15,37 +15,37 @@ The platform consists of four main components:
 
 <div class="grid cards" markdown>
 
--   :material-cog:{ .lg .middle } **Part I — Administrative Site (BPA)**
+- :material-cog:{ .lg .middle } **Part I — Administrative Site (BPA)**
 
-    ---
+ ---
 
-    The back-office configuration tool where analysts design services, forms, workflows, and business rules.
+ The back-office configuration tool where analysts design services, forms, workflows, and business rules.
 
-    [:octicons-arrow-right-24: Go to BPA](part1-bpa/01-introduction.md)
+ [:octicons-arrow-right-24: Go to BPA](part1-bpa/01-introduction.md)
 
--   :material-monitor:{ .lg .middle } **Part II — Display System (DS)**
+- :material-monitor:{ .lg .middle } **Part II — Display System (DS)**
 
-    ---
+ ---
 
-    The public-facing website where applicants fill forms, upload documents, pay fees, and track their applications.
+ The public-facing website where applicants fill forms, upload documents, pay fees, and track their applications.
 
-    [:octicons-arrow-right-24: Go to DS](part2-ds/01-user-dashboard.md)
+ [:octicons-arrow-right-24: Go to DS](part2-ds/01-user-dashboard.md)
 
--   :material-database:{ .lg .middle } **Part III — Generic Database (GDB)**
+- :material-database:{ .lg .middle } **Part III — Generic Database (GDB)**
 
-    ---
+ ---
 
-    A flexible database system for managing structured data independently from the service workflow.
+ A flexible database system for managing structured data independently from the service workflow.
 
-    [:octicons-arrow-right-24: Go to GDB](part3-gdb/01-public-part.md)
+ [:octicons-arrow-right-24: Go to GDB](part3-gdb/01-public-part.md)
 
--   :material-chart-bar:{ .lg .middle } **Part IV — Statistics**
+- :material-chart-bar:{ .lg .middle } **Part IV — Statistics**
 
-    ---
+ ---
 
-    Dashboards and reports for monitoring service usage, processing times, and operational metrics.
+ Dashboards and reports for monitoring service usage, processing times, and operational metrics.
 
-    [:octicons-arrow-right-24: Go to Statistics](part4-statistics/01-statistics.md)
+ [:octicons-arrow-right-24: Go to Statistics](part4-statistics/01-statistics.md)
 
 </div>
 
@@ -68,10 +68,5 @@ The platform has received significant updates. Key new features include:
 This manual was last fully updated in 2024. The current update (February 2026) incorporates changes from approximately 9,600 platform commits. Changes are marked throughout with:
 
 !!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    Content that has been updated from the original manual.
 
-!!! success "New Feature"
-    Content documenting entirely new platform capabilities.
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    Content that requires human verification on a live instance.

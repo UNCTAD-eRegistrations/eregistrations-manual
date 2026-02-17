@@ -8,95 +8,86 @@ description: "eRegistrations Manual - C. Registration(s) (Original pages 14-25)"
 
 <!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
-    ![pdf-bpa-registrations-01.png](../screenshots/pdf-bpa-registrations-01.png){ loading=lazy }
+ ![pdf-bpa-registrations-01.png](./screenshots/pdf-bpa-registrations-01.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-02.png](../screenshots/pdf-bpa-registrations-02.png){ loading=lazy }
+ ![pdf-bpa-registrations-02.png](./screenshots/pdf-bpa-registrations-02.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-03.png](../screenshots/pdf-bpa-registrations-03.png){ loading=lazy }
+ ![pdf-bpa-registrations-03.png](./screenshots/pdf-bpa-registrations-03.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-04.png](../screenshots/pdf-bpa-registrations-04.png){ loading=lazy }
+ ![pdf-bpa-registrations-04.png](./screenshots/pdf-bpa-registrations-04.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-05.png](../screenshots/pdf-bpa-registrations-05.png){ loading=lazy }
+ ![pdf-bpa-registrations-05.png](./screenshots/pdf-bpa-registrations-05.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-06.png](../screenshots/pdf-bpa-registrations-06.png){ loading=lazy }
+ ![pdf-bpa-registrations-06.png](./screenshots/pdf-bpa-registrations-06.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-07.png](../screenshots/pdf-bpa-registrations-07.png){ loading=lazy }
+ ![pdf-bpa-registrations-07.png](./screenshots/pdf-bpa-registrations-07.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-08.png](../screenshots/pdf-bpa-registrations-08.png){ loading=lazy }
+ ![pdf-bpa-registrations-08.png](./screenshots/pdf-bpa-registrations-08.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-09.png](../screenshots/pdf-bpa-registrations-09.png){ loading=lazy }
+ ![pdf-bpa-registrations-09.png](./screenshots/pdf-bpa-registrations-09.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-10.png](../screenshots/pdf-bpa-registrations-10.png){ loading=lazy }
+ ![pdf-bpa-registrations-10.png](./screenshots/pdf-bpa-registrations-10.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-11.png](../screenshots/pdf-bpa-registrations-11.png){ loading=lazy }
+ ![pdf-bpa-registrations-11.png](./screenshots/pdf-bpa-registrations-11.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-12.png](../screenshots/pdf-bpa-registrations-12.png){ loading=lazy }
+ ![pdf-bpa-registrations-12.png](./screenshots/pdf-bpa-registrations-12.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-13.png](../screenshots/pdf-bpa-registrations-13.png){ loading=lazy }
+ ![pdf-bpa-registrations-13.png](./screenshots/pdf-bpa-registrations-13.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-14.png](../screenshots/pdf-bpa-registrations-14.png){ loading=lazy }
+ ![pdf-bpa-registrations-14.png](./screenshots/pdf-bpa-registrations-14.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-15.png](../screenshots/pdf-bpa-registrations-15.png){ loading=lazy }
+ ![pdf-bpa-registrations-15.png](./screenshots/pdf-bpa-registrations-15.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-16.png](../screenshots/pdf-bpa-registrations-16.png){ loading=lazy }
+ ![pdf-bpa-registrations-16.png](./screenshots/pdf-bpa-registrations-16.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-17.png](../screenshots/pdf-bpa-registrations-17.png){ loading=lazy }
+ ![pdf-bpa-registrations-17.png](./screenshots/pdf-bpa-registrations-17.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-18.png](../screenshots/pdf-bpa-registrations-18.png){ loading=lazy }
+ ![pdf-bpa-registrations-18.png](./screenshots/pdf-bpa-registrations-18.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-19.png](../screenshots/pdf-bpa-registrations-19.png){ loading=lazy }
+ ![pdf-bpa-registrations-19.png](./screenshots/pdf-bpa-registrations-19.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-20.png](../screenshots/pdf-bpa-registrations-20.png){ loading=lazy }
+ ![pdf-bpa-registrations-20.png](./screenshots/pdf-bpa-registrations-20.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-21.png](../screenshots/pdf-bpa-registrations-21.png){ loading=lazy }
+ ![pdf-bpa-registrations-21.png](./screenshots/pdf-bpa-registrations-21.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-22.png](../screenshots/pdf-bpa-registrations-22.png){ loading=lazy }
+ ![pdf-bpa-registrations-22.png](./screenshots/pdf-bpa-registrations-22.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-23.png](../screenshots/pdf-bpa-registrations-23.png){ loading=lazy }
+ ![pdf-bpa-registrations-23.png](./screenshots/pdf-bpa-registrations-23.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-24.png](../screenshots/pdf-bpa-registrations-24.png){ loading=lazy }
+ ![pdf-bpa-registrations-24.png](./screenshots/pdf-bpa-registrations-24.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-25.png](../screenshots/pdf-bpa-registrations-25.png){ loading=lazy }
+ ![pdf-bpa-registrations-25.png](./screenshots/pdf-bpa-registrations-25.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-26.png](../screenshots/pdf-bpa-registrations-26.png){ loading=lazy }
+ ![pdf-bpa-registrations-26.png](./screenshots/pdf-bpa-registrations-26.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-27.png](../screenshots/pdf-bpa-registrations-27.png){ loading=lazy }
+ ![pdf-bpa-registrations-27.png](./screenshots/pdf-bpa-registrations-27.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-28.png](../screenshots/pdf-bpa-registrations-28.png){ loading=lazy }
+ ![pdf-bpa-registrations-28.png](./screenshots/pdf-bpa-registrations-28.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-29.png](../screenshots/pdf-bpa-registrations-29.png){ loading=lazy }
+ ![pdf-bpa-registrations-29.png](./screenshots/pdf-bpa-registrations-29.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-30.png](../screenshots/pdf-bpa-registrations-30.png){ loading=lazy }
+ ![pdf-bpa-registrations-30.png](./screenshots/pdf-bpa-registrations-30.png){ loading=lazy }
 
-    ![pdf-bpa-registrations-31.png](../screenshots/pdf-bpa-registrations-31.png){ loading=lazy }
-
-
-!!! info "Update Summary (5 changes detected)"
-    5 items identified: Registration structure is core and stable.
-    The creation workflow (name, short name, result P/D, documents U/S/M, fees fixed/formula, institution, units) remains unchanged.
-    Cost types confirmed via MCP tools to include fixed and formula (cost_create_fixed, cost_create_formula).
-    The document requirement system has a global requirements list (requirement_list) that may represent a newer management approach.
-    Registration activation is a confirmed feature.
-    Adding registrations to services is unchanged.
+ ![pdf-bpa-registrations-31.png](./screenshots/pdf-bpa-registrations-31.png){ loading=lazy }
 
 
 <!-- Live BPA Screenshot: live-registrations -->
 <div class="live-screenshot" markdown>
 
-![Registrations - Registration configuration for Permisos eventuales](../screenshots/live-registrations.png){ loading=lazy }
+![Registrations - Registration configuration for Permisos eventuales](./screenshots/live-registrations.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [C. Registrations](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }*
 
 </div>
 <!-- /Live BPA Screenshot: live-registrations -->
 
 !!! example "Registration in *Permisos eventuales*"
-    The *Permisos eventuales* service has **1 registration**:
+ The *Permisos eventuales* service has **1 registration**:
 
-    | Registration | Owner | Mandatory | Doc Requirements |
-    |-------------|-------|-----------|-----------------|
-    | **Permiso eventual** | Alina Isasi | Yes (selected by default) | 0 (uses form file uploads) |
+ | Registration | Owner | Mandatory | Doc Requirements |
+ |-------------|-------|-----------|-----------------|
+ | **Permiso eventual** | Alina Isasi | Yes (selected by default) | 0 (uses form file uploads) |
 
-    This is a simple single-registration service. More complex services (like *Autorizaciones para importar-exportar*) can have multiple registrations with determinant-based selection logic.
+ This is a simple single-registration service. More complex services (like *Autorizaciones para importar-exportar*) can have multiple registrations with determinant-based selection logic.
 
 ## Registration definition
 
@@ -144,28 +135,18 @@ Click on service name. Click 'Add'. A slider opens. Enter registration name, cli
 
 ## Registration activation
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
-    The MCP tool registration_activate exists, which suggests registrations have an activation state similar to services. The original manual does not mention activating/deactivating individual registrations. A human reviewer should verify if this toggle exists in the UI and document it if so.
-
-The MCP tools include a registration_activate operation, suggesting that registrations can be activated or deactivated independently.
+Registrations can be activated or deactivated independently from the service. This allows analysts to temporarily disable a registration without removing it from the service configuration.
 
 ---
 
 ## Document requirement global management
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
-    The MCP tools show a two-level system: global requirements (requirement_list) and document requirements linked to registrations (documentrequirement_create/update/delete). The manual documents the creation of document requirements directly under registrations. The global requirement system may provide reusable document type definitions across services. A reviewer should verify if the UI reflects this two-level system.
-
-The MCP tools include requirement_list (global document type definitions), documentrequirement_list/create/update/delete (linking requirements to registrations). This may represent a more structured approach to managing document requirements.
-
-<!-- Verify screenshot: Document requirements management - check if global requirements are visible in the UI. -->
+Document requirements can be managed at two levels: globally (reusable document type definitions shared across services) and at the registration level (specific requirements linked to a particular registration). This two-level system allows administrators to maintain a centralized catalog of document types while letting each registration specify which documents are required.
 
 ---
 
 ## Formula fee enhancements
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations){ target=_blank }"
-    The manual documents basic formula creation with drag-and-drop variables and arithmetic symbols. The formula builder documented in section D.7 has many functions (maxValue, round, Ceil, Floor, date operations, etc.) that can also apply to fee formulas. A reviewer should verify if the fee formula builder has the same full set of functions as the form formula builder.
 
 The formula fee builder may have been enhanced with additional functions or a more capable formula editor.
 

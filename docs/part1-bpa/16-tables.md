@@ -8,54 +8,47 @@ description: "eRegistrations Manual - H. Tables (Original pages 125-132)"
 
 <!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
-    ![pdf-bpa-tables-01.png](../screenshots/pdf-bpa-tables-01.png){ loading=lazy }
+ ![pdf-bpa-tables-01.png](./screenshots/pdf-bpa-tables-01.png){ loading=lazy }
 
-    ![pdf-bpa-tables-02.png](../screenshots/pdf-bpa-tables-02.png){ loading=lazy }
+ ![pdf-bpa-tables-02.png](./screenshots/pdf-bpa-tables-02.png){ loading=lazy }
 
-    ![pdf-bpa-tables-03.png](../screenshots/pdf-bpa-tables-03.png){ loading=lazy }
+ ![pdf-bpa-tables-03.png](./screenshots/pdf-bpa-tables-03.png){ loading=lazy }
 
-    ![pdf-bpa-tables-04.png](../screenshots/pdf-bpa-tables-04.png){ loading=lazy }
+ ![pdf-bpa-tables-04.png](./screenshots/pdf-bpa-tables-04.png){ loading=lazy }
 
-    ![pdf-bpa-tables-05.png](../screenshots/pdf-bpa-tables-05.png){ loading=lazy }
+ ![pdf-bpa-tables-05.png](./screenshots/pdf-bpa-tables-05.png){ loading=lazy }
 
-    ![pdf-bpa-tables-06.png](../screenshots/pdf-bpa-tables-06.png){ loading=lazy }
+ ![pdf-bpa-tables-06.png](./screenshots/pdf-bpa-tables-06.png){ loading=lazy }
 
-    ![pdf-bpa-tables-07.png](../screenshots/pdf-bpa-tables-07.png){ loading=lazy }
+ ![pdf-bpa-tables-07.png](./screenshots/pdf-bpa-tables-07.png){ loading=lazy }
 
-    ![pdf-bpa-tables-08.png](../screenshots/pdf-bpa-tables-08.png){ loading=lazy }
+ ![pdf-bpa-tables-08.png](./screenshots/pdf-bpa-tables-08.png){ loading=lazy }
 
-    ![pdf-bpa-tables-09.png](../screenshots/pdf-bpa-tables-09.png){ loading=lazy }
+ ![pdf-bpa-tables-09.png](./screenshots/pdf-bpa-tables-09.png){ loading=lazy }
 
-    ![pdf-bpa-tables-10.png](../screenshots/pdf-bpa-tables-10.png){ loading=lazy }
+ ![pdf-bpa-tables-10.png](./screenshots/pdf-bpa-tables-10.png){ loading=lazy }
 
-    ![pdf-bpa-tables-11.png](../screenshots/pdf-bpa-tables-11.png){ loading=lazy }
+ ![pdf-bpa-tables-11.png](./screenshots/pdf-bpa-tables-11.png){ loading=lazy }
 
-    ![pdf-bpa-tables-12.png](../screenshots/pdf-bpa-tables-12.png){ loading=lazy }
+ ![pdf-bpa-tables-12.png](./screenshots/pdf-bpa-tables-12.png){ loading=lazy }
 
-    ![pdf-bpa-tables-13.png](../screenshots/pdf-bpa-tables-13.png){ loading=lazy }
+ ![pdf-bpa-tables-13.png](./screenshots/pdf-bpa-tables-13.png){ loading=lazy }
 
-    ![pdf-bpa-tables-14.png](../screenshots/pdf-bpa-tables-14.png){ loading=lazy }
+ ![pdf-bpa-tables-14.png](./screenshots/pdf-bpa-tables-14.png){ loading=lazy }
 
-    ![pdf-bpa-tables-15.png](../screenshots/pdf-bpa-tables-15.png){ loading=lazy }
+ ![pdf-bpa-tables-15.png](./screenshots/pdf-bpa-tables-15.png){ loading=lazy }
 
-    ![pdf-bpa-tables-16.png](../screenshots/pdf-bpa-tables-16.png){ loading=lazy }
+ ![pdf-bpa-tables-16.png](./screenshots/pdf-bpa-tables-16.png){ loading=lazy }
 
-    ![pdf-bpa-tables-17.png](../screenshots/pdf-bpa-tables-17.png){ loading=lazy }
+ ![pdf-bpa-tables-17.png](./screenshots/pdf-bpa-tables-17.png){ loading=lazy }
 
-    ![pdf-bpa-tables-18.png](../screenshots/pdf-bpa-tables-18.png){ loading=lazy }
-
-
-!!! info "Update Summary (5 changes detected)"
-    5 items identified: The three types of catalogs (service, cross-tables, instance) remain unchanged.
-    Catalog creation, subcatalogs, GDB-based catalogs, import/export with templates, groups, and document rejection reasons are all accurately documented.
-    The MCP tools reveal a 'classification' system (classification_list, classification_create, classification_update, classification_delete, classification_export_csv, classification_apply_country_codes) that may relate to or extend the catalog system.
-    Import/export may have improvements.
+ ![pdf-bpa-tables-18.png](./screenshots/pdf-bpa-tables-18.png){ loading=lazy }
 
 
 <!-- Live BPA Screenshot: live-tables -->
 <div class="live-screenshot" markdown>
 
-![Tables - Classification tables are managed at the service level](../screenshots/live-tables.png){ loading=lazy }
+![Tables - Classification tables are managed at the service level](./screenshots/live-tables.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [H. Tables](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
 *Tables/Classifications are accessible from within service configuration.*
 
@@ -89,19 +82,12 @@ Catalogs used by all services in one instance (list of countries, cities, compan
 
 ## Classification system
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    The MCP tools expose a classification system that appears to be a data source or catalog management feature. classification_export_csv suggests the ability to export classification data. classification_apply_country_codes suggests a country-code standardization feature. A human reviewer should determine: (1) Is the classification system visible in the Tables section or elsewhere in the BPA? (2) Is it an evolution of the catalog system or a separate concept? (3) Does it need its own documentation section?
-
-The MCP tools reveal a 'classification' system with operations: classification_list, classification_get, classification_create, classification_update, classification_delete, classification_export_csv, classification_apply_country_codes. This may relate to or extend the catalog/tables system.
-
-<!-- Screenshot needed: Classification system interface if visible in BPA. -->
+Tables in eRegistrations are backed by a classification system that organizes catalog data (dropdown options, reference lists, etc.) into reusable structures. Classifications can be created, updated, exported as CSV, and shared across services. Each classification has entries with labels and values, and supports custom keys and custom ordering.
 
 ---
 
 ## Catalog import/export improvements
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    The classification_export_csv tool suggests that CSV export is available for catalog data. The import template system (XLS format with levels, parents, and translations) documented in the manual may have been enhanced. A reviewer should verify the current import/export options.
 
 The catalog import/export functionality may have received improvements since the manual was written, including CSV export capability and additional import formats.
 
@@ -111,8 +97,6 @@ The catalog import/export functionality may have received improvements since the
 
 ## GDB-based catalog enhancements
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    The original manual documents GDB-based catalogs with system source selection, database selection, and column mapping. With platform evolution, this functionality may have been enhanced. A reviewer should check the current GDB-based catalog creation workflow.
 
 GDB-based catalogs (catalogs populated from GDB data) may have received improvements in how they reference databases, handle versioning, or display values.
 

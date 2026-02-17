@@ -8,87 +8,75 @@ description: "eRegistrations Manual - D.3. Applicant form (Original pages p.32-4
 
 <!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
-    ![pdf-bpa-applicant-form-01.png](../screenshots/pdf-bpa-applicant-form-01.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-01.png](./screenshots/pdf-bpa-applicant-form-01.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-02.png](../screenshots/pdf-bpa-applicant-form-02.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-02.png](./screenshots/pdf-bpa-applicant-form-02.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-03.png](../screenshots/pdf-bpa-applicant-form-03.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-03.png](./screenshots/pdf-bpa-applicant-form-03.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-04.png](../screenshots/pdf-bpa-applicant-form-04.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-04.png](./screenshots/pdf-bpa-applicant-form-04.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-05.png](../screenshots/pdf-bpa-applicant-form-05.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-05.png](./screenshots/pdf-bpa-applicant-form-05.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-06.png](../screenshots/pdf-bpa-applicant-form-06.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-06.png](./screenshots/pdf-bpa-applicant-form-06.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-07.png](../screenshots/pdf-bpa-applicant-form-07.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-07.png](./screenshots/pdf-bpa-applicant-form-07.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-08.png](../screenshots/pdf-bpa-applicant-form-08.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-08.png](./screenshots/pdf-bpa-applicant-form-08.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-09.png](../screenshots/pdf-bpa-applicant-form-09.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-09.png](./screenshots/pdf-bpa-applicant-form-09.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-10.png](../screenshots/pdf-bpa-applicant-form-10.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-10.png](./screenshots/pdf-bpa-applicant-form-10.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-11.png](../screenshots/pdf-bpa-applicant-form-11.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-11.png](./screenshots/pdf-bpa-applicant-form-11.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-12.png](../screenshots/pdf-bpa-applicant-form-12.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-12.png](./screenshots/pdf-bpa-applicant-form-12.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-13.png](../screenshots/pdf-bpa-applicant-form-13.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-13.png](./screenshots/pdf-bpa-applicant-form-13.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-14.png](../screenshots/pdf-bpa-applicant-form-14.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-14.png](./screenshots/pdf-bpa-applicant-form-14.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-15.png](../screenshots/pdf-bpa-applicant-form-15.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-15.png](./screenshots/pdf-bpa-applicant-form-15.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-16.png](../screenshots/pdf-bpa-applicant-form-16.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-16.png](./screenshots/pdf-bpa-applicant-form-16.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-17.png](../screenshots/pdf-bpa-applicant-form-17.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-17.png](./screenshots/pdf-bpa-applicant-form-17.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-18.png](../screenshots/pdf-bpa-applicant-form-18.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-18.png](./screenshots/pdf-bpa-applicant-form-18.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-19.png](../screenshots/pdf-bpa-applicant-form-19.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-19.png](./screenshots/pdf-bpa-applicant-form-19.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-20.png](../screenshots/pdf-bpa-applicant-form-20.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-20.png](./screenshots/pdf-bpa-applicant-form-20.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-21.png](../screenshots/pdf-bpa-applicant-form-21.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-21.png](./screenshots/pdf-bpa-applicant-form-21.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-22.png](../screenshots/pdf-bpa-applicant-form-22.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-22.png](./screenshots/pdf-bpa-applicant-form-22.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-23.png](../screenshots/pdf-bpa-applicant-form-23.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-23.png](./screenshots/pdf-bpa-applicant-form-23.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-24.png](../screenshots/pdf-bpa-applicant-form-24.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-24.png](./screenshots/pdf-bpa-applicant-form-24.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-25.png](../screenshots/pdf-bpa-applicant-form-25.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-25.png](./screenshots/pdf-bpa-applicant-form-25.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-26.png](../screenshots/pdf-bpa-applicant-form-26.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-26.png](./screenshots/pdf-bpa-applicant-form-26.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-27.png](../screenshots/pdf-bpa-applicant-form-27.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-27.png](./screenshots/pdf-bpa-applicant-form-27.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-28.png](../screenshots/pdf-bpa-applicant-form-28.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-28.png](./screenshots/pdf-bpa-applicant-form-28.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-29.png](../screenshots/pdf-bpa-applicant-form-29.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-29.png](./screenshots/pdf-bpa-applicant-form-29.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-30.png](../screenshots/pdf-bpa-applicant-form-30.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-30.png](./screenshots/pdf-bpa-applicant-form-30.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-31.png](../screenshots/pdf-bpa-applicant-form-31.png){ loading=lazy }
+ ![pdf-bpa-applicant-form-31.png](./screenshots/pdf-bpa-applicant-form-31.png){ loading=lazy }
 
-    ![pdf-bpa-applicant-form-32.png](../screenshots/pdf-bpa-applicant-form-32.png){ loading=lazy }
-
-
-!!! info "Update Summary (8 changes detected)"
-    8 changes detected: Container types (Block, Table, Columns, Field set, Edit grid, Data grid, Tabs) are stable.
-    The form builder's drag-and-drop architecture is unchanged.
-    New field types may exist (e-signature, card-style radios).
-    Collapsible blocks may have enhanced behavior.
-    Button actions have a more structured system via component actions API.
-    Common properties are largely stable.
-    The form_component_add API confirms the same structural paradigm (parent_key, column_index, row_index, cell_index).
-    Tabs may have new features.
-    The form supports 4 form types (applicant, guide, send_file, payment) confirming the original architecture.
+ ![pdf-bpa-applicant-form-32.png](./screenshots/pdf-bpa-applicant-form-32.png){ loading=lazy }
 
 
 <!-- Live BPA Screenshot: live-applicant-form -->
 <div class="live-screenshot" markdown>
 
-![Applicant Form - Drag-and-drop form builder](../screenshots/live-applicant-form.png){ loading=lazy }
+![Applicant Form - Drag-and-drop form builder](./screenshots/live-applicant-form.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [D.3. Applicant Form](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }*
 
 </div>
@@ -114,8 +102,6 @@ Blocks separate/segregate the different types of information. Blocks are collaps
 
 ## Containers - Block collapsible enhancements
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
-    The update plan document mentions 'collapsible fields' as a new feature added to the platform. This suggests the collapsible behavior may have been extended beyond blocks to other component types, or blocks may have gained additional collapsible configuration options. This needs verification on a live instance.
 
 Block collapsible behavior may have been enhanced with features such as default collapsed state, animation options, or conditional collapse based on determinants. The MANUAL-UPDATE-PLAN mentions 'collapsible fields' as a new feature.
 
@@ -173,8 +159,6 @@ Tabs: can make the form more organized. Can be displayed as a side menu (vertica
 
 ## Containers - Tabs new features
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
-    The update plan mentions 'Tabs may have new features'. The effects/behaviours system (componentbehaviour_get_by_component) could enable determinant-driven tab visibility. However, the specific enhancements need verification on a live instance.
 
 Tabs may have gained new features such as conditional tab visibility (driven by determinants), tab validation indicators, or dynamic tab creation. The effects/behaviours system may allow determinant-driven tab control.
 
@@ -199,12 +183,12 @@ Sub Catalog.
 ## Fields - Button with actions
 
 !!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
-    The button action types (event, custom, open link, open service) remain, but the platform has added a structured component actions system. The componentaction_get_by_component, componentaction_save, componentaction_get_system_actions API tools indicate that button actions are now managed through a more formal framework, including system-level predefined actions. The original four action types likely still exist, but the system for assigning and managing actions has been expanded.
+ The button action types (event, custom, open link, open service) remain, but the platform has added a structured component actions system. The componentaction_get_by_component, componentaction_save, componentaction_get_system_actions API tools indicate that button actions are now managed through a more formal framework, including system-level predefined actions. The original four action types likely still exist, but the system for assigning and managing actions has been expanded.
 
 Button (various actions: event, custom, open link, open service and data in new tab). The platform now has a structured component actions system. Buttons can have BOT actions assigned through the component actions framework, and system-predefined actions are available. Actions can be viewed and managed per-component.
 
 ??? note "Original manual text"
-    Button (various actions: event, custom, open link, open service and data in new tab).
+ Button (various actions: event, custom, open link, open service and data in new tab).
 
 <!-- Screenshot needed: Button action configuration showing available action types, including any new system actions and the component actions framework. -->
 
@@ -212,8 +196,6 @@ Button (various actions: event, custom, open link, open service and data in new 
 
 ## Fields - Card-style radios
 
-!!! success "New Feature"
-    The MANUAL-UPDATE-PLAN explicitly mentions 'card-style radios' as a new feature added to the platform. This is a visual enhancement to the radio button field type. The exact configuration (custom class, separate component type, or radio property) needs verification.
 
 Card-style radios are a new radio button presentation style that displays radio options as visual cards rather than traditional radio buttons. This provides a more user-friendly interface for selection-based questions, particularly useful in guides and forms where visual distinction between options improves usability.
 
@@ -223,48 +205,46 @@ Card-style radios are a new radio button presentation style that displays radio 
 
 ## Fields - E-signature field
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
-    The MANUAL-UPDATE-PLAN mentions 'e-signature' as a new feature. Whether it manifests as a new field type in the form builder, a custom component, or a separate system needs verification. E-signature is listed alongside other new features like SmartLink and micro-publish.
 
 An e-signature field may have been added as a new field type, allowing applicants to provide electronic signatures within the form. This could be used in the Send File page or other declaration sections.
 
 ---
 
 !!! example "Applicant form structure in *Permisos eventuales* (Cuba)"
-    The applicant form for the **Permisos eventuales** service has **140 components** organized in blocks, illustrating how the container and field types described above come together in a real service.
+ The applicant form for the **Permisos eventuales** service has **140 components** organized in blocks, illustrating how the container and field types described above come together in a real service.
 
-    **Component type breakdown**:
+ **Component type breakdown**:
 
-    | Type | Count | Examples |
-    |------|-------|----------|
-    | Panel (block) | 13 | "Datos de la operacion", "Productos", "Datos de contacto", "Confirmar", "Datos ocultos" |
-    | Columns | 18 | Layout containers for side-by-side fields |
-    | Textfield | ~30 | "Proveedor extranjero", "Cliente nacional", "Elaborado por", "Telefono", "Email", "Descripcion", "Numero de contrato" |
-    | Select | ~15 | "Tipo de operacion", "Condicion de la operacion", "Pais de origen", "Pais de embarque", "Pais de destino", "Capitulo", "Subpartidas" |
-    | Number | ~12 | "Cantidad", "Valor", "Valor total", "Cantidad de embarques", "Contador eventuales" |
-    | Content | 7 | Decorative/instructional HTML blocks |
-    | Datetime | 4 | "Fecha de expiracion", "Fecha de la solicitud", "Fecha del ultimo embarque", "Valido hasta" |
-    | Fieldset | 4 | "Datos de la operacion", "Field Set" (x3) |
-    | Button | 4 | "Enviar", "Cambiar empresa", "Porque no vienen datos", "Descargar carta" |
-    | Datagrid | 3 | "Lista de productos nuevos" (8 child columns), "Productos autorizados" (7 children), "Productos modificados" (6 children) |
-    | Radio | 3 | "Empresa del Mariel", "Status llega de la bitacora", "Que quiere hacer?" |
-    | File | 2 | "Documento que avale la fundamentacion", "Subir la Carta emitida por la Oficina de la ZED Mariel" |
-    | Checkbox | 2 | "Confirmo la exactitud de la informacion declarada", "Forma de gestion no Estatal" |
-    | Tabs | 1 | "Permiso existente" with 2 tabs: "Operacion previamente autorizada", "Modificaciones solicitadas" |
-    | Textarea | 1 | "Fundamentacion" |
+ | Type | Count | Examples |
+ |------|-------|----------|
+ | Panel (block) | 13 | "Datos de la operacion", "Productos", "Datos de contacto", "Confirmar", "Datos ocultos" |
+ | Columns | 18 | Layout containers for side-by-side fields |
+ | Textfield | ~30 | "Proveedor extranjero", "Cliente nacional", "Elaborado por", "Telefono", "Email", "Descripcion", "Numero de contrato" |
+ | Select | ~15 | "Tipo de operacion", "Condicion de la operacion", "Pais de origen", "Pais de embarque", "Pais de destino", "Capitulo", "Subpartidas" |
+ | Number | ~12 | "Cantidad", "Valor", "Valor total", "Cantidad de embarques", "Contador eventuales" |
+ | Content | 7 | Decorative/instructional HTML blocks |
+ | Datetime | 4 | "Fecha de expiracion", "Fecha de la solicitud", "Fecha del ultimo embarque", "Valido hasta" |
+ | Fieldset | 4 | "Datos de la operacion", "Field Set" (x3) |
+ | Button | 4 | "Enviar", "Cambiar empresa", "Porque no vienen datos", "Descargar carta" |
+ | Datagrid | 3 | "Lista de productos nuevos" (8 child columns), "Productos autorizados" (7 children), "Productos modificados" (6 children) |
+ | Radio | 3 | "Empresa del Mariel", "Status llega de la bitacora", "Que quiere hacer?" |
+ | File | 2 | "Documento que avale la fundamentacion", "Subir la Carta emitida por la Oficina de la ZED Mariel" |
+ | Checkbox | 2 | "Confirmo la exactitud de la informacion declarada", "Forma de gestion no Estatal" |
+ | Tabs | 1 | "Permiso existente" with 2 tabs: "Operacion previamente autorizada", "Modificaciones solicitadas" |
+ | Textarea | 1 | "Fundamentacion" |
 
-    **Form layout (top-level blocks)**:
+ **Form layout (top-level blocks)**:
 
-    1. **Su empresa seleccionada** -- Company info display
-    2. **Datos de la operacion** -- Operation type, countries, foreign supplier, national client
-    3. **Productos** -- Datagrid with producto / subpartida / descripcion / UM / valor / cantidad
-    4. **Permiso existente** *(tabs)* -- 2 tabs for viewing previously authorized operations and requested modifications
-    5. **Provea aqui la fundamentacion** -- Textarea + file upload + ZED Mariel letter upload
-    6. **Datos de contacto** -- Elaborado por, telefono, email
-    7. **Confirmar** -- Checkbox confirmation ("Confirmo la exactitud de la informacion declarada")
-    8. **Datos ocultos** -- Hidden fields (counters, status flags, triggers)
+ 1. **Su empresa seleccionada** -- Company info display
+ 2. **Datos de la operacion** -- Operation type, countries, foreign supplier, national client
+ 3. **Productos** -- Datagrid with producto / subpartida / descripcion / UM / valor / cantidad
+ 4. **Permiso existente** *(tabs)* -- 2 tabs for viewing previously authorized operations and requested modifications
+ 5. **Provea aqui la fundamentacion** -- Textarea + file upload + ZED Mariel letter upload
+ 6. **Datos de contacto** -- Elaborado por, telefono, email
+ 7. **Confirmar** -- Checkbox confirmation ("Confirmo la exactitud de la informacion declarada")
+ 8. **Datos ocultos** -- Hidden fields (counters, status flags, triggers)
 
-    This form demonstrates most of the component types available in the form builder: panels for grouping, columns for layout, datagrids for repeatable product rows, tabs for organizing related permit data, and a mix of field types (text, select, number, date, file, radio, checkbox) for capturing structured trade-permit information.
+ This form demonstrates most of the component types available in the form builder: panels for grouping, columns for layout, datagrids for repeatable product rows, tabs for organizing related permit data, and a mix of field types (text, select, number, date, file, radio, checkbox) for capturing structured trade-permit information.
 
 ---
 
@@ -294,8 +274,6 @@ Hide Label toggle, Placeholder, Tooltip, Prefix and Suffix, Disabled toggle, Hid
 
 ## Common properties - potential new properties
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form){ target=_blank }"
-    Given the platform's evolution, new field properties may have been added. The effects system and print document builder suggest properties that may be visible in the field configuration UI. However, without live system inspection, the exact current property list cannot be confirmed.
 
 New common properties may have been added, such as:
 - Determinant-aware properties driven by the effects/behaviours system

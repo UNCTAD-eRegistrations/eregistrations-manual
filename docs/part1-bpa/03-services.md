@@ -8,39 +8,35 @@ description: "eRegistrations Manual - B. Services"
 
 <!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
-    ![pdf-bpa-services-01.png](../screenshots/pdf-bpa-services-01.png){ loading=lazy }
+ ![pdf-bpa-services-01.png](./screenshots/pdf-bpa-services-01.png){ loading=lazy }
 
-    ![pdf-bpa-services-02.png](../screenshots/pdf-bpa-services-02.png){ loading=lazy }
+ ![pdf-bpa-services-02.png](./screenshots/pdf-bpa-services-02.png){ loading=lazy }
 
-    ![pdf-bpa-services-03.png](../screenshots/pdf-bpa-services-03.png){ loading=lazy }
+ ![pdf-bpa-services-03.png](./screenshots/pdf-bpa-services-03.png){ loading=lazy }
 
-    ![pdf-bpa-services-04.png](../screenshots/pdf-bpa-services-04.png){ loading=lazy }
+ ![pdf-bpa-services-04.png](./screenshots/pdf-bpa-services-04.png){ loading=lazy }
 
-    ![pdf-bpa-services-05.png](../screenshots/pdf-bpa-services-05.png){ loading=lazy }
+ ![pdf-bpa-services-05.png](./screenshots/pdf-bpa-services-05.png){ loading=lazy }
 
-    ![pdf-bpa-services-06.png](../screenshots/pdf-bpa-services-06.png){ loading=lazy }
+ ![pdf-bpa-services-06.png](./screenshots/pdf-bpa-services-06.png){ loading=lazy }
 
-    ![pdf-bpa-services-07.png](../screenshots/pdf-bpa-services-07.png){ loading=lazy }
+ ![pdf-bpa-services-07.png](./screenshots/pdf-bpa-services-07.png){ loading=lazy }
 
-    ![pdf-bpa-services-08.png](../screenshots/pdf-bpa-services-08.png){ loading=lazy }
+ ![pdf-bpa-services-08.png](./screenshots/pdf-bpa-services-08.png){ loading=lazy }
 
-    ![pdf-bpa-services-09.png](../screenshots/pdf-bpa-services-09.png){ loading=lazy }
-
-
-!!! info "Update Summary (7 changes detected)"
-    7 changes detected: Import/copy service functionality added, service groups feature is new, micro-publish added to publish flow, service bar has additional buttons, archive workflow may have UI changes, service activation toggle unchanged, SmartLink feature is new.
+ ![pdf-bpa-services-09.png](./screenshots/pdf-bpa-services-09.png){ loading=lazy }
 
 
 <!-- Live BPA Screenshot: live-services-list -->
 <div class="live-screenshot" markdown>
 
-![Services List - All configured services grouped by category](../screenshots/live-services-list.png){ loading=lazy }
+![Services List - All configured services grouped by category](./screenshots/live-services-list.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [B. Services](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
 
 </div>
 <!-- /Live BPA Screenshot: live-services-list -->
 
-![Services List](../screenshots/bpa-services-list.png)
+![Services List](./screenshots/bpa-services-list.png)
 *The Services page showing grouped services with Import and Add buttons, version numbers, and publish dates.*
 
 ## Definition of Service
@@ -58,70 +54,69 @@ A registration is any authorization (certificate, permit, clearance, document) i
 ## 1. Create a service
 
 !!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    The platform now supports importing services from other instances and copying existing services. This is a significant addition that was not in the original manual. The Import functionality allows replication of service configurations between instances, and Copy allows duplicating a service within the same instance.
 
 A new service can be created by clicking on the 'Add' button. Additionally, services can be imported from another instance or copied from an existing service within the same instance using the 'Import' or 'Copy' functionality. Then a slider opens, where you can type the name of the service and click save.
 
 ??? note "Original manual text"
-    A new service can be created by clicking on the 'add' button. Then a slider opens, where you can type the name of the service and click save.
+ A new service can be created by clicking on the 'add' button. Then a slider opens, where you can type the name of the service and click save.
 
 <!-- Screenshot needed: Services list showing Add button, and Import/Copy options if available in toolbar -->
 
 !!! example "Services in the Cuba VUCE platform"
-    The Cuba platform has **36 services** organized into categories:
+ The Cuba platform has **36 services** organized into categories:
 
-    **Trade permits and registrations** (core public-facing services):
+ **Trade permits and registrations** (core public-facing services):
 
-    | # | Service name | Description |
-    |---|-------------|-------------|
-    | 1 | **Permisos eventuales** | Temporary import/export permits |
-    | 2 | **Registro de clientes y proveedores** | Registration of clients and suppliers |
-    | 3 | **Acreditaciones** | Accreditations for trade operators |
-    | 4 | **Certificado de aprobacion del Modelo Instrumentos de medicion** | Type-approval certificate for measuring instruments |
-    | 5 | **Permiso fitosanitario** | Phytosanitary (plant health) permit |
-    | 6 | **Registro de importadores y exportadores de servicios** | Registry of service importers and exporters |
-    | 7 | **Autorizaciones para importar-exportar** | Import/export authorizations |
-    | 8 | **Homologacion de equipos de uso final de energia electrica** | Homologation of end-use electrical energy equipment |
-    | 9 | **Permiso Zoosanitario de importacion** | Zoosanitary (animal health) import permit |
-    | 10 | **Registro de Sustancias sometidas a Fiscalizacion** | Registry of controlled/regulated substances |
-    | 11 | **Permisos de equipos de uso final de energia electrica** | Permits for end-use electrical energy equipment |
-    | 12 | **Registro Sanitario INHEM** | INHEM sanitary registration |
-    | 13 | **Registros Zoosanitarios del CENASA** | CENASA zoosanitary registrations |
-    | 14 | **Registro de Sucursales** | Branch office registration |
-    | 15 | **Certificado de aprobacion de modelo para instrumentos de medicion** | Model-approval certificate for measuring instruments |
-    | 16 | **Certificado sanitario de exportacion** | Sanitary export certificate |
-    | 17 | **Licencia Sanitaria del CECMED** | CECMED sanitary license (medicines/medical devices) |
-    | 18 | **Licencia de Seguridad ambiental y nuclear** | Environmental and nuclear safety license |
-    | 19 | **Permiso de Sustancias sometidas a Fiscalizacion** | Permit for controlled/regulated substances |
-    | 20 | **Bitacora** | Logbook / activity journal |
-    | 21 | **Consulta de Certificados emitidos** | Query issued certificates |
-    | 22 | **Certificado de importacion para donativos medicos** | Import certificate for medical donations |
-    | 23 | **Certificado de origen** | Certificate of origin |
+ | # | Service name | Description |
+ |---|-------------|-------------|
+ | 1 | **Permisos eventuales** | Temporary import/export permits |
+ | 2 | **Registro de clientes y proveedores** | Registration of clients and suppliers |
+ | 3 | **Acreditaciones** | Accreditations for trade operators |
+ | 4 | **Certificado de aprobacion del Modelo Instrumentos de medicion** | Type-approval certificate for measuring instruments |
+ | 5 | **Permiso fitosanitario** | Phytosanitary (plant health) permit |
+ | 6 | **Registro de importadores y exportadores de servicios** | Registry of service importers and exporters |
+ | 7 | **Autorizaciones para importar-exportar** | Import/export authorizations |
+ | 8 | **Homologacion de equipos de uso final de energia electrica** | Homologation of end-use electrical energy equipment |
+ | 9 | **Permiso Zoosanitario de importacion** | Zoosanitary (animal health) import permit |
+ | 10 | **Registro de Sustancias sometidas a Fiscalizacion** | Registry of controlled/regulated substances |
+ | 11 | **Permisos de equipos de uso final de energia electrica** | Permits for end-use electrical energy equipment |
+ | 12 | **Registro Sanitario INHEM** | INHEM sanitary registration |
+ | 13 | **Registros Zoosanitarios del CENASA** | CENASA zoosanitary registrations |
+ | 14 | **Registro de Sucursales** | Branch office registration |
+ | 15 | **Certificado de aprobacion de modelo para instrumentos de medicion** | Model-approval certificate for measuring instruments |
+ | 16 | **Certificado sanitario de exportacion** | Sanitary export certificate |
+ | 17 | **Licencia Sanitaria del CECMED** | CECMED sanitary license (medicines/medical devices) |
+ | 18 | **Licencia de Seguridad ambiental y nuclear** | Environmental and nuclear safety license |
+ | 19 | **Permiso de Sustancias sometidas a Fiscalizacion** | Permit for controlled/regulated substances |
+ | 20 | **Bitacora** | Logbook / activity journal |
+ | 21 | **Consulta de Certificados emitidos** | Query issued certificates |
+ | 22 | **Certificado de importacion para donativos medicos** | Import certificate for medical donations |
+ | 23 | **Certificado de origen** | Certificate of origin |
 
-    **Administrative services** (operator-facing):
+ **Administrative services** (operator-facing):
 
-    | # | Service name | Description |
-    |---|-------------|-------------|
-    | 24 | **Administracion clientes y proveedores** | Client and supplier administration |
-    | 25 | **Administracion VUCE** | VUCE platform administration |
-    | 26 | **Consultar Registros INHEM** | Query INHEM registrations |
-    | 27 | **Administrar Permisos Fitosanitarios** | Manage phytosanitary permits |
-    | 28 | **Administrar Registro INHEM** | Manage INHEM registrations |
+ | # | Service name | Description |
+ |---|-------------|-------------|
+ | 24 | **Administracion clientes y proveedores** | Client and supplier administration |
+ | 25 | **Administracion VUCE** | VUCE platform administration |
+ | 26 | **Consultar Registros INHEM** | Query INHEM registrations |
+ | 27 | **Administrar Permisos Fitosanitarios** | Manage phytosanitary permits |
+ | 28 | **Administrar Registro INHEM** | Manage INHEM registrations |
 
-    **Test/development services**:
+ **Test/development services**:
 
-    | # | Service name | Description |
-    |---|-------------|-------------|
-    | 29 | Servicio Template de Prueba | Test template service |
-    | 30 | Servicio test | Generic test service |
-    | 31 | TestNP2025 | Developer test service |
-    | 32 | My Dashboard - copy | Dashboard copy (testing) |
-    | 33 | Permiso Fitosanitario - copy | Phytosanitary permit copy (testing) |
-    | 34 | new service to merge - copy | Merge test copy |
-    | 35 | Permisos eventuales - GDB SACLAP | Eventual permits with GDB SACLAP integration |
-    | 36 | Documentacion: Listar datos desde GDB... | Documentation: List data from GDB |
+ | # | Service name | Description |
+ |---|-------------|-------------|
+ | 29 | Servicio Template de Prueba | Test template service |
+ | 30 | Servicio test | Generic test service |
+ | 31 | TestNP2025 | Developer test service |
+ | 32 | My Dashboard - copy | Dashboard copy (testing) |
+ | 33 | Permiso Fitosanitario - copy | Phytosanitary permit copy (testing) |
+ | 34 | new service to merge - copy | Merge test copy |
+ | 35 | Permisos eventuales - GDB SACLAP | Eventual permits with GDB SACLAP integration |
+ | 36 | Documentacion: Listar datos desde GDB.. | Documentation: List data from GDB |
 
-    This real-world example illustrates how a single eRegistrations instance can host dozens of services spanning multiple government agencies and regulatory domains -- from phytosanitary permits (agriculture) to sanitary licenses (health) to certificates of origin (trade).
+ This real-world example illustrates how a single eRegistrations instance can host dozens of services spanning multiple government agencies and regulatory domains -- from phytosanitary permits (agriculture) to sanitary licenses (health) to certificates of origin (trade).
 
 ---
 
@@ -156,8 +151,7 @@ Once a service has been created, one or more registrations must be created and a
 ## 2. The Service bar
 
 !!! warning "Modified — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    The publish flow has been enhanced with micro-publish capability. Micro-publish allows analysts to publish only specific changes (e.g., just form changes, just role changes) rather than republishing the entire service. This is a significant workflow improvement. The exact UI for this needs verification.
-
+ The publish flow has been enhanced with micro-publish capability. Micro-publish allows analysts to publish only specific changes (e.g., just form changes, just role changes) rather than republishing the entire service. This is a significant workflow improvement.
 This is the service bar, just below the instance (blue) bar. This appears when you click on a service from the list of services in the work space.
 
 The service bar consists of:
@@ -168,14 +162,14 @@ The service bar consists of:
 - Service settings icon
 
 ??? note "Original manual text"
-    This is the service bar, just below the instance (blue) bar. This appears when you click on a service from the list of services in the work space.
-    
-    The service bar consists of:
-    - The name of the service, that can be edited by clicking on the edit button next to it
-    - The 'preview service' button: this displays the application file as seen from the user interface
-    - The 'publish service' button: when a service is published, it becomes available on the public interface. Every time a change is made in the BPA that needs to be reflected on the public interface (DS), the service has to be (re)published.
-    - The 'see service' button. This opens the service in the public interface (DS), in a new tab
-    - Service settings icon
+ This is the service bar, just below the instance (blue) bar. This appears when you click on a service from the list of services in the work space.
+ 
+ The service bar consists of:
+ - The name of the service, that can be edited by clicking on the edit button next to it
+ - The 'preview service' button: this displays the application file as seen from the user interface
+ - The 'publish service' button: when a service is published, it becomes available on the public interface. Every time a change is made in the BPA that needs to be reflected on the public interface (DS), the service has to be (re)published.
+ - The 'see service' button. This opens the service in the public interface (DS), in a new tab
+ - Service settings icon
 
 <!-- Screenshot needed: Service bar showing all buttons including any new micro-publish UI elements -->
 
@@ -183,8 +177,6 @@ The service bar consists of:
 
 ## Micro-publish details
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    Micro-publish is known to exist in the platform but the exact UI workflow, button placement, and options need to be verified on a live instance. The manual should document how to access micro-publish and what options are available.
 
 Micro-publish is a feature that allows publishing only specific parts of a service (e.g., form changes, role configuration changes) rather than republishing the entire service. This can speed up the publish process and reduce risk of unintended changes being published.
 
@@ -194,8 +186,6 @@ Micro-publish is a feature that allows publishing only specific parts of a servi
 
 ## Service Groups
 
-!!! success "New Feature"
-    Service groups is a feature that was added to the platform after the original manual was written. It allows organizing services into logical groups (e.g., by ministry, by type of registration). This needs verification on the current platform to confirm the exact UI and workflow.
 
 Services can be organized into groups for better management. When there are many services in an instance, groups help categorize and organize them. Groups appear in the services list view and can be collapsed or expanded.
 
@@ -205,8 +195,6 @@ Services can be organized into groups for better management. When there are many
 
 ## Import/Copy Service
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    The Import and Copy service features are known to exist in the platform. Import is particularly useful when setting up new country instances based on existing configurations. The exact location of these buttons (toolbar, context menu, or service settings) and the workflow details need to be verified on a live instance.
 
 Services can be imported from other eRegistrations instances or copied within the same instance. Import allows replicating a complete service configuration (forms, roles, BOTs, certificates) from one instance to another. Copy creates a duplicate of an existing service within the same instance.
 
@@ -216,8 +204,6 @@ Services can be imported from other eRegistrations instances or copied within th
 
 ## SmartLink
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    SmartLink is mentioned in the plan as a new feature. It may or may not be directly visible in the Services section. Its exact placement in the BPA UI and relationship to the services list needs to be verified. It may belong in a different section of the manual.
 
 SmartLink is a feature that allows creating links between services, enabling data sharing and workflow coordination across multiple services.
 

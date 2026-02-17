@@ -5,17 +5,11 @@ description: "eRegistrations Manual - Introduction (Original pages p.5)"
 
 # Introduction
 
-!!! info "Update Summary (1 changes detected)"
-    The introduction remains largely accurate.
-    The core description of eRegistrations as a no-code platform and the basic applicant-operator-certificate flow are unchanged.
-    The terminology (public site, DS, BPA) is still current.
-    Minor additions could mention newer capabilities (e-signature, advanced workflows) but the introduction is intentionally high-level and does not require significant revision.
-
 
 <!-- Live BPA Screenshot: live-introduction -->
 <div class="live-screenshot" markdown>
 
-![BPA Overview - The Business Process Administration interface](../screenshots/live-introduction.png){ loading=lazy }
+![BPA Overview - The Business Process Administration interface](./screenshots/live-introduction.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [Introduction](https://bpa.cuba.eregistrations.org/services){ target=_blank }*
 
 </div>
@@ -51,8 +45,6 @@ Online services are visible on the 'public site', also called 'user site' or 'DS
 
 ## Potential mention of newer platform capabilities
 
-!!! question "Needs Verification — [Verify in BPA](https://bpa.cuba.eregistrations.org/services){ target=_blank }"
-    The introduction does not mention e-signature, advanced workflow capabilities, or other features added since July 2025. Since the introduction is meant to be a high-level overview, it may be acceptable as-is, but a subject matter expert should confirm whether any new top-level capabilities warrant mention here.
 
 The introduction may benefit from a brief mention of newer platform capabilities such as e-signature support, advanced workflow features, or other significant additions made after July 2025. However, since the introduction is intentionally high-level, this should be verified with stakeholders before adding.
 

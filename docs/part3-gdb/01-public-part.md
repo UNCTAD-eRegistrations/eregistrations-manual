@@ -8,27 +8,23 @@ description: "eRegistrations Manual - A. Public part (Original pages p.153-154)"
 
 <!-- PDF Screenshots -->
 ??? example "Original Manual Screenshots"
-    ![pdf-gdb-public-part-01.png](../screenshots/pdf-gdb-public-part-01.png){ loading=lazy }
+ ![pdf-gdb-public-part-01.png](./screenshots/pdf-gdb-public-part-01.png){ loading=lazy }
 
-    ![pdf-gdb-public-part-02.png](../screenshots/pdf-gdb-public-part-02.png){ loading=lazy }
+ ![pdf-gdb-public-part-02.png](./screenshots/pdf-gdb-public-part-02.png){ loading=lazy }
 
-    ![pdf-gdb-public-part-03.png](../screenshots/pdf-gdb-public-part-03.png){ loading=lazy }
+ ![pdf-gdb-public-part-03.png](./screenshots/pdf-gdb-public-part-03.png){ loading=lazy }
 
-    ![pdf-gdb-public-part-04.png](../screenshots/pdf-gdb-public-part-04.png){ loading=lazy }
+ ![pdf-gdb-public-part-04.png](./screenshots/pdf-gdb-public-part-04.png){ loading=lazy }
 
-    ![pdf-gdb-public-part-05.png](../screenshots/pdf-gdb-public-part-05.png){ loading=lazy }
+ ![pdf-gdb-public-part-05.png](./screenshots/pdf-gdb-public-part-05.png){ loading=lazy }
 
-    ![pdf-gdb-public-part-06.png](../screenshots/pdf-gdb-public-part-06.png){ loading=lazy }
-
-
-!!! info "Update Summary (1 changes detected)"
-    1 change detected: GDB public interface may have minor UI updates but the core structure (header bar, hamburger menu, database list, status button, add record button) is largely stable.
+ ![pdf-gdb-public-part-06.png](./screenshots/pdf-gdb-public-part-06.png){ loading=lazy }
 
 
 <!-- Live BPA Screenshot: live-gdb-public -->
 <div class="live-screenshot" markdown>
 
-![Generic Database (GDB) - Public-facing data portal](../screenshots/live-gdb-public.png){ loading=lazy }
+![Generic Database (GDB) - Public-facing data portal](./screenshots/live-gdb-public.png){ loading=lazy }
 *Current BPA view (2026-02-15) — [A. Public Part](https://gdb.cuba.eregistrations.org){ target=_blank }*
 *The GDB is a separate system at gdb.cuba.eregistrations.org (requires separate login).*
 
@@ -66,8 +62,6 @@ The sub menu displays the name of the database. The 'add record' button and edit
 
 ## Minor UI changes
 
-!!! question "Needs Verification — [Verify in BPA](https://gdb.cuba.eregistrations.org){ target=_blank }"
-    GDB is a mature and stable system. While the platform has had many updates, the GDB public interface tends to receive fewer visual changes compared to the DS. However, given the time elapsed since the manual was written, minor visual differences in styling or icons are possible. A visual comparison of the current GDB interface against the manual screenshots is recommended.
 
 The GDB public interface may have minor visual updates (styling, spacing, icons) but the overall structure and functionality remain the same.
 
