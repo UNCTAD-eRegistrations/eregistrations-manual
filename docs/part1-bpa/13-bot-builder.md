@@ -185,3 +185,5 @@ The mapping UI may have received visual or functional improvements since the man
 The platform includes bot_input_visibility_update and bot_output_visibility_update operations, allowing analysts to control which BOT input and output fields are visible in the mapping interface. This can be used to hide irrelevant fields and simplify the mapping view when working with external services that expose many fields.
 
 ---
+
+**See also:** [Roles](14-roles.md) · [Part B (Processing)](../part5-new-features/06-part-b.md) · [Certificates](15-certificates.md)

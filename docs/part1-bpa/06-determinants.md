@@ -110,3 +110,5 @@ See [Effects System](../part5-new-features/01-effects-system.md) for detailed do
 ---
 
 ---
+
+**See also:** [Effects System](../part5-new-features/01-effects-system.md) · [Applicant Form](07-applicant-form.md) · [Guide](05-guide.md)

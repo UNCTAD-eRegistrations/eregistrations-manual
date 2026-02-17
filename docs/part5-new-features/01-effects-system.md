@@ -173,3 +173,5 @@ The Effects system is likely accessible through one or more of the following loc
 The exact UI location, navigation path, and visual appearance of the Effects configuration interface need to be verified on the live platform.
 
 ---
+
+**See also:** [Determinants](../part1-bpa/06-determinants.md) · [Applicant Form](../part1-bpa/07-applicant-form.md) · [Custom Classes](../part1-bpa/12-custom-classes.md)

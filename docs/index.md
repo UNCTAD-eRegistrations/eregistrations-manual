@@ -63,8 +63,25 @@ The platform has received significant updates. Key new features include:
 | [Part B (Processing)](part5-new-features/06-part-b.md) | Comprehensive operator processing documentation |
 | [Collapsible Fields](part5-new-features/07-collapsible-fields.md) | Enhanced form section collapsing |
 
-## About This Update
+## BPA Section Guide
 
-This manual was last fully updated in 2024. The current update (February 2026) incorporates changes from approximately 9,600 platform commits. Changes are marked throughout with:
-
+| Section | What it covers |
+|---------|---------------|
+| [A. Introduction](part1-bpa/01-introduction.md) | Overview of the BPA interface and navigation |
+| [B. Entry Page](part1-bpa/02-entry-page.md) | The first screen after login |
+| [C. Services](part1-bpa/03-services.md) | Creating and managing services (the top-level container) |
+| [D.1. Registrations](part1-bpa/04-registrations.md) | Defining registrations — results, documents, fees, institutions |
+| [D.1b. Guide](part1-bpa/05-guide.md) | The pre-form questionnaire page for applicants |
+| [D.2. Determinants](part1-bpa/06-determinants.md) | Conditional logic that drives form behavior |
+| [D.3. Applicant Form](part1-bpa/07-applicant-form.md) | Building forms — field types, containers, layout |
+| [D.4. Documents](part1-bpa/08-documents.md) | Document requirements and upload configuration |
+| [D.5. Payment](part1-bpa/09-payment.md) | Fees — fixed and formula-based |
+| [D.6. Send File](part1-bpa/10-send-file.md) | The submission page configuration |
+| [D.7. Useful Functions](part1-bpa/11-useful-functions.md) | Formulas, email templates, notifications |
+| [D.8. Custom Classes](part1-bpa/12-custom-classes.md) | CSS styling and display customization for fields |
+| [E. BOT Builder](part1-bpa/13-bot-builder.md) | Automated actions — document, data, and internal BOTs |
+| [F. Roles](part1-bpa/14-roles.md) | Processing workflow — human roles, BOT roles, statuses |
+| [G. Certificates](part1-bpa/15-certificates.md) | Print document templates and certificate generation |
+| [H. Tables](part1-bpa/16-tables.md) | Catalogs — service, cross-table, and instance catalogs |
+| [I. Settings](part1-bpa/17-settings.md) | Instance and service-level configuration |
 

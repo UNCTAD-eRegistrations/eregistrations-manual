@@ -172,3 +172,5 @@ Additional custom classes may have been added to the platform in the approximate
 The Effects system (which supports activate/deactivate/show/hide/enable/disable effect types) may partially overlap with or complement custom class functionality for showing/hiding components.
 
 ---
+
+**See also:** [Applicant Form](07-applicant-form.md) · [Effects System](../part5-new-features/01-effects-system.md)

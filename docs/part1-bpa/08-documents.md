@@ -31,3 +31,5 @@ File upload components are linked to required documents through the Data tab. In
 
 ---
 
+**See also:** [Registrations](04-registrations.md) · [Certificates](15-certificates.md)
+

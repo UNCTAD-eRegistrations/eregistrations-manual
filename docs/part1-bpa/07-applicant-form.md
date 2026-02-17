@@ -223,3 +223,5 @@ New common properties may have been added, such as:
 - Properties for field-level permissions or restrictions
 
 ---
+
+**See also:** [Determinants](06-determinants.md) · [Custom Classes](12-custom-classes.md) · [Effects System](../part5-new-features/01-effects-system.md)

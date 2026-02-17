@@ -202,3 +202,5 @@ Roles support additional permission flags including the ability to confirm payme
 Processing roles can include system actions -- built-in platform actions that handle standard workflow operations such as file validation, rejection, sending back for corrections, and printing. These system actions are assigned to buttons within the role's processing form and execute predefined logic without requiring custom BOT configuration. See the Part B (Processing) section for the full list of available system actions.
 
 ---
+
+**See also:** [BOT Builder](13-bot-builder.md) · [Part B (Processing)](../part5-new-features/06-part-b.md) · [Certificates](15-certificates.md)
