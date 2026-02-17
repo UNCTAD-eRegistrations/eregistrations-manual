@@ -1834,41 +1834,24 @@
 
 
 <h1 id="card-style-radios">Card-style Radios<a class="headerlink" href="#card-style-radios" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Update Summary (5 changes detected)</p>
-<p>Entirely new section.
-Card-style radios are a new UI pattern for radio buttons that displays options as visual cards rather than traditional radio buttons.
-The original manual documents the 'Radio Switch' custom class (section D.8) which changes radio button appearance, but card-style radios appear to be a further evolution providing a more visual selection interface.
-This may be implemented as a new custom class, a new radio display mode in the form builder, or a new component type.
-5 blocks identified, all needing verification.</p>
-</div>
 <!-- Live BPA Screenshot: live-card-radios -->
 <div class="live-screenshot">
-<p><img alt="Card-style Radios - Enhanced radio button display as selection cards" loading="lazy" src="../../screenshots/live-card-radios.png" />
+<p><img alt="Card-style Radios - Enhanced radio button display as selection cards" loading="lazy" src="./screenshots/live-card-radios.png" />
 <em>Current BPA view (2026-02-15) — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Card-style Radios</a></em>
 <em>Card-style radios are a display option for radio components in the form builder.</em></p>
 </div>
 <!-- /Live BPA Screenshot: live-card-radios -->
 
 <h2 id="overview-of-card-style-radios">Overview of Card-style Radios<a class="headerlink" href="#overview-of-card-style-radios" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>
-<p>Card-style radios are identified as a new feature in the manual update plan. The original manual documents several radio-related custom classes including 'Radio Switch' (section D.8 - Appearance changing classes) but does not mention card-style display. The exact implementation mechanism needs verification.</p>
-</div>
 <p>Card-style radios are a new UI pattern in eRegistrations that displays radio button options as visual cards rather than traditional radio button circles with labels. Each option appears as a distinct card, potentially with an icon, title, and description, providing a more visual and user-friendly selection interface.</p>
 <p>This pattern is particularly useful for:
 - Guide questions where the applicant needs to make a clear choice between visually distinct options.
 - Service type selection where each option has a unique visual identity.
 - Any scenario where the visual card layout improves comprehension of the available options.</p>
-<p>The original manual documents the 'Radio Switch' custom class which changes radio buttons into a switch-like appearance. Card-style radios are a further evolution of radio button display options.</p>
 <!-- Screenshot needed: Screenshot showing card-style radios in use on a form, comparing the visual appearance with traditional radio buttons. -->
 
 <hr />
 <h2 id="implementing-card-style-radios">Implementing Card-style Radios<a class="headerlink" href="#implementing-card-style-radios" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>
-<p>The implementation mechanism is not confirmed. The custom class approach is most consistent with how eRegistrations handles visual variations (the manual documents numerous custom classes for different visual effects). However, it could also be a component property or a new component type. A human reviewer should verify the implementation.</p>
-</div>
 <p>Card-style radios may be implemented through one of the following mechanisms:</p>
 <ol>
 <li>
@@ -1886,10 +1869,6 @@ This may be implemented as a new custom class, a new radio display mode in the f
 
 <hr />
 <h2 id="card-style-radio-appearance-and-customization">Card-style Radio Appearance and Customization<a class="headerlink" href="#card-style-radio-appearance-and-customization" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>
-<p>The visual appearance and customization options are speculative based on common card-radio patterns in web applications. The actual appearance in eRegistrations may be more limited or have different options. A reviewer should capture screenshots of card-style radios in various configurations.</p>
-</div>
 <p>Card-style radios likely display each option as a card element that may include:
 - An icon or image representing the option.
 - The option label/title displayed prominently.
@@ -1900,28 +1879,20 @@ This may be implemented as a new custom class, a new radio display mode in the f
 - Card layout (horizontal row, grid, or vertical stack).
 - Icon or image support.
 - Color theming.</p>
-<p>The exact customization options available need verification.</p>
 <!-- Screenshot needed: Screenshots showing card-style radios with different configurations: with icons, different sizes, different layouts, and in selected/unselected states. -->
 
 <hr />
 <h2 id="card-style-radios-in-the-guide">Card-style Radios in the Guide<a class="headerlink" href="#card-style-radios-in-the-guide" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>
-<p>The Guide is a natural use case for card-style radios because it involves clear choice-making. However, whether card-style radios are specifically designed for or restricted to the Guide needs verification. They may be available for any radio component in any form.</p>
-</div>
 <p>Card-style radios may be particularly useful in the Guide section of the application file, where applicants answer questions to determine their registration requirements. The card layout can make guide questions more intuitive by providing visual cards for each option.</p>
 <p>For example, a guide question asking 'What type of registration do you need?' could display options as cards with icons representing each registration type, rather than a simple radio button list.</p>
 <!-- Screenshot needed: Screenshot of card-style radios used in a Guide question, showing how the card layout improves the question presentation. -->
 
 <hr />
 <h2 id="relationship-to-existing-custom-classes">Relationship to Existing Custom Classes<a class="headerlink" href="#relationship-to-existing-custom-classes" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>
-<p>The relationship to existing custom classes determines where card-style radios should be documented in the manual. If it is a custom class, it belongs in section D.8. If it is a new component or display mode, it may belong in section D.3 (Applicant form) or as a standalone section. A reviewer should determine the correct categorization.</p>
-</div>
-<p>The original manual documents the following appearance-changing custom classes that affect radio and selection components:
-- Radio Switch: Changes radio buttons into a switch-like appearance.
-- Search results list: Changes the display of select/radio options.</p>
+<ul>
+<li>Radio Switch: Changes radio buttons into a switch-like appearance.</li>
+<li>Search results list: Changes the display of select/radio options.</li>
+</ul>
 <p>Card-style radios may be:
 - An addition to this list of custom classes (e.g., 'radio-card' class).
 - A replacement for Radio Switch with more advanced visual options.

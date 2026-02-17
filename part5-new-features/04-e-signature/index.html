@@ -1878,29 +1878,15 @@
 
 
 <h1 id="e-signature">E-signature<a class="headerlink" href="#e-signature" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Update Summary (7 changes detected)</p>
-<p>Entirely new section.
-E-signature functionality allows applicants to digitally sign documents or the application itself.
-The original manual describes the Send file page (section D.6) as the 'declaration and signature page' with an 'I Swear' custom component, but does not mention digital or electronic signatures.
-E-signature likely extends the Send page with actual digital signing capability.
-It may involve integration with external e-signature providers, new custom components, or configuration in service settings.
-No direct MCP tool endpoints for e-signature were found, suggesting it may be implemented as a form component configuration or external integration.
-7 blocks identified, all needing verification due to limited concrete information.</p>
-</div>
 <!-- Live BPA Screenshot: live-e-signature -->
 <div class="live-screenshot">
-<p><img alt="E-signature - Digital signature integration for forms" loading="lazy" src="../../screenshots/live-e-signature.png" />
+<p><img alt="E-signature - Digital signature integration for forms" loading="lazy" src="./screenshots/live-e-signature.png" />
 <em>Current BPA view (2026-02-15) — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration" target="_blank">E-signature</a></em>
 <em>E-signature is configured in service settings.</em></p>
 </div>
 <!-- /Live BPA Screenshot: live-e-signature -->
 
 <h2 id="overview-of-e-signature">Overview of E-signature<a class="headerlink" href="#overview-of-e-signature" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration" target="_blank">Verify in BPA</a></p>
-<p>The original manual's Send file section (D.6) mentions the 'I Swear' component for declaration and signature but does not describe electronic or digital signature capabilities. E-signature is identified as a new feature in the manual update plan. No MCP tool endpoints specific to e-signature were found in the available tools, suggesting it may be implemented at the form component or service configuration level.</p>
-</div>
 <p>E-signature functionality allows applicants to digitally sign documents or the application itself within the eRegistrations platform. This provides legal validity to the submission and may replace or supplement the traditional 'I Swear' declaration component.</p>
 <p>E-signature may be implemented as:
 - A new custom component in the form builder that can be placed on the Send page or other pages.
@@ -1909,23 +1895,14 @@ No direct MCP tool endpoints for e-signature were found, suggesting it may be im
 <p>The specific implementation approach needs verification.</p>
 <hr />
 <h2 id="e-signature-configuration-in-bpa">E-signature Configuration in BPA<a class="headerlink" href="#e-signature-configuration-in-bpa" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration" target="_blank">Verify in BPA</a></p>
-<p>The configuration workflow is speculative. The bpa-settings analysis notes that e-signature may have associated settings at the service level. A human reviewer should document the actual configuration process by accessing the BPA.</p>
-</div>
 <p>To configure e-signature for a service, the analyst likely needs to:
 1. Enable e-signature at the service level (possibly through service settings).
 2. Add an e-signature component to the appropriate form page (likely the Send page).
 3. Configure which documents or forms require a signature.
 4. Set up the e-signature provider integration (if using an external provider).
 5. Configure the signature validation rules and appearance.</p>
-<p>The exact configuration steps and UI location need verification.</p>
 <hr />
 <h2 id="e-signature-component-in-form-builder">E-signature Component in Form Builder<a class="headerlink" href="#e-signature-component-in-form-builder" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration" target="_blank">Verify in BPA</a></p>
-<p>The original manual documents several custom components (I Swear, QR code, Payment Providers) but does not mention an e-signature component. If e-signature is a form component, it would likely appear in the Custom Components tab alongside these. The exact component type and configuration options need verification.</p>
-</div>
 <p>E-signature may be available as a new custom component in the form builder, similar to the existing 'I Swear' component and 'QR code' component found in the Custom Components tab.</p>
 <p>The e-signature component would likely allow:
 - Capturing a digital signature (drawn, typed, or uploaded).
@@ -1934,10 +1911,6 @@ No direct MCP tool endpoints for e-signature were found, suggesting it may be im
 <p>The component may have its own configuration options for signature type, appearance, and validation.</p>
 <hr />
 <h2 id="e-signature-provider-integration">E-signature Provider Integration<a class="headerlink" href="#e-signature-provider-integration" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration" target="_blank">Verify in BPA</a></p>
-<p>The nature of the e-signature integration is entirely speculative. Different eRegistrations deployments may use different e-signature providers depending on local legal requirements. A human reviewer should determine what providers are supported and how they are configured.</p>
-</div>
 <p>E-signature may integrate with external providers for digital signature validation. Common integration patterns include:
 - Government PKI (Public Key Infrastructure) systems for legally binding signatures.
 - Third-party e-signature services (DocuSign, Adobe Sign, etc.).
@@ -1946,10 +1919,6 @@ No direct MCP tool endpoints for e-signature were found, suggesting it may be im
 <p>The integration may be configured at the instance level (affecting all services) or at the service level.</p>
 <hr />
 <h2 id="e-signature-on-send-page">E-signature on Send Page<a class="headerlink" href="#e-signature-on-send-page" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration" target="_blank">Verify in BPA</a></p>
-<p>The Send page is the most logical location for e-signature since it is already designated as the declaration and signature page. The exact integration of e-signature with the Send page workflow needs verification.</p>
-</div>
 <p>The Send file page (section D.6 of the manual) is described as the 'declaration and signature page.' E-signature functionality likely appears on or is closely associated with this page.</p>
 <p>With e-signature enabled, the Send page may include:
 - A digital signature pad or upload area.
@@ -1961,10 +1930,6 @@ No direct MCP tool endpoints for e-signature were found, suggesting it may be im
 
 <hr />
 <h2 id="e-signature-in-service-settings">E-signature in Service Settings<a class="headerlink" href="#e-signature-in-service-settings" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration" target="_blank">Verify in BPA</a></p>
-<p>The bpa-settings.json analysis file includes a 'verify' block for 'E-signature related settings'. This section should be consistent with whatever e-signature settings are found in the service settings area.</p>
-</div>
 <p>E-signature may require configuration in the service settings area. Possible settings include:
 - Enable/disable e-signature for the service.
 - E-signature provider selection.
@@ -1974,10 +1939,6 @@ No direct MCP tool endpoints for e-signature were found, suggesting it may be im
 <p>The bpa-settings analysis has already flagged that new settings related to e-signature may exist.</p>
 <hr />
 <h2 id="e-signature-applicant-experience-ds">E-signature Applicant Experience (DS)<a class="headerlink" href="#e-signature-applicant-experience-ds" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/settings/configuration" target="_blank">Verify in BPA</a></p>
-<p>The applicant-side experience of e-signature is speculative. The exact UI and user flow need to be verified on the Display System. This may also require documentation in the DS section of the manual (Part II).</p>
-</div>
 <p>From the applicant's perspective on the Display System (DS), e-signature likely appears as:
 - A signature step or area on the Send page before final submission.
 - Instructions for how to complete the digital signature.

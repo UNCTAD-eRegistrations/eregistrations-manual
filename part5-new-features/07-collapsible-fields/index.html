@@ -1832,28 +1832,15 @@
 
 
 <h1 id="collapsible-fields">Collapsible Fields<a class="headerlink" href="#collapsible-fields" title="Permanent link">&para;</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Update Summary (5 changes detected)</p>
-<p>Enhanced documentation for collapsible functionality.
-The original manual documents block collapsible toggle in section D.3 (Applicant form): 'Blocks are collapsible.
-If you do not want your blocks to collapse, disable the collapsible toggle under the general tab.' This new section documents enhanced collapsible behaviors that may extend beyond basic block collapsing to include individual fields, groups of fields, field sets, and more granular collapsible controls.
-This may include new collapsible modes, default collapsed/expanded states, and collapsible behavior triggered by determinants or effects.
-5 blocks identified, mostly needing verification.</p>
-</div>
 <!-- Live BPA Screenshot: live-collapsible-fields -->
 <div class="live-screenshot">
-<p><img alt="Collapsible Fields - Expandable/collapsible form sections" loading="lazy" src="../../screenshots/live-collapsible-fields.png" />
+<p><img alt="Collapsible Fields - Expandable/collapsible form sections" loading="lazy" src="./screenshots/live-collapsible-fields.png" />
 <em>Current BPA view (2026-02-15) — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Collapsible Fields</a></em>
 <em>Collapsible fields are configured as a display option in the form builder.</em></p>
 </div>
 <!-- /Live BPA Screenshot: live-collapsible-fields -->
 
 <h2 id="overview-of-collapsible-fields">Overview of Collapsible Fields<a class="headerlink" href="#overview-of-collapsible-fields" title="Permanent link">&para;</a></h2>
-<div class="admonition success">
-<p class="admonition-title">New Feature</p>
-<p>The original manual explicitly documents block collapsible: 'Blocks are collapsible. If you do not want your blocks to collapse, disable the collapsible toggle under the general tab.' This new section expands on that foundation with enhanced collapsible capabilities that may have been added to the platform. The exact enhancements need verification.</p>
-</div>
-<p>The collapsible functionality in eRegistrations allows form sections to be collapsed and expanded by the user, reducing visual clutter and improving form navigation. The original manual documents block-level collapsing, where entire blocks can be toggled between collapsed and expanded states.</p>
 <p>Enhanced collapsible functionality may extend this capability to:
 - Individual fields or groups of fields within a block.
 - Field sets with collapsible headers.
@@ -1864,11 +1851,6 @@ This may include new collapsible modes, default collapsed/expanded states, and c
 
 <hr />
 <h2 id="block-collapsible-toggle-enhanced">Block Collapsible Toggle (Enhanced)<a class="headerlink" href="#block-collapsible-toggle-enhanced" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>
-<p>The original manual documents the basic collapsible toggle for blocks. Enhanced options like default state, icon position, and state persistence are common in form builders and may have been added. A reviewer should check the current block configuration options for any enhancements.</p>
-</div>
-<p>The block collapsible toggle, documented in the original manual, may have been enhanced with additional options:</p>
 <ul>
 <li>Default state: Configuration for whether the block starts collapsed or expanded when the form loads.</li>
 <li>Collapsible icon position: Where the collapse/expand control appears (header left, header right, etc.).</li>
@@ -1880,23 +1862,14 @@ This may include new collapsible modes, default collapsed/expanded states, and c
 
 <hr />
 <h2 id="field-level-collapsible-behavior">Field-level Collapsible Behavior<a class="headerlink" href="#field-level-collapsible-behavior" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>
-<p>The original manual documents Field Set as a container that 'groups the fields of the same category of data together' but does not mention collapsible behavior for field sets. Edit Grids and Data Grids are documented as repeating containers. Whether these now support collapsible behavior is unknown. A reviewer should check each container type for collapsible options.</p>
-</div>
 <p>Beyond block-level collapsing, the platform may support collapsible behavior for individual fields or field groups:</p>
 <ul>
 <li>Field sets with collapsible headers: The Field Set container (documented in section D.3) may now support a collapsible toggle similar to blocks.</li>
 <li>Collapsible panels within blocks: Sub-sections within a block that can be independently collapsed.</li>
 <li>Collapsible edit grids: Edit grid rows or sections that can be collapsed to show only summary data.</li>
 </ul>
-<p>The exact scope of field-level collapsible behavior needs verification.</p>
 <hr />
 <h2 id="conditional-collapsible-behavior">Conditional Collapsible Behavior<a class="headerlink" href="#conditional-collapsible-behavior" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>
-<p>The Effects system supports activate/deactivate/show/hide/enable/disable effect types. Collapse/expand may be an additional behavior type or may be achieved through the existing show/hide mechanism. The integration between collapsible behavior and determinants/effects needs verification.</p>
-</div>
 <p>The collapsible state of blocks or fields may be controllable through determinants or the Effects system:</p>
 <ul>
 <li>A determinant condition could automatically collapse or expand a section based on the applicant's input.</li>
@@ -1906,10 +1879,6 @@ This may include new collapsible modes, default collapsed/expanded states, and c
 <p>For example, a block of additional fields could start collapsed and automatically expand when the user selects 'Yes' to a relevant question.</p>
 <hr />
 <h2 id="collapsible-behavior-in-custom-classes">Collapsible Behavior in Custom Classes<a class="headerlink" href="#collapsible-behavior-in-custom-classes" title="Permanent link">&para;</a></h2>
-<div class="admonition question">
-<p class="admonition-title">Needs Verification — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">Verify in BPA</a></p>
-<p>The original manual's custom classes section does not mention collapsible-related classes, but the platform may have added them. Custom classes are the standard mechanism for adding visual behaviors in eRegistrations. A reviewer should check the custom classes dropdown for any collapsible-related options.</p>
-</div>
 <p>Collapsible behavior may be achievable or modified through custom classes. The custom classes section (D.8) documents numerous appearance and spacing classes, and a 'collapsible' custom class or variant may exist.</p>
 <p>Possible custom classes related to collapsible behavior:
 - Start collapsed: A class that makes a component start in the collapsed state.
