@@ -776,17 +776,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#determinant-summary-for-permisos-eventuales" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Determinant summary for Permisos eventuales
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2037,17 +2026,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#determinant-summary-for-permisos-eventuales" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Determinant summary for Permisos eventuales
-      
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2066,24 +2044,20 @@
 
 
 <h1 id="d2-determinants">D.2. Determinants<a class="headerlink" href="#d2-determinants" title="Permanent link">&para;</a></h1>
-<!-- PDF Screenshots -->
 <details class="example">
 <summary>Original Manual Screenshots</summary>
+<p><img alt="pdf-bpa-determinants-01.png" loading="lazy" src="../../screenshots/pdf-bpa-determinants-01.png" /></p>
+<p><img alt="pdf-bpa-determinants-02.png" loading="lazy" src="../../screenshots/pdf-bpa-determinants-02.png" /></p>
+<p><img alt="pdf-bpa-determinants-03.png" loading="lazy" src="../../screenshots/pdf-bpa-determinants-03.png" /></p>
+<p><img alt="pdf-bpa-determinants-04.png" loading="lazy" src="../../screenshots/pdf-bpa-determinants-04.png" /></p>
+<p><img alt="pdf-bpa-determinants-05.png" loading="lazy" src="../../screenshots/pdf-bpa-determinants-05.png" /></p>
+<p><img alt="pdf-bpa-determinants-06.png" loading="lazy" src="../../screenshots/pdf-bpa-determinants-06.png" /></p>
 </details>
-<p><img alt="pdf-bpa-determinants-01.png" loading="lazy" src="./screenshots/pdf-bpa-determinants-01.png" /></p>
-<p><img alt="pdf-bpa-determinants-02.png" loading="lazy" src="./screenshots/pdf-bpa-determinants-02.png" /></p>
-<p><img alt="pdf-bpa-determinants-03.png" loading="lazy" src="./screenshots/pdf-bpa-determinants-03.png" /></p>
-<p><img alt="pdf-bpa-determinants-04.png" loading="lazy" src="./screenshots/pdf-bpa-determinants-04.png" /></p>
-<p><img alt="pdf-bpa-determinants-05.png" loading="lazy" src="./screenshots/pdf-bpa-determinants-05.png" /></p>
-<p><img alt="pdf-bpa-determinants-06.png" loading="lazy" src="./screenshots/pdf-bpa-determinants-06.png" /></p>
-<!-- Live BPA Screenshot: live-determinants -->
 <div class="live-screenshot">
-<p><img alt="Determinants - Manage determinants drawer with condition rules" loading="lazy" src="./screenshots/live-determinants.png" />
-<em>Current BPA view (2026-02-15) — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/forms/applicant-form" target="_blank">D.2. Determinants</a></em>
+<p><img alt="Determinants - Manage determinants drawer with condition rules" loading="lazy" src="../../screenshots/live-determinants.png" />
+<em>Current BPA view — D.2. Determinants</em>
 <em>Click the "D" icon on any form component to open the determinants panel</em></p>
 </div>
-<!-- /Live BPA Screenshot: live-determinants -->
-
 <h2 id="determinant-definition">Determinant definition<a class="headerlink" href="#determinant-definition" title="Permanent link">&para;</a></h2>
 <p>A determinant is a filter allowing to take into account the particular case of each applicant in a service. It determines/triggers: if an applicant is subject to a registration and/or what requirements the applicant must provide to register (data, documents, fees).</p>
 <hr />
@@ -2097,72 +2071,19 @@
 <p>To create a determinant on a block, click on the edit button (gear icon). A slider will open. Click on the Determinant tab, Add. Insert name of determinant, choose the determinant type. The platform supports the following determinant types:</p>
 <h3 id="1-text-determinant">1. Text determinant<a class="headerlink" href="#1-text-determinant" title="Permanent link">&para;</a></h3>
 <p>Evaluates text field values. Operators: <code>EQUAL</code>, <code>NOT_EQUAL</code>, <code>CONTAINS</code>, <code>STARTS_WITH</code>, <code>ENDS_WITH</code>. Can be used with an empty value to check if a field is empty/not empty.</p>
-<div class="admonition example">
-<p class="admonition-title">Real examples from <em>Permisos eventuales</em></p>
-</div>
-<ul>
-<li><strong>"Fundamentación != empty"</strong> — field <code>applicantFundamentacion</code>, operator <code>NOT_EQUAL</code>, value <code>""</code> (empty). Shows a section only when the applicant has provided a justification text.</li>
-<li><strong>"cliente extranjero != empty"</strong> — field <code>applicantClienteExtranjero</code>, operator <code>NOT_EQUAL</code>, value <code>""</code>. Shows foreign client fields only when data is present.</li>
-<li><strong>"Funciono la descarga = true"</strong> — field <code>aprobarStatusDeLaDescarga</code>, operator <code>EQUAL</code>, value <code>"true"</code>. Controls workflow based on download status.</li>
-</ul>
 <h3 id="2-select-radio-determinant">2. Select / Radio determinant<a class="headerlink" href="#2-select-radio-determinant" title="Permanent link">&para;</a></h3>
 <p>Evaluates select, dropdown, or radio button field values. Operators: <code>EQUAL</code>, <code>NOT_EQUAL</code>.</p>
-<div class="admonition example">
-<p class="admonition-title">Real examples from <em>Permisos eventuales</em></p>
-</div>
-<ul>
-<li><strong>"Que necesita = nuevo permiso"</strong> — field <code>applicantQueQuiereHacer</code>, value <code>"registrarNuevo"</code>. Shows the "new permit" workflow when the applicant selects they need a new permit.</li>
-<li><strong>"Que necesita = modificar permiso existente"</strong> — same field, value <code>"modificarExistente"</code>. Shows the "modify existing permit" workflow instead.</li>
-<li><strong>"EMPRESA pertenece Zona Mariel"</strong> — field <code>applicantPermisoEventual2</code>, value <code>"true"</code>. Shows additional fields for companies in the Mariel Special Zone.</li>
-<li><strong>"Quiere = Cancelar Operación"</strong> vs <strong>"Quiere = Realizar Operación"</strong> — field <code>datosComplementariosRadio</code>, with different values. Controls which processing path to follow.</li>
-</ul>
 <h3 id="3-numeric-determinant">3. Numeric determinant<a class="headerlink" href="#3-numeric-determinant" title="Permanent link">&para;</a></h3>
 <p>Evaluates number field values. Operators: <code>EQUAL</code>, <code>NOT_EQUAL</code>, <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>GREATER_THAN_OR_EQUAL</code>, <code>LESS_THAN_OR_EQUAL</code>.</p>
-<div class="admonition example">
-<p class="admonition-title">Real examples from <em>Permisos eventuales</em></p>
-</div>
-<ul>
-<li><strong>"Cantidad de productos modificados &gt; 0"</strong> — field <code>revisionCantidadProductosModificadosAprobados</code>, operator <code>GREATER_THAN</code>, value <code>0</code>. Shows the modified products section only when there are products to review.</li>
-<li><strong>"Contador productos nuevos &gt; 0"</strong> — field <code>applicantContadorProductosNuevos</code>, operator <code>GREATER_THAN</code>, value <code>0</code>. Shows the new products section only when new products exist.</li>
-</ul>
 <h3 id="4-boolean-determinant">4. Boolean determinant<a class="headerlink" href="#4-boolean-determinant" title="Permanent link">&para;</a></h3>
 <p>Evaluates checkbox/toggle values. Checks if a boolean field is <code>True</code> or <code>False</code>.</p>
-<div class="admonition example">
-<p class="admonition-title">Real examples from <em>Permisos eventuales</em></p>
-</div>
-<ul>
-<li><strong>"Confirmo la exactitud = SI (formulario parte A)"</strong> — field <code>applicantCheckbox2</code>, value <code>true</code>. Enables the submit button only after the applicant confirms data accuracy.</li>
-<li><strong>"Form is valid"</strong> — field <code>isFormValid</code>, value <code>true</code>. Controls whether submission-related actions are available.</li>
-<li><strong>"User is logged in"</strong> — field <code>is_submit_allowed</code>, value <code>true</code>. Gates functionality that requires authentication.</li>
-</ul>
 <h3 id="5-date-determinant">5. Date determinant<a class="headerlink" href="#5-date-determinant" title="Permanent link">&para;</a></h3>
 <p>Evaluates date/time field values. Can check for specific dates or empty dates.</p>
 <p><strong>Special case — Empty date field</strong>: Create a determinant with a selected date time field with predicate <code>=</code> or <code>!=</code> without selecting any date. This allows checking whether a date has been filled in or left empty.</p>
 <h3 id="6-classification-determinant">6. Classification determinant<a class="headerlink" href="#6-classification-determinant" title="Permanent link">&para;</a></h3>
 <p>Evaluates catalog/classification field values. Operators: <code>EQUAL</code>, <code>NOT_EQUAL</code>. Supports multi-select evaluation with subject modes: <code>ALL</code>, <code>ANY</code>, <code>NONE</code>.</p>
-<div class="admonition example">
-<p class="admonition-title">Real examples from <em>Permisos eventuales</em></p>
-</div>
-<p>This service uses <strong>12 classification determinants</strong> to control form layout based on the type of trade operation:</p>
-<ul>
-<li><strong>"Operación = exportar (nuevos - parte A)"</strong> — field <code>applicantTipoDeOperacion2</code>, operator <code>EQUAL</code>. Shows export-specific fields for new product entries.</li>
-<li><strong>"Operación = importar (nuevos - parte A)"</strong> — same field, different classification value. Shows import-specific fields instead.</li>
-<li>The pattern repeats for different form sections: <em>nuevos parte A</em>, <em>nuevos parte B</em>, <em>modificados parte A</em>, <em>modificados parte B</em>, <em>a modificar parte A</em>, <em>nuevos aprobados parte B</em>, etc.</li>
-</ul>
-<p>This demonstrates how classification determinants adapt a single form to handle both import and export workflows, across multiple form sections (Part A for applicant, Part B for reviewer).</p>
 <h3 id="7-grid-determinant">7. Grid determinant<a class="headerlink" href="#7-grid-determinant" title="Permanent link">&para;</a></h3>
 <p>Evaluates grid component values. Used with edit grids or data grids to create conditions based on repeatable row data.</p>
-<div class="admonition example">
-<p class="admonition-title">Real examples from <em>Permisos eventuales</em></p>
-</div>
-<ul>
-<li><strong>"Aprobado nuevo"</strong> — field <code>revisionDataGridNuevosParteB</code>. Controls visibility of sections based on whether the reviewer's grid of approved new items has data.</li>
-<li><strong>"Selecionar = SI (Parte A - existentes)"</strong> — field <code>applicantDataGridNuevonuevo3</code>. Controls visibility based on grid selections.</li>
-</ul>
-<details class="note">
-<summary>Original manual text</summary>
-</details>
-<p>To create a determinant on a block, click on the edit button (gear icon). A slider will open. Click on the Determinant tab, Add. Insert name of determinant, choose 'Determinant based on field value' under determinant type, select the relevant field, choose the relevant predicate, select value or choose comparison field, save.</p>
 <hr />
 <h2 id="applying-determinants-via-drag-and-drop">Applying determinants via drag and drop<a class="headerlink" href="#applying-determinants-via-drag-and-drop" title="Permanent link">&para;</a></h2>
 <p>Once created, select and drop the determinant on the right panel under selected determinants, select the behavior of the component (show/hide when determinant condition is true), General Save.</p>
@@ -2172,52 +2093,8 @@
 <hr />
 <h2 id="effects-and-component-behaviours-system">Effects and component behaviours system<a class="headerlink" href="#effects-and-component-behaviours-system" title="Permanent link">&para;</a></h2>
 <p>The platform includes a component behaviours and effects system that extends determinant capabilities beyond simple show/hide. Component behaviours allow configuring multiple effects on a component, each driven by one or more determinants. Effects can control properties such as visibility, required status, disabled state, and other component attributes. This provides more granular control than the original show/hide mechanism.</p>
-<p>See <a href="./part5-new-features/01-effects-system.md">Effects System</a> for detailed documentation.</p>
+<p>See <a href="../../part5-new-features/01-effects-system/">Effects System</a> for detailed documentation.</p>
 <hr />
-<h2 id="determinant-summary-for-permisos-eventuales">Determinant summary for <em>Permisos eventuales</em><a class="headerlink" href="#determinant-summary-for-permisos-eventuales" title="Permanent link">&para;</a></h2>
-<p>This service currently has <strong>40 determinants</strong> across all types:</p>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Count</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Radio/Select</td>
-<td>14</td>
-<td>"Que necesita = nuevo permiso"</td>
-</tr>
-<tr>
-<td>Classification</td>
-<td>12</td>
-<td>"Operación = exportar (nuevos - parte A)"</td>
-</tr>
-<tr>
-<td>Text</td>
-<td>5</td>
-<td>"Fundamentación != empty"</td>
-</tr>
-<tr>
-<td>Boolean</td>
-<td>5</td>
-<td>"Confirmo la exactitud = SI"</td>
-</tr>
-<tr>
-<td>Numeric</td>
-<td>2</td>
-<td>"Cantidad de productos modificados &gt; 0"</td>
-</tr>
-<tr>
-<td>Grid</td>
-<td>2</td>
-<td>"Aprobado nuevo"</td>
-</tr>
-</tbody>
-</table>
-<p>This demonstrates a realistic distribution: radio/select and classification determinants are the most common, used to branch the form into different workflows. Boolean and text determinants handle validation gates and field presence checks. Numeric and grid determinants handle count-based and table-based conditions.</p>
 <hr />
 
 

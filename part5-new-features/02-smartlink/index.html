@@ -1856,14 +1856,11 @@
 
 
 <h1 id="smartlink">SmartLink<a class="headerlink" href="#smartlink" title="Permanent link">&para;</a></h1>
-<!-- Live BPA Screenshot: live-smartlink -->
 <div class="live-screenshot">
-<p><img alt="SmartLink - Dynamic registration linking and data sharing" loading="lazy" src="./screenshots/live-smartlink.png" />
-<em>Current BPA view (2026-02-15) — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/registrations" target="_blank">SmartLink</a></em>
+<p><img alt="SmartLink - Dynamic registration linking and data sharing" loading="lazy" src="../../screenshots/live-smartlink.png" />
+<em>Current BPA view — SmartLink</em>
 <em>SmartLink connects registrations for data reuse across services.</em></p>
 </div>
-<!-- /Live BPA Screenshot: live-smartlink -->
-
 <h2 id="overview-of-smartlink">Overview of SmartLink<a class="headerlink" href="#overview-of-smartlink" title="Permanent link">&para;</a></h2>
 <p>SmartLink is a feature in eRegistrations that enables linking between services, allowing data sharing and workflow coordination across multiple services within the same instance. When services are linked through SmartLink, data entered in one service can flow to another service, and workflow steps can be coordinated across service boundaries.</p>
 <p>SmartLink may extend or complement the Internal BOT functionality that already exists for cross-service data transfer (documented in the BOT builder section). While Internal BOTs copy data between specific form fields across services, SmartLink may provide a higher-level linkage mechanism that manages the overall relationship between services.</p>
@@ -1873,6 +1870,7 @@
 1. A separate, higher-level feature that manages service-to-service relationships, with Internal BOTs handling the actual data transfer.
 2. A replacement or evolution of the Internal BOT cross-service functionality.
 3. A UI layer on top of Internal BOTs that makes cross-service linking easier to configure.</p>
+<p>The exact relationship between SmartLink and Internal BOTs needs to be verified.</p>
 <hr />
 <h2 id="service-registration-linking">Service-Registration Linking<a class="headerlink" href="#service-registration-linking" title="Permanent link">&para;</a></h2>
 <p>The platform supports linking services to registrations through a dedicated mechanism. This allows a registration created under one service to be associated with or accessible from another service. This may be a component of the SmartLink feature or a separate capability.</p>
@@ -1886,6 +1884,7 @@
 4. Configuring the direction of data flow (unidirectional or bidirectional).
 5. Optionally defining conditions under which the link is active.
 6. Saving and publishing the link configuration.</p>
+<p>The exact steps, UI location, and available options need verification on the live platform.</p>
 <hr />
 <h2 id="smartlink-data-sharing-capabilities">SmartLink Data Sharing Capabilities<a class="headerlink" href="#smartlink-data-sharing-capabilities" title="Permanent link">&para;</a></h2>
 <p>SmartLink may enable sharing of the following types of data between linked services:
@@ -1894,6 +1893,7 @@
 - Registration results and certificates
 - Application status and workflow state
 - Fee payment information</p>
+<p>The exact types of data that can be shared and any restrictions on data sharing need verification.</p>
 <hr />
 <h2 id="smartlink-ui-location-in-bpa">SmartLink UI Location in BPA<a class="headerlink" href="#smartlink-ui-location-in-bpa" title="Permanent link">&para;</a></h2>
 <p>SmartLink may be accessible from one or more of the following locations in the BPA:
@@ -1901,6 +1901,7 @@
 - Within the service settings or service bar.
 - Through the registration configuration interface.
 - As part of the BOT builder interface.</p>
+<p>The exact location and navigation path need to be verified on the live platform.</p>
 <hr />
 
 

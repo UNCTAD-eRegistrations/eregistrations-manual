@@ -1900,14 +1900,11 @@
 
 
 <h1 id="part-b-processing">Part B (Processing)<a class="headerlink" href="#part-b-processing" title="Permanent link">&para;</a></h1>
-<!-- Live BPA Screenshot: live-part-b -->
 <div class="live-screenshot">
-<p><img alt="Part B (Processing) - Operator processing screen configuration" loading="lazy" src="./screenshots/live-part-b.png" />
-<em>Current BPA view (2026-02-15) — <a href="https://bpa.cuba.eregistrations.org/services/2c918084887c7a8f01887c99ed2a6fd5/roles" target="_blank">Part B (Processing)</a></em>
+<p><img alt="Part B (Processing) - Operator processing screen configuration" loading="lazy" src="../../screenshots/live-part-b.png" />
+<em>Current BPA view — Part B (Processing)</em>
 <em>Part B configuration is done within the roles/processing section.</em></p>
 </div>
-<!-- /Live BPA Screenshot: live-part-b -->
-
 <h2 id="overview-of-part-b-processing">Overview of Part B (Processing)<a class="headerlink" href="#overview-of-part-b-processing" title="Permanent link">&para;</a></h2>
 <p>Part B refers to the processing/operator side of an eRegistrations service. While Part A is the applicant-facing side (the application file with its guide, form, documents, payment, and send pages), Part B is the operator-facing side where processing roles review, validate, and act on submitted applications.</p>
 <p>Part B encompasses:
@@ -1917,62 +1914,11 @@
 - Configuration of what applicant data is visible or editable in Part B.
 - Automated actions triggered during processing (BOT roles).</p>
 <p>Part B is configured through the Roles section (section F) of the BPA and is accessed by operators through the Display System (DS).</p>
-<!-- Screenshot needed: Overview screenshot of the Part B interface as seen by an operator, showing the main layout and navigation elements. -->
-
 <hr />
 <h2 id="part-b-system-actions">Part B System Actions<a class="headerlink" href="#part-b-system-actions" title="Permanent link">&para;</a></h2>
 <p>Part B system actions are built-in actions that can be triggered during the processing workflow. These are pre-defined actions provided by the platform (as opposed to custom BOT actions created by the analyst).</p>
 <p>System actions are available for form components and can be assigned to buttons, fields, or blocks within processing role forms. They provide standard processing functionality without requiring custom BOT configuration.</p>
 <p>The list of available system actions can be viewed through the system actions interface. Each action has an ID, name, and category.</p>
-<!-- Screenshot needed: Screenshot listing the available Part B system actions with their names and categories. -->
-
-<div class="admonition example">
-<p class="admonition-title">Part B system actions</p>
-</div>
-<p>The platform provides <strong>22 built-in system actions</strong> organized in 5 categories:</p>
-<table>
-<thead>
-<tr>
-<th>Category</th>
-<th>Count</th>
-<th>Actions</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Processing</strong></td>
-<td>4</td>
-<td><code>fileValidated</code>, <code>fileDecline</code>, <code>fileReject</code>, <code>cancelFile</code></td>
-<td>Approve, decline, reject, or cancel applications</td>
-</tr>
-<tr>
-<td><strong>Print</strong></td>
-<td>3</td>
-<td><code>printEntirePartAButton</code>, <code>printApplicantGuide</code>, <code>printApplicantFile</code></td>
-<td>Generate printable views of the application, guide, or full file</td>
-</tr>
-<tr>
-<td><strong>Applicant</strong></td>
-<td>5</td>
-<td><code>start_kyc</code>, <code>saveData</code>, <code>saveSENDPAGE</code>, <code>saveDOCUMENT</code>, <code>savePAYMENTPAGE</code>, <code>saveA5</code></td>
-<td>Handle applicant-side save and submit operations</td>
-</tr>
-<tr>
-<td><strong>Navigation</strong></td>
-<td>3</td>
-<td><code>goToNextPage</code>, <code>goToPreviousPage</code>, <code>validateCurrentTab</code></td>
-<td>Navigate between form pages and validate current tab</td>
-</tr>
-<tr>
-<td><strong>Other</strong></td>
-<td>7</td>
-<td><code>saveGUIDE</code>, <code>revisionFileValidated</code>, <code>revisionFileReject</code>, <code>revisionFileDecline</code>, <code>registerAndApply</code>, <code>sendBack</code></td>
-<td>Guide saving, revision processing, registration, and send-back</td>
-</tr>
-</tbody>
-</table>
-<p>System actions are referenced by their ID when configuring component actions (using their <code>id</code> as the <code>bot_id</code> in <code>componentaction_save</code>). They are built into the platform and <strong>do not appear in the BOT list</strong>.</p>
 <hr />
 <h2 id="part-b-system-buttons">Part B System Buttons<a class="headerlink" href="#part-b-system-buttons" title="Permanent link">&para;</a></h2>
 <p>Part B system buttons are pre-defined buttons that can be enabled for operator processing forms. The service settings (section I) mention 'enabling BPA system buttons in Part B' as a toggle option.</p>
@@ -1984,8 +1930,6 @@
 - Generate certificate button
 - Other standard processing workflow buttons</p>
 <p>These buttons are distinct from custom buttons created by the analyst in the form builder. They provide standardized processing functionality with built-in workflow logic.</p>
-<!-- Screenshot needed: Screenshot of the Part B system buttons as they appear to the operator, and the settings toggle for enabling them. -->
-
 <hr />
 <h2 id="component-actions-in-part-b">Component Actions in Part B<a class="headerlink" href="#component-actions-in-part-b" title="Permanent link">&para;</a></h2>
 <p>Component actions define how BOTs and system actions are linked to form components in Part B. Each form component (button, field, or block) can have actions attached to it that execute when the component is interacted with or rendered.</p>
@@ -1998,8 +1942,6 @@
 - Applying determinant conditions to control when actions execute.
 - Multiple BOT execution with a field key selector for dynamic BOT selection.</p>
 <p>Actions are configured per component and are specific to the service.</p>
-<!-- Screenshot needed: Screenshot of the component action configuration interface showing options for BOT linking, parallel execution, and determinant conditions. -->
-
 <hr />
 <h2 id="part-b-form-visibility-configuration">Part B Form Visibility Configuration<a class="headerlink" href="#part-b-form-visibility-configuration" title="Permanent link">&para;</a></h2>
 <p>The service settings allow configuration of which form components are visible in Part B. Under 'Pages, buttons and fields' in service settings, there is an option to 'make blocks/fields visible in Part A and Part B based on registration linkage.'</p>
@@ -2008,8 +1950,6 @@
 - Some components can be configured to appear only in the operator processing form (Part B).
 - Some components can appear in both Part A and Part B.</p>
 <p>The visibility is typically controlled through the block or field configuration, where the analyst can specify which part the component belongs to.</p>
-<!-- Screenshot needed: Screenshot showing the Part A/Part B visibility toggle for a block or field in the form builder, and the corresponding service settings option. -->
-
 <hr />
 <h2 id="part-b-print-functionality">Part B Print Functionality<a class="headerlink" href="#part-b-print-functionality" title="Permanent link">&para;</a></h2>
 <p>The service settings mention 'show print buttons on Part B' as a configuration option. When enabled, operators can print application data, documents, or certificates directly from the processing page.</p>
@@ -2018,8 +1958,6 @@
 - Printing specific documents or certificates.
 - Printing a summary of the processing history.</p>
 <p>The print button appearance and behavior need verification.</p>
-<!-- Screenshot needed: Screenshot of the print button in Part B and the resulting print dialog or preview. -->
-
 <hr />
 <h2 id="processing-role-form-in-part-b">Processing Role Form in Part B<a class="headerlink" href="#processing-role-form-in-part-b" title="Permanent link">&para;</a></h2>
 <p>Each processing role (human role) has a form that defines what the operator sees and can do. This form is built in the BPA using the same form builder as the applicant form, but it serves a different purpose.</p>
@@ -2030,8 +1968,6 @@
 - Document generation and display components.
 - Approval/rejection/send-back controls.</p>
 <p>The form is configured under the 'Form' tab of each role in the Roles section (section F).</p>
-<!-- Screenshot needed: Screenshot of a processing role form being built in the BPA, showing the available components and configuration options for Part B. -->
-
 <hr />
 <h2 id="part-b-data-revision-features">Part B Data Revision Features<a class="headerlink" href="#part-b-data-revision-features" title="Permanent link">&para;</a></h2>
 <p>Enhanced data revision features in Part B may include:
@@ -2039,8 +1975,6 @@
 - Side-by-side comparison of submitted data with previous versions.
 - Inline editing capabilities for operators to correct data.
 - Batch approval or rejection of multiple fields.</p>
-<!-- Screenshot needed: Screenshot of the Part B data revision interface showing field-by-field verification. -->
-
 <hr />
 
 
