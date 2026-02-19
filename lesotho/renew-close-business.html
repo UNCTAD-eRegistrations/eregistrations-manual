@@ -1,1222 +1,1650 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Manual: Renew or Close a Business - Lesotho eRegistrations</title>
-<style>
-  :root {
-    --gov-blue: #003580;
-    --gov-blue-light: #0050b3;
-    --gov-blue-pale: #e8f0fe;
-    --gov-gold: #c8a415;
-    --success: #28a745;
-    --warning: #f0ad4e;
-    --danger: #dc3545;
-    --text: #333;
-    --text-light: #666;
-    --bg: #f5f7fa;
-    --white: #fff;
-    --border: #d0d7e2;
-    --shadow: 0 2px 8px rgba(0,53,128,0.10);
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renew or Close a Business - User Manual | OBFC Lesotho</title>
+    <meta name="description" content="User manual for Renew or Close a Business on the Lesotho One Business Facilitation Centre (OBFC) eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           LESOTHO eREGISTRATIONS — USER MANUAL
+           Design system: https://lesotho.eregistrations.dev/
+           Generated: February 2026
+           ============================================================ */
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* --- Reset & Base --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.65;
-    font-size: 16px;
-  }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
 
-  /* Header */
-  .gov-header {
-    background: var(--gov-blue);
-    color: var(--white);
-    padding: 0;
-  }
-  .gov-header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 18px 24px;
-  }
-  .gov-header-top .logo-area {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .gov-header-top .coat-of-arms {
-    width: 56px;
-    height: 56px;
-    background: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
-    color: var(--gov-blue);
-    font-weight: bold;
-  }
-  .gov-header-top h1 {
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-  }
-  .gov-header-top .subtitle {
-    font-size: 13px;
-    opacity: 0.85;
-    margin-top: 2px;
-  }
-  .gov-header-top .lang {
-    font-size: 13px;
-    opacity: 0.7;
-  }
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
 
-  .gov-nav {
-    background: var(--gov-blue-light);
-    border-top: 1px solid rgba(255,255,255,0.15);
-  }
-  .gov-nav-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
-    display: flex;
-    gap: 0;
-  }
-  .gov-nav a {
-    color: var(--white);
-    text-decoration: none;
-    padding: 10px 18px;
-    font-size: 14px;
-    opacity: 0.85;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s;
-  }
-  .gov-nav a:hover, .gov-nav a.active {
-    opacity: 1;
-    border-bottom-color: var(--gov-gold);
-    background: rgba(255,255,255,0.06);
-  }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
-  /* Page Content */
-  .page-wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 32px 24px 60px;
-  }
+        a {
+            color: #4CAF74;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
 
-  .breadcrumb {
-    font-size: 13px;
-    color: var(--text-light);
-    margin-bottom: 24px;
-  }
-  .breadcrumb a { color: var(--gov-blue); text-decoration: none; }
-  .breadcrumb a:hover { text-decoration: underline; }
-  .breadcrumb .sep { margin: 0 6px; }
+        a:hover {
+            color: #3d9461;
+            text-decoration: underline;
+        }
 
-  .page-title {
-    font-size: 32px;
-    color: var(--gov-blue);
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.25;
-  }
-  .page-subtitle {
-    font-size: 17px;
-    color: var(--text-light);
-    margin-bottom: 28px;
-  }
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1F2128;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+        }
 
-  /* Info Banner */
-  .info-banner {
-    background: var(--gov-blue-pale);
-    border-left: 5px solid var(--gov-blue);
-    padding: 18px 22px;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 32px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-  .info-banner .icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-  .info-banner p { font-size: 15px; }
-  .info-banner strong { color: var(--gov-blue); }
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
 
-  /* Sections */
-  .section {
-    background: var(--white);
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    margin-bottom: 28px;
-    overflow: hidden;
-  }
-  .section-header {
-    background: var(--gov-blue);
-    color: var(--white);
-    padding: 16px 24px;
-    font-size: 19px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .section-header .num {
-    background: var(--white);
-    color: var(--gov-blue);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-  .section-body { padding: 24px; }
+        p { margin-bottom: 1em; }
 
-  h3 {
-    color: var(--gov-blue);
-    font-size: 18px;
-    margin: 20px 0 10px;
-    font-weight: 600;
-  }
-  h3:first-child { margin-top: 0; }
+        strong {
+            color: #1F2128;
+            font-weight: 600;
+        }
 
-  p { margin-bottom: 12px; }
+        /* --- Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-  /* Browser Chrome Mockup */
-  .browser-mockup {
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 20px 0;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-  }
-  .browser-bar {
-    background: #e8ecf0;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid var(--border);
-  }
-  .browser-dots {
-    display: flex;
-    gap: 6px;
-  }
-  .browser-dots span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: block;
-  }
-  .browser-dots .red { background: #ff5f57; }
-  .browser-dots .yellow { background: #febc2e; }
-  .browser-dots .green { background: #28c840; }
-  .browser-url {
-    flex: 1;
-    background: var(--white);
-    border-radius: 6px;
-    padding: 6px 14px;
-    font-size: 13px;
-    color: var(--text-light);
-    border: 1px solid #d0d4da;
-    font-family: monospace;
-  }
-  .browser-url .lock { color: var(--success); margin-right: 4px; }
-  .browser-content {
-    background: var(--white);
-    padding: 24px;
-    min-height: 120px;
-  }
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: #2B2A65;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
 
-  /* Mock Form Elements */
-  .mock-form { margin: 12px 0; }
-  .mock-field {
-    margin-bottom: 16px;
-  }
-  .mock-field label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 5px;
-  }
-  .mock-field label .req { color: var(--danger); }
-  .mock-input {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    font-size: 14px;
-    color: var(--text-light);
-    background: #fafbfc;
-  }
-  .mock-input.disabled {
-    background: #eef1f5;
-    color: #999;
-  }
-  .mock-select {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    font-size: 14px;
-    background: #fafbfc;
-    color: var(--text-light);
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23666' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-  }
-  .mock-btn {
-    display: inline-block;
-    padding: 11px 28px;
-    background: var(--gov-blue);
-    color: var(--white);
-    border: none;
-    border-radius: 6px;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: default;
-  }
-  .mock-btn.secondary {
-    background: var(--white);
-    color: var(--gov-blue);
-    border: 2px solid var(--gov-blue);
-  }
-  .mock-btn.gold {
-    background: var(--gov-gold);
-    color: var(--white);
-  }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
 
-  /* Data Grid Mockup */
-  .mock-grid {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 14px;
-  }
-  .mock-grid th {
-    background: var(--gov-blue-pale);
-    color: var(--gov-blue);
-    padding: 10px 14px;
-    text-align: left;
-    font-weight: 600;
-    border-bottom: 2px solid var(--gov-blue);
-  }
-  .mock-grid td {
-    padding: 10px 14px;
-    border-bottom: 1px solid #eee;
-    vertical-align: middle;
-  }
-  .mock-grid tr:hover td {
-    background: #f8fafd;
-  }
-  .mock-checkbox {
-    width: 18px;
-    height: 18px;
-    border: 2px solid var(--gov-blue);
-    border-radius: 4px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-  }
-  .mock-checkbox.checked {
-    background: var(--gov-blue);
-    color: var(--white);
-    font-size: 12px;
-  }
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
 
-  /* Lists */
-  ul, ol { margin: 8px 0 16px 24px; }
-  li { margin-bottom: 6px; }
+        .header-logos img { height: 52px; width: auto; }
+        .header-logos .coat-of-arms { height: 56px; }
 
-  /* Tip / Warning / Note boxes */
-  .callout {
-    padding: 16px 20px;
-    border-radius: 8px;
-    margin: 16px 0;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    font-size: 14px;
-  }
-  .callout .icon { font-size: 20px; flex-shrink: 0; }
-  .callout.tip {
-    background: #e8f5e9;
-    border-left: 4px solid var(--success);
-  }
-  .callout.warning {
-    background: #fff8e1;
-    border-left: 4px solid var(--warning);
-  }
-  .callout.danger {
-    background: #fce4ec;
-    border-left: 4px solid var(--danger);
-  }
-  .callout.info {
-    background: var(--gov-blue-pale);
-    border-left: 4px solid var(--gov-blue);
-  }
+        .header-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.25);
+            flex-shrink: 0;
+        }
 
-  /* Summary Cards */
-  .summary-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px;
-    margin: 16px 0;
-  }
-  .summary-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 18px;
-    text-align: center;
-    border-top: 4px solid var(--gov-blue);
-  }
-  .summary-card .card-num {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--gov-blue);
-  }
-  .summary-card .card-label {
-    font-size: 14px;
-    color: var(--text-light);
-    margin-top: 4px;
-  }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
 
-  /* Workflow Steps */
-  .workflow {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin: 20px 0;
-  }
-  .wf-step {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    position: relative;
-    padding-bottom: 24px;
-  }
-  .wf-step:last-child { padding-bottom: 0; }
-  .wf-step::before {
-    content: '';
-    position: absolute;
-    left: 22px;
-    top: 46px;
-    bottom: 0;
-    width: 3px;
-    background: var(--gov-blue-pale);
-  }
-  .wf-step:last-child::before { display: none; }
-  .wf-icon {
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: var(--gov-blue);
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    flex-shrink: 0;
-    z-index: 1;
-  }
-  .wf-icon.bot { background: #6c757d; }
-  .wf-icon.complete { background: var(--success); }
-  .wf-body h4 {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--gov-blue);
-    margin-bottom: 4px;
-  }
-  .wf-body p {
-    font-size: 14px;
-    color: var(--text-light);
-    margin: 0;
-  }
-  .wf-body .badge {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-top: 6px;
-  }
-  .badge-user { background: var(--gov-blue-pale); color: var(--gov-blue); }
-  .badge-auto { background: #e8e8e8; color: #555; }
+        .header-nav a {
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 400;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
 
-  /* Registration Cards */
-  .reg-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-    margin: 16px 0;
-  }
-  .reg-card {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .reg-card-header {
-    padding: 12px 16px;
-    font-weight: 600;
-    font-size: 15px;
-    color: var(--white);
-  }
-  .reg-card-header.renew { background: var(--gov-blue); }
-  .reg-card-header.terminate { background: var(--danger); }
-  .reg-card-body {
-    padding: 14px 16px;
-    font-size: 14px;
-  }
-  .reg-card-body li { margin-bottom: 4px; }
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
 
-  /* FAQ */
-  .faq-item {
-    border-bottom: 1px solid #eee;
-    padding: 16px 0;
-  }
-  .faq-item:last-child { border-bottom: none; }
-  .faq-q {
-    font-weight: 600;
-    color: var(--gov-blue);
-    font-size: 16px;
-    margin-bottom: 8px;
-    cursor: default;
-  }
-  .faq-q::before {
-    content: 'Q. ';
-    font-weight: 700;
-  }
-  .faq-a {
-    font-size: 15px;
-    padding-left: 26px;
-    color: var(--text);
-  }
-  .faq-a::before {
-    content: 'A. ';
-    font-weight: 600;
-    color: var(--gov-blue);
-  }
+        .btn-login {
+            background: #4CAF74;
+            color: #FFFFFF !important;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            transition: background 0.2s ease;
+        }
 
-  /* Fee Table */
-  .fee-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 12px 0;
-    font-size: 14px;
-  }
-  .fee-table th {
-    background: var(--gov-blue);
-    color: var(--white);
-    padding: 10px 16px;
-    text-align: left;
-    font-weight: 600;
-  }
-  .fee-table td {
-    padding: 10px 16px;
-    border-bottom: 1px solid #eee;
-  }
-  .fee-table tr:nth-child(even) td {
-    background: #fafbfc;
-  }
-  .fee-table .currency {
-    font-family: monospace;
-    font-weight: 600;
-  }
+        .btn-login:hover { background: #3d9461; text-decoration: none !important; }
 
-  /* Footer */
-  .gov-footer {
-    background: var(--gov-blue);
-    color: var(--white);
-    padding: 36px 24px;
-    margin-top: 48px;
-  }
-  .gov-footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 32px;
-  }
-  .gov-footer h4 {
-    font-size: 15px;
-    margin-bottom: 12px;
-    opacity: 0.9;
-  }
-  .gov-footer p, .gov-footer li {
-    font-size: 13px;
-    opacity: 0.75;
-    line-height: 1.7;
-  }
-  .gov-footer ul { list-style: none; margin: 0; padding: 0; }
-  .gov-footer a { color: var(--white); text-decoration: none; }
-  .gov-footer a:hover { text-decoration: underline; }
-  .gov-footer-bottom {
-    max-width: 1100px;
-    margin: 24px auto 0;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    font-size: 12px;
-    opacity: 0.6;
-    text-align: center;
-  }
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 14px 0;
+        }
 
-  /* Responsive */
-  @media (max-width: 768px) {
-    .gov-header-top { flex-direction: column; text-align: center; gap: 10px; }
-    .gov-nav-inner { flex-wrap: wrap; justify-content: center; }
-    .gov-footer-inner { grid-template-columns: 1fr; }
-    .page-title { font-size: 24px; }
-    .summary-cards { grid-template-columns: 1fr 1fr; }
-    .reg-grid { grid-template-columns: 1fr; }
-    .mock-grid { font-size: 12px; }
-    .mock-grid th, .mock-grid td { padding: 8px 10px; }
-  }
+        .breadcrumb-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #888;
+            flex-wrap: wrap;
+        }
 
-  @media print {
-    .gov-header, .gov-footer { break-inside: avoid; }
-    .section { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
-  }
-</style>
+        .breadcrumb-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumb-list li + li::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-top: 1.5px solid #aaa;
+            border-right: 1.5px solid #aaa;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .breadcrumb-list a { color: #4CAF74; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%);
+            color: #FFFFFF;
+            padding: 64px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 40%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .btn-primary {
+            background: #4CAF74;
+            color: #FFFFFF;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #3d9461;
+            color: #FFFFFF;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 260px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-icon-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(76,175,116,0.15);
+            border: 2px solid rgba(76,175,116,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-circle svg {
+            width: 80px;
+            height: 80px;
+            fill: none;
+            stroke: #4CAF74;
+            stroke-width: 1.5;
+        }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc {
+            background: #F5F5F7;
+            padding: 48px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: #1F2128;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .toc-item:hover {
+            border-color: #4CAF74;
+            box-shadow: 0 2px 8px rgba(76,175,116,0.12);
+            text-decoration: none;
+            color: #1F2128;
+        }
+
+        .toc-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+
+        .section {
+            margin-bottom: 56px;
+            scroll-margin-top: 100px;
+        }
+
+        .section > h2 {
+            font-size: 32px;
+            font-weight: 600;
+            padding-left: 20px;
+            border-left: 4px solid #4CAF74;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .section > h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .section > h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* --- Steps --- */
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .step:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+
+        .step-number {
+            counter-increment: step-counter;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content { flex: 1; min-width: 0; }
+
+        .step-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1F2128;
+        }
+
+        .step-content p { margin-bottom: 8px; font-size: 16px; }
+        .step-content p:last-child { margin-bottom: 0; }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box, .warning-box, .note-box {
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin: 24px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .info-box { background: #F5F5F7; border-left: 4px solid #4CAF74; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box .box-label { color: #4CAF74; }
+        .warning-box .box-label { color: #D4891A; }
+        .note-box .box-label { color: #4A90D9; }
+
+        .box-label svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* --- Checklist --- */
+        .checklist { list-style: none; padding: 0; margin: 20px 0; }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid #F0F0F2;
+            font-size: 16px;
+        }
+
+        .checklist li:last-child { border-bottom: none; }
+
+        .checklist .check-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+        .checklist .check-icon svg { width: 24px; height: 24px; }
+
+        /* --- Field Table --- */
+        .field-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 24px 0;
+            font-size: 15px;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .field-table thead { background: #2B2A65; color: #FFFFFF; }
+
+        .field-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 16px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .field-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: top;
+        }
+
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F5F5F7; }
+        .field-table .required-yes { color: #4CAF74; font-weight: 600; }
+        .field-table .required-no { color: #999; }
+
+        /* --- Cost Table --- */
+        .cost-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 24px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        .cost-table thead { background: #2B2A65; color: #FFFFFF; }
+
+        .cost-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 16px;
+            text-align: left;
+        }
+
+        .cost-table td { padding: 14px 16px; border-bottom: 1px solid #F0F0F2; }
+        .cost-table tbody tr:last-child td { border-bottom: none; }
+        .cost-table tbody tr:nth-child(even) { background: #FAFAFA; }
+
+        .cost-table .amount {
+            font-weight: 700;
+            color: #1F2128;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cost-table .total-row { background: #F5F5F7 !important; font-weight: 700; }
+
+        .cost-table .total-row td {
+            border-top: 2px solid #2B2A65;
+            color: #1F2128;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- Tab Group --- */
+        .tab-group {
+            margin: 28px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #F5F5F7;
+            border-bottom: 1px solid #E5E7EB;
+            overflow-x: auto;
+            gap: 0;
+        }
+
+        .tab-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 14px 24px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #555866;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
+
+        .tab-btn.active {
+            color: #4CAF74;
+            border-bottom-color: #4CAF74;
+            background: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .tab-panel { display: none; padding: 24px; }
+        .tab-panel.active { display: block; }
+
+        /* --- Timeline --- */
+        .timeline {
+            position: relative;
+            margin: 32px 0;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+            padding-left: 24px;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #4CAF74;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 0 0 3px #4CAF74;
+            z-index: 1;
+        }
+
+        .timeline-item.pending::before {
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px #D0D0D8;
+        }
+
+        .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
+        .timeline-item .timeline-meta { font-size: 13px; color: #999; margin-top: 4px; }
+
+        /* --- Screenshot Placeholder --- */
+        .screenshot-placeholder {
+            border: 2px dashed #D0D0D8;
+            border-radius: 10px;
+            background: #FAFAFA;
+            padding: 48px 24px;
+            text-align: center;
+            margin: 24px 0;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .screenshot-placeholder svg {
+            width: 40px;
+            height: 40px;
+            stroke: #CCC;
+            margin-bottom: 12px;
+        }
+
+        .screenshot-placeholder p { margin: 0; }
+        .screenshot-placeholder img { margin: 0 auto; border-radius: 6px; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: #2B2A65;
+            color: rgba(255,255,255,0.8);
+            padding: 56px 0 0;
+            font-size: 15px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .footer-col h5 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo { margin-bottom: 16px; }
+        .footer-logo img { height: 50px; width: auto; }
+
+        .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+        .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
+        .footer-col a:hover { color: #4CAF74; text-decoration: none; }
+
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 14px; }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-contact-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            stroke: #4CAF74;
+            fill: none;
+            margin-top: 2px;
+        }
+
+        .footer-social { display: flex; gap: 12px; margin-top: 8px; }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .footer-social a:hover { background: #4CAF74; }
+        .footer-social svg { width: 18px; height: 18px; fill: #FFFFFF; }
+
+        .footer-implemented {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-implemented span {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .footer-implemented img {
+            height: 36px;
+            width: auto;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-implemented img:hover { opacity: 1; }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 34px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-description { max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 32px; }
+            h2, .section > h2 { font-size: 26px; }
+            h3 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 12px; padding: 10px 16px; }
+            .header-nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 28px; }
+            .step { flex-direction: column; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+            .field-table, .cost-table { font-size: 14px; }
+            .field-table th, .field-table td, .cost-table th, .cost-table td { padding: 10px 12px; }
+            .tab-btn { padding: 12px 16px; font-size: 13px; }
+        }
+
+        @media (max-width: 480px) {
+            .header-logos img { height: 36px; }
+            .header-logos .coat-of-arms { height: 40px; }
+            .hero h1 { font-size: 24px; }
+            .footer-implemented { flex-direction: column; gap: 16px; }
+        }
+
+        /* ============================================================
+           PRINT STYLES
+           ============================================================ */
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 11pt; line-height: 1.5; color: #000; background: #FFF; }
+            .site-header { position: static; box-shadow: none; background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .header-nav .btn-login { display: none; }
+            .hero { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 32px 0; page-break-after: always; }
+            .hero h1 { font-size: 28pt; }
+            .btn-primary { display: none; }
+            .hero-image { display: none; }
+            .toc { page-break-after: always; background: #F5F5F7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .toc-item { break-inside: avoid; }
+            .section { page-break-inside: avoid; }
+            .section > h2 { page-break-after: avoid; border-left-color: #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .step { page-break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+            .step-number { background: #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .info-box, .warning-box, .note-box { page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .field-table, .cost-table { page-break-inside: avoid; font-size: 9pt; }
+            .field-table thead, .cost-table thead { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .tab-group { page-break-inside: avoid; }
+            .tab-nav { display: none; }
+            .tab-panel { display: block !important; border-top: 1px solid #ddd; padding-top: 12px; margin-top: 8px; }
+            .tab-panel::before { content: attr(data-tab-label); font-weight: 700; font-size: 13pt; display: block; margin-bottom: 8px; }
+            .timeline::before { background: #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { background: #4CAF74 !important; box-shadow: 0 0 0 3px #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .screenshot-placeholder { border-color: #ccc; page-break-inside: avoid; }
+            .site-footer { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
+            .footer-social { display: none; }
+            a { color: #000; text-decoration: underline; }
+            a[href]::after { content: none; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- ==================== HEADER ==================== -->
-<header class="gov-header">
-  <div class="gov-header-top">
-    <div class="logo-area">
-      <div class="coat-of-arms">LS</div>
-      <div>
-        <h1>Lesotho Business Registration</h1>
-        <div class="subtitle">Ministry of Trade and Industry, Cooperatives and Marketing</div>
-      </div>
-    </div>
-    <div class="lang">English | Sesotho</div>
-  </div>
-  <nav class="gov-nav">
-    <div class="gov-nav-inner">
-      <a href="#">Home</a>
-      <a href="#">Register a Business</a>
-      <a href="#" class="active">Renew or Close</a>
-      <a href="#">My Applications</a>
-      <a href="#">Help</a>
-    </div>
-  </nav>
-</header>
-
-<!-- ==================== MAIN CONTENT ==================== -->
-<main class="page-wrap">
-
-  <div class="breadcrumb">
-    <a href="#">Home</a><span class="sep">/</span>
-    <a href="#">Services</a><span class="sep">/</span>
-    <span>Renew or Close a Business</span>
-  </div>
-
-  <h2 class="page-title">How to Renew or Close a Business</h2>
-  <p class="page-subtitle">
-    Step-by-step citizen guide for the <strong>Renew or Close a Business</strong> service on
-    <a href="https://businessregistrations.gov.ls" style="color:var(--gov-blue)">businessregistrations.gov.ls</a>
-  </p>
-
-  <!-- At a Glance -->
-  <div class="summary-cards">
-    <div class="summary-card">
-      <div class="card-num">100%</div>
-      <div class="card-label">Online Process</div>
-    </div>
-    <div class="summary-card">
-      <div class="card-num">7</div>
-      <div class="card-label">Registration Types</div>
-    </div>
-    <div class="summary-card">
-      <div class="card-num">2</div>
-      <div class="card-label">Review Steps</div>
-    </div>
-    <div class="summary-card">
-      <div class="card-num">LSL</div>
-      <div class="card-label">Fees in Maloti</div>
-    </div>
-  </div>
-
-  <div class="info-banner">
-    <span class="icon">&#9432;</span>
-    <div>
-      <p><strong>Who is this for?</strong> Any person or company registered in Lesotho who needs to renew a Business ID, renew a Trading or Industrial Licence, or formally close (terminate) a business. You must already have an account at <strong>businessregistrations.gov.ls</strong>.</p>
-    </div>
-  </div>
-
-  <!-- ===================== SECTION 1: BEFORE YOU BEGIN ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">1</span> Before You Begin
-    </div>
-    <div class="section-body">
-      <h3>What You Need</h3>
-      <ul>
-        <li>A registered account on <strong>businessregistrations.gov.ls</strong> (the same account you used to register your business).</li>
-        <li>Your <strong>Business ID number</strong> (e.g., BID-2024-00456).</li>
-        <li>Knowledge of which licences you hold &mdash; <strong>Trading Licence</strong> and/or <strong>Industrial Licence</strong>.</li>
-        <li>A valid mobile money or bank account for online fee payments (M-Pesa, EcoCash, or bank transfer).</li>
-      </ul>
-
-      <div class="callout tip">
-        <span class="icon">&#10004;</span>
-        <div><strong>Good news:</strong> No paper documents need to be uploaded. The system automatically pulls your business data from the Government Data Bridge (GDB), so your Business ID, licence details, and expiry dates are pre-filled.</div>
-      </div>
-
-      <h3>Understanding the Two Options</h3>
-      <p>This service covers <strong>two distinct actions</strong> that you select per business:</p>
-      <table class="fee-table">
-        <tr>
-          <th>Action</th>
-          <th>What It Does</th>
-          <th>When to Use</th>
-        </tr>
-        <tr>
-          <td><strong>Renew</strong></td>
-          <td>Extends your Business ID and/or licences for a new validity period</td>
-          <td>Your business is expiring within 90 days or has already expired</td>
-        </tr>
-        <tr>
-          <td><strong>Close (Terminate)</strong></td>
-          <td>Permanently deregisters your Business ID and/or cancels licences</td>
-          <td>You are ceasing business operations in Lesotho</td>
-        </tr>
-      </table>
-
-      <div class="callout warning">
-        <span class="icon">&#9888;</span>
-        <div><strong>Important:</strong> Closing a business is <em>permanent</em>. Once your termination is approved, you cannot reverse it. If you wish to operate again, you will need to register a new business from scratch.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================== SECTION 2: LOG IN ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">2</span> Log In and Access the Service
-    </div>
-    <div class="section-body">
-      <ol>
-        <li>Open your browser and go to <strong>https://businessregistrations.gov.ls</strong></li>
-        <li>Click <strong>"Log in"</strong> in the top right corner.</li>
-        <li>Enter your email address and password, then click <strong>"Sign in"</strong>.</li>
-        <li>From the homepage, find and click <strong>"Renew or close a business"</strong> in the service catalogue.</li>
-      </ol>
-
-      <div class="browser-mockup">
-        <div class="browser-bar">
-          <div class="browser-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-          <div class="browser-url"><span class="lock">&#128274;</span> businessregistrations.gov.ls/services/renew-close</div>
-        </div>
-        <div class="browser-content">
-          <div style="text-align:center; padding: 20px;">
-            <div style="font-size:24px; color:var(--gov-blue); font-weight:700; margin-bottom:8px;">Renew or Close a Business</div>
-            <div style="color:var(--text-light); margin-bottom:20px;">Manage your registered businesses, trading licences, and industrial licences</div>
-            <div class="mock-btn">List all your businesses</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="callout info">
-        <span class="icon">&#128273;</span>
-        <div><strong>First time?</strong> If you registered your business by visiting the One Stop Business Facilitation Centre (OBFC) in Maseru, you may need to create an online account first. Your existing Business ID will be linked automatically once you verify your identity.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================== SECTION 3: LIST YOUR BUSINESSES ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">3</span> Retrieve Your Businesses
-    </div>
-    <div class="section-body">
-      <p>After logging in, the system retrieves all businesses and licences registered under your account. Click the <strong>"List all your businesses"</strong> button and wait a few seconds.</p>
-
-      <p>The system will display two panels:</p>
-      <ul>
-        <li><strong>Your Businesses</strong> &mdash; a table listing every Business ID linked to your account.</li>
-        <li><strong>Your Licences</strong> &mdash; a table listing all Trading Licences and Industrial Licences.</li>
-      </ul>
-
-      <h3>Your Businesses Table</h3>
-      <p>Each row in the businesses table shows:</p>
-
-      <div class="browser-mockup">
-        <div class="browser-bar">
-          <div class="browser-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-          <div class="browser-url"><span class="lock">&#128274;</span> businessregistrations.gov.ls &mdash; Your businesses (2)</div>
-        </div>
-        <div class="browser-content" style="padding: 16px;">
-          <div style="font-size:16px; font-weight:600; color:var(--gov-blue); margin-bottom:12px; border-bottom: 2px solid var(--gov-blue-pale); padding-bottom:8px;">Your businesses (2)</div>
-          <table class="mock-grid">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Business ID</th>
-                <th>Type</th>
-                <th>Expiry</th>
-                <th>Fee (LSL)</th>
-                <th>Penalty (LSL)</th>
-                <th style="text-align:center">Renew</th>
-                <th style="text-align:center">Close</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Maseru Trading Co.</td>
-                <td>BID-00456</td>
-                <td>Sole Proprietor</td>
-                <td style="color:var(--danger)">15-01-2026</td>
-                <td class="currency">200.00</td>
-                <td class="currency" style="color:var(--danger)">50.00</td>
-                <td style="text-align:center"><span class="mock-checkbox checked">&#10003;</span></td>
-                <td style="text-align:center"><span class="mock-checkbox"></span></td>
-              </tr>
-              <tr>
-                <td>Hlotse Crafts Ltd</td>
-                <td>BID-01289</td>
-                <td>Company</td>
-                <td>30-08-2026</td>
-                <td class="currency">0.00</td>
-                <td class="currency">0.00</td>
-                <td style="text-align:center"><span class="mock-checkbox"></span></td>
-                <td style="text-align:center"><span class="mock-checkbox"></span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <h3>Understanding Each Column</h3>
-      <table class="fee-table">
-        <tr><th>Column</th><th>Description</th></tr>
-        <tr><td><strong>Name</strong></td><td>The registered business name as it appears on your certificate</td></tr>
-        <tr><td><strong>Business ID</strong></td><td>Your unique registration number assigned by OBFC</td></tr>
-        <tr><td><strong>Type</strong></td><td>Entity type: Sole Proprietor, Partnership, Company, Cooperative, etc.</td></tr>
-        <tr><td><strong>Expiry</strong></td><td>Date your Business ID expires. Shown in red if within 90 days or already expired</td></tr>
-        <tr><td><strong>Fee (LSL)</strong></td><td>The processing/renewal fee in Lesotho Maloti. Appears only when "Renew" is ticked</td></tr>
-        <tr><td><strong>Penalty (LSL)</strong></td><td>Late renewal penalty. Charged when your Business ID has already expired</td></tr>
-        <tr><td><strong>Renew</strong></td><td>Tick this checkbox to renew the Business ID. Pre-ticked for businesses expiring within 90 days</td></tr>
-        <tr><td><strong>Close</strong></td><td>Tick this checkbox to permanently close/terminate the Business ID</td></tr>
-      </table>
-
-      <div class="callout tip">
-        <span class="icon">&#128161;</span>
-        <div><strong>Auto-selection:</strong> Businesses expiring in less than 90 days are automatically pre-selected for renewal. You can deselect "Renew" and select "Close" instead if you wish to terminate.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================== SECTION 4: SELECT ACTIONS ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">4</span> Select Renew or Close for Each Business and Licence
-    </div>
-    <div class="section-body">
-      <h3>For Business IDs</h3>
-      <p>In the businesses table, for each business you want to act on:</p>
-      <ul>
-        <li>Tick the <strong>"Renew"</strong> checkbox to extend the Business ID validity.</li>
-        <li>Tick the <strong>"Close"</strong> checkbox to terminate the Business ID permanently.</li>
-        <li>You may only select one option per business &mdash; Renew <em>or</em> Close, not both.</li>
-        <li>Leave both unchecked if you do not want to take any action on that business.</li>
-      </ul>
-
-      <h3>For Trading Licences</h3>
-      <p>Below the businesses table, you will see a similar table for <strong>Trading Licences</strong>. Each row shows the licence number, business it belongs to, type, expiry date, renewal fee, and penalty fee. The same Renew/Close checkboxes apply.</p>
-
-      <h3>For Industrial Licences</h3>
-      <p>If you hold Industrial Licences, a third table appears. Industrial Licences are required for manufacturing, processing, or industrial activities. Select Renew or Close as needed.</p>
-
-      <div class="callout warning">
-        <span class="icon">&#9888;</span>
-        <div><strong>Closing a Business ID also affects licences:</strong> If you close a Business ID, all associated Trading and Industrial Licences under that business will also be terminated. Make sure you review the full impact before proceeding.</div>
-      </div>
-
-      <h3>Fees Breakdown</h3>
-      <p>The system calculates fees automatically based on your selections. Fees are shown in <strong>Lesotho Maloti (LSL)</strong>:</p>
-      <table class="fee-table">
-        <tr><th>Fee Type</th><th>Applies To</th><th>Description</th></tr>
-        <tr><td>Processing Fee</td><td>Renewal of Business ID</td><td>Standard renewal fee, amount depends on entity type</td></tr>
-        <tr><td>Penalty Fee</td><td>Expired Business ID renewal</td><td>Additional charge if your Business ID has passed its expiry date</td></tr>
-        <tr><td>Processing Fee</td><td>Renewal of Trading Licence</td><td>Standard licence renewal fee</td></tr>
-        <tr><td>Penalty Fee</td><td>Expired Trading Licence renewal</td><td>Late renewal surcharge for expired trading licences</td></tr>
-        <tr><td>Processing Fee</td><td>Renewal of Industrial Licence</td><td>Standard industrial licence renewal fee</td></tr>
-        <tr><td>Penalty Fee</td><td>Expired Industrial Licence renewal</td><td>Late renewal surcharge for expired industrial licences</td></tr>
-        <tr><td>Termination Fee</td><td>Closing Business ID</td><td>Administrative processing fee for business termination</td></tr>
-        <tr><td>Termination Fee</td><td>Closing Trading/Industrial Licence</td><td>Administrative fee for licence cancellation</td></tr>
-      </table>
-
-      <div class="callout tip">
-        <span class="icon">&#128176;</span>
-        <div><strong>Tip for Basotho business owners:</strong> Renew early! If you renew your Business ID or licence <strong>before</strong> it expires, you avoid the penalty fee entirely. The system allows renewal up to 90 days before expiry.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================== SECTION 5: REVIEW & SEND ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">5</span> Review Your Selections and Submit
-    </div>
-    <div class="section-body">
-      <p>After selecting your Renew/Close options, the system generates a summary of all actions and associated fees.</p>
-
-      <h3>Send Page</h3>
-      <p>Click the <strong>"Send"</strong> tab to proceed to the submission page. Here you will see:</p>
-      <ul>
-        <li>A summary of all Business IDs and Licences you are renewing or closing.</li>
-        <li>The total processing fees and any penalty fees.</li>
-        <li>An email field where your confirmation will be sent.</li>
-        <li>An <strong>acknowledgement checkbox</strong> you must tick to confirm the accuracy of your information.</li>
-      </ul>
-
-      <div class="browser-mockup">
-        <div class="browser-bar">
-          <div class="browser-dots"><span class="red"></span><span class="yellow"></span><span class="green"></span></div>
-          <div class="browser-url"><span class="lock">&#128274;</span> businessregistrations.gov.ls &mdash; Send your application</div>
-        </div>
-        <div class="browser-content">
-          <div class="mock-form">
-            <div style="font-size:18px; font-weight:700; color:var(--gov-blue); margin-bottom:16px;">Application Summary</div>
-            <div style="background:#f8fafe; padding:14px; border-radius:6px; margin-bottom:16px; border:1px solid var(--border);">
-              <div style="font-size:14px; margin-bottom:6px;"><strong>Renew Business ID:</strong> Maseru Trading Co. (BID-00456)</div>
-              <div style="font-size:14px; margin-bottom:6px;"><strong>Renewal Fee:</strong> LSL 200.00 | <strong>Penalty:</strong> LSL 50.00</div>
-              <div style="font-size:14px; font-weight:700; color:var(--gov-blue); margin-top:10px; padding-top:10px; border-top:1px solid var(--border);">Total: LSL 250.00</div>
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logos">
+                <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                </a>
+                <div class="header-divider"></div>
+                <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/7363eda357ebb1583ab4ce37d8e31141f937cf98.png" alt="Lesotho Coat of Arms" class="coat-of-arms">
+                </a>
             </div>
-            <div class="mock-field">
-              <label>Confirmation Email <span class="req">*</span></label>
-              <div class="mock-input">nthabiseng.m@email.co.ls</div>
+            <nav class="header-nav">
+                <a href="https://lesotho.eregistrations.dev/about/">About</a>
+                <a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a>
+                <a href="https://services.businessregistrations.gov.ls/" class="btn-login">Login | Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                <li><a href="https://services.businessregistrations.gov.ls/">Renew/Close Business</a></li>
+                <li><span class="current">User Manual</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">User Manual</span>
+                    <h1>Renew or Close a Business</h1>
+                    <p class="hero-description">Complete guide to renewing your Business ID, renewing trading or industrial licences, or closing (terminating) your business and licences through the OBFC online portal in the Kingdom of Lesotho.</p>
+                    <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Start Application &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="6" width="40" height="52" rx="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M24 28 L30 34 L40 22" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                            <line x1="22" y1="42" x2="42" y2="42" stroke-linecap="round"/>
+                            <line x1="22" y1="48" x2="36" y2="48" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
-            <div style="margin:16px 0; display:flex; align-items:center; gap:8px;">
-              <span class="mock-checkbox checked" style="flex-shrink:0;">&#10003;</span>
-              <span style="font-size:14px;">I confirm that the information above is correct and I understand the implications of my selections.</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#overview" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span class="toc-label">Overview</span>
+                </a>
+                <a href="#renewal-vs-closure" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span class="toc-label">Renewal vs. Closure</span>
+                </a>
+                <a href="#requirements" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span class="toc-label">Requirements</span>
+                </a>
+                <a href="#costs-fees" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span class="toc-label">Costs &amp; Fees</span>
+                </a>
+                <a href="#step-by-step" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span class="toc-label">Step-by-Step Guide</span>
+                </a>
+                <a href="#after-submission" class="toc-item">
+                    <span class="toc-number">6</span>
+                    <span class="toc-label">After Submission</span>
+                </a>
+                <a href="#faq" class="toc-item">
+                    <span class="toc-number">7</span>
+                    <span class="toc-label">Frequently Asked Questions</span>
+                </a>
+                <a href="#contact" class="toc-item">
+                    <span class="toc-number">8</span>
+                    <span class="toc-label">Contact &amp; Support</span>
+                </a>
             </div>
-            <div class="mock-btn">Submit Application</div>
-          </div>
         </div>
-      </div>
+    </section>
 
-      <div class="callout danger">
-        <span class="icon">&#9888;</span>
-        <div><strong>Double-check before submitting:</strong> Once you submit, you cannot modify your selections. If you accidentally selected "Close" instead of "Renew," you will need to contact the OBFC directly to resolve the issue.</div>
-      </div>
-    </div>
-  </div>
+    <!-- ============================================================
+         MANUAL CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
 
-  <!-- ===================== SECTION 6: PAYMENT ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">6</span> Payment
-    </div>
-    <div class="section-body">
-      <p>After submitting your application, you will be directed to the payment page if any fees are due.</p>
+            <!-- ============================
+                 SECTION 1: OVERVIEW
+                 ============================ -->
+            <div class="section" id="overview">
+                <h2>1. Overview</h2>
+                <p>The <strong>Renew or Close a Business</strong> service allows registered businesses in Lesotho to manage the lifecycle of their Business ID and licences through the OBFC online portal. This single service handles both <strong>renewal</strong> and <strong>termination (closure)</strong> of:</p>
+                <ul>
+                    <li><strong>Business ID</strong> &mdash; the unique identifier for your registered business</li>
+                    <li><strong>Trading Licences</strong> &mdash; licences required for commercial trading activities</li>
+                    <li><strong>Industrial Licences</strong> &mdash; licences required for industrial and manufacturing operations</li>
+                </ul>
 
-      <h3>Payment Methods</h3>
-      <ul>
-        <li><strong>Digital Payment</strong> &mdash; Pay directly through the platform using mobile money (M-Pesa, EcoCash) or bank transfer. This is the fastest option.</li>
-        <li><strong>In-Person Payment</strong> &mdash; You may also pay at the OBFC offices in Maseru. Bring your application reference number.</li>
-      </ul>
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Good to know
+                    </div>
+                    <p>You can renew and terminate different items in a single application. For example, you may renew your Business ID while simultaneously closing a trading licence you no longer need.</p>
+                </div>
 
-      <div class="callout tip">
-        <span class="icon">&#128241;</span>
-        <div><strong>Mobile money tip:</strong> Make sure you have sufficient balance in your M-Pesa or EcoCash account before starting the payment. The transaction must complete within the session or you may need to restart the payment step.</div>
-      </div>
+                <h3>What this service covers</h3>
+                <p>This service encompasses seven distinct registrations that are processed together in one application:</p>
 
-      <p>Once payment is confirmed, your application moves automatically to the review queue.</p>
-    </div>
-  </div>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Registration</th>
+                            <th>Action</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Renewal Business ID</td>
+                            <td>Renew</td>
+                            <td>Extend the validity of your Business ID</td>
+                        </tr>
+                        <tr>
+                            <td>Renewal Trading Licences</td>
+                            <td>Renew</td>
+                            <td>Extend the validity of your trading licence(s)</td>
+                        </tr>
+                        <tr>
+                            <td>Renewal Industrial Licences</td>
+                            <td>Renew</td>
+                            <td>Extend the validity of your industrial licence(s)</td>
+                        </tr>
+                        <tr>
+                            <td>Termination Business ID</td>
+                            <td>Close</td>
+                            <td>Permanently close your Business ID</td>
+                        </tr>
+                        <tr>
+                            <td>Termination Trading Licences</td>
+                            <td>Close</td>
+                            <td>Permanently close a trading licence</td>
+                        </tr>
+                        <tr>
+                            <td>Termination Industrial Licences</td>
+                            <td>Close</td>
+                            <td>Permanently close an industrial licence</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-  <!-- ===================== SECTION 7: WORKFLOW ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">7</span> What Happens After Submission
-    </div>
-    <div class="section-body">
-      <p>Your application goes through a structured review process. Here is what to expect:</p>
+            <!-- ============================
+                 SECTION 2: RENEWAL VS. CLOSURE
+                 ============================ -->
+            <div class="section" id="renewal-vs-closure">
+                <h2>2. Renewal vs. Closure</h2>
+                <p>Understanding the difference between renewal and closure is important before you begin your application.</p>
 
-      <div class="workflow">
-        <div class="wf-step">
-          <div class="wf-icon">1</div>
-          <div class="wf-body">
-            <h4>You Submit the Application</h4>
-            <p>Your form with all selected renewals/closures and payment is received by the system.</p>
-            <span class="badge badge-user">Applicant</span>
-          </div>
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'tab-renewal')" data-tab="tab-renewal">Renewal</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-closure')" data-tab="tab-closure">Closure (Termination)</button>
+                    </div>
+                    <div class="tab-panel active" id="tab-renewal" data-tab-label="Renewal">
+                        <h4>Renewal</h4>
+                        <p>Renewal extends the validity period of your Business ID or licence. Choose renewal when:</p>
+                        <ul>
+                            <li>Your Business ID or licence is approaching its expiry date</li>
+                            <li>Your Business ID or licence has already expired and you wish to continue operating</li>
+                            <li>You want to maintain your business registration and continue trading</li>
+                        </ul>
+                        <p><strong>Renewal period:</strong> Business IDs are renewed for 3 years. Trading and industrial licences are typically renewed for 1 year.</p>
+                        <div class="warning-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                Warning
+                            </div>
+                            <p>If your Business ID or licence has expired, <strong>penalty fees</strong> will apply in addition to the standard renewal fees. The penalty amount depends on how many days past the expiry date you are.</p>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="tab-closure" data-tab-label="Closure (Termination)">
+                        <h4>Closure (Termination)</h4>
+                        <p>Closure permanently terminates your Business ID or licence. Choose termination when:</p>
+                        <ul>
+                            <li>You are ceasing all business operations permanently</li>
+                            <li>You no longer need a specific trading or industrial licence</li>
+                            <li>Your business is being dissolved</li>
+                        </ul>
+                        <div class="warning-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                Warning
+                            </div>
+                            <p><strong>Termination is permanent.</strong> Once your Business ID or licence is terminated, you cannot reverse the action. You would need to apply for a new registration if you wish to resume operations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Can I do both in one application?</h3>
+                <p>Yes. The system allows you to select different actions for different items. For example, you may:</p>
+                <ul>
+                    <li>Renew your Business ID while closing an industrial licence</li>
+                    <li>Renew one trading licence while closing another</li>
+                    <li>Close your Business ID along with all associated licences</li>
+                </ul>
+            </div>
+
+            <!-- ============================
+                 SECTION 3: REQUIREMENTS
+                 ============================ -->
+            <div class="section" id="requirements">
+                <h2>3. Requirements</h2>
+                <p>Before starting your application, make sure you have the following:</p>
+
+                <h3>Prerequisites</h3>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>An OBFC user account</strong> &mdash; You must have a registered account on the OBFC portal. If you do not have one, register at <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a></span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>An existing Business ID</strong> &mdash; The system will automatically retrieve your registered businesses and licences linked to your account</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Knowledge of your business details</strong> &mdash; Business name, Business ID number, sector, and activity</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Payment method</strong> &mdash; Ability to pay fees digitally through the portal, or capacity to pay in person at the OBFC</span>
+                    </li>
+                </ul>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Note
+                    </div>
+                    <p>No document uploads are required for this service. The system automatically retrieves your business and licence data from the national registry.</p>
+                </div>
+
+                <h3>Entity types supported</h3>
+                <p>This service supports all entity types registered with OBFC, including:</p>
+                <ul>
+                    <li>Sole Proprietorships</li>
+                    <li>Partnerships</li>
+                    <li>Companies (Private and Public)</li>
+                    <li>Other registered entity types</li>
+                </ul>
+            </div>
+
+            <!-- ============================
+                 SECTION 4: COSTS & FEES
+                 ============================ -->
+            <div class="section" id="costs-fees">
+                <h2>4. Costs &amp; Fees</h2>
+                <p>Fees for this service are calculated automatically based on the actions you select (renewal or termination) and whether any penalties apply for late renewal.</p>
+
+                <h3>Fee categories</h3>
+                <p>The system calculates fees across the following categories:</p>
+
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Fee Category</th>
+                            <th>Applies to</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Business ID Renewal Fee</td>
+                            <td>Renewal of Business ID</td>
+                            <td>Standard processing fee for extending Business ID validity</td>
+                        </tr>
+                        <tr>
+                            <td>Business ID Penalty Fee</td>
+                            <td>Late renewal of Business ID</td>
+                            <td>Applied when Business ID has already expired</td>
+                        </tr>
+                        <tr>
+                            <td>Trading Licence Renewal Fee</td>
+                            <td>Renewal of trading licence(s)</td>
+                            <td>Per licence renewal</td>
+                        </tr>
+                        <tr>
+                            <td>Trading Licence Penalty Fee</td>
+                            <td>Late renewal of trading licence(s)</td>
+                            <td>Applied when licence has expired</td>
+                        </tr>
+                        <tr>
+                            <td>Industrial Licence Renewal Fee</td>
+                            <td>Renewal of industrial licence(s)</td>
+                            <td>Per licence renewal</td>
+                        </tr>
+                        <tr>
+                            <td>Industrial Licence Penalty Fee</td>
+                            <td>Late renewal of industrial licence(s)</td>
+                            <td>Applied when licence has expired</td>
+                        </tr>
+                        <tr>
+                            <td>Business ID Termination Fee</td>
+                            <td>Closure of Business ID</td>
+                            <td>Processing fee for permanent closure</td>
+                        </tr>
+                        <tr>
+                            <td>Trading Licence Termination Fee</td>
+                            <td>Closure of trading licence(s)</td>
+                            <td>Processing fee for licence termination</td>
+                        </tr>
+                        <tr>
+                            <td>Industrial Licence Termination Fee</td>
+                            <td>Closure of industrial licence(s)</td>
+                            <td>Processing fee for licence termination</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Penalty fees
+                    </div>
+                    <p>Penalty fees are automatically calculated based on the number of days past the expiry date. The longer you wait to renew after expiry, the higher the penalty. <strong>Renew before expiry to avoid penalties.</strong> The system will alert you when your Business ID or licence is within 90 days of expiry.</p>
+                </div>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Payment
+                    </div>
+                    <p>Fees can be paid digitally through the portal. The exact fee amounts are displayed on the <strong>Fees</strong> summary page before you submit your application. You will see a detailed breakdown including renewal fees, penalty fees (if applicable), and total amounts per registration.</p>
+                </div>
+            </div>
+
+            <!-- ============================
+                 SECTION 5: STEP-BY-STEP GUIDE
+                 ============================ -->
+            <div class="section" id="step-by-step">
+                <h2>5. Step-by-Step Guide</h2>
+                <p>Follow these steps to renew or close your business, trading licences, or industrial licences.</p>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Log in to the OBFC Portal</h4>
+                            <p>Visit <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a> and sign in with your registered email and password. If you do not have an account, click <strong>"Register"</strong> to create one.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Select "Renew or Close a Business"</h4>
+                            <p>From the dashboard or service catalogue, find and click the <strong>"Renew or close a business"</strong> service to begin a new application.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Load Your Businesses</h4>
+                            <p>Click the <strong>"List all your businesses"</strong> button. The system will automatically retrieve all businesses registered to your account from the national database. This may take a few moments.</p>
+                            <div class="info-box">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                    Tip
+                                </div>
+                                <p>If you own a company, you will also see a button <strong>"List all your licences"</strong> to load licences connected to that company entity.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Review Your Businesses</h4>
+                            <p>The system displays your businesses in a table showing:</p>
+                            <ul>
+                                <li><strong>Business Name</strong></li>
+                                <li><strong>Business ID number</strong></li>
+                                <li><strong>Expiry date</strong></li>
+                                <li><strong>Entity type</strong> (Sole Proprietor, Company, etc.)</li>
+                                <li>Number of days until expiry or days since expiry</li>
+                            </ul>
+                            <p>The total number of businesses is shown at the top of the section.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Select Actions for Each Business</h4>
+                            <p>For each business in the list, select the action you want to take:</p>
+                            <ul>
+                                <li><strong>Renew</strong> &mdash; tick the "Renew" checkbox to extend the validity of that Business ID</li>
+                                <li><strong>Close</strong> &mdash; tick the "Close" checkbox to permanently terminate that Business ID</li>
+                            </ul>
+                            <p>You can select different actions for different businesses. You may also leave businesses unchanged by not selecting either option.</p>
+                            <div class="warning-box">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                    Important
+                                </div>
+                                <p>You cannot select both "Renew" and "Close" for the same business. These are mutually exclusive actions.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Review Your Licences</h4>
+                            <p>Below the business list, the system displays your licences in a separate table showing:</p>
+                            <ul>
+                                <li><strong>Licence ID number</strong></li>
+                                <li><strong>Licence name / description</strong></li>
+                                <li><strong>Type</strong> (Trading or Industrial)</li>
+                                <li><strong>Sector and Activity</strong></li>
+                                <li><strong>Expiry date</strong></li>
+                                <li>Number of days until expiry or days since expiry</li>
+                            </ul>
+                            <p>The total number of licences is shown at the top of the section.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Select Actions for Each Licence</h4>
+                            <p>For each licence, select the action you want to take:</p>
+                            <ul>
+                                <li><strong>Renew</strong> &mdash; tick the "Renew" checkbox to extend the validity of that licence</li>
+                                <li><strong>Close</strong> &mdash; tick the "Close" checkbox to permanently terminate that licence</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">8</div>
+                        <div class="step-content">
+                            <h4>Review Fees</h4>
+                            <p>Click <strong>"Go to payment"</strong> to proceed to the fees summary. The system displays a detailed breakdown of all fees, including:</p>
+                            <ul>
+                                <li>Renewal fees for each selected Business ID</li>
+                                <li>Penalty fees for any expired items</li>
+                                <li>Renewal fees for each selected trading licence</li>
+                                <li>Renewal fees for each selected industrial licence</li>
+                                <li>Termination fees for any items marked for closure</li>
+                                <li><strong>Total amount due</strong></li>
+                            </ul>
+                            <p>Review the fee breakdown carefully before proceeding.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">9</div>
+                        <div class="step-content">
+                            <h4>Complete Payment</h4>
+                            <p>Pay the total fees through the digital payment system integrated into the portal. Follow the on-screen payment instructions to complete the transaction.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">10</div>
+                        <div class="step-content">
+                            <h4>Confirm and Submit</h4>
+                            <p>On the final page, review the acknowledgment statement, tick the confirmation checkbox, and click <strong>"Submit"</strong> to send your application for processing.</p>
+                            <div class="info-box">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                    Tip
+                                </div>
+                                <p>You will receive a confirmation with a reference number. Keep this number for future reference and to track the status of your application.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- ============================
+                 SECTION 6: AFTER SUBMISSION
+                 ============================ -->
+            <div class="section" id="after-submission">
+                <h2>6. After Submission</h2>
+                <p>Once you submit your application, it goes through a structured review and approval workflow.</p>
+
+                <h3>Processing workflow</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Application Submitted</h4>
+                        <p>Your application is received and assigned a reference number. You can track its status from your portal dashboard.</p>
+                        <div class="timeline-meta">Day 0</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Review</h4>
+                        <p>An OBFC officer reviews your application to verify the details and ensure all information is correct. They may approve, request changes, or send the application back to you for corrections.</p>
+                        <div class="timeline-meta">Day 1&ndash;2</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Approval</h4>
+                        <p>A senior officer approves the reviewed application. At this stage, the renewal or termination is formally authorised.</p>
+                        <div class="timeline-meta">Day 2&ndash;3</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>System Update</h4>
+                        <p>The system automatically updates the national business registry. Business IDs and licences are either renewed with new expiry dates or marked as terminated.</p>
+                        <div class="timeline-meta">Day 3&ndash;4</div>
+                    </div>
+                    <div class="timeline-item pending">
+                        <h4>Certificates Issued</h4>
+                        <p>Updated Business ID certificates and renewed licences are generated and made available for download from your portal account.</p>
+                        <div class="timeline-meta">Day 4&ndash;5</div>
+                    </div>
+                </div>
+
+                <h3>Workflow roles</h3>
+                <p>Your application is processed through the following roles:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Role</th>
+                            <th>Type</th>
+                            <th>Responsibility</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Applicant</td>
+                            <td>You</td>
+                            <td>Submit the application with selected actions and payment</td>
+                        </tr>
+                        <tr>
+                            <td>Review</td>
+                            <td>OBFC Officer</td>
+                            <td>Verify application details and check compliance</td>
+                        </tr>
+                        <tr>
+                            <td>Approval</td>
+                            <td>Senior Officer</td>
+                            <td>Final approval or rejection of the application</td>
+                        </tr>
+                        <tr>
+                            <td>BUSINESSES update</td>
+                            <td>Automated</td>
+                            <td>Automatically updates the business registry database</td>
+                        </tr>
+                        <tr>
+                            <td>LICENCES update</td>
+                            <td>Automated</td>
+                            <td>Automatically updates licence records</td>
+                        </tr>
+                        <tr>
+                            <td>BUSINESS ID upload</td>
+                            <td>Automated</td>
+                            <td>Generates updated Business ID certificate</td>
+                        </tr>
+                        <tr>
+                            <td>LICENCES upload</td>
+                            <td>Automated</td>
+                            <td>Generates updated licence certificates</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Tracking your application
+                    </div>
+                    <p>You can monitor your application status at any time by logging into the portal and checking your dashboard. You will also receive email notifications when your application status changes.</p>
+                </div>
+
+                <h3>If your application is sent back</h3>
+                <p>If the reviewing officer finds issues with your application, it may be sent back to you with comments. In this case:</p>
+                <ol>
+                    <li>Log in to the portal and open the returned application</li>
+                    <li>Read the reviewer's comments carefully</li>
+                    <li>Make the requested corrections or provide additional information</li>
+                    <li>Resubmit the application</li>
+                </ol>
+            </div>
+
+            <!-- ============================
+                 SECTION 7: FAQ
+                 ============================ -->
+            <div class="section" id="faq">
+                <h2>7. Frequently Asked Questions</h2>
+
+                <h4>When should I renew my Business ID?</h4>
+                <p>You should renew before the expiry date to avoid penalty fees. The system will flag your Business ID when it is within 90 days of expiry, and again when it is within 60 days. You can renew at any time, even after expiry, but late renewals will incur additional penalty charges.</p>
+
+                <h4>Can I renew a Business ID that has already expired?</h4>
+                <p>Yes. You can renew an expired Business ID, but penalty fees will be added based on the number of days past the expiry date. The longer you wait, the higher the penalty.</p>
+
+                <h4>What happens when I close (terminate) a Business ID?</h4>
+                <p>Termination is permanent. Your Business ID will be marked as closed in the national registry and you will no longer be able to operate under that registration. If you wish to start a new business in the future, you will need to submit a new business registration application.</p>
+
+                <h4>Can I renew some licences and close others?</h4>
+                <p>Yes. The system allows you to select different actions for each item individually. You can renew your Business ID, renew one licence, and close another all within the same application.</p>
+
+                <h4>What if my businesses or licences do not appear in the list?</h4>
+                <p>Make sure you click the <strong>"List all your businesses"</strong> button to load your data from the registry. If they still do not appear, it may be because they are registered under a different account or entity. Contact OBFC support for assistance.</p>
+
+                <h4>How are fees calculated?</h4>
+                <p>Fees are calculated automatically by the system based on the type of action (renewal or termination), the type of registration (Business ID, trading licence, or industrial licence), and whether any penalties apply. The exact amounts are displayed on the Fees page before you submit.</p>
+
+                <h4>Can I pay in person instead of online?</h4>
+                <p>The system supports digital payment through the portal. For alternative payment arrangements, please contact the OBFC directly.</p>
+
+                <h4>How long does processing take?</h4>
+                <p>Typical processing time is 3 to 5 business days from submission to completion. This includes review, approval, and automated system updates.</p>
+
+                <h4>Will I receive new certificates after renewal?</h4>
+                <p>Yes. After approval, the system automatically generates updated Business ID certificates and licence certificates with new expiry dates. These are available for download from your portal account.</p>
+
+                <h4>What is the difference between trading and industrial licences?</h4>
+                <p>Trading licences cover commercial trading activities (buying and selling goods, retail, wholesale, etc.), while industrial licences cover manufacturing, processing, and industrial production activities. Your licence type depends on the nature of your business operations.</p>
+            </div>
+
+            <!-- ============================
+                 SECTION 8: CONTACT & SUPPORT
+                 ============================ -->
+            <div class="section" id="contact">
+                <h2>8. Contact &amp; Support</h2>
+                <p>If you need assistance with your renewal or closure application, the OBFC team is ready to help.</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Details</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>In person</strong></td>
+                            <td>LNDC Centre, Block A, Kingsway Road, Maseru</td>
+                            <td>Monday &ndash; Friday, 8:00 AM &ndash; 4:30 PM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phone</strong></td>
+                            <td>+266 2231 7454</td>
+                            <td>Monday &ndash; Friday, 8:00 AM &ndash; 4:30 PM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td><a href="mailto:info@obfc.org.ls">info@obfc.org.ls</a></td>
+                            <td>24/7 (responses within 1&ndash;2 business days)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Online portal</strong></td>
+                            <td><a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a></td>
+                            <td>24/7</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        When contacting support
+                    </div>
+                    <p>Have your <strong>Business ID number</strong> and <strong>application reference number</strong> ready when contacting support. This will help the team locate your records quickly.</p>
+                </div>
+            </div>
+
         </div>
-        <div class="wf-step">
-          <div class="wf-icon">2</div>
-          <div class="wf-body">
-            <h4>Review by OBFC Officer</h4>
-            <p>An officer at the One Stop Business Facilitation Centre reviews your application. They verify your business data, payment, and requested actions. The officer may send the application back to you if corrections are needed.</p>
-            <span class="badge badge-user">Human Review</span>
-          </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Column 1: Logo & About -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="https://lesotho.eregistrations.dev/_assets/v11/e8f8e0f4875113e3103aae78a6e2c99f11345f18.png" alt="OBFC Logo">
+                    </div>
+                    <p>One Business Facilitation Centre (OBFC) provides a single window for business registration and licensing services in the Kingdom of Lesotho.</p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="footer-col">
+                    <h5>Contact Details</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>LNDC Centre, Block A<br>Kingsway Road, Maseru</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75l.72 3.59a1 1 0 0 1-.26.95L8.09 10.7a16 16 0 0 0 5.21 5.21l2.41-2.41a1 1 0 0 1 .95-.26l3.59.72a1 1 0 0 1 .75 1z"/></svg>
+                        <span>+266 2231 7454</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@obfc.org.ls</span>
+                    </div>
+                </div>
+
+                <!-- Column 3: Social Channels -->
+                <div class="footer-col">
+                    <h5>Follow Us</h5>
+                    <p>Stay connected with OBFC for the latest updates on business services.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Quick Links -->
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                        <li><a href="https://services.businessregistrations.gov.ls/">Login / Register</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/privacy/">Privacy Policy</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Implemented by -->
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <a href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/742ddaa6ec00aadee1b93dffeefc513e3c77473c.png" alt="World Bank">
+                </a>
+                <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/fd2d79a17613c98a31e05becdb641ca8c82159b4.png" alt="UNCTAD">
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Generated: February 2026
+            </div>
         </div>
-        <div class="wf-step">
-          <div class="wf-icon">3</div>
-          <div class="wf-body">
-            <h4>Approval</h4>
-            <p>A senior officer approves the renewal or termination. This is the final decision step.</p>
-            <span class="badge badge-user">Human Approval</span>
-          </div>
-        </div>
-        <div class="wf-step">
-          <div class="wf-icon bot">&#9881;</div>
-          <div class="wf-body">
-            <h4>Automatic Business ID Update</h4>
-            <p>The system automatically updates your Business ID records in the government registry &mdash; extending the validity date for renewals, or marking the business as terminated for closures.</p>
-            <span class="badge badge-auto">Automated</span>
-          </div>
-        </div>
-        <div class="wf-step">
-          <div class="wf-icon bot">&#9881;</div>
-          <div class="wf-body">
-            <h4>Automatic Licence Update</h4>
-            <p>Trading and Industrial Licence records are updated in the government registry. Renewed licences receive new validity dates; terminated licences are marked as cancelled.</p>
-            <span class="badge badge-auto">Automated</span>
-          </div>
-        </div>
-        <div class="wf-step">
-          <div class="wf-icon bot">&#9881;</div>
-          <div class="wf-body">
-            <h4>Certificate Generation</h4>
-            <p>Updated certificates (Business ID card and/or licence certificates) are generated and uploaded to your account for download.</p>
-            <span class="badge badge-auto">Automated</span>
-          </div>
-        </div>
-        <div class="wf-step">
-          <div class="wf-icon complete">&#10003;</div>
-          <div class="wf-body">
-            <h4>Confirmation Email</h4>
-            <p>You receive a confirmation email with your updated documents. You can also download them from the "My Applications" section at any time.</p>
-            <span class="badge badge-user">Complete</span>
-          </div>
-        </div>
-      </div>
+    </footer>
 
-      <div class="callout info">
-        <span class="icon">&#128337;</span>
-        <div><strong>Expected processing time:</strong> Most applications are reviewed within 2-3 working days. You can track your application status in real time by logging into your account and checking "My Applications."</div>
-      </div>
-    </div>
-  </div>
+    <!-- ============================================================
+         TAB SWITCHING SCRIPT
+         ============================================================ -->
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
 
-  <!-- ===================== SECTION 8: REGISTRATIONS ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">8</span> Types of Registrations Covered
-    </div>
-    <div class="section-body">
-      <p>This service handles <strong>7 distinct registration types</strong>, grouped by action:</p>
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
 
-      <div class="reg-grid">
-        <div class="reg-card">
-          <div class="reg-card-header renew">Renewal - Business ID</div>
-          <div class="reg-card-body">
-            <p>Extends the validity of your Business ID for another period (typically 1-3 years depending on entity type).</p>
-          </div>
-        </div>
-        <div class="reg-card">
-          <div class="reg-card-header renew">Renewal - Trading Licences</div>
-          <div class="reg-card-body">
-            <p>Renews your Trading Licence, required for retail, wholesale, and general commerce operations.</p>
-          </div>
-        </div>
-        <div class="reg-card">
-          <div class="reg-card-header renew">Renewal - Industrial Licences</div>
-          <div class="reg-card-body">
-            <p>Renews your Industrial Licence for manufacturing, processing, or factory operations.</p>
-          </div>
-        </div>
-        <div class="reg-card">
-          <div class="reg-card-header terminate">Termination - Business ID</div>
-          <div class="reg-card-body">
-            <p>Permanently closes your business registration. This deactivates the Business ID in the national registry.</p>
-          </div>
-        </div>
-        <div class="reg-card">
-          <div class="reg-card-header terminate">Termination - Trading Licences</div>
-          <div class="reg-card-body">
-            <p>Cancels your Trading Licence. Required if you stop trading activities.</p>
-          </div>
-        </div>
-        <div class="reg-card">
-          <div class="reg-card-header terminate">Termination - Industrial Licences</div>
-          <div class="reg-card-body">
-            <p>Cancels your Industrial Licence. Required if you stop manufacturing or industrial activities.</p>
-          </div>
-        </div>
-      </div>
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
 
-      <div class="callout info">
-        <span class="icon">&#128203;</span>
-        <div><strong>No documents to upload:</strong> Unlike the initial business registration, renewal and closure do not require you to upload any supporting documents. All data is retrieved automatically from the government registry.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================== SECTION 9: FAQ ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">9</span> Frequently Asked Questions
-    </div>
-    <div class="section-body">
-
-      <div class="faq-item">
-        <div class="faq-q">How early can I renew my Business ID before it expires?</div>
-        <div class="faq-a">You can renew up to <strong>90 days</strong> before the expiry date. The system will automatically pre-select businesses expiring within 90 days for renewal. Renewing early avoids any penalty fees and ensures your business remains in good standing.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">What happens if my Business ID has already expired?</div>
-        <div class="faq-a">You can still renew it, but a <strong>penalty fee</strong> will be added on top of the standard processing fee. The penalty amount depends on how many days past the expiry date you are. Your business may face limitations while expired, so renew as soon as possible.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Can I renew some licences and close others in the same application?</div>
-        <div class="faq-a">Yes. This is one of the key features of the service. For example, if you own two businesses &mdash; say, a shop in Maseru and a workshop in Mafeteng &mdash; you can renew one and close the other in the same application. Just select the appropriate checkbox (Renew or Close) for each business and licence.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">I have a company (not a sole proprietor). Are there additional steps?</div>
-        <div class="faq-a">The process is the same for all entity types, including companies, partnerships, and cooperatives. However, companies may have additional licences associated with them. The system will automatically detect if your entity is a company and display all associated licences for action.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">How do I know if my renewal was approved?</div>
-        <div class="faq-a">You will receive an <strong>email notification</strong> at the address you provided during submission. You can also log into your account at any time and go to <strong>"My Applications"</strong> to check the status. Approved applications will show a green "Completed" badge, and your updated certificates will be available for download.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">What if the officer sends my application back?</div>
-        <div class="faq-a">If the reviewing officer finds an issue (for example, conflicting selections), your application will be returned to you with a note explaining what needs to be corrected. You will receive an email notification. Log in, make the corrections, and resubmit. You do <strong>not</strong> need to pay again.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Can I undo a business closure after I submit?</div>
-        <div class="faq-a"><strong>Before approval:</strong> Contact the OBFC office in Maseru immediately and ask them to return the application. <strong>After approval:</strong> Termination is permanent. You would need to register a new business through the "Register a new business" service on the same platform.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Why does my business not appear in the list?</div>
-        <div class="faq-a">Your business may not appear if: (1) it was registered under a different email address, (2) it is a company and your personal account is not linked as an authorized representative, or (3) the data has not yet been synchronized from the registry. Contact the OBFC help desk at (+266) 2231-7454 for assistance.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">I do not have internet access. Can I do this in person?</div>
-        <div class="faq-a">Yes. You can visit the <strong>One Stop Business Facilitation Centre (OBFC)</strong> in Maseru, where a staff member will help you complete the process on a computer. Bring your national ID (or passport) and your business registration certificate.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Are the fees the same for sole proprietors and companies?</div>
-        <div class="faq-a">Processing fees vary by entity type and licence category. The exact fee for your situation is calculated automatically and displayed in the table before you submit. Companies typically have higher renewal fees than sole proprietors.</div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ===================== SECTION 10: TIPS ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">10</span> Tips for a Smooth Experience
-    </div>
-    <div class="section-body">
-      <div class="callout tip">
-        <span class="icon">&#128197;</span>
-        <div><strong>Set a calendar reminder</strong> &mdash; Renew at least 60 days before expiry to avoid any last-minute issues. Late renewals attract penalty fees and your business may temporarily lose its active status.</div>
-      </div>
-
-      <div class="callout tip">
-        <span class="icon">&#128241;</span>
-        <div><strong>Use a stable internet connection</strong> &mdash; The application communicates with the Government Data Bridge to pull your business data. A slow or intermittent connection can cause timeouts. WiFi at home, office, or the Maseru public library works well.</div>
-      </div>
-
-      <div class="callout tip">
-        <span class="icon">&#128190;</span>
-        <div><strong>Save your application reference number</strong> &mdash; After submission, note down the reference number displayed on screen and sent to your email. You will need this if you contact the OBFC about your application or for payment at the office.</div>
-      </div>
-
-      <div class="callout tip">
-        <span class="icon">&#128101;</span>
-        <div><strong>For companies with multiple directors</strong> &mdash; Only authorized representatives linked to the company in the registry can manage renewals and closures. If you need to change the authorized representative, this must be done through a separate "Change of Particulars" application first.</div>
-      </div>
-
-      <div class="callout tip">
-        <span class="icon">&#128176;</span>
-        <div><strong>Keep payment receipts</strong> &mdash; Whether you pay by mobile money or bank transfer, keep a record of the transaction. In rare cases, payment confirmation may take up to 24 hours to reflect in the system.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===================== SECTION 11: CONTACT ===================== -->
-  <div class="section">
-    <div class="section-header">
-      <span class="num">11</span> Need Help?
-    </div>
-    <div class="section-body">
-      <p>If you encounter any difficulties or have questions not covered in this guide:</p>
-      <table class="fee-table">
-        <tr><th>Contact Method</th><th>Details</th></tr>
-        <tr><td><strong>OBFC Help Desk</strong></td><td>Visit the One Stop Business Facilitation Centre, 1st Floor, Development House, Kingsway Road, Maseru</td></tr>
-        <tr><td><strong>Phone</strong></td><td>(+266) 2231-7454</td></tr>
-        <tr><td><strong>Email</strong></td><td>support@businessregistrations.gov.ls</td></tr>
-        <tr><td><strong>Operating Hours</strong></td><td>Monday &ndash; Friday, 08:00 &ndash; 16:30</td></tr>
-        <tr><td><strong>Online Help</strong></td><td>Click "Help" in the top navigation bar on businessregistrations.gov.ls</td></tr>
-      </table>
-
-      <div class="callout info">
-        <span class="icon">&#127468;&#127473;</span>
-        <div><strong>This service is provided by</strong> the Ministry of Trade and Industry, Cooperatives and Marketing, Government of Lesotho, with technical support from UNCTAD eRegistrations.</div>
-      </div>
-    </div>
-  </div>
-
-</main>
-
-<!-- ==================== FOOTER ==================== -->
-<footer class="gov-footer">
-  <div class="gov-footer-inner">
-    <div>
-      <h4>About This Service</h4>
-      <p>The Lesotho Business Registration platform is an initiative of the Government of Lesotho to simplify business registration, renewal, and closure processes. The platform is powered by UNCTAD eRegistrations technology and aims to reduce the time and cost of doing business in Lesotho.</p>
-    </div>
-    <div>
-      <h4>Quick Links</h4>
-      <ul>
-        <li><a href="#">Register a New Business</a></li>
-        <li><a href="#">Renew or Close a Business</a></li>
-        <li><a href="#">Check Application Status</a></li>
-        <li><a href="#">Service Catalogue</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="#">Terms of Service</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Accessibility</a></li>
-        <li><a href="#">Data Protection</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="gov-footer-bottom">
-    &copy; 2026 Government of Lesotho &mdash; Ministry of Trade and Industry, Cooperatives and Marketing.
-    Powered by <a href="https://eregistrations.org">UNCTAD eRegistrations</a>.
-  </div>
-</footer>
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>

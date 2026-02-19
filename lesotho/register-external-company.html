@@ -3,1575 +3,1413 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Manual: Register an External Company - Lesotho eRegistrations</title>
+    <title>Register an External Company - User Manual | OBFC Lesotho</title>
+    <meta name="description" content="User manual for Register an External Company on the Lesotho One Business Facilitation Centre (OBFC) eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gov-blue: #003580;
-            --gov-blue-light: #0050b3;
-            --gov-blue-pale: #e8f0fe;
-            --gov-blue-dark: #002255;
-            --accent-green: #28a745;
-            --accent-orange: #e8860c;
-            --accent-red: #dc3545;
-            --text-primary: #1a1a2e;
-            --text-secondary: #4a4a6a;
-            --border-color: #d0d7e2;
-            --bg-light: #f4f7fb;
-            --bg-white: #ffffff;
-            --shadow-sm: 0 1px 3px rgba(0,53,128,0.08);
-            --shadow-md: 0 4px 12px rgba(0,53,128,0.12);
-            --shadow-lg: 0 8px 24px rgba(0,53,128,0.16);
+        /* ============================================================
+           LESOTHO eREGISTRATIONS — USER MANUAL
+           Design system: https://lesotho.eregistrations.dev/
+           Generated: February 2026
+           ============================================================ */
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
 
         body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text-primary);
-            background: var(--bg-light);
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 18px;
             line-height: 1.7;
-            font-size: 16px;
+            color: #555866;
+            background: #FFFFFF;
         }
 
-        /* HEADER */
-        .gov-header {
-            background: linear-gradient(135deg, var(--gov-blue-dark), var(--gov-blue));
-            color: white;
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: #4CAF74;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #3d9461;
+            text-decoration: underline;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1F2128;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+
+        p { margin-bottom: 1em; }
+
+        strong {
+            color: #1F2128;
+            font-weight: 600;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: #2B2A65;
             padding: 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
-        .gov-header-inner {
-            max-width: 1100px;
+
+        .header-inner {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 16px 24px;
+            padding: 12px 24px;
             display: flex;
             align-items: center;
-            gap: 18px;
+            justify-content: space-between;
+            gap: 24px;
         }
-        .gov-crest {
-            width: 52px;
-            height: 52px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 50%;
+
+        .header-logos {
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 28px;
+            gap: 16px;
             flex-shrink: 0;
-            border: 2px solid rgba(255,255,255,0.3);
-        }
-        .gov-header h1 {
-            font-size: 20px;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-        .gov-header .subtitle {
-            font-size: 13px;
-            opacity: 0.85;
-            margin-top: 2px;
         }
 
-        /* BREADCRUMB */
-        .breadcrumb-bar {
-            background: var(--gov-blue-pale);
-            border-bottom: 1px solid var(--border-color);
-            padding: 10px 24px;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-        .breadcrumb-bar a {
-            color: var(--gov-blue);
-            text-decoration: none;
-        }
-        .breadcrumb-bar a:hover { text-decoration: underline; }
-        .breadcrumb-bar span { margin: 0 6px; color: #aaa; }
+        .header-logos img { height: 52px; width: auto; }
+        .header-logos .coat-of-arms { height: 56px; }
 
-        /* MAIN LAYOUT */
-        .main-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 32px 24px 60px;
-            display: grid;
-            grid-template-columns: 1fr 300px;
+        .header-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.25);
+            flex-shrink: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
             gap: 32px;
         }
-        @media (max-width: 900px) {
-            .main-container { grid-template-columns: 1fr; }
-        }
 
-        /* CONTENT */
-        .content-area h2 {
-            color: var(--gov-blue);
-            font-size: 26px;
-            margin: 40px 0 16px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--gov-blue);
-        }
-        .content-area h2:first-child { margin-top: 0; }
-
-        .content-area h3 {
-            color: var(--gov-blue-light);
-            font-size: 20px;
-            margin: 28px 0 12px;
-        }
-        .content-area h4 {
-            font-size: 17px;
-            margin: 20px 0 8px;
-            color: var(--text-primary);
-        }
-        .content-area p {
-            margin-bottom: 14px;
-            color: var(--text-secondary);
-        }
-        .content-area ul, .content-area ol {
-            margin: 10px 0 18px 24px;
-            color: var(--text-secondary);
-        }
-        .content-area li { margin-bottom: 6px; }
-
-        /* HERO BANNER */
-        .hero-banner {
-            background: linear-gradient(135deg, var(--gov-blue), var(--gov-blue-light));
-            color: white;
-            border-radius: 12px;
-            padding: 36px 40px;
-            margin-bottom: 32px;
-            box-shadow: var(--shadow-md);
-        }
-        .hero-banner h2 {
-            color: white !important;
-            border: none !important;
-            font-size: 28px;
-            margin: 0 0 10px !important;
-            padding: 0 !important;
-        }
-        .hero-banner p {
-            color: rgba(255,255,255,0.9) !important;
-            font-size: 16px;
-            margin: 0;
-        }
-        .hero-meta {
-            display: flex;
-            gap: 24px;
-            margin-top: 18px;
-            flex-wrap: wrap;
-        }
-        .hero-meta-item {
-            background: rgba(255,255,255,0.15);
-            border-radius: 8px;
-            padding: 10px 16px;
-            font-size: 13px;
-        }
-        .hero-meta-item strong { display: block; font-size: 16px; }
-
-        /* INFO BOXES */
-        .info-box {
-            border-radius: 10px;
-            padding: 18px 22px;
-            margin: 18px 0;
+        .header-nav a {
+            color: #FFFFFF;
             font-size: 15px;
+            font-weight: 400;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
         }
-        .info-box.tip {
-            background: #eaf7ee;
-            border-left: 4px solid var(--accent-green);
-        }
-        .info-box.warning {
-            background: #fff8e6;
-            border-left: 4px solid var(--accent-orange);
-        }
-        .info-box.important {
-            background: #fde8ea;
-            border-left: 4px solid var(--accent-red);
-        }
-        .info-box.note {
-            background: var(--gov-blue-pale);
-            border-left: 4px solid var(--gov-blue);
-        }
-        .info-box-title {
-            font-weight: 700;
-            margin-bottom: 4px;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .info-box.tip .info-box-title { color: #1e7e34; }
-        .info-box.warning .info-box-title { color: #b36b00; }
-        .info-box.important .info-box-title { color: var(--accent-red); }
-        .info-box.note .info-box-title { color: var(--gov-blue); }
 
-        /* BROWSER MOCKUP */
-        .browser-mockup {
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 22px 0;
-            box-shadow: var(--shadow-md);
-            background: white;
-        }
-        .browser-chrome {
-            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
-            padding: 10px 16px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        .browser-dots {
-            display: flex;
-            gap: 6px;
-        }
-        .browser-dots span {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+
+        .btn-login {
+            background: #4CAF74;
+            color: #FFFFFF !important;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
             display: inline-block;
-        }
-        .browser-dots .dot-red { background: #ff5f57; }
-        .browser-dots .dot-yellow { background: #febc2e; }
-        .browser-dots .dot-green { background: #28c840; }
-        .browser-url {
-            flex: 1;
-            background: white;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            padding: 5px 12px;
-            font-size: 12px;
-            color: #555;
-            font-family: 'SF Mono', 'Consolas', monospace;
-        }
-        .browser-url .lock { color: var(--accent-green); margin-right: 4px; }
-        .browser-body {
-            padding: 24px 28px;
-            min-height: 120px;
+            transition: background 0.2s ease;
         }
 
-        /* FORM MOCKUP ELEMENTS */
-        .mock-form-group {
-            margin-bottom: 16px;
+        .btn-login:hover { background: #3d9461; text-decoration: none !important; }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 14px 0;
         }
-        .mock-label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 5px;
-        }
-        .mock-label .required {
-            color: var(--accent-red);
-            margin-left: 2px;
-        }
-        .mock-input {
-            width: 100%;
-            padding: 9px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 14px;
-            color: #888;
-            background: #fafbfc;
-        }
-        .mock-select {
-            width: 100%;
-            padding: 9px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 14px;
-            color: #888;
-            background: #fafbfc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M3 5l3 3 3-3' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;
-            appearance: none;
-        }
-        .mock-checkbox-row {
+
+        .breadcrumb-list {
+            list-style: none;
             display: flex;
             align-items: center;
             gap: 8px;
             font-size: 14px;
-            color: var(--text-secondary);
-            margin: 6px 0;
+            color: #888;
+            flex-wrap: wrap;
         }
-        .mock-checkbox {
-            width: 16px;
-            height: 16px;
-            border: 2px solid var(--border-color);
-            border-radius: 3px;
+
+        .breadcrumb-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumb-list li + li::before {
+            content: "";
             display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-top: 1.5px solid #aaa;
+            border-right: 1.5px solid #aaa;
+            transform: rotate(45deg);
             flex-shrink: 0;
         }
-        .mock-checkbox.checked {
-            background: var(--gov-blue);
-            border-color: var(--gov-blue);
+
+        .breadcrumb-list a { color: #4CAF74; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%);
+            color: #FFFFFF;
+            padding: 64px 0;
             position: relative;
+            overflow: hidden;
         }
-        .mock-checkbox.checked::after {
-            content: '';
+
+        .hero::after {
+            content: "";
             position: absolute;
-            left: 4px;
-            top: 1px;
-            width: 5px;
-            height: 9px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
+            top: 0; right: 0; bottom: 0;
+            width: 40%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
+            pointer-events: none;
         }
-        .mock-btn {
-            display: inline-block;
-            padding: 10px 24px;
-            border-radius: 6px;
+
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+
+        .hero-label {
             font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .btn-primary {
+            background: #4CAF74;
+            color: #FFFFFF;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 16px;
             font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
             border: none;
             cursor: pointer;
         }
-        .mock-btn-primary {
-            background: var(--gov-blue);
-            color: white;
-        }
-        .mock-btn-success {
-            background: var(--accent-green);
-            color: white;
-        }
-        .mock-btn-outline {
-            background: white;
-            color: var(--gov-blue);
-            border: 2px solid var(--gov-blue);
-        }
-        .mock-section-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--gov-blue);
-            margin-bottom: 14px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid var(--gov-blue-pale);
-        }
-        .mock-tab-bar {
-            display: flex;
-            border-bottom: 2px solid var(--border-color);
-            margin-bottom: 18px;
-            gap: 0;
-        }
-        .mock-tab {
-            padding: 10px 18px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-secondary);
-            border-bottom: 3px solid transparent;
-            margin-bottom: -2px;
-        }
-        .mock-tab.active {
-            color: var(--gov-blue);
-            border-bottom-color: var(--gov-blue);
-        }
 
-        /* STEP INDICATOR */
-        .step-flow {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            margin: 24px 0;
-            flex-wrap: wrap;
-        }
-        .step-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .step-circle {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: var(--gov-blue);
-            color: white;
+        .btn-primary:hover { background: #3d9461; color: #FFFFFF; text-decoration: none; transform: translateY(-1px); }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 260px; height: 260px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 15px;
-            flex-shrink: 0;
-        }
-        .step-circle.inactive {
-            background: #ccc;
-        }
-        .step-text {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-primary);
-            white-space: nowrap;
-        }
-        .step-arrow {
-            margin: 0 10px;
-            color: #bbb;
-            font-size: 18px;
+            position: relative;
+            z-index: 1;
         }
 
-        /* WORKFLOW TABLE */
-        .workflow-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 16px 0 24px;
-            font-size: 14px;
-        }
-        .workflow-table th {
-            background: var(--gov-blue);
-            color: white;
-            padding: 12px 16px;
-            text-align: left;
-            font-weight: 600;
-        }
-        .workflow-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border-color);
-            vertical-align: top;
-        }
-        .workflow-table tr:nth-child(even) { background: var(--gov-blue-pale); }
-        .workflow-table tr:hover { background: #dce8f7; }
-
-        /* DOCUMENT CHECKLIST */
-        .doc-checklist {
-            list-style: none;
-            margin: 14px 0;
-            padding: 0;
-        }
-        .doc-checklist li {
-            padding: 12px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 8px;
-            background: white;
+        .hero-icon-circle {
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: rgba(76,175,116,0.15);
+            border: 2px solid rgba(76,175,116,0.3);
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: #4CAF74; stroke-width: 1.5; }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc { background: #F5F5F7; padding: 48px 0; border-bottom: 1px solid #E5E7EB; }
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 12px;
         }
-        .doc-icon {
-            width: 32px;
-            height: 32px;
-            background: var(--gov-blue-pale);
-            border-radius: 6px;
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: #1F2128;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .toc-item:hover { border-color: #4CAF74; box-shadow: 0 2px 8px rgba(76,175,116,0.12); text-decoration: none; color: #1F2128; }
+
+        .toc-number {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
         }
-        .doc-details { flex: 1; }
-        .doc-name { font-weight: 600; color: var(--text-primary); font-size: 15px; }
-        .doc-desc { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
-        .doc-badge {
-            font-size: 11px;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        .doc-badge.required { background: #fde8ea; color: var(--accent-red); }
-        .doc-badge.optional { background: #eaf7ee; color: #1e7e34; }
 
-        /* COST CARD */
-        .cost-card {
-            background: white;
-            border: 2px solid var(--gov-blue);
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
+
+        .section > h2 {
+            font-size: 32px; font-weight: 600;
+            padding-left: 20px;
+            border-left: 4px solid #4CAF74;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .section > h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; }
+        .section > h4 { font-size: 20px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* --- Steps --- */
+        .steps { counter-reset: step-counter; list-style: none; padding: 0; margin: 24px 0; }
+
+        .step {
+            display: flex; gap: 20px; align-items: flex-start;
+            margin-bottom: 24px; padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
             border-radius: 12px;
-            overflow: hidden;
-            margin: 18px 0;
+            transition: box-shadow 0.2s ease;
         }
-        .cost-card-header {
-            background: var(--gov-blue);
-            color: white;
-            padding: 14px 20px;
-            font-weight: 700;
+
+        .step:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+
+        .step-number {
+            counter-increment: step-counter;
+            width: 40px; height: 40px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0; margin-top: 2px;
+        }
+
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #1F2128; }
+        .step-content p { margin-bottom: 8px; font-size: 16px; }
+        .step-content p:last-child { margin-bottom: 0; }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box, .warning-box, .note-box {
+            padding: 20px 24px; border-radius: 10px; margin: 24px 0;
+            font-size: 16px; line-height: 1.6; position: relative;
+        }
+
+        .info-box { background: #F5F5F7; border-left: 4px solid #4CAF74; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        .info-box .box-label { color: #4CAF74; }
+        .warning-box .box-label { color: #D4891A; }
+        .note-box .box-label { color: #4A90D9; }
+        .box-label svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* --- Checklist --- */
+        .checklist { list-style: none; padding: 0; margin: 20px 0; }
+
+        .checklist li {
+            display: flex; align-items: flex-start; gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid #F0F0F2;
             font-size: 16px;
         }
-        .cost-card-body { padding: 16px 20px; }
-        .cost-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border-color);
-            font-size: 15px;
-        }
-        .cost-row:last-child { border-bottom: none; }
-        .cost-row.total {
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--gov-blue);
-            border-top: 2px solid var(--gov-blue);
-            padding-top: 14px;
-            margin-top: 4px;
+
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .check-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+        .checklist .check-icon svg { width: 24px; height: 24px; }
+
+        /* --- Field Table --- */
+        .field-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            margin: 24px 0; font-size: 15px;
+            border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden;
         }
 
-        /* FAQ */
+        .field-table thead { background: #2B2A65; color: #FFFFFF; }
+
+        .field-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 14px 16px; text-align: left; white-space: nowrap;
+        }
+
+        .field-table td { padding: 12px 16px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F5F5F7; }
+        .field-table .required-yes { color: #4CAF74; font-weight: 600; }
+        .field-table .required-no { color: #999; }
+
+        /* --- Cost Table --- */
+        .cost-table {
+            width: 100%; border-collapse: separate; border-spacing: 0;
+            margin: 24px 0;
+            border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden;
+            font-size: 16px;
+        }
+
+        .cost-table thead { background: #2B2A65; color: #FFFFFF; }
+
+        .cost-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 14px 16px; text-align: left;
+        }
+
+        .cost-table td { padding: 14px 16px; border-bottom: 1px solid #F0F0F2; }
+        .cost-table tbody tr:last-child td { border-bottom: none; }
+        .cost-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .cost-table .amount { font-weight: 700; color: #1F2128; font-family: 'Poppins', sans-serif; }
+        .cost-table .total-row { background: #F5F5F7 !important; font-weight: 700; }
+        .cost-table .total-row td { border-top: 2px solid #2B2A65; color: #1F2128; font-family: 'Poppins', sans-serif; }
+
+        /* --- Timeline --- */
+        .timeline { position: relative; margin: 32px 0; padding-left: 40px; }
+
+        .timeline::before {
+            content: ""; position: absolute;
+            left: 15px; top: 0; bottom: 0;
+            width: 3px; background: #E5E7EB; border-radius: 2px;
+        }
+
+        .timeline-item { position: relative; margin-bottom: 32px; padding-left: 24px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+            content: ""; position: absolute;
+            left: -28px; top: 4px;
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            background: #4CAF74;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 0 0 3px #4CAF74;
+            z-index: 1;
+        }
+
+        .timeline-item.pending::before { background: #FFFFFF; box-shadow: 0 0 0 3px #D0D0D8; }
+        .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
+        .timeline-item .timeline-meta { font-size: 13px; color: #999; margin-top: 4px; }
+
+        /* --- FAQ --- */
         .faq-item {
-            border: 1px solid var(--border-color);
+            border: 1px solid #E5E7EB;
             border-radius: 10px;
-            margin-bottom: 10px;
-            overflow: hidden;
-            background: white;
-        }
-        .faq-question {
-            padding: 16px 20px;
-            font-weight: 600;
-            color: var(--gov-blue);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-        }
-        .faq-question:hover { background: var(--gov-blue-pale); }
-        .faq-toggle {
-            font-size: 20px;
-            color: var(--gov-blue);
-            transition: transform 0.2s;
-        }
-        .faq-answer {
-            padding: 0 20px 16px;
-            color: var(--text-secondary);
-            font-size: 15px;
-            display: none;
-        }
-        .faq-item.open .faq-answer { display: block; }
-        .faq-item.open .faq-toggle { transform: rotate(45deg); }
-
-        /* SIDEBAR */
-        .sidebar {}
-        .sidebar-card {
-            background: white;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-sm);
-        }
-        .sidebar-card h4 {
-            color: var(--gov-blue);
-            font-size: 15px;
             margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--gov-blue-pale);
-        }
-        .sidebar-card p, .sidebar-card li {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-        .sidebar-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .sidebar-card ul li {
-            padding: 6px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .sidebar-card ul li:last-child { border: none; }
-        .sidebar-link {
-            color: var(--gov-blue);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .sidebar-link:hover { text-decoration: underline; }
-
-        .quick-nav a {
-            display: block;
-            padding: 8px 12px;
-            color: var(--gov-blue);
-            text-decoration: none;
-            font-size: 14px;
-            border-left: 3px solid transparent;
-            transition: all 0.15s;
-        }
-        .quick-nav a:hover {
-            background: var(--gov-blue-pale);
-            border-left-color: var(--gov-blue);
+            overflow: hidden;
         }
 
-        /* FOOTER */
-        .gov-footer {
-            background: var(--gov-blue-dark);
+        .faq-question {
+            display: flex; align-items: center; gap: 14px;
+            padding: 18px 20px;
+            background: #FFFFFF;
+            cursor: pointer;
+            font-weight: 600; font-size: 16px; color: #1F2128;
+            border: none; width: 100%; text-align: left;
+            font-family: 'Poppins', sans-serif;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover { background: #F5F5F7; }
+        .faq-question .faq-icon { width: 24px; height: 24px; flex-shrink: 0; transition: transform 0.3s ease; }
+        .faq-item.open .faq-question .faq-icon { transform: rotate(45deg); }
+        .faq-answer { padding: 0 20px 18px 58px; font-size: 16px; line-height: 1.7; display: none; }
+        .faq-item.open .faq-answer { display: block; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: #2B2A65;
             color: rgba(255,255,255,0.8);
-            padding: 32px 24px;
-            margin-top: 40px;
-            font-size: 14px;
+            padding: 56px 0 0;
+            font-size: 15px;
         }
-        .gov-footer-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .gov-footer a { color: rgba(255,255,255,0.9); text-decoration: underline; }
 
-        /* PRINT STYLES */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 16px; font-weight: 600; margin-bottom: 18px; }
+        .footer-logo { margin-bottom: 16px; }
+        .footer-logo img { height: 50px; width: auto; }
+        .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+        .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
+        .footer-col a:hover { color: #4CAF74; text-decoration: none; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 14px; }
+
+        .footer-contact-item {
+            display: flex; align-items: flex-start; gap: 10px;
+            margin-bottom: 12px; font-size: 14px;
+        }
+
+        .footer-contact-item svg { width: 18px; height: 18px; flex-shrink: 0; stroke: #4CAF74; fill: none; margin-top: 2px; }
+
+        .footer-social { display: flex; gap: 12px; margin-top: 8px; }
+
+        .footer-social a {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .footer-social a:hover { background: #4CAF74; }
+        .footer-social svg { width: 18px; height: 18px; fill: #FFFFFF; }
+
+        .footer-implemented {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            display: flex; align-items: center; justify-content: center;
+            gap: 32px; flex-wrap: wrap;
+        }
+
+        .footer-implemented span { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); font-weight: 500; }
+        .footer-implemented img { height: 36px; width: auto; opacity: 0.85; transition: opacity 0.2s ease; }
+        .footer-implemented img:hover { opacity: 1; }
+
+        .footer-copyright { text-align: center; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.45); }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 34px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-description { max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 32px; }
+            h2, .section > h2 { font-size: 26px; }
+            h3 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 12px; padding: 10px 16px; }
+            .header-nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 28px; }
+            .step { flex-direction: column; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+            .field-table, .cost-table { font-size: 14px; }
+            .field-table th, .field-table td, .cost-table th, .cost-table td { padding: 10px 12px; }
+            .tab-btn { padding: 12px 16px; font-size: 13px; }
+        }
+
+        @media (max-width: 480px) {
+            .header-logos img { height: 36px; }
+            .header-logos .coat-of-arms { height: 40px; }
+            .hero h1 { font-size: 24px; }
+            .footer-implemented { flex-direction: column; gap: 16px; }
+        }
+
+        /* ============================================================
+           PRINT STYLES
+           ============================================================ */
         @media print {
-            .gov-header { position: static; }
-            .sidebar { display: none; }
-            .main-container { grid-template-columns: 1fr; }
-            .browser-mockup { break-inside: avoid; }
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 11pt; line-height: 1.5; color: #000; background: #FFF; }
+            .site-header { position: static; box-shadow: none; background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .header-nav .btn-login { display: none; }
+            .hero { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 32px 0; page-break-after: always; }
+            .hero h1 { font-size: 28pt; }
+            .btn-primary { display: none; }
+            .hero-image { display: none; }
+            .toc { page-break-after: always; background: #F5F5F7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .toc-item { break-inside: avoid; }
+            .section { page-break-inside: avoid; }
+            .section > h2 { page-break-after: avoid; border-left-color: #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .step { page-break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+            .step-number { background: #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .info-box, .warning-box, .note-box { page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .field-table, .cost-table { page-break-inside: avoid; font-size: 9pt; }
+            .field-table thead, .cost-table thead { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline::before { background: #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { background: #4CAF74 !important; box-shadow: 0 0 0 3px #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .site-footer { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
+            .footer-social { display: none; }
+            a { color: #000; text-decoration: underline; }
+            a[href]::after { content: none; }
             .faq-answer { display: block !important; }
         }
-
-        /* FIELD EXPLANATION TABLE */
-        .field-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 12px 0 22px;
-            font-size: 14px;
-        }
-        .field-table th {
-            background: var(--gov-blue-pale);
-            color: var(--gov-blue);
-            padding: 10px 14px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
-        }
-        .field-table td {
-            padding: 10px 14px;
-            border-bottom: 1px solid var(--border-color);
-            vertical-align: top;
-        }
-        .field-table code {
-            background: var(--gov-blue-pale);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 13px;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-        .tag-required { background: #fde8ea; color: var(--accent-red); }
-        .tag-auto { background: #eaf7ee; color: #1e7e34; }
-        .tag-system { background: #f0f0f0; color: #666; }
     </style>
 </head>
 <body>
 
-<!-- GOVERNMENT HEADER -->
-<header class="gov-header">
-    <div class="gov-header-inner">
-        <div class="gov-crest">&#127473;&#127480;</div>
-        <div>
-            <h1>Lesotho Business Registration Portal</h1>
-            <div class="subtitle">Ministry of Trade, Industry and Business Development &mdash; User Manual</div>
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logos">
+                <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                </a>
+                <div class="header-divider"></div>
+                <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/7363eda357ebb1583ab4ce37d8e31141f937cf98.png" alt="Lesotho Coat of Arms" class="coat-of-arms">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <a href="https://lesotho.eregistrations.dev/about/">About</a>
+                <a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a>
+                <a href="https://services.businessregistrations.gov.ls/" class="btn-login">Login | Register</a>
+            </nav>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- BREADCRUMB -->
-<nav class="breadcrumb-bar">
-    <a href="https://businessregistrations.gov.ls">Home</a>
-    <span>&#9656;</span>
-    <a href="#">Services</a>
-    <span>&#9656;</span>
-    <strong>Register an External Company</strong>
-</nav>
-
-<!-- MAIN -->
-<div class="main-container">
-
-<!-- CONTENT -->
-<main class="content-area">
-
-    <!-- HERO -->
-    <div class="hero-banner">
-        <h2>Register an External Company</h2>
-        <p>Complete guide for registering a company incorporated outside Lesotho that wishes to conduct business within the Kingdom of Lesotho.</p>
-        <div class="hero-meta">
-            <div class="hero-meta-item">
-                <strong>Name Reservation</strong>
-                Registration included
-            </div>
-            <div class="hero-meta-item">
-                <strong>Online</strong>
-                100% digital process
-            </div>
-            <div class="hero-meta-item">
-                <strong>businessregistrations.gov.ls</strong>
-                Official portal
-            </div>
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                <li><a href="https://services.businessregistrations.gov.ls/">Register External Company</a></li>
+                <li><span class="current">User Manual</span></li>
+            </ol>
         </div>
     </div>
 
-    <!-- OVERVIEW -->
-    <h2 id="overview">1. Overview</h2>
-    <p>An <strong>external company</strong> (also known as a foreign company) is a company incorporated or registered outside the Kingdom of Lesotho that establishes a place of business or carries on business activities within Lesotho. Under the Companies Act 2011, such companies are required to register with the Registrar of Companies before commencing operations.</p>
-    <p>This manual walks you through every step of the online registration process on the Lesotho eRegistrations portal at <strong>businessregistrations.gov.ls</strong>.</p>
-
-    <div class="info-box note">
-        <div class="info-box-title">Who needs this registration?</div>
-        Any company incorporated in South Africa, Botswana, Eswatini, Mozambique, or any other country that intends to operate a branch, office, or carry on business within Lesotho must register as an external company.
-    </div>
-
-    <h3>What you will accomplish</h3>
-    <ul>
-        <li><strong>Name Reservation</strong> &mdash; Reserve your external company's name for use in Lesotho</li>
-        <li><strong>External Company Registration</strong> &mdash; Officially register your company to operate in the Kingdom</li>
-    </ul>
-
-    <!-- PREREQUISITES -->
-    <h2 id="prerequisites">2. Before You Begin</h2>
-
-    <h3>Eligibility requirements</h3>
-    <ul>
-        <li>The company must be validly incorporated in its country of origin</li>
-        <li>The applicant must be authorised to act on behalf of the company (e.g., director, company secretary, or authorised agent)</li>
-        <li>The company must designate a local representative or registered agent in Lesotho</li>
-    </ul>
-
-    <h3>What you will need</h3>
-    <ol>
-        <li><strong>A user account</strong> on businessregistrations.gov.ls (register for free if you do not have one)</li>
-        <li><strong>Company details from the country of origin</strong> &mdash; name, registration number, date of incorporation, registered office address</li>
-        <li><strong>Details of directors and shareholders</strong> &mdash; full names, nationalities, passport/ID numbers, contact addresses</li>
-        <li><strong>Lesotho local address</strong> &mdash; where the company will conduct business (e.g., Maseru, Leribe, or another district)</li>
-        <li><strong>Company constitutional documents</strong> &mdash; certified copies of your Memorandum and Articles of Association or equivalent</li>
-        <li><strong>Certificate of Incorporation</strong> &mdash; from the country of origin, certified or apostilled</li>
-        <li><strong>Board resolution</strong> &mdash; authorising registration in Lesotho and appointing a local representative</li>
-        <li><strong>Valid email address</strong> &mdash; for receiving notifications and your registration certificate</li>
-    </ol>
-
-    <div class="info-box tip">
-        <div class="info-box-title">Tip</div>
-        Gather all documents before starting the application. You can save your progress as a draft and return later, but having everything ready will speed up the process considerably.
-    </div>
-
-    <!-- ACCOUNT CREATION -->
-    <h2 id="account">3. Creating Your Account</h2>
-    <p>If you do not already have an account on the Lesotho Business Registration Portal, follow these steps:</p>
-
-    <div class="browser-mockup">
-        <div class="browser-chrome">
-            <div class="browser-dots">
-                <span class="dot-red"></span>
-                <span class="dot-yellow"></span>
-                <span class="dot-green"></span>
-            </div>
-            <div class="browser-url"><span class="lock">&#128274;</span> businessregistrations.gov.ls/register</div>
-        </div>
-        <div class="browser-body">
-            <div class="mock-section-title">Create Your Account</div>
-            <div class="mock-form-group">
-                <label class="mock-label">First name <span class="required">*</span></label>
-                <div class="mock-input">e.g., Thabo</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Last name <span class="required">*</span></label>
-                <div class="mock-input">e.g., Mokhele</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Email address <span class="required">*</span></label>
-                <div class="mock-input">e.g., thabo.mokhele@company.co.za</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Password <span class="required">*</span></label>
-                <div class="mock-input">&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Gender</label>
-                <div class="mock-select">-- Select --</div>
-            </div>
-            <div style="margin-top:14px;">
-                <span class="mock-btn mock-btn-primary">Create Account</span>
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">User Manual</span>
+                    <h1>Register an External Company</h1>
+                    <p class="hero-description">Complete guide to registering a foreign or external company to operate in the Kingdom of Lesotho through the One Business Facilitation Centre (OBFC) online platform.</p>
+                    <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Start Application &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="14" width="48" height="40" rx="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 24h48" stroke-linecap="round"/>
+                            <circle cx="32" cy="10" r="5" stroke-linecap="round"/>
+                            <line x1="32" y1="5" x2="32" y2="3" stroke-linecap="round"/>
+                            <line x1="18" y1="32" x2="46" y2="32" stroke-linecap="round"/>
+                            <line x1="18" y1="38" x2="46" y2="38" stroke-linecap="round"/>
+                            <line x1="18" y1="44" x2="36" y2="44" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <p>After registration, you will receive a verification email. Click the link in the email to activate your account. You can then log in using your email and password.</p>
-
-    <div class="info-box warning">
-        <div class="info-box-title">Important</div>
-        Use a professional email address that you check regularly. All official correspondence, including your registration certificate, will be sent to this address. The system records your email (<code>kc_email</code>), name, and nationality automatically from your profile.
-    </div>
-
-    <!-- STARTING THE APPLICATION -->
-    <h2 id="start-application">4. Starting the Application</h2>
-
-    <h3>Step 4.1 &mdash; Log in and select the service</h3>
-    <ol>
-        <li>Go to <strong>businessregistrations.gov.ls</strong></li>
-        <li>Click <strong>Login</strong> and enter your credentials</li>
-        <li>From the dashboard, locate <strong>"Register an external company"</strong> in the list of available services</li>
-        <li>Click on the service to begin your application</li>
-    </ol>
-
-    <div class="browser-mockup">
-        <div class="browser-chrome">
-            <div class="browser-dots">
-                <span class="dot-red"></span>
-                <span class="dot-yellow"></span>
-                <span class="dot-green"></span>
-            </div>
-            <div class="browser-url"><span class="lock">&#128274;</span> businessregistrations.gov.ls/dashboard</div>
-        </div>
-        <div class="browser-body">
-            <div class="mock-section-title">Available Services</div>
-            <div style="border:2px solid var(--gov-blue); border-radius:8px; padding:14px 18px; margin:8px 0; background:var(--gov-blue-pale); cursor:pointer;">
-                <div style="font-weight:700; color:var(--gov-blue); font-size:16px;">Register an external company</div>
-                <div style="font-size:13px; color:var(--text-secondary); margin-top:4px;">Register a company incorporated outside Lesotho</div>
-            </div>
-            <div style="border:1px solid var(--border-color); border-radius:8px; padding:14px 18px; margin:8px 0;">
-                <div style="font-weight:600; color:var(--text-primary); font-size:15px;">Register a company</div>
-                <div style="font-size:13px; color:var(--text-secondary); margin-top:4px;">Register a new Lesotho company</div>
-            </div>
-            <div style="border:1px solid var(--border-color); border-radius:8px; padding:14px 18px; margin:8px 0;">
-                <div style="font-weight:600; color:var(--text-primary); font-size:15px;">Register a business name</div>
-                <div style="font-size:13px; color:var(--text-secondary); margin-top:4px;">Sole trader or partnership</div>
-            </div>
-        </div>
-    </div>
-
-    <h3>Step 4.2 &mdash; Confirm the registration type</h3>
-    <p>When you open the service, the system automatically selects the <strong>Name Reservation</strong> registration. This is the first step in the external company registration process. The name reservation checkbox is pre-selected.</p>
-
-    <div class="browser-mockup">
-        <div class="browser-chrome">
-            <div class="browser-dots">
-                <span class="dot-red"></span>
-                <span class="dot-yellow"></span>
-                <span class="dot-green"></span>
-            </div>
-            <div class="browser-url"><span class="lock">&#128274;</span> businessregistrations.gov.ls/service/external-company</div>
-        </div>
-        <div class="browser-body">
-            <div class="mock-section-title">Register an External Company</div>
-            <p style="font-size:14px; color:var(--text-secondary); margin-bottom:14px;">Select the registration you wish to proceed with:</p>
-            <div class="mock-checkbox-row">
-                <span class="mock-checkbox checked"></span>
-                <strong>Name reservation</strong>
-            </div>
-            <p style="font-size:13px; color:var(--text-secondary); margin:8px 0 16px 24px;">Reserve the external company name for use within Lesotho.</p>
-        </div>
-    </div>
-
-    <!-- FILLING THE FORM -->
-    <h2 id="form">5. Filling in the Application Form</h2>
-
-    <p>The application form is divided into several sections. The system automatically fills in your personal information from your account profile. You will need to complete the company details manually.</p>
-
-    <h3>Application process overview</h3>
-    <div class="step-flow">
-        <div class="step-item">
-            <div class="step-circle">1</div>
-            <span class="step-text">Applicant Info</span>
-        </div>
-        <span class="step-arrow">&#9654;</span>
-        <div class="step-item">
-            <div class="step-circle">2</div>
-            <span class="step-text">Company Details</span>
-        </div>
-        <span class="step-arrow">&#9654;</span>
-        <div class="step-item">
-            <div class="step-circle">3</div>
-            <span class="step-text">Documents</span>
-        </div>
-        <span class="step-arrow">&#9654;</span>
-        <div class="step-item">
-            <div class="step-circle">4</div>
-            <span class="step-text">Payment</span>
-        </div>
-        <span class="step-arrow">&#9654;</span>
-        <div class="step-item">
-            <div class="step-circle">5</div>
-            <span class="step-text">Submit</span>
-        </div>
-    </div>
-
-    <h3 id="section-applicant">Section A: Applicant Information (auto-filled)</h3>
-    <p>The following fields are automatically populated from your user profile. You do not need to enter them manually but should verify they are correct:</p>
-
-    <table class="field-table">
-        <thead>
-            <tr>
-                <th>Field</th>
-                <th>Description</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Username</strong></td>
-                <td>Your login username on the portal</td>
-                <td><span class="tag tag-auto">Auto-filled</span></td>
-            </tr>
-            <tr>
-                <td><strong>Full name</strong></td>
-                <td>Your first name and last name, combined from your profile (e.g., "Thabo Mokhele")</td>
-                <td><span class="tag tag-auto">Auto-filled</span></td>
-            </tr>
-            <tr>
-                <td><strong>E-mail</strong></td>
-                <td>Email address registered with your account. All notifications will be sent here.</td>
-                <td><span class="tag tag-auto">Auto-filled</span></td>
-            </tr>
-            <tr>
-                <td><strong>Gender</strong></td>
-                <td>As recorded in your profile</td>
-                <td><span class="tag tag-auto">Auto-filled</span></td>
-            </tr>
-            <tr>
-                <td><strong>Nationality</strong></td>
-                <td>Your nationality as recorded in your profile (e.g., "Mosotho", "South African")</td>
-                <td><span class="tag tag-auto">Auto-filled</span></td>
-            </tr>
-            <tr>
-                <td><strong>Date of birth</strong></td>
-                <td>Your date of birth from the authentication profile</td>
-                <td><span class="tag tag-auto">Auto-filled</span></td>
-            </tr>
-            <tr>
-                <td><strong>National number</strong></td>
-                <td>Your national ID or passport number as recorded in the system</td>
-                <td><span class="tag tag-auto">Auto-filled</span></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="info-box tip">
-        <div class="info-box-title">Tip</div>
-        If any auto-filled information is incorrect, update your profile before submitting. Go to your account settings to edit your personal details. The fields labelled <code>kc_firstName</code>, <code>kc_lastName</code>, etc. are pulled directly from the authentication service.
-    </div>
-
-    <h3 id="section-company">Section B: External Company Details</h3>
-    <p>This is the main section where you enter information about the foreign company you wish to register in Lesotho.</p>
-
-    <div class="browser-mockup">
-        <div class="browser-chrome">
-            <div class="browser-dots">
-                <span class="dot-red"></span>
-                <span class="dot-yellow"></span>
-                <span class="dot-green"></span>
-            </div>
-            <div class="browser-url"><span class="lock">&#128274;</span> businessregistrations.gov.ls/service/external-company/form</div>
-        </div>
-        <div class="browser-body">
-            <div class="mock-tab-bar">
-                <div class="mock-tab">Applicant Info</div>
-                <div class="mock-tab active">Company Details</div>
-                <div class="mock-tab">Documents</div>
-                <div class="mock-tab">Payment</div>
-            </div>
-            <div class="mock-section-title">External Company Information</div>
-            <div class="mock-form-group">
-                <label class="mock-label">Proposed company name in Lesotho <span class="required">*</span></label>
-                <div class="mock-input">e.g., Southgate Holdings (Lesotho) (Pty) Ltd</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Company name in country of origin <span class="required">*</span></label>
-                <div class="mock-input">e.g., Southgate Holdings (Pty) Ltd</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Country of incorporation <span class="required">*</span></label>
-                <div class="mock-select">-- Select country --</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Registration number in country of origin <span class="required">*</span></label>
-                <div class="mock-input">e.g., 2019/123456/07</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Date of incorporation <span class="required">*</span></label>
-                <div class="mock-input">e.g., 15/03/2019</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Registered office address (in country of origin) <span class="required">*</span></label>
-                <div class="mock-input">e.g., 45 Commissioner Street, Johannesburg, Gauteng, 2001</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Principal business address in Lesotho <span class="required">*</span></label>
-                <div class="mock-input">e.g., 12 Kingsway Road, Maseru, 100</div>
-            </div>
-            <div class="mock-form-group">
-                <label class="mock-label">Nature of business / Business objectives <span class="required">*</span></label>
-                <div class="mock-input" style="height:60px;">e.g., Import and export of construction materials, building services, and project management</div>
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#overview" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span class="toc-label">Overview</span>
+                </a>
+                <a href="#requirements" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span class="toc-label">Requirements</span>
+                </a>
+                <a href="#costs" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span class="toc-label">Costs &amp; Fees</span>
+                </a>
+                <a href="#step-by-step" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span class="toc-label">Step-by-Step Guide</span>
+                </a>
+                <a href="#documents" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span class="toc-label">Document Upload</span>
+                </a>
+                <a href="#after-submission" class="toc-item">
+                    <span class="toc-number">6</span>
+                    <span class="toc-label">After Submission</span>
+                </a>
+                <a href="#faq" class="toc-item">
+                    <span class="toc-number">7</span>
+                    <span class="toc-label">Frequently Asked Questions</span>
+                </a>
+                <a href="#legal" class="toc-item">
+                    <span class="toc-number">8</span>
+                    <span class="toc-label">Legal Basis</span>
+                </a>
+                <a href="#contact" class="toc-item">
+                    <span class="toc-number">9</span>
+                    <span class="toc-label">Contact &amp; Support</span>
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <h4>Field-by-field guidance</h4>
-    <table class="field-table">
-        <thead>
-            <tr>
-                <th>Field</th>
-                <th>What to enter</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Proposed company name</strong></td>
-                <td>The name the company will trade under in Lesotho. It may include "(Lesotho)" to distinguish it. Must not be identical to an existing Lesotho company.</td>
-                <td>Southgate Holdings (Lesotho) (Pty) Ltd</td>
-            </tr>
-            <tr>
-                <td><strong>Company name in country of origin</strong></td>
-                <td>The exact legal name as registered in the foreign jurisdiction.</td>
-                <td>Southgate Holdings (Pty) Ltd</td>
-            </tr>
-            <tr>
-                <td><strong>Country of incorporation</strong></td>
-                <td>Select from the dropdown the country where the company was originally registered.</td>
-                <td>South Africa</td>
-            </tr>
-            <tr>
-                <td><strong>Registration number</strong></td>
-                <td>The company's official registration or incorporation number from the home country.</td>
-                <td>2019/123456/07</td>
-            </tr>
-            <tr>
-                <td><strong>Date of incorporation</strong></td>
-                <td>The original date the company was incorporated abroad. Use the date picker.</td>
-                <td>15 March 2019</td>
-            </tr>
-            <tr>
-                <td><strong>Registered office address</strong></td>
-                <td>The company's registered address in its home country, as per the certificate of incorporation.</td>
-                <td>45 Commissioner St, Johannesburg, 2001</td>
-            </tr>
-            <tr>
-                <td><strong>Address in Lesotho</strong></td>
-                <td>The physical address where the company will operate in Lesotho. Must be a real street address, not a P.O. Box.</td>
-                <td>12 Kingsway Road, Maseru, 100</td>
-            </tr>
-            <tr>
-                <td><strong>Nature of business</strong></td>
-                <td>A brief description of the company's primary business activities that it will carry out in Lesotho.</td>
-                <td>Import and export of construction materials</td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- ============================================================
+         MANUAL CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
 
-    <h3 id="section-directors">Section C: Directors, Shareholders &amp; Local Representative</h3>
-    <p>You will need to provide details for the company's directors, shareholders, and a designated local representative in Lesotho.</p>
+            <!-- ==================== SECTION 1: OVERVIEW ==================== -->
+            <div class="section" id="overview">
+                <h2>1. Overview</h2>
+                <p>An <strong>external company</strong> (also called a foreign company) is a company incorporated outside the Kingdom of Lesotho that wishes to establish a place of business or conduct business activities within Lesotho. Under the Companies Act 2011, every external company must register with the Registrar of Companies before commencing business in Lesotho.</p>
+                <p>This service allows you to register an external company online through the OBFC eRegistrations platform. The process begins with a <strong>name reservation</strong>, followed by submission of the required registration documents and payment of applicable fees.</p>
 
-    <h4>Directors</h4>
-    <p>For each director, provide:</p>
-    <ul>
-        <li>Full name (first name, middle names, last name)</li>
-        <li>Nationality and passport or national ID number</li>
-        <li>Physical and postal address</li>
-        <li>Date of appointment</li>
-    </ul>
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Who needs this registration?
+                    </div>
+                    <p>Any company incorporated outside Lesotho that intends to establish a place of business, open a branch office, or carry on business activities within the Kingdom of Lesotho must complete this registration.</p>
+                </div>
 
-    <h4>Shareholders / Members</h4>
-    <p>For each shareholder or member, provide:</p>
-    <ul>
-        <li>Full name or company name (if the shareholder is a legal entity)</li>
-        <li>Type of person: <strong>Natural</strong> (individual) or <strong>Legal</strong> (company)</li>
-        <li>Nationality or country of incorporation</li>
-        <li>Number and type of shares held</li>
-    </ul>
+                <h3>What you will receive</h3>
+                <ul>
+                    <li>A <strong>Certificate of Registration</strong> as an external company in Lesotho</li>
+                    <li>A unique company registration number</li>
+                    <li>Legal authority to conduct business in the Kingdom of Lesotho</li>
+                </ul>
 
-    <h4>Local representative in Lesotho</h4>
-    <p>Every external company must appoint a person resident in Lesotho who is authorised to accept service of process and notices on behalf of the company. Provide:</p>
-    <ul>
-        <li>Full name of the local representative</li>
-        <li>Physical address in Lesotho</li>
-        <li>Contact telephone number and email address</li>
-        <li>Relationship to the company (e.g., director, lawyer, accountant, authorised agent)</li>
-    </ul>
-
-    <div class="info-box warning">
-        <div class="info-box-title">Important</div>
-        The local representative must be a natural person with a physical address in Lesotho. A P.O. Box alone is not sufficient. This person will receive all legal notices on behalf of the company.
-    </div>
-
-    <!-- DOCUMENTS -->
-    <h2 id="documents">6. Required Documents</h2>
-    <p>Upload the following documents as part of your application. Accepted file formats are <strong>PDF</strong>, <strong>JPG</strong>, and <strong>PNG</strong>. Each file must not exceed <strong>5 MB</strong>.</p>
-
-    <ul class="doc-checklist">
-        <li>
-            <div class="doc-icon">&#128196;</div>
-            <div class="doc-details">
-                <div class="doc-name">Certificate of Incorporation (from country of origin)</div>
-                <div class="doc-desc">A certified or apostilled copy of the company's certificate of incorporation from the foreign jurisdiction.</div>
+                <h3>Service at a glance</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Detail</th>
+                            <th>Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Service name</strong></td>
+                            <td>Register an External Company</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Issuing authority</strong></td>
+                            <td>Registrar of Companies, Ministry of Law and Justice</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Platform</strong></td>
+                            <td>OBFC eRegistrations (online)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>First step</strong></td>
+                            <td>Name Reservation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Processing time</strong></td>
+                            <td>5 &ndash; 10 business days (estimated)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Validity</strong></td>
+                            <td>Valid as long as the company remains in good standing</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <span class="doc-badge required">Required</span>
-        </li>
-        <li>
-            <div class="doc-icon">&#128196;</div>
-            <div class="doc-details">
-                <div class="doc-name">Memorandum and Articles of Association</div>
-                <div class="doc-desc">Or equivalent constitutional documents (e.g., company charter, bylaws). Must be certified.</div>
+
+            <!-- ==================== SECTION 2: REQUIREMENTS ==================== -->
+            <div class="section" id="requirements">
+                <h2>2. Requirements</h2>
+                <p>Before starting your application, ensure you have the following documents and information ready. Having everything prepared will allow you to complete the application in a single session.</p>
+
+                <h3>Eligibility</h3>
+                <ul>
+                    <li>The company must be validly incorporated in its country of origin</li>
+                    <li>The company must not be under liquidation or deregistration proceedings</li>
+                    <li>An authorised representative or local agent must be appointed in Lesotho</li>
+                </ul>
+
+                <h3>Required documents</h3>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Certificate of incorporation</strong> from the country of origin (certified copy, apostilled or notarised)</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Constitutional documents</strong> (memorandum and articles of association or equivalent charter documents)</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>List of directors</strong> with full names, nationalities, residential addresses, and identification details</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Power of attorney</strong> or authorisation letter appointing a local agent or representative in Lesotho</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Identification documents</strong> of directors and local representative (passport or national ID)</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Proof of registered office address</strong> in Lesotho (lease agreement, utility bill, or similar)</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Certificate of good standing</strong> from the country of origin (issued within the last 6 months)</span>
+                    </li>
+                </ul>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Important
+                    </div>
+                    <p>All documents originating from outside Lesotho must be either <strong>apostilled</strong> (if the country of origin is a party to the Hague Apostille Convention) or <strong>notarised and authenticated</strong> by the Lesotho embassy or consulate. Documents not in English must be accompanied by a certified English translation.</p>
+                </div>
+
+                <h3>Information you will need to provide</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Information</th>
+                            <th>Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company name</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>The name of the external company as registered in its country of origin</td>
+                        </tr>
+                        <tr>
+                            <td>Country of incorporation</td>
+                            <td>Selection</td>
+                            <td class="required-yes">Yes</td>
+                            <td>The country where the company was originally incorporated</td>
+                        </tr>
+                        <tr>
+                            <td>Date of incorporation</td>
+                            <td>Date</td>
+                            <td class="required-yes">Yes</td>
+                            <td>The date the company was incorporated in its country of origin</td>
+                        </tr>
+                        <tr>
+                            <td>Registered office in Lesotho</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>The physical address of the company's registered office in Lesotho</td>
+                        </tr>
+                        <tr>
+                            <td>Business activities</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Description of the nature of business to be conducted in Lesotho</td>
+                        </tr>
+                        <tr>
+                            <td>Local representative details</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Full name, address, and contact details of the authorised local agent</td>
+                        </tr>
+                        <tr>
+                            <td>Directors' details</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Full names, nationalities, and addresses of all directors</td>
+                        </tr>
+                        <tr>
+                            <td>Applicant email</td>
+                            <td>Email</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Email address used for account registration and notifications</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <span class="doc-badge required">Required</span>
-        </li>
-        <li>
-            <div class="doc-icon">&#128196;</div>
-            <div class="doc-details">
-                <div class="doc-name">Board Resolution</div>
-                <div class="doc-desc">Resolution authorising registration in Lesotho and appointment of a local representative. Must be signed by directors.</div>
+
+            <!-- ==================== SECTION 3: COSTS & FEES ==================== -->
+            <div class="section" id="costs">
+                <h2>3. Costs &amp; Fees</h2>
+                <p>The following fees apply to the registration of an external company in Lesotho. All fees are payable online through the OBFC platform.</p>
+
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Fee Item</th>
+                            <th>Amount (LSL)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Name reservation</td>
+                            <td class="amount">100.00</td>
+                            <td>Reserves your chosen company name for 60 days</td>
+                        </tr>
+                        <tr>
+                            <td>Registration of external company</td>
+                            <td class="amount">1,000.00</td>
+                            <td>Non-refundable processing fee</td>
+                        </tr>
+                        <tr>
+                            <td>Certificate of registration</td>
+                            <td class="amount">200.00</td>
+                            <td>Issuance of the official certificate</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Estimated total</td>
+                            <td class="amount">1,300.00</td>
+                            <td>Additional fees may apply depending on services selected</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Payment methods
+                    </div>
+                    <p>Fees can be paid online through the available payment providers on the platform. You will select your preferred payment method during the application process. A payment receipt will be generated automatically upon successful payment.</p>
+                </div>
             </div>
-            <span class="doc-badge required">Required</span>
-        </li>
-        <li>
-            <div class="doc-icon">&#128196;</div>
-            <div class="doc-details">
-                <div class="doc-name">Passport / National ID of Directors</div>
-                <div class="doc-desc">Clear copies of identification documents for each listed director.</div>
+
+            <!-- ==================== SECTION 4: STEP-BY-STEP GUIDE ==================== -->
+            <div class="section" id="step-by-step">
+                <h2>4. Step-by-Step Guide</h2>
+                <p>Follow these steps to register your external company through the OBFC eRegistrations platform.</p>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Create an account</h4>
+                            <p>Visit <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a> and click <strong>"Register"</strong> to create a new user account. You will need to provide your full name, a valid email address, and create a password.</p>
+                            <p>A verification email will be sent to confirm your account. Click the link in the email to activate your account.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Log in and select the service</h4>
+                            <p>Log in with your email and password. From the dashboard, locate and select <strong>"Register an external company"</strong> from the list of available services.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Reserve a company name</h4>
+                            <p>The first step in the registration process is <strong>name reservation</strong>. Enter your proposed company name for use in Lesotho. The system will check the name against existing registered names.</p>
+                            <p>You may propose up to three alternative names in case your first choice is not available. Once approved, the name is reserved for 60 days.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Complete the application form</h4>
+                            <p>Fill in all required fields in the online application form. This includes company details, director information, local representative details, and the registered office address in Lesotho. Fields marked with an asterisk (<strong>*</strong>) are mandatory.</p>
+                            <p>You can save your progress at any time and return to complete the form later.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Upload supporting documents</h4>
+                            <p>Upload all required documents as listed in the <a href="#requirements">Requirements</a> section. Ensure documents are clear, legible, and in an accepted format (PDF, JPG, or PNG, maximum 5 MB per file).</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Validate the form</h4>
+                            <p>Click the <strong>"Validate the form"</strong> button to check that all required fields have been completed and all mandatory documents have been uploaded. The system will highlight any missing or incomplete information.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Pay the fees</h4>
+                            <p>Select your preferred payment provider and complete the payment for the applicable fees. A payment confirmation receipt will be generated and attached to your application.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">8</div>
+                        <div class="step-content">
+                            <h4>Submit the application</h4>
+                            <p>Review your application one final time, then click <strong>"Submit"</strong>. You will receive a confirmation email with your application reference number. Keep this number for tracking your application status.</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Save your progress
+                    </div>
+                    <p>You do not need to complete the entire application in one session. The system automatically saves your progress. You can log out and return at any time to continue where you left off.</p>
+                </div>
             </div>
-            <span class="doc-badge required">Required</span>
-        </li>
-        <li>
-            <div class="doc-icon">&#128196;</div>
-            <div class="doc-details">
-                <div class="doc-name">Proof of Lesotho Business Address</div>
-                <div class="doc-desc">Lease agreement, utility bill, or letter from landlord confirming the physical address of the business in Lesotho.</div>
+
+            <!-- ==================== SECTION 5: DOCUMENT UPLOAD ==================== -->
+            <div class="section" id="documents">
+                <h2>5. Document Upload</h2>
+                <p>The following guidelines apply when uploading documents to your application.</p>
+
+                <h3>Accepted file formats</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Format</th>
+                            <th>Extension</th>
+                            <th>Maximum Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>PDF documents</td>
+                            <td>.pdf</td>
+                            <td>5 MB</td>
+                        </tr>
+                        <tr>
+                            <td>JPEG images</td>
+                            <td>.jpg, .jpeg</td>
+                            <td>5 MB</td>
+                        </tr>
+                        <tr>
+                            <td>PNG images</td>
+                            <td>.png</td>
+                            <td>5 MB</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Tips for uploading documents</h3>
+                <ul>
+                    <li>Scan documents at a minimum resolution of <strong>300 DPI</strong> for clarity</li>
+                    <li>Ensure all text in the document is <strong>legible and not cut off</strong></li>
+                    <li>If a document has multiple pages, combine them into a <strong>single PDF file</strong></li>
+                    <li>Colour scans are preferred over black-and-white for certified documents</li>
+                    <li>Check that all stamps, signatures, and apostille seals are clearly visible</li>
+                </ul>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Warning
+                    </div>
+                    <p>Documents that are blurry, incomplete, or do not meet authentication requirements (apostille / notarisation) will be rejected, and your application will be returned for correction. This may significantly delay the registration process.</p>
+                </div>
             </div>
-            <span class="doc-badge required">Required</span>
-        </li>
-        <li>
-            <div class="doc-icon">&#128196;</div>
-            <div class="doc-details">
-                <div class="doc-name">Power of Attorney (if applicable)</div>
-                <div class="doc-desc">If the applicant is an agent acting on behalf of the company, a notarised power of attorney is required.</div>
+
+            <!-- ==================== SECTION 6: AFTER SUBMISSION ==================== -->
+            <div class="section" id="after-submission">
+                <h2>6. After Submission</h2>
+                <p>Once you submit your application, it will go through the following review process.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Application received</h4>
+                        <p>Your application is received and assigned a unique reference number. You will receive a confirmation email.</p>
+                        <div class="timeline-meta">Day 0</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Initial review</h4>
+                        <p>The Registrar's office conducts an initial review of your application and supporting documents for completeness.</p>
+                        <div class="timeline-meta">Day 1 &ndash; 3</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Detailed assessment</h4>
+                        <p>Your documents are verified for authenticity, and the proposed company name is confirmed against existing records.</p>
+                        <div class="timeline-meta">Day 3 &ndash; 7</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Decision</h4>
+                        <p>The Registrar approves or requests corrections to your application. You will be notified by email of the outcome.</p>
+                        <div class="timeline-meta">Day 7 &ndash; 10</div>
+                    </div>
+                    <div class="timeline-item pending">
+                        <h4>Certificate issued</h4>
+                        <p>Upon approval, your Certificate of Registration as an external company is issued and made available for download through the platform.</p>
+                        <div class="timeline-meta">Upon approval</div>
+                    </div>
+                </div>
+
+                <h3>Tracking your application</h3>
+                <p>You can track the status of your application at any time by logging into your account on the <a href="https://services.businessregistrations.gov.ls/">OBFC platform</a>. Your dashboard will show the current status of each application.</p>
+
+                <h3>If your application is returned</h3>
+                <p>If the Registrar requires corrections or additional information, you will receive an email notification explaining what needs to be addressed. Log in to your account, make the requested changes, and resubmit your application. The review process will resume from where it left off.</p>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Note
+                    </div>
+                    <p>Processing times are estimates and may vary depending on the completeness of your application, the volume of applications being processed, and the time needed for document verification.</p>
+                </div>
             </div>
-            <span class="doc-badge optional">If applicable</span>
-        </li>
-        <li>
-            <div class="doc-icon">&#128196;</div>
-            <div class="doc-details">
-                <div class="doc-name">Good Standing Certificate</div>
-                <div class="doc-desc">A recent certificate of good standing or compliance from the registrar of the company's home country (issued within the last 3 months).</div>
+
+            <!-- ==================== SECTION 7: FAQ ==================== -->
+            <div class="section" id="faq">
+                <h2>7. Frequently Asked Questions</h2>
+
+                <div class="faq-item open">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#4CAF74" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>What is an external company?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>An external company is any company that was incorporated or registered outside of Lesotho but wishes to establish a place of business or carry on business activities within the Kingdom of Lesotho. This includes branch offices, representative offices, and subsidiaries of foreign corporations.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#4CAF74" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>Do I need a local representative?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. Every external company registering in Lesotho must appoint a local agent or authorised representative who is resident in Lesotho. This person will serve as the point of contact for official correspondence and legal notices.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#4CAF74" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>How long does the name reservation last?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>A reserved name is held for 60 days from the date of approval. If you do not complete the registration within this period, the name reservation will expire and the name will become available to others. You may apply for a new name reservation if needed.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#4CAF74" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>Can I start operations before registration is complete?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. An external company must not carry on business in Lesotho until it has been registered with the Registrar of Companies. Operating without registration may result in penalties under the Companies Act 2011.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#4CAF74" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>What happens if my documents are in a foreign language?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All documents submitted in a language other than English must be accompanied by a certified English translation. The translation should be performed by a sworn translator or certified translation service, and the original language document must also be submitted alongside the translation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#4CAF74" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>Are the fees refundable?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Registration and processing fees are non-refundable once payment has been made, regardless of the outcome of the application. The name reservation fee is also non-refundable. Please ensure all documents are in order before submitting your application and payment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#4CAF74" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>What ongoing obligations does an external company have?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Once registered, an external company must file annual returns with the Registrar, notify the Registrar of any changes to directors or the local representative, maintain a registered office address in Lesotho, and comply with all applicable tax and regulatory requirements in the Kingdom of Lesotho.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="#4CAF74" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        <span>Can I apply on behalf of someone else?</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. An authorised user, lawyer, trustee, or accountant can submit the registration application on behalf of the external company, provided they have a valid power of attorney or authorisation from the company. The authorisation document must be uploaded with the application.</p>
+                    </div>
+                </div>
             </div>
-            <span class="doc-badge required">Required</span>
-        </li>
-    </ul>
 
-    <div class="info-box tip">
-        <div class="info-box-title">Document preparation tips</div>
-        <ul style="margin:6px 0 0 16px;">
-            <li>Documents in languages other than English or Sesotho must be accompanied by a certified translation.</li>
-            <li>Ensure all scans are clear, legible, and in colour where possible.</li>
-            <li>Apostilled documents are preferred for countries that are parties to the Hague Apostille Convention.</li>
-        </ul>
-    </div>
+            <!-- ==================== SECTION 8: LEGAL BASIS ==================== -->
+            <div class="section" id="legal">
+                <h2>8. Legal Basis</h2>
+                <p>The registration of external companies in Lesotho is governed by the following legislation:</p>
 
-    <!-- PAYMENT -->
-    <h2 id="payment">7. Fees and Payment</h2>
-    <p>The registration fee for an external company includes the name reservation fee. Payment can be made online through the portal or in cash at the Companies Registry.</p>
+                <ul>
+                    <li><strong>Companies Act 2011</strong> &mdash; Part XVI (External Companies), which sets out the requirements for registration, the obligations of external companies, and the powers of the Registrar of Companies.</li>
+                    <li><strong>Companies Regulations</strong> &mdash; Prescribes the forms, fees, and procedural requirements for company registration.</li>
+                    <li><strong>Business Names Act</strong> &mdash; Governs the registration and use of business names in Lesotho.</li>
+                </ul>
 
-    <div class="cost-card">
-        <div class="cost-card-header">Fee Schedule &mdash; Register an External Company</div>
-        <div class="cost-card-body">
-            <div class="cost-row">
-                <span>Name Reservation</span>
-                <span><strong>LSL 100.00</strong></span>
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Key legal requirements
+                    </div>
+                    <p>Under the Companies Act 2011, an external company that carries on business in Lesotho without registration commits an offence. The Act also requires external companies to display their name and country of incorporation at every place of business in Lesotho, and to include this information on all official correspondence and documentation.</p>
+                </div>
+
+                <h3>Penalties for non-compliance</h3>
+                <p>Failure to register as an external company, or failure to comply with ongoing reporting obligations, may result in fines and other penalties as prescribed by the Companies Act 2011. Directors and officers of the company may be held personally liable for certain contraventions.</p>
             </div>
-            <div class="cost-row">
-                <span>External Company Registration Fee</span>
-                <span><strong>LSL 500.00</strong></span>
+
+            <!-- ==================== SECTION 9: CONTACT & SUPPORT ==================== -->
+            <div class="section" id="contact">
+                <h2>9. Contact &amp; Support</h2>
+                <p>If you need assistance with the registration process, the OBFC support team is available to help.</p>
+
+                <h3>One Business Facilitation Centre (OBFC)</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Contact</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Address</strong></td>
+                            <td>LNDC Centre, Block A, Kingsway Road, Maseru, Lesotho</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telephone</strong></td>
+                            <td>+266 2231 7454</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td><a href="mailto:info@obfc.org.ls">info@obfc.org.ls</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Website</strong></td>
+                            <td><a href="https://lesotho.eregistrations.dev/">lesotho.eregistrations.dev</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Office hours</strong></td>
+                            <td>Monday &ndash; Friday, 08:00 &ndash; 16:30</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Getting help online</h3>
+                <ul>
+                    <li>Visit the <a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a> page for guides and tutorials</li>
+                    <li>Send an email to the OBFC support team describing your issue</li>
+                    <li>Include your application reference number in all correspondence</li>
+                </ul>
+
+                <h3>In-person assistance</h3>
+                <p>You may visit the OBFC office in person during office hours for face-to-face assistance with your registration. Staff can guide you through the online process and help resolve any technical issues.</p>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Tip
+                    </div>
+                    <p>When contacting support, always have your application reference number ready. This allows the support team to locate your application quickly and provide targeted assistance.</p>
+                </div>
             </div>
-            <div class="cost-row total">
-                <span>Total payable</span>
-                <span>LSL 600.00</span>
+
+        </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Column 1: Logo & About -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="https://lesotho.eregistrations.dev/_assets/v11/e8f8e0f4875113e3103aae78a6e2c99f11345f18.png" alt="OBFC Logo">
+                    </div>
+                    <p>One Business Facilitation Centre (OBFC) provides a single window for business registration and licensing services in the Kingdom of Lesotho.</p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="footer-col">
+                    <h5>Contact Details</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>LNDC Centre, Block A<br>Kingsway Road, Maseru</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75l.72 3.59a1 1 0 0 1-.26.95L8.09 10.7a16 16 0 0 0 5.21 5.21l2.41-2.41a1 1 0 0 1 .95-.26l3.59.72a1 1 0 0 1 .75 1z"/></svg>
+                        <span>+266 2231 7454</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@obfc.org.ls</span>
+                    </div>
+                </div>
+
+                <!-- Column 3: Social Channels -->
+                <div class="footer-col">
+                    <h5>Follow Us</h5>
+                    <p>Stay connected with OBFC for the latest updates on business services.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Quick Links -->
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                        <li><a href="https://services.businessregistrations.gov.ls/">Login / Register</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/privacy/">Privacy Policy</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Implemented by -->
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <a href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/742ddaa6ec00aadee1b93dffeefc513e3c77473c.png" alt="World Bank">
+                </a>
+                <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/fd2d79a17613c98a31e05becdb641ca8c82159b4.png" alt="UNCTAD">
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Generated: February 2026
             </div>
         </div>
-    </div>
+    </footer>
 
-    <p>The system displays the total cost in <strong>Lesotho Loti (LSL)</strong>. At current exchange rates, LSL 1 = ZAR 1 (the Loti is pegged to the South African Rand).</p>
-
-    <h3>Payment methods</h3>
-
-    <div class="browser-mockup">
-        <div class="browser-chrome">
-            <div class="browser-dots">
-                <span class="dot-red"></span>
-                <span class="dot-yellow"></span>
-                <span class="dot-green"></span>
-            </div>
-            <div class="browser-url"><span class="lock">&#128274;</span> businessregistrations.gov.ls/service/external-company/payment</div>
-        </div>
-        <div class="browser-body">
-            <div class="mock-section-title">Payment</div>
-            <p style="font-size:14px; color:var(--text-secondary); margin-bottom:14px;">Total to pay: <strong style="color:var(--gov-blue); font-size:18px;">LSL 600.00</strong></p>
-            <div class="mock-section-title" style="font-size:14px;">Select payment method:</div>
-            <div class="mock-checkbox-row" style="margin:10px 0;">
-                <span class="mock-checkbox checked"></span>
-                <strong>Online payment</strong> &mdash; Pay via mobile money or bank card
-            </div>
-            <div class="mock-checkbox-row" style="margin:10px 0;">
-                <span class="mock-checkbox"></span>
-                <strong>Cash payment</strong> &mdash; Pay at the Companies Registry counter
-            </div>
-            <div style="margin-top:16px;">
-                <span class="mock-btn mock-btn-primary">Proceed to payment</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="info-box note">
-        <div class="info-box-title">Note on fees</div>
-        The Name Reservation fee (<code>price_nameReservationnameReservation</code>) is included in the total. The system calculates and displays the total in LSL automatically. Fees are subject to change; always confirm the amount shown on screen.
-    </div>
-
-    <!-- VALIDATION AND SUBMISSION -->
-    <h2 id="submit">8. Validating and Submitting</h2>
-
-    <h3>Step 8.1 &mdash; Validate your form</h3>
-    <p>Before submitting, click the <strong>"Validate the form"</strong> button. The system will check that all required fields are filled in and all mandatory documents are uploaded.</p>
-
-    <div class="browser-mockup">
-        <div class="browser-chrome">
-            <div class="browser-dots">
-                <span class="dot-red"></span>
-                <span class="dot-yellow"></span>
-                <span class="dot-green"></span>
-            </div>
-            <div class="browser-url"><span class="lock">&#128274;</span> businessregistrations.gov.ls/service/external-company/review</div>
-        </div>
-        <div class="browser-body">
-            <div class="mock-section-title">Review and Submit</div>
-            <p style="font-size:14px; color:var(--text-secondary); margin-bottom:14px;">Please review all information before submitting.</p>
-            <div style="display:flex; gap:12px; margin-top:16px;">
-                <span class="mock-btn mock-btn-outline">Validate the form</span>
-                <span class="mock-btn mock-btn-success">Validate and send</span>
-            </div>
-            <p style="font-size:12px; color:#888; margin-top:12px;">By submitting, you confirm that all information provided is accurate and complete.</p>
-        </div>
-    </div>
-
-    <p>If validation fails, the system will highlight the fields that need attention in red. Correct any errors and validate again.</p>
-
-    <h3>Step 8.2 &mdash; Submit the application</h3>
-    <p>Once validation passes, click <strong>"Validate and send"</strong> to submit your application. You will receive:</p>
-    <ul>
-        <li>A <strong>file number</strong> (reference number) for tracking your application</li>
-        <li>A <strong>confirmation email</strong> at your registered email address</li>
-        <li>A <strong>QR code</strong> that links to your application status</li>
-    </ul>
-
-    <div class="info-box important">
-        <div class="info-box-title">After submission</div>
-        Once submitted, you cannot modify the application. If you need to make changes, you will need to contact the Companies Registry directly. Keep your file number safe &mdash; you will need it for all follow-up enquiries.
-    </div>
-
-    <!-- WORKFLOW -->
-    <h2 id="workflow">9. What Happens After Submission</h2>
-    <p>After you submit your application, it enters the review workflow at the Companies Registry. Here is what to expect:</p>
-
-    <table class="workflow-table">
-        <thead>
-            <tr>
-                <th>Stage</th>
-                <th>Who handles it</th>
-                <th>What happens</th>
-                <th>Estimated time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>1. Submission received</strong></td>
-                <td>System (automatic)</td>
-                <td>Your application is logged and assigned a file number. You receive a confirmation email and receipt (if paid online).</td>
-                <td>Immediate</td>
-            </tr>
-            <tr>
-                <td><strong>2. Name availability check</strong></td>
-                <td>Registrar's Office</td>
-                <td>An officer checks the proposed name against the existing register of companies in Lesotho to ensure it is unique and does not conflict with existing names.</td>
-                <td>1&ndash;2 business days</td>
-            </tr>
-            <tr>
-                <td><strong>3. Document review</strong></td>
-                <td>Registrar's Office</td>
-                <td>All uploaded documents are reviewed for completeness, authenticity, and compliance with the Companies Act 2011.</td>
-                <td>2&ndash;5 business days</td>
-            </tr>
-            <tr>
-                <td><strong>4. Approval or query</strong></td>
-                <td>Registrar</td>
-                <td>If everything is in order, the application is approved. If there are issues, you will receive a query notification via email with details of what needs correction.</td>
-                <td>1&ndash;3 business days</td>
-            </tr>
-            <tr>
-                <td><strong>5. Certificate issued</strong></td>
-                <td>Registrar's Office</td>
-                <td>Upon approval, a Certificate of Registration for the external company is generated and made available for download from the portal.</td>
-                <td>1 business day</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="info-box tip">
-        <div class="info-box-title">Track your application</div>
-        Log in to <strong>businessregistrations.gov.ls</strong> at any time to check the status of your application. You can also use the QR code provided at submission to access your file directly.
-    </div>
-
-    <h3>If your application is sent back</h3>
-    <p>If the Registrar's Office sends your application back for corrections, you will receive an email notification explaining what needs to be amended. Log in to the portal, make the required changes, and resubmit. Common reasons for queries include:</p>
-    <ul>
-        <li>Proposed name is too similar to an existing registered company</li>
-        <li>Documents are unclear, expired, or missing certifications</li>
-        <li>Incomplete director or shareholder information</li>
-        <li>Local representative details are missing or incomplete</li>
-    </ul>
-
-    <!-- FAQ -->
-    <h2 id="faq">10. Frequently Asked Questions</h2>
-
-    <div class="faq-item open">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            What is an external company under Lesotho law?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            An external company is any company that was incorporated or registered outside of Lesotho but intends to carry on business activities within the Kingdom. Under the Companies Act 2011, such companies must register with the Registrar of Companies before commencing operations. This applies whether the company is opening a branch office, a subsidiary, or simply conducting regular business transactions in Lesotho.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            How long does the registration process take?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            The typical turnaround time is <strong>5 to 10 business days</strong> from submission to certificate issuance, assuming all documents are in order and the name is available. If corrections are required, the timeline will be extended depending on how quickly you respond to queries.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Can I use the same company name as in my home country?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            You may propose the same name, but it must not conflict with an existing company already registered in Lesotho. It is common practice to add "(Lesotho)" to distinguish the local registration. For example, if your South African company is "Matla Construction (Pty) Ltd", you might register as "Matla Construction (Lesotho) (Pty) Ltd" in Lesotho. The Registrar will advise if the name is available during the name reservation step.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            What is the role of the local representative?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            The local representative is a person resident in Lesotho who is authorised to accept service of legal documents and official notices on behalf of the external company. This person must have a physical address in Lesotho (not a P.O. Box). They may be a director, lawyer, accountant, or any other person appointed by the company. This requirement ensures that the Lesotho authorities can communicate with the company through a local point of contact.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            I am a South African company &mdash; do I need an apostille on my documents?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            South Africa is a signatory to the Hague Apostille Convention, so an apostille is the preferred form of authentication. You can obtain an apostille from the South African Department of International Relations and Cooperation (DIRCO). Alternatively, you may have your documents certified by the South African High Commission in Maseru. Documents certified by a South African notary public are also generally accepted.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Can I save my application as a draft and finish later?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            Yes. The eRegistrations platform automatically saves your progress. When you log back in, go to your dashboard and look for applications with status <strong>"Draft"</strong>. Click on it to continue where you left off. Your draft will be stored until you submit or delete it.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            How do I pay if I do not have online payment options?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            You can select the <strong>"Cash payment"</strong> option during the payment step. The system will generate a payment reference. Take this reference to the Companies Registry office at the Ministry of Trade, Industry and Business Development in Maseru. Pay the fee at the counter and present the receipt. Your application will be processed once payment is confirmed. Note: You may also pay through Mpesa or EcoCash mobile money if those payment providers are available on the platform.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            What happens after I receive my external company registration certificate?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            After receiving your registration certificate, you should:
-            <ul style="margin:8px 0 0 16px;">
-                <li>Apply for a <strong>Tax Identification Number (TIN)</strong> from the Lesotho Revenue Authority (LRA)</li>
-                <li>Obtain any <strong>trade licences</strong> required for your specific business activity from the relevant district council</li>
-                <li>Register for <strong>VAT</strong> if your turnover exceeds the threshold</li>
-                <li>Open a <strong>local bank account</strong> in Lesotho (Standard Lesotho Bank, Nedbank Lesotho, or First National Bank Lesotho)</li>
-                <li>Comply with annual filing obligations, including filing annual returns with the Companies Registry</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            What if my application is rejected?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            If your application is rejected, you will receive a notification explaining the reason. Common reasons include: the proposed name is reserved or identical to an existing company, the documents are not properly certified, or the company is not in good standing in its home country. You can correct the issues and submit a new application. The name reservation fee may need to be paid again if the original reservation expired.
-        </div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-question" onclick="this.parentElement.classList.toggle('open')">
-            Is the Lesotho Loti the same value as the South African Rand?
-            <span class="faq-toggle">+</span>
-        </div>
-        <div class="faq-answer">
-            Yes. The Lesotho Loti (LSL) is pegged at par to the South African Rand (ZAR) under the Common Monetary Area agreement. 1 LSL = 1 ZAR. Both currencies are legal tender in Lesotho, so you can pay in either Maloti or Rand at the same value.
-        </div>
-    </div>
-
-    <!-- CONTACT -->
-    <h2 id="contact">11. Contact and Support</h2>
-
-    <table class="workflow-table">
-        <thead>
-            <tr>
-                <th>Contact</th>
-                <th>Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>Companies Registry</strong></td>
-                <td>Ministry of Trade, Industry and Business Development<br>
-                    Ground Floor, Accountant General Building<br>
-                    Kingsway Road, Maseru 100, Lesotho</td>
-            </tr>
-            <tr>
-                <td><strong>Online Portal</strong></td>
-                <td><a href="https://businessregistrations.gov.ls" style="color:var(--gov-blue);">businessregistrations.gov.ls</a></td>
-            </tr>
-            <tr>
-                <td><strong>Office Hours</strong></td>
-                <td>Monday to Friday: 08:00 &ndash; 16:30<br>Closed on weekends and public holidays</td>
-            </tr>
-            <tr>
-                <td><strong>Technical Support</strong></td>
-                <td>For technical issues with the portal, use the support link on the website or contact the IT helpdesk</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="info-box note">
-        <div class="info-box-title">Khotso, Pula, Nala</div>
-        The Government of Lesotho is committed to making business registration accessible and transparent for all investors. This online service reduces the need for in-person visits and helps you start your business operations in Lesotho faster.
-    </div>
-
-</main>
-
-<!-- SIDEBAR -->
-<aside class="sidebar">
-
-    <div class="sidebar-card">
-        <h4>Quick Navigation</h4>
-        <nav class="quick-nav">
-            <a href="#overview">1. Overview</a>
-            <a href="#prerequisites">2. Before You Begin</a>
-            <a href="#account">3. Creating Your Account</a>
-            <a href="#start-application">4. Starting the Application</a>
-            <a href="#form">5. Filling the Form</a>
-            <a href="#documents">6. Required Documents</a>
-            <a href="#payment">7. Fees and Payment</a>
-            <a href="#submit">8. Validate and Submit</a>
-            <a href="#workflow">9. After Submission</a>
-            <a href="#faq">10. FAQ</a>
-            <a href="#contact">11. Contact</a>
-        </nav>
-    </div>
-
-    <div class="sidebar-card">
-        <h4>Service Summary</h4>
-        <ul>
-            <li><strong>Service:</strong> Register an External Company</li>
-            <li><strong>Registration:</strong> Name Reservation</li>
-            <li><strong>Portal:</strong> businessregistrations.gov.ls</li>
-            <li><strong>Process:</strong> 100% online</li>
-            <li><strong>Currency:</strong> LSL (Lesotho Loti)</li>
-        </ul>
-    </div>
-
-    <div class="sidebar-card">
-        <h4>Estimated Costs</h4>
-        <ul>
-            <li>Name Reservation: <strong>LSL 100</strong></li>
-            <li>Registration Fee: <strong>LSL 500</strong></li>
-            <li>Total: <strong>LSL 600</strong></li>
-        </ul>
-        <p style="font-size:12px; margin-top:8px; color:#888;">Fees subject to change. Confirm on portal.</p>
-    </div>
-
-    <div class="sidebar-card">
-        <h4>Estimated Timeline</h4>
-        <ul>
-            <li>Form completion: <strong>30&ndash;45 min</strong></li>
-            <li>Name check: <strong>1&ndash;2 days</strong></li>
-            <li>Document review: <strong>2&ndash;5 days</strong></li>
-            <li>Certificate: <strong>1 day</strong></li>
-        </ul>
-        <p style="font-size:12px; margin-top:8px; color:#888;">Total: approximately 5&ndash;10 business days</p>
-    </div>
-
-    <div class="sidebar-card">
-        <h4>Document Checklist</h4>
-        <ul>
-            <li>&#9744; Certificate of Incorporation</li>
-            <li>&#9744; Memorandum &amp; Articles</li>
-            <li>&#9744; Board Resolution</li>
-            <li>&#9744; Directors' IDs / Passports</li>
-            <li>&#9744; Lesotho Address Proof</li>
-            <li>&#9744; Good Standing Certificate</li>
-            <li>&#9744; Power of Attorney (if applicable)</li>
-        </ul>
-    </div>
-
-    <div class="sidebar-card" style="background:var(--gov-blue); color:white; border:none;">
-        <h4 style="color:white; border-bottom-color:rgba(255,255,255,0.3);">Need Help?</h4>
-        <p style="color:rgba(255,255,255,0.9);">Visit the Companies Registry at the Ministry of Trade in Maseru, or use the online support portal.</p>
-        <p style="margin-top:10px;">
-            <a href="https://businessregistrations.gov.ls" style="color:white; font-weight:600;">Go to Portal &rarr;</a>
-        </p>
-    </div>
-
-</aside>
-
-</div>
-
-<!-- FOOTER -->
-<footer class="gov-footer">
-    <div class="gov-footer-inner">
-        <div>
-            <strong>Kingdom of Lesotho</strong><br>
-            Ministry of Trade, Industry and Business Development<br>
-            Companies Registry &mdash; Maseru
-        </div>
-        <div>
-            <strong>Online Services</strong><br>
-            <a href="https://businessregistrations.gov.ls">businessregistrations.gov.ls</a><br>
-            Powered by UNCTAD eRegistrations
-        </div>
-        <div>
-            <strong>Last updated:</strong> February 2026<br>
-            <strong>Service ID:</strong> 2c9280859173da120191755230960abb
-        </div>
-    </div>
-</footer>
-
-<script>
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offset = 80;
-                const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top: y, behavior: 'smooth' });
-            }
-        });
-    });
-</script>
+    <!-- ============================================================
+         SCRIPTS
+         ============================================================ -->
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>

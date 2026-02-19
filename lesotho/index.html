@@ -1,1375 +1,1099 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lesotho Business Registration — Citizen User Manuals</title>
-  <meta name="description" content="Step-by-step guides for every service on businessregistrations.gov.ls — powered by UNCTAD eRegistrations">
-  <style>
-    /* ===== CSS RESET & BASE ===== */
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --blue-dark: #003580;
-      --blue-mid: #00509E;
-      --blue-light: #E8F0FE;
-      --blue-accent: #1A6FEF;
-      --green-ls: #009543;
-      --green-light: #E6F7ED;
-      --black-ls: #1A1A2E;
-      --white: #FFFFFF;
-      --gray-50: #F8FAFC;
-      --gray-100: #F1F5F9;
-      --gray-200: #E2E8F0;
-      --gray-300: #CBD5E1;
-      --gray-400: #94A3B8;
-      --gray-500: #64748B;
-      --gray-600: #475569;
-      --gray-700: #334155;
-      --gray-800: #1E293B;
-      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --transition: 0.2s ease;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: var(--gray-50);
-      color: var(--gray-800);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ===== FLAG STRIPE BANNER ===== */
-    .flag-stripe {
-      display: flex;
-      height: 6px;
-      width: 100%;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .flag-stripe span {
-      flex: 1;
-    }
-
-    .flag-stripe .stripe-blue { background: var(--blue-dark); }
-    .flag-stripe .stripe-white { background: var(--white); }
-    .flag-stripe .stripe-green { background: var(--green-ls); }
-    .flag-stripe .stripe-black { background: var(--black-ls); }
-
-    /* ===== HEADER ===== */
-    .site-header {
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 50%, #003068 100%);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .site-header::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .site-header::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      left: -10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(0,149,67,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem 2.5rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .header-top {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .crest-container {
-      width: 72px;
-      height: 72px;
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .crest-container .crest-icon {
-      font-size: 2.2rem;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-    }
-
-    .header-titles {
-      flex: 1;
-    }
-
-    .header-titles .govt-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
-      opacity: 0.8;
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .header-titles .dept-name {
-      font-size: 1.15rem;
-      font-weight: 600;
-      opacity: 0.95;
-    }
-
-    .hero-section {
-      text-align: center;
-      padding: 1rem 0 0.5rem;
-    }
-
-    .hero-section h1 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      line-height: 1.2;
-      margin-bottom: 0.75rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    }
-
-    .hero-section h1 .accent {
-      color: #7DD3A8;
-    }
-
-    .hero-section .subtitle {
-      font-size: 1.15rem;
-      opacity: 0.85;
-      max-width: 600px;
-      margin: 0 auto;
-      font-weight: 400;
-      line-height: 1.5;
-    }
-
-    .hero-section .subtitle a {
-      color: #7DD3A8;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(125, 211, 168, 0.4);
-    }
-
-    .hero-section .subtitle a:hover {
-      border-bottom-color: #7DD3A8;
-    }
-
-    .stats-bar {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-item .stat-number {
-      font-size: 1.6rem;
-      font-weight: 800;
-      display: block;
-      line-height: 1;
-    }
-
-    .stat-item .stat-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      opacity: 0.7;
-      margin-top: 0.25rem;
-    }
-
-    /* ===== SEARCH BAR ===== */
-    .search-section {
-      max-width: 1200px;
-      margin: -1.5rem auto 0;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 10;
-    }
-
-    .search-wrapper {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-xl);
-      padding: 0.25rem;
-      display: flex;
-      align-items: center;
-      border: 2px solid transparent;
-      transition: border-color var(--transition);
-    }
-
-    .search-wrapper:focus-within {
-      border-color: var(--blue-accent);
-      box-shadow: var(--shadow-xl), 0 0 0 3px rgba(26, 111, 239, 0.1);
-    }
-
-    .search-icon {
-      padding: 0.75rem 0.5rem 0.75rem 1.25rem;
-      color: var(--gray-400);
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    .search-input {
-      flex: 1;
-      border: none;
-      outline: none;
-      font-size: 1.05rem;
-      padding: 0.85rem 0.5rem;
-      background: transparent;
-      color: var(--gray-800);
-    }
-
-    .search-input::placeholder {
-      color: var(--gray-400);
-    }
-
-    .search-clear {
-      background: none;
-      border: none;
-      color: var(--gray-400);
-      cursor: pointer;
-      padding: 0.75rem 1.25rem;
-      font-size: 1.1rem;
-      display: none;
-      transition: color var(--transition);
-    }
-
-    .search-clear:hover {
-      color: var(--gray-600);
-    }
-
-    .search-clear.visible {
-      display: block;
-    }
-
-    .search-count {
-      padding: 0.5rem 1rem;
-      font-size: 0.8rem;
-      color: var(--gray-500);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-
-    .no-results {
-      text-align: center;
-      padding: 4rem 2rem;
-      display: none;
-    }
-
-    .no-results.visible {
-      display: block;
-    }
-
-    .no-results .no-results-icon {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      opacity: 0.5;
-    }
-
-    .no-results h3 {
-      color: var(--gray-600);
-      font-size: 1.2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .no-results p {
-      color: var(--gray-400);
-      font-size: 0.95rem;
-    }
-
-    /* ===== MAIN CONTENT ===== */
-    .main-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2.5rem 2rem 4rem;
-    }
-
-    /* ===== CATEGORY SECTIONS ===== */
-    .category-section {
-      margin-bottom: 3rem;
-    }
-
-    .category-section.hidden {
-      display: none;
-    }
-
-    .category-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 2px solid var(--gray-200);
-    }
-
-    .category-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .category-header h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--gray-800);
-      flex: 1;
-    }
-
-    .category-header .category-count {
-      font-size: 0.8rem;
-      color: var(--gray-400);
-      font-weight: 500;
-      background: var(--gray-100);
-      padding: 0.2rem 0.65rem;
-      border-radius: 999px;
-    }
-
-    /* Category color themes */
-    .cat-getting-started .category-icon { background: #EDE9FE; color: #7C3AED; }
-    .cat-getting-started .category-header { border-bottom-color: #DDD6FE; }
-
-    .cat-business .category-icon { background: #DBEAFE; color: var(--blue-dark); }
-    .cat-business .category-header { border-bottom-color: #BFDBFE; }
-
-    .cat-company .category-icon { background: var(--green-light); color: var(--green-ls); }
-    .cat-company .category-header { border-bottom-color: #BBF7D0; }
-
-    .cat-licensing .category-icon { background: #FEF3C7; color: #D97706; }
-    .cat-licensing .category-header { border-bottom-color: #FDE68A; }
-
-    .cat-corporate .category-icon { background: #FFE4E6; color: #E11D48; }
-    .cat-corporate .category-header { border-bottom-color: #FECDD3; }
-
-    /* ===== CARD GRID ===== */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-    }
-
-    /* ===== SERVICE CARD ===== */
-    .service-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--gray-200);
-      transition: all var(--transition);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: var(--gray-200);
-      transition: background var(--transition);
-    }
-
-    .service-card:hover {
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-2px);
-      border-color: var(--gray-300);
-    }
-
-    .service-card.hidden {
-      display: none;
-    }
-
-    /* Card accent colors per category */
-    .cat-getting-started .service-card:hover::before { background: #7C3AED; }
-    .cat-business .service-card:hover::before { background: var(--blue-dark); }
-    .cat-company .service-card:hover::before { background: var(--green-ls); }
-    .cat-licensing .service-card:hover::before { background: #D97706; }
-    .cat-corporate .service-card:hover::before { background: #E11D48; }
-
-    .card-icon {
-      font-size: 2rem;
-      margin-bottom: 0.75rem;
-      line-height: 1;
-    }
-
-    .card-number {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--gray-300);
-      background: var(--gray-50);
-      padding: 0.15rem 0.5rem;
-      border-radius: 999px;
-    }
-
-    .card-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--gray-800);
-      margin-bottom: 0.4rem;
-      line-height: 1.3;
-    }
-
-    .card-description {
-      font-size: 0.88rem;
-      color: var(--gray-500);
-      line-height: 1.5;
-      flex: 1;
-      margin-bottom: 1rem;
-    }
-
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.88rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all var(--transition);
-      padding: 0.5rem 1rem;
-      border-radius: var(--radius-sm);
-      align-self: flex-start;
-    }
-
-    .card-link .arrow {
-      transition: transform var(--transition);
-    }
-
-    .card-link:hover .arrow {
-      transform: translateX(3px);
-    }
-
-    /* Link colors per category */
-    .cat-getting-started .card-link {
-      color: #7C3AED;
-      background: #F5F3FF;
-    }
-    .cat-getting-started .card-link:hover {
-      background: #EDE9FE;
-    }
-
-    .cat-business .card-link {
-      color: var(--blue-dark);
-      background: var(--blue-light);
-    }
-    .cat-business .card-link:hover {
-      background: #D5E4FA;
-    }
-
-    .cat-company .card-link {
-      color: #047857;
-      background: var(--green-light);
-    }
-    .cat-company .card-link:hover {
-      background: #D1FAE5;
-    }
-
-    .cat-licensing .card-link {
-      color: #B45309;
-      background: #FFFBEB;
-    }
-    .cat-licensing .card-link:hover {
-      background: #FEF3C7;
-    }
-
-    .cat-corporate .card-link {
-      color: #BE123C;
-      background: #FFF1F2;
-    }
-    .cat-corporate .card-link:hover {
-      background: #FFE4E6;
-    }
-
-    /* ===== QUICK LINKS BAR ===== */
-    .quick-links {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 1.5rem 2rem;
-      max-width: 1200px;
-      margin: 1rem auto 0;
-    }
-
-    .quick-link {
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: all var(--transition);
-      border: 1px solid var(--gray-200);
-      background: var(--white);
-      color: var(--gray-600);
-    }
-
-    .quick-link:hover {
-      background: var(--blue-dark);
-      color: var(--white);
-      border-color: var(--blue-dark);
-    }
-
-    /* ===== FOOTER ===== */
-    .site-footer {
-      background: var(--gray-800);
-      color: var(--gray-400);
-      padding: 2.5rem 2rem;
-      text-align: center;
-    }
-
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-logo .un-badge {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--gray-300);
-    }
-
-    .footer-main-text {
-      font-size: 0.9rem;
-      color: var(--gray-300);
-      margin-bottom: 0.25rem;
-    }
-
-    .footer-sub-text {
-      font-size: 0.8rem;
-    }
-
-    .footer-links {
-      margin-top: 1.25rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--gray-400);
-      text-decoration: none;
-      font-size: 0.8rem;
-      transition: color var(--transition);
-    }
-
-    .footer-links a:hover {
-      color: var(--white);
-    }
-
-    /* ===== SCROLL TO TOP ===== */
-    .scroll-top {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--blue-dark);
-      color: var(--white);
-      border: none;
-      cursor: pointer;
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all var(--transition);
-      z-index: 50;
-    }
-
-    .scroll-top.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .scroll-top:hover {
-      background: var(--blue-mid);
-      transform: translateY(-2px);
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 1024px) {
-      .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .header-content {
-        padding: 2rem 1.5rem 2rem;
-      }
-
-      .header-top {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .hero-section h1 {
-        font-size: 1.8rem;
-      }
-
-      .hero-section .subtitle {
-        font-size: 1rem;
-      }
-
-      .stats-bar {
-        gap: 1.5rem;
-      }
-
-      .stat-item .stat-number {
-        font-size: 1.3rem;
-      }
-
-      .search-section {
-        padding: 0 1rem;
-      }
-
-      .main-content {
-        padding: 2rem 1rem 3rem;
-      }
-
-      .card-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      .service-card {
-        padding: 1.25rem;
-      }
-
-      .quick-links {
-        padding: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-section h1 {
-        font-size: 1.5rem;
-      }
-
-      .stats-bar {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .search-input {
-        font-size: 0.95rem;
-      }
-    }
-
-    /* ===== PRINT STYLES ===== */
-    @media print {
-      .flag-stripe,
-      .search-section,
-      .quick-links,
-      .scroll-top,
-      .card-link .arrow {
-        display: none !important;
-      }
-
-      body {
-        background: white;
-        color: black;
-        font-size: 11pt;
-      }
-
-      .site-header {
-        background: none !important;
-        color: black;
-        border-bottom: 3px solid var(--blue-dark);
-        padding-bottom: 1rem;
-      }
-
-      .site-header::before,
-      .site-header::after {
-        display: none;
-      }
-
-      .hero-section h1 {
-        color: var(--blue-dark);
-        font-size: 1.6rem;
-      }
-
-      .hero-section .subtitle {
-        color: var(--gray-600);
-      }
-
-      .stats-bar {
-        border-top-color: var(--gray-300);
-      }
-
-      .stat-item .stat-number {
-        color: var(--blue-dark);
-      }
-
-      .stat-item .stat-label {
-        color: var(--gray-600);
-      }
-
-      .header-titles .govt-label,
-      .header-titles .dept-name {
-        color: var(--gray-700);
-      }
-
-      .crest-container {
-        background: var(--gray-100);
-        border-color: var(--gray-300);
-      }
-
-      .main-content {
-        padding: 1rem 0;
-      }
-
-      .card-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
-      }
-
-      .service-card {
-        box-shadow: none;
-        border: 1px solid var(--gray-300);
-        page-break-inside: avoid;
-        padding: 1rem;
-      }
-
-      .service-card:hover {
-        transform: none;
-        box-shadow: none;
-      }
-
-      .card-link {
-        color: var(--blue-dark) !important;
-        background: none !important;
-        padding: 0;
-        font-size: 0.8rem;
-      }
-
-      .card-link::after {
-        content: ' (' attr(href) ')';
-        font-weight: 400;
-        font-size: 0.7rem;
-        color: var(--gray-500);
-      }
-
-      .category-section {
-        page-break-inside: avoid;
-        margin-bottom: 1.5rem;
-      }
-
-      .site-footer {
-        background: none;
-        color: var(--gray-600);
-        border-top: 1px solid var(--gray-300);
-        padding: 1rem 0;
-      }
-
-      .footer-links {
-        display: none;
-      }
-
-      .footer-main-text {
-        color: var(--gray-600);
-      }
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .category-section {
-      animation: fadeInUp 0.5s ease forwards;
-    }
-
-    .category-section:nth-child(2) { animation-delay: 0.1s; }
-    .category-section:nth-child(3) { animation-delay: 0.15s; }
-    .category-section:nth-child(4) { animation-delay: 0.2s; }
-    .category-section:nth-child(5) { animation-delay: 0.25s; }
-
-    /* ===== COMING SOON CARDS ===== */
-    .service-card.coming-soon {
-      opacity: 0.65;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    .service-card.coming-soon:hover {
-      transform: none;
-      box-shadow: var(--shadow-sm);
-      border-color: var(--gray-200);
-    }
-
-    .service-card.coming-soon::after {
-      content: 'COMING SOON';
-      position: absolute;
-      top: 18px;
-      right: -34px;
-      background: linear-gradient(135deg, #E11D48, #BE123C);
-      color: var(--white);
-      font-size: 0.6rem;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      padding: 0.3rem 2.5rem;
-      transform: rotate(45deg);
-      z-index: 2;
-      box-shadow: 0 2px 6px rgba(225, 29, 72, 0.3);
-    }
-
-    .service-card.coming-soon .card-link {
-      color: var(--gray-400);
-      background: var(--gray-100);
-      cursor: default;
-    }
-
-    .service-card.coming-soon .card-link:hover {
-      background: var(--gray-100);
-    }
-
-    .service-card.coming-soon .card-link .arrow {
-      display: none;
-    }
-
-    /* Stats coming-soon accent */
-    .stat-coming-soon {
-      font-size: 0.75rem;
-      opacity: 0.7;
-      display: block;
-      margin-top: 0.15rem;
-    }
-
-    @media print {
-      .service-card.coming-soon::after {
-        background: var(--gray-400);
-        box-shadow: none;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Manuals | OBFC Lesotho</title>
+    <meta name="description" content="Complete user manuals for all OBFC eRegistrations services in the Kingdom of Lesotho.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           LESOTHO eREGISTRATIONS — SERVICE MANUALS CATALOG
+           Design system: https://lesotho.eregistrations.dev/
+           ============================================================ */
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: #4CAF74;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #3d9461;
+            text-decoration: underline;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1F2128;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+
+        p { margin-bottom: 1em; }
+
+        strong {
+            color: #1F2128;
+            font-weight: 600;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: #2B2A65;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .header-logos img {
+            height: 52px;
+            width: auto;
+        }
+
+        .header-logos .coat-of-arms {
+            height: 56px;
+        }
+
+        .header-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.25);
+            flex-shrink: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .header-nav a {
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 400;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
+
+        .header-nav a:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        .btn-login {
+            background: #4CAF74;
+            color: #FFFFFF !important;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            transition: background 0.2s ease;
+        }
+
+        .btn-login:hover {
+            background: #3d9461;
+            text-decoration: none !important;
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%);
+            color: #FFFFFF;
+            padding: 64px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            font-size: 42px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 0;
+            max-width: 620px;
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+        }
+
+        .hero-icon-circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: rgba(76,175,116,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-circle svg {
+            width: 80px;
+            height: 80px;
+            stroke: #4CAF74;
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        /* ============================================================
+           SEARCH / FILTER BAR
+           ============================================================ */
+        .search-section {
+            padding: 40px 0 0;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 560px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border: 2px solid #E0E0E0;
+            border-radius: 9999px;
+            padding: 6px 6px 6px 20px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .search-bar:focus-within {
+            border-color: #4CAF74;
+            box-shadow: 0 0 0 3px rgba(76,175,116,0.15);
+        }
+
+        .search-bar svg {
+            width: 20px;
+            height: 20px;
+            stroke: #999;
+            fill: none;
+            flex-shrink: 0;
+        }
+
+        .search-bar input {
+            flex: 1;
+            border: none;
+            outline: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #1F2128;
+            background: transparent;
+        }
+
+        .search-bar input::placeholder {
+            color: #999;
+        }
+
+        .search-count {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* ============================================================
+           CARD GRID
+           ============================================================ */
+        .catalog-section {
+            padding: 32px 0 64px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #1F2128;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            font-size: 15px;
+            color: #888;
+            margin-bottom: 28px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        /* --- Active Card --- */
+        .card {
+            background: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 28px 24px;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.25s ease, transform 0.2s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(76,175,116,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        .card h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1F2128;
+            line-height: 1.4;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #6B7280;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #4CAF74;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            text-decoration: none;
+            transition: background 0.2s ease;
+            align-self: flex-start;
+        }
+
+        .card-btn:hover {
+            background: #3d9461;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        /* --- Coming Soon Card --- */
+        .card.coming-soon {
+            background: #F5F5F5;
+            border-color: #E8E8E8;
+        }
+
+        .card.coming-soon:hover {
+            box-shadow: none;
+            transform: none;
+        }
+
+        .card.coming-soon .card-icon {
+            background: rgba(0,0,0,0.05);
+            filter: grayscale(1);
+            opacity: 0.5;
+        }
+
+        .card.coming-soon h4 {
+            color: #999;
+        }
+
+        .card.coming-soon p {
+            color: #AAA;
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            background: #E0E0E0;
+            color: #888;
+            padding: 4px 14px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 48px 24px;
+            color: #999;
+            font-size: 16px;
+        }
+
+        .no-results svg {
+            width: 48px;
+            height: 48px;
+            stroke: #CCC;
+            fill: none;
+            margin: 0 auto 16px;
+            display: block;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: #2B2A65;
+            color: rgba(255,255,255,0.8);
+            padding: 56px 0 0;
+            font-size: 15px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .footer-col h5 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.8);
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover {
+            color: #4CAF74;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-contact-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            stroke: #4CAF74;
+            fill: none;
+            margin-top: 2px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background: #4CAF74;
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: #FFFFFF;
+        }
+
+        .footer-implemented {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-implemented span {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .footer-implemented img {
+            height: 36px;
+            width: auto;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-implemented img:hover {
+            opacity: 1;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-description {
+                max-width: 100%;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                padding: 10px 16px;
+            }
+
+            .header-nav {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-logos img {
+                height: 36px;
+            }
+
+            .header-logos .coat-of-arms {
+                height: 40px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .footer-implemented {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .search-bar {
+                padding: 4px 4px 4px 16px;
+            }
+        }
+
+        /* ============================================================
+           PRINT STYLES
+           ============================================================ */
+        @media print {
+            .site-header,
+            .search-section,
+            .site-footer {
+                display: none;
+            }
+
+            .hero {
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .card {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #CCC;
+            }
+
+            .card-btn {
+                background: #4CAF74 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Flag Stripe -->
-  <div class="flag-stripe" role="presentation">
-    <span class="stripe-blue"></span>
-    <span class="stripe-white"></span>
-    <span class="stripe-green"></span>
-    <span class="stripe-black"></span>
-    <span class="stripe-green"></span>
-    <span class="stripe-white"></span>
-    <span class="stripe-blue"></span>
-  </div>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="header-content">
-      <div class="header-top">
-        <div class="crest-container">
-          <span class="crest-icon" aria-label="Lesotho national emblem">&#127987;</span>
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logos">
+                <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                </a>
+                <div class="header-divider"></div>
+                <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/7363eda357ebb1583ab4ce37d8e31141f937cf98.png" alt="Lesotho Coat of Arms" class="coat-of-arms">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <a href="https://lesotho.eregistrations.dev/about/">About</a>
+                <a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a>
+                <a href="https://services.businessregistrations.gov.ls/" class="btn-login">Login | Register</a>
+            </nav>
         </div>
-        <div class="header-titles">
-          <div class="govt-label">Kingdom of Lesotho</div>
-          <div class="dept-name">Ministry of Trade and Industry &mdash; Companies Registry</div>
+    </header>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">OBFC Lesotho</span>
+                    <h1>Service Manuals</h1>
+                    <p class="hero-description">Complete guides for all OBFC services. Step-by-step instructions to help you navigate business registration, licensing, and compliance in Lesotho.</p>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="4" width="34" height="46" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="22" y="14" width="34" height="46" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="30" y1="28" x2="48" y2="28" stroke-linecap="round"/>
+                            <line x1="30" y1="36" x2="48" y2="36" stroke-linecap="round"/>
+                            <line x1="30" y1="44" x2="42" y2="44" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="hero-section">
-        <h1>Lesotho Business Registration<br><span class="accent">Citizen User Manuals</span></h1>
-        <p class="subtitle">
-          Step-by-step guides for every service on
-          <a href="https://businessregistrations.gov.ls" target="_blank" rel="noopener">businessregistrations.gov.ls</a>
-        </p>
-        <div class="stats-bar">
-          <div class="stat-item">
-            <span class="stat-number">12</span>
-            <span class="stat-label">Manuals Available</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">5</span>
-            <span class="stat-label">Coming Soon</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">5</span>
-            <span class="stat-label">Categories</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Online</span>
-          </div>
+    </section>
+
+    <!-- ============================================================
+         SEARCH / FILTER
+         ============================================================ -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-bar" role="search">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search manuals... e.g. &quot;register company&quot;, &quot;renew licence&quot;" aria-label="Search service manuals" autocomplete="off">
+            </div>
+            <p class="search-count" id="searchCount">Showing all 12 manuals</p>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Search -->
-  <div class="search-section">
-    <div class="search-wrapper">
-      <span class="search-icon" aria-hidden="true">&#128270;</span>
-      <input
-        type="text"
-        class="search-input"
-        id="searchInput"
-        placeholder="Search services... e.g. &quot;register company&quot;, &quot;renew license&quot;, &quot;dissolution&quot;"
-        aria-label="Search services"
-        autocomplete="off"
-      >
-      <button class="search-clear" id="searchClear" aria-label="Clear search">&times;</button>
-      <span class="search-count" id="searchCount">12 services + 5 coming soon</span>
-    </div>
-  </div>
-
-  <!-- Quick Links -->
-  <nav class="quick-links" aria-label="Category navigation">
-    <a href="#getting-started" class="quick-link">Getting Started</a>
-    <a href="#business-registration" class="quick-link">Business Registration</a>
-    <a href="#company-registration" class="quick-link">Company Registration</a>
-    <a href="#licensing" class="quick-link">Licensing</a>
-    <a href="#corporate-actions" class="quick-link">Corporate Actions</a>
-  </nav>
-
-  <!-- No Results -->
-  <div class="no-results" id="noResults">
-    <div class="no-results-icon">&#128301;</div>
-    <h3>No services found</h3>
-    <p>Try a different search term or browse the categories below.</p>
-  </div>
-
-  <!-- Main Content -->
-  <main class="main-content">
-
-    <!-- ===== GETTING STARTED ===== -->
-    <section class="category-section cat-getting-started" id="getting-started" data-category="getting-started">
-      <div class="category-header">
-        <div class="category-icon">&#127919;</div>
-        <h2>Getting Started</h2>
-        <span class="category-count">2 guides</span>
-      </div>
-      <div class="card-grid">
-
-        <article class="service-card" data-title="My Dashboard">
-          <span class="card-number">#1</span>
-          <div class="card-icon">&#128202;</div>
-          <h3 class="card-title">My Dashboard</h3>
-          <p class="card-description">Navigate your citizen portal: view applications, track statuses, and manage your profile.</p>
-          <a href="my-dashboard/" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
-
-        <article class="service-card" data-title="Verify your identity">
-          <span class="card-number">#2</span>
-          <div class="card-icon">&#128100;</div>
-          <h3 class="card-title">Verify Your Identity</h3>
-          <p class="card-description">Complete the KYC verification process to unlock all business registration services.</p>
-          <a href="verify-identity.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
-
-      </div>
     </section>
 
-    <!-- ===== BUSINESS REGISTRATION ===== -->
-    <section class="category-section cat-business" id="business-registration" data-category="business-registration">
-      <div class="category-header">
-        <div class="category-icon">&#127978;</div>
-        <h2>Business Registration <span style="font-weight:400; font-size:0.85rem; color:var(--gray-500)">(Sole Proprietorship)</span></h2>
-        <span class="category-count">5 guides</span>
-      </div>
-      <div class="card-grid">
+    <!-- ============================================================
+         SERVICE CARDS
+         ============================================================ -->
+    <section class="catalog-section">
+        <div class="container">
 
-        <article class="service-card" data-title="Name reservation">
-          <span class="card-number">#3</span>
-          <div class="card-icon">&#128221;</div>
-          <h3 class="card-title">Name Reservation</h3>
-          <p class="card-description">Reserve a unique business name before registering your sole proprietorship.</p>
-          <a href="name-reservation.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+            <h2 class="section-title">Available Services</h2>
+            <p class="section-subtitle">Click any service to view its complete step-by-step user manual.</p>
 
-        <article class="service-card" data-title="Register a Business">
-          <span class="card-number">#4</span>
-          <div class="card-icon">&#128188;</div>
-          <h3 class="card-title">Register a Business</h3>
-          <p class="card-description">Submit your sole proprietorship registration application and required documents.</p>
-          <a href="register-business.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+            <div class="card-grid" id="cardGrid">
 
-        <article class="service-card" data-title="Update your business data">
-          <span class="card-number">#5</span>
-          <div class="card-icon">&#9999;&#65039;</div>
-          <h3 class="card-title">Update Your Business Data</h3>
-          <p class="card-description">Change your business name, address, activities, or other registered details.</p>
-          <a href="update-business-data.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+                <!-- 1. Register a Business -->
+                <div class="card" data-search="register a business register new business obfc single window sole proprietorship">
+                    <div class="card-icon">&#127970;</div>
+                    <h4>Register a Business</h4>
+                    <p>Register a new business in Lesotho through the OBFC single window.</p>
+                    <a href="register-business.html" class="card-btn">View Manual &rarr;</a>
+                </div>
 
-        <article class="service-card" data-title="Renew or close a business">
-          <span class="card-number">#6</span>
-          <div class="card-icon">&#128260;</div>
-          <h3 class="card-title">Renew or Close a Business</h3>
-          <p class="card-description">Renew your annual business registration or formally close your sole proprietorship.</p>
-          <a href="renew-close-business.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+                <!-- 2. Name Reservation -->
+                <div class="card" data-search="name reservation reserve company name incorporation">
+                    <div class="card-icon">&#128221;</div>
+                    <h4>Name Reservation</h4>
+                    <p>Reserve a company name before incorporation.</p>
+                    <a href="name-reservation.html" class="card-btn">View Manual &rarr;</a>
+                </div>
 
-        <article class="service-card" data-title="Delegate user rights">
-          <span class="card-number">#7</span>
-          <div class="card-icon">&#128101;</div>
-          <h3 class="card-title">Delegate User Rights</h3>
-          <p class="card-description">Grant another person access to manage your business registrations on your behalf.</p>
-          <a href="delegate-user-rights.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+                <!-- 3. Register a Company -->
+                <div class="card" data-search="register a company incorporate private public company incorporation memorandum">
+                    <div class="card-icon">&#127963;</div>
+                    <h4>Register a Company</h4>
+                    <p>Incorporate a private or public company.</p>
+                    <a href="register-company.html" class="card-btn">View Manual &rarr;</a>
+                </div>
 
-      </div>
+                <!-- 4. Register an External Company -->
+                <div class="card" data-search="register external company foreign company operate lesotho international">
+                    <div class="card-icon">&#127758;</div>
+                    <h4>Register an External Company</h4>
+                    <p>Register a foreign company to operate in Lesotho.</p>
+                    <a href="register-external-company.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 5. Verify Identity -->
+                <div class="card" data-search="verify identity verification business registration services kyc know your customer">
+                    <div class="card-icon">&#128100;</div>
+                    <h4>Verify Identity</h4>
+                    <p>Verify your identity for business registration services.</p>
+                    <a href="verify-identity.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 6. Update Business Data -->
+                <div class="card" data-search="update business data registered information change details address activities">
+                    <div class="card-icon">&#9998;</div>
+                    <h4>Update Business Data</h4>
+                    <p>Update your registered business information.</p>
+                    <a href="update-business-data.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 7. Renew or Close a Business -->
+                <div class="card" data-search="renew close business licences renew licence closure annual renewal">
+                    <div class="card-icon">&#128260;</div>
+                    <h4>Renew or Close a Business</h4>
+                    <p>Renew licences or close your business.</p>
+                    <a href="renew-close-business.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 8. Renew or Close a Licence -->
+                <div class="card" data-search="renew close licence specific licence renewal closure trading licence">
+                    <div class="card-icon">&#128196;</div>
+                    <h4>Renew or Close a Licence</h4>
+                    <p>Renew or close a specific licence.</p>
+                    <a href="renew-close-license.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 9. Annual Filing -->
+                <div class="card" data-search="annual filing submit company returns annual returns compliance financial statements">
+                    <div class="card-icon">&#128197;</div>
+                    <h4>Annual Filing</h4>
+                    <p>Submit your annual company returns.</p>
+                    <a href="annual-filing.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 10. Change Financial Year -->
+                <div class="card" data-search="change financial year end date company fiscal year accounting period">
+                    <div class="card-icon">&#128200;</div>
+                    <h4>Change Financial Year</h4>
+                    <p>Change your company's financial year end date.</p>
+                    <a href="change-financial-year.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 11. Delegate User Rights -->
+                <div class="card" data-search="delegate user rights account access another person permissions representative">
+                    <div class="card-icon">&#128101;</div>
+                    <h4>Delegate User Rights</h4>
+                    <p>Delegate account access to another person.</p>
+                    <a href="delegate-user-rights.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 12. My Dashboard -->
+                <div class="card" data-search="my dashboard navigate manage account dashboard overview portal profile applications">
+                    <div class="card-icon">&#128202;</div>
+                    <h4>My Dashboard</h4>
+                    <p>Navigate and manage your account dashboard.</p>
+                    <a href="my-dashboard.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- ========== Coming Soon ========== -->
+
+                <!-- CS 1. De-register a Company -->
+                <div class="card coming-soon" data-search="de-register company deregister remove strike off">
+                    <div class="card-icon">&#128683;</div>
+                    <h4>De-register a Company</h4>
+                    <p>Remove a company from the register.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- CS 2. Voluntary Dissolution -->
+                <div class="card coming-soon" data-search="voluntary dissolution dissolve wind up winding">
+                    <div class="card-icon">&#128465;</div>
+                    <h4>Voluntary Dissolution</h4>
+                    <p>Voluntarily dissolve and wind up a company.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- CS 3. Lodge a Merger Document -->
+                <div class="card coming-soon" data-search="lodge merger document merge companies amalgamation">
+                    <div class="card-icon">&#128279;</div>
+                    <h4>Lodge a Merger Document</h4>
+                    <p>Submit documents for a company merger.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- CS 4. Lodge a Conversion Document -->
+                <div class="card coming-soon" data-search="lodge conversion document convert company type">
+                    <div class="card-icon">&#128257;</div>
+                    <h4>Lodge a Conversion Document</h4>
+                    <p>Submit documents to convert a company type.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- CS 5. Appoint a Liquidator -->
+                <div class="card coming-soon" data-search="appoint liquidator liquidation winding up">
+                    <div class="card-icon">&#9878;</div>
+                    <h4>Appoint a Liquidator</h4>
+                    <p>Appoint a liquidator for company winding up.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- No Results message (hidden by default) -->
+                <div class="no-results" id="noResults" style="display: none;">
+                    <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                        <line x1="8" y1="8" x2="14" y2="14"/>
+                        <line x1="14" y1="8" x2="8" y2="14"/>
+                    </svg>
+                    <p>No manuals match your search. Try different keywords.</p>
+                </div>
+
+            </div>
+        </div>
     </section>
 
-    <!-- ===== COMPANY REGISTRATION ===== -->
-    <section class="category-section cat-company" id="company-registration" data-category="company-registration">
-      <div class="category-header">
-        <div class="category-icon">&#127970;</div>
-        <h2>Company Registration</h2>
-        <span class="category-count">4 guides</span>
-      </div>
-      <div class="card-grid">
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
 
-        <article class="service-card" data-title="Register a company">
-          <span class="card-number">#8</span>
-          <div class="card-icon">&#127963;&#65039;</div>
-          <h3 class="card-title">Register a Company</h3>
-          <p class="card-description">Incorporate a new local company: memorandum, directors, shares, and filing.</p>
-          <a href="register-company.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+                <!-- Column 1: Logo & About -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="https://lesotho.eregistrations.dev/_assets/v11/e8f8e0f4875113e3103aae78a6e2c99f11345f18.png" alt="OBFC Logo">
+                    </div>
+                    <p>One Business Facilitation Centre (OBFC) provides a single window for business registration and licensing services in the Kingdom of Lesotho.</p>
+                </div>
 
-        <article class="service-card" data-title="Register an external company">
-          <span class="card-number">#9</span>
-          <div class="card-icon">&#127758;</div>
-          <h3 class="card-title">Register an External Company</h3>
-          <p class="card-description">Register a foreign company to operate in Lesotho with the Companies Registry.</p>
-          <a href="register-external-company.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+                <!-- Column 2: Contact Details -->
+                <div class="footer-col">
+                    <h5>Contact Details</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>LNDC Centre, Block A<br>Kingsway Road, Maseru</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75l.72 3.59a1 1 0 0 1-.26.95L8.09 10.7a16 16 0 0 0 5.21 5.21l2.41-2.41a1 1 0 0 1 .95-.26l3.59.72a1 1 0 0 1 .75 1z"/></svg>
+                        <span>+266 2231 7454</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@obfc.org.ls</span>
+                    </div>
+                </div>
 
-        <article class="service-card" data-title="Annual filing">
-          <span class="card-number">#10</span>
-          <div class="card-icon">&#128197;</div>
-          <h3 class="card-title">Annual Filing</h3>
-          <p class="card-description">Submit your company's annual return and financial statements on time.</p>
-          <a href="annual-filing.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+                <!-- Column 3: Social Channels -->
+                <div class="footer-col">
+                    <h5>Follow Us</h5>
+                    <p>Stay connected with OBFC for the latest updates on business services.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
 
-        <article class="service-card" data-title="Change financial year">
-          <span class="card-number">#11</span>
-          <div class="card-icon">&#128198;</div>
-          <h3 class="card-title">Change Financial Year</h3>
-          <p class="card-description">Request a change to your company's financial year-end date with the registry.</p>
-          <a href="change-financial-year.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+                <!-- Column 4: Quick Links -->
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                        <li><a href="https://services.businessregistrations.gov.ls/">Login / Register</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/privacy/">Privacy Policy</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
 
-      </div>
-    </section>
+            </div>
 
-    <!-- ===== LICENSING ===== -->
-    <section class="category-section cat-licensing" id="licensing" data-category="licensing">
-      <div class="category-header">
-        <div class="category-icon">&#128203;</div>
-        <h2>Licensing</h2>
-        <span class="category-count">1 guide</span>
-      </div>
-      <div class="card-grid">
+            <!-- Implemented by -->
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <a href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/742ddaa6ec00aadee1b93dffeefc513e3c77473c.png" alt="World Bank">
+                </a>
+                <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/fd2d79a17613c98a31e05becdb641ca8c82159b4.png" alt="UNCTAD">
+                </a>
+            </div>
 
-        <article class="service-card" data-title="Renew or close a license">
-          <span class="card-number">#12</span>
-          <div class="card-icon">&#128196;</div>
-          <h3 class="card-title">Renew or Close a License</h3>
-          <p class="card-description">Renew your trading license annually or request closure when ceasing operations.</p>
-          <a href="renew-close-license.html" class="card-link">
-            Read Manual <span class="arrow">&rarr;</span>
-          </a>
-        </article>
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
-      </div>
-    </section>
+    <!-- ============================================================
+         SEARCH SCRIPT
+         ============================================================ -->
+    <script>
+        (function() {
+            var searchInput = document.getElementById('searchInput');
+            var cardGrid = document.getElementById('cardGrid');
+            var searchCount = document.getElementById('searchCount');
+            var noResults = document.getElementById('noResults');
 
-    <!-- ===== CORPORATE ACTIONS ===== -->
-    <section class="category-section cat-corporate" id="corporate-actions" data-category="corporate-actions">
-      <div class="category-header">
-        <div class="category-icon">&#9878;&#65039;</div>
-        <h2>Corporate Actions</h2>
-        <span class="category-count">5 guides &mdash; coming soon</span>
-      </div>
-      <div class="card-grid">
+            searchInput.addEventListener('input', function() {
+                var query = this.value.toLowerCase().trim();
+                var cards = cardGrid.querySelectorAll('.card');
+                var visibleCount = 0;
 
-        <article class="service-card coming-soon" data-title="Voluntary dissolution">
-          <span class="card-number">#13</span>
-          <div class="card-icon">&#128220;</div>
-          <h3 class="card-title">Voluntary Dissolution</h3>
-          <p class="card-description">Initiate the voluntary winding-up process and dissolve your company legally.</p>
-          <span class="card-link">
-            Coming Soon
-          </span>
-        </article>
+                cards.forEach(function(card) {
+                    if (card.id === 'noResults') return;
 
-        <article class="service-card coming-soon" data-title="Lodge merger document">
-          <span class="card-number">#14</span>
-          <div class="card-icon">&#129309;</div>
-          <h3 class="card-title">Lodge Merger Document</h3>
-          <p class="card-description">File the required merger documents when combining two or more companies.</p>
-          <span class="card-link">
-            Coming Soon
-          </span>
-        </article>
+                    var title = card.querySelector('h4');
+                    var desc = card.querySelector('p');
+                    var searchData = card.getAttribute('data-search') || '';
+                    var titleText = title ? title.textContent.toLowerCase() : '';
+                    var descText = desc ? desc.textContent.toLowerCase() : '';
+                    var combined = titleText + ' ' + descText + ' ' + searchData;
 
-        <article class="service-card coming-soon" data-title="Lodge conversion document">
-          <span class="card-number">#15</span>
-          <div class="card-icon">&#128259;</div>
-          <h3 class="card-title">Lodge Conversion Document</h3>
-          <p class="card-description">Convert your company type by lodging the official conversion documentation.</p>
-          <span class="card-link">
-            Coming Soon
-          </span>
-        </article>
+                    if (!query || combined.indexOf(query) !== -1) {
+                        card.style.display = '';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
 
-        <article class="service-card coming-soon" data-title="Appoint a liquidator">
-          <span class="card-number">#16</span>
-          <div class="card-icon">&#128084;</div>
-          <h3 class="card-title">Appoint a Liquidator</h3>
-          <p class="card-description">Formally appoint a liquidator to manage the winding-up of your company.</p>
-          <span class="card-link">
-            Coming Soon
-          </span>
-        </article>
+                if (visibleCount === 0) {
+                    noResults.style.display = '';
+                    searchCount.textContent = 'No results found';
+                } else {
+                    noResults.style.display = 'none';
+                    if (!query) {
+                        searchCount.textContent = 'Showing all 12 manuals';
+                    } else {
+                        searchCount.textContent = 'Showing ' + visibleCount + ' result' + (visibleCount === 1 ? '' : 's');
+                    }
+                }
+            });
 
-        <article class="service-card coming-soon" data-title="De-register a company">
-          <span class="card-number">#17</span>
-          <div class="card-icon">&#10060;</div>
-          <h3 class="card-title">De-register a Company</h3>
-          <p class="card-description">Remove your company from the register after completing all closure requirements.</p>
-          <span class="card-link">
-            Coming Soon
-          </span>
-        </article>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div class="footer-logo">
-        <span class="un-badge">UN</span>
-        <span style="color: var(--gray-300); font-weight: 600;">UNCTAD eRegistrations</span>
-      </div>
-      <p class="footer-main-text">
-        Generated by UNCTAD eRegistrations &bull; Last updated February 2026
-      </p>
-      <p class="footer-sub-text">
-        These manuals help citizens navigate online government services in the Kingdom of Lesotho.
-      </p>
-      <div class="footer-links">
-        <a href="https://businessregistrations.gov.ls" target="_blank" rel="noopener">Live Portal</a>
-        <a href="https://eregistrations.org" target="_blank" rel="noopener">eRegistrations.org</a>
-        <a href="https://unctad.org" target="_blank" rel="noopener">UNCTAD</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scroll to Top -->
-  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8593;</button>
-
-  <!-- JavaScript -->
-  <script>
-    (function () {
-      'use strict';
-
-      // Elements
-      const searchInput = document.getElementById('searchInput');
-      const searchClear = document.getElementById('searchClear');
-      const searchCount = document.getElementById('searchCount');
-      const noResults = document.getElementById('noResults');
-      const scrollTopBtn = document.getElementById('scrollTop');
-      const allCards = document.querySelectorAll('.service-card');
-      const allSections = document.querySelectorAll('.category-section');
-      const availableCards = document.querySelectorAll('.service-card:not(.coming-soon)');
-      const comingSoonCards = document.querySelectorAll('.service-card.coming-soon');
-      const totalServices = allCards.length;
-      const totalAvailable = availableCards.length;
-      const totalComingSoon = comingSoonCards.length;
-
-      // Search functionality
-      function performSearch() {
-        const query = searchInput.value.trim().toLowerCase();
-        let visibleCount = 0;
-
-        // Toggle clear button
-        searchClear.classList.toggle('visible', query.length > 0);
-
-        // Filter cards
-        allCards.forEach(function (card) {
-          const title = (card.getAttribute('data-title') || '').toLowerCase();
-          const desc = (card.querySelector('.card-description') || {}).textContent || '';
-          const match = !query || title.includes(query) || desc.toLowerCase().includes(query);
-
-          card.classList.toggle('hidden', !match);
-          if (match) visibleCount++;
-        });
-
-        // Hide empty categories
-        allSections.forEach(function (section) {
-          const visibleCards = section.querySelectorAll('.service-card:not(.hidden)');
-          section.classList.toggle('hidden', visibleCards.length === 0);
-        });
-
-        // Update count
-        if (query) {
-          searchCount.textContent = visibleCount + ' of ' + totalServices;
-        } else {
-          searchCount.textContent = totalAvailable + ' services + ' + totalComingSoon + ' coming soon';
-        }
-
-        // No results message
-        noResults.classList.toggle('visible', visibleCount === 0 && query.length > 0);
-      }
-
-      searchInput.addEventListener('input', performSearch);
-
-      searchClear.addEventListener('click', function () {
-        searchInput.value = '';
-        performSearch();
-        searchInput.focus();
-      });
-
-      // Keyboard shortcut: / to focus search
-      document.addEventListener('keydown', function (e) {
-        if (e.key === '/' && document.activeElement !== searchInput) {
-          e.preventDefault();
-          searchInput.focus();
-          searchInput.select();
-        }
-        if (e.key === 'Escape' && document.activeElement === searchInput) {
-          searchInput.value = '';
-          performSearch();
-          searchInput.blur();
-        }
-      });
-
-      // Scroll to top button
-      function handleScroll() {
-        scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-      }
-
-      window.addEventListener('scroll', handleScroll, { passive: true });
-
-      scrollTopBtn.addEventListener('click', function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-
-      // Smooth scroll for quick links
-      document.querySelectorAll('.quick-link').forEach(function (link) {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          var target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            // Clear search first
-            searchInput.value = '';
-            performSearch();
-
-            var offset = target.getBoundingClientRect().top + window.scrollY - 20;
-            window.scrollTo({ top: offset, behavior: 'smooth' });
-          }
-        });
-      });
-    })();
-  </script>
+            // Keyboard shortcut: / to focus search
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '/' && document.activeElement !== searchInput) {
+                    e.preventDefault();
+                    searchInput.focus();
+                    searchInput.select();
+                }
+                if (e.key === 'Escape' && document.activeElement === searchInput) {
+                    searchInput.value = '';
+                    searchInput.dispatchEvent(new Event('input'));
+                    searchInput.blur();
+                }
+            });
+        })();
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - User Manual | OBFC Lesotho</title>
+    <meta name="description" content="User manual for My Dashboard on the Lesotho One Business Facilitation Centre (OBFC) eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           LESOTHO eREGISTRATIONS — USER MANUAL TEMPLATE
+           Design system: https://lesotho.eregistrations.dev/
+           Generated: February 2026
+           ============================================================ */
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: #4CAF74;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #3d9461;
+            text-decoration: underline;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1F2128;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+
+        p { margin-bottom: 1em; }
+
+        strong { color: #1F2128; font-weight: 600; }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: #2B2A65;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .header-logos img { height: 52px; width: auto; }
+        .header-logos .coat-of-arms { height: 56px; }
+
+        .header-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.25);
+            flex-shrink: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .header-nav a {
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 400;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
+
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+
+        .btn-login {
+            background: #4CAF74;
+            color: #FFFFFF !important;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            transition: background 0.2s ease;
+        }
+
+        .btn-login:hover { background: #3d9461; text-decoration: none !important; }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 14px 0;
+        }
+
+        .breadcrumb-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #888;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumb-list li + li::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-top: 1.5px solid #aaa;
+            border-right: 1.5px solid #aaa;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .breadcrumb-list a { color: #4CAF74; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%);
+            color: #FFFFFF;
+            padding: 64px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 40%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .btn-primary {
+            background: #4CAF74;
+            color: #FFFFFF;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #3d9461;
+            color: #FFFFFF;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 260px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-icon-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(76,175,116,0.15);
+            border: 2px solid rgba(76,175,116,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-circle svg {
+            width: 80px;
+            height: 80px;
+            fill: none;
+            stroke: #4CAF74;
+            stroke-width: 1.5;
+        }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc {
+            background: #F5F5F7;
+            padding: 48px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: #1F2128;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .toc-item:hover {
+            border-color: #4CAF74;
+            box-shadow: 0 2px 8px rgba(76,175,116,0.12);
+            text-decoration: none;
+            color: #1F2128;
+        }
+
+        .toc-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+
+        .section {
+            margin-bottom: 56px;
+            scroll-margin-top: 100px;
+        }
+
+        .section > h2 {
+            font-size: 32px;
+            font-weight: 600;
+            padding-left: 20px;
+            border-left: 4px solid #4CAF74;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .section > h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .section > h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* --- Steps --- */
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .step:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+
+        .step-number {
+            counter-increment: step-counter;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #1F2128; }
+        .step-content p { margin-bottom: 8px; font-size: 16px; }
+        .step-content p:last-child { margin-bottom: 0; }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box, .warning-box, .note-box {
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin: 24px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .info-box { background: #F5F5F7; border-left: 4px solid #4CAF74; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box .box-label { color: #4CAF74; }
+        .warning-box .box-label { color: #D4891A; }
+        .note-box .box-label { color: #4A90D9; }
+        .box-label svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* --- Checklist --- */
+        .checklist { list-style: none; padding: 0; margin: 20px 0; }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid #F0F0F2;
+            font-size: 16px;
+        }
+
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .check-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+        .checklist .check-icon svg { width: 24px; height: 24px; }
+
+        /* --- Field Table --- */
+        .field-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 24px 0;
+            font-size: 15px;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .field-table thead { background: #2B2A65; color: #FFFFFF; }
+
+        .field-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 16px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .field-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: top;
+        }
+
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F5F5F7; }
+        .field-table .required-yes { color: #4CAF74; font-weight: 600; }
+        .field-table .required-no { color: #999; }
+
+        /* --- Screenshot Placeholder --- */
+        .screenshot-placeholder {
+            border: 2px dashed #D0D0D8;
+            border-radius: 10px;
+            background: #FAFAFA;
+            padding: 48px 24px;
+            text-align: center;
+            margin: 24px 0;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .screenshot-placeholder svg {
+            width: 40px;
+            height: 40px;
+            stroke: #CCC;
+            margin-bottom: 12px;
+        }
+
+        .screenshot-placeholder p { margin: 0; }
+        .screenshot-placeholder img { margin: 0 auto; border-radius: 6px; }
+
+        /* --- Tab Group --- */
+        .tab-group {
+            margin: 28px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #F5F5F7;
+            border-bottom: 1px solid #E5E7EB;
+            overflow-x: auto;
+            gap: 0;
+        }
+
+        .tab-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 14px 24px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #555866;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
+
+        .tab-btn.active {
+            color: #4CAF74;
+            border-bottom-color: #4CAF74;
+            background: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .tab-panel { display: none; padding: 24px; }
+        .tab-panel.active { display: block; }
+
+        /* --- Timeline --- */
+        .timeline {
+            position: relative;
+            margin: 32px 0;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+            padding-left: 24px;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #4CAF74;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 0 0 3px #4CAF74;
+            z-index: 1;
+        }
+
+        .timeline-item.pending::before {
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px #D0D0D8;
+        }
+
+        .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
+        .timeline-item .timeline-meta { font-size: 13px; color: #999; margin-top: 4px; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: #2B2A65;
+            color: rgba(255,255,255,0.8);
+            padding: 56px 0 0;
+            font-size: 15px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .footer-col h5 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo { margin-bottom: 16px; }
+        .footer-logo img { height: 50px; width: auto; }
+        .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+        .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
+        .footer-col a:hover { color: #4CAF74; text-decoration: none; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 14px; }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-contact-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            stroke: #4CAF74;
+            fill: none;
+            margin-top: 2px;
+        }
+
+        .footer-social { display: flex; gap: 12px; margin-top: 8px; }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .footer-social a:hover { background: #4CAF74; }
+        .footer-social svg { width: 18px; height: 18px; fill: #FFFFFF; }
+
+        .footer-implemented {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-implemented span {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .footer-implemented img {
+            height: 36px;
+            width: auto;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-implemented img:hover { opacity: 1; }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 34px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-description { max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 32px; }
+            h2, .section > h2 { font-size: 26px; }
+            h3 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 12px; padding: 10px 16px; }
+            .header-nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 28px; }
+            .step { flex-direction: column; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+            .field-table { font-size: 14px; }
+            .field-table th, .field-table td { padding: 10px 12px; }
+            .tab-btn { padding: 12px 16px; font-size: 13px; }
+        }
+
+        @media (max-width: 480px) {
+            .header-logos img { height: 36px; }
+            .header-logos .coat-of-arms { height: 40px; }
+            .hero h1 { font-size: 24px; }
+            .footer-implemented { flex-direction: column; gap: 16px; }
+        }
+
+        /* ============================================================
+           PRINT STYLES
+           ============================================================ */
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 11pt; line-height: 1.5; color: #000; background: #FFF; }
+            .site-header { position: static; box-shadow: none; background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .header-nav .btn-login { display: none; }
+            .hero { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 32px 0; page-break-after: always; }
+            .hero h1 { font-size: 28pt; }
+            .btn-primary { display: none; }
+            .hero-image { display: none; }
+            .toc { page-break-after: always; background: #F5F5F7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .toc-item { break-inside: avoid; }
+            .section { page-break-inside: avoid; }
+            .section > h2 { page-break-after: avoid; border-left-color: #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .step { page-break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+            .step-number { background: #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .info-box, .warning-box, .note-box { page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .field-table { page-break-inside: avoid; font-size: 9pt; }
+            .field-table thead { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .tab-group { page-break-inside: avoid; }
+            .tab-nav { display: none; }
+            .tab-panel { display: block !important; border-top: 1px solid #ddd; padding-top: 12px; margin-top: 8px; }
+            .tab-panel::before { content: attr(data-tab-label); font-weight: 700; font-size: 13pt; display: block; margin-bottom: 8px; }
+            .timeline::before { background: #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { background: #4CAF74 !important; box-shadow: 0 0 0 3px #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .screenshot-placeholder { border-color: #ccc; page-break-inside: avoid; }
+            .site-footer { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
+            .footer-social { display: none; }
+            a { color: #000; text-decoration: underline; }
+            a[href]::after { content: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logos">
+                <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                </a>
+                <div class="header-divider"></div>
+                <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/7363eda357ebb1583ab4ce37d8e31141f937cf98.png" alt="Lesotho Coat of Arms" class="coat-of-arms">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <a href="https://lesotho.eregistrations.dev/about/">About</a>
+                <a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a>
+                <a href="https://services.businessregistrations.gov.ls/" class="btn-login">Login | Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                <li><a href="https://services.businessregistrations.gov.ls/">My Dashboard</a></li>
+                <li><span class="current">User Manual</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">User Manual</span>
+                    <h1>My Dashboard</h1>
+                    <p class="hero-description">Your central hub for managing all business registrations, tracking applications, and accessing business services on the Lesotho eRegistrations platform.</p>
+                    <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Go to My Dashboard &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <!-- Dashboard icon -->
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="48" height="48" rx="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="8" y1="20" x2="56" y2="20" stroke-linecap="round"/>
+                            <rect x="14" y="26" width="16" height="12" rx="2" stroke-linecap="round"/>
+                            <rect x="34" y="26" width="16" height="12" rx="2" stroke-linecap="round"/>
+                            <rect x="14" y="42" width="36" height="8" rx="2" stroke-linecap="round"/>
+                            <circle cx="14" cy="14" r="2" fill="#4CAF74" stroke="none"/>
+                            <circle cx="20" cy="14" r="2" fill="#4CAF74" stroke="none"/>
+                            <circle cx="26" cy="14" r="2" fill="#4CAF74" stroke="none"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#section-1" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span class="toc-label">Overview</span>
+                </a>
+                <a href="#section-2" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span class="toc-label">Accessing Your Dashboard</span>
+                </a>
+                <a href="#section-3" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span class="toc-label">Dashboard Layout &amp; Navigation</span>
+                </a>
+                <a href="#section-4" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span class="toc-label">Identity Verification (KYC)</span>
+                </a>
+                <a href="#section-5" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span class="toc-label">Managing Your Businesses</span>
+                </a>
+                <a href="#section-6" class="toc-item">
+                    <span class="toc-number">6</span>
+                    <span class="toc-label">Viewing &amp; Tracking Applications</span>
+                </a>
+                <a href="#section-7" class="toc-item">
+                    <span class="toc-number">7</span>
+                    <span class="toc-label">Business Actions &amp; Services</span>
+                </a>
+                <a href="#section-8" class="toc-item">
+                    <span class="toc-number">8</span>
+                    <span class="toc-label">Business Registries</span>
+                </a>
+                <a href="#section-9" class="toc-item">
+                    <span class="toc-number">9</span>
+                    <span class="toc-label">Useful Links &amp; External Services</span>
+                </a>
+                <a href="#section-10" class="toc-item">
+                    <span class="toc-number">10</span>
+                    <span class="toc-label">Frequently Asked Questions</span>
+                </a>
+                <a href="#section-11" class="toc-item">
+                    <span class="toc-number">11</span>
+                    <span class="toc-label">Contact &amp; Support</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MANUAL CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
+
+            <!-- ======================== SECTION 1 ======================== -->
+            <div class="section" id="section-1">
+                <h2>1. Overview</h2>
+                <p>The <strong>My Dashboard</strong> is your personalised control centre on the Lesotho eRegistrations platform. After logging in, the dashboard gives you a single place to manage every aspect of your business life in Lesotho &mdash; from registering a new sole proprietorship or company, to renewing licences, tracking the status of pending applications, and accessing useful government services.</p>
+
+                <p>Key capabilities of the dashboard include:</p>
+                <ul>
+                    <li>Viewing all your registered <strong>sole proprietorships</strong> and <strong>companies</strong> at a glance</li>
+                    <li>Tracking the status and renewal dates of each business and its linked activities/licences</li>
+                    <li>Performing actions such as <strong>renewing</strong>, <strong>closing</strong>, <strong>updating data</strong>, and <strong>delegating rights</strong> directly from the dashboard</li>
+                    <li>Monitoring all your <strong>submitted applications</strong> and their processing status</li>
+                    <li>Accessing <strong>public business registries</strong> (sole proprietorships, companies, beneficial ownership)</li>
+                    <li>Navigating to <strong>useful external links</strong> such as tax clearance, trade portal, and eCustoms</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Tip
+                    </div>
+                    <p>The dashboard is free to use and available 24 hours a day, 7 days a week. You can access it from any device with a web browser and an internet connection.</p>
+                </div>
+            </div>
+
+            <!-- ======================== SECTION 2 ======================== -->
+            <div class="section" id="section-2">
+                <h2>2. Accessing Your Dashboard</h2>
+                <p>Follow these steps to access your personal dashboard:</p>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Open the Platform</h4>
+                            <p>Navigate to <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a> using any modern web browser (Chrome, Firefox, Safari, or Edge).</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Log In to Your Account</h4>
+                            <p>Click the <strong>"Login | Register"</strong> button in the top-right corner of the page. Enter your registered email address and password. If you do not yet have an account, click <strong>"Register"</strong> to create one.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Arrive at Your Dashboard</h4>
+                            <p>After a successful login, you will be taken to the <strong>Welcome</strong> tab. From here, you can verify your identity or navigate to any of the dashboard tabs to manage your businesses and applications.</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Important
+                    </div>
+                    <p>Keep your login credentials secure and do not share them with others. If you suspect unauthorised access to your account, change your password immediately and contact OBFC support.</p>
+                </div>
+            </div>
+
+            <!-- ======================== SECTION 3 ======================== -->
+            <div class="section" id="section-3">
+                <h2>3. Dashboard Layout &amp; Navigation</h2>
+                <p>Your dashboard is organised into several tabs, each providing access to different features. The main navigation tabs appear at the top of the dashboard area:</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'tab-welcome')" data-tab="tab-welcome">Welcome</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-mydash')" data-tab="tab-mydash">My Dashboard</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-myapps')" data-tab="tab-myapps">My Applications</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-busid')" data-tab="tab-busid">Business ID</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-activities')" data-tab="tab-activities">Activities &amp; Licences</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-links')" data-tab="tab-links">Useful Links</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-registries')" data-tab="tab-registries">Business Registries</button>
+                    </div>
+                    <div class="tab-panel active" id="tab-welcome" data-tab-label="Welcome">
+                        <h4>Welcome</h4>
+                        <p>The first screen you see after logging in. It displays a welcome message and provides a button to <strong>verify your identity</strong> (KYC) if you have not done so already. Identity verification is required before you can register a business.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-mydash" data-tab-label="My Dashboard">
+                        <h4>My Dashboard</h4>
+                        <p>Your main overview page. Shows all your registered sole proprietorships and companies, each with their Business ID, name, type, status, renewal date, and linked activities/licences. You can take actions (renew, close, update, delegate rights) directly from here.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-myapps" data-tab-label="My Applications">
+                        <h4>My Applications</h4>
+                        <p>A paginated list of all applications you have submitted. Each entry shows the service name, company name, creation date, submission date, and current processing status. You can also delete draft applications that have not yet been submitted.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-busid" data-tab-label="Business ID">
+                        <h4>Business ID</h4>
+                        <p>Detailed information about each of your businesses, identified by their unique Business ID number.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-activities" data-tab-label="Activities, Licences & Business Names">
+                        <h4>Activities, Licences &amp; Business Names</h4>
+                        <p>A consolidated view of all the business activities and licences linked to your businesses, along with their renewal dates and statuses.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-links" data-tab-label="Useful Links">
+                        <h4>Useful Links</h4>
+                        <p>Quick-access buttons to external government services and portals including tax clearance, trade portal, tourism licensing, eCustoms, and more.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-registries" data-tab-label="Business Registries">
+                        <h4>Business Registries</h4>
+                        <p>Access the public registries to search for sole proprietorships, companies, and beneficial ownership information.</p>
+                    </div>
+                </div>
+
+                <div class="screenshot-placeholder">
+                    <svg viewBox="0 0 48 48" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="40" height="32" rx="3"/><polyline points="4,34 16,24 24,30"/><polyline points="26,28 34,20 44,30"/><circle cx="34" cy="16" r="3"/></svg>
+                    <p>Screenshot: Dashboard navigation tabs and layout overview</p>
+                </div>
+            </div>
+
+            <!-- ======================== SECTION 4 ======================== -->
+            <div class="section" id="section-4">
+                <h2>4. Identity Verification (KYC)</h2>
+                <p>Before you can register a business or perform certain actions on the platform, you must verify your identity. This process is known as <strong>Know Your Customer (KYC)</strong> verification.</p>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Navigate to the Welcome Tab</h4>
+                            <p>After logging in, you will land on the <strong>Welcome</strong> tab by default. If you are on another tab, click <strong>"Welcome"</strong> in the navigation bar.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Click "Verify Your Identity"</h4>
+                            <p>Click the <strong>"Verify your identity"</strong> button. This will launch the identity verification process powered by the platform's KYC provider.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Complete the Verification</h4>
+                            <p>Follow the on-screen instructions to upload your identification documents and complete the verification. You may be asked to provide a government-issued ID and a selfie.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Check Your KYC Status</h4>
+                            <p>Once submitted, your KYC status will be updated on the dashboard. You can check the current status at any time. Verification is typically processed quickly, but may take up to 24 hours in some cases.</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Note
+                    </div>
+                    <p>Identity verification is a one-time process. Once verified, you will not need to repeat it unless your identity documents expire or there is a change in your personal information.</p>
+                </div>
+            </div>
+
+            <!-- ======================== SECTION 5 ======================== -->
+            <div class="section" id="section-5">
+                <h2>5. Managing Your Businesses</h2>
+                <p>The <strong>My Dashboard</strong> tab provides a comprehensive overview of all your registered businesses. Businesses are organised into two categories: <strong>Sole Proprietorships</strong> and <strong>Companies</strong>.</p>
+
+                <h3>Sole Proprietorships</h3>
+                <p>Each sole proprietorship entry displays the following information:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Business ID</strong></td>
+                            <td>The unique identifier assigned to your business upon registration</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td>The registered trading name of your sole proprietorship</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Type</strong></td>
+                            <td>The type of business entity (sole proprietorship)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Status</strong></td>
+                            <td>Current registration status (active, expired, etc.)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Renewal Date</strong></td>
+                            <td>The date by which the business registration must be renewed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>No. of Activities</strong></td>
+                            <td>The number of licensed business activities linked to this business</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Linked Activities</strong></td>
+                            <td>A detailed list of each activity/licence, including licence ID, business name, sector, and renewal date</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Companies</h3>
+                <p>Company entries display similar information, with additional fields:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Business ID</strong></td>
+                            <td>Unique identifier for the company</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Name</strong></td>
+                            <td>The registered company name</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legal Person Number</strong></td>
+                            <td>The legal entity registration number</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Type of Business</strong></td>
+                            <td>The company type classification</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Renewal Date</strong></td>
+                            <td>The date by which the company registration must be renewed</td>
+                        </tr>
+                        <tr>
+                            <td><strong>No. of Activities</strong></td>
+                            <td>Number of licensed activities linked to the company</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Linked Activities</strong></td>
+                            <td>Detailed listing of all linked licences and activities</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Tip
+                    </div>
+                    <p>If you do not have any businesses registered yet, the dashboard will display a message with a button to <strong>register a new sole proprietorship</strong> or <strong>create a new company</strong>. Click the appropriate button to start the registration process.</p>
+                </div>
+            </div>
+
+            <!-- ======================== SECTION 6 ======================== -->
+            <div class="section" id="section-6">
+                <h2>6. Viewing &amp; Tracking Applications</h2>
+                <p>The <strong>My Applications</strong> tab shows a complete list of all applications you have created or submitted through the platform. This includes registrations, renewals, amendments, and closures.</p>
+
+                <h3>Application Information</h3>
+                <p>Each application entry displays:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Column</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Service</strong></td>
+                            <td>The type of service or registration the application relates to</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Company</strong></td>
+                            <td>The business name associated with the application</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Created</strong></td>
+                            <td>The date and time the application was first created (as a draft)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Submitted</strong></td>
+                            <td>The date and time the application was officially submitted for processing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Status</strong></td>
+                            <td>The current processing status of the application</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Application Status Stages</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Draft</h4>
+                        <p>Application has been created but not yet submitted. You can still edit or delete it.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Submitted</h4>
+                        <p>Application has been submitted and is awaiting review by the relevant authority.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Under Review</h4>
+                        <p>Your application is being reviewed by government officials.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Approved</h4>
+                        <p>Your application has been approved and the registration or licence is active.</p>
+                    </div>
+                    <div class="timeline-item pending">
+                        <h4>Returned / Requires Action</h4>
+                        <p>Additional information or corrections are needed. Check the application for details and resubmit.</p>
+                    </div>
+                </div>
+
+                <h3>Deleting a Draft Application</h3>
+                <p>If you have created an application but have not yet submitted it, you can delete it:</p>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Locate the Draft</h4>
+                            <p>Go to the <strong>My Applications</strong> tab and find the application with "Draft" status.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Click the Delete Option</h4>
+                            <p>Click the delete action on the draft application. A confirmation message will appear.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Confirm Deletion</h4>
+                            <p>Click <strong>"Delete file"</strong> to confirm, or <strong>"Cancel"</strong> to keep the application.</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Warning
+                    </div>
+                    <p>Deleting a draft application is permanent and cannot be undone. Only applications that have <strong>not yet been submitted</strong> can be deleted. Once submitted, applications cannot be removed by the applicant.</p>
+                </div>
+
+                <h3>Pagination</h3>
+                <p>If you have many applications, the list is paginated. Use the <strong>Previous</strong> and <strong>Next</strong> buttons at the bottom of the list to navigate between pages. You can also adjust the number of <strong>rows per page</strong> using the dropdown selector.</p>
+            </div>
+
+            <!-- ======================== SECTION 7 ======================== -->
+            <div class="section" id="section-7">
+                <h2>7. Business Actions &amp; Services</h2>
+                <p>From the My Dashboard tab, you can perform a number of actions on each of your registered businesses. The available actions depend on the type of business and its current status.</p>
+
+                <h3>Sole Proprietorship Actions</h3>
+                <p>For each sole proprietorship, you can access the following actions through the action menu:</p>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Update Data</strong> &mdash; Modify the registered details of your sole proprietorship, such as business address or contact information</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Renew Business</strong> &mdash; Renew your business registration before or after it expires to maintain active status</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Delegate Rights</strong> &mdash; Authorise another person to manage or take actions on your business on your behalf</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Close Business</strong> &mdash; Formally close your sole proprietorship and deactivate the registration</span>
+                    </li>
+                </ul>
+
+                <h3>Company Actions</h3>
+                <p>For registered companies, the following actions are available:</p>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Update Data</strong> &mdash; Update company details including directors, shareholders, registered address, and contact information</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Annual Filing</strong> &mdash; Submit required annual returns and filings for your company</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Delegate Rights</strong> &mdash; Authorise another person to act on behalf of the company</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Close Business</strong> &mdash; Initiate the formal closure or winding up of the company</span>
+                    </li>
+                </ul>
+
+                <h3>Activity/Licence Actions</h3>
+                <p>Within each business, you can also perform actions on individual licences and activities:</p>
+                <ul>
+                    <li><strong>Renew or Close</strong> &mdash; Renew a specific business activity licence, or close it if no longer needed</li>
+                    <li><strong>Change Business Name</strong> &mdash; Request a name change for a specific business activity</li>
+                    <li><strong>Delegate Right to a Licence</strong> &mdash; Grant another person rights to manage a specific licence</li>
+                </ul>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Note
+                    </div>
+                    <p>Some actions may only be available to users who have been granted authorisation rights. If you are a delegated user, you may see a limited set of actions depending on the permissions granted to you by the business owner.</p>
+                </div>
+            </div>
+
+            <!-- ======================== SECTION 8 ======================== -->
+            <div class="section" id="section-8">
+                <h2>8. Business Registries</h2>
+                <p>The <strong>Business Registries</strong> tab provides access to Lesotho's public business registers. These are searchable databases where you can look up information about any registered business in the country.</p>
+
+                <p>Three registries are available:</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'tab-reg-sole')" data-tab="tab-reg-sole">Sole Proprietorships</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-reg-comp')" data-tab="tab-reg-comp">Companies</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-reg-bo')" data-tab="tab-reg-bo">Beneficial Ownership</button>
+                    </div>
+                    <div class="tab-panel active" id="tab-reg-sole" data-tab-label="Sole Proprietorships">
+                        <h4>Sole Proprietorships Registry</h4>
+                        <p>Search the register of all sole proprietorships registered in Lesotho. You can look up businesses by name, Business ID, or owner name to verify registration status and details.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-reg-comp" data-tab-label="Companies">
+                        <h4>Companies Registry</h4>
+                        <p>Search the register of all companies incorporated in Lesotho. View company details including legal person number, directors, and registration status.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-reg-bo" data-tab-label="Beneficial Ownership">
+                        <h4>Beneficial Ownership Registry</h4>
+                        <p>Access the beneficial ownership register to identify the natural persons who ultimately own or control a registered company. This registry supports transparency and anti-money laundering requirements.</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Tip
+                    </div>
+                    <p>The business registries are publicly accessible. You do not need to be logged in to search them, but being logged in allows you to navigate directly from the dashboard.</p>
+                </div>
+            </div>
+
+            <!-- ======================== SECTION 9 ======================== -->
+            <div class="section" id="section-9">
+                <h2>9. Useful Links &amp; External Services</h2>
+                <p>The <strong>Useful Links</strong> tab provides quick-access buttons to external government portals and services that are relevant to business owners in Lesotho. Click any of the following to navigate directly to the respective service:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tax Clearance</strong></td>
+                            <td>Apply for or check the status of your tax clearance certificate</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trade Portal</strong></td>
+                            <td>Access Lesotho's trade information portal for import/export procedures</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tourism License</strong></td>
+                            <td>Apply for or renew tourism-related business licences</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Land Administration Online System</strong></td>
+                            <td>Access land registration and property management services</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Business Laws</strong></td>
+                            <td>Browse the legal framework governing businesses in Lesotho</td>
+                        </tr>
+                        <tr>
+                            <td><strong>LEAP</strong></td>
+                            <td>Access the Lesotho Enterprise Assistance Programme for business support</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Business Taxes</strong></td>
+                            <td>Manage your business tax obligations with the Lesotho Revenue Authority</td>
+                        </tr>
+                        <tr>
+                            <td><strong>eCustoms</strong></td>
+                            <td>Access electronic customs declarations and border management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Livestock Registration</strong></td>
+                            <td>Register livestock and manage agricultural business records</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Construction Permit</strong></td>
+                            <td>Apply for building and construction permits</td>
+                        </tr>
+                        <tr>
+                            <td><strong>eRegulations</strong></td>
+                            <td>View step-by-step guides for business procedures and regulations in Lesotho</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Note
+                    </div>
+                    <p>These external links open in separate windows and are managed by their respective government agencies. You may need to create separate accounts on some of these platforms. The OBFC eRegistrations platform is not responsible for the content or availability of external services.</p>
+                </div>
+            </div>
+
+            <!-- ======================== SECTION 10 ======================== -->
+            <div class="section" id="section-10">
+                <h2>10. Frequently Asked Questions</h2>
+
+                <h4>How do I register a new business?</h4>
+                <p>From the My Dashboard tab, if you have no businesses yet, click the <strong>"Register a new sole proprietorship"</strong> or <strong>"New company"</strong> button. If you already have businesses, you can start a new registration from the relevant services page. You must complete identity verification (KYC) before registering.</p>
+
+                <h4>What does it mean when my business status shows "Expired"?</h4>
+                <p>An "Expired" status indicates that your business registration has passed its renewal date without being renewed. You should renew it as soon as possible by clicking <strong>"Renew Business"</strong> from the action menu on your dashboard. Late renewals may incur additional fees.</p>
+
+                <h4>Can I manage businesses on behalf of someone else?</h4>
+                <p>Yes. A business owner can <strong>delegate rights</strong> to another registered user. Once rights are delegated, the authorised person will see the business on their own dashboard and can perform the permitted actions.</p>
+
+                <h4>How do I check if my application has been processed?</h4>
+                <p>Go to the <strong>My Applications</strong> tab. The <strong>Status</strong> column shows the current state of each application. If the status is "Approved," your application has been successfully processed. If it shows "Returned," additional action is required from you.</p>
+
+                <h4>Can I delete a submitted application?</h4>
+                <p>No. Only <strong>draft</strong> applications (those not yet submitted) can be deleted. Once an application is submitted, it enters the processing workflow and can no longer be removed by the applicant. If you submitted an application in error, contact OBFC support for assistance.</p>
+
+                <h4>What is a Business ID?</h4>
+                <p>A Business ID is a unique identification number assigned to your business upon registration. It is used across all government systems to identify your business. Keep this number safe as you will need it for renewals, licence applications, and other government interactions.</p>
+
+                <h4>What is the difference between a Business ID and a Licence ID?</h4>
+                <p>A <strong>Business ID</strong> identifies your business entity (sole proprietorship or company). A <strong>Licence ID</strong> identifies a specific business activity or licence linked to that business. One business can have multiple licences for different activities.</p>
+
+                <h4>How long does identity verification take?</h4>
+                <p>Identity verification is usually completed within minutes. In some cases, manual review may be required, which can take up to 24 hours. You will be notified of the outcome on your dashboard.</p>
+            </div>
+
+            <!-- ======================== SECTION 11 ======================== -->
+            <div class="section" id="section-11">
+                <h2>11. Contact &amp; Support</h2>
+                <p>If you need assistance with your dashboard or any aspect of the eRegistrations platform, the OBFC support team is available to help.</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Visit in Person</strong></td>
+                            <td>LNDC Centre, Block A, Kingsway Road, Maseru, Lesotho</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phone</strong></td>
+                            <td>+266 2231 7454</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td><a href="mailto:info@obfc.org.ls">info@obfc.org.ls</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Online Help</strong></td>
+                            <td><a href="https://lesotho.eregistrations.dev/help/">lesotho.eregistrations.dev/help</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Office Hours
+                    </div>
+                    <p>The OBFC office is open Monday to Friday, 8:00 AM to 4:30 PM. The online platform is available 24/7. For urgent matters outside office hours, please send an email and you will receive a response on the next business day.</p>
+                </div>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        When Contacting Support
+                    </div>
+                    <p>To help us assist you more quickly, please have the following information ready: your registered email address, Business ID (if applicable), and a description of the issue you are experiencing. If your question relates to a specific application, include the application reference number.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Column 1: Logo & About -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="https://lesotho.eregistrations.dev/_assets/v11/e8f8e0f4875113e3103aae78a6e2c99f11345f18.png" alt="OBFC Logo">
+                    </div>
+                    <p>One Business Facilitation Centre (OBFC) provides a single window for business registration and licensing services in the Kingdom of Lesotho.</p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="footer-col">
+                    <h5>Contact Details</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>LNDC Centre, Block A<br>Kingsway Road, Maseru</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75l.72 3.59a1 1 0 0 1-.26.95L8.09 10.7a16 16 0 0 0 5.21 5.21l2.41-2.41a1 1 0 0 1 .95-.26l3.59.72a1 1 0 0 1 .75 1z"/></svg>
+                        <span>+266 2231 7454</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@obfc.org.ls</span>
+                    </div>
+                </div>
+
+                <!-- Column 3: Social Channels -->
+                <div class="footer-col">
+                    <h5>Follow Us</h5>
+                    <p>Stay connected with OBFC for the latest updates on business services.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Quick Links -->
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                        <li><a href="https://services.businessregistrations.gov.ls/">Login / Register</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/privacy/">Privacy Policy</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Implemented by -->
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <a href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/742ddaa6ec00aadee1b93dffeefc513e3c77473c.png" alt="World Bank">
+                </a>
+                <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/fd2d79a17613c98a31e05becdb641ca8c82159b4.png" alt="UNCTAD">
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Generated: February 2026
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         TAB SWITCHING SCRIPT
+         ============================================================ -->
+    <script>
+        function switchTab(event, tabId) {
+            // Find the parent tab-group
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+
+            // Deactivate all tabs and panels within this group
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+
+            // Activate the clicked tab and corresponding panel
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

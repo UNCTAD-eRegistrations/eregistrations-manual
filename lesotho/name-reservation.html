@@ -1,1352 +1,1984 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Name Reservation - User Manual | Lesotho Business Registration</title>
-<style>
-  :root {
-    --gov-blue: #003580;
-    --gov-blue-light: #0050b3;
-    --gov-blue-pale: #e8f0fe;
-    --accent-green: #28a745;
-    --accent-orange: #f39c12;
-    --accent-red: #dc3545;
-    --text-dark: #1a1a2e;
-    --text-muted: #555;
-    --border-light: #dde3ec;
-    --bg-light: #f7f9fc;
-    --bg-white: #ffffff;
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-    --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
-    --radius: 8px;
-    --radius-lg: 12px;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Reservation - User Manual | OBFC Lesotho</title>
+    <meta name="description" content="User manual for Name Reservation on the Lesotho One Business Facilitation Centre (OBFC) eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           LESOTHO eREGISTRATIONS — USER MANUAL
+           Design system: https://lesotho.eregistrations.dev/
+           Generated: February 2026
+           ============================================================ */
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* --- Reset & Base --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: var(--text-dark);
-    background: var(--bg-light);
-    line-height: 1.7;
-    font-size: 16px;
-  }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
 
-  /* ---- HEADER ---- */
-  .gov-header {
-    background: linear-gradient(135deg, var(--gov-blue) 0%, var(--gov-blue-light) 100%);
-    color: white;
-    padding: 0;
-  }
-  .gov-header-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 18px 24px;
-  }
-  .gov-header-top .flag-strip {
-    display: flex;
-    gap: 6px;
-    align-items: center;
-  }
-  .flag-stripe {
-    width: 28px; height: 8px; border-radius: 2px;
-  }
-  .flag-blue { background: #00209f; }
-  .flag-white { background: #fff; }
-  .flag-green { background: #009543; }
-  .gov-header-top .gov-name {
-    font-size: 14px;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
-  }
-  .gov-header-main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px 24px 36px;
-  }
-  .gov-header-main h1 {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .gov-header-main .subtitle {
-    font-size: 1.1rem;
-    opacity: 0.85;
-    font-weight: 400;
-  }
-  .breadcrumb {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 8px 24px;
-    font-size: 13px;
-    opacity: 0.75;
-  }
-  .breadcrumb a { color: white; text-decoration: none; }
-  .breadcrumb a:hover { text-decoration: underline; }
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
 
-  /* ---- MAIN ---- */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 32px 24px 60px;
-  }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
-  /* ---- QUICK INFO BAR ---- */
-  .quick-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 36px;
-  }
-  .quick-info-card {
-    background: var(--bg-white);
-    border-radius: var(--radius);
-    padding: 20px;
-    box-shadow: var(--shadow-sm);
-    border-left: 4px solid var(--gov-blue);
-    text-align: center;
-  }
-  .quick-info-card .qi-label {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-muted);
-    margin-bottom: 6px;
-  }
-  .quick-info-card .qi-value {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--gov-blue);
-  }
+        a {
+            color: #4CAF74;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
 
-  /* ---- SECTIONS ---- */
-  .section {
-    background: var(--bg-white);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    margin-bottom: 28px;
-    overflow: hidden;
-  }
-  .section-header {
-    background: var(--gov-blue-pale);
-    padding: 18px 24px;
-    border-bottom: 1px solid var(--border-light);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .section-header .step-badge {
-    background: var(--gov-blue);
-    color: white;
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 14px;
-    flex-shrink: 0;
-  }
-  .section-header h2 {
-    font-size: 1.25rem;
-    color: var(--gov-blue);
-    font-weight: 600;
-  }
-  .section-body { padding: 24px; }
+        a:hover {
+            color: #3d9461;
+            text-decoration: underline;
+        }
 
-  /* ---- BROWSER MOCKUP ---- */
-  .browser-mockup {
-    border: 1px solid var(--border-light);
-    border-radius: var(--radius);
-    overflow: hidden;
-    margin: 20px 0;
-    box-shadow: var(--shadow-md);
-  }
-  .browser-chrome {
-    background: #e8ecf0;
-    padding: 10px 16px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid var(--border-light);
-  }
-  .browser-dots {
-    display: flex;
-    gap: 6px;
-  }
-  .browser-dot {
-    width: 12px; height: 12px;
-    border-radius: 50%;
-  }
-  .dot-red { background: #ff5f57; }
-  .dot-yellow { background: #ffbd2e; }
-  .dot-green { background: #28c840; }
-  .browser-url {
-    flex: 1;
-    background: white;
-    border-radius: 6px;
-    padding: 6px 14px;
-    font-size: 13px;
-    color: var(--text-muted);
-    font-family: monospace;
-    border: 1px solid #d0d5dd;
-  }
-  .browser-content {
-    background: white;
-    padding: 24px;
-  }
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1F2128;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+        }
 
-  /* ---- MOCK FORM ---- */
-  .mock-form-group {
-    margin-bottom: 16px;
-  }
-  .mock-form-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 4px;
-  }
-  .mock-form-group label .required {
-    color: var(--accent-red);
-    margin-left: 2px;
-  }
-  .mock-input,
-  .mock-select {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid var(--border-light);
-    border-radius: 6px;
-    font-size: 14px;
-    background: #fafbfd;
-    color: var(--text-muted);
-  }
-  .mock-btn {
-    display: inline-block;
-    padding: 10px 24px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: default;
-    border: none;
-  }
-  .mock-btn-primary {
-    background: var(--gov-blue);
-    color: white;
-  }
-  .mock-btn-success {
-    background: var(--accent-green);
-    color: white;
-  }
-  .mock-btn-outline {
-    background: white;
-    color: var(--gov-blue);
-    border: 2px solid var(--gov-blue);
-  }
-  .mock-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .mock-row-3 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-  }
-  .mock-tab-bar {
-    display: flex;
-    border-bottom: 2px solid var(--border-light);
-    margin-bottom: 20px;
-  }
-  .mock-tab {
-    padding: 10px 20px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text-muted);
-    border-bottom: 3px solid transparent;
-    margin-bottom: -2px;
-  }
-  .mock-tab.active {
-    color: var(--gov-blue);
-    border-bottom-color: var(--gov-blue);
-  }
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
 
-  /* ---- TIPS / ALERTS ---- */
-  .tip-box {
-    border-radius: var(--radius);
-    padding: 16px 20px;
-    margin: 16px 0;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-  }
-  .tip-box .tip-icon {
-    font-size: 20px;
-    flex-shrink: 0;
-    line-height: 1;
-    margin-top: 2px;
-  }
-  .tip-info {
-    background: #e8f4fd;
-    border-left: 4px solid #2196f3;
-  }
-  .tip-warning {
-    background: #fff8e1;
-    border-left: 4px solid var(--accent-orange);
-  }
-  .tip-success {
-    background: #e8f5e9;
-    border-left: 4px solid var(--accent-green);
-  }
-  .tip-danger {
-    background: #fdecea;
-    border-left: 4px solid var(--accent-red);
-  }
+        h2 {
+            font-size: 36px;
+            font-weight: 600;
+        }
 
-  /* ---- FIELD TABLE ---- */
-  .field-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin: 16px 0;
-    font-size: 14px;
-  }
-  .field-table thead th {
-    background: var(--gov-blue);
-    color: white;
-    padding: 12px 16px;
-    text-align: left;
-    font-weight: 600;
-  }
-  .field-table thead th:first-child { border-radius: var(--radius) 0 0 0; }
-  .field-table thead th:last-child { border-radius: 0 var(--radius) 0 0; }
-  .field-table tbody td {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--border-light);
-  }
-  .field-table tbody tr:nth-child(even) { background: var(--bg-light); }
-  .field-table tbody tr:last-child td:first-child { border-radius: 0 0 0 var(--radius); }
-  .field-table tbody tr:last-child td:last-child { border-radius: 0 0 var(--radius) 0; }
+        h3 {
+            font-size: 32px;
+            font-weight: 600;
+        }
 
-  /* ---- WORKFLOW ---- */
-  .workflow-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin: 20px 0;
-  }
-  .wf-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    position: relative;
-  }
-  .wf-connector {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  .wf-circle {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: var(--gov-blue);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 14px;
-    z-index: 1;
-  }
-  .wf-circle.done { background: var(--accent-green); }
-  .wf-circle.pending { background: var(--text-muted); }
-  .wf-line {
-    width: 3px;
-    height: 40px;
-    background: var(--border-light);
-  }
-  .wf-content {
-    padding: 6px 0 30px;
-  }
-  .wf-content h4 {
-    font-size: 1rem;
-    margin-bottom: 4px;
-    color: var(--gov-blue);
-  }
-  .wf-content p {
-    font-size: 14px;
-    color: var(--text-muted);
-  }
+        h4 {
+            font-size: 24px;
+            font-weight: 600;
+        }
 
-  /* ---- FAQ ---- */
-  .faq-item {
-    border-bottom: 1px solid var(--border-light);
-    padding: 18px 0;
-  }
-  .faq-item:last-child { border-bottom: none; }
-  .faq-q {
-    font-weight: 700;
-    color: var(--gov-blue);
-    margin-bottom: 8px;
-    font-size: 1rem;
-  }
-  .faq-a {
-    color: var(--text-muted);
-    font-size: 15px;
-    line-height: 1.7;
-  }
+        h5 {
+            font-size: 18px;
+            font-weight: 600;
+        }
 
-  /* ---- FOOTER ---- */
-  .gov-footer {
-    background: var(--gov-blue);
-    color: white;
-    text-align: center;
-    padding: 28px 24px;
-    font-size: 14px;
-    margin-top: 40px;
-  }
-  .gov-footer a { color: #a3c9ff; text-decoration: none; }
-  .gov-footer a:hover { text-decoration: underline; }
-  .gov-footer .footer-line { opacity: 0.7; margin-top: 6px; }
+        p {
+            margin-bottom: 1em;
+        }
 
-  /* ---- CHECKLIST ---- */
-  .checklist {
-    list-style: none;
-    padding: 0;
-  }
-  .checklist li {
-    padding: 10px 0;
-    padding-left: 32px;
-    position: relative;
-    border-bottom: 1px solid var(--border-light);
-    font-size: 15px;
-  }
-  .checklist li:last-child { border-bottom: none; }
-  .checklist li::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 12px;
-    width: 18px; height: 18px;
-    border: 2px solid var(--gov-blue);
-    border-radius: 4px;
-  }
+        strong {
+            color: #1F2128;
+            font-weight: 600;
+        }
 
-  /* ---- COST TABLE ---- */
-  .cost-highlight {
-    background: var(--gov-blue-pale);
-    border-radius: var(--radius);
-    padding: 20px;
-    text-align: center;
-    margin: 16px 0;
-  }
-  .cost-highlight .cost-amount {
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--gov-blue);
-  }
-  .cost-highlight .cost-label {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-top: 4px;
-  }
+        /* --- Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-  /* ---- NAMING RULES GRID ---- */
-  .naming-rules {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 16px 0;
-  }
-  .naming-rule-card {
-    border-radius: var(--radius);
-    padding: 16px;
-    border: 1px solid var(--border-light);
-  }
-  .naming-rule-card h4 {
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-  .naming-rule-card ul {
-    font-size: 14px;
-    color: var(--text-muted);
-    padding-left: 18px;
-  }
-  .naming-rule-card ul li { margin-bottom: 4px; }
-  .rule-do { border-left: 4px solid var(--accent-green); }
-  .rule-do h4 { color: var(--accent-green); }
-  .rule-dont { border-left: 4px solid var(--accent-red); }
-  .rule-dont h4 { color: var(--accent-red); }
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: #2B2A65;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
 
-  /* ---- RESPONSIVE ---- */
-  @media (max-width: 768px) {
-    .gov-header-main h1 { font-size: 1.6rem; }
-    .quick-info { grid-template-columns: 1fr 1fr; }
-    .mock-row, .mock-row-3 { grid-template-columns: 1fr; }
-    .naming-rules { grid-template-columns: 1fr; }
-    .container { padding: 20px 16px 40px; }
-  }
-  @media (max-width: 480px) {
-    .quick-info { grid-template-columns: 1fr; }
-  }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
 
-  @media print {
-    .gov-header { background: var(--gov-blue) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    .section { break-inside: avoid; }
-  }
-</style>
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .header-logos img {
+            height: 52px;
+            width: auto;
+        }
+
+        .header-logos .coat-of-arms {
+            height: 56px;
+        }
+
+        .header-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.25);
+            flex-shrink: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .header-nav a {
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 400;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
+
+        .header-nav a:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        .btn-login {
+            background: #4CAF74;
+            color: #FFFFFF !important;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            transition: background 0.2s ease;
+        }
+
+        .btn-login:hover {
+            background: #3d9461;
+            text-decoration: none !important;
+        }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 14px 0;
+        }
+
+        .breadcrumb-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #888;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumb-list li + li::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-top: 1.5px solid #aaa;
+            border-right: 1.5px solid #aaa;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .breadcrumb-list a {
+            color: #4CAF74;
+            font-weight: 400;
+        }
+
+        .breadcrumb-list .current {
+            color: #555866;
+            font-weight: 500;
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%);
+            color: #FFFFFF;
+            padding: 64px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            font-size: 42px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .btn-primary {
+            background: #4CAF74;
+            color: #FFFFFF;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #3d9461;
+            color: #FFFFFF;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 260px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-icon-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(76,175,116,0.15);
+            border: 2px solid rgba(76,175,116,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-circle svg {
+            width: 80px;
+            height: 80px;
+            fill: none;
+            stroke: #4CAF74;
+            stroke-width: 1.5;
+        }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc {
+            background: #F5F5F7;
+            padding: 48px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .toc h2 {
+            font-size: 28px;
+            margin-bottom: 24px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: #1F2128;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .toc-item:hover {
+            border-color: #4CAF74;
+            box-shadow: 0 2px 8px rgba(76,175,116,0.12);
+            text-decoration: none;
+            color: #1F2128;
+        }
+
+        .toc-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .toc-label {
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content {
+            padding: 56px 0 80px;
+        }
+
+        /* --- Section --- */
+        .section {
+            margin-bottom: 56px;
+            scroll-margin-top: 100px;
+        }
+
+        .section > h2 {
+            font-size: 32px;
+            font-weight: 600;
+            padding-left: 20px;
+            border-left: 4px solid #4CAF74;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .section > h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .section > h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .section > p,
+        .section > ul,
+        .section > ol {
+            margin-bottom: 16px;
+        }
+
+        .section ul,
+        .section ol {
+            padding-left: 24px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+        }
+
+        /* --- Steps --- */
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .step:hover {
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        }
+
+        .step-number {
+            counter-increment: step-counter;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .step-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1F2128;
+        }
+
+        .step-content p {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .step-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box,
+        .warning-box,
+        .note-box {
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin: 24px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .info-box {
+            background: #F5F5F7;
+            border-left: 4px solid #4CAF74;
+        }
+
+        .warning-box {
+            background: #FFF8F0;
+            border-left: 4px solid #F5A623;
+        }
+
+        .note-box {
+            background: #F0F6FF;
+            border-left: 4px solid #4A90D9;
+        }
+
+        .info-box .box-label,
+        .warning-box .box-label,
+        .note-box .box-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box .box-label {
+            color: #4CAF74;
+        }
+
+        .warning-box .box-label {
+            color: #D4891A;
+        }
+
+        .note-box .box-label {
+            color: #4A90D9;
+        }
+
+        .box-label svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* --- Checklist --- */
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid #F0F0F2;
+            font-size: 16px;
+        }
+
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+
+        .checklist .check-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .checklist .check-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* --- Field Table --- */
+        .field-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 24px 0;
+            font-size: 15px;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .field-table thead {
+            background: #2B2A65;
+            color: #FFFFFF;
+        }
+
+        .field-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 16px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .field-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: top;
+        }
+
+        .field-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .field-table tbody tr:nth-child(even) {
+            background: #FAFAFA;
+        }
+
+        .field-table tbody tr:hover {
+            background: #F5F5F7;
+        }
+
+        .field-table .required-yes {
+            color: #4CAF74;
+            font-weight: 600;
+        }
+
+        .field-table .required-no {
+            color: #999;
+        }
+
+        /* --- Cost Table --- */
+        .cost-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 24px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        .cost-table thead {
+            background: #2B2A65;
+            color: #FFFFFF;
+        }
+
+        .cost-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 16px;
+            text-align: left;
+        }
+
+        .cost-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #F0F0F2;
+        }
+
+        .cost-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .cost-table tbody tr:nth-child(even) {
+            background: #FAFAFA;
+        }
+
+        .cost-table .amount {
+            font-weight: 700;
+            color: #1F2128;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .cost-table .total-row {
+            background: #F5F5F7 !important;
+            font-weight: 700;
+        }
+
+        .cost-table .total-row td {
+            border-top: 2px solid #2B2A65;
+            color: #1F2128;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- Timeline --- */
+        .timeline {
+            position: relative;
+            margin: 32px 0;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+            padding-left: 24px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #4CAF74;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 0 0 3px #4CAF74;
+            z-index: 1;
+        }
+
+        .timeline-item.pending::before {
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px #D0D0D8;
+        }
+
+        .timeline-item h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1F2128;
+        }
+
+        .timeline-item p {
+            font-size: 15px;
+            color: #555866;
+            margin-bottom: 0;
+        }
+
+        .timeline-item .timeline-meta {
+            font-size: 13px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        /* ============================================================
+           FAQ STYLES
+           ============================================================ */
+        .faq-item {
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: #FFFFFF;
+            border: none;
+            padding: 18px 24px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1F2128;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            transition: background 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background: #F5F5F7;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 22px;
+            font-weight: 400;
+            color: #4CAF74;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.open .faq-question::after {
+            content: "\2212";
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 24px 18px;
+            font-size: 15px;
+            color: #555866;
+            line-height: 1.7;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: #2B2A65;
+            color: rgba(255,255,255,0.8);
+            padding: 56px 0 0;
+            font-size: 15px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .footer-col h5 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.8);
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover {
+            color: #4CAF74;
+            text-decoration: none;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-contact-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            stroke: #4CAF74;
+            fill: none;
+            margin-top: 2px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background: #4CAF74;
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+            fill: #FFFFFF;
+        }
+
+        .footer-implemented {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-implemented span {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .footer-implemented img {
+            height: 36px;
+            width: auto;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-implemented img:hover {
+            opacity: 1;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-description {
+                max-width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2, .section > h2 {
+                font-size: 26px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                padding: 10px 16px;
+            }
+
+            .header-nav {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 40px 0;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .step {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            .field-table,
+            .cost-table {
+                font-size: 14px;
+            }
+
+            .field-table th,
+            .field-table td,
+            .cost-table th,
+            .cost-table td {
+                padding: 10px 12px;
+            }
+
+            .tab-btn {
+                padding: 12px 16px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-logos img {
+                height: 36px;
+            }
+
+            .header-logos .coat-of-arms {
+                height: 40px;
+            }
+
+            .hero h1 {
+                font-size: 24px;
+            }
+
+            .footer-implemented {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        /* ============================================================
+           PRINT STYLES
+           ============================================================ */
+        @media print {
+            @page {
+                margin: 2cm 1.5cm;
+                size: A4;
+            }
+
+            body {
+                font-size: 11pt;
+                line-height: 1.5;
+                color: #000;
+                background: #FFF;
+            }
+
+            .site-header {
+                position: static;
+                box-shadow: none;
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .header-nav .btn-login {
+                display: none;
+            }
+
+            .hero {
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                padding: 32px 0;
+                page-break-after: always;
+            }
+
+            .hero h1 {
+                font-size: 28pt;
+            }
+
+            .btn-primary {
+                display: none;
+            }
+
+            .hero-image {
+                display: none;
+            }
+
+            .toc {
+                page-break-after: always;
+                background: #F5F5F7 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .toc-item {
+                break-inside: avoid;
+            }
+
+            .section {
+                page-break-inside: avoid;
+            }
+
+            .section > h2 {
+                page-break-after: avoid;
+                border-left-color: #4CAF74 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .step {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+
+            .step-number {
+                background: #4CAF74 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .info-box,
+            .warning-box,
+            .note-box {
+                page-break-inside: avoid;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .field-table,
+            .cost-table {
+                page-break-inside: avoid;
+                font-size: 9pt;
+            }
+
+            .field-table thead,
+            .cost-table thead {
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .timeline::before {
+                background: #ccc !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .timeline-item::before {
+                background: #4CAF74 !important;
+                box-shadow: 0 0 0 3px #4CAF74 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .site-footer {
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                page-break-before: always;
+            }
+
+            .footer-social {
+                display: none;
+            }
+
+            a {
+                color: #000;
+                text-decoration: underline;
+            }
+
+            a[href]::after {
+                content: none;
+            }
+
+            .faq-answer {
+                display: block !important;
+            }
+
+            .faq-question::after {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<!-- ===== GOVERNMENT HEADER ===== -->
-<header class="gov-header">
-  <div class="breadcrumb">
-    <a href="https://businessregistrations.gov.ls">Home</a> &rsaquo;
-    <a href="https://businessregistrations.gov.ls">Services</a> &rsaquo;
-    Name Reservation
-  </div>
-  <div class="gov-header-top">
-    <div class="flag-strip">
-      <div class="flag-stripe flag-blue"></div>
-      <div class="flag-stripe flag-white"></div>
-      <div class="flag-stripe flag-green"></div>
-    </div>
-    <div class="gov-name">Kingdom of Lesotho &mdash; Ministry of Trade &amp; Industry</div>
-  </div>
-  <div class="gov-header-main">
-    <h1>Name Reservation</h1>
-    <div class="subtitle">User Manual &mdash; Lesotho Business Registration System (eRegistrations)</div>
-  </div>
-</header>
-
-<!-- ===== MAIN CONTENT ===== -->
-<main class="container">
-
-  <!-- QUICK INFO BAR -->
-  <div class="quick-info">
-    <div class="quick-info-card">
-      <div class="qi-label">Service</div>
-      <div class="qi-value">Name Reservation</div>
-    </div>
-    <div class="quick-info-card">
-      <div class="qi-label">Processing Time</div>
-      <div class="qi-value">1 &ndash; 3 Days</div>
-    </div>
-    <div class="quick-info-card">
-      <div class="qi-label">Online Portal</div>
-      <div class="qi-value">businessregistrations.gov.ls</div>
-    </div>
-    <div class="quick-info-card">
-      <div class="qi-label">Validity</div>
-      <div class="qi-value">60 Days</div>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- SECTION: OVERVIEW -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">i</div>
-      <h2>What Is Name Reservation?</h2>
-    </div>
-    <div class="section-body">
-      <p>
-        Before you can register a company in Lesotho, you must first <strong>reserve a unique business name</strong>.
-        The Name Reservation service lets you propose up to <strong>three business names</strong> and check their
-        availability against existing registered companies. Once the Registrar General's Office approves your
-        chosen name, it is reserved exclusively for you for <strong>60 days</strong>, during which you should
-        complete your company registration.
-      </p>
-
-      <div class="tip-box tip-info">
-        <span class="tip-icon">&#9432;</span>
-        <div>
-          <strong>Who should use this service?</strong> Any person who wishes to incorporate a Private Company,
-          Public Company, or register another type of business entity in Lesotho.
-          Both Basotho nationals and foreign nationals may apply.
-        </div>
-      </div>
-
-      <h3 style="margin-top: 20px; margin-bottom: 12px; color: var(--gov-blue);">Before You Start &mdash; What You Will Need</h3>
-      <ul class="checklist">
-        <li>A device with internet access (computer, tablet, or smartphone)</li>
-        <li>A valid email address for receiving notifications</li>
-        <li>Your national ID document (scanned copy or photograph)</li>
-        <li>Three proposed business names ready (you may enter fewer, but three is recommended)</li>
-        <li>Personal details of the business owner (name, date of birth, address)</li>
-        <li>A phone number where you can be reached</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- SECTION: NAMING RULES -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">!</div>
-      <h2>Naming Rules &amp; Guidelines</h2>
-    </div>
-    <div class="section-body">
-      <p style="margin-bottom: 16px;">
-        Choosing a suitable business name is crucial. The Registrar General will reject names that are already taken,
-        offensive, or misleading. Here are the rules to follow:
-      </p>
-
-      <div class="naming-rules">
-        <div class="naming-rule-card rule-do">
-          <h4>Acceptable Names</h4>
-          <ul>
-            <li>Unique and distinguishable from existing registered names</li>
-            <li>Related to your business activity (e.g., "Maseru Fresh Produce (Pty) Ltd")</li>
-            <li>Creative combinations (e.g., "Thaba-Bosiu Holdings Ltd")</li>
-            <li>Owner's surname with descriptor (e.g., "Molapo Construction (Pty) Ltd")</li>
-            <li>Names ending with appropriate suffix: "(Pty) Ltd" for private, "Ltd" for public</li>
-          </ul>
-        </div>
-        <div class="naming-rule-card rule-dont">
-          <h4>Names That Will Be Rejected</h4>
-          <ul>
-            <li>Names already registered to another company</li>
-            <li>Names identical or too similar to government departments</li>
-            <li>Offensive, obscene, or misleading names</li>
-            <li>Names suggesting royal or government patronage without approval</li>
-            <li>Names using restricted words (e.g., "Bank", "Insurance") without a licence</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tip-box tip-success">
-        <span class="tip-icon">&#10004;</span>
-        <div>
-          <strong>Pro tip:</strong> Prepare three different names ranked by preference. The system allows you to
-          check availability instantly, but the Registrar may still reject a name during review.
-          Having alternatives saves time.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- STEP 1: GETTING STARTED -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">1</div>
-      <h2>Step 1: Access the Portal &amp; Select Your Business Type</h2>
-    </div>
-    <div class="section-body">
-      <p>Open your browser and navigate to the Lesotho Business Registration portal.</p>
-
-      <!-- BROWSER MOCKUP: Landing / Ready to Start -->
-      <div class="browser-mockup">
-        <div class="browser-chrome">
-          <div class="browser-dots">
-            <div class="browser-dot dot-red"></div>
-            <div class="browser-dot dot-yellow"></div>
-            <div class="browser-dot dot-green"></div>
-          </div>
-          <div class="browser-url">https://businessregistrations.gov.ls</div>
-        </div>
-        <div class="browser-content">
-          <div class="mock-tab-bar">
-            <div class="mock-tab active">Ready to start?</div>
-            <div class="mock-tab">Name</div>
-            <div class="mock-tab">Owner</div>
-          </div>
-          <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
-            Please select the type of business you wish to register and then click <strong>Start!</strong>
-          </p>
-          <div class="mock-row-3">
-            <div class="mock-form-group">
-              <label>Type of business <span class="required">*</span></label>
-              <div class="mock-select">-- Select --</div>
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logos">
+                <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                </a>
+                <div class="header-divider"></div>
+                <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/7363eda357ebb1583ab4ce37d8e31141f937cf98.png" alt="Lesotho Coat of Arms" class="coat-of-arms">
+                </a>
             </div>
-            <div class="mock-form-group">
-              <label>Type of company</label>
-              <div class="mock-select" style="color:#aaa;">Appears after selecting business type</div>
-            </div>
-            <div class="mock-form-group">
-              <label>Company is</label>
-              <div class="mock-select" style="color:#aaa;">Private / Public</div>
-            </div>
-          </div>
-          <div style="margin-top: 20px; text-align: center;">
-            <span class="mock-btn mock-btn-primary">Start!</span>
-          </div>
+            <nav class="header-nav">
+                <a href="https://lesotho.eregistrations.dev/about/">About</a>
+                <a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a>
+                <a href="https://services.businessregistrations.gov.ls/" class="btn-login">Login | Register</a>
+            </nav>
         </div>
-      </div>
+    </header>
 
-      <h3 style="margin: 20px 0 12px; color: var(--gov-blue);">Field-by-Field Explanation</h3>
-      <table class="field-table">
-        <thead>
-          <tr>
-            <th>Field</th>
-            <th>What to Enter</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Type of business</strong></td>
-            <td>Select the type of business entity you want to register (e.g., Company, Sole Trader, Partnership). This determines which additional fields appear.</td>
-            <td>Company</td>
-          </tr>
-          <tr>
-            <td><strong>Type of company</strong></td>
-            <td>Appears after selecting "Company" as business type. Choose the specific company structure. This field is conditionally activated.</td>
-            <td>Limited Liability Company</td>
-          </tr>
-          <tr>
-            <td><strong>Company is</strong></td>
-            <td>Select whether your company is <em>Private</em> or <em>Public</em>. Most small to medium businesses in Lesotho choose Private.</td>
-            <td>Private</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="tip-box tip-warning">
-        <span class="tip-icon">&#9888;</span>
-        <div>
-          <strong>Important:</strong> The "Type of company" and "Company is" fields only become active once you
-          select an appropriate business type. If these fields appear greyed out, return to "Type of business"
-          and make your selection first.
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                <li><a href="https://services.businessregistrations.gov.ls/">Name Reservation</a></li>
+                <li><span class="current">User Manual</span></li>
+            </ol>
         </div>
-      </div>
     </div>
-  </div>
 
-  <!-- ======================================================= -->
-  <!-- STEP 2: NAME TAB -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">2</div>
-      <h2>Step 2: Propose &amp; Check Your Business Names</h2>
-    </div>
-    <div class="section-body">
-      <p>
-        After clicking <strong>Start!</strong>, the form advances to the <strong>Name</strong> tab. Here you will
-        enter up to three proposed business names and check their availability in real time.
-      </p>
-
-      <!-- BROWSER MOCKUP: Name Tab -->
-      <div class="browser-mockup">
-        <div class="browser-chrome">
-          <div class="browser-dots">
-            <div class="browser-dot dot-red"></div>
-            <div class="browser-dot dot-yellow"></div>
-            <div class="browser-dot dot-green"></div>
-          </div>
-          <div class="browser-url">https://businessregistrations.gov.ls &mdash; Name Reservation</div>
-        </div>
-        <div class="browser-content">
-          <div class="mock-tab-bar">
-            <div class="mock-tab">Ready to start?</div>
-            <div class="mock-tab active">Name</div>
-            <div class="mock-tab">Owner</div>
-          </div>
-
-          <p style="font-size: 13px; background: #f0f4ff; padding: 12px; border-radius: 6px; margin-bottom: 18px;">
-            <strong>How to choose a good name:</strong> Your proposed name should be unique, not misleading, and
-            should reflect the nature of your business. You may propose up to 3 names in order of preference.
-          </p>
-
-          <!-- Name 1 -->
-          <div style="border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; margin-bottom: 14px;">
-            <div style="display: flex; gap: 12px; align-items: flex-end;">
-              <div style="flex: 1;">
-                <label style="display:block; font-size: 13px; font-weight: 600; margin-bottom: 4px;">Proposed name #1 <span style="color:var(--accent-red);">*</span></label>
-                <div class="mock-input">Lesotho Mountain Traders (Pty) Ltd</div>
-              </div>
-              <span class="mock-btn mock-btn-outline" style="margin-bottom: 1px;">Check #1</span>
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">User Manual</span>
+                    <h1>Name Reservation</h1>
+                    <p class="hero-description">Reserve a unique business name before registering your company in Lesotho. This online service allows you to check name availability and secure your preferred business name through the One Business Facilitation Centre (OBFC).</p>
+                    <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Start Application &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="6" width="40" height="52" rx="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="22" y1="20" x2="42" y2="20" stroke-linecap="round"/>
+                            <line x1="22" y1="28" x2="42" y2="28" stroke-linecap="round"/>
+                            <line x1="22" y1="36" x2="36" y2="36" stroke-linecap="round"/>
+                            <polyline points="38,44 42,48 50,38" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
             </div>
-            <div style="margin-top: 8px; font-size: 13px; color: var(--accent-green); font-weight: 600;">
-              &#10004; Name is available
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#overview" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span class="toc-label">Overview</span>
+                </a>
+                <a href="#requirements" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span class="toc-label">Requirements</span>
+                </a>
+                <a href="#costs" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span class="toc-label">Costs &amp; Fees</span>
+                </a>
+                <a href="#step-by-step" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span class="toc-label">Step-by-Step Guide</span>
+                </a>
+                <a href="#form-fields" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span class="toc-label">Form Fields Reference</span>
+                </a>
+                <a href="#after-submission" class="toc-item">
+                    <span class="toc-number">6</span>
+                    <span class="toc-label">After Submission</span>
+                </a>
+                <a href="#faq" class="toc-item">
+                    <span class="toc-number">7</span>
+                    <span class="toc-label">Frequently Asked Questions</span>
+                </a>
+                <a href="#contact" class="toc-item">
+                    <span class="toc-number">8</span>
+                    <span class="toc-label">Contact &amp; Support</span>
+                </a>
             </div>
-          </div>
+        </div>
+    </section>
 
-          <!-- Name 2 -->
-          <div style="border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; margin-bottom: 14px;">
-            <div style="display: flex; gap: 12px; align-items: flex-end;">
-              <div style="flex: 1;">
-                <label style="display:block; font-size: 13px; font-weight: 600; margin-bottom: 4px;">Proposed name #2</label>
-                <div class="mock-input">Highlands Supply Co (Pty) Ltd</div>
-              </div>
-              <span class="mock-btn mock-btn-outline">Check #2</span>
+    <!-- ============================================================
+         MANUAL CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
+
+            <!-- ==================== SECTION 1: OVERVIEW ==================== -->
+            <div class="section" id="overview">
+                <h2>1. Overview</h2>
+                <p>The Name Reservation service allows you to reserve a unique business name before formally registering your company with the Registrar of Companies in Lesotho. A reserved name is held exclusively for you, ensuring no other business can register under the same name during the reservation period.</p>
+
+                <p>This service is available online through the OBFC eRegistrations platform. You can propose up to <strong>three alternative names</strong> and the system will check each one for availability in real time. Once you submit your application, a government officer will review and approve your preferred name.</p>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Who is this for?
+                    </div>
+                    <p>This service is for anyone intending to register a business in Lesotho, including sole proprietors, partnerships, private companies, and public companies. Name reservation is a recommended first step before company registration.</p>
+                </div>
+
+                <h3>What you will need</h3>
+                <ul>
+                    <li>An OBFC online account (free to create)</li>
+                    <li>Up to three proposed business names</li>
+                    <li>Details about the type of business you intend to register</li>
+                    <li>Personal information of the business owner (name, date of birth, nationality)</li>
+                    <li>A copy of your National ID document</li>
+                    <li>Contact details and address</li>
+                </ul>
+
+                <h3>How long does it take?</h3>
+                <p>The online application takes approximately <strong>10 to 15 minutes</strong> to complete. Processing by the Registrar typically takes <strong>1 to 3 business days</strong> after submission.</p>
             </div>
-            <div style="margin-top: 8px; font-size: 13px; color: var(--accent-red); font-weight: 600;">
-              &#10008; Name already exists
+
+            <!-- ==================== SECTION 2: REQUIREMENTS ==================== -->
+            <div class="section" id="requirements">
+                <h2>2. Requirements</h2>
+                <p>Before starting your application, make sure you have the following items ready:</p>
+
+                <h3>Documents</h3>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>National ID</strong> &mdash; A scanned copy or clear photograph of your national identity document (passport or national ID card). Accepted formats: PDF, JPG, or PNG.</span>
+                    </li>
+                </ul>
+
+                <h3>Information</h3>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Proposed business names</strong> &mdash; Up to 3 name options in order of preference</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Type of business</strong> &mdash; Whether the entity is a sole proprietor, partnership, or company</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Type of company</strong> &mdash; If registering a company, whether it is private or public</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Owner details</strong> &mdash; Full name, surname, gender, date of birth, and nationality</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Contact details</strong> &mdash; Physical address, municipality, phone number, and email address</span>
+                    </li>
+                </ul>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Important
+                    </div>
+                    <p>The names you propose must be unique and not already registered by another business in Lesotho. The system will check each name in real time, but final approval is subject to review by the Registrar of Companies.</p>
+                </div>
             </div>
-          </div>
 
-          <!-- Name 3 -->
-          <div style="border: 1px solid var(--border-light); border-radius: 8px; padding: 16px; margin-bottom: 14px;">
-            <div style="display: flex; gap: 12px; align-items: flex-end;">
-              <div style="flex: 1;">
-                <label style="display:block; font-size: 13px; font-weight: 600; margin-bottom: 4px;">Proposed name #3</label>
-                <div class="mock-input">Katse Enterprises (Pty) Ltd</div>
-              </div>
-              <span class="mock-btn mock-btn-outline">Check #3</span>
+            <!-- ==================== SECTION 3: COSTS & FEES ==================== -->
+            <div class="section" id="costs">
+                <h2>3. Costs &amp; Fees</h2>
+                <p>The following fees apply to the name reservation service. Payment is made digitally through the online platform.</p>
+
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Fee Item</th>
+                            <th>Amount (LSL)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Name Reservation Fee</td>
+                            <td class="amount">50.00</td>
+                            <td>Non-refundable processing fee</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total</td>
+                            <td class="amount">50.00</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Payment
+                    </div>
+                    <p>Payment is processed digitally through the OBFC platform. You will be prompted to pay after submitting and validating your application form. The system accepts digital payment methods available through the platform.</p>
+                </div>
             </div>
-          </div>
 
-          <div style="text-align: right; margin-top: 16px;">
-            <span class="mock-btn mock-btn-primary">Next tab &rarr;</span>
-          </div>
-        </div>
-      </div>
+            <!-- ==================== SECTION 4: STEP-BY-STEP GUIDE ==================== -->
+            <div class="section" id="step-by-step">
+                <h2>4. Step-by-Step Guide</h2>
+                <p>Follow these steps to complete your name reservation application online.</p>
 
-      <h3 style="margin: 20px 0 12px; color: var(--gov-blue);">How the Name Check Works</h3>
-      <ol style="padding-left: 20px; font-size: 15px; color: var(--text-muted);">
-        <li style="margin-bottom: 8px;">Type your proposed business name in the text field.</li>
-        <li style="margin-bottom: 8px;">Click the corresponding <strong>Check</strong> button to search the registry.</li>
-        <li style="margin-bottom: 8px;">The system queries the Companies Registry database and tells you instantly whether the name is already taken or available.</li>
-        <li style="margin-bottom: 8px;">A <span style="color:var(--accent-green); font-weight:600;">green checkmark</span> means the name is available; a <span style="color:var(--accent-red); font-weight:600;">red cross</span> means it is already registered.</li>
-        <li style="margin-bottom: 8px;">If a name is taken, modify it and check again. Consider adding a geographic term (e.g., "Maseru", "Katse") or your industry keyword.</li>
-      </ol>
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Create an Account or Log In</h4>
+                            <p>Visit <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a> and either create a new account or log into your existing one. You will need a valid email address to register.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Select Name Reservation Service</h4>
+                            <p>From the service catalogue, select <strong>Name Reservation</strong>. You will see an introductory page explaining the service and its requirements.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Choose Your Business Type</h4>
+                            <p>On the "Ready to start?" tab, select the <strong>type of business</strong> you want to register (e.g., Sole Proprietor, Partnership, Company). If you selected "Company", also specify the <strong>type of company</strong> (Private or Public) and the <strong>company classification</strong>.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Click "Start!" to Begin</h4>
+                            <p>After reviewing the information and selecting your business type, click the <strong>Start!</strong> button to proceed to the application form.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Propose Your Business Names</h4>
+                            <p>On the "Name" tab, enter up to three proposed business names:</p>
+                            <ul style="margin-top: 8px; padding-left: 20px;">
+                                <li><strong>Proposed name #1</strong> &mdash; Your first-choice name (required)</li>
+                                <li><strong>Proposed name #2</strong> &mdash; Your second-choice name (optional)</li>
+                                <li><strong>Proposed name #3</strong> &mdash; Your third-choice name (optional)</li>
+                            </ul>
+                            <p style="margin-top: 8px;">After entering each name, click the corresponding <strong>Check</strong> button (Check #1, Check #2, or Check #3) to verify whether the name is already taken. The system will display whether the name exists or is available.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Click "Next Tab" to Continue</h4>
+                            <p>Once you have entered and checked your proposed names, click <strong>Next tab</strong> to proceed to the owner details section.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Enter Owner Information</h4>
+                            <p>On the "Owner" tab, fill in the personal details of the business owner:</p>
+                            <ul style="margin-top: 8px; padding-left: 20px;">
+                                <li><strong>Name</strong> and <strong>Surname</strong></li>
+                                <li><strong>Gender</strong> (select from dropdown)</li>
+                                <li><strong>Date of birth</strong></li>
+                                <li><strong>Nationality</strong> (select from dropdown)</li>
+                            </ul>
+                            <p style="margin-top: 8px;">Upload a scanned copy of your <strong>National ID</strong> document.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">8</div>
+                        <div class="step-content">
+                            <h4>Enter Contact &amp; Address Details</h4>
+                            <p>Still on the "Owner" tab, provide your contact and address information:</p>
+                            <ul style="margin-top: 8px; padding-left: 20px;">
+                                <li><strong>Address</strong> &mdash; Your physical address</li>
+                                <li><strong>Municipality</strong> &mdash; Select from the dropdown</li>
+                                <li><strong>Google Maps reference</strong> &mdash; A link or reference for your location (optional)</li>
+                                <li><strong>Phone</strong> number</li>
+                                <li><strong>Email</strong> address</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">9</div>
+                        <div class="step-content">
+                            <h4>Validate and Submit</h4>
+                            <p>Click <strong>Validate the form</strong> to check that all required fields are completed correctly. If there are any errors, the system will highlight them so you can correct them. Once validated, proceed to submit your application and complete the digital payment.</p>
+                        </div>
+                    </li>
+                </ol>
 
-      <div class="tip-box tip-danger">
-        <span class="tip-icon">&#9888;</span>
-        <div>
-          <strong>Duplicate names are blocked.</strong> The system will not let you submit two identical proposed
-          names. Each of your three names must be different from the others. If you enter the same name in
-          multiple fields, the system will alert you.
-        </div>
-      </div>
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Tip
+                    </div>
+                    <p>You can save your progress and return later to complete the application. Your data is saved automatically as you fill in each section.</p>
+                </div>
 
-      <div class="tip-box tip-info">
-        <span class="tip-icon">&#9432;</span>
-        <div>
-          <strong>Sesotho or English?</strong> You may propose business names in either Sesotho or English.
-          Names in both languages are accepted. For example, "Lehlaka la Thaba (Pty) Ltd" is perfectly valid.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- STEP 3: OWNER TAB -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">3</div>
-      <h2>Step 3: Enter Owner / Applicant Details</h2>
-    </div>
-    <div class="section-body">
-      <p>
-        The <strong>Owner</strong> tab collects the personal details of the person applying for the name
-        reservation. This is typically the intended owner or director of the company being formed.
-      </p>
-
-      <!-- BROWSER MOCKUP: Owner Tab -->
-      <div class="browser-mockup">
-        <div class="browser-chrome">
-          <div class="browser-dots">
-            <div class="browser-dot dot-red"></div>
-            <div class="browser-dot dot-yellow"></div>
-            <div class="browser-dot dot-green"></div>
-          </div>
-          <div class="browser-url">https://businessregistrations.gov.ls &mdash; Owner Details</div>
-        </div>
-        <div class="browser-content">
-          <div class="mock-tab-bar">
-            <div class="mock-tab">Ready to start?</div>
-            <div class="mock-tab">Name</div>
-            <div class="mock-tab active">Owner</div>
-          </div>
-
-          <!-- Personal Info Block -->
-          <p style="font-size: 13px; font-weight: 600; color: var(--gov-blue); margin-bottom: 12px; border-bottom: 1px solid var(--border-light); padding-bottom: 6px;">Personal Information</p>
-          <div class="mock-row-3">
-            <div class="mock-form-group">
-              <label>Name <span class="required">*</span></label>
-              <div class="mock-input">Thabo</div>
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Warning
+                    </div>
+                    <p>You cannot propose the same name twice. Each of your three proposed names must be different from the others. The system will alert you if duplicate names are detected.</p>
+                </div>
             </div>
-            <div class="mock-form-group">
-              <label>Surname <span class="required">*</span></label>
-              <div class="mock-input">Molapo</div>
+
+            <!-- ==================== SECTION 5: FORM FIELDS REFERENCE ==================== -->
+            <div class="section" id="form-fields">
+                <h2>5. Form Fields Reference</h2>
+                <p>Below is a complete reference of all fields you will encounter in the application form, organised by tab.</p>
+
+                <h3>Tab 1: Ready to Start?</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Type of business</td>
+                            <td>Dropdown</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Select the type of business entity you want to register (e.g., Sole Proprietor, Partnership, Company)</td>
+                        </tr>
+                        <tr>
+                            <td>Type of company</td>
+                            <td>Dropdown</td>
+                            <td class="required-yes">Yes</td>
+                            <td>If business type is Company, select whether it is Private or Public</td>
+                        </tr>
+                        <tr>
+                            <td>Company is</td>
+                            <td>Dropdown</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Further classification of the company type</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Tab 2: Name</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Proposed name #1</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Your first-choice business name. Click "Check #1" to verify availability.</td>
+                        </tr>
+                        <tr>
+                            <td>Proposed name #2</td>
+                            <td>Text</td>
+                            <td class="required-no">No</td>
+                            <td>Your second-choice business name. Click "Check #2" to verify availability.</td>
+                        </tr>
+                        <tr>
+                            <td>Proposed name #3</td>
+                            <td>Text</td>
+                            <td class="required-no">No</td>
+                            <td>Your third-choice business name. Click "Check #3" to verify availability.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Tab 3: Owner</h3>
+                <h4>Personal Details</h4>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Name</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>First name of the business owner</td>
+                        </tr>
+                        <tr>
+                            <td>Surname</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Last name / surname of the business owner</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>Dropdown</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Gender of the business owner</td>
+                        </tr>
+                        <tr>
+                            <td>Date of birth</td>
+                            <td>Date</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Date of birth of the business owner</td>
+                        </tr>
+                        <tr>
+                            <td>Nationality</td>
+                            <td>Dropdown</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Nationality of the business owner (select from list of countries)</td>
+                        </tr>
+                        <tr>
+                            <td>National ID</td>
+                            <td>File upload</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Scanned copy of national identity document (PDF, JPG, or PNG)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>Address &amp; Contact</h4>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Address</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Physical street address of the owner</td>
+                        </tr>
+                        <tr>
+                            <td>Municipality</td>
+                            <td>Dropdown</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Municipality or district where the owner resides</td>
+                        </tr>
+                        <tr>
+                            <td>Google Maps reference</td>
+                            <td>Text</td>
+                            <td class="required-no">No</td>
+                            <td>A Google Maps link or reference for your location</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Contact phone number</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>Email</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Contact email address (used for notifications)</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="mock-form-group">
-              <label>Gender</label>
-              <div class="mock-select">Male</div>
+
+            <!-- ==================== SECTION 6: AFTER SUBMISSION ==================== -->
+            <div class="section" id="after-submission">
+                <h2>6. After Submission</h2>
+                <p>Once you have submitted and paid for your name reservation application, it enters a review process. Here is what happens next:</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Application Submitted</h4>
+                        <p>Your application is received and a reference number is generated. You will receive a confirmation email with your reference number.</p>
+                        <div class="timeline-meta">Day 0</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Name Review</h4>
+                        <p>A government officer at the Registrar of Companies reviews your proposed name(s) for compliance with naming rules and regulations. They verify that the name is not identical or deceptively similar to an existing registered name.</p>
+                        <div class="timeline-meta">Day 1&ndash;2</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Decision</h4>
+                        <p>The officer approves or rejects each proposed name. If approved, one name will be confirmed as reserved for you. If all names are rejected, you will be notified with reasons and can submit a new application.</p>
+                        <div class="timeline-meta">Day 2&ndash;3</div>
+                    </div>
+                    <div class="timeline-item pending">
+                        <h4>Name Reservation Certificate</h4>
+                        <p>Once approved, your name reservation certificate is issued and available for download from the platform. You can then proceed with your full business registration.</p>
+                        <div class="timeline-meta">Day 3</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Tracking your application
+                    </div>
+                    <p>You can track the status of your application at any time by logging into your account at <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a>. You will also receive email notifications when the status of your application changes.</p>
+                </div>
+
+                <h3>What if my name is rejected?</h3>
+                <p>If one or more of your proposed names are rejected, the officer will provide reasons for the rejection. Common reasons include:</p>
+                <ul>
+                    <li>The name is identical or too similar to an existing registered business</li>
+                    <li>The name contains restricted or prohibited words</li>
+                    <li>The name is misleading or offensive</li>
+                </ul>
+                <p>You may submit a new name reservation application with different proposed names. Each new application requires a separate fee payment.</p>
             </div>
-          </div>
-          <div class="mock-row">
-            <div class="mock-form-group">
-              <label>Date of birth <span class="required">*</span></label>
-              <div class="mock-input">15/03/1985</div>
+
+            <!-- ==================== SECTION 7: FAQ ==================== -->
+            <div class="section" id="faq">
+                <h2>7. Frequently Asked Questions</h2>
+
+                <div class="faq-item open">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How long is a name reservation valid?</button>
+                    <div class="faq-answer">
+                        <p>A reserved name is typically held for a period specified by the Registrar of Companies. You should complete your full business registration within this period, or the reserved name may become available to others.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can I reserve more than one name at the same time?</button>
+                    <div class="faq-answer">
+                        <p>Each application allows you to propose up to three alternative names. The Registrar will approve one name per application. If you need to reserve names for different businesses, you must submit separate applications.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What names are not allowed?</button>
+                    <div class="faq-answer">
+                        <p>Names that are identical to existing registered businesses, names that could mislead the public, names containing offensive language, and names that imply government affiliation without authorisation are typically not allowed. The Registrar has final discretion over name approvals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do I need to reserve a name before registering my business?</button>
+                    <div class="faq-answer">
+                        <p>Name reservation is recommended but the exact requirement depends on the type of business you are registering. For companies, reserving a name first ensures that your desired name is available and held for you during the registration process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What does the "Check" button do?</button>
+                    <div class="faq-answer">
+                        <p>When you enter a proposed business name and click the "Check" button (Check #1, Check #2, or Check #3), the system queries the national business registry in real time to verify whether the name is already taken. It will indicate whether the name exists or is available. Note that even if the name shows as available, the final decision rests with the Registrar.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can I change my reserved name later?</button>
+                    <div class="faq-answer">
+                        <p>Once a name is reserved, it cannot be changed. If you wish to use a different name, you must submit a new name reservation application and pay the applicable fee.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is the difference between a private and public company?</button>
+                    <div class="faq-answer">
+                        <p>A <strong>private company</strong> restricts the transfer of its shares and limits the number of shareholders. A <strong>public company</strong> can offer shares to the general public and typically has more regulatory requirements. The type you select affects the naming rules and suffix required (e.g., "(Pty) Ltd" for private, "Ltd" for public).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is the name reservation fee refundable?</button>
+                    <div class="faq-answer">
+                        <p>No. The name reservation fee is a non-refundable processing fee, regardless of whether the name is approved or rejected.</p>
+                    </div>
+                </div>
             </div>
-            <div class="mock-form-group">
-              <label>Nationality</label>
-              <div class="mock-select">Mosotho</div>
+
+            <!-- ==================== SECTION 8: CONTACT & SUPPORT ==================== -->
+            <div class="section" id="contact">
+                <h2>8. Contact &amp; Support</h2>
+                <p>If you need help with your name reservation application or have questions about the process, the OBFC support team is available to assist you.</p>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Contact Information
+                    </div>
+                    <p><strong>One Business Facilitation Centre (OBFC)</strong></p>
+                    <p>LNDC Centre, Block A<br>Kingsway Road, Maseru, Lesotho</p>
+                    <p>Phone: <strong>+266 2231 7454</strong><br>
+                    Email: <strong>info@obfc.org.ls</strong></p>
+                    <p>Office Hours: Monday to Friday, 8:00 AM &ndash; 4:30 PM</p>
+                </div>
+
+                <h3>Online Support</h3>
+                <ul>
+                    <li><strong>Help Centre:</strong> <a href="https://lesotho.eregistrations.dev/help/">lesotho.eregistrations.dev/help</a></li>
+                    <li><strong>Online Portal:</strong> <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a></li>
+                </ul>
+
+                <h3>In-Person Assistance</h3>
+                <p>You can also visit the OBFC offices in Maseru for in-person assistance with your application. Staff at the centre can help you navigate the online platform and answer any questions about the name reservation process.</p>
             </div>
-          </div>
-          <div class="mock-form-group">
-            <label>National ID <span class="required">*</span></label>
-            <div class="mock-input" style="color: var(--gov-blue);">&#128206; national-id-scan.pdf (uploaded)</div>
-          </div>
 
-          <!-- Address Block -->
-          <p style="font-size: 13px; font-weight: 600; color: var(--gov-blue); margin: 20px 0 12px; border-bottom: 1px solid var(--border-light); padding-bottom: 6px;">Contact &amp; Address</p>
-          <div class="mock-row">
-            <div class="mock-form-group">
-              <label>Address <span class="required">*</span></label>
-              <div class="mock-input">Plot 123, Kingsway Road</div>
+        </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Column 1: Logo & About -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="https://lesotho.eregistrations.dev/_assets/v11/e8f8e0f4875113e3103aae78a6e2c99f11345f18.png" alt="OBFC Logo">
+                    </div>
+                    <p>One Business Facilitation Centre (OBFC) provides a single window for business registration and licensing services in the Kingdom of Lesotho.</p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="footer-col">
+                    <h5>Contact Details</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>LNDC Centre, Block A<br>Kingsway Road, Maseru</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75l.72 3.59a1 1 0 0 1-.26.95L8.09 10.7a16 16 0 0 0 5.21 5.21l2.41-2.41a1 1 0 0 1 .95-.26l3.59.72a1 1 0 0 1 .75 1z"/></svg>
+                        <span>+266 2231 7454</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@obfc.org.ls</span>
+                    </div>
+                </div>
+
+                <!-- Column 3: Social Channels -->
+                <div class="footer-col">
+                    <h5>Follow Us</h5>
+                    <p>Stay connected with OBFC for the latest updates on business services.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Quick Links -->
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                        <li><a href="https://services.businessregistrations.gov.ls/">Login / Register</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/privacy/">Privacy Policy</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/terms/">Terms of Service</a></li>
+                    </ul>
+                </div>
+
             </div>
-            <div class="mock-form-group">
-              <label>Municipality</label>
-              <div class="mock-select">Maseru</div>
+
+            <!-- Implemented by -->
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <a href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/742ddaa6ec00aadee1b93dffeefc513e3c77473c.png" alt="World Bank">
+                </a>
+                <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/fd2d79a17613c98a31e05becdb641ca8c82159b4.png" alt="UNCTAD">
+                </a>
             </div>
-          </div>
-          <div class="mock-row-3">
-            <div class="mock-form-group">
-              <label>Google Maps reference</label>
-              <div class="mock-input" style="color:#aaa;">Optional</div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Generated: February 2026
             </div>
-            <div class="mock-form-group">
-              <label>Phone <span class="required">*</span></label>
-              <div class="mock-input">+266 5800 1234</div>
-            </div>
-            <div class="mock-form-group">
-              <label>Email <span class="required">*</span></label>
-              <div class="mock-input">thabo.molapo@email.co.ls</div>
-            </div>
-          </div>
-
-          <div style="text-align: right; margin-top: 20px;">
-            <span class="mock-btn mock-btn-success">Validate the form &#10004;</span>
-          </div>
         </div>
-      </div>
+    </footer>
 
-      <h3 style="margin: 20px 0 12px; color: var(--gov-blue);">Owner Tab &mdash; Field Reference</h3>
-      <table class="field-table">
-        <thead>
-          <tr>
-            <th>Field</th>
-            <th>Description</th>
-            <th>Example</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Name</strong></td>
-            <td>Your first name / given name as it appears on your national ID</td>
-            <td>Thabo</td>
-          </tr>
-          <tr>
-            <td><strong>Surname</strong></td>
-            <td>Your family name / last name</td>
-            <td>Molapo</td>
-          </tr>
-          <tr>
-            <td><strong>Gender</strong></td>
-            <td>Select Male or Female</td>
-            <td>Male</td>
-          </tr>
-          <tr>
-            <td><strong>Date of birth</strong></td>
-            <td>Your date of birth. You must be at least 18 years old to register a business.</td>
-            <td>15/03/1985</td>
-          </tr>
-          <tr>
-            <td><strong>Nationality</strong></td>
-            <td>Your country of citizenship. Select from the dropdown list.</td>
-            <td>Lesotho</td>
-          </tr>
-          <tr>
-            <td><strong>National ID</strong></td>
-            <td>Upload a scan or clear photograph of your national identity document. Accepted formats: PDF, JPG, PNG.</td>
-            <td>national-id.pdf</td>
-          </tr>
-          <tr>
-            <td><strong>Address</strong></td>
-            <td>Your physical residential or business address</td>
-            <td>Plot 123, Kingsway Road</td>
-          </tr>
-          <tr>
-            <td><strong>Municipality</strong></td>
-            <td>Select your district / municipality from the dropdown</td>
-            <td>Maseru</td>
-          </tr>
-          <tr>
-            <td><strong>Google Maps reference</strong></td>
-            <td>Optional. Paste a Google Maps link or coordinates to help locate your address.</td>
-            <td>https://maps.google.com/...</td>
-          </tr>
-          <tr>
-            <td><strong>Phone</strong></td>
-            <td>Your contact phone number including country code</td>
-            <td>+266 5800 1234</td>
-          </tr>
-          <tr>
-            <td><strong>Email</strong></td>
-            <td>A valid email address. You will receive notifications about your application here.</td>
-            <td>thabo@email.co.ls</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="tip-box tip-warning">
-        <span class="tip-icon">&#9888;</span>
-        <div>
-          <strong>Double-check your email address.</strong> All official communications about your name reservation
-          will be sent to this email. An incorrect email means you will not receive your approval notice.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- STEP 4: VALIDATE & SUBMIT -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">4</div>
-      <h2>Step 4: Validate &amp; Submit Your Application</h2>
-    </div>
-    <div class="section-body">
-      <p>
-        Once you have filled in all fields in the <strong>Owner</strong> tab, click the
-        <strong>"Validate the form"</strong> button at the bottom. The system will check that:
-      </p>
-      <ul style="padding-left: 20px; margin: 12px 0;">
-        <li>All required fields are completed</li>
-        <li>At least one proposed name has been checked and is available</li>
-        <li>Your proposed names are each unique (not duplicates of each other)</li>
-        <li>Your national ID document has been uploaded</li>
-      </ul>
-      <p>
-        If validation passes, you will be able to submit your application. If there are errors,
-        the system highlights the problematic fields in red &mdash; correct them and try again.
-      </p>
-
-      <div class="tip-box tip-success">
-        <span class="tip-icon">&#10004;</span>
-        <div>
-          <strong>After submission:</strong> You will receive a confirmation email with a reference number.
-          Keep this number &mdash; you will need it to track your application status and for your
-          subsequent company registration.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- SECTION: REQUIRED DOCUMENTS -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">&#128196;</div>
-      <h2>Required Documents</h2>
-    </div>
-    <div class="section-body">
-      <p>The Name Reservation service requires the following document to be uploaded during your application:</p>
-
-      <table class="field-table">
-        <thead>
-          <tr>
-            <th>Document</th>
-            <th>Format</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>National Identity Document</strong></td>
-            <td>PDF, JPG, or PNG</td>
-            <td>
-              A clear scan or photograph of your valid Lesotho national ID card, or passport for
-              foreign nationals. The document must show your full name, date of birth, and photograph.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="tip-box tip-info">
-        <span class="tip-icon">&#9432;</span>
-        <div>
-          <strong>File size:</strong> Keep your uploads under 5 MB. If your file is too large,
-          compress it or take a new photograph with lower resolution.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- SECTION: WORKFLOW -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">&#9881;</div>
-      <h2>Processing Workflow &mdash; What Happens After You Submit</h2>
-    </div>
-    <div class="section-body">
-      <p>After you submit your application, here is what happens behind the scenes:</p>
-
-      <div class="workflow-steps">
-        <div class="wf-step">
-          <div class="wf-connector">
-            <div class="wf-circle">1</div>
-            <div class="wf-line"></div>
-          </div>
-          <div class="wf-content">
-            <h4>You Submit Your Application</h4>
-            <p>Your completed form with proposed names, personal details, and national ID is submitted electronically via the portal.</p>
-          </div>
-        </div>
-
-        <div class="wf-step">
-          <div class="wf-connector">
-            <div class="wf-circle">2</div>
-            <div class="wf-line"></div>
-          </div>
-          <div class="wf-content">
-            <h4>Name Reservation Officer Reviews</h4>
-            <p>
-              A Name Reservation officer at the Registrar General's Office reviews your proposed names.
-              They verify the name does not conflict with existing registrations, is not offensive,
-              and complies with the Companies Act.
-            </p>
-          </div>
-        </div>
-
-        <div class="wf-step">
-          <div class="wf-connector">
-            <div class="wf-circle">3</div>
-            <div class="wf-line"></div>
-          </div>
-          <div class="wf-content">
-            <h4>Decision: Approved or Returned</h4>
-            <p>
-              <strong>Approved:</strong> Your preferred name is reserved for 60 days. You receive an email confirmation with a Name Reservation Certificate.<br>
-              <strong>Returned:</strong> If all names are rejected, you are notified by email with the reason. You can then submit new names.
-            </p>
-          </div>
-        </div>
-
-        <div class="wf-step">
-          <div class="wf-connector">
-            <div class="wf-circle done">4</div>
-          </div>
-          <div class="wf-content">
-            <h4>Proceed to Company Registration</h4>
-            <p>With your reserved name, you can now proceed to the full company registration service within the 60-day reservation period.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="tip-box tip-warning">
-        <span class="tip-icon">&#9888;</span>
-        <div>
-          <strong>60-day deadline:</strong> If you do not complete your company registration within 60 days
-          of name approval, the reservation expires and the name becomes available to others.
-          You would need to apply again.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- SECTION: COSTS -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">M</div>
-      <h2>Costs &amp; Payment</h2>
-    </div>
-    <div class="section-body">
-      <p>The Name Reservation service is subject to a government fee. Payment can be made digitally through the portal.</p>
-
-      <div class="cost-highlight">
-        <div class="cost-label">Name Reservation Fee</div>
-        <div class="cost-amount">Refer to Portal for Current Fee</div>
-        <div class="cost-label" style="margin-top: 8px;">Payment is required before your application is processed</div>
-      </div>
-
-      <div class="tip-box tip-info">
-        <span class="tip-icon">&#9432;</span>
-        <div>
-          <strong>Digital payment:</strong> The system supports online/digital payment. Once you complete and
-          submit your form, you will be guided through the payment process. A payment receipt will be
-          emailed to you automatically.
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- SECTION: FAQ -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">?</div>
-      <h2>Frequently Asked Questions</h2>
-    </div>
-    <div class="section-body">
-
-      <div class="faq-item">
-        <div class="faq-q">1. How long does the name reservation process take?</div>
-        <div class="faq-a">
-          Typically 1 to 3 working days from the date of submission. The instant name check on the portal tells you
-          if a name is already registered, but the Registrar General's Office still conducts a formal review before
-          issuing the reservation certificate.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">2. Can I reserve a name if I am not a Mosotho citizen?</div>
-        <div class="faq-a">
-          Yes. Foreign nationals can reserve a business name in Lesotho. You will need to upload a valid passport
-          instead of a national ID. Additional requirements may apply during the full company registration process
-          for foreign-owned businesses.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">3. What happens if all three of my proposed names are rejected?</div>
-        <div class="faq-a">
-          If none of your proposed names are approved, you will receive an email notification with the reasons for
-          rejection. You can then submit a new application with different names. There is no penalty for resubmitting.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">4. Can I extend my 60-day name reservation?</div>
-        <div class="faq-a">
-          Name reservations are valid for 60 days from the date of approval. If you need more time, you should
-          contact the Registrar General's Office directly to enquire about extension possibilities. In most cases,
-          you may simply re-apply if the name is still available.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">5. Can I use Sesotho words in my business name?</div>
-        <div class="faq-a">
-          Absolutely. Business names in Sesotho, English, or a combination of both are accepted. For example,
-          "Mokorotlo Designs (Pty) Ltd" or "Lehlaka la Thaba Holdings Ltd" are both valid names.
-          The name must still comply with all other naming rules.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">6. Do I need to create an account on the portal before applying?</div>
-        <div class="faq-a">
-          The system checks whether you are logged in before allowing submission. You should create an account
-          or sign in before starting your application. Registration on the portal is free and only requires a
-          valid email address.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">7. What is the difference between a Private and Public company?</div>
-        <div class="faq-a">
-          A <strong>Private company</strong> (Pty) Ltd has restrictions on share transfers and cannot offer shares
-          to the public. It is the most common type for small and medium businesses in Lesotho. A
-          <strong>Public company</strong> (Ltd) can offer shares to the public and is subject to additional
-          regulatory requirements. Most entrepreneurs starting a new business should choose Private.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">8. The system says my name "already exists" but I cannot find that company. Why?</div>
-        <div class="faq-a">
-          The registry database includes all companies ever registered in Lesotho, including inactive or
-          dissolved companies. A name that appears to be taken may belong to a company that is no longer
-          operating but has not been formally deregistered. In such cases, you will need to choose a
-          different name or contact the Registrar General for clarification.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">9. Can I reserve more than one name at the same time?</div>
-        <div class="faq-a">
-          Each application allows you to propose up to three names, but only one will be reserved (your
-          top available choice). If you need to reserve names for multiple different businesses, you must
-          submit separate applications for each.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">10. I made a mistake in my application. Can I edit it after submission?</div>
-        <div class="faq-a">
-          Once submitted, you cannot edit the application directly. If the Registrar finds an issue, they
-          may return it to you for correction. If you notice an error immediately after submission, contact
-          the Registrar General's Office with your reference number and explain the correction needed.
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ======================================================= -->
-  <!-- SECTION: CONTACT & HELP -->
-  <!-- ======================================================= -->
-  <div class="section">
-    <div class="section-header">
-      <div class="step-badge">&#9742;</div>
-      <h2>Need Help?</h2>
-    </div>
-    <div class="section-body">
-      <p>If you experience difficulties with the online system or have questions about the name reservation process, you can reach out through the following channels:</p>
-
-      <table class="field-table">
-        <thead>
-          <tr>
-            <th>Channel</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>In Person</strong></td>
-            <td>Registrar General's Office, Ministry of Trade &amp; Industry, Maseru, Lesotho</td>
-          </tr>
-          <tr>
-            <td><strong>Website</strong></td>
-            <td><a href="https://businessregistrations.gov.ls" style="color: var(--gov-blue);">businessregistrations.gov.ls</a></td>
-          </tr>
-          <tr>
-            <td><strong>Office Hours</strong></td>
-            <td>Monday to Friday, 08:00 &ndash; 16:30</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="tip-box tip-info">
-        <span class="tip-icon">&#9432;</span>
-        <div>
-          <strong>Technical issues?</strong> If the portal is not loading or you encounter errors, try clearing
-          your browser cache, switching to a different browser (Chrome or Firefox recommended), or checking
-          your internet connection. If the issue persists, contact the support channels above.
-        </div>
-      </div>
-    </div>
-  </div>
-
-</main>
-
-<!-- ===== FOOTER ===== -->
-<footer class="gov-footer">
-  <div>
-    <strong>Kingdom of Lesotho</strong> &mdash; Ministry of Trade &amp; Industry
-  </div>
-  <div class="footer-line">
-    Business Registration Portal: <a href="https://businessregistrations.gov.ls">businessregistrations.gov.ls</a>
-  </div>
-  <div class="footer-line" style="margin-top: 12px; font-size: 12px; opacity: 0.6;">
-    This user manual was generated from the eRegistrations service configuration.
-    Last updated: February 2026.
-  </div>
-</footer>
+    <!-- ============================================================
+         TAB SWITCHING SCRIPT
+         ============================================================ -->
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
