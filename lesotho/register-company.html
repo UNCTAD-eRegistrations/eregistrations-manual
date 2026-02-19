@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Manual — Register a Company | Lesotho Business Registrations</title>
+<style>
+  :root {
+    --gov-blue: #003580;
+    --gov-blue-light: #0050b3;
+    --gov-blue-pale: #e8f0fe;
+    --gov-gold: #c8a415;
+    --text: #1a1a2e;
+    --text-light: #555;
+    --bg: #f7f8fc;
+    --white: #ffffff;
+    --border: #d0d7e3;
+    --success: #1a7a3a;
+    --warn: #b35c00;
+    --danger: #c0392b;
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  /* ===== HEADER ===== */
+  .gov-header {
+    background: var(--gov-blue);
+    color: var(--white);
+    padding: 0;
+  }
+  .gov-header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 24px 14px;
+  }
+  .gov-header-top .logo-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .gov-crest {
+    width: 52px;
+    height: 52px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--gov-blue);
+  }
+  .gov-title h1 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .gov-title p {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-top: 2px;
+  }
+  .gov-header-bar {
+    background: var(--gov-blue-light);
+    padding: 10px 24px;
+  }
+  .gov-header-bar .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-size: 14px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .gov-header-bar a {
+    color: rgba(255,255,255,0.9);
+    text-decoration: none;
+  }
+  .gov-header-bar a:hover { text-decoration: underline; }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--gov-blue) 0%, #004aad 100%);
+    color: var(--white);
+    padding: 52px 24px 48px;
+    text-align: center;
+  }
+  .hero h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .hero p {
+    font-size: 17px;
+    opacity: 0.9;
+    max-width: 640px;
+    margin: 0 auto 24px;
+  }
+  .hero-badges {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-badge {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  /* ===== LAYOUT ===== */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 32px;
+    margin: 36px auto;
+    max-width: 1100px;
+    padding: 0 24px;
+  }
+  @media (max-width: 860px) {
+    .content-grid { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+
+  /* ===== SIDEBAR / TOC ===== */
+  .sidebar {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+  }
+  .toc {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+  }
+  .toc h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gov-blue);
+    margin-bottom: 14px;
+  }
+  .toc ul { list-style: none; }
+  .toc li { margin-bottom: 6px; }
+  .toc a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.15s;
+  }
+  .toc a:hover {
+    background: var(--gov-blue-pale);
+    color: var(--gov-blue);
+  }
+
+  /* ===== MAIN CONTENT ===== */
+  .main-content section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 28px;
+  }
+  .main-content h2 {
+    color: var(--gov-blue);
+    font-size: 22px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gov-blue-pale);
+  }
+  .main-content h3 {
+    color: var(--gov-blue);
+    font-size: 17px;
+    margin: 24px 0 10px;
+  }
+  .main-content p { margin-bottom: 12px; }
+  .main-content ul, .main-content ol {
+    margin: 8px 0 16px 24px;
+  }
+  .main-content li { margin-bottom: 6px; }
+
+  /* ===== BROWSER MOCKUP ===== */
+  .browser-mockup {
+    border: 1px solid #c5cdd8;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+  .browser-bar {
+    background: #e8ecf1;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .browser-dots {
+    display: flex;
+    gap: 6px;
+  }
+  .browser-dots span {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .browser-dots .r { background: #ff5f57; }
+  .browser-dots .y { background: #ffbd2e; }
+  .browser-dots .g { background: #28c840; }
+  .browser-url {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #555;
+    font-family: monospace;
+  }
+  .browser-body {
+    background: var(--white);
+    padding: 24px;
+    min-height: 120px;
+  }
+  .browser-body .mock-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 16px;
+    gap: 0;
+  }
+  .mock-tab {
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-light);
+    border-bottom: 3px solid transparent;
+    cursor: default;
+  }
+  .mock-tab.active {
+    color: var(--gov-blue);
+    border-bottom-color: var(--gov-blue);
+  }
+  .mock-field {
+    margin-bottom: 12px;
+  }
+  .mock-field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 4px;
+  }
+  .mock-field .field-box {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #888;
+    background: #fafafa;
+  }
+  .mock-field .field-box.filled {
+    color: var(--text);
+    background: var(--white);
+  }
+  .mock-btn {
+    display: inline-block;
+    background: var(--gov-blue);
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+
+  /* ===== INFO BOXES ===== */
+  .info-box {
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 15px;
+  }
+  .info-box.tip {
+    background: #e8f5e9;
+    border-left: 4px solid var(--success);
+  }
+  .info-box.warning {
+    background: #fff8e1;
+    border-left: 4px solid var(--warn);
+  }
+  .info-box.important {
+    background: #fce4ec;
+    border-left: 4px solid var(--danger);
+  }
+  .info-box.note {
+    background: var(--gov-blue-pale);
+    border-left: 4px solid var(--gov-blue);
+  }
+  .info-box strong {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ===== TABLES ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 15px;
+  }
+  th {
+    background: var(--gov-blue);
+    color: var(--white);
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  tr:nth-child(even) { background: #f5f7fa; }
+  .required-tag {
+    display: inline-block;
+    background: var(--danger);
+    color: var(--white);
+    font-size: 11px;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+  .optional-tag {
+    display: inline-block;
+    background: #999;
+    color: var(--white);
+    font-size: 11px;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  /* ===== WORKFLOW ===== */
+  .workflow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 20px 0;
+  }
+  .wf-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    padding-bottom: 24px;
+  }
+  .wf-step:last-child { padding-bottom: 0; }
+  .wf-step::before {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 40px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .wf-step:last-child::before { display: none; }
+  .wf-num {
+    width: 40px;
+    height: 40px;
+    background: var(--gov-blue);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .wf-num.bot {
+    background: var(--gov-gold);
+    color: var(--text);
+  }
+  .wf-body h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+  .wf-body p {
+    font-size: 14px;
+    color: var(--text-light);
+    margin: 0;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-item {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .faq-q {
+    padding: 14px 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #f5f7fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-q::after {
+    content: '+';
+    font-size: 20px;
+    color: var(--gov-blue);
+    font-weight: 700;
+  }
+  .faq-item.open .faq-q::after { content: '\2212'; }
+  .faq-a {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .faq-item.open .faq-a {
+    max-height: 500px;
+    padding: 16px 20px;
+  }
+
+  /* ===== CHECKLIST ===== */
+  .checklist {
+    list-style: none;
+    margin: 12px 0;
+    padding: 0;
+  }
+  .checklist li {
+    padding: 8px 0 8px 32px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gov-blue);
+    border-radius: 3px;
+  }
+
+  /* ===== FOOTER ===== */
+  .gov-footer {
+    background: var(--gov-blue);
+    color: rgba(255,255,255,0.85);
+    padding: 32px 24px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+  }
+  .gov-footer a { color: var(--gov-gold); }
+  .gov-footer p { margin: 4px 0; }
+
+  /* ===== PRINT ===== */
+  @media print {
+    .sidebar, .gov-header-bar, .hero-badges { display: none; }
+    .content-grid { grid-template-columns: 1fr; }
+    .main-content section { break-inside: avoid; border: none; box-shadow: none; }
+    body { font-size: 12pt; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== GOVERNMENT HEADER ===== -->
+<header class="gov-header">
+  <div class="gov-header-top">
+    <div class="logo-area">
+      <div class="gov-crest">LS</div>
+      <div class="gov-title">
+        <h1>Kingdom of Lesotho</h1>
+        <p>One Business Facilitation Centre &mdash; Online Business Registration</p>
+      </div>
+    </div>
+  </div>
+  <div class="gov-header-bar">
+    <div class="inner">
+      <a href="#overview">Overview</a>
+      <a href="#before">Before You Start</a>
+      <a href="#form-guide">Form Guide</a>
+      <a href="#documents">Documents</a>
+      <a href="#fees">Fees</a>
+      <a href="#workflow">After Submission</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <h2>Register a Company in Lesotho</h2>
+  <p>Complete guide to incorporating your company and obtaining all required licences through the One Business Facilitation Centre online portal.</p>
+  <div class="hero-badges">
+    <span class="hero-badge">100% Online</span>
+    <span class="hero-badge">5 Registrations in One Application</span>
+    <span class="hero-badge">Track Progress in Real Time</span>
+  </div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="content-grid">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <nav class="toc">
+      <h3>Contents</h3>
+      <ul>
+        <li><a href="#overview">1. Overview</a></li>
+        <li><a href="#before">2. Before You Start</a></li>
+        <li><a href="#form-guide">3. Completing the Form</a></li>
+        <li><a href="#tab-welcome">3.1 Welcome Tab</a></li>
+        <li><a href="#tab-company">3.2 Company Tab</a></li>
+        <li><a href="#tab-shareholders">3.3 Shareholders Tab</a></li>
+        <li><a href="#tab-management">3.4 Management Tab</a></li>
+        <li><a href="#tab-articles">3.5 Articles Tab</a></li>
+        <li><a href="#tab-permit">3.6 Permit Tab</a></li>
+        <li><a href="#documents">4. Required Documents</a></li>
+        <li><a href="#fees">5. Fees &amp; Payment</a></li>
+        <li><a href="#workflow">6. After Submission</a></li>
+        <li><a href="#checklist">7. Pre-Submission Checklist</a></li>
+        <li><a href="#faq">8. Frequently Asked Questions</a></li>
+        <li><a href="#contact">9. Contact &amp; Support</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main-content">
+
+    <!-- SECTION 1: OVERVIEW -->
+    <section id="overview">
+      <h2>1. Overview</h2>
+      <p>The <strong>Register a Company</strong> service on <em>businessregistrations.gov.ls</em> allows you to incorporate a new company in the Kingdom of Lesotho entirely online. Through a single application, you can obtain up to five registrations simultaneously:</p>
+      <table>
+        <thead>
+          <tr><th>Registration</th><th>Issuing Authority</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Company Incorporation</strong></td><td>OBFC (Registrar of Companies)</td><td>Official registration of the company as a legal entity</td></tr>
+          <tr><td><strong>Business ID</strong></td><td>OBFC</td><td>Unique identification number for your business</td></tr>
+          <tr><td><strong>Business Permit</strong></td><td>OBFC</td><td>Permit to operate a business in Lesotho</td></tr>
+          <tr><td><strong>Trading Licence</strong></td><td>Ministry of Trade</td><td>Licence for commercial trading activities (if applicable)</td></tr>
+          <tr><td><strong>Industrial Licence</strong></td><td>Ministry of Trade</td><td>Licence for manufacturing/industrial activities (if applicable)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box note">
+        <strong>Who can use this service?</strong>
+        Any person or entity wishing to form a Private Company, Public Company, Non-Profit Company, or register an External (foreign) Company in Lesotho.
+      </div>
+    </section>
+
+    <!-- SECTION 2: BEFORE YOU START -->
+    <section id="before">
+      <h2>2. Before You Start</h2>
+      <h3>What you will need</h3>
+      <ul>
+        <li>A registered account on <strong>businessregistrations.gov.ls</strong> (you must be logged in to start an application)</li>
+        <li>Your national ID document or passport (scanned copy)</li>
+        <li>Company name &mdash; make sure it has not already been taken (you can check during the application)</li>
+        <li>Details of all shareholders, directors, and the company secretary</li>
+        <li>A clear idea of your business activities (sector and specific activity)</li>
+        <li>Banking statement showing proof of local deposit (for business permit)</li>
+        <li>Business plan document (for business permit applications)</li>
+      </ul>
+
+      <div class="info-box tip">
+        <strong>Tip: Prepare your documents in advance</strong>
+        Scan all required documents as PDF or clear photographs before starting. Accepted formats are PDF, JPG, and PNG. Each file should be under 5 MB.
+      </div>
+
+      <h3>Company types available</h3>
+      <table>
+        <thead><tr><th>Type</th><th>Key Feature</th></tr></thead>
+        <tbody>
+          <tr><td>Private Company</td><td>Limited number of shareholders; shares not publicly traded</td></tr>
+          <tr><td>Public Company</td><td>Can offer shares to the general public</td></tr>
+          <tr><td>Non-Profit Company</td><td>Incorporated for charitable, social, or community purposes</td></tr>
+          <tr><td>External Company</td><td>Foreign company registering a branch or subsidiary in Lesotho</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SECTION 3: FORM GUIDE -->
+    <section id="form-guide">
+      <h2>3. Completing the Application Form</h2>
+      <p>The application is organised into six tabs. You must complete each tab before moving to the next. Progress is saved automatically, so you can return to your application at any time.</p>
+
+      <!-- BROWSER MOCKUP -->
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="browser-url">https://businessregistrations.gov.ls/register-company</div>
+        </div>
+        <div class="browser-body">
+          <div class="mock-tabs">
+            <div class="mock-tab active">Welcome</div>
+            <div class="mock-tab">Company</div>
+            <div class="mock-tab">Shareholders</div>
+            <div class="mock-tab">Management</div>
+            <div class="mock-tab">Articles</div>
+            <div class="mock-tab">Permit</div>
+          </div>
+          <div class="mock-field">
+            <label>Type of company <span class="required-tag">Required</span></label>
+            <div class="field-box">Select one...</div>
+          </div>
+          <div class="mock-field">
+            <label>Company name <span class="required-tag">Required</span></label>
+            <div class="field-box">Enter your proposed company name</div>
+          </div>
+          <div class="mock-field">
+            <label>Business name</label>
+            <div class="field-box">Enter trading name (if different from company name)</div>
+          </div>
+          <div class="mock-btn">Start Application</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 1: WELCOME -->
+    <section id="tab-welcome">
+      <h2>3.1 Welcome Tab &mdash; Basic Information</h2>
+      <p>The Welcome tab collects the foundational details about your company and its planned activities.</p>
+
+      <h3>Type of company</h3>
+      <p>Select the legal form of your company from the dropdown. Choose between Private Company, Public Company, Non-Profit Making Company, or External Company. This selection determines which fields and requirements appear throughout the rest of the form.</p>
+
+      <h3>Company name</h3>
+      <p>Enter your proposed company name. The system will check whether the name is already registered. If the name already exists, you will be notified and asked to choose a different name.</p>
+
+      <div class="info-box warning">
+        <strong>Company name rules</strong>
+        A Private Company name must end with "(Pty) Ltd". A Public Company name must end with "Ltd". Non-profit names must include "NPC" or similar designation.
+      </div>
+
+      <h3>Business name</h3>
+      <p>If your company will trade under a name different from the registered company name, enter it here. The system also checks whether the business name is already taken. You may use a previously reserved business name if you have one.</p>
+
+      <h3>Turnover and employees</h3>
+      <p>Enter your projected annual turnover in Maloti (LSL) and the expected number of employees. These figures help determine applicable fees and licensing requirements.</p>
+
+      <h3>Business activities</h3>
+      <p>Select your primary sector (e.g., Manufacturing, Retail, Services) and specific activity from the dropdown lists. Based on your selections, the system automatically determines whether you need a Trading Licence, Industrial Licence, or both. You can add multiple activities.</p>
+
+      <!-- BROWSER MOCKUP: ACTIVITIES -->
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="browser-url">https://businessregistrations.gov.ls/register-company#activities</div>
+        </div>
+        <div class="browser-body">
+          <div class="mock-field">
+            <label>Sector <span class="required-tag">Required</span></label>
+            <div class="field-box filled">Manufacturing</div>
+          </div>
+          <div class="mock-field">
+            <label>Activity <span class="required-tag">Required</span></label>
+            <div class="field-box filled">Textile and garment production</div>
+          </div>
+          <div class="mock-field">
+            <label>Type of licence</label>
+            <div class="field-box filled">Industrial Licence</div>
+          </div>
+          <div class="mock-field">
+            <label>Licensing fee</label>
+            <div class="field-box filled">LSL 500.00</div>
+          </div>
+          <p style="font-size:13px; color:var(--text-light); margin-top:12px;">The licensing fee is calculated automatically based on your activity selection.</p>
+        </div>
+      </div>
+
+      <h3>Registered address</h3>
+      <p>Provide the company's registered address, selecting the district and town from the dropdowns. Enter a telephone number and email address for the company.</p>
+
+      <h3>Operating office</h3>
+      <p>If your operating office is at a different location from the registered address, select "Yes" and provide the operating office details (address, district, town, phone, email).</p>
+
+      <div class="info-box tip">
+        <strong>Tip</strong>
+        Click the "Next tab" button at the bottom of each tab to proceed. All required fields must be completed before you can move forward.
+      </div>
+    </section>
+
+    <!-- TAB 2: COMPANY / SHAREHOLDERS -->
+    <section id="tab-company">
+      <h2>3.2 Company Tab &mdash; Share Capital</h2>
+      <p>This tab captures information about your company's share structure.</p>
+
+      <h3>Total amount and shares</h3>
+      <p>Enter the total share capital amount (in Maloti) and the total number of shares to be issued. For example, if your company has a capital of LSL 100,000 with 1,000 shares, each share is worth LSL 100.</p>
+
+      <h3>Single or multiple shareholders?</h3>
+      <p>Indicate whether the company has a single shareholder or multiple shareholders. This determines the layout for the next step.</p>
+    </section>
+
+    <!-- TAB 3: SHAREHOLDERS -->
+    <section id="tab-shareholders">
+      <h2>3.3 Shareholders Tab</h2>
+      <p>Add all shareholders of the company. For each shareholder, you must specify the type and provide the relevant details.</p>
+
+      <h3>Types of shareholders</h3>
+      <table>
+        <thead><tr><th>Type</th><th>Details Required</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Individual</strong></td>
+            <td>First name, surname, other names, gender, date of birth, national ID number, nationality, type of share, number of shares, ID document upload</td>
+          </tr>
+          <tr>
+            <td><strong>Lesotho Company</strong></td>
+            <td>Company name, type, type of share, number of shares, supporting documents</td>
+          </tr>
+          <tr>
+            <td><strong>Foreign Corporate Entity</strong></td>
+            <td>Corporate name, type, country of incorporation, incorporation number, date of incorporation, address, country, telephone, email, type of share, number of shares, documents</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-box note">
+        <strong>Example</strong>
+        'Malefu Mokoena holds 500 ordinary shares. Thabo Letsie holds 300 ordinary shares. Khotso Holdings (Pty) Ltd holds 200 preference shares. Total: 1,000 shares.
+      </div>
+
+      <p>Click <strong>"Add another"</strong> in the shareholder grid to add additional shareholders. The total shares across all shareholders should match the total number of shares entered in the Company tab.</p>
+    </section>
+
+    <!-- TAB 4: MANAGEMENT -->
+    <section id="tab-management">
+      <h2>3.4 Management Tab &mdash; Executive Officers</h2>
+      <p>Register the directors, secretary, and any agents (authorised representatives) of the company.</p>
+
+      <h3>Types of executive officers</h3>
+      <p>For each executive officer, select the role type:</p>
+      <ul>
+        <li><strong>Director</strong> &mdash; responsible for management and governance</li>
+        <li><strong>Secretary</strong> &mdash; responsible for statutory compliance and record-keeping</li>
+        <li><strong>Agent</strong> &mdash; authorised representative (e.g., for an external company)</li>
+      </ul>
+
+      <h3>Details for each officer</h3>
+      <p>Provide the following for each executive officer:</p>
+      <table>
+        <thead><tr><th>Field</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>First name</td><td>Officer's given name</td></tr>
+          <tr><td>Surname</td><td>Officer's family name</td></tr>
+          <tr><td>Other names</td><td>Any middle or additional names</td></tr>
+          <tr><td>Gender</td><td>Male or Female</td></tr>
+          <tr><td>Date of birth</td><td>Use the date picker (DD/MM/YYYY)</td></tr>
+          <tr><td>National ID number</td><td>Lesotho national ID or passport number</td></tr>
+          <tr><td>Nationality</td><td>Select from the dropdown list</td></tr>
+          <tr><td>Address</td><td>Residential address</td></tr>
+          <tr><td>Country</td><td>Country of residence</td></tr>
+          <tr><td>Telephone</td><td>Contact phone number</td></tr>
+          <tr><td>Email</td><td>Contact email address</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Required uploads for officers</h3>
+      <ul>
+        <li><strong>ID Document</strong> &mdash; scan of national ID or passport <span class="required-tag">Required</span></li>
+        <li><strong>Consent to Act</strong> &mdash; signed consent form (for directors) <span class="required-tag">Required</span></li>
+        <li><strong>Power of Attorney</strong> &mdash; if the person is acting through a representative <span class="optional-tag">Optional</span></li>
+      </ul>
+
+      <div class="info-box warning">
+        <strong>Minimum requirements</strong>
+        A Private Company must have at least one director. A Public Company must have at least two directors and one secretary. Every company is recommended to appoint a secretary.
+      </div>
+    </section>
+
+    <!-- TAB 5: ARTICLES -->
+    <section id="tab-articles">
+      <h2>3.5 Articles Tab &mdash; Articles of Association</h2>
+      <p>The Articles of Association are the rules governing how your company will be run. You have two options:</p>
+
+      <h3>Option A: Use automated articles (recommended)</h3>
+      <p>Select <strong>"Yes"</strong> when asked if you will use the automated Articles of Association provided by OBFC. The system will generate a standard set of articles based on the information you have already entered. Click the "Articles of Association" button to generate and preview the document.</p>
+
+      <h3>Option B: Upload your own articles</h3>
+      <p>Select <strong>"No"</strong> to upload your own custom Articles of Association. You must then upload a PDF or scanned document. This is typically used by companies with specific governance requirements.</p>
+
+      <div class="info-box tip">
+        <strong>Tip</strong>
+        For most standard companies, the automated articles are sufficient and save time. If you have special provisions (e.g., different classes of shares with different voting rights), you may need custom articles.
+      </div>
+    </section>
+
+    <!-- TAB 6: PERMIT -->
+    <section id="tab-permit">
+      <h2>3.6 Permit Tab &mdash; Business Permit Details</h2>
+      <p>This tab collects the information required for your business permit application, including applicant personal details, financial information, and staffing.</p>
+
+      <h3>Applicant personal details</h3>
+      <p>Enter the personal details of the main applicant (the person applying on behalf of the company):</p>
+      <ul>
+        <li>First name, other names, surname</li>
+        <li>Gender, date of birth, nationality</li>
+        <li>National ID number</li>
+        <li>Personal address (district, town)</li>
+        <li>Telephone and email</li>
+        <li>ID Document upload</li>
+      </ul>
+
+      <h3>Financial information</h3>
+      <table>
+        <thead><tr><th>Field</th><th>Explanation</th></tr></thead>
+        <tbody>
+          <tr><td>Local deposit (LSL)</td><td>Amount deposited in a local Lesotho bank account for the business</td></tr>
+          <tr><td>Source of the deposit</td><td>Select the origin of the funds (e.g., personal savings, loan, investor)</td></tr>
+          <tr><td>Other source</td><td>If your source is not listed, describe it here</td></tr>
+          <tr><td>Banking statement</td><td>Upload a recent bank statement showing the local deposit</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Staffing</h3>
+      <p>Enter the number of local staff, foreign staff, and the system will calculate the total. If the numbers do not add up, you will be asked to correct them.</p>
+
+      <h3>Insurance</h3>
+      <p>Upload your insurance company certificate if you have one.</p>
+
+      <h3>Business plan and strategy</h3>
+      <p>For the business permit, you must describe:</p>
+      <ul>
+        <li><strong>Strategic nature of the business</strong> &mdash; what makes your business important to Lesotho's economy</li>
+        <li><strong>Contribution to local businesses</strong> &mdash; how you plan to support local enterprises</li>
+        <li><strong>Capacity transfer plan</strong> &mdash; how you will train and develop local workforce</li>
+        <li><strong>Corporate social responsibility</strong> &mdash; your social and environmental commitments</li>
+      </ul>
+      <p>Finally, upload your <strong>business plan</strong> document.</p>
+
+      <div class="info-box important">
+        <strong>Important</strong>
+        All text areas must be completed thoroughly. Brief or vague answers may result in your application being sent back for revision.
+      </div>
+    </section>
+
+    <!-- SECTION 4: DOCUMENTS -->
+    <section id="documents">
+      <h2>4. Required Documents</h2>
+      <p>The following documents may be required depending on your company type and circumstances. Prepare digital copies (PDF or image format, max 5 MB each) before starting your application.</p>
+
+      <h3>For Company Incorporation</h3>
+      <table>
+        <thead><tr><th>Document</th><th>Required?</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Articles of Association</td><td><span class="required-tag">Required</span></td><td>Use automated version or upload your own</td></tr>
+          <tr><td>Consent to Act (Directors)</td><td><span class="required-tag">Required</span></td><td>Signed by each director agreeing to serve</td></tr>
+          <tr><td>ID documents of all officers</td><td><span class="required-tag">Required</span></td><td>National ID or passport for each director, secretary, and agent</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Business ID</h3>
+      <table>
+        <thead><tr><th>Document</th><th>Required?</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>ID document of applicant</td><td><span class="required-tag">Required</span></td><td>The primary applicant's national ID or passport</td></tr>
+          <tr><td>Proof of business address</td><td><span class="required-tag">Required</span></td><td>Utility bill, lease agreement, or similar</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Business Permit</h3>
+      <table>
+        <thead><tr><th>Document</th><th>Required?</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Banking statement</td><td><span class="required-tag">Required</span></td><td>Shows local deposit for the business</td></tr>
+          <tr><td>Business plan</td><td><span class="required-tag">Required</span></td><td>Detailed plan covering strategy, staffing, and impact</td></tr>
+          <tr><td>Insurance certificate</td><td><span class="required-tag">Required</span></td><td>From a Lesotho-registered insurance company</td></tr>
+        </tbody>
+      </table>
+
+      <h3>For Trading and Industrial Licences</h3>
+      <p>No additional document uploads are required specifically for trading or industrial licences. The licensing information is derived from your activity selections in the Welcome tab.</p>
+    </section>
+
+    <!-- SECTION 5: FEES -->
+    <section id="fees">
+      <h2>5. Fees and Payment</h2>
+      <p>Fees are calculated automatically based on your company type and selected business activities. A summary of all fees is displayed on the form before submission.</p>
+
+      <h3>Fee breakdown</h3>
+      <table>
+        <thead><tr><th>Registration</th><th>Fee Description</th></tr></thead>
+        <tbody>
+          <tr><td>Company Incorporation</td><td>Fixed statutory fee for company registration</td></tr>
+          <tr><td>Business ID</td><td>Fee for issuing the business identification number</td></tr>
+          <tr><td>Business ID &mdash; Branches</td><td>Additional fee per branch (if applicable)</td></tr>
+          <tr><td>Trading Licence</td><td>Based on business activity and turnover</td></tr>
+          <tr><td>Industrial Licence</td><td>Based on manufacturing activity and scale</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box note">
+        <strong>Payment methods</strong>
+        Fees can be paid digitally through the online portal. The total amount to pay is displayed in Lesotho Maloti (LSL) at the bottom of the form. You will be directed to the payment gateway after submitting your application.
+      </div>
+
+      <!-- BROWSER MOCKUP: FEES -->
+      <div class="browser-mockup">
+        <div class="browser-bar">
+          <div class="browser-dots"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+          <div class="browser-url">https://businessregistrations.gov.ls/register-company#fees</div>
+        </div>
+        <div class="browser-body">
+          <table style="font-size:14px; margin:0;">
+            <tr><td>Company Incorporation</td><td style="text-align:right">LSL 500.00</td></tr>
+            <tr><td>Business ID</td><td style="text-align:right">LSL 200.00</td></tr>
+            <tr><td>Trading Licence (Retail &mdash; General)</td><td style="text-align:right">LSL 350.00</td></tr>
+            <tr style="font-weight:700; border-top:2px solid var(--gov-blue);"><td>Total to pay (LSL)</td><td style="text-align:right">LSL 1,050.00</td></tr>
+          </table>
+          <p style="font-size:12px; color:#888; margin-top:10px;">* Example fees for illustration only. Actual fees are calculated based on your specific application.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: WORKFLOW -->
+    <section id="workflow">
+      <h2>6. What Happens After You Submit</h2>
+      <p>Once you submit your application, it enters a multi-step review and approval process. You can track the status of your application in real time by logging into your account on <em>businessregistrations.gov.ls</em>.</p>
+
+      <div class="workflow-steps">
+        <div class="wf-step">
+          <div class="wf-num">1</div>
+          <div class="wf-body">
+            <h4>Treasury &mdash; Payment Verification</h4>
+            <p>The Treasury department verifies that your payment has been received and processed correctly. If there is a payment issue, they will notify you.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">2</div>
+          <div class="wf-body">
+            <h4>CI Review &mdash; Company Incorporation Review</h4>
+            <p>An officer at OBFC reviews your company incorporation application, checking that all information is correct and documents are in order.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">3</div>
+          <div class="wf-body">
+            <h4>CI Approval &mdash; Company Incorporation Approval</h4>
+            <p>A senior officer approves or rejects the incorporation. If approved, the system proceeds to generate your company registration. If rejected, you will be notified with reasons.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num bot">4</div>
+          <div class="wf-body">
+            <h4>CI Create &amp; Certificate (Automated)</h4>
+            <p>The system automatically creates the company record in the national register and generates your Certificate of Incorporation.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">5</div>
+          <div class="wf-body">
+            <h4>BP Review &amp; Approval &mdash; Business Permit</h4>
+            <p>Your business permit application is reviewed and approved. This includes assessing your business plan, financial capacity, and staffing details.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num bot">6</div>
+          <div class="wf-body">
+            <h4>BP Create &amp; Certificate (Automated)</h4>
+            <p>The business permit is created in the system and your certificate is generated.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">7</div>
+          <div class="wf-body">
+            <h4>BR Review &amp; Approval &mdash; Business ID</h4>
+            <p>Your Business ID registration is reviewed and approved.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num bot">8</div>
+          <div class="wf-body">
+            <h4>BR Create &amp; Certificate (Automated)</h4>
+            <p>Your unique Business ID number is assigned and the certificate is generated.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num">9</div>
+          <div class="wf-body">
+            <h4>TL / IL Review &amp; Approval &mdash; Trading and Industrial Licences</h4>
+            <p>If you applied for trading or industrial licences, these are reviewed and approved by the Ministry of Trade. Each licence follows its own review and approval steps.</p>
+          </div>
+        </div>
+        <div class="wf-step">
+          <div class="wf-num bot">10</div>
+          <div class="wf-body">
+            <h4>TL / IL Create &amp; Certificate (Automated)</h4>
+            <p>Once approved, your trading and/or industrial licence certificates are generated automatically. You can download all certificates from your account dashboard.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-box tip">
+        <strong>Sent back for revision?</strong>
+        At any review stage, if information is incomplete or incorrect, the officer may send your application back to you for correction. You will receive a notification by email and can see the status in your account. Make the requested corrections and resubmit.
+      </div>
+    </section>
+
+    <!-- SECTION 7: CHECKLIST -->
+    <section id="checklist">
+      <h2>7. Pre-Submission Checklist</h2>
+      <p>Before clicking "Submit", make sure you have completed every item on this list:</p>
+      <ul class="checklist">
+        <li>Selected the correct type of company (Private, Public, Non-Profit, or External)</li>
+        <li>Entered and verified the company name (confirmed it is available)</li>
+        <li>Listed all business activities and confirmed the licence types and fees</li>
+        <li>Provided the registered address with district, town, phone, and email</li>
+        <li>Entered share capital details (total amount and number of shares)</li>
+        <li>Added all shareholders with their ID documents and share allocations</li>
+        <li>Added all directors, the company secretary, and any agents with ID uploads</li>
+        <li>Uploaded or generated the Articles of Association</li>
+        <li>Completed the permit section: applicant details, local deposit, source of funds</li>
+        <li>Uploaded banking statement showing local deposit</li>
+        <li>Entered staffing numbers (local, foreign, and total)</li>
+        <li>Written the strategic nature, local contribution, capacity transfer, and CSR descriptions</li>
+        <li>Uploaded the business plan document</li>
+        <li>Reviewed all fees in the summary and confirmed the total</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 8: FAQ -->
+    <section id="faq">
+      <h2>8. Frequently Asked Questions</h2>
+
+      <div class="faq-item open">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long does it take to register a company?</div>
+        <div class="faq-a">
+          <p>Processing times vary, but most applications are processed within 5 to 10 working days after payment is confirmed. Complex applications or those requiring corrections may take longer. You can track progress in real time through your online account.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I save my application and come back later?</div>
+        <div class="faq-a">
+          <p>Yes. The system automatically saves your progress. You can log out and return to complete your application at any time. Your draft will be available in your account dashboard under "My Applications".</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What if my company name is already taken?</div>
+        <div class="faq-a">
+          <p>The system checks name availability in real time. If your proposed name is already registered, you will see a message saying the name already exists. You must choose a different name. You can also use a previously reserved business name if you have one linked to your account.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need both a Trading Licence and an Industrial Licence?</div>
+        <div class="faq-a">
+          <p>It depends on your business activities. If you are only engaged in trading (buying and selling goods), you need a Trading Licence. If you are involved in manufacturing or industrial production, you need an Industrial Licence. If your business does both, you may need both licences. The system determines this automatically based on the activities you select.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can a foreigner register a company in Lesotho?</div>
+        <div class="faq-a">
+          <p>Yes. Foreign nationals can register companies in Lesotho. If you are registering a branch of an existing foreign company, select "External Company" as the type. You will need to provide additional information about the parent company, including the country of incorporation, incorporation number, and registration documents.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens if my application is sent back for revision?</div>
+        <div class="faq-a">
+          <p>You will receive an email notification explaining what needs to be corrected. Log into your account, open the application, make the required changes, and resubmit. Common reasons for revision include missing documents, incorrect information, or insufficient detail in the business plan sections.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I download my certificates after approval?</div>
+        <div class="faq-a">
+          <p>Once each registration is approved and the certificate is generated, you will receive a notification. Log into your account on <em>businessregistrations.gov.ls</em>, go to "My Applications", find the completed application, and download each certificate (Certificate of Incorporation, Business ID, Business Permit, and any licence certificates).</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I use the automated Articles of Association?</div>
+        <div class="faq-a">
+          <p>Yes, and it is recommended for most companies. The OBFC provides a standard template that covers typical governance requirements. Select "Yes" on the Articles tab and click the button to generate them. If your company has special governance needs (different share classes, specific voting rules, etc.), you should prepare and upload your own articles instead.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What payment methods are accepted?</div>
+        <div class="faq-a">
+          <p>Fees can be paid digitally through the online payment gateway. The system will direct you to the payment page after you submit your application. Make sure you have a valid payment method ready. After payment is confirmed, your application proceeds to the review stage.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">I made an error after submitting. Can I correct it?</div>
+        <div class="faq-a">
+          <p>Once submitted, you cannot directly edit the application. However, reviewing officers may send the application back to you if they notice errors, giving you an opportunity to make corrections. If you discover an error immediately after submission, contact the OBFC helpdesk for guidance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CONTACT -->
+    <section id="contact">
+      <h2>9. Contact and Support</h2>
+      <p>If you encounter any difficulties with the online registration process, you can reach the One Business Facilitation Centre through the following channels:</p>
+      <table>
+        <tbody>
+          <tr><td><strong>Website</strong></td><td><a href="https://businessregistrations.gov.ls" style="color:var(--gov-blue)">businessregistrations.gov.ls</a></td></tr>
+          <tr><td><strong>Office</strong></td><td>One Business Facilitation Centre (OBFC), Maseru, Lesotho</td></tr>
+          <tr><td><strong>Office Hours</strong></td><td>Monday to Friday, 08:00 &ndash; 16:30</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box note">
+        <strong>In-person assistance</strong>
+        If you prefer, you can visit the OBFC office in Maseru for in-person assistance with your application. Staff can help you navigate the online form and answer questions about requirements.
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="gov-footer">
+  <p><strong>Kingdom of Lesotho &mdash; One Business Facilitation Centre</strong></p>
+  <p>Online Business Registration Portal &mdash; <a href="https://businessregistrations.gov.ls">businessregistrations.gov.ls</a></p>
+  <p style="margin-top: 12px; font-size: 12px; opacity: 0.7;">This user manual is provided for informational purposes. For the most current fees and requirements, please refer to the online portal. Generated with support from UNCTAD eRegistrations.</p>
+</footer>
+
+</body>
+</html>

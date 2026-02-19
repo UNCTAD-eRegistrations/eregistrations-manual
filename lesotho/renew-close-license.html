@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Manual: Renew or Close a Licence - Lesotho eRegistrations</title>
+<style>
+  :root {
+    --gov-blue: #003580;
+    --gov-blue-light: #0050b3;
+    --gov-blue-pale: #e8f0fe;
+    --accent-green: #1a7a2e;
+    --accent-orange: #d4780a;
+    --accent-red: #c0392b;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a4a5a;
+    --border-light: #d0d7e2;
+    --bg-light: #f5f7fb;
+    --bg-white: #ffffff;
+    --shadow-sm: 0 1px 3px rgba(0,53,128,0.08);
+    --shadow-md: 0 4px 12px rgba(0,53,128,0.12);
+    --radius: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-dark);
+    background: var(--bg-light);
+    line-height: 1.65;
+    font-size: 16px;
+  }
+
+  /* --- Header --- */
+  .gov-header {
+    background: var(--gov-blue);
+    color: #fff;
+    padding: 0;
+  }
+  .gov-header-top {
+    background: #002260;
+    padding: 6px 0;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .gov-header-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 28px 24px 24px;
+  }
+  .gov-header-main h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .gov-header-main .subtitle {
+    font-size: 15px;
+    opacity: 0.85;
+    font-weight: 400;
+  }
+  .gov-header-main .service-badge {
+    display: inline-block;
+    margin-top: 14px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    padding: 5px 16px;
+    font-size: 13px;
+  }
+
+  /* --- Main container --- */
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  /* --- Table of Contents --- */
+  .toc {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 28px 0;
+    box-shadow: var(--shadow-sm);
+  }
+  .toc h2 {
+    font-size: 18px;
+    color: var(--gov-blue);
+    margin-bottom: 14px;
+  }
+  .toc ol {
+    padding-left: 22px;
+  }
+  .toc li {
+    margin-bottom: 6px;
+  }
+  .toc a {
+    color: var(--gov-blue-light);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .toc a:hover { text-decoration: underline; }
+
+  /* --- Sections --- */
+  section {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    margin-top: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  section h2 {
+    font-size: 22px;
+    color: var(--gov-blue);
+    border-bottom: 2px solid var(--gov-blue-pale);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+  }
+  section h3 {
+    font-size: 17px;
+    color: var(--gov-blue);
+    margin: 22px 0 10px;
+  }
+  section p, section li {
+    color: var(--text-mid);
+  }
+  section ul, section ol {
+    padding-left: 22px;
+    margin-bottom: 12px;
+  }
+  section li { margin-bottom: 6px; }
+
+  /* --- Alert boxes --- */
+  .alert {
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .alert-info {
+    background: var(--gov-blue-pale);
+    border-left: 4px solid var(--gov-blue);
+    color: var(--gov-blue);
+  }
+  .alert-warning {
+    background: #fef9e7;
+    border-left: 4px solid var(--accent-orange);
+    color: #7d5a00;
+  }
+  .alert-success {
+    background: #eafaf1;
+    border-left: 4px solid var(--accent-green);
+    color: #14532d;
+  }
+  .alert-danger {
+    background: #fdecea;
+    border-left: 4px solid var(--accent-red);
+    color: #7f1d1d;
+  }
+  .alert strong { display: block; margin-bottom: 2px; }
+
+  /* --- Browser chrome mockup --- */
+  .browser-mockup {
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin: 20px 0;
+    box-shadow: var(--shadow-md);
+  }
+  .browser-bar {
+    background: #e8ecf1;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .browser-dot {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .browser-dot.red { background: #ec6a5e; }
+  .browser-dot.yellow { background: #f4bf4f; }
+  .browser-dot.green { background: #61c554; }
+  .browser-url {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: #555;
+    margin-left: 8px;
+  }
+  .browser-body {
+    background: #fff;
+    padding: 22px 24px;
+  }
+  .browser-body .mock-header {
+    background: var(--gov-blue);
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .mock-field {
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    background: #fafbfd;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mock-field .label { color: var(--text-mid); font-weight: 500; }
+  .mock-field .value { color: var(--text-dark); }
+  .mock-btn {
+    display: inline-block;
+    background: var(--gov-blue);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: default;
+    margin-top: 10px;
+  }
+  .mock-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+  .mock-checkbox .box {
+    width: 18px; height: 18px;
+    border: 2px solid var(--gov-blue);
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--gov-blue);
+  }
+
+  /* --- Step indicators --- */
+  .step-flow {
+    display: flex;
+    gap: 0;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  .step-item {
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    padding: 14px 10px;
+    background: var(--gov-blue-pale);
+    border: 1px solid var(--border-light);
+    position: relative;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gov-blue);
+  }
+  .step-item:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+  .step-item:last-child { border-radius: 0 var(--radius) var(--radius) 0; }
+  .step-item .num {
+    display: block;
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 2px;
+  }
+  .step-item.active {
+    background: var(--gov-blue);
+    color: #fff;
+  }
+
+  /* --- Fee table --- */
+  table.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0;
+    font-size: 14px;
+  }
+  table.fee-table th {
+    background: var(--gov-blue);
+    color: #fff;
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 600;
+  }
+  table.fee-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-mid);
+  }
+  table.fee-table tr:nth-child(even) td { background: var(--bg-light); }
+
+  /* --- FAQ --- */
+  .faq-item {
+    border-bottom: 1px solid var(--border-light);
+    padding: 16px 0;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    font-weight: 700;
+    color: var(--gov-blue);
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+  .faq-a {
+    color: var(--text-mid);
+    font-size: 14px;
+    padding-left: 18px;
+    border-left: 3px solid var(--gov-blue-pale);
+  }
+
+  /* --- Footer --- */
+  .gov-footer {
+    background: var(--gov-blue);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 13px;
+    margin-top: 40px;
+  }
+  .gov-footer a { color: #fff; }
+
+  /* --- Responsive --- */
+  @media (max-width: 640px) {
+    .gov-header-main h1 { font-size: 22px; }
+    section { padding: 18px 16px; }
+    .step-flow { flex-direction: column; }
+    .step-item { border-radius: 0 !important; }
+    .step-item:first-child { border-radius: var(--radius) var(--radius) 0 0 !important; }
+    .step-item:last-child { border-radius: 0 0 var(--radius) var(--radius) !important; }
+  }
+
+  @media print {
+    .gov-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== HEADER ==================== -->
+<header class="gov-header">
+  <div class="gov-header-top">Government of Lesotho &mdash; Ministry of Trade, Industry and Business Development</div>
+  <div class="gov-header-main">
+    <h1>Renew or Close a Licence</h1>
+    <p class="subtitle">Citizen User Manual &mdash; businessregistrations.gov.ls</p>
+    <span class="service-badge">Online Service &bull; Trading &amp; Industrial Licences</span>
+  </div>
+</header>
+
+<!-- ==================== CONTENT ==================== -->
+<div class="container">
+
+  <!-- Table of Contents -->
+  <nav class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+      <li><a href="#overview">Service Overview</a></li>
+      <li><a href="#before-you-start">Before You Start</a></li>
+      <li><a href="#step-by-step">Step-by-Step Form Instructions</a></li>
+      <li><a href="#renewing">How to Renew a Licence</a></li>
+      <li><a href="#closing">How to Close (Terminate) a Licence</a></li>
+      <li><a href="#fees">Fees and Penalties</a></li>
+      <li><a href="#payment">Payment</a></li>
+      <li><a href="#workflow">What Happens After You Submit</a></li>
+      <li><a href="#documents">Required Documents</a></li>
+      <li><a href="#faq">Frequently Asked Questions</a></li>
+      <li><a href="#contact">Help and Contact</a></li>
+    </ol>
+  </nav>
+
+  <!-- ===== 1. OVERVIEW ===== -->
+  <section id="overview">
+    <h2>1. Service Overview</h2>
+    <p>This online service allows you to <strong>renew</strong> or <strong>close (terminate)</strong> your existing business licences in Lesotho. It covers both:</p>
+    <ul>
+      <li><strong>Trading Licences</strong> &mdash; for retail, wholesale, hawking, and general trading businesses</li>
+      <li><strong>Industrial Licences</strong> &mdash; for manufacturing, processing, and industrial operations</li>
+    </ul>
+    <p>You can renew and close multiple licences in a single application. For example, if you own a textile factory in Maseru (industrial licence) and a shop in Maputsoe (trading licence), you can renew one and close the other in the same session.</p>
+
+    <div class="alert alert-info">
+      <strong>Who can use this service?</strong>
+      Any registered business owner in Lesotho whose trading or industrial licence is active or approaching expiry. You must have an eRegistrations account linked to your business.
+    </div>
+  </section>
+
+  <!-- ===== 2. BEFORE YOU START ===== -->
+  <section id="before-you-start">
+    <h2>2. Before You Start</h2>
+    <h3>Requirements</h3>
+    <ul>
+      <li>A registered account on <strong>businessregistrations.gov.ls</strong></li>
+      <li>Your Licence ID number (printed on your current licence certificate)</li>
+      <li>A computer or mobile phone with internet access</li>
+      <li>A valid payment method for any applicable fees</li>
+    </ul>
+
+    <h3>Important Timelines</h3>
+    <div class="alert alert-warning">
+      <strong>Renew before expiry!</strong>
+      You can renew a licence up to <strong>90 days before</strong> its expiry date. If your licence has already expired, you may still renew it, but <strong>penalty fees</strong> will apply for every day past the expiry date.
+    </div>
+    <p>The system automatically detects how many days remain until your licence expires and calculates the applicable renewal or penalty fees accordingly.</p>
+
+    <h3>Estimated Processing Time</h3>
+    <ul>
+      <li><strong>Renewal:</strong> 2&ndash;5 working days after payment and submission</li>
+      <li><strong>Closure (Termination):</strong> 3&ndash;7 working days after submission</li>
+    </ul>
+  </section>
+
+  <!-- ===== 3. STEP-BY-STEP ===== -->
+  <section id="step-by-step">
+    <h2>3. Step-by-Step Form Instructions</h2>
+
+    <!-- Step flow -->
+    <div class="step-flow">
+      <div class="step-item active"><span class="num">1</span>Log In</div>
+      <div class="step-item"><span class="num">2</span>Load Licences</div>
+      <div class="step-item"><span class="num">3</span>Select Action</div>
+      <div class="step-item"><span class="num">4</span>Review Fees</div>
+      <div class="step-item"><span class="num">5</span>Pay &amp; Submit</div>
+    </div>
+
+    <!-- Step 1 -->
+    <h3>Step 1: Log In to Your Account</h3>
+    <p>Go to <strong>businessregistrations.gov.ls</strong> and log in with your email and password. If you do not yet have an account, you must first register as a new user.</p>
+
+    <div class="browser-mockup">
+      <div class="browser-bar">
+        <span class="browser-dot red"></span>
+        <span class="browser-dot yellow"></span>
+        <span class="browser-dot green"></span>
+        <span class="browser-url">https://businessregistrations.gov.ls/service/renew-close-licence</span>
+      </div>
+      <div class="browser-body">
+        <div class="mock-header">Renew or Close a Licence</div>
+        <p style="font-size:14px;color:#666;margin-bottom:12px;">Please log in to view your licences. Once logged in, the system will load all licences associated with your account.</p>
+        <div class="mock-btn">Log In to Continue</div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <h3>Step 2: Load Your Licences</h3>
+    <p>After logging in, click the <strong>"List all your licences"</strong> button. The system will search for all trading and industrial licences registered under your name or business entity.</p>
+
+    <div class="browser-mockup">
+      <div class="browser-bar">
+        <span class="browser-dot red"></span>
+        <span class="browser-dot yellow"></span>
+        <span class="browser-dot green"></span>
+        <span class="browser-url">https://businessregistrations.gov.ls/service/renew-close-licence</span>
+      </div>
+      <div class="browser-body">
+        <div class="mock-header">Your Licences (3)</div>
+        <p style="font-size:13px;color:#888;margin-bottom:10px;">Entity type: Company</p>
+        <div class="mock-field">
+          <div>
+            <span class="label">Licence ID:</span> TL-2024-00342<br>
+            <span class="label">Name:</span> Maseru General Trading<br>
+            <span class="label">Type:</span> Trading &bull; <span class="label">Sector:</span> Retail<br>
+            <span class="label">Expiry:</span> <span style="color:var(--accent-orange);">15 Mar 2026 (24 days left)</span>
+          </div>
+          <div>
+            <div class="mock-checkbox"><span class="box">&#10003;</span> Renew</div>
+            <div class="mock-checkbox"><span class="box"></span> Close</div>
+          </div>
+        </div>
+        <div class="mock-field">
+          <div>
+            <span class="label">Licence ID:</span> IL-2023-00118<br>
+            <span class="label">Name:</span> Ha Thetsane Textiles<br>
+            <span class="label">Type:</span> Industrial &bull; <span class="label">Sector:</span> Manufacturing<br>
+            <span class="label">Expiry:</span> <span style="color:var(--accent-red);">01 Jan 2026 (Expired &mdash; 49 days late)</span>
+          </div>
+          <div>
+            <div class="mock-checkbox"><span class="box"></span> Renew</div>
+            <div class="mock-checkbox"><span class="box">&#10003;</span> Close</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p>Each licence row shows the following fields, which are loaded automatically from the government database:</p>
+
+    <table class="fee-table">
+      <tr><th>Field</th><th>Description</th></tr>
+      <tr><td><strong>Name</strong></td><td>The registered business name on your licence</td></tr>
+      <tr><td><strong>Licence ID</strong></td><td>Your unique licence identification number</td></tr>
+      <tr><td><strong>Type</strong></td><td>Trading or Industrial</td></tr>
+      <tr><td><strong>Sector</strong></td><td>Business sector (e.g., Retail, Manufacturing, Wholesale)</td></tr>
+      <tr><td><strong>Activity</strong></td><td>The specific business activity covered by the licence</td></tr>
+      <tr><td><strong>Expiry</strong></td><td>Current expiry date; highlighted orange if within 90 days, red if expired</td></tr>
+      <tr><td><strong>Fee</strong></td><td>Processing/renewal fee (calculated automatically)</td></tr>
+      <tr><td><strong>Penalty Fee</strong></td><td>Late renewal penalty, if the licence has expired</td></tr>
+      <tr><td><strong>Renew / Close</strong></td><td>Checkboxes to select the action for each licence</td></tr>
+    </table>
+
+    <div class="alert alert-info">
+      <strong>Tip:</strong> The <strong>"Number of days late"</strong> and <strong>"Nr of days left to expire"</strong> fields are calculated automatically. You do not need to enter dates manually. If a licence has more than 90 days left before expiry, renewal is not yet available.
+    </div>
+
+    <!-- Step 3 -->
+    <h3>Step 3: Select Your Action (Renew or Close)</h3>
+    <p>For each licence, tick <strong>one</strong> checkbox:</p>
+    <ul>
+      <li><strong>Renew</strong> &mdash; to extend the licence for another period. The new start and new expiry dates are calculated automatically.</li>
+      <li><strong>Close</strong> &mdash; to permanently terminate the licence. This cannot be undone; you would need to apply for a new licence if you wish to resume operations.</li>
+    </ul>
+    <div class="alert alert-danger">
+      <strong>Warning:</strong> Closing a licence is permanent. Once your termination request is approved, the licence is cancelled. If you have a bakery licence in Teyateyaneng and you close it, you will need to apply for a brand new licence to operate again.
+    </div>
+  </section>
+
+  <!-- ===== 4. RENEWING ===== -->
+  <section id="renewing">
+    <h2>4. How to Renew a Licence</h2>
+    <p>When you tick the <strong>"Renew"</strong> checkbox for a licence, the system will:</p>
+    <ol>
+      <li>Check whether the licence is eligible for renewal (expiry within 90 days or already expired)</li>
+      <li>Calculate the <strong>renewal fee</strong> based on the licence type and sector</li>
+      <li>Add a <strong>penalty fee</strong> if the licence has already expired (charged per day late)</li>
+      <li>Display the <strong>new start date</strong> and <strong>new expiry date</strong> (typically one year from the renewal date)</li>
+    </ol>
+
+    <h3>Renewal Fee Breakdown</h3>
+    <p>The fee summary section separates industrial and trading licences:</p>
+    <ul>
+      <li><strong>Industrial Licences Fees:</strong> lists each industrial licence selected for renewal, its renewal fee, and any penalty</li>
+      <li><strong>Trading Licences Fees:</strong> lists each trading licence selected for renewal, its renewal fee, and any penalty</li>
+    </ul>
+    <p>Totals are displayed at the bottom of each section, including <strong>Renewal fee (total)</strong> and <strong>Penalty fee (total)</strong>.</p>
+
+    <div class="alert alert-success">
+      <strong>Example:</strong> 'Mme Nthabiseng in Leribe has two trading licences. One expires in 15 days (no penalty) and one expired 30 days ago. She ticks "Renew" for both. The first has only the standard renewal fee. The second includes a penalty fee for 30 days of late renewal. Both fees are summed in the total.
+    </div>
+  </section>
+
+  <!-- ===== 5. CLOSING ===== -->
+  <section id="closing">
+    <h2>5. How to Close (Terminate) a Licence</h2>
+    <p>When you tick the <strong>"Close"</strong> checkbox for a licence, the system will:</p>
+    <ol>
+      <li>Record the termination date as today</li>
+      <li>Calculate any <strong>termination processing fee</strong></li>
+      <li>Add a <strong>penalty fee</strong> if the licence is already expired and has outstanding days</li>
+    </ol>
+
+    <h3>Termination Fee Breakdown</h3>
+    <p>Similar to renewal, the fees are separated by licence type:</p>
+    <ul>
+      <li><strong>Industrial Licences Termination Fees:</strong> termination fee + penalty for each industrial licence being closed</li>
+      <li><strong>Trading Licences Termination Fees:</strong> termination fee + penalty for each trading licence being closed</li>
+    </ul>
+
+    <div class="alert alert-warning">
+      <strong>Note:</strong> Even when closing a licence, outstanding penalty fees for expired periods must still be paid. Closing a licence does not waive any penalties owed.
+    </div>
+  </section>
+
+  <!-- ===== 6. FEES ===== -->
+  <section id="fees">
+    <h2>6. Fees and Penalties</h2>
+
+    <table class="fee-table">
+      <tr>
+        <th>Fee Type</th>
+        <th>Applies To</th>
+        <th>Description</th>
+      </tr>
+      <tr>
+        <td>Renewal Processing Fee</td>
+        <td>Trading &amp; Industrial</td>
+        <td>Standard fee to renew a licence for the next period. Amount depends on licence category and sector.</td>
+      </tr>
+      <tr>
+        <td>Termination Processing Fee</td>
+        <td>Trading &amp; Industrial</td>
+        <td>Administrative fee for permanently closing a licence.</td>
+      </tr>
+      <tr>
+        <td>Penalty Fee (Late Renewal)</td>
+        <td>Trading &amp; Industrial</td>
+        <td>Charged per day for each day the licence has been expired. Calculated automatically from the expiry date to today.</td>
+      </tr>
+      <tr>
+        <td>Penalty Fee (Termination)</td>
+        <td>Trading &amp; Industrial</td>
+        <td>If you close an already-expired licence, penalty applies for the period between expiry and the termination date.</td>
+      </tr>
+    </table>
+
+    <div class="alert alert-info">
+      <strong>All fees are in Lesotho Loti (LSL).</strong> The exact amounts are determined by your licence type, business sector, and the number of days past expiry (if any). The system calculates them automatically &mdash; you do not need to compute fees yourself.
+    </div>
+  </section>
+
+  <!-- ===== 7. PAYMENT ===== -->
+  <section id="payment">
+    <h2>7. Payment</h2>
+    <p>After selecting your actions (renew or close) for all relevant licences, click the <strong>"Go to payment"</strong> button at the bottom of the form.</p>
+
+    <div class="browser-mockup">
+      <div class="browser-bar">
+        <span class="browser-dot red"></span>
+        <span class="browser-dot yellow"></span>
+        <span class="browser-dot green"></span>
+        <span class="browser-url">https://businessregistrations.gov.ls/service/renew-close-licence/payment</span>
+      </div>
+      <div class="browser-body">
+        <div class="mock-header">Payment Summary</div>
+        <div class="mock-field">
+          <span class="label">Renewal fees (Trading):</span>
+          <span class="value">LSL 450.00</span>
+        </div>
+        <div class="mock-field">
+          <span class="label">Penalty fees (Trading):</span>
+          <span class="value">LSL 120.00</span>
+        </div>
+        <div class="mock-field">
+          <span class="label">Termination fees (Industrial):</span>
+          <span class="value">LSL 200.00</span>
+        </div>
+        <div class="mock-field" style="font-weight:700;background:#eef6ff;">
+          <span class="label" style="font-weight:700;color:var(--gov-blue);">Total Due:</span>
+          <span class="value" style="font-weight:700;color:var(--gov-blue);font-size:18px;">LSL 770.00</span>
+        </div>
+        <div class="mock-btn" style="margin-top:16px;">Pay Now</div>
+      </div>
+    </div>
+
+    <p>You can pay digitally through the integrated payment gateway. Once payment is confirmed, the system marks your application as paid and forwards it for processing.</p>
+
+    <h3>Send Page</h3>
+    <p>After payment, you will see a confirmation page where you must:</p>
+    <ol>
+      <li>Enter your <strong>email address</strong> to receive status notifications</li>
+      <li>Tick the <strong>acknowledgement checkbox</strong> confirming that the information is correct</li>
+      <li>Click <strong>"Submit"</strong> to send your application</li>
+    </ol>
+  </section>
+
+  <!-- ===== 8. WORKFLOW ===== -->
+  <section id="workflow">
+    <h2>8. What Happens After You Submit</h2>
+    <p>Once you submit your application, it goes through the following workflow:</p>
+
+    <div class="step-flow">
+      <div class="step-item active"><span class="num">1</span>You Submit</div>
+      <div class="step-item"><span class="num">2</span>Review</div>
+      <div class="step-item"><span class="num">3</span>Approval</div>
+      <div class="step-item"><span class="num">4</span>Licence Update</div>
+      <div class="step-item"><span class="num">5</span>Certificate</div>
+    </div>
+
+    <table class="fee-table">
+      <tr><th>Stage</th><th>Who</th><th>What Happens</th></tr>
+      <tr>
+        <td><strong>1. Submission</strong></td>
+        <td>You (Applicant)</td>
+        <td>You complete the form, pay fees, and submit the application online.</td>
+      </tr>
+      <tr>
+        <td><strong>2. Review</strong></td>
+        <td>Government Officer</td>
+        <td>A licensing officer reviews your application for correctness. They may send it back if there are issues.</td>
+      </tr>
+      <tr>
+        <td><strong>3. Approval</strong></td>
+        <td>Senior Officer</td>
+        <td>A senior officer gives final approval for the renewal or termination.</td>
+      </tr>
+      <tr>
+        <td><strong>4. Licence Update</strong></td>
+        <td>Automated System</td>
+        <td>The system automatically updates the licence database with the new dates (renewal) or closure status (termination).</td>
+      </tr>
+      <tr>
+        <td><strong>5. Certificate Upload</strong></td>
+        <td>Automated System</td>
+        <td>Your updated licence certificate is generated and uploaded to your account. You can download it from the portal.</td>
+      </tr>
+    </table>
+
+    <div class="alert alert-info">
+      <strong>Track your application:</strong> You can log in at any time to see which stage your application is at. You will also receive email notifications at key stages if you provided your email address.
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>Sent back?</strong> If the reviewing officer finds an issue (e.g., your licence details do not match records), the application will be sent back to you with a note explaining what needs to be corrected. You can then edit and resubmit.
+    </div>
+  </section>
+
+  <!-- ===== 9. DOCUMENTS ===== -->
+  <section id="documents">
+    <h2>9. Required Documents</h2>
+    <p>This service currently <strong>does not require</strong> you to upload any supporting documents. All licence information is retrieved automatically from the government database based on your account.</p>
+
+    <div class="alert alert-success">
+      <strong>No paperwork needed!</strong> Unlike older paper-based processes, this online service pulls your licence data electronically. You do not need to bring or scan any certificates, ID cards, or letters. Simply log in and the system handles the rest.
+    </div>
+
+    <p>However, it is good practice to keep the following readily available in case officers request additional information:</p>
+    <ul>
+      <li>Your national ID or passport</li>
+      <li>Original licence certificate (for reference)</li>
+      <li>Proof of business address (utility bill or lease agreement)</li>
+      <li>Tax clearance certificate (if applicable)</li>
+    </ul>
+  </section>
+
+  <!-- ===== 10. FAQ ===== -->
+  <section id="faq">
+    <h2>10. Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="faq-q">Q1: Can I renew some licences and close others in the same application?</div>
+      <div class="faq-a">Yes. The system allows you to tick "Renew" for some licences and "Close" for others in the same session. For example, you can renew your Maseru trading licence and close your Mafeteng industrial licence at the same time. The fees for all selected actions will be combined in a single payment.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q2: My licence expired more than 90 days ago. Can I still renew it?</div>
+      <div class="faq-a">Yes, you can still renew an expired licence. However, penalty fees will be calculated for every day past the expiry date. The longer you wait, the higher the penalty. If your licence has been expired for a very long period, contact the Ministry of Trade directly for guidance.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q3: My licence does not appear when I click "List all your licences." What should I do?</div>
+      <div class="faq-a">This may happen if your licence is registered under a different entity type or name. First, verify you selected the correct <strong>Entity type (Licence)</strong> in the dropdown. If the problem persists, contact the licensing office with your Licence ID number so they can verify your records in the system.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q4: What is the difference between a Trading Licence and an Industrial Licence?</div>
+      <div class="faq-a">A <strong>Trading Licence</strong> covers buying and selling activities (retail, wholesale, hawking). An <strong>Industrial Licence</strong> covers manufacturing, processing, or industrial production. If you run a shop selling goods, you have a trading licence. If you operate a factory producing goods, you have an industrial licence. Some businesses may hold both.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q5: How is the penalty fee calculated?</div>
+      <div class="faq-a">The penalty fee is calculated automatically based on the <strong>number of days</strong> your licence has been expired. The system computes the difference between the expiry date and today's date. Each day of delay incurs a charge. The total penalty is displayed in the fee summary before you proceed to payment, so there are no surprises.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q6: Can I cancel a closure (termination) after submitting?</div>
+      <div class="faq-a">Once your termination request has been <strong>approved</strong> by the licensing authority, it cannot be reversed. However, if your application is still under review, you may contact the licensing office and request the application be sent back to you so you can modify it. Act quickly if you change your mind.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q7: Do I need to visit a government office in person?</div>
+      <div class="faq-a">No. This is a fully online service. You can complete the entire process &mdash; from selecting licences to paying fees and receiving your updated certificate &mdash; from your computer or mobile phone. You do not need to visit Maseru or any district office.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q8: How will I receive my renewed licence certificate?</div>
+      <div class="faq-a">After your renewal is approved and processed, the updated licence certificate is uploaded to your eRegistrations account. You can log in and download it as a PDF. You will receive an email notification when it is ready. You can print it for your records or display it at your business premises.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q9: I have licences in different districts (e.g., Maseru and Berea). Can I handle them all here?</div>
+      <div class="faq-a">Yes. The system loads <strong>all</strong> licences linked to your account regardless of district. Whether your businesses are in Maseru, Berea, Leribe, Qacha's Nek, or any other district, they will all appear in the list. You can renew or close any combination in a single application.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Q10: What happens if my payment fails or is interrupted?</div>
+      <div class="faq-a">If your payment does not complete successfully, your application will not be submitted. You can log back in and retry the payment. No duplicate charges will be applied. If money was deducted but the system did not register payment, contact the licensing office with your transaction reference number for manual verification.</div>
+    </div>
+  </section>
+
+  <!-- ===== 11. CONTACT ===== -->
+  <section id="contact">
+    <h2>11. Help and Contact</h2>
+    <p>If you need assistance with this service, you can reach the licensing authority through the following channels:</p>
+    <table class="fee-table">
+      <tr><th>Channel</th><th>Details</th></tr>
+      <tr><td>Website</td><td><strong>businessregistrations.gov.ls</strong></td></tr>
+      <tr><td>In Person</td><td>Ministry of Trade, Industry and Business Development, Kingsway Road, Maseru</td></tr>
+      <tr><td>District Offices</td><td>Visit any district licensing office during working hours (08:00 &ndash; 16:30, Monday to Friday)</td></tr>
+    </table>
+
+    <div class="alert alert-success">
+      <strong>Tip:</strong> Before visiting in person, try resolving your issue online first. Many common questions are answered above. The online system is available 24 hours a day, 7 days a week.
+    </div>
+  </section>
+
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="gov-footer">
+  <p><strong>Government of Lesotho</strong> &mdash; Ministry of Trade, Industry and Business Development</p>
+  <p style="margin-top:6px;">Online Business Registration Portal &bull; <a href="https://businessregistrations.gov.ls">businessregistrations.gov.ls</a></p>
+  <p style="margin-top:10px;font-size:11px;opacity:0.7;">This user manual was generated from the eRegistrations service configuration. Last updated: February 2026.</p>
+</footer>
+
+</body>
+</html>

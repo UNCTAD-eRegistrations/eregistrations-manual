@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Manual — Verify Your Identity (KYC) | Lesotho Business Registrations</title>
+    <style>
+        /* ===== BASE RESET & TYPOGRAPHY ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: #f7f8fc;
+        }
+
+        /* ===== GOVERNMENT THEME COLOURS ===== */
+        :root {
+            --gov-blue: #003580;
+            --gov-blue-dark: #002255;
+            --gov-blue-light: #e8eef7;
+            --gov-accent: #0066cc;
+            --gov-green: #28a745;
+            --gov-orange: #e67e22;
+            --gov-red: #dc3545;
+            --gov-gray: #6c757d;
+            --gov-bg: #f7f8fc;
+            --border: #d1d9e6;
+            --shadow: 0 2px 12px rgba(0,53,128,0.08);
+        }
+
+        /* ===== HEADER ===== */
+        .gov-header {
+            background: linear-gradient(135deg, var(--gov-blue) 0%, var(--gov-blue-dark) 100%);
+            color: #fff;
+            padding: 0;
+        }
+        .gov-header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 18px 24px;
+        }
+        .gov-header-top .coat-of-arms {
+            font-size: 2rem;
+            margin-right: 16px;
+        }
+        .gov-header-top .title-block h1 {
+            font-size: 1.45rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .gov-header-top .title-block p {
+            font-size: 0.88rem;
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+        .gov-header-nav {
+            background: var(--gov-blue-dark);
+            padding: 0 24px;
+        }
+        .gov-header-nav ul {
+            list-style: none;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 0;
+        }
+        .gov-header-nav a {
+            display: block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 10px 18px;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .gov-header-nav a:hover,
+        .gov-header-nav a.active {
+            background: rgba(255,255,255,0.12);
+            color: #fff;
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 32px 24px 60px;
+        }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb {
+            font-size: 0.82rem;
+            color: var(--gov-gray);
+            margin-bottom: 24px;
+        }
+        .breadcrumb a { color: var(--gov-accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb span { margin: 0 6px; }
+
+        /* ===== HERO / INTRO ===== */
+        .hero {
+            background: #fff;
+            border-left: 5px solid var(--gov-blue);
+            padding: 28px 32px;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+            margin-bottom: 36px;
+        }
+        .hero h2 {
+            color: var(--gov-blue);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+        .hero p { font-size: 1rem; color: #4a5568; }
+
+        /* ===== TABLE OF CONTENTS ===== */
+        .toc {
+            background: var(--gov-blue-light);
+            border-radius: 6px;
+            padding: 24px 28px;
+            margin-bottom: 36px;
+        }
+        .toc h3 {
+            color: var(--gov-blue);
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+        }
+        .toc ol {
+            padding-left: 20px;
+        }
+        .toc li {
+            margin-bottom: 6px;
+        }
+        .toc a {
+            color: var(--gov-accent);
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .toc a:hover { text-decoration: underline; }
+
+        /* ===== SECTION HEADINGS ===== */
+        .section {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: var(--shadow);
+            padding: 28px 32px;
+            margin-bottom: 28px;
+        }
+        .section h2 {
+            color: var(--gov-blue);
+            font-size: 1.35rem;
+            border-bottom: 2px solid var(--gov-blue-light);
+            padding-bottom: 10px;
+            margin-bottom: 18px;
+        }
+        .section h3 {
+            color: var(--gov-blue-dark);
+            font-size: 1.1rem;
+            margin: 20px 0 10px;
+        }
+        .section p, .section li {
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+        .section ul, .section ol {
+            padding-left: 22px;
+            margin-bottom: 14px;
+        }
+        .section li { margin-bottom: 6px; }
+
+        /* ===== INFO / WARNING / SUCCESS BOXES ===== */
+        .info-box {
+            padding: 16px 20px;
+            border-radius: 5px;
+            margin: 16px 0;
+            font-size: 0.92rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .info-box .icon {
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .info-box.info {
+            background: #e8f4fd;
+            border-left: 4px solid var(--gov-accent);
+            color: #1a5276;
+        }
+        .info-box.warning {
+            background: #fef5e7;
+            border-left: 4px solid var(--gov-orange);
+            color: #7d5a29;
+        }
+        .info-box.success {
+            background: #e8f8ed;
+            border-left: 4px solid var(--gov-green);
+            color: #1e6e3a;
+        }
+        .info-box.danger {
+            background: #fde8ea;
+            border-left: 4px solid var(--gov-red);
+            color: #7d1a2a;
+        }
+
+        /* ===== BROWSER CHROME MOCKUP ===== */
+        .browser-mockup {
+            border: 1px solid #c4cdd5;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 20px 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+        .browser-bar {
+            background: linear-gradient(180deg, #e8ecf0 0%, #dde1e6 100%);
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #c4cdd5;
+        }
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .browser-dots span {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+        .browser-dots .red { background: #ff5f57; }
+        .browser-dots .yellow { background: #febc2e; }
+        .browser-dots .green { background: #28c840; }
+        .browser-url {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #c4cdd5;
+            border-radius: 4px;
+            padding: 5px 12px;
+            font-size: 0.78rem;
+            color: var(--gov-gray);
+            font-family: 'SF Mono', 'Consolas', monospace;
+        }
+        .browser-content {
+            padding: 0;
+            min-height: 200px;
+        }
+
+        /* ===== FORM MOCKUP INSIDE BROWSER ===== */
+        .mockup-header {
+            background: var(--gov-blue);
+            color: #fff;
+            padding: 14px 22px;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+        .mockup-body {
+            padding: 22px 24px;
+        }
+        .mockup-label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .mockup-label .req {
+            color: var(--gov-red);
+            margin-left: 2px;
+        }
+        .mockup-input {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 9px 12px;
+            font-size: 0.88rem;
+            color: #555;
+            background: #f9fafb;
+            margin-bottom: 16px;
+        }
+        .mockup-input.filled {
+            background: #fff;
+            color: #1a202c;
+            border-color: #a0aec0;
+        }
+        .mockup-row {
+            display: flex;
+            gap: 16px;
+        }
+        .mockup-row > div { flex: 1; }
+        .mockup-btn {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 5px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: default;
+            text-align: center;
+            border: none;
+        }
+        .mockup-btn.primary {
+            background: var(--gov-blue);
+            color: #fff;
+        }
+        .mockup-btn.success {
+            background: var(--gov-green);
+            color: #fff;
+        }
+        .mockup-btn.disabled {
+            background: #cbd5e0;
+            color: #718096;
+        }
+        .mockup-status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+        .mockup-status.approved { background: #d4edda; color: #155724; }
+        .mockup-status.review { background: #fff3cd; color: #856404; }
+        .mockup-status.declined { background: #f8d7da; color: #721c24; }
+        .mockup-status.pending { background: #e2e3e5; color: #383d41; }
+        .mockup-divider {
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin: 18px 0;
+        }
+        .mockup-panel-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--gov-blue);
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        /* ===== STEP INDICATOR ===== */
+        .steps-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin: 24px 0;
+        }
+        .step-item {
+            text-align: center;
+            position: relative;
+            flex: 1;
+            max-width: 180px;
+        }
+        .step-item::after {
+            content: '';
+            position: absolute;
+            top: 18px;
+            right: -50%;
+            width: 100%;
+            height: 3px;
+            background: #d1d9e6;
+            z-index: 0;
+        }
+        .step-item:last-child::after { display: none; }
+        .step-item.active::after { background: var(--gov-blue); }
+        .step-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            position: relative;
+            z-index: 1;
+        }
+        .step-item.active .step-circle {
+            background: var(--gov-blue);
+            color: #fff;
+        }
+        .step-item.completed .step-circle {
+            background: var(--gov-green);
+            color: #fff;
+        }
+        .step-item.upcoming .step-circle {
+            background: #e2e8f0;
+            color: var(--gov-gray);
+        }
+        .step-label {
+            font-size: 0.75rem;
+            color: var(--gov-gray);
+        }
+        .step-item.active .step-label { color: var(--gov-blue); font-weight: 600; }
+
+        /* ===== WORKFLOW DIAGRAM ===== */
+        .workflow {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .workflow-step {
+            background: var(--gov-blue-light);
+            border: 2px solid var(--gov-blue);
+            border-radius: 8px;
+            padding: 14px 24px;
+            text-align: center;
+            width: 320px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--gov-blue-dark);
+        }
+        .workflow-step.bot {
+            border-color: var(--gov-orange);
+            background: #fef5e7;
+            color: #7d5a29;
+        }
+        .workflow-step.applicant {
+            border-color: var(--gov-green);
+            background: #e8f8ed;
+            color: #1e6e3a;
+        }
+        .workflow-arrow {
+            font-size: 1.4rem;
+            color: var(--gov-gray);
+            padding: 4px 0;
+        }
+
+        /* ===== REQUIREMENTS TABLE ===== */
+        .req-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+        }
+        .req-table th {
+            background: var(--gov-blue);
+            color: #fff;
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            text-align: left;
+        }
+        .req-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+        }
+        .req-table tr:nth-child(even) { background: #f7f8fc; }
+
+        /* ===== FAQ ===== */
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 16px 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-weight: 700;
+            color: var(--gov-blue);
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+        .faq-a {
+            color: #4a5568;
+            font-size: 0.92rem;
+        }
+
+        /* ===== FOOTER ===== */
+        .gov-footer {
+            background: var(--gov-blue-dark);
+            color: rgba(255,255,255,0.75);
+            text-align: center;
+            padding: 28px 24px;
+            font-size: 0.82rem;
+            margin-top: 40px;
+        }
+        .gov-footer a { color: rgba(255,255,255,0.9); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 700px) {
+            .mockup-row { flex-direction: column; gap: 0; }
+            .steps-indicator { flex-wrap: wrap; gap: 8px; }
+            .step-item::after { display: none; }
+            .workflow-step { width: 100%; }
+            .gov-header-top { flex-direction: column; text-align: center; }
+            .container { padding: 20px 14px 40px; }
+            .section { padding: 20px 16px; }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            .gov-header-nav, .toc { display: none; }
+            .section { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+            .browser-mockup { box-shadow: none; border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== GOVERNMENT HEADER ===== -->
+<header class="gov-header">
+    <div class="gov-header-top">
+        <div style="display:flex;align-items:center;">
+            <div class="coat-of-arms">&#127987;</div>
+            <div class="title-block">
+                <h1>Lesotho Business Registrations</h1>
+                <p>Ministry of Trade, Industry and Business Development</p>
+            </div>
+        </div>
+        <div style="font-size:0.82rem;opacity:0.8;">businessregistrations.gov.ls</div>
+    </div>
+    <nav class="gov-header-nav">
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#before-you-begin">Before You Begin</a></li>
+            <li><a href="#step-by-step" class="active">Step-by-Step Guide</a></li>
+            <li><a href="#workflow">After Submission</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="container">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="#">Home</a> <span>&#8250;</span>
+        <a href="#">Services</a> <span>&#8250;</span>
+        Verify Your Identity (KYC)
+    </div>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h2>Verify Your Identity (KYC)</h2>
+        <p>This manual guides you through the Know Your Customer (KYC) identity verification process on the Lesotho Business Registrations portal. Identity verification is required before you can register a business, apply for permits, or access other government services on the platform.</p>
+    </div>
+
+    <!-- Table of Contents -->
+    <div class="toc" id="toc">
+        <h3>In This Manual</h3>
+        <ol>
+            <li><a href="#overview">What is Identity Verification (KYC)?</a></li>
+            <li><a href="#before-you-begin">Before You Begin &mdash; What You Need</a></li>
+            <li><a href="#step1">Step 1: Log In to the Portal</a></li>
+            <li><a href="#step2">Step 2: Confirm Your Personal Details</a></li>
+            <li><a href="#step3">Step 3: Enter Your National ID and Date of Birth</a></li>
+            <li><a href="#step4">Step 4: Start the Identity Verification</a></li>
+            <li><a href="#step5">Step 5: Complete the Automated Verification (Didit)</a></li>
+            <li><a href="#step6">Step 6: Review Your Verification Status</a></li>
+            <li><a href="#step7">Step 7: Request Manual Review (If Needed)</a></li>
+            <li><a href="#workflow">What Happens After Submission</a></li>
+            <li><a href="#statuses">Understanding Verification Statuses</a></li>
+            <li><a href="#documents">Identification Documents</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="#support">Contact &amp; Support</a></li>
+        </ol>
+    </div>
+
+    <!-- ===== SECTION: OVERVIEW ===== -->
+    <div class="section" id="overview">
+        <h2>1. What is Identity Verification (KYC)?</h2>
+        <p>Know Your Customer (KYC) is a mandatory process that confirms you are who you say you are. The Government of Lesotho requires all users of the Business Registrations portal to verify their identity before submitting any application.</p>
+        <p>The verification uses an automated system called <strong>Didit</strong> that checks your personal information against official government records. In most cases, the process takes just a few minutes.</p>
+
+        <div class="info-box info">
+            <div class="icon">&#9432;</div>
+            <div><strong>Why is this required?</strong> Identity verification protects you against fraud and ensures the integrity of official business records. It is a one-time process &mdash; once verified, you do not need to repeat it for other services on the portal.</div>
+        </div>
+
+        <h3>Who needs to verify?</h3>
+        <ul>
+            <li>Any individual who wants to register a business in Lesotho</li>
+            <li>Company directors and shareholders</li>
+            <li>Applicants for trade licenses, permits, and other business-related services</li>
+            <li>Foreign nationals seeking to do business in Lesotho</li>
+        </ul>
+    </div>
+
+    <!-- ===== SECTION: BEFORE YOU BEGIN ===== -->
+    <div class="section" id="before-you-begin">
+        <h2>2. Before You Begin &mdash; What You Need</h2>
+
+        <table class="req-table">
+            <thead>
+                <tr>
+                    <th style="width:40%;">Requirement</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Portal Account</strong></td>
+                    <td>You must have a registered account on <a href="https://businessregistrations.gov.ls">businessregistrations.gov.ls</a>. If you do not have one, create an account first.</td>
+                </tr>
+                <tr>
+                    <td><strong>National ID Number</strong></td>
+                    <td>Your Lesotho National Identity Document number (for Basotho citizens) or passport number (for foreign nationals).</td>
+                </tr>
+                <tr>
+                    <td><strong>Date of Birth</strong></td>
+                    <td>Your exact date of birth as it appears on your identity document.</td>
+                </tr>
+                <tr>
+                    <td><strong>Internet Connection</strong></td>
+                    <td>A stable internet connection. The verification process involves a live identity check and requires a camera.</td>
+                </tr>
+                <tr>
+                    <td><strong>Device with Camera</strong></td>
+                    <td>A smartphone, tablet, or computer with a working camera for the Didit facial verification.</td>
+                </tr>
+                <tr>
+                    <td><strong>Physical ID Document</strong></td>
+                    <td>Keep your physical ID card or passport nearby. The Didit system may ask you to photograph it.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box warning">
+            <div class="icon">&#9888;</div>
+            <div><strong>Important:</strong> The name on your portal account must match the name on your national ID exactly. If your account name is different (for example, a nickname or abbreviated name), please update it before starting verification.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: STEP 1 ===== -->
+    <div class="section" id="step1">
+        <h2>3. Step 1: Log In to the Portal</h2>
+        <p>Open your web browser and go to <strong>businessregistrations.gov.ls</strong>. Click the <strong>"Log in"</strong> button in the top-right corner and enter your email address and password.</p>
+
+        <!-- Browser Mockup: Login -->
+        <div class="browser-mockup">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <div class="browser-url">https://businessregistrations.gov.ls/dashboard</div>
+            </div>
+            <div class="browser-content">
+                <div class="mockup-header">
+                    Lesotho Business Registrations &mdash; Dashboard
+                </div>
+                <div class="mockup-body">
+                    <p style="font-size:0.9rem;color:#4a5568;margin-bottom:14px;">Welcome back, <strong>Palesa Mokoena</strong></p>
+                    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+                        <div style="background:var(--gov-blue-light);padding:16px 20px;border-radius:6px;flex:1;min-width:200px;">
+                            <div style="font-weight:700;color:var(--gov-blue);font-size:0.9rem;">Identity Status</div>
+                            <div style="margin-top:6px;"><span class="mockup-status pending">Not Verified</span></div>
+                            <div style="margin-top:10px;"><span class="mockup-btn primary" style="font-size:0.8rem;padding:7px 14px;">Verify Your Identity</span></div>
+                        </div>
+                        <div style="background:#f7f8fc;padding:16px 20px;border-radius:6px;flex:1;min-width:200px;border:1px solid #e2e8f0;">
+                            <div style="font-weight:700;color:var(--gov-gray);font-size:0.9rem;">My Applications</div>
+                            <div style="margin-top:6px;font-size:0.88rem;color:#718096;">No applications yet</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>After logging in, you will see your <strong>Dashboard</strong>. Look for the <strong>"Verify Your Identity"</strong> button or navigate to the identity verification service from the services menu.</p>
+
+        <div class="info-box info">
+            <div class="icon">&#9432;</div>
+            <div>If you see a green "Verified" badge on your dashboard, your identity is already confirmed and you do not need to complete this process again.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: STEP 2 ===== -->
+    <div class="section" id="step2">
+        <h2>4. Step 2: Confirm Your Personal Details</h2>
+        <p>The first part of the verification form shows your account information. These fields are pre-filled from your registration.</p>
+
+        <!-- Browser Mockup: Personal Details -->
+        <div class="browser-mockup">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <div class="browser-url">https://businessregistrations.gov.ls/service/verify-identity</div>
+            </div>
+            <div class="browser-content">
+                <div class="mockup-header">
+                    Verify Your Identity
+                </div>
+                <div class="mockup-body">
+                    <!-- Step indicator -->
+                    <div class="steps-indicator">
+                        <div class="step-item active">
+                            <div class="step-circle">1</div>
+                            <div class="step-label">Your Data</div>
+                        </div>
+                        <div class="step-item upcoming">
+                            <div class="step-circle">2</div>
+                            <div class="step-label">ID &amp; Verification</div>
+                        </div>
+                        <div class="step-item upcoming">
+                            <div class="step-circle">3</div>
+                            <div class="step-label">Result</div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-panel-title">Your Data</div>
+                    <div class="mockup-row">
+                        <div>
+                            <label class="mockup-label">First name <span class="req">*</span></label>
+                            <div class="mockup-input filled">Palesa</div>
+                        </div>
+                        <div>
+                            <label class="mockup-label">Last name <span class="req">*</span></label>
+                            <div class="mockup-input filled">Mokoena</div>
+                        </div>
+                    </div>
+                    <div class="mockup-row">
+                        <div>
+                            <label class="mockup-label">Email</label>
+                            <div class="mockup-input filled">palesa.mokoena@email.co.ls</div>
+                        </div>
+                        <div></div>
+                    </div>
+                    <p style="font-size:0.82rem;color:#718096;margin-top:8px;">These details are from your account registration. If they are incorrect, please update your account profile first.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Field Descriptions</h3>
+        <table class="req-table">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>First name</strong></td>
+                    <td>Yes</td>
+                    <td>Your first name exactly as it appears on your national ID. This is pre-filled from your account.</td>
+                </tr>
+                <tr>
+                    <td><strong>Last name</strong></td>
+                    <td>Yes</td>
+                    <td>Your surname / family name exactly as on your ID. Must match government records.</td>
+                </tr>
+                <tr>
+                    <td><strong>Email</strong></td>
+                    <td>No</td>
+                    <td>Your email address. Verification results may be sent to this address.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box warning">
+            <div class="icon">&#9888;</div>
+            <div><strong>Name Matching:</strong> The system compares the name on your account with the name extracted from your ID during verification. If these do not match, the verification may fail. Ensure your first name and last name are exactly as they appear on your National ID before proceeding.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: STEP 3 ===== -->
+    <div class="section" id="step3">
+        <h2>5. Step 3: Enter Your National ID and Date of Birth</h2>
+        <p>In the second section of the form, you must enter your identification details. These will be checked against official government records.</p>
+
+        <!-- Browser Mockup: ID Details -->
+        <div class="browser-mockup">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <div class="browser-url">https://businessregistrations.gov.ls/service/verify-identity</div>
+            </div>
+            <div class="browser-content">
+                <div class="mockup-header">
+                    Verify Your Identity
+                </div>
+                <div class="mockup-body">
+                    <div class="steps-indicator">
+                        <div class="step-item completed">
+                            <div class="step-circle">&#10003;</div>
+                            <div class="step-label">Your Data</div>
+                        </div>
+                        <div class="step-item active">
+                            <div class="step-circle">2</div>
+                            <div class="step-label">ID &amp; Verification</div>
+                        </div>
+                        <div class="step-item upcoming">
+                            <div class="step-circle">3</div>
+                            <div class="step-label">Result</div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-panel-title">Identity Details</div>
+                    <div class="mockup-row">
+                        <div>
+                            <label class="mockup-label">ID number <span class="req">*</span></label>
+                            <div class="mockup-input filled">4401015800083</div>
+                        </div>
+                        <div>
+                            <label class="mockup-label">Date of birth <span class="req">*</span></label>
+                            <div class="mockup-input filled">01/01/1988</div>
+                        </div>
+                    </div>
+                    <hr class="mockup-divider">
+                    <p style="font-size:0.82rem;color:#718096;margin-bottom:16px;">Please enter your Lesotho National ID number. If you are a foreign national, enter your passport number.</p>
+                    <div class="mockup-btn primary">Start identity verification</div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Field Descriptions</h3>
+        <table class="req-table">
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ID number</strong></td>
+                    <td>Yes</td>
+                    <td>Your Lesotho National ID number (13 digits). For foreign nationals, enter your passport number. This must match official records exactly.</td>
+                </tr>
+                <tr>
+                    <td><strong>Date of birth</strong></td>
+                    <td>Yes</td>
+                    <td>Your date of birth in DD/MM/YYYY format. Use the date picker or type it directly. Must match your ID document.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box info">
+            <div class="icon">&#9432;</div>
+            <div><strong>Example:</strong> If your name is Thabo Lerato and your ID number is 4401015800083, born on 15 March 1990, enter <em>4401015800083</em> in the ID field and select <em>15/03/1990</em> as the date of birth.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: STEP 4 ===== -->
+    <div class="section" id="step4">
+        <h2>6. Step 4: Start the Identity Verification</h2>
+        <p>After entering your ID number and date of birth, click the blue <strong>"Start identity verification"</strong> button. This launches the automated Didit verification process.</p>
+
+        <div class="info-box warning">
+            <div class="icon">&#9888;</div>
+            <div><strong>Before clicking:</strong> Double-check that your ID number and date of birth are correct. Once verification starts, the system will cross-check these against government databases. Incorrect information will cause the verification to fail.</div>
+        </div>
+
+        <h3>What happens when you click the button:</h3>
+        <ol>
+            <li>The system sends your information to the Didit verification service</li>
+            <li>A verification window or prompt will appear on your screen</li>
+            <li>You may be asked to take a selfie photo using your device's camera</li>
+            <li>You may be asked to photograph your physical ID document</li>
+            <li>The system will compare your selfie with the photo on your ID</li>
+            <li>Results are returned automatically, usually within 1-3 minutes</li>
+        </ol>
+    </div>
+
+    <!-- ===== SECTION: STEP 5 ===== -->
+    <div class="section" id="step5">
+        <h2>7. Step 5: Complete the Automated Verification (Didit)</h2>
+        <p>The Didit verification system will guide you through a short process. Follow the on-screen instructions carefully.</p>
+
+        <h3>Tips for a Successful Verification</h3>
+        <ul>
+            <li><strong>Good lighting:</strong> Ensure your face is well-lit. Avoid backlight (do not sit with a window behind you).</li>
+            <li><strong>Remove obstructions:</strong> Take off sunglasses, hats, or face coverings. The camera must see your full face clearly.</li>
+            <li><strong>Hold still:</strong> Keep your device steady when taking the selfie. Blurry images may cause a failed verification.</li>
+            <li><strong>Clean lens:</strong> Make sure your device camera lens is clean and not smudged.</li>
+            <li><strong>ID document:</strong> If asked to photograph your ID, place it on a flat, dark surface. Ensure all four corners are visible and the text is readable.</li>
+            <li><strong>Stable connection:</strong> Stay connected to the internet throughout the process. Do not close the browser tab.</li>
+        </ul>
+
+        <div class="info-box danger">
+            <div class="icon">&#9888;</div>
+            <div><strong>Do not close the browser tab</strong> while the verification is in progress. Closing the tab may require you to restart the entire process.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: STEP 6 ===== -->
+    <div class="section" id="step6">
+        <h2>8. Step 6: Review Your Verification Status</h2>
+        <p>After the Didit process is complete, the portal will display your verification result. There are four possible statuses:</p>
+
+        <!-- Browser Mockup: Status Display -->
+        <div class="browser-mockup">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <div class="browser-url">https://businessregistrations.gov.ls/service/verify-identity</div>
+            </div>
+            <div class="browser-content">
+                <div class="mockup-header">
+                    Verify Your Identity &mdash; Result
+                </div>
+                <div class="mockup-body">
+                    <div class="steps-indicator">
+                        <div class="step-item completed">
+                            <div class="step-circle">&#10003;</div>
+                            <div class="step-label">Your Data</div>
+                        </div>
+                        <div class="step-item completed">
+                            <div class="step-circle">&#10003;</div>
+                            <div class="step-label">ID &amp; Verification</div>
+                        </div>
+                        <div class="step-item active">
+                            <div class="step-circle">3</div>
+                            <div class="step-label">Result</div>
+                        </div>
+                    </div>
+
+                    <div style="text-align:center;padding:20px 0;">
+                        <div style="font-size:2.5rem;margin-bottom:10px;">&#9989;</div>
+                        <div style="font-size:1.15rem;font-weight:700;color:#155724;">Identity Verified Successfully</div>
+                        <p style="font-size:0.88rem;color:#4a5568;margin-top:8px;">Your identity has been confirmed. You can now access all services on the portal.</p>
+                        <div style="margin-top:16px;">
+                            <span class="mockup-status approved">Approved</span>
+                        </div>
+                        <div style="margin-top:20px;">
+                            <span class="mockup-btn success">Close and go back to your dashboard</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>If your verification is approved, click <strong>"Close and go back to your dashboard"</strong> to return to the main portal. You can now proceed to register a business or use other services.</p>
+    </div>
+
+    <!-- ===== SECTION: STEP 7 ===== -->
+    <div class="section" id="step7">
+        <h2>9. Step 7: Request Manual Review (If Needed)</h2>
+        <p>If the automated verification cannot confirm your identity (status: "In Review" or "Declined"), you may request a manual review by a government officer.</p>
+
+        <!-- Browser Mockup: Manual Review -->
+        <div class="browser-mockup">
+            <div class="browser-bar">
+                <div class="browser-dots">
+                    <span class="red"></span>
+                    <span class="yellow"></span>
+                    <span class="green"></span>
+                </div>
+                <div class="browser-url">https://businessregistrations.gov.ls/service/verify-identity</div>
+            </div>
+            <div class="browser-content">
+                <div class="mockup-header">
+                    Verify Your Identity &mdash; Review Required
+                </div>
+                <div class="mockup-body">
+                    <div style="text-align:center;padding:16px 0;">
+                        <div style="font-size:2.5rem;margin-bottom:10px;">&#128269;</div>
+                        <div style="font-size:1.1rem;font-weight:700;color:#856404;">Manual Review Required</div>
+                        <p style="font-size:0.88rem;color:#4a5568;margin-top:8px;">The automated system could not fully verify your identity. Please request a manual review by a government officer.</p>
+                        <div style="margin-top:12px;">
+                            <span class="mockup-status review">In Review</span>
+                        </div>
+                        <div style="margin-top:20px;">
+                            <span class="mockup-btn primary">Request review</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>Click the <strong>"Request review"</strong> button to submit your application for manual review. A government officer will examine your identity documents and make a determination.</p>
+
+        <div class="info-box info">
+            <div class="icon">&#9432;</div>
+            <div><strong>Processing time:</strong> Manual reviews are typically completed within 1-3 business days. You will receive a notification at your registered email address when the review is complete.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: WORKFLOW ===== -->
+    <div class="section" id="workflow">
+        <h2>10. What Happens After Submission</h2>
+        <p>Once you initiate the verification, your application follows this workflow:</p>
+
+        <div class="workflow">
+            <div class="workflow-step applicant">
+                Step 1: Applicant submits verification form
+            </div>
+            <div class="workflow-arrow">&#9660;</div>
+            <div class="workflow-step">
+                Step 2: Didit automated identity check runs
+            </div>
+            <div class="workflow-arrow">&#9660;</div>
+            <div class="workflow-step" style="border-style:dashed;">
+                Result: Approved, In Review, or Declined
+            </div>
+            <div class="workflow-arrow">&#9660;</div>
+            <div class="workflow-step">
+                Step 3: Review Didit Application<br>
+                <span style="font-size:0.8rem;font-weight:400;">(Government officer reviews if not auto-approved)</span>
+            </div>
+            <div class="workflow-arrow">&#9660;</div>
+            <div class="workflow-step bot">
+                Step 4: Update Natural Person as KYC Verified<br>
+                <span style="font-size:0.8rem;font-weight:400;">(Automated system update upon approval)</span>
+            </div>
+            <div class="workflow-arrow">&#9660;</div>
+            <div class="workflow-step applicant">
+                Step 5: Applicant receives confirmation<br>
+                <span style="font-size:0.8rem;font-weight:400;">(Dashboard updated, services unlocked)</span>
+            </div>
+        </div>
+
+        <h3>Workflow Roles Explained</h3>
+        <table class="req-table">
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Type</th>
+                    <th>What They Do</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Applicant</strong></td>
+                    <td>You (the citizen)</td>
+                    <td>Fills in the form, provides ID details, completes the Didit verification, and receives the final result.</td>
+                </tr>
+                <tr>
+                    <td><strong>Review Didit Application</strong></td>
+                    <td>Government Officer</td>
+                    <td>Reviews applications that could not be automatically approved. Can approve or reject with a reason.</td>
+                </tr>
+                <tr>
+                    <td><strong>Update Natural Person</strong></td>
+                    <td>Automated (Bot)</td>
+                    <td>Once approved, the system automatically marks you as KYC-verified in the government database. No action required from you.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ===== SECTION: STATUSES ===== -->
+    <div class="section" id="statuses">
+        <h2>11. Understanding Verification Statuses</h2>
+        <p>Your verification can be in one of the following statuses at any time:</p>
+
+        <table class="req-table">
+            <thead>
+                <tr>
+                    <th style="width:25%;">Status</th>
+                    <th style="width:30%;">What It Means</th>
+                    <th>What You Should Do</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="mockup-status pending">Not Started</span></td>
+                    <td>You have not yet started the KYC process.</td>
+                    <td>Navigate to the Verify Your Identity service and begin the form.</td>
+                </tr>
+                <tr>
+                    <td><span class="mockup-status approved">Approved</span></td>
+                    <td>Your identity has been confirmed successfully.</td>
+                    <td>Nothing more needed. You can now use all portal services. Your dashboard will show a green verified badge.</td>
+                </tr>
+                <tr>
+                    <td><span class="mockup-status review">In Review</span></td>
+                    <td>Your application is being reviewed by a government officer.</td>
+                    <td>Wait for the review to complete. Check your email for updates. This typically takes 1-3 business days.</td>
+                </tr>
+                <tr>
+                    <td><span class="mockup-status declined">Declined</span></td>
+                    <td>Your verification was not successful.</td>
+                    <td>Check the rejection reason displayed on the form. Correct any issues and try again, or contact support.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box danger">
+            <div class="icon">&#9888;</div>
+            <div><strong>If your verification is declined:</strong> Common reasons include a mismatch between the name on your account and your ID, an unreadable ID photograph, or poor lighting during the selfie. Review the rejection reason carefully, correct the issue, and resubmit.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: DOCUMENTS ===== -->
+    <div class="section" id="documents">
+        <h2>12. Identification Documents</h2>
+        <p>The KYC service does not require you to upload documents separately. Instead, the Didit system captures your ID during the automated verification. However, you should have the following documents ready:</p>
+
+        <table class="req-table">
+            <thead>
+                <tr>
+                    <th>Document</th>
+                    <th>For Whom</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Lesotho National ID Card</strong></td>
+                    <td>Basotho citizens</td>
+                    <td>Your valid national identity card issued by the Ministry of Home Affairs. Ensure it is not expired and the photo is clear.</td>
+                </tr>
+                <tr>
+                    <td><strong>Passport</strong></td>
+                    <td>Foreign nationals</td>
+                    <td>A valid passport from your country of nationality. Must have at least 6 months of validity remaining.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box success">
+            <div class="icon">&#10004;</div>
+            <div><strong>Good news:</strong> No document uploads are required. The entire process is handled through the Didit automated verification system, which captures and checks your ID in real time.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: FAQ ===== -->
+    <div class="section" id="faq">
+        <h2>13. Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">How long does the verification process take?</div>
+            <div class="faq-a">The automated Didit verification typically takes 1-3 minutes. If a manual review is required, expect 1-3 business days. You will be notified by email when the review is complete.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Do I need to verify my identity more than once?</div>
+            <div class="faq-a">No. Identity verification is a one-time process. Once your status is "Approved," you do not need to repeat it for other services on the portal. Your verified status will remain active.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">My verification was declined. What should I do?</div>
+            <div class="faq-a">Check the reason for decline on the verification page. Common causes include:
+                <ul style="margin-top:6px;">
+                    <li>Name mismatch between your account and your ID document</li>
+                    <li>Poor quality selfie or ID photo (bad lighting, blurry image)</li>
+                    <li>Expired ID document</li>
+                    <li>Incorrect ID number or date of birth</li>
+                </ul>
+                Correct the issue and try again. If the problem persists, contact the support office.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">I am a foreign national. Can I verify my identity?</div>
+            <div class="faq-a">Yes. Foreign nationals can use their passport for verification. Enter your passport number in the ID number field and complete the Didit verification as normal. If the automated system cannot verify your passport, a manual review will be initiated.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">My camera is not working. Can I still verify?</div>
+            <div class="faq-a">The Didit system requires a camera for facial verification. Try using a different device such as a smartphone with a working camera. If you cannot access any device with a camera, contact the One Stop Business Facilitation Centre for in-person assistance.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">I changed my name after marriage. How do I verify?</div>
+            <div class="faq-a">Ensure your portal account name matches the name on your current, valid ID document. If you recently changed your name, update your national ID first, then update your account name on the portal before starting verification.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What personal data is collected during verification?</div>
+            <div class="faq-a">The system collects your first name, last name, ID number, date of birth, gender, and nationality. A facial photograph is captured for comparison with your ID document. This data is processed in accordance with the Government of Lesotho data protection regulations and is used solely for identity verification purposes.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">The verification is stuck on "In Review." Who do I contact?</div>
+            <div class="faq-a">If your application has been "In Review" for more than 5 business days, contact the One Stop Business Facilitation Centre. Provide your full name, email address, and the date you submitted the verification.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Can someone else verify on my behalf?</div>
+            <div class="faq-a">No. Identity verification is personal and requires your live presence for the facial recognition step. No third party can complete this process on your behalf. You must use your own face and your own ID document.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">I completed verification but my dashboard still shows "Not Verified."</div>
+            <div class="faq-a">Try refreshing the page or logging out and back in. If the status does not update within 24 hours, contact support. The automated bot that updates your verified status may need to be retriggered by an administrator.</div>
+        </div>
+    </div>
+
+    <!-- ===== SECTION: SUPPORT ===== -->
+    <div class="section" id="support">
+        <h2>14. Contact &amp; Support</h2>
+        <p>If you need assistance with the identity verification process, you can reach the support team through the following channels:</p>
+
+        <table class="req-table">
+            <thead>
+                <tr>
+                    <th>Channel</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>One Stop Business Facilitation Centre</strong></td>
+                    <td>Visit in person at the Ministry of Trade, Industry and Business Development, Maseru</td>
+                </tr>
+                <tr>
+                    <td><strong>Portal Support</strong></td>
+                    <td>Use the "Help" or "Contact Us" link on the portal at businessregistrations.gov.ls</td>
+                </tr>
+                <tr>
+                    <td><strong>Email</strong></td>
+                    <td>Send your inquiry to the support address listed on the portal's Contact page</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="info-box info">
+            <div class="icon">&#9432;</div>
+            <div><strong>When contacting support, please include:</strong>
+                <ul style="margin-top:6px;">
+                    <li>Your full name as registered on the portal</li>
+                    <li>Your email address used for registration</li>
+                    <li>The date you attempted verification</li>
+                    <li>A description of the issue or error message you received</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div> <!-- end .container -->
+
+<!-- ===== FOOTER ===== -->
+<footer class="gov-footer">
+    <p><strong>Government of Lesotho</strong> &mdash; Ministry of Trade, Industry and Business Development</p>
+    <p style="margin-top:6px;">Lesotho Business Registrations Portal &mdash; <a href="https://businessregistrations.gov.ls">businessregistrations.gov.ls</a></p>
+    <p style="margin-top:12px;font-size:0.75rem;opacity:0.7;">This user manual is provided for guidance purposes. The Government of Lesotho reserves the right to update processes and requirements. Last updated: February 2026.</p>
+</footer>
+
+</body>
+</html>
