@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dashboard – User Manual | Lesotho Business Registrations</title>
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #222;
+    background: #f5f7fa;
+  }
+  a { color: #003580; text-decoration: underline; }
+  a:hover { color: #00254f; }
+  h1, h2, h3, h4 { color: #003580; font-weight: 700; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 0.75rem; padding-bottom: 0.3rem; border-bottom: 3px solid #003580; }
+  h3 { font-size: 1.2rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+  h4 { font-size: 1rem; margin-top: 1rem; color: #1a5276; }
+  p { margin-bottom: 0.9rem; }
+  ul, ol { margin: 0.5rem 0 1rem 1.5rem; }
+  li { margin-bottom: 0.3rem; }
+
+  /* ── Layout ── */
+  .page-header {
+    background: linear-gradient(135deg, #003580 0%, #00509e 100%);
+    color: #fff;
+    padding: 2rem 1.5rem;
+    border-bottom: 5px solid #b8860b;
+  }
+  .page-header .flag { font-size: 2.5rem; vertical-align: middle; margin-right: 0.5rem; }
+  .page-header h1 { color: #fff; font-size: 1.8rem; display: inline; }
+  .page-header .subtitle { color: #cce0ff; margin-top: 0.4rem; font-size: 1rem; }
+  .page-header .url-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 4px;
+    padding: 0.2rem 0.7rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 1.2rem; }
+  .content-wrap { display: flex; gap: 2rem; align-items: flex-start; margin-top: 2rem; }
+
+  /* ── Sidebar TOC ── */
+  .toc-sidebar {
+    flex: 0 0 240px;
+    background: #fff;
+    border: 1px solid #dde3ec;
+    border-radius: 8px;
+    padding: 1.2rem;
+    position: sticky;
+    top: 1.5rem;
+  }
+  .toc-sidebar h3 { color: #003580; font-size: 1rem; margin-top: 0; border-bottom: 2px solid #003580; padding-bottom: 0.3rem; margin-bottom: 0.7rem; }
+  .toc-sidebar ol { margin-left: 1rem; }
+  .toc-sidebar li { margin-bottom: 0.2rem; font-size: 0.88rem; }
+  .toc-sidebar a { color: #003580; text-decoration: none; }
+  .toc-sidebar a:hover { text-decoration: underline; }
+
+  .main-content { flex: 1 1 0; min-width: 0; }
+  section { background: #fff; border-radius: 8px; border: 1px solid #dde3ec; padding: 1.5rem; margin-bottom: 1.5rem; }
+
+  /* ── Callout Boxes ── */
+  .tip, .warning, .info, .action-box {
+    border-radius: 6px;
+    padding: 0.9rem 1.1rem;
+    margin: 1rem 0;
+    border-left: 5px solid;
+  }
+  .tip    { background: #eafaf1; border-color: #27ae60; }
+  .tip strong    { color: #1e8449; }
+  .warning{ background: #fef9e7; border-color: #f39c12; }
+  .warning strong{ color: #b7770d; }
+  .info   { background: #eaf0fb; border-color: #003580; }
+  .info strong   { color: #003580; }
+  .action-box { background: #fdf2f2; border-color: #c0392b; }
+  .action-box strong { color: #922b21; }
+
+  /* ── Status Badges ── */
+  .badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .badge-active   { background: #d5f5e3; color: #1e8449; }
+  .badge-pending  { background: #fef9e7; color: #b7770d; }
+  .badge-review   { background: #d6eaf8; color: #1a5276; }
+  .badge-expired  { background: #fde8e8; color: #922b21; }
+
+  /* ── Browser/Dashboard Mockup ── */
+  .mockup-browser {
+    background: #e8edf5;
+    border-radius: 10px;
+    border: 1px solid #bcc5d6;
+    overflow: hidden;
+    margin: 1.2rem 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    font-size: 0.85rem;
+  }
+  .mockup-toolbar {
+    background: #d0d8e8;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid #bcc5d6;
+  }
+  .mockup-dots { display: flex; gap: 5px; }
+  .mockup-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .mockup-dot.red { background: #e74c3c; }
+  .mockup-dot.yellow { background: #f1c40f; }
+  .mockup-dot.green { background: #2ecc71; }
+  .mockup-url {
+    flex: 1;
+    background: #fff;
+    border-radius: 4px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.78rem;
+    color: #555;
+    border: 1px solid #ccc;
+  }
+  .mockup-body { background: #f5f7fa; padding: 0; }
+
+  .mockup-topbar {
+    background: #003580;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+  .mockup-topbar .site-title { font-weight: 700; font-size: 0.9rem; }
+
+  .mockup-tabs {
+    background: #fff;
+    border-bottom: 2px solid #003580;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0.5rem;
+  }
+  .mockup-tab {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.78rem;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    margin-bottom: -2px;
+    color: #555;
+    border-radius: 4px 4px 0 0;
+  }
+  .mockup-tab.active {
+    background: #fff;
+    color: #003580;
+    font-weight: 700;
+    border-color: #003580 #003580 #fff;
+  }
+
+  .mockup-content { padding: 1rem; }
+
+  .mockup-business-card {
+    background: #fff;
+    border: 1px solid #dde3ec;
+    border-radius: 6px;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-left: 4px solid #003580;
+  }
+  .mockup-business-card h4 { color: #003580; margin: 0 0 0.3rem 0; font-size: 0.9rem; }
+  .mockup-business-card .meta { font-size: 0.75rem; color: #666; display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 0.5rem; }
+  .mockup-business-card .meta span { white-space: nowrap; }
+
+  .mockup-table { width: 100%; border-collapse: collapse; font-size: 0.75rem; margin-top: 0.5rem; }
+  .mockup-table th { background: #eaf0fb; color: #003580; padding: 0.3rem 0.5rem; text-align: left; font-weight: 700; }
+  .mockup-table td { padding: 0.3rem 0.5rem; border-bottom: 1px solid #eee; }
+  .mockup-table tr:last-child td { border-bottom: none; }
+
+  .mockup-btn {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    margin: 0.15rem;
+  }
+  .mockup-btn-primary { background: #003580; color: #fff; }
+  .mockup-btn-outline { background: #fff; color: #003580; border: 1px solid #003580; }
+  .mockup-btn-danger  { background: #fff; color: #c0392b; border: 1px solid #c0392b; }
+
+  .mockup-section-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #003580;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0.7rem 0 0.3rem 0;
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #dde3ec;
+  }
+
+  /* ── KYC Mockup ── */
+  .kyc-card {
+    background: #fff;
+    border: 2px solid #f39c12;
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+  .kyc-icon { font-size: 2rem; margin-bottom: 0.3rem; }
+  .kyc-card h3 { color: #b7770d; margin-top: 0; }
+  .kyc-card p { font-size: 0.82rem; color: #666; margin-bottom: 0.5rem; }
+
+  /* ── Applications table ── */
+  .doc-table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; font-size: 0.9rem; }
+  .doc-table th { background: #003580; color: #fff; padding: 0.5rem 0.7rem; text-align: left; font-weight: 600; }
+  .doc-table td { padding: 0.5rem 0.7rem; border-bottom: 1px solid #e0e6f0; vertical-align: top; }
+  .doc-table tr:nth-child(even) td { background: #f5f7fa; }
+  .doc-table tr:hover td { background: #eaf0fb; }
+
+  /* ── Useful Links grid ── */
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    margin: 1rem 0;
+  }
+  .link-card {
+    background: #fff;
+    border: 1px solid #dde3ec;
+    border-radius: 6px;
+    padding: 0.8rem;
+    border-top: 3px solid #003580;
+  }
+  .link-card h4 { color: #003580; font-size: 0.88rem; margin: 0 0 0.3rem 0; }
+  .link-card p { font-size: 0.78rem; color: #555; margin: 0; }
+
+  /* ── FAQ ── */
+  .faq-item { border: 1px solid #dde3ec; border-radius: 6px; margin-bottom: 0.7rem; overflow: hidden; }
+  .faq-q { background: #eaf0fb; padding: 0.75rem 1rem; font-weight: 700; color: #003580; font-size: 0.95rem; }
+  .faq-a { padding: 0.75rem 1rem; font-size: 0.9rem; background: #fff; }
+  .faq-a p:last-child { margin-bottom: 0; }
+
+  /* ── Step list ── */
+  .steps { counter-reset: step-counter; list-style: none; margin-left: 0; }
+  .steps li {
+    counter-increment: step-counter;
+    padding: 0.5rem 0.5rem 0.5rem 3rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+    background: #f9fbff;
+    border-radius: 5px;
+    border: 1px solid #e6ecf5;
+  }
+  .steps li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0.7rem;
+    top: 0.5rem;
+    background: #003580;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Action sub-sections ── */
+  .action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .action-card { background: #f9fbff; border: 1px solid #dde3ec; border-radius: 6px; padding: 1rem; }
+  .action-card h4 { margin-top: 0; color: #003580; border-bottom: 1px solid #dde3ec; padding-bottom: 0.3rem; margin-bottom: 0.5rem; }
+  .action-card ul { margin-left: 1.2rem; }
+  .action-card li { font-size: 0.88rem; margin-bottom: 0.2rem; }
+
+  /* ── Footer ── */
+  footer {
+    background: #003580;
+    color: #cce0ff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+  }
+  footer a { color: #88bbff; }
+
+  /* ── Print ── */
+  @media print {
+    body { background: #fff; font-size: 12pt; }
+    .toc-sidebar { position: static; border: 1px solid #999; }
+    .content-wrap { display: block; }
+    .mockup-browser { page-break-inside: avoid; }
+    section { border: 1px solid #ccc; break-inside: avoid; }
+    .action-grid { grid-template-columns: 1fr; }
+    .links-grid { grid-template-columns: 1fr 1fr; }
+    footer { background: #fff; color: #333; border-top: 1px solid #999; }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 720px) {
+    .content-wrap { flex-direction: column; }
+    .toc-sidebar { position: static; flex: none; width: 100%; }
+    .action-grid { grid-template-columns: 1fr; }
+    .links-grid { grid-template-columns: 1fr 1fr; }
+    h1 { font-size: 1.4rem; }
+    .mockup-tabs { overflow-x: auto; flex-wrap: nowrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="page-header">
+  <div class="container">
+    <div>
+      <span class="flag">🇱🇸</span>
+      <h1>My Dashboard</h1>
+    </div>
+    <p class="subtitle">User Manual &mdash; Lesotho Business Registrations Portal</p>
+    <span class="url-badge">businessregistrations.gov.ls</span>
+  </div>
+</header>
+
+<div class="container">
+  <div class="content-wrap">
+
+    <!-- ══════════════ SIDEBAR TOC ══════════════ -->
+    <nav class="toc-sidebar" aria-label="Table of Contents">
+      <h3>Contents</h3>
+      <ol>
+        <li><a href="#intro">What is My Dashboard?</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#kyc">Identity Verification (KYC)</a></li>
+        <li><a href="#dashboard-tab">My Dashboard Tab</a>
+          <ol style="margin-left:0.8rem; margin-top:0.2rem;">
+            <li><a href="#sole-props">Sole Proprietorships</a></li>
+            <li><a href="#companies">Companies</a></li>
+            <li><a href="#empty-state">Empty State</a></li>
+          </ol>
+        </li>
+        <li><a href="#actions">Managing Your Businesses</a>
+          <ol style="margin-left:0.8rem; margin-top:0.2rem;">
+            <li><a href="#renew">Renew</a></li>
+            <li><a href="#update">Update Data</a></li>
+            <li><a href="#delegate">Delegate Rights</a></li>
+            <li><a href="#close">Close a Business</a></li>
+            <li><a href="#annual">Annual Filing</a></li>
+          </ol>
+        </li>
+        <li><a href="#applications">My Applications Tab</a></li>
+        <li><a href="#useful-links">Useful Links</a></li>
+        <li><a href="#registries">Business Registries</a></li>
+        <li><a href="#faq">Frequently Asked Questions</a></li>
+      </ol>
+    </nav>
+
+    <!-- ══════════════ MAIN CONTENT ══════════════ -->
+    <main class="main-content">
+
+      <!-- 1. INTRODUCTION -->
+      <section id="intro">
+        <h2>1. What is My Dashboard?</h2>
+        <p>
+          <strong>My Dashboard</strong> is your personal home page on Lesotho's business registration portal at
+          <a href="https://businessregistrations.gov.ls" target="_blank">businessregistrations.gov.ls</a>.
+          Once you log in, the dashboard gives you a complete view of all your businesses and lets you take
+          action — all in one place.
+        </p>
+        <p>Think of it as a <em>control room</em> for your business life. Instead of visiting multiple government
+          offices or digging through paper records, you can see the status of every business you own, check
+          which licences are coming up for renewal, and submit applications online.</p>
+
+        <h3>Who uses My Dashboard?</h3>
+        <p>Any Mosotho citizen or legal person who has registered (or plans to register) a business in Lesotho.
+          This includes:</p>
+        <ul>
+          <li>Sole traders (individuals running a business under their own name or a business name)</li>
+          <li>Directors, shareholders, or officers of registered companies</li>
+          <li>Representatives acting on behalf of a business through delegated rights</li>
+        </ul>
+
+        <div class="info">
+          <strong>Note:</strong> My Dashboard is not the same as the registration form. It is what you see
+          <em>after</em> you have already created an account and logged in. If you have not yet registered an
+          account, you will first be asked to create one.
+        </div>
+      </section>
+
+      <!-- 2. GETTING STARTED -->
+      <section id="getting-started">
+        <h2>2. Getting Started</h2>
+        <h3>What you need</h3>
+        <ul>
+          <li>A computer, tablet, or smartphone with an internet connection</li>
+          <li>A registered account on <a href="https://businessregistrations.gov.ls" target="_blank">businessregistrations.gov.ls</a></li>
+          <li>Your national ID number (for identity verification — see Section 3)</li>
+        </ul>
+
+        <h3>How to log in</h3>
+        <ol class="steps">
+          <li>Open your browser and go to <strong>businessregistrations.gov.ls</strong></li>
+          <li>Click <strong>Log In</strong> or <strong>Sign In</strong> at the top-right of the page</li>
+          <li>Enter your registered email address and password, then click <strong>Sign In</strong></li>
+          <li>If you have not yet created an account, click <strong>Create Account</strong> and follow the prompts</li>
+          <li>Once signed in, you are taken directly to <strong>My Dashboard</strong></li>
+        </ol>
+
+        <div class="tip">
+          <strong>Tip:</strong> If you forget your password, click <strong>Forgot Password</strong> on the login page.
+          A reset link will be sent to your registered email address within a few minutes.
+        </div>
+
+        <h3>What happens automatically when you log in</h3>
+        <p>
+          The moment you land on My Dashboard, the system quietly fetches your information from government
+          databases — you do not need to search or enter anything. It retrieves:
+        </p>
+        <ul>
+          <li>All sole proprietorships linked to your national ID</li>
+          <li>All companies you are associated with (as director, shareholder, or officer)</li>
+          <li>Active licences and business activities for each business</li>
+          <li>Your identity verification (KYC) status</li>
+        </ul>
+        <p>This may take a few seconds. If the page shows a loading spinner, please wait — it is working.</p>
+      </section>
+
+      <!-- 3. KYC -->
+      <section id="kyc">
+        <h2>3. Identity Verification (KYC)</h2>
+        <p>
+          Before you can use all features of My Dashboard, the system needs to confirm who you are.
+          This process is called <strong>Know Your Customer</strong> (KYC). It links your portal account
+          to your real identity using your Lesotho national ID.
+        </p>
+        <p>KYC is a one-time step. Once approved, you will never need to do it again on this portal.</p>
+
+        <h3>Why is KYC required?</h3>
+        <p>Lesotho's business registration laws require that government knows the true identity of business
+          owners. KYC prevents fraud, protects your businesses from being misused, and ensures that only
+          you (or someone you authorise) can manage your registrations.</p>
+
+        <h3>KYC Status</h3>
+        <p>Your KYC status will be one of three things:</p>
+
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>What it means</th>
+              <th>What you should do</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-pending">Pending</span></td>
+              <td>You have not yet started identity verification</td>
+              <td>Click <strong>Verify your identity</strong> and complete the form</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-review">In Review</span></td>
+              <td>You submitted your details and they are being checked by the registry</td>
+              <td>Wait — this usually takes 1–2 business days. You will receive a notification.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-active">Approved</span></td>
+              <td>Your identity has been confirmed. Full dashboard access is unlocked.</td>
+              <td>No action needed. Proceed to use your dashboard.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>What My Dashboard looks like if KYC is not yet approved</h3>
+
+        <!-- KYC mockup -->
+        <div class="mockup-browser">
+          <div class="mockup-toolbar">
+            <div class="mockup-dots">
+              <div class="mockup-dot red"></div>
+              <div class="mockup-dot yellow"></div>
+              <div class="mockup-dot green"></div>
+            </div>
+            <div class="mockup-url">businessregistrations.gov.ls/dashboard</div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-topbar">
+              <span class="site-title">🇱🇸 Lesotho Business Registrations</span>
+              <span>Palesa Mokoena &nbsp;|&nbsp; Log out</span>
+            </div>
+            <div class="mockup-tabs">
+              <div class="mockup-tab active">Welcome</div>
+              <div class="mockup-tab">My Dashboard</div>
+              <div class="mockup-tab">My Applications</div>
+              <div class="mockup-tab">Useful Links</div>
+              <div class="mockup-tab">Business Registries</div>
+            </div>
+            <div class="mockup-content">
+              <div class="kyc-card">
+                <div class="kyc-icon">🪪</div>
+                <h3>Verify your identity to continue</h3>
+                <p>Before you can manage your businesses, we need to confirm your identity.<br>
+                   This is a one-time step required by Lesotho law.</p>
+                <button class="mockup-btn mockup-btn-primary" style="font-size:0.85rem; padding:0.4rem 1.2rem;">
+                  Verify your identity
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3>How to complete KYC</h3>
+        <ol class="steps">
+          <li>On the <strong>Welcome</strong> tab, click the <strong>Verify your identity</strong> button</li>
+          <li>Enter your national ID number exactly as printed on your ID card</li>
+          <li>Provide any additional details requested (date of birth, full name)</li>
+          <li>Submit the form. Your status changes to <span class="badge badge-review">In Review</span></li>
+          <li>Wait for approval — you will see <span class="badge badge-active">Approved</span> when done</li>
+        </ol>
+
+        <div class="warning">
+          <strong>Important:</strong> Make sure the details you enter exactly match your national ID card.
+          Mistakes will cause delays. If your details do not match, contact the Registrar General's office
+          for assistance.
+        </div>
+      </section>
+
+      <!-- 4. MY DASHBOARD TAB -->
+      <section id="dashboard-tab">
+        <h2>4. My Dashboard Tab</h2>
+        <p>
+          Once your identity is verified, click the <strong>My Dashboard</strong> tab to see all your
+          businesses. This is the main working view of the portal.
+        </p>
+        <p>
+          The page is divided into two main sections:
+        </p>
+        <ul>
+          <li><strong>Sole Proprietorships</strong> — businesses registered under your personal name</li>
+          <li><strong>Companies</strong> — legally registered companies you are associated with</li>
+        </ul>
+
+        <!-- Full dashboard mockup -->
+        <div class="mockup-browser">
+          <div class="mockup-toolbar">
+            <div class="mockup-dots">
+              <div class="mockup-dot red"></div>
+              <div class="mockup-dot yellow"></div>
+              <div class="mockup-dot green"></div>
+            </div>
+            <div class="mockup-url">businessregistrations.gov.ls/dashboard</div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-topbar">
+              <span class="site-title">🇱🇸 Lesotho Business Registrations</span>
+              <span>Palesa Mokoena &nbsp;|&nbsp; Log out</span>
+            </div>
+            <div class="mockup-tabs">
+              <div class="mockup-tab">Welcome</div>
+              <div class="mockup-tab active">My Dashboard</div>
+              <div class="mockup-tab">My Applications</div>
+              <div class="mockup-tab">Useful Links</div>
+              <div class="mockup-tab">Business Registries</div>
+            </div>
+            <div class="mockup-content">
+
+              <div class="mockup-section-label">Sole Proprietorships</div>
+
+              <div class="mockup-business-card">
+                <h4>Palesa Trading</h4>
+                <div class="meta">
+                  <span>ID: SP-2021-00412</span>
+                  <span>Renewal: 31 Mar 2026</span>
+                  <span>Activities: 2</span>
+                  <span><span class="badge badge-active">Active</span></span>
+                  <span>Type: Sole Proprietorship</span>
+                </div>
+                <table class="mockup-table">
+                  <thead>
+                    <tr>
+                      <th>Activity</th>
+                      <th>Licence ID</th>
+                      <th>Renewal Date</th>
+                      <th>Business Name</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>General Trading</td>
+                      <td>LIC-2021-04412</td>
+                      <td>31 Mar 2026</td>
+                      <td>Palesa Trading</td>
+                    </tr>
+                    <tr>
+                      <td>Restaurant / Food Services</td>
+                      <td>LIC-2022-07831</td>
+                      <td>31 Mar 2026</td>
+                      <td>Palesa Trading</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="margin-top:0.5rem;">
+                  <button class="mockup-btn mockup-btn-outline">Update data</button>
+                  <button class="mockup-btn mockup-btn-primary">Renew Business</button>
+                  <button class="mockup-btn mockup-btn-outline">Delegate rights</button>
+                  <button class="mockup-btn mockup-btn-danger">Close business</button>
+                </div>
+              </div>
+
+              <div class="mockup-section-label">Companies</div>
+
+              <div class="mockup-business-card" style="border-left-color:#27ae60;">
+                <h4>Mokoena Enterprises (Pty) Ltd</h4>
+                <div class="meta">
+                  <span>ID: CO-2019-00187</span>
+                  <span>Renewal: 30 Jun 2026</span>
+                  <span>Activities: 1</span>
+                  <span>Type: Private Company</span>
+                  <span>Legal person no.: LP-0044521</span>
+                </div>
+                <table class="mockup-table">
+                  <thead>
+                    <tr>
+                      <th>Activity</th>
+                      <th>Licence ID</th>
+                      <th>Renewal Date</th>
+                      <th>Business Name</th>
+                      <th>Company</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Manufacturing</td>
+                      <td>LIC-2019-01187</td>
+                      <td>30 Jun 2026</td>
+                      <td>Mokoena Enterprises</td>
+                      <td>Mokoena Enterprises (Pty) Ltd</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div style="margin-top:0.5rem;">
+                  <button class="mockup-btn mockup-btn-outline">Update data</button>
+                  <button class="mockup-btn mockup-btn-primary">Annual filing</button>
+                  <button class="mockup-btn mockup-btn-outline">Delegate rights</button>
+                  <button class="mockup-btn mockup-btn-danger">Close business</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- SOLE PROPRIETORSHIPS -->
+        <h3 id="sole-props">Sole Proprietorships Section</h3>
+        <p>
+          A <strong>sole proprietorship</strong> is a business owned and run by one person — you.
+          It is registered under your personal national ID number. For each sole proprietorship,
+          the dashboard shows:
+        </p>
+        <table class="doc-table">
+          <thead>
+            <tr><th>Field</th><th>What it means</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Business ID</strong></td><td>Unique registration number assigned by the Registrar (e.g. SP-2021-00412)</td></tr>
+            <tr><td><strong>Name</strong></td><td>The registered name of your business</td></tr>
+            <tr><td><strong>Renewal date</strong></td><td>The date by which you must renew your business registration to keep it active</td></tr>
+            <tr><td><strong>No. of activities</strong></td><td>How many licensed activities are registered under this business</td></tr>
+            <tr><td><strong>Status</strong></td><td>Whether the business is Active, Expired, or Suspended</td></tr>
+            <tr><td><strong>Type</strong></td><td>Always "Sole Proprietorship" in this section</td></tr>
+          </tbody>
+        </table>
+        <p>Below each business card you will see a table of <strong>linked activities and licences</strong>,
+           showing each individual activity (e.g. General Trading, Restaurant) with its licence ID and renewal date.</p>
+
+        <!-- COMPANIES -->
+        <h3 id="companies">Companies Section</h3>
+        <p>
+          A <strong>company</strong> is a separate legal entity — it exists independently of you as a person.
+          You may appear here as a director, shareholder, or officer. For each company, the dashboard shows:
+        </p>
+        <table class="doc-table">
+          <thead>
+            <tr><th>Field</th><th>What it means</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Business ID</strong></td><td>Unique registration number (e.g. CO-2019-00187)</td></tr>
+            <tr><td><strong>Name</strong></td><td>Registered company name including legal suffix (Pty Ltd, Ltd, etc.)</td></tr>
+            <tr><td><strong>Renewal date</strong></td><td>Date by which the annual filing or renewal must be done</td></tr>
+            <tr><td><strong>No. of activities</strong></td><td>Number of licensed business activities</td></tr>
+            <tr><td><strong>Type of business</strong></td><td>Private Company, Public Company, Non-profit, etc.</td></tr>
+            <tr><td><strong>Legal person number</strong></td><td>Internal identifier for the company as a legal person</td></tr>
+          </tbody>
+        </table>
+        <p>Company licences and activities appear in a sub-table, same as for sole proprietorships but also
+           showing the <strong>Company name</strong> column to distinguish when a company has multiple trading names.</p>
+
+        <!-- EMPTY STATE -->
+        <h3 id="empty-state">What if no businesses appear?</h3>
+        <p>If you have no sole proprietorships or companies linked to your ID, the section will show an empty
+           state message such as:</p>
+        <div class="mockup-browser" style="max-width:500px;">
+          <div class="mockup-body" style="padding:1.5rem; text-align:center; background:#fff;">
+            <p style="color:#888; font-size:0.85rem;">
+              No sole proprietorships found linked to your national ID.<br>
+              <a href="#" style="color:#003580;">Register your first business</a>
+            </p>
+          </div>
+        </div>
+        <p>This can happen if:</p>
+        <ul>
+          <li>You have not yet registered any businesses — click the link to start</li>
+          <li>Your businesses were registered under a different ID number — contact the Registrar's office</li>
+          <li>Your KYC identity verification has not yet been approved — complete Step 3 first</li>
+          <li>The system is still loading — wait a moment and refresh the page</li>
+        </ul>
+
+        <div class="tip">
+          <strong>Tip:</strong> The system automatically links businesses to your account using your national
+          ID number. No manual entry is needed. If a business you own does not appear, do not register it
+          again — contact the Registrar to correct the linkage.
+        </div>
+      </section>
+
+      <!-- 5. MANAGING YOUR BUSINESSES -->
+      <section id="actions">
+        <h2>5. Managing Your Businesses</h2>
+        <p>Each business card on My Dashboard has an <strong>Actions</strong> area with buttons for common tasks.
+           The actions available depend on whether the business is a sole proprietorship or a company.</p>
+
+        <div class="action-grid">
+          <div class="action-card">
+            <h4>Sole Proprietorship actions</h4>
+            <ul>
+              <li>Update data</li>
+              <li>Renew Business</li>
+              <li>Delegate rights</li>
+              <li>Close business</li>
+            </ul>
+          </div>
+          <div class="action-card">
+            <h4>Company actions</h4>
+            <ul>
+              <li>Update data</li>
+              <li>Annual filing</li>
+              <li>Delegate rights</li>
+              <li>Close business</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RENEW -->
+        <h3 id="renew">Renew Your Business or Licence</h3>
+        <p>
+          Business registrations and licences in Lesotho must be renewed periodically — usually every year.
+          The <strong>Renew Business</strong> button starts the renewal application for your sole proprietorship.
+          Licences for individual activities renew at the same time.
+        </p>
+        <p>You will know renewal is due because:</p>
+        <ul>
+          <li>The <strong>Renewal date</strong> shown on your business card is approaching</li>
+          <li>Your business status may change from <span class="badge badge-active">Active</span> to
+              <span class="badge badge-expired">Expired</span> if the deadline passes</li>
+          <li>The portal may show a warning banner</li>
+        </ul>
+
+        <h4>How to renew</h4>
+        <ol class="steps">
+          <li>On your business card, click <strong>Renew Business</strong></li>
+          <li>Review the pre-filled details. The system fills in most information automatically</li>
+          <li>Confirm any changes if needed and attach required documents</li>
+          <li>Pay the renewal fee online (if applicable)</li>
+          <li>Submit — a new application will appear in <strong>My Applications</strong></li>
+        </ol>
+
+        <div class="warning">
+          <strong>Renew before the deadline.</strong> Operating an expired business registration is a legal
+          violation. Renewal applications submitted late may incur penalty fees. Check your renewal dates
+          regularly and set a personal reminder a month before the deadline.
+        </div>
+
+        <!-- UPDATE DATA -->
+        <h3 id="update">Update Business Data</h3>
+        <p>
+          If your business details change — for example, your trading address, phone number, or the nature
+          of an activity — you must update the official record. Click <strong>Update data</strong> to open
+          an amendment application.
+        </p>
+        <p>Common reasons to update:</p>
+        <ul>
+          <li>New business address or contact details</li>
+          <li>Change in business activities or scope</li>
+          <li>Change in ownership (for sole proprietorships)</li>
+          <li>Change in company directors or shareholders</li>
+        </ul>
+        <ol class="steps">
+          <li>Click <strong>Update data</strong> on the relevant business card</li>
+          <li>The current registered data loads automatically into the form</li>
+          <li>Edit only the fields that need changing</li>
+          <li>Attach any supporting documents (e.g. lease agreement for new address)</li>
+          <li>Submit. The update appears in <strong>My Applications</strong> with status <em>Submitted</em></li>
+        </ol>
+
+        <div class="tip">
+          <strong>Tip:</strong> Keep your contact details up to date. The registry uses your registered
+          email and phone number to send important notices about your business, including renewal reminders
+          and inspection notifications.
+        </div>
+
+        <!-- DELEGATE RIGHTS -->
+        <h3 id="delegate">Delegate Rights to Someone Else</h3>
+        <p>
+          <strong>Delegating rights</strong> means authorising another person — such as an employee, accountant,
+          or lawyer — to manage your business on this portal on your behalf. The delegate can perform actions
+          you choose, without needing your login credentials.
+        </p>
+        <p>This is useful when:</p>
+        <ul>
+          <li>You are travelling and cannot access the portal</li>
+          <li>Your accountant handles your renewals and filings</li>
+          <li>You want an employee to update business data without full access</li>
+        </ul>
+
+        <h4>How to delegate</h4>
+        <ol class="steps">
+          <li>Click <strong>Delegate rights</strong> on the relevant business card</li>
+          <li>Enter the national ID number or email of the person you wish to authorise</li>
+          <li>Select which rights to grant (e.g. renew only, or full management)</li>
+          <li>Set an expiry date for the delegation if desired</li>
+          <li>Confirm. The delegate receives an email notification</li>
+        </ol>
+
+        <div class="action-box">
+          <strong>Warning:</strong> Only delegate to people you fully trust. A delegate can submit applications
+          and make changes in your name. You remain legally responsible for all actions taken under your
+          business registration. You can revoke delegation at any time through the same menu.
+        </div>
+
+        <!-- CLOSE BUSINESS -->
+        <h3 id="close">Close a Business</h3>
+        <p>
+          If you permanently stop operating a business, you must formally close (deregister) it. Simply
+          stopping trading without deregistering means you may still owe annual fees and remain legally
+          liable. Click <strong>Close business</strong> to begin the deregistration process.
+        </p>
+
+        <div class="warning">
+          <strong>This action is permanent.</strong> Closing a business cancels its registration and all
+          associated licences. Make sure you have stopped all operations, settled outstanding taxes, and
+          informed employees before proceeding. Once approved, deregistration cannot be reversed.
+        </div>
+
+        <ol class="steps">
+          <li>Click <strong>Close business</strong> on the business card</li>
+          <li>Read the confirmation screen carefully</li>
+          <li>Confirm the reason for closure and the effective date</li>
+          <li>Attach a tax clearance certificate if required</li>
+          <li>Submit the closure application</li>
+          <li>The Registrar's office reviews and approves the closure — you receive a confirmation</li>
+        </ol>
+
+        <!-- ANNUAL FILING (COMPANIES) -->
+        <h3 id="annual">Annual Filing (Companies only)</h3>
+        <p>
+          All registered companies in Lesotho must submit an <strong>annual return</strong> (also called
+          annual filing) to the Registrar of Companies each year. This confirms that the company is still
+          active, its registered details are correct, and all directors and shareholders are up to date.
+        </p>
+        <p>Failure to file on time results in:</p>
+        <ul>
+          <li>Late filing penalties</li>
+          <li>The company being marked as non-compliant</li>
+          <li>Possible deregistration of the company by the Registrar</li>
+        </ul>
+
+        <ol class="steps">
+          <li>Click <strong>Annual filing</strong> on the company card</li>
+          <li>Review the pre-loaded company information (directors, shareholders, registered address)</li>
+          <li>Confirm or update any details that have changed during the year</li>
+          <li>Upload required financial statements if the company size requires them</li>
+          <li>Pay the annual filing fee online</li>
+          <li>Submit. You receive a filing confirmation receipt</li>
+        </ol>
+
+        <div class="tip">
+          <strong>Tip:</strong> Set a calendar reminder for the company's annual filing deadline. Your
+          dashboard shows the <strong>Renewal date</strong> for each company — this is the date by which
+          the annual filing must be completed.
+        </div>
+      </section>
+
+      <!-- 6. MY APPLICATIONS TAB -->
+      <section id="applications">
+        <h2>6. My Applications Tab</h2>
+        <p>
+          The <strong>My Applications</strong> tab is your record of everything you have submitted through
+          the portal. Every time you start or submit an application — whether for registration, renewal,
+          update, or closure — it appears here.
+        </p>
+
+        <!-- Applications mockup -->
+        <div class="mockup-browser">
+          <div class="mockup-toolbar">
+            <div class="mockup-dots">
+              <div class="mockup-dot red"></div>
+              <div class="mockup-dot yellow"></div>
+              <div class="mockup-dot green"></div>
+            </div>
+            <div class="mockup-url">businessregistrations.gov.ls/dashboard</div>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-topbar">
+              <span class="site-title">🇱🇸 Lesotho Business Registrations</span>
+              <span>Palesa Mokoena &nbsp;|&nbsp; Log out</span>
+            </div>
+            <div class="mockup-tabs">
+              <div class="mockup-tab">Welcome</div>
+              <div class="mockup-tab">My Dashboard</div>
+              <div class="mockup-tab active">My Applications</div>
+              <div class="mockup-tab">Useful Links</div>
+              <div class="mockup-tab">Business Registries</div>
+            </div>
+            <div class="mockup-content">
+              <table class="mockup-table" style="font-size:0.78rem;">
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>Company / Business</th>
+                    <th>Created</th>
+                    <th>Submitted</th>
+                    <th>Status</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Sole Proprietorship Renewal</td>
+                    <td>Palesa Trading</td>
+                    <td>10 Jan 2026</td>
+                    <td>10 Jan 2026</td>
+                    <td><span class="badge badge-active" style="font-size:0.7rem;">Approved</span></td>
+                    <td><button class="mockup-btn mockup-btn-outline" style="font-size:0.7rem;">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>Business Update</td>
+                    <td>Palesa Trading</td>
+                    <td>05 Feb 2026</td>
+                    <td>05 Feb 2026</td>
+                    <td><span class="badge badge-review" style="font-size:0.7rem;">In Review</span></td>
+                    <td><button class="mockup-btn mockup-btn-outline" style="font-size:0.7rem;">View</button></td>
+                  </tr>
+                  <tr>
+                    <td>Annual Filing</td>
+                    <td>Mokoena Enterprises (Pty) Ltd</td>
+                    <td>15 Feb 2026</td>
+                    <td>—</td>
+                    <td><span class="badge badge-pending" style="font-size:0.7rem;">Draft</span></td>
+                    <td><button class="mockup-btn mockup-btn-outline" style="font-size:0.7rem;">Continue</button>
+                        <button class="mockup-btn mockup-btn-danger" style="font-size:0.7rem;">Delete</button></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p style="font-size:0.75rem; color:#888; margin-top:0.5rem;">Showing 3 of 3 applications &nbsp;|&nbsp; Page 1 of 1</p>
+            </div>
+          </div>
+        </div>
+
+        <h3>Understanding the columns</h3>
+        <table class="doc-table">
+          <thead><tr><th>Column</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Service</strong></td><td>The type of application — e.g. "Sole Proprietorship Renewal", "Annual Filing", "Business Update"</td></tr>
+            <tr><td><strong>Company / Business</strong></td><td>Which of your businesses this application is for</td></tr>
+            <tr><td><strong>Created</strong></td><td>The date you first started filling in the application (even if not submitted yet)</td></tr>
+            <tr><td><strong>Submitted</strong></td><td>The date you officially submitted. A dash (—) means the application is still in draft</td></tr>
+            <tr><td><strong>Status</strong></td><td>Where the application is in the process (see below)</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Application statuses</h3>
+        <table class="doc-table">
+          <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge badge-pending">Draft</span></td><td>You started the application but have not submitted it yet. You can continue filling it in or delete it.</td></tr>
+            <tr><td><span class="badge badge-review">In Review</span></td><td>Submitted. A registry officer is reviewing your application. No action needed from you unless they request additional documents.</td></tr>
+            <tr><td><span class="badge badge-active">Approved</span></td><td>The application has been approved. Your business record is updated.</td></tr>
+            <tr><td><span class="badge badge-expired">Rejected</span></td><td>The application was not approved. Open the application to see the reason and resubmit with corrections.</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Pagination</h3>
+        <p>If you have many applications, they are split into pages. Use the page navigation at the bottom
+           of the list to move between pages. Each page shows up to 10 applications.</p>
+
+        <h3>Deleting a draft application</h3>
+        <p>You can delete an application that is still in <span class="badge badge-pending">Draft</span> status.
+           Once an application is submitted, it cannot be deleted — contact the registry office if you need to
+           withdraw a submitted application.</p>
+
+        <div class="info">
+          <strong>Keep this tab handy.</strong> If you are waiting for an approval, the My Applications tab
+          is the fastest way to check the current status without calling the registry office.
+        </div>
+      </section>
+
+      <!-- 7. USEFUL LINKS -->
+      <section id="useful-links">
+        <h2>7. Useful Links</h2>
+        <p>The <strong>Useful Links</strong> tab connects you to other government services relevant to running
+           a business in Lesotho. These are external portals — clicking a link opens it in a new window.</p>
+
+        <div class="links-grid">
+          <div class="link-card">
+            <h4>Tax Clearance</h4>
+            <p>Obtain a tax clearance certificate from the Lesotho Revenue Authority (LRA). Required for most government tenders and some business transactions.</p>
+          </div>
+          <div class="link-card">
+            <h4>Trade Portal</h4>
+            <p>Information on import/export procedures, tariffs, and trade regulations for businesses involved in international trade.</p>
+          </div>
+          <div class="link-card">
+            <h4>Tourism License</h4>
+            <p>Apply for or renew a tourism operator licence if your business operates in the hospitality, travel, or tourism sector.</p>
+          </div>
+          <div class="link-card">
+            <h4>Land Administration Online System</h4>
+            <p>Check land rights, apply for a lease, or access land title information — relevant for businesses needing property documentation.</p>
+          </div>
+          <div class="link-card">
+            <h4>Business Laws</h4>
+            <p>Access the legal texts governing business registration and operation in Lesotho, including the Companies Act and Business Registration Act.</p>
+          </div>
+          <div class="link-card">
+            <h4>LEAP</h4>
+            <p>Lesotho Electronic Applications Platform — government portal for various public services and permit applications.</p>
+          </div>
+          <div class="link-card">
+            <h4>Business Taxes</h4>
+            <p>Lesotho Revenue Authority portal for filing business taxes, VAT, and other fiscal obligations. Keep your tax affairs in order alongside your registration.</p>
+          </div>
+          <div class="link-card">
+            <h4>eCustoms</h4>
+            <p>Electronic customs declarations for businesses importing or exporting goods through Lesotho customs.</p>
+          </div>
+          <div class="link-card">
+            <h4>Livestock Registration</h4>
+            <p>Register livestock and obtain documentation — relevant for businesses in agricultural or livestock trading sectors.</p>
+          </div>
+          <div class="link-card">
+            <h4>Construction Permit</h4>
+            <p>Apply for building and construction permits required before commencing any construction work on your business premises.</p>
+          </div>
+          <div class="link-card">
+            <h4>eRegulations</h4>
+            <p>Step-by-step guides explaining all administrative procedures for starting and running a business in Lesotho, with required documents and fees.</p>
+          </div>
+        </div>
+
+        <div class="tip">
+          <strong>Tip:</strong> Many business compliance steps involve multiple agencies. For example,
+          renewing your trading licence here on the business registrations portal, then separately renewing
+          your tax registration on the LRA portal. Use the Useful Links tab to navigate between them quickly.
+        </div>
+      </section>
+
+      <!-- 8. BUSINESS REGISTRIES -->
+      <section id="registries">
+        <h2>8. Business Registries</h2>
+        <p>The <strong>Business Registries</strong> tab provides public access to the official registries
+           maintained by the Lesotho Registrar General. These are searchable databases of all legally
+           registered entities in Lesotho — available to any member of the public.</p>
+
+        <div class="action-grid">
+          <div class="action-card">
+            <h4>Sole Proprietorships Registry</h4>
+            <p style="font-size:0.88rem;">
+              A public record of all registered sole proprietorships in Lesotho. You can search by
+              business name or registration number to verify whether a business is legitimately registered.
+              Useful when choosing a unique name before registering or checking a supplier's credentials.
+            </p>
+          </div>
+          <div class="action-card">
+            <h4>Companies Registry</h4>
+            <p style="font-size:0.88rem;">
+              The official register of all incorporated companies in Lesotho. Shows company names,
+              registration numbers, type of company, and registered address. Use this to verify a
+              company's existence, check its status, or confirm its directors.
+            </p>
+          </div>
+        </div>
+        <div class="action-card" style="margin-top:1rem;">
+          <h4>Beneficial Ownership Registry</h4>
+          <p style="font-size:0.88rem;">
+            A transparency register showing the real people (natural persons) who ultimately own or
+            control companies registered in Lesotho. This registry supports Lesotho's anti-money-laundering
+            and financial transparency obligations. It is separate from the shareholders register and
+            identifies those with significant control or ownership of 25% or more.
+          </p>
+        </div>
+
+        <div class="info">
+          <strong>Note:</strong> Searching these registries is free and does not require you to be logged in.
+          The information shown is limited to what is publicly available by law. Some detailed documents
+          (e.g. company constitutional documents) may require a formal request or a fee.
+        </div>
+      </section>
+
+      <!-- 9. FAQ -->
+      <section id="faq">
+        <h2>9. Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+          <div class="faq-q">What is KYC and why do I have to do it?</div>
+          <div class="faq-a">
+            <p>KYC stands for "Know Your Customer" — it is the process of confirming your identity before
+               you can manage businesses on the portal. Lesotho law requires that the government knows who
+               is behind every business registration to prevent fraud. You only need to do it once, and
+               it usually takes 1–2 business days to be approved. Until it is approved, you can browse
+               the portal but cannot take any actions on your businesses.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How do I renew my business registration or licence?</div>
+          <div class="faq-a">
+            <p>Go to the <strong>My Dashboard</strong> tab, find the business you want to renew, and click
+               <strong>Renew Business</strong>. For companies, the equivalent is <strong>Annual filing</strong>.
+               The system pre-fills most of the form — review it, make any corrections, pay the fee if
+               required, and submit. Your renewal application will appear in <strong>My Applications</strong>
+               and typically takes a few days to be processed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">My business does not appear on My Dashboard. What should I do?</div>
+          <div class="faq-a">
+            <p>First, make sure your KYC (identity verification) is <span class="badge badge-active">Approved</span>.
+               If it is pending, complete that step first. If your KYC is approved but the business still
+               does not appear, it may be registered under a different national ID number in the registry.
+               Do not try to re-register — contact the Registrar General's office to request a linkage
+               correction. Bring your original ID document and proof of business ownership.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Can I manage multiple businesses on one account?</div>
+          <div class="faq-a">
+            <p>Yes. My Dashboard is designed to show all businesses linked to your national ID number —
+               there is no limit. Sole proprietorships and companies all appear on the same dashboard.
+               If you are a director of several companies, they all appear in the Companies section. You
+               can take actions on each business independently.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What does "Delegate rights" mean and is it safe?</div>
+          <div class="faq-a">
+            <p>Delegating rights means authorising another person (such as an accountant, lawyer, or
+               trusted employee) to act on your behalf for a specific business on this portal. You
+               choose what they can do and can set an expiry date. You remain legally responsible for
+               all actions they take. Only delegate to people you fully trust, and revoke the delegation
+               as soon as it is no longer needed. You can manage and revoke delegations at any time
+               through the Delegate rights menu.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">My application status shows "In Review" — how long will it take?</div>
+          <div class="faq-a">
+            <p>Processing times vary depending on the type of application and the current workload at
+               the registry office. As a general guide: simple renewals and data updates typically take
+               2–5 business days; new registrations may take 5–10 business days; closures can take up
+               to 15 business days. You will receive a notification when your application is approved
+               or if additional documents are needed. Avoid submitting a duplicate application while
+               one is already in review.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">I accidentally started an application I don't need. Can I delete it?</div>
+          <div class="faq-a">
+            <p>Yes — go to the <strong>My Applications</strong> tab and find the application. If it
+               shows status <span class="badge badge-pending">Draft</span> (meaning you have not yet
+               submitted it), you will see a <strong>Delete</strong> button. Click it to remove the
+               draft. Once an application is <em>submitted</em>, it cannot be deleted from the portal —
+               you will need to contact the registry office to request a withdrawal.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What is the difference between a Sole Proprietorship and a Company?</div>
+          <div class="faq-a">
+            <p>A <strong>sole proprietorship</strong> is owned and operated by one individual — you and
+               the business are legally the same person. You are personally liable for all debts.
+               A <strong>company</strong> (such as a (Pty) Ltd) is a separate legal entity — it can own
+               property, sue and be sued, and its debts are generally separate from your personal assets.
+               Companies have more reporting requirements (like annual filing) but offer stronger legal
+               protection. If you are unsure which structure suits your situation, consult a business
+               advisor or the eRegulations portal for guidance.</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div><!-- /.content-wrap -->
+
+  <div style="margin-top:1.5rem; padding:0.8rem 0; font-size:0.82rem; color:#888; text-align:center;">
+    Last updated: February 2026 &nbsp;&bull;&nbsp; This manual covers My Dashboard as implemented on businessregistrations.gov.ls
+  </div>
+</div><!-- /.container -->
+
+<footer>
+  <p><strong>Lesotho Business Registrations</strong> &mdash; businessregistrations.gov.ls</p>
+  <p style="margin-top:0.4rem;">Registrar General's Office &nbsp;&bull;&nbsp; Ministry of Law and Justice, Lesotho</p>
+  <p style="margin-top:0.4rem; font-size:0.78rem;">This document is a citizen user manual. For legal and regulatory questions, consult a qualified legal professional or contact the Registrar's office directly.</p>
+</footer>
+
+</body>
+</html>

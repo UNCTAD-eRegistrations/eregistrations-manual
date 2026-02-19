@@ -1,2361 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register a Business in Lesotho — User Guide</title>
-    <style>
-        :root {
-            --primary: #1a5276;
-            --primary-light: #2980b9;
-            --accent: #27ae60;
-            --bg: #fdfdfd;
-            --card-bg: #ffffff;
-            --border: #dee2e6;
-            --text: #2c3e50;
-            --text-light: #636e72;
-            --section-bg: #f8f9fa;
-            --warning: #e67e22;
-            --info: #3498db;
-            --danger: #c0392b;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesotho Business Registration — User Manuals</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #222; }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+  /* Header */
+  header { background: #003580; color: white; padding: 0; }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 32px 24px 28px; display: flex; align-items: center; gap: 20px; }
+  .flag { font-size: 48px; }
+  .header-text h1 { font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .header-text p { font-size: 15px; opacity: 0.85; }
+  .site-url { background: rgba(255,255,255,0.12); border-radius: 4px; padding: 2px 10px; font-size: 13px; margin-top: 8px; display: inline-block; }
 
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.7;
-            color: var(--text);
-            background: var(--bg);
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+  /* Nav tabs */
+  .nav-bar { background: #002560; }
+  .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; gap: 4px; }
+  .nav-tab { color: rgba(255,255,255,0.7); padding: 12px 20px; font-size: 14px; cursor: pointer; border-bottom: 3px solid transparent; text-decoration: none; }
+  .nav-tab.active { color: white; border-bottom-color: #f0a500; }
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white;
-            padding: 2.5rem 3rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-        }
-        header h1 { font-size: 2rem; margin-bottom: 0.5rem; }
-        header p { opacity: 0.9; font-size: 1.05rem; }
-        .header-meta {
-            margin-top: 1rem;
-            display: flex;
-            gap: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.85;
-        }
+  /* Main */
+  main { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
 
-        /* TOC */
-        nav.toc {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.5rem 2rem;
-            margin-bottom: 2.5rem;
-        }
-        nav.toc h2 {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--primary-light);
-        }
-        nav.toc ol {
-            columns: 2;
-            column-gap: 2rem;
-            padding-left: 1.5rem;
-        }
-        nav.toc li { margin-bottom: 0.4rem; break-inside: avoid; }
-        nav.toc a {
-            color: var(--primary-light);
-            text-decoration: none;
-        }
-        nav.toc a:hover { text-decoration: underline; }
+  /* Intro */
+  .intro { background: white; border-radius: 10px; padding: 28px 32px; margin-bottom: 36px; border-left: 5px solid #003580; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
+  .intro h2 { font-size: 20px; color: #003580; margin-bottom: 10px; }
+  .intro p { font-size: 15px; line-height: 1.7; color: #444; }
+  .intro a { color: #003580; }
 
-        /* Sections */
-        section {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 2rem 2.5rem;
-            margin-bottom: 2rem;
-        }
-        section h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border);
-        }
-        section h3 {
-            font-size: 1.15rem;
-            color: var(--primary);
-            margin: 1.5rem 0 0.75rem;
-        }
-        section h4 {
-            font-size: 1rem;
-            color: var(--text-light);
-            margin: 1rem 0 0.5rem;
-            font-weight: 600;
-        }
+  /* Section heading */
+  .section-heading { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 16px; margin-top: 8px; }
 
-        /* Screenshot placeholder */
-        .screenshot {
-            margin: 1rem 0 1.5rem;
-        }
-        .screenshot img {
-            max-width: 100%;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-        .screenshot-placeholder {
-            background: #f0f4f8;
-            border: 2px dashed #b0bec5;
-            border-radius: 8px;
-            padding: 3rem 2rem;
-            text-align: center;
-            color: #607d8b;
-            margin-bottom: 1.5rem;
-        }
-        .screenshot-placeholder p { margin: 0.5rem 0; }
-        .screenshot-note { font-size: 0.85rem; font-style: italic; }
+  /* Cards grid */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
 
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            font-size: 0.95rem;
-        }
-        th, td {
-            padding: 0.6rem 0.8rem;
-            border: 1px solid var(--border);
-            text-align: left;
-        }
-        th {
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-        }
-        tr:nth-child(even) { background: var(--section-bg); }
+  .card { background: white; border-radius: 10px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); transition: box-shadow 0.2s, transform 0.2s; border: 1px solid #e8edf2; display: flex; flex-direction: column; }
+  .card:hover { box-shadow: 0 4px 16px rgba(0,53,128,0.15); transform: translateY(-2px); }
 
-        /* Info boxes */
-        .info-box {
-            background: #eaf4fd;
-            border-left: 4px solid var(--info);
-            padding: 1rem 1.25rem;
-            border-radius: 0 6px 6px 0;
-            margin: 1rem 0;
-        }
-        .warning-box {
-            background: #fef5e7;
-            border-left: 4px solid var(--warning);
-            padding: 1rem 1.25rem;
-            border-radius: 0 6px 6px 0;
-            margin: 1rem 0;
-        }
-        .danger-box {
-            background: #fdecea;
-            border-left: 4px solid var(--danger);
-            padding: 1rem 1.25rem;
-            border-radius: 0 6px 6px 0;
-            margin: 1rem 0;
-        }
-        .info-box strong, .warning-box strong, .danger-box strong { display: block; margin-bottom: 0.3rem; }
+  .card-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 14px; }
+  .icon-blue { background: #e8f0fb; }
+  .icon-green { background: #e6f4ea; }
+  .icon-orange { background: #fff3e0; }
+  .icon-purple { background: #f3e8fd; }
+  .icon-teal { background: #e0f5f5; }
+  .icon-red { background: #fdecea; }
 
-        /* Tip box */
-        .tip-box {
-            background: #e8f8f5;
-            border-left: 4px solid var(--accent);
-            padding: 1rem 1.25rem;
-            border-radius: 0 6px 6px 0;
-            margin: 1rem 0;
-        }
-        .tip-box strong { display: block; margin-bottom: 0.3rem; color: #1e8449; }
+  .card h3 { font-size: 16px; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
+  .card p { font-size: 14px; color: #666; line-height: 1.5; flex: 1; margin-bottom: 16px; }
 
-        /* Lists */
-        ul, ol { padding-left: 1.5rem; margin: 0.5rem 0; }
-        li { margin-bottom: 0.3rem; }
+  .card-status { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-bottom: 12px; }
+  .status-available { background: #e6f4ea; color: #1e7e34; }
+  .status-coming { background: #f5f5f5; color: #999; }
 
-        /* Registration cards */
-        .reg-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-        .reg-card {
-            background: var(--section-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1rem;
-            text-align: center;
-        }
-        .reg-card strong { display: block; color: var(--primary); margin-bottom: 0.3rem; }
-        .reg-card small { color: var(--text-light); }
+  .card-link { display: inline-flex; align-items: center; gap: 6px; background: #003580; color: white; text-decoration: none; padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+  .card-link:hover { background: #002560; }
+  .card-link-soon { display: inline-flex; align-items: center; gap: 6px; background: #f0f0f0; color: #aaa; padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: default; }
 
-        /* Step number styling */
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
-            color: white;
-            border-radius: 50%;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-right: 0.75rem;
-            flex-shrink: 0;
-        }
-        .step-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border);
-        }
-        .step-header h2 {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
+  /* Footer */
+  footer { background: #1a1a2e; color: rgba(255,255,255,0.6); text-align: center; padding: 28px 24px; font-size: 13px; margin-top: 60px; }
+  footer a { color: rgba(255,255,255,0.8); }
 
-        /* Checklist */
-        .checklist {
-            list-style: none;
-            padding-left: 0;
-            margin: 1rem 0;
-        }
-        .checklist li {
-            padding: 0.6rem 0 0.6rem 2.2rem;
-            position: relative;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .checklist li:last-child { border-bottom: none; }
-        .checklist li::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0.7rem;
-            width: 18px;
-            height: 18px;
-            border: 2px solid var(--primary-light);
-            border-radius: 3px;
-            background: white;
-        }
-        .checklist li.checked::before {
-            background: var(--accent);
-            border-color: var(--accent);
-        }
-        .checklist li.checked::after {
-            content: '';
-            position: absolute;
-            left: 4px;
-            top: 0.75rem;
-            width: 10px;
-            height: 6px;
-            border-left: 2px solid white;
-            border-bottom: 2px solid white;
-            transform: rotate(-45deg);
-        }
-
-        /* Guide flow diagram */
-        .guide-flow {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        .guide-question {
-            background: var(--section-bg);
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            padding: 1.25rem;
-        }
-        .guide-question-label {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        .guide-options {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 0.5rem;
-        }
-        .guide-option {
-            background: white;
-            border: 1px solid var(--primary-light);
-            border-radius: 6px;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        /* Flow diagram */
-        .flow {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 0.5rem;
-            margin: 1rem 0;
-        }
-        .flow-step {
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        .flow-auto { background: #eaf4fd; color: #2980b9; border: 1px solid #bcdff6; }
-        .flow-review { background: #fef5e7; color: #e67e22; border: 1px solid #fad9a1; }
-        .flow-done { background: #e8f8f5; color: #27ae60; border: 1px solid #a3e4d0; }
-        .flow-arrow { color: var(--text-light); font-size: 1.2rem; }
-
-        /* What you get cards */
-        .outcome-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-        .outcome-card {
-            background: var(--section-bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.25rem;
-            text-align: center;
-        }
-        .outcome-card .card-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        .outcome-card strong {
-            display: block;
-            color: var(--primary);
-            margin-bottom: 0.3rem;
-            font-size: 1rem;
-        }
-        .outcome-card p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            margin: 0;
-        }
-
-        /* Path comparison */
-        .path-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        .path-card {
-            background: var(--section-bg);
-            border: 2px solid var(--border);
-            border-radius: 10px;
-            padding: 1.5rem;
-        }
-        .path-card h4 {
-            color: var(--primary);
-            font-size: 1.1rem;
-            margin-bottom: 0.75rem;
-        }
-        .path-card ul {
-            margin: 0;
-        }
-
-        /* Conditional block */
-        .conditional-block {
-            border-left: 3px solid var(--warning);
-            padding-left: 1rem;
-            margin: 0.75rem 0 0.75rem 0.5rem;
-        }
-        .conditional-label {
-            font-size: 0.85rem;
-            color: var(--warning);
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        /* Tags/badges */
-        .badge {
-            display: inline-block;
-            padding: 0.15rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        .badge-company { background: #f3e5f5; color: #8e24aa; }
-        .badge-foreign { background: #fef5e7; color: #e67e22; }
-        .badge-all { background: #e8f8f5; color: #27ae60; }
-
-        /* Back to top */
-        .back-top {
-            text-align: right;
-            margin-top: 1rem;
-        }
-        .back-top a {
-            font-size: 0.85rem;
-            color: var(--primary-light);
-            text-decoration: none;
-        }
-
-        /* Workflow steps */
-        .workflow-steps {
-            margin: 1.5rem 0;
-        }
-        .workflow-step {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: var(--section-bg);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-        .workflow-step .ws-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 36px;
-            height: 36px;
-            background: var(--primary-light);
-            color: white;
-            border-radius: 50%;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        .workflow-step .ws-content {
-            flex: 1;
-        }
-        .workflow-step .ws-content strong {
-            display: block;
-            margin-bottom: 0.25rem;
-        }
-        .workflow-step .ws-content p {
-            margin: 0;
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-        .workflow-step.ws-auto {
-            border-left: 3px solid var(--info);
-        }
-        .workflow-step.ws-manual {
-            border-left: 3px solid var(--warning);
-        }
-
-        /* FAQ */
-        .faq-item {
-            margin-bottom: 1.25rem;
-            padding-bottom: 1.25rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .faq-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-        .faq-question {
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.4rem;
-            font-size: 1.05rem;
-        }
-        .faq-answer {
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* ========== Form Mockups ========== */
-        .form-mockup {
-            background: #fff;
-            border: 1px solid #c8d6e5;
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 1.5rem 0 1rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-        }
-        .form-mockup-bar {
-            background: linear-gradient(to right, #1a5276, #2980b9);
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.82rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .form-mockup-bar .bar-title { font-weight: 600; }
-        .form-mockup-bar .bar-url { opacity: 0.7; font-size: 0.75rem; }
-        .form-mockup-tabs {
-            display: flex;
-            background: #f4f6f8;
-            border-bottom: 2px solid #dee2e6;
-            padding: 0 0.5rem;
-            overflow-x: auto;
-        }
-        .mtab {
-            padding: 0.55rem 0.85rem;
-            font-size: 0.75rem;
-            color: #777;
-            border-bottom: 2px solid transparent;
-            margin-bottom: -2px;
-            white-space: nowrap;
-            cursor: default;
-        }
-        .mtab.active {
-            color: #1a5276;
-            border-bottom-color: #1a5276;
-            font-weight: 600;
-            background: #fff;
-        }
-        .form-mockup-body {
-            padding: 1.25rem 1.5rem;
-        }
-        .mock-section {
-            margin-bottom: 1.1rem;
-        }
-        .mock-section-title {
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: #555;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.6rem;
-            padding-bottom: 0.35rem;
-            border-bottom: 1px solid #eef0f2;
-        }
-        .mock-row {
-            display: flex;
-            gap: 0.8rem;
-            margin-bottom: 0.5rem;
-        }
-        .mock-field {
-            flex: 1;
-            min-width: 0;
-        }
-        .mock-label {
-            font-size: 0.7rem;
-            color: #666;
-            margin-bottom: 0.2rem;
-            display: block;
-        }
-        .mock-label .req { color: #e74c3c; font-weight: 700; }
-        .mock-input, .mock-select {
-            background: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 0.35rem 0.55rem;
-            font-size: 0.75rem;
-            color: #aaa;
-            width: 100%;
-            box-sizing: border-box;
-        }
-        .mock-select {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .mock-select::after { content: '\25BE'; color: #aaa; }
-        .mock-upload {
-            background: #fafbfc;
-            border: 2px dashed #ccc;
-            border-radius: 6px;
-            padding: 0.75rem;
-            text-align: center;
-            font-size: 0.72rem;
-            color: #999;
-        }
-        .mock-upload-icon { font-size: 1.2rem; margin-bottom: 0.2rem; }
-        .mock-radio-group {
-            display: flex;
-            gap: 1.2rem;
-            margin: 0.3rem 0;
-        }
-        .mock-radio {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-            font-size: 0.78rem;
-            color: #555;
-        }
-        .mock-radio .dot {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            border: 2px solid #bbb;
-            flex-shrink: 0;
-        }
-        .mock-radio.selected .dot {
-            border-color: #1a5276;
-            background: radial-gradient(circle, #1a5276 4px, transparent 4px);
-        }
-        .mock-btn {
-            display: inline-block;
-            background: #1a5276;
-            color: white;
-            padding: 0.4rem 1.2rem;
-            border-radius: 4px;
-            font-size: 0.78rem;
-            font-weight: 600;
-        }
-        .mock-btn-outline {
-            display: inline-block;
-            background: white;
-            color: #1a5276;
-            border: 1px solid #1a5276;
-            padding: 0.4rem 1.2rem;
-            border-radius: 4px;
-            font-size: 0.78rem;
-        }
-        .mock-btn-sm {
-            display: inline-block;
-            background: #2980b9;
-            color: white;
-            padding: 0.25rem 0.7rem;
-            border-radius: 3px;
-            font-size: 0.7rem;
-        }
-        .mock-grid {
-            background: #fafbfc;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow: hidden;
-            margin: 0.4rem 0;
-            font-size: 0.7rem;
-        }
-        .mock-grid-header {
-            background: #e8ecf0;
-            display: flex;
-            font-weight: 600;
-            color: #555;
-        }
-        .mock-grid-header span, .mock-grid-row span {
-            flex: 1;
-            padding: 0.35rem 0.5rem;
-            border-right: 1px solid #ddd;
-        }
-        .mock-grid-header span:last-child, .mock-grid-row span:last-child { border-right: none; }
-        .mock-grid-row {
-            display: flex;
-            color: #aaa;
-            border-top: 1px solid #eee;
-        }
-        .mock-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1rem;
-            padding-top: 0.65rem;
-            border-top: 1px solid #eee;
-        }
-        .mock-caption {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #78909c;
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
-        .mock-divider {
-            border: none;
-            border-top: 1px dashed #e0e0e0;
-            margin: 0.75rem 0;
-        }
-        .mock-note {
-            background: #eaf4fd;
-            border-radius: 4px;
-            padding: 0.4rem 0.6rem;
-            font-size: 0.72rem;
-            color: #2980b9;
-            margin: 0.4rem 0;
-        }
-
-        @media (max-width: 768px) {
-            body { padding: 1rem; }
-            section { padding: 1.5rem; }
-            nav.toc ol { columns: 1; }
-            .header-meta { flex-direction: column; gap: 0.5rem; }
-            .path-cards { grid-template-columns: 1fr; }
-            .step-number { width: 38px; height: 38px; font-size: 1.1rem; }
-            .mock-row { flex-direction: column; gap: 0.4rem; }
-            .mock-radio-group { flex-direction: column; gap: 0.4rem; }
-            .form-mockup-tabs { gap: 0; }
-            .mtab { padding: 0.45rem 0.6rem; font-size: 0.68rem; }
-        }
-    </style>
+  @media (max-width: 600px) {
+    .header-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .flag { font-size: 36px; }
+    .header-text h1 { font-size: 22px; }
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 
 <header>
-    <h1>Register a Business in Lesotho</h1>
-    <p>Your step-by-step guide to registering a business through the One Business Service Centre (OBFC) online portal</p>
-    <div class="header-meta">
-        <span>One Business Service Centre (OBFC)</span>
-        <span>businessregistrations.gov.ls</span>
-        <span>Last updated: February 2026</span>
+  <div class="header-inner">
+    <div class="flag">🇱🇸</div>
+    <div class="header-text">
+      <h1>Lesotho Business Registration</h1>
+      <p>Citizen User Manuals — Step-by-step guides for all business registration services</p>
+      <span class="site-url">businessregistrations.gov.ls</span>
     </div>
+  </div>
 </header>
 
-<!-- TABLE OF CONTENTS -->
-<nav class="toc" id="toc">
-    <h2>What's in This Guide</h2>
-    <ol>
-        <li><a href="#welcome">Welcome &mdash; What Is This Service?</a></li>
-        <li><a href="#before-you-start">Before You Start &mdash; What to Prepare</a></li>
-        <li><a href="#step-guide">Step 1: The Guide &mdash; Tell Us About Your Business</a></li>
-        <li><a href="#step-owner">Step 2: Business Owner Details</a></li>
-        <li><a href="#step-business">Step 3: Your Business Information</a></li>
-        <li><a href="#step-shareholders">Step 4: Shareholders (Companies Only)</a></li>
-        <li><a href="#step-beneficial">Step 5: Beneficial Owners (Companies Only)</a></li>
-        <li><a href="#step-directors">Step 6: Directors &amp; Secretaries (Companies Only)</a></li>
-        <li><a href="#step-articles">Step 7: Articles of Association (Companies Only)</a></li>
-        <li><a href="#step-incorporation">Step 8: Incorporation Documents (Companies Only)</a></li>
-        <li><a href="#step-permit">Step 9: Business Permit (Foreign-Owned Businesses)</a></li>
-        <li><a href="#step-submit">Step 10: Review &amp; Submit</a></li>
-        <li><a href="#after-submit">What Happens After You Submit?</a></li>
-        <li><a href="#what-you-get">What You'll Receive</a></li>
-        <li><a href="#tips-faq">Tips &amp; Common Questions</a></li>
-    </ol>
-</nav>
-
-<!-- ============================================================ -->
-<!-- 1. WELCOME -->
-<!-- ============================================================ -->
-<section id="welcome">
-    <h2>Welcome &mdash; What Is This Service?</h2>
-
-    <p>
-        If you want to start a business in Lesotho, you're in the right place. The <strong>One Business Service Centre (OBFC)</strong>
-        lets you register your business through a single online application &mdash; no need to visit multiple offices or fill
-        out separate forms for different government agencies.
-    </p>
-
-    <p>
-        Whether you're opening a small shop as a sole proprietor or forming a company with shareholders, this one
-        application handles everything: your <strong>Business ID</strong>, your <strong>business licences</strong>,
-        your <strong>company incorporation</strong> (if applicable), and even your <strong>business permit</strong>
-        if you're a foreign national.
-    </p>
-
-    <h3>What will you get from this process?</h3>
-
-    <p>Depending on the type of business you're registering, you could receive up to five official documents from a single application:</p>
-
-    <div class="outcome-cards">
-        <div class="outcome-card">
-            <strong>Business ID</strong>
-            <p>Your unique business identifier &mdash; every business gets one</p>
-        </div>
-        <div class="outcome-card">
-            <strong>Trading Licence</strong>
-            <p>Required for each trading activity your business carries out</p>
-        </div>
-        <div class="outcome-card">
-            <strong>Industrial Licence</strong>
-            <p>Required for manufacturing or industrial activities</p>
-        </div>
-        <div class="outcome-card">
-            <strong>Company Incorporation</strong>
-            <p>Official certificate that your company is registered (companies only)</p>
-        </div>
-        <div class="outcome-card">
-            <strong>Business Permit</strong>
-            <p>Operating permit for businesses with foreign ownership</p>
-        </div>
-    </div>
-
-    <h3>How does the process work?</h3>
-
-    <p>
-        The application is divided into steps, presented as tabs across the top of the screen. You'll
-        answer a few questions about your business first, and then the system will show you <strong>only
-        the sections that apply to your situation</strong>. A sole proprietor will see fewer steps than
-        someone registering a company. If you're a citizen of Lesotho, you'll see fewer sections than
-        a foreign national. It's designed to keep things simple by only asking you what's relevant.
-    </p>
-
-    <p>
-        Here's the general flow: first you answer the Guide questions, then you fill in your personal
-        details, then you describe your business, and finally you review and submit. For companies,
-        there are additional steps in between for shareholders, directors, and company documents.
-    </p>
-
-    <div class="info-box">
-        <strong>Good to know</strong>
-        You can save your progress and come back later. You don't have to complete the entire application
-        in one sitting. Just log back into the portal and your application will be right where you left it.
-    </div>
-
-    <h3>What do you need to get started?</h3>
-
-    <p>
-        To begin, you'll need a user account on the OBFC portal. If you don't have one yet, you'll
-        need to create one first. You'll need a valid email address to register. Once your account is
-        set up and you've logged in, look for the <strong>"Register a Business"</strong> service and
-        click to start a new application.
-    </p>
-
-    <h3>How long does it take?</h3>
-
-    <p>
-        The time depends on the type of business and how quickly you can gather your documents. Filling
-        out the online form typically takes <strong>30 minutes to an hour</strong> for a sole proprietor,
-        and <strong>one to two hours</strong> for a company (since there's more information to provide).
-        After you submit, some review steps happen automatically (within minutes), while others require
-        a government officer to review your application, which may take a few business days.
-    </p>
-
-    <h3>Who sees what?</h3>
-
-    <p>Here's a quick overview of what you'll encounter based on your situation:</p>
-
-    <div class="path-cards">
-        <div class="path-card">
-            <h4>Sole Proprietor</h4>
-            <ul>
-                <li>Business Owner details</li>
-                <li>Your business information</li>
-                <li>Review and submit</li>
-                <li>Business Permit section <em>(only if the owner is a foreign national)</em></li>
-            </ul>
-        </div>
-        <div class="path-card">
-            <h4>Company</h4>
-            <ul>
-                <li>Business Owner details</li>
-                <li>Company information</li>
-                <li>Shareholders</li>
-                <li>Beneficial Owners</li>
-                <li>Directors and Secretaries</li>
-                <li>Articles of Association</li>
-                <li>Incorporation Documents</li>
-                <li>Review and submit</li>
-                <li>Business Permit section <em>(only if there is significant foreign ownership)</em></li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 2. BEFORE YOU START -->
-<!-- ============================================================ -->
-<section id="before-you-start">
-    <h2>Before You Start &mdash; What to Prepare</h2>
-
-    <p>
-        Before you begin the online application, take a few minutes to gather everything you'll need. Having
-        these items ready will make the process much smoother and faster. There's nothing worse than getting
-        halfway through and realising you need to go find a document!
-    </p>
-
-    <h3>Documents and information everyone needs</h3>
-
-    <ul class="checklist">
-        <li><strong>A scanned copy of your ID document</strong> &mdash; either your Lesotho national identity card or your passport. The system accepts common image formats and PDF files.</li>
-        <li><strong>Your personal details</strong> &mdash; full legal name, date of birth, gender, nationality, and ID number.</li>
-        <li><strong>Your contact information</strong> &mdash; a working phone number and email address. You'll receive notifications about your application by email, so make sure it's one you check regularly.</li>
-        <li><strong>Your home address</strong> &mdash; if you live in Lesotho, you'll need to know your district and town. If you live abroad, have your full international address ready.</li>
-        <li><strong>Your marital status</strong> &mdash; if you're married, you'll also need your spouse's basic details (name, date of birth, nationality, and ID information).</li>
-        <li><strong>The name you want for your business</strong> &mdash; have a couple of options in mind, in case your first choice is already taken.</li>
-        <li><strong>A clear idea of your business activities</strong> &mdash; what will your business do? Selling goods? Manufacturing? Providing services? You'll need to select your activities from a list.</li>
-        <li><strong>Your business address</strong> &mdash; the physical location of your main office or shop, including the district and town.</li>
-    </ul>
-
-    <h3>Additional items if you're registering a company</h3>
-
-    <ul class="checklist">
-        <li><strong>Shareholder details</strong> &mdash; for each shareholder, you'll need their full name, nationality, date of birth, ID document, and information about how many shares they hold.</li>
-        <li><strong>Director details</strong> &mdash; every company must have at least one director. You'll need each director's personal information, ID document, and a signed consent letter.</li>
-        <li><strong>Share capital information</strong> &mdash; how much total capital will the company have? What type of shares? What is the value per share?</li>
-        <li><strong>Company secretary details</strong> (if appointing one) &mdash; their personal information and ID document.</li>
-        <li><strong>Articles of Association</strong> &mdash; you can either let the system generate these automatically (recommended) or upload your own custom version prepared by a lawyer.</li>
-        <li><strong>If any shareholder is another company</strong> &mdash; you'll need that company's registration number, date of incorporation, and corporate documents.</li>
-    </ul>
-
-    <h3>Additional items for foreign-owned businesses</h3>
-
-    <ul class="checklist">
-        <li><strong>Investment information</strong> &mdash; how much are you investing locally? Where is the money coming from?</li>
-        <li><strong>Staffing plan</strong> &mdash; how many local and foreign employees do you plan to hire?</li>
-        <li><strong>A description of how your business benefits Lesotho</strong> &mdash; this helps with the business permit review.</li>
-        <li><strong>Certified copies of ID documents</strong> and <strong>proof of address</strong> for beneficial owners.</li>
-    </ul>
-
-    <div class="tip-box">
-        <strong>Tip: Scan your documents ahead of time</strong>
-        Make sure all your documents are scanned clearly and saved as PDF, JPG, or PNG files.
-        Blurry or hard-to-read scans can delay your application.
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 3. STEP 1: THE GUIDE -->
-<!-- ============================================================ -->
-<section id="step-guide">
-    <div class="step-header">
-        <span class="step-number">1</span>
-        <h2>The Guide &mdash; Tell Us About Your Business</h2>
-    </div>
-
-    <div class="screenshot">
-        <img src="ds-screenshots/guide.png" alt="The Guide page showing three questions: type of business, who is registering, and nationality of owner">
-    </div>
-    <p class="mock-caption">The Guide page &mdash; answer three questions about your business</p>
-
-    <div class="screenshot">
-        <img src="ds-screenshots/guide-answered.png" alt="The Guide page with Company, Myself, and Lesotho selected, and a Start application button">
-    </div>
-    <p class="mock-caption">After answering, click "Start application" to proceed to the form</p>
-
-    <p>
-        The very first thing you'll see when you start a new application is a short set of three questions.
-        Think of this as the system getting to know you so it can personalise the rest of the application.
-        Your answers here determine which sections you'll need to fill out.
-    </p>
-
-    <div class="guide-flow">
-        <div class="guide-question">
-            <div class="guide-question-label">Question 1: What type of business do you want to register?</div>
-            <p>This is the most important choice you'll make. It affects almost everything else in the application.</p>
-            <div class="guide-options">
-                <span class="guide-option">Sole Proprietor</span>
-                <span class="guide-option">Company</span>
-            </div>
-        </div>
-
-        <div class="guide-question">
-            <div class="guide-question-label">Question 2: Are you the business owner?</div>
-            <p>Are you registering this business for yourself, or are you filling out this form on behalf of someone else?</p>
-            <div class="guide-options">
-                <span class="guide-option">Yes, I will be the owner</span>
-                <span class="guide-option">No, I am creating this for another person</span>
-            </div>
-        </div>
-
-        <div class="guide-question">
-            <div class="guide-question-label">Question 3: Where is the business owner from?</div>
-            <p>Is the owner a citizen of Lesotho, or from another country? This determines whether you'll need a business permit.</p>
-            <div class="guide-options">
-                <span class="guide-option">Lesotho</span>
-                <span class="guide-option">Other country</span>
-            </div>
-        </div>
-    </div>
-
-    <h3>What's the difference between a Sole Proprietor and a Company?</h3>
-
-    <div class="path-cards">
-        <div class="path-card">
-            <h4>Sole Proprietor</h4>
-            <p>
-                A sole proprietorship is the simplest form of business. It's just you &mdash; one person running a business.
-                You're personally responsible for the business, and there's no legal separation between you and the business.
-                This is ideal if you're starting small: a shop, a consulting practice, a service business.
-            </p>
-            <p style="margin-top: 0.5rem;">
-                <strong>The application is shorter</strong> &mdash; you only need to provide your personal details and your business information.
-            </p>
-        </div>
-        <div class="path-card">
-            <h4>Company</h4>
-            <p>
-                A company is a separate legal entity. It can have multiple owners (shareholders), directors who manage it,
-                and its own legal identity separate from the people who own it. This is the right choice if you're
-                starting a business with partners, want to limit your personal liability, or plan to grow the business significantly.
-            </p>
-            <p style="margin-top: 0.5rem;">
-                <strong>The application is more detailed</strong> &mdash; you'll also need to provide shareholder, director, and incorporation information.
-            </p>
-        </div>
-    </div>
-
-    <div class="info-box">
-        <strong>How your answers shape the application</strong>
-        <ul>
-            <li>If you choose <strong>Sole Proprietor</strong>, you'll only see the sections for owner details and business information. Quick and straightforward.</li>
-            <li>If you choose <strong>Company</strong>, you'll see additional sections for shareholders, beneficial owners, directors, articles of association, and incorporation documents.</li>
-            <li>If you say <strong>"Yes, I will be the owner"</strong>, some of your personal information will be filled in automatically from your account, saving you time.</li>
-            <li>If the owner is from <strong>another country</strong>, a Business Permit section will appear with additional questions about the investment and its benefits to Lesotho.</li>
-        </ul>
-    </div>
-
-    <p>
-        Once you've answered all three questions, click <strong>"Start application"</strong>. The system will build a personalised
-        form with only the sections that apply to your situation. You'll see tabs across the top of the screen &mdash; each tab
-        is a step in the process.
-    </p>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 4. STEP 2: BUSINESS OWNER DETAILS -->
-<!-- ============================================================ -->
-<section id="step-owner">
-    <div class="step-header">
-        <span class="step-number">2</span>
-        <h2>Business Owner Details</h2>
-    </div>
-
-    <div class="form-mockup">
-        <div class="form-mockup-bar">
-            <span class="bar-title">Register a Business</span>
-            <span class="bar-url">services.businessregistrations.gov.ls</span>
-        </div>
-        <div class="form-mockup-tabs">
-            <span class="mtab">Guide</span>
-            <span class="mtab active">Business Owner</span>
-            <span class="mtab">Company</span>
-            <span class="mtab">Shareholders</span>
-            <span class="mtab">Beneficial Owners</span>
-            <span class="mtab">Executives</span>
-            <span class="mtab">Articles</span>
-            <span class="mtab">Incorporation</span>
-        </div>
-        <div class="form-mockup-body">
-            <div class="mock-section">
-                <div class="mock-section-title">Identity document</div>
-                <div class="mock-upload">
-                    <div class="mock-upload-icon">&#128196;</div>
-                    Upload passport copy &mdash; PDF, JPG or PNG
-                </div>
-            </div>
-            <div class="mock-section">
-                <div class="mock-section-title">Personal information</div>
-                <div class="mock-row">
-                    <div class="mock-field"><span class="mock-label">First name <span class="req">*</span></span><div class="mock-input">John</div></div>
-                    <div class="mock-field"><span class="mock-label">Middle names</span><div class="mock-input"></div></div>
-                    <div class="mock-field"><span class="mock-label">Surname <span class="req">*</span></span><div class="mock-input">Mokoena</div></div>
-                </div>
-                <div class="mock-row">
-                    <div class="mock-field"><span class="mock-label">Gender <span class="req">*</span></span><div class="mock-select"><span>Male</span></div></div>
-                    <div class="mock-field"><span class="mock-label">Date of birth <span class="req">*</span></span><div class="mock-input">15/03/1985</div></div>
-                    <div class="mock-field"><span class="mock-label">Nationality <span class="req">*</span></span><div class="mock-select"><span>Lesotho</span></div></div>
-                </div>
-                <div class="mock-row">
-                    <div class="mock-field"><span class="mock-label">National ID number <span class="req">*</span></span><div class="mock-input">4567890123</div></div>
-                    <div class="mock-field"><span class="mock-label">Maiden name</span><div class="mock-input"></div></div>
-                </div>
-            </div>
-            <div class="mock-section">
-                <div class="mock-section-title">Residential address</div>
-                <div class="mock-field" style="margin-bottom:0.5rem">
-                    <span class="mock-label">Is the address in Lesotho?</span>
-                    <div class="mock-radio-group">
-                        <span class="mock-radio selected"><span class="dot"></span> Yes</span>
-                        <span class="mock-radio"><span class="dot"></span> No</span>
-                    </div>
-                </div>
-                <div class="mock-row">
-                    <div class="mock-field"><span class="mock-label">District <span class="req">*</span></span><div class="mock-select"><span>Maseru</span></div></div>
-                    <div class="mock-field"><span class="mock-label">Town <span class="req">*</span></span><div class="mock-select"><span>Maseru</span></div></div>
-                    <div class="mock-field"><span class="mock-label">Village <span class="req">*</span></span><div class="mock-input">Ha Matala</div></div>
-                </div>
-                <div class="mock-row">
-                    <div class="mock-field"><span class="mock-label">Street name or Chief name <span class="req">*</span></span><div class="mock-input">Kingsway Road</div></div>
-                    <div class="mock-field"><span class="mock-label">Address <span class="req">*</span></span><div class="mock-input">P.O. Box 123</div></div>
-                </div>
-            </div>
-            <div class="mock-section">
-                <div class="mock-section-title">Contact &amp; marital status</div>
-                <div class="mock-row">
-                    <div class="mock-field" style="max-width:120px"><span class="mock-label">Phone code <span class="req">*</span></span><div class="mock-select"><span>+266</span></div></div>
-                    <div class="mock-field"><span class="mock-label">Phone number <span class="req">*</span></span><div class="mock-input">5885 1234</div></div>
-                    <div class="mock-field"><span class="mock-label">Email <span class="req">*</span></span><div class="mock-input">john@email.com</div></div>
-                    <div class="mock-field"><span class="mock-label">Marital status <span class="req">*</span></span><div class="mock-select"><span>Single</span></div></div>
-                </div>
-            </div>
-            <div class="mock-actions">
-                <span></span>
-                <span class="mock-btn">Next &rarr;</span>
-            </div>
-        </div>
-    </div>
-    <p class="mock-caption">The Business Owner tab &mdash; your personal details, address, and contact information</p>
-
-    <p>
-        This is where you tell us about the person who owns the business. If you said "Yes, I will be the
-        owner" in the Guide, some of this will already be filled in for you. If you're filling this out for
-        someone else, you'll need to enter their details.
-    </p>
-
-    <h3>Your identity</h3>
-
-    <p>
-        First, you'll <strong>upload a scan of your ID document</strong> &mdash; this can be your Lesotho national
-        identity card or your passport. Make sure the scan is clear, the text is readable, and all four
-        corners of the document are visible. The system accepts PDF, JPG, and PNG files.
-    </p>
-
-    <div class="tip-box">
-        <strong>Tip: Getting a good scan</strong>
-        If you don't have a scanner, you can use your phone's camera. Place your ID on a flat, well-lit
-        surface and take a photo straight from above. Make sure there's no glare and all the text is sharp.
-        Many phones also have a "scan document" feature in their camera app that works well.
-    </div>
-
-    <p>
-        Then you'll fill in your basic personal information:
-    </p>
-
-    <ul>
-        <li><strong>Full name</strong> &mdash; your first name and last name, exactly as they appear on your ID document. Make sure the spelling matches.</li>
-        <li><strong>Date of birth</strong> &mdash; select from the date picker</li>
-        <li><strong>Gender</strong> &mdash; select from the available options</li>
-        <li><strong>Nationality</strong> &mdash; select your country of citizenship from the dropdown list</li>
-        <li><strong>ID number</strong> &mdash; the number on your national ID card or passport. Double-check this carefully, as it's used to verify your identity.</li>
-    </ul>
-
-    <h3>Your address</h3>
-
-    <p>
-        Where do you live? The form will adjust based on your nationality:
-    </p>
-
-    <ul>
-        <li><strong>If you live in Lesotho:</strong> Select your <strong>district</strong> and <strong>town</strong> from the dropdown lists, then enter your street address or physical location description.</li>
-        <li><strong>If you live abroad:</strong> Enter your full address, including city, state or region, postal code, and country.</li>
-    </ul>
-
-    <h3>Contact details</h3>
-
-    <p>
-        Provide a <strong>phone number</strong> where you can be reached and your <strong>email address</strong>.
-        These are important because the system sends notifications about your application to your email, and a
-        government officer may need to contact you if there are any questions.
-    </p>
-
-    <div class="warning-box">
-        <strong>Make sure your email is correct</strong>
-        You'll receive updates about your application by email, including when it's approved and when your
-        certificates are ready. Double-check that you've typed it correctly.
-    </div>
-
-    <h3>Marital status</h3>
-
-    <p>
-        Select your marital status from the options provided. If you indicate that you're <strong>married</strong>,
-        a few additional fields will appear asking for your spouse's details:
-    </p>
-
-    <ul>
-        <li>Spouse's full name</li>
-        <li>Spouse's date of birth</li>
-        <li>Spouse's nationality</li>
-        <li>Spouse's ID document type and number</li>
-    </ul>
-
-    <div class="info-box">
-        <strong>Why do we ask about your spouse?</strong>
-        Under Lesotho law, marital status can affect business ownership rights and obligations.
-        This information is needed for the legal registration of your business.
-    </div>
-
-    <h3>Moving to the next step</h3>
-
-    <p>
-        When you've filled in everything on this page, click the <strong>"Next"</strong> button at the bottom
-        to move on to the next tab. If any required fields are missing, the system will highlight them
-        so you know what still needs to be completed.
-    </p>
-
-    <div class="tip-box">
-        <strong>Tip: Required fields</strong>
-        Fields marked with an asterisk (*) are required. You won't be able to move to the next step until
-        all required fields are filled in.
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 5. STEP 3: YOUR BUSINESS INFORMATION -->
-<!-- ============================================================ -->
-<section id="step-business">
-    <div class="step-header">
-        <span class="step-number">3</span>
-        <h2>Your Business Information</h2>
-    </div>
-
-    <div class="screenshot">
-        <img src="ds-screenshots/tab-company.png" alt="The Company tab showing fields for company name, type, shares, activities, and address">
-    </div>
-    <p class="mock-caption">The Company tab &mdash; business name, type, share capital, activity, and address</p>
-
-    <p>
-        Now it's time to tell us about the business itself. The title of this tab changes depending on
-        what you chose in the Guide &mdash; it will say either <strong>"Sole Proprietor"</strong> or
-        <strong>"Company"</strong>. The content also adapts. Let's walk through each part.
-    </p>
-
-    <h3>Choose your business name</h3>
-
-    <p>
-        This is an exciting part &mdash; choosing the official name for your business! Enter the name you'd
-        like to use. This is the name that will appear on your official certificates, licences, and all
-        legal documents.
-    </p>
-
-    <p>
-        After typing in your desired name, click the <strong>"Check availability"</strong> button. The
-        system will search the entire national business registry to see if that name (or one very
-        similar to it) is already in use by another business. There are three possible outcomes:
-    </p>
-
-    <ul>
-        <li><strong>Name is available</strong> &mdash; great news! You'll see a confirmation message and can proceed with this name.</li>
-        <li><strong>Name is already taken</strong> &mdash; someone else has already registered a business with this name. You'll need to choose a different one.</li>
-        <li><strong>Name is too similar to an existing one</strong> &mdash; the system may flag names that are very close to existing businesses. This is to avoid confusion in the marketplace.</li>
-    </ul>
-
-    <div class="tip-box">
-        <strong>Tip: Have backup names ready</strong>
-        Popular business names are often already taken. Come prepared with two or three alternative names
-        just in case your first choice isn't available. Consider adding something unique &mdash; your
-        district name, a descriptive word, or initials &mdash; to make the name more distinctive.
-    </div>
-
-    <h3>Company details (companies only)</h3>
-
-    <p>
-        If you're registering a company, you'll see some additional fields:
-    </p>
-
-    <ul>
-        <li><strong>Type of company</strong> &mdash; select the company type from the dropdown list</li>
-        <li><strong>Expected annual turnover</strong> &mdash; your best estimate of how much revenue the business will generate per year</li>
-        <li><strong>Number of employees</strong> &mdash; how many people do you plan to hire?</li>
-    </ul>
-
-    <h3>Share capital (companies only)</h3>
-
-    <p>
-        Companies need to declare their share capital. This is the total amount of money that shareholders
-        invest in the company. You'll need to provide:
-    </p>
-
-    <ul>
-        <li><strong>Total share capital</strong> &mdash; the total value of all shares</li>
-        <li><strong>Type of shares</strong> &mdash; most new companies issue ordinary shares</li>
-        <li><strong>Number of shares</strong> &mdash; how many shares are being issued</li>
-        <li><strong>Value per share</strong> &mdash; the price of each individual share</li>
-    </ul>
-
-    <div class="info-box">
-        <strong>What is share capital?</strong>
-        Share capital is the money that owners invest in the company in exchange for ownership (shares).
-        For example, if you create 1,000 shares at M10 each, your total share capital is M10,000.
-        This money forms the initial funding of the company.
-    </div>
-
-    <h3>Business activities</h3>
-
-    <p>
-        This is where you tell us exactly what your business will do. You'll add each activity one at a
-        time. For each activity:
-    </p>
-
-    <ol>
-        <li>Click <strong>"Add an activity"</strong></li>
-        <li>Select the <strong>sector</strong> your activity belongs to (for example: retail trade, manufacturing, food services)</li>
-        <li>Select the specific <strong>activity</strong> from the list</li>
-        <li>The system will automatically determine whether this is a <strong>trading</strong> or <strong>industrial</strong> activity and calculate the <strong>licensing fee</strong></li>
-    </ol>
-
-    <p>
-        You can add as many activities as your business will carry out. Each activity may require its own
-        licence, and the fees will be calculated for you. Don't worry about getting it perfect on the first
-        try &mdash; you can remove an activity and add a different one if you change your mind before submitting.
-    </p>
-
-    <div class="info-box">
-        <strong>How fees are calculated</strong>
-        Each business activity has an associated licensing fee. The amount depends on the type of activity
-        and is set by government regulations. The system calculates these fees automatically as you add
-        activities, so you'll always know the total cost before you submit your application. You'll see
-        a running total of all fees at the bottom of the activities section.
-    </div>
-
-    <div class="conditional-block">
-        <div class="conditional-label">Registering a business name for an activity</div>
-        <p>
-            For each activity, you also have the option to register a separate <strong>business name</strong>
-            (sometimes called a "trading as" name). This is optional &mdash; you only need it if you want to
-            operate under a different name for a specific activity. For example, your company might be called
-            "ABC Holdings" but you want to trade under the name "Sunrise Bakery" for your baking activity.
-        </p>
-    </div>
-
-    <h3>Main office location</h3>
-
-    <p>
-        Where is your business located? Provide the address of your main office, shop, or place of business:
-    </p>
-
-    <ul>
-        <li><strong>Physical address</strong> or description of the location</li>
-        <li><strong>District</strong> and <strong>town</strong> (select from the dropdown lists)</li>
-        <li><strong>Phone number</strong> for the business</li>
-        <li><strong>Email address</strong> for the business</li>
-    </ul>
-
-    <h3>Additional offices or branches</h3>
-
-    <p>
-        Does your business have more than one location? If you have branch offices, workshops, or other
-        premises, you can add them here. Click <strong>"Add a branch"</strong> and fill in the address
-        details for each additional location.
-    </p>
-
-    <p>
-        If your business only operates from one location, you can skip this part.
-    </p>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 6. STEP 4: SHAREHOLDERS -->
-<!-- ============================================================ -->
-<section id="step-shareholders">
-    <div class="step-header">
-        <span class="step-number">4</span>
-        <h2>Shareholders <span class="badge badge-company">Companies Only</span></h2>
-    </div>
-
-    <div class="screenshot">
-        <img src="ds-screenshots/tab-shareholders.png" alt="Shareholders tab showing add shareholder form with individual/company selection">
-    </div>
-    <p class="mock-caption">The Shareholders tab &mdash; add each shareholder with their details and share allocation</p>
-
-    <p>
-        If you're registering a company, you need to list all the people or organisations that own shares
-        in the company. Shareholders are the owners of the company &mdash; they've invested money in exchange
-        for a stake in the business. A sole proprietor won't see this section at all, since a sole
-        proprietorship is owned directly by one person without shares.
-    </p>
-
-    <p>
-        Click <strong>"Add a shareholder"</strong> to begin. You'll add each shareholder one at a time.
-        For each one, you'll first choose whether they are an <strong>individual person</strong> or
-        <strong>another company</strong> (a corporate shareholder). The information you need to provide
-        is different for each type.
-    </p>
-
-    <h3>If the shareholder is a person</h3>
-
-    <p>For each individual shareholder, you'll provide:</p>
-
-    <ul>
-        <li><strong>Full name</strong> &mdash; first name and last name</li>
-        <li><strong>Nationality</strong></li>
-        <li><strong>Date of birth</strong></li>
-        <li><strong>ID document</strong> &mdash; upload a scan of their ID card or passport</li>
-        <li><strong>ID number</strong></li>
-        <li><strong>Address</strong> and <strong>contact details</strong></li>
-    </ul>
-
-    <h3>If the shareholder is another company</h3>
-
-    <p>Sometimes companies are owned by other companies. If that's the case, provide:</p>
-
-    <ul>
-        <li><strong>Company name</strong></li>
-        <li><strong>Registration number</strong> of the shareholder company</li>
-        <li><strong>Date of incorporation</strong></li>
-        <li><strong>Country of registration</strong></li>
-        <li><strong>Corporate documents</strong> &mdash; upload the relevant registration or incorporation documents</li>
-    </ul>
-
-    <h3>Share allocation</h3>
-
-    <p>
-        For each shareholder, you'll also need to specify:
-    </p>
-
-    <ul>
-        <li><strong>Number of shares</strong> they hold</li>
-        <li><strong>Type of shares</strong> (usually ordinary shares)</li>
-        <li><strong>Nominal value</strong> of their shares</li>
-    </ul>
-
-    <p>
-        The system will <strong>automatically calculate</strong> the percentage of ownership for each shareholder
-        and show you a running total. The total shares allocated must match the total share capital you declared
-        in the business information step.
-    </p>
-
-    <h3>Is this shareholder also a director?</h3>
-
-    <p>
-        For each shareholder, you can indicate whether they are <strong>also a director</strong> of the company.
-        If you tick this option, their details will carry over to the Directors section automatically, saving
-        you from entering the same information twice.
-    </p>
-
-    <div class="tip-box">
-        <strong>Tip: Save time on directors</strong>
-        If most of your shareholders are also directors (which is common for small companies), make sure to
-        check the "Also a director" option for each one. In the Directors step, you can then use the
-        "Copy directors from shareholders" button to pull all their information in one click.
-    </div>
-
-    <div class="warning-box">
-        <strong>Check your totals</strong>
-        The total number of shares allocated to all shareholders must equal the total number of shares
-        you declared in the previous step. The system will flag this if the numbers don't match.
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 7. STEP 5: BENEFICIAL OWNERS -->
-<!-- ============================================================ -->
-<section id="step-beneficial">
-    <div class="step-header">
-        <span class="step-number">5</span>
-        <h2>Beneficial Owners <span class="badge badge-company">Companies Only</span></h2>
-    </div>
-
-    <div class="screenshot">
-        <img src="ds-screenshots/tab-beneficial-owners.png" alt="Beneficial Owners tab showing declaration and Yes/No questions about control">
-    </div>
-    <p class="mock-caption">The Beneficial Owners tab &mdash; shareholders are listed automatically; add any additional controllers</p>
-
-    <h3>What is a beneficial owner?</h3>
-
-    <p>
-        A beneficial owner is a person who has significant control or influence over the company, even
-        if they're not listed as the official owner on paper. Governments around the world require this
-        information to ensure transparency and prevent misuse of companies.
-    </p>
-
-    <p>
-        In practice, this usually includes:
-    </p>
-
-    <ul>
-        <li>Any shareholder who <strong>owns more than 10% of the shares</strong></li>
-        <li>Anyone who can <strong>exercise significant influence</strong> over how the company is run, even without being a shareholder</li>
-        <li>Anyone who <strong>ultimately benefits</strong> from the company's profits or assets</li>
-    </ul>
-
-    <div class="info-box">
-        <strong>The system helps you here</strong>
-        Based on the shareholder information you entered in the previous step, the system <strong>automatically
-        identifies</strong> shareholders who own more than 10% and lists them as beneficial owners. You may need to
-        add additional people if there are others who exercise control.
-    </div>
-
-    <h3>What you need for each beneficial owner</h3>
-
-    <p>For each person listed as a beneficial owner, you'll need to provide:</p>
-
-    <ul>
-        <li><strong>Personal details</strong> &mdash; full name, date of birth, nationality</li>
-        <li><strong>A certified copy of their ID document</strong> &mdash; this means a copy that has been officially certified as authentic</li>
-        <li><strong>Proof of address</strong> &mdash; a recent utility bill, bank statement, or similar document showing their residential address</li>
-        <li><strong>The nature of their control</strong> &mdash; do they control through shareholding, voting rights, or some other arrangement?</li>
-    </ul>
-
-    <h3>Special cases</h3>
-
-    <p>
-        If a government body or international organisation is involved in the ownership or control of the
-        company, additional details will be required about the nature of that involvement. The system
-        will show you the relevant fields if this applies to your situation.
-    </p>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 8. STEP 6: DIRECTORS & SECRETARIES -->
-<!-- ============================================================ -->
-<section id="step-directors">
-    <div class="step-header">
-        <span class="step-number">6</span>
-        <h2>Directors &amp; Secretaries <span class="badge badge-company">Companies Only</span></h2>
-    </div>
-
-    <div class="screenshot">
-        <img src="ds-screenshots/tab-executives.png" alt="Executives tab showing Copy directors from shareholders button and empty director list">
-    </div>
-    <p class="mock-caption">The Executives tab &mdash; directors and company secretary with their details</p>
-
-    <p>
-        Every company in Lesotho must have at least <strong>one director</strong> &mdash; the person (or people)
-        responsible for managing the company's affairs and making decisions on its behalf.
-    </p>
-
-    <h3>Adding directors</h3>
-
-    <p>
-        If you already marked some shareholders as directors in the previous step, you can save
-        time by clicking the <strong>"Copy directors from shareholders"</strong> button. This will
-        pull in all their details automatically.
-    </p>
-
-    <p>
-        To add a new director (or complete the details for one copied from shareholders), you'll provide:
-    </p>
-
-    <ul>
-        <li><strong>Full name</strong></li>
-        <li><strong>Date of birth</strong></li>
-        <li><strong>Nationality</strong></li>
-        <li><strong>ID document</strong> &mdash; upload a scan of their ID or passport</li>
-        <li><strong>Residential address</strong></li>
-        <li><strong>Contact details</strong> &mdash; phone and email</li>
-        <li><strong>Consent letter</strong> &mdash; each director must provide a signed letter confirming they agree to serve as a director. Upload the scanned document here.</li>
-    </ul>
-
-    <h3>Powers and authorities</h3>
-
-    <p>
-        For each director, you can specify what financial decisions they are authorised to make
-        independently. For example:
-    </p>
-
-    <ul>
-        <li>Can they sign cheques or authorise payments up to a certain amount?</li>
-        <li>Can they enter into contracts on behalf of the company?</li>
-        <li>What is the maximum value of transactions they can approve alone?</li>
-    </ul>
-
-    <p>
-        This information forms part of your company's official records and helps establish clear governance
-        from the start.
-    </p>
-
-    <h3>Company secretary (optional)</h3>
-
-    <p>
-        You can also appoint a <strong>company secretary</strong>. While not always mandatory for small
-        companies, a secretary helps with administrative compliance and record-keeping. The company
-        secretary is responsible for maintaining official records, filing annual returns, and ensuring
-        the company meets its legal obligations.
-    </p>
-
-    <p>
-        If you choose to appoint one, you'll provide the same type of personal information and ID
-        document as for directors. The secretary can be one of the directors (wearing two hats, so to
-        speak), or a separate person entirely.
-    </p>
-
-    <div class="tip-box">
-        <strong>Tip: Director consent letters</strong>
-        Each director needs to sign a consent letter before the company can be registered. Prepare these
-        in advance and have them scanned and ready to upload. The letter should clearly state that the
-        person consents to being appointed as a director of the company, include the company name, and be
-        signed and dated.
-    </div>
-
-    <div class="info-box">
-        <strong>What makes a good director?</strong>
-        A director should be someone you trust to make decisions about the company. They have legal
-        responsibilities, including acting in the best interests of the company, avoiding conflicts of
-        interest, and keeping proper financial records. Make sure anyone you nominate as a director
-        understands these responsibilities.
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 9. STEP 7: ARTICLES OF ASSOCIATION -->
-<!-- ============================================================ -->
-<section id="step-articles">
-    <div class="step-header">
-        <span class="step-number">7</span>
-        <h2>Articles of Association <span class="badge badge-company">Companies Only</span></h2>
-    </div>
-
-    <div class="screenshot">
-        <img src="ds-screenshots/tab-articles-of-association.png" alt="Articles of Association tab with Yes/No question about using automated articles provided by OBFC">
-    </div>
-    <p class="mock-caption">The Articles of Association tab &mdash; choose auto-generated or upload your own</p>
-
-    <p>
-        The Articles of Association are the rules that govern how your company operates &mdash; things like
-        how decisions are made, how shares can be transferred, and how meetings are conducted. Think of it
-        as the rulebook for your company.
-    </p>
-
-    <p>You have two options here:</p>
-
-    <h3>Option A: Use the automatic template (recommended)</h3>
-
-    <p>
-        The system can <strong>generate your Articles of Association automatically</strong> based on all
-        the information you've already provided &mdash; your company name, shareholders, directors, share
-        capital, and so on. This uses a standard template that complies with Lesotho company law.
-    </p>
-
-    <p>
-        This is the easiest option and is recommended for most new companies. Simply click the button
-        to generate the document and review the result.
-    </p>
-
-    <h3>Option B: Upload your own</h3>
-
-    <p>
-        If you've had a lawyer prepare custom Articles of Association for your company, you can upload
-        them here instead. This might be the case if:
-    </p>
-
-    <ul>
-        <li>Your company has unusual governance arrangements</li>
-        <li>Shareholders have agreed on specific rights or restrictions</li>
-        <li>You're setting up a joint venture with particular terms</li>
-        <li>Your lawyer has recommended specific provisions for your industry</li>
-    </ul>
-
-    <p>
-        Upload the document as a PDF file. Make sure it's complete, signed where necessary, and complies
-        with Lesotho company law.
-    </p>
-
-    <div class="info-box">
-        <strong>Which option should you choose?</strong>
-        If you're starting a straightforward company and don't have specific legal requirements, the automatic
-        template is the way to go. It saves time, ensures your articles comply with the law, and is free.
-        If you have a complex business arrangement or specific requirements, having a lawyer prepare custom
-        articles is worth the investment. When in doubt, consult a legal professional.
-    </div>
-
-    <div class="tip-box">
-        <strong>Tip: Review the auto-generated articles</strong>
-        Even if you choose the automatic template, take the time to read through the generated document.
-        It's your company's rulebook, after all. Understanding what's in it will help you run your company
-        properly from day one.
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 10. STEP 8: INCORPORATION DOCUMENTS -->
-<!-- ============================================================ -->
-<section id="step-incorporation">
-    <div class="step-header">
-        <span class="step-number">8</span>
-        <h2>Incorporation Documents <span class="badge badge-company">Companies Only</span></h2>
-    </div>
-
-    <div class="screenshot">
-        <img src="ds-screenshots/tab-incorporation-documents.png" alt="Incorporation Documents tab showing memorandum, shareholders, contributions, and e-signature sections">
-    </div>
-    <p class="mock-caption">The Incorporation Documents tab &mdash; memorandum, contributions, and electronic signatures</p>
-
-    <p>
-        This section brings together all the information you've entered so far and generates the official
-        <strong>Memorandum of Association</strong> &mdash; the founding document of your company. This is the
-        document that, once signed and approved, officially creates the company as a legal entity.
-    </p>
-
-    <h3>Reviewing the document</h3>
-
-    <p>
-        Click <strong>"Update to latest data"</strong> to make sure the document reflects all the
-        information you've entered throughout the application. The system compiles everything into
-        one comprehensive document:
-    </p>
-
-    <ul>
-        <li>Your company name and registered address</li>
-        <li>The purpose and objectives of the company</li>
-        <li>Share capital details &mdash; total value, number of shares, and value per share</li>
-        <li>The full list of shareholders with their share allocations</li>
-        <li>Directors and their details</li>
-        <li>Any other relevant information from your application</li>
-    </ul>
-
-    <p>
-        Read through the entire document carefully. This is the legal foundation of your company,
-        and everything in it needs to be accurate.
-    </p>
-
-    <div class="warning-box">
-        <strong>Review carefully before signing</strong>
-        Take the time to read through every section of the generated document. If you notice any errors
-        &mdash; a misspelled name, wrong share amounts, incorrect address &mdash; go back to the
-        relevant step and correct the information. Then return here and click "Update to latest data"
-        to regenerate the document with the corrections.
-    </div>
-
-    <h3>Signing the document</h3>
-
-    <p>
-        All shareholders need to sign the Memorandum of Association. You have two ways to do this:
-    </p>
-
-    <h4>Electronic signing</h4>
-    <p>
-        Each shareholder will receive a <strong>verification code by email</strong>. They enter this code
-        into the system to confirm their identity and sign the document electronically. This is the
-        fastest option, especially if your shareholders are in different locations.
-    </p>
-
-    <h4>Manual signing</h4>
-    <p>
-        If electronic signing isn't possible, you can print the document, have all shareholders sign
-        it in person, then scan the signed document and upload it back to the system.
-    </p>
-
-    <div class="info-box">
-        <strong>Important acknowledgement</strong>
-        Before proceeding, you'll be asked to acknowledge that you will print and sign the incorporation
-        documents. This is a legal requirement &mdash; you must confirm that all parties have agreed to
-        the contents of the document.
-    </div>
-
-    <div class="tip-box">
-        <strong>Tip: Coordinate with your shareholders</strong>
-        If you're using electronic signing, let your shareholders know in advance to check their email.
-        The verification codes are time-sensitive, so it's best if everyone is ready to sign around the same time.
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 11. STEP 9: BUSINESS PERMIT -->
-<!-- ============================================================ -->
-<section id="step-permit">
-    <div class="step-header">
-        <span class="step-number">9</span>
-        <h2>Business Permit <span class="badge badge-foreign">Foreign-Owned Businesses</span></h2>
-    </div>
-
-    <div class="form-mockup">
-        <div class="form-mockup-bar">
-            <span class="bar-title">Register a Business</span>
-            <span class="bar-url">services.businessregistrations.gov.ls</span>
-        </div>
-        <div class="form-mockup-tabs">
-            <span class="mtab">Guide</span>
-            <span class="mtab">Business Owner</span>
-            <span class="mtab">Company</span>
-            <span class="mtab">Shareholders</span>
-            <span class="mtab">Beneficial Owners</span>
-            <span class="mtab">Executives</span>
-            <span class="mtab">Articles</span>
-            <span class="mtab">Incorporation</span>
-            <span class="mtab active">Business Permit</span>
-        </div>
-        <div class="form-mockup-body">
-            <div class="mock-section">
-                <div class="mock-section-title">Investor personal details</div>
-                <div class="mock-row">
-                    <div class="mock-field"><span class="mock-label">First name <span class="req">*</span></span><div class="mock-input">James</div></div>
-                    <div class="mock-field"><span class="mock-label">Other names <span class="req">*</span></span><div class="mock-input"></div></div>
-                    <div class="mock-field"><span class="mock-label">Last name <span class="req">*</span></span><div class="mock-input">Smith</div></div>
-                </div>
-                <div class="mock-row">
-                    <div class="mock-field"><span class="mock-label">Nationality <span class="req">*</span></span><div class="mock-select"><span>South Africa</span></div></div>
-                    <div class="mock-field"><span class="mock-label">Date of birth <span class="req">*</span></span><div class="mock-input">10/06/1978</div></div>
-                    <div class="mock-field"><span class="mock-label">National ID number <span class="req">*</span></span><div class="mock-input">SA-789456123</div></div>
-                </div>
-            </div>
-            <div class="mock-section">
-                <div class="mock-section-title">Capital &amp; staff</div>
-                <div class="mock-row">
-                    <div class="mock-field"><span class="mock-label">Local deposit <span class="req">*</span></span><div class="mock-input">200,000</div></div>
-                    <div class="mock-field"><span class="mock-label">Source of the deposit <span class="req">*</span></span><div class="mock-select"><span>Personal savings</span></div></div>
-                </div>
-                <div class="mock-row">
-                    <div class="mock-field"><span class="mock-label">Local staff</span><div class="mock-input">8</div></div>
-                    <div class="mock-field"><span class="mock-label">Foreign staff</span><div class="mock-input">2</div></div>
-                    <div class="mock-field"><span class="mock-label">Total staff</span><div class="mock-input" style="background:#eee">10</div></div>
-                </div>
-            </div>
-            <div class="mock-section">
-                <div class="mock-section-title">Business case for Lesotho</div>
-                <div class="mock-field" style="margin-bottom:0.5rem">
-                    <span class="mock-label">Strategic business for Lesotho</span>
-                    <div class="mock-input" style="min-height:40px; color:#aaa; font-size:0.72rem">Describe the strategic nature of the business to the Lesotho economy...</div>
-                </div>
-                <div class="mock-field" style="margin-bottom:0.5rem">
-                    <span class="mock-label">Skills and technology transfer plan</span>
-                    <div class="mock-input" style="min-height:40px; color:#aaa; font-size:0.72rem">Briefly explain the skills and technology transfer within the next 2 years...</div>
-                </div>
-                <div class="mock-field">
-                    <span class="mock-label">Corporate social responsibility plan</span>
-                    <div class="mock-input" style="min-height:40px; color:#aaa; font-size:0.72rem">Briefly explain the plan of corporate social responsibility...</div>
-                </div>
-            </div>
-            <div class="mock-actions">
-                <span class="mock-btn-outline">&larr; Previous</span>
-                <span class="mock-btn">Next &rarr;</span>
-            </div>
-        </div>
-    </div>
-    <p class="mock-caption">The Business Permit tab &mdash; foreign investor details, capital, staff, and business case (only for non-Lesotho owners)</p>
-
-    <p>
-        This section only appears if the business has foreign ownership. For a sole proprietor, it appears
-        when the owner is from another country. For a company, it appears when 30% or more of the
-        shareholders are foreign nationals.
-    </p>
-
-    <p>
-        A business permit is the government's way of making sure that foreign investment benefits
-        Lesotho. Don't worry &mdash; it's part of the same application, so you won't need to file separately.
-    </p>
-
-    <h3>Contact person for the permit</h3>
-
-    <p>
-        You'll need to nominate a <strong>contact person</strong> for the business permit application. This
-        is the person the authorities will reach out to if they have questions. Provide their name, phone
-        number, and email address.
-    </p>
-
-    <h3>Investment information</h3>
-
-    <p>The government wants to understand the financial side of your business. You'll be asked:</p>
-
-    <ul>
-        <li><strong>How much are you investing locally?</strong> &mdash; the total amount of money being invested in Lesotho</li>
-        <li><strong>Where is the money coming from?</strong> &mdash; personal savings, bank loan, investors, foreign investment, etc.</li>
-        <li><strong>What assets are you bringing?</strong> &mdash; equipment, vehicles, machinery, or other tangible assets</li>
-    </ul>
-
-    <h3>Staffing plan</h3>
-
-    <p>
-        One of the goals of the business permit process is to ensure that foreign businesses create
-        opportunities for people in Lesotho. You'll need to provide:
-    </p>
-
-    <ul>
-        <li><strong>How many local employees</strong> (Basotho) will you hire?</li>
-        <li><strong>How many foreign employees</strong> will the business need?</li>
-        <li>For any foreign employees: <strong>why</strong> is a foreign worker needed for that role? (For example, specialised skills not available locally)</li>
-    </ul>
-
-    <h3>Strategic value to Lesotho</h3>
-
-    <p>
-        This is your chance to explain how your business will benefit the country. You'll answer questions about:
-    </p>
-
-    <ul>
-        <li><strong>Economic contribution</strong> &mdash; how will your business support the local economy? Will it create jobs, generate tax revenue, or support local suppliers?</li>
-        <li><strong>Skills transfer</strong> &mdash; will you be training local employees in new skills? Will they gain expertise that benefits the broader workforce?</li>
-        <li><strong>Social responsibility</strong> &mdash; does your business plan include any community engagement, environmental considerations, or social impact initiatives?</li>
-    </ul>
-
-    <div class="tip-box">
-        <strong>Tip: Be specific and genuine</strong>
-        When describing the benefits to Lesotho, be concrete. Instead of saying "we'll help the economy," say
-        "we plan to hire 15 local employees and purchase supplies from Maseru-based vendors." Specific
-        details strengthen your application.
-    </div>
-
-    <div class="info-box">
-        <strong>Why is this information needed?</strong>
-        The business permit process exists to ensure that foreign investment benefits the people of Lesotho.
-        The government wants to see that your business will create jobs, contribute to the local economy,
-        and operate responsibly. Being thorough and honest in your answers will help the reviewing officer
-        make a positive decision on your application.
-    </div>
-
-    <div class="warning-box">
-        <strong>This section cannot be skipped</strong>
-        If the system has determined that your business requires a permit (based on the ownership nationality
-        information you provided), all the fields in this section are required. You won't be able to submit
-        your application without completing them.
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 12. STEP 10: REVIEW & SUBMIT -->
-<!-- ============================================================ -->
-<section id="step-submit">
-    <div class="step-header">
-        <span class="step-number">10</span>
-        <h2>Review &amp; Submit</h2>
-    </div>
-
-    <div class="screenshot">
-        <img src="ds-screenshots/tab-send-review.png" alt="Send tab showing user rights question, declaration checkbox, and What's next information">
-    </div>
-    <p class="mock-caption">The Send tab &mdash; declaration, user rights, and submit your application</p>
-
-    <p>
-        You've made it to the final step. Before submitting your application, you'll see a summary of
-        everything you've entered. Take a moment to review it all carefully.
-    </p>
-
-    <h3>Review your application</h3>
-
-    <p>
-        The summary page shows all the information from every section you've completed. Scroll through
-        and check:
-    </p>
-
-    <ul>
-        <li>Is your personal information correct?</li>
-        <li>Is the business name right?</li>
-        <li>Are all activities listed correctly?</li>
-        <li>For companies: are all shareholders, directors, and share allocations accurate?</li>
-        <li>Are all required documents uploaded?</li>
-    </ul>
-
-    <p>
-        If you need to change anything, you can go back to the relevant tab and make corrections.
-    </p>
-
-    <h3>The declaration</h3>
-
-    <p>
-        Before you can submit, you must read and agree to a <strong>declaration</strong>. This is a formal
-        statement confirming that:
-    </p>
-
-    <ul>
-        <li>All the information you've provided is true and accurate to the best of your knowledge</li>
-        <li>You understand that providing false information is a legal offence</li>
-        <li>You agree to comply with the laws and regulations of Lesotho</li>
-    </ul>
-
-    <p>Tick the checkbox to confirm that you agree to the declaration.</p>
-
-    <h3>Payment</h3>
-
-    <p>
-        Your application includes fees for the various licences and registrations. You'll see a
-        breakdown of what you owe. You have two ways to pay:
-    </p>
-
-    <ul>
-        <li><strong>Pay online</strong> &mdash; use the secure online payment system (powered by iVeri) to pay with a debit or credit card. The payment is processed immediately.</li>
-        <li><strong>Pay at the counter</strong> &mdash; if you prefer to pay in person, select the cashier option. You'll need to visit an OBFC office to make the payment before your application can proceed.</li>
-    </ul>
-
-    <h3>Submit your application</h3>
-
-    <p>
-        Once you've reviewed everything, agreed to the declaration, and made your payment (or selected
-        the cashier option), click <strong>"Submit"</strong>. Your application will be sent for processing.
-    </p>
-
-    <p>
-        After clicking Submit, you'll see a confirmation message on screen. You'll also receive a
-        <strong>confirmation email</strong> with a reference number for your application. Keep this
-        reference number &mdash; you can use it to check the status of your application later.
-    </p>
-
-    <div class="warning-box">
-        <strong>You cannot edit your application after submitting</strong>
-        Once you click Submit, your application enters the review process. If a government officer finds an
-        issue, they may send it back to you with a request for corrections. But you cannot make changes
-        on your own after submission. That's why it's so important to review everything carefully before
-        you click that button.
-    </div>
-
-    <div class="tip-box">
-        <strong>Tip: Take one last look</strong>
-        Before clicking Submit, consider going back through each tab one more time. Pay special attention
-        to names, ID numbers, and uploaded documents. A small typo can cause delays if an officer needs
-        to send the application back for corrections.
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 13. WHAT HAPPENS AFTER YOU SUBMIT -->
-<!-- ============================================================ -->
-<section id="after-submit">
-    <h2>What Happens After You Submit?</h2>
-
-    <p>
-        After you click Submit, your application doesn't just disappear into a black hole. It goes through
-        a series of review steps, some automatic and some manual. Here's what happens behind the scenes,
-        so you know what to expect and aren't left wondering.
-    </p>
-
-    <p>
-        The review process is a bit like an assembly line. Your application moves from one stage to the
-        next, and at each stage, either the system checks something automatically or a government officer
-        reviews a specific part. Some steps happen in parallel (at the same time), which helps speed
-        things up.
-    </p>
-
-    <div class="workflow-steps">
-
-        <div class="workflow-step ws-auto">
-            <div class="ws-number">1</div>
-            <div class="ws-content">
-                <strong>Activity names are checked</strong>
-                <p>
-                    The system automatically verifies the business activity names you selected. This is instant
-                    and requires no action from you.
-                </p>
-            </div>
-        </div>
-
-        <div class="workflow-step ws-manual">
-            <div class="ws-number">2</div>
-            <div class="ws-content">
-                <strong>Business permit review (if applicable)</strong>
-                <p>
-                    If your business requires a permit (because of foreign ownership), a government officer will
-                    review your permit application. They may approve it, ask for more information, or request changes.
-                    You'll be notified by email.
-                </p>
-            </div>
-        </div>
-
-        <div class="workflow-step ws-manual">
-            <div class="ws-number">3</div>
-            <div class="ws-content">
-                <strong>Business ID review</strong>
-                <p>
-                    An officer reviews your basic business information and validates that everything is in order.
-                    This step confirms your business identity and assigns your unique Business ID number.
-                </p>
-            </div>
-        </div>
-
-        <div class="workflow-step ws-manual">
-            <div class="ws-number">4</div>
-            <div class="ws-content">
-                <strong>Licence review</strong>
-                <p>
-                    Your trading and/or industrial licence applications are reviewed. The officer checks that your
-                    activities, business location, and other details meet the requirements for each licence.
-                </p>
-            </div>
-        </div>
-
-        <div class="workflow-step ws-auto">
-            <div class="ws-number">5</div>
-            <div class="ws-content">
-                <strong>Fee calculation and confirmation</strong>
-                <p>
-                    The system calculates the final fees based on your approved activities and confirms the amounts.
-                    If you already paid online, this step processes automatically. If you chose to pay at the counter,
-                    you'll be notified to make your payment.
-                </p>
-            </div>
-        </div>
-
-        <div class="workflow-step ws-auto">
-            <div class="ws-number">6</div>
-            <div class="ws-content">
-                <strong>Certificates are generated</strong>
-                <p>
-                    Once everything is approved and payment is confirmed, the system automatically generates your
-                    certificates. You'll receive a notification with instructions on how to download them.
-                </p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="conditional-block">
-        <div class="conditional-label">Additional step for companies</div>
-        <p>
-            If you're registering a company, there is an additional review and approval process for the
-            <strong>company incorporation</strong>. A Registrar of Companies officer reviews your incorporation
-            documents, memorandum and articles of association, director consents, and other company-specific
-            paperwork. This happens alongside the other review steps.
-        </p>
-    </div>
-
-    <h3>How will you be notified?</h3>
-
-    <p>
-        You'll receive <strong>email notifications</strong> at each major step of the process:
-    </p>
-
-    <ul>
-        <li>When your application is received</li>
-        <li>When each registration is approved (or if corrections are needed)</li>
-        <li>When your certificates are ready to download</li>
-    </ul>
-
-    <p>
-        You can also log into the OBFC portal at any time to check the status of your application.
-    </p>
-
-    <div class="info-box">
-        <strong>Some steps are instant, others take time</strong>
-        Automated steps (like activity name checks and certificate generation) happen within minutes.
-        Manual review steps depend on the workload of government officers and may take a few business days.
-        Most straightforward applications are processed within one to two weeks.
-    </div>
-
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
-
-<!-- ============================================================ -->
-<!-- 14. WHAT YOU'LL RECEIVE -->
-<!-- ============================================================ -->
-<section id="what-you-get">
-    <h2>What You'll Receive</h2>
-
-    <p>
-        Once your application is fully approved, you'll receive your official documents. Here's
-        what to expect based on the type of business you registered:
-    </p>
-
-    <h3>Everyone receives</h3>
-
-    <div class="outcome-cards">
-        <div class="outcome-card">
-            <strong>Business ID Certificate</strong>
-            <p>Your official business identification number. This is your primary proof that your business is registered in Lesotho.</p>
-        </div>
-    </div>
-
-    <h3>Depending on your activities</h3>
-
-    <div class="outcome-cards">
-        <div class="outcome-card">
-            <strong>Trading Licence(s)</strong>
-            <p>One for each trading activity you registered. Required to legally carry out that activity.</p>
-        </div>
-        <div class="outcome-card">
-            <strong>Industrial Licence(s)</strong>
-            <p>One for each industrial or manufacturing activity you registered.</p>
-        </div>
-    </div>
-
-    <h3>For companies</h3>
-
-    <div class="outcome-cards">
-        <div class="outcome-card">
-            <strong>Certificate of Incorporation</strong>
-            <p>The official document confirming that your company has been legally created as a separate entity under Lesotho law.</p>
-        </div>
+<div class="nav-bar">
+  <div class="nav-inner">
+    <a class="nav-tab active" href="index.html">All Services</a>
+    <a class="nav-tab" href="https://businessregistrations.gov.ls" target="_blank">Go to Portal ↗</a>
+  </div>
+</div>
+
+<main>
+
+  <div class="intro">
+    <h2>How to use these manuals</h2>
+    <p>Each guide below walks you through a specific service on <a href="https://businessregistrations.gov.ls" target="_blank">businessregistrations.gov.ls</a> — Lesotho's official online business registration portal. Select the service you need help with and follow the step-by-step instructions. Guides marked <strong>Available</strong> can be opened now; others are coming soon.</p>
+  </div>
+
+  <!-- GETTING STARTED -->
+  <div class="section-heading">Getting Started</div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-icon icon-blue">🏠</div>
+      <span class="card-status status-available">Available</span>
+      <h3>My Dashboard</h3>
+      <p>Your personal portal. View all your businesses, check licence renewal dates, track applications, and take quick actions — all in one place.</p>
+      <a class="card-link" href="my-dashboard/index.html">Read Guide →</a>
+    </div>
+
+    <div class="card">
+      <div class="card-icon icon-purple">🪪</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Verify Your Identity (KYC)</h3>
+      <p>Before using the portal's digital services, you must verify your identity. This guide explains how to complete the KYC process step by step.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <h3>For foreign-owned businesses</h3>
-
-    <div class="outcome-cards">
-        <div class="outcome-card">
-            <strong>Business Permit</strong>
-            <p>Your authorisation to operate a foreign-owned business in Lesotho. This must be renewed periodically.</p>
-        </div>
-    </div>
-
-    <div class="tip-box">
-        <strong>Tip: Keep your certificates safe</strong>
-        Download and save digital copies of all your certificates. You may also want to print physical copies.
-        You'll need to present your Business ID certificate and licences when dealing with banks, suppliers,
-        and government agencies. Some documents may need to be displayed at your business premises.
+    <div class="card">
+      <div class="card-icon icon-teal">👥</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Delegate User Rights</h3>
+      <p>Allow another person (an employee, accountant, or agent) to act on behalf of your business within the portal.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <h3>What to do with your certificates</h3>
+  </div>
 
-    <p>Once you've received your documents, here are some practical next steps:</p>
+  <!-- REGISTER A BUSINESS -->
+  <div class="section-heading">Register a Business</div>
+  <div class="cards">
 
-    <ul>
-        <li><strong>Open a business bank account</strong> &mdash; take your Business ID certificate to a bank to open an account in your business name. Most banks require this document.</li>
-        <li><strong>Display your licences</strong> &mdash; trading and industrial licences should be displayed at your place of business, as required by law.</li>
-        <li><strong>Keep copies with your records</strong> &mdash; save digital and physical copies in a safe place. You'll need them for various purposes, such as applying for loans, signing contracts with suppliers, or dealing with government agencies.</li>
-        <li><strong>Note renewal dates</strong> &mdash; some documents, particularly the business permit and licences, may need to be renewed periodically. Mark the renewal dates in your calendar so you don't miss them.</li>
-    </ul>
+    <div class="card">
+      <div class="card-icon icon-green">🏪</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Register a Business</h3>
+      <p>Register a new sole proprietorship or company. Covers business name, ownership, activities, and all required documents.</p>
+      <span class="card-link-soon">Coming soon</span>
+    </div>
 
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
+    <div class="card">
+      <div class="card-icon icon-green">🏢</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Register a Company</h3>
+      <p>Incorporate a new private limited company in Lesotho. Includes director registration, share structure, and memorandum of incorporation.</p>
+      <span class="card-link-soon">Coming soon</span>
+    </div>
 
-<!-- ============================================================ -->
-<!-- 15. TIPS & COMMON QUESTIONS -->
-<!-- ============================================================ -->
-<section id="tips-faq">
-    <h2>Tips &amp; Common Questions</h2>
-
-    <div class="faq-item">
-        <div class="faq-question">What if my business name is already taken?</div>
-        <div class="faq-answer">
-            Don't worry &mdash; this is common. When you click "Check availability" and discover the name is taken,
-            simply try a different name. Consider adding a word that makes it unique, like your district name or
-            a descriptive word related to your business. For example, if "Sunrise Trading" is taken, try
-            "Sunrise Trading Maseru" or "Sunrise General Trading."
-        </div>
-    </div>
+    <div class="card">
+      <div class="card-icon icon-green">🌐</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Register an External Company</h3>
+      <p>Register a foreign company to operate in Lesotho. Covers the requirements for external companies under Lesotho law.</p>
+      <span class="card-link-soon">Coming soon</span>
+    </div>
 
-    <div class="faq-item">
-        <div class="faq-question">Can I save my application and come back later?</div>
-        <div class="faq-answer">
-            Yes! Your progress is saved as you go. You can close the browser, and when you log back in,
-            you'll find your application waiting for you exactly where you left off. This is especially
-            useful if you need to gather additional documents or consult with your business partners.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-green">📝</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Name Reservation</h3>
+      <p>Reserve a business or company name before completing full registration. Prevents others from using your chosen name during the reservation period.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">What if I make a mistake in my application?</div>
-        <div class="faq-answer">
-            Before you submit, you can go back and change anything. After submission, if a reviewing officer
-            notices an issue, they can send your application back to you with a note about what needs to
-            be corrected. You'll receive an email notification and can then log in and make the necessary changes.
-        </div>
-    </div>
+  </div>
 
-    <div class="faq-item">
-        <div class="faq-question">How long does the whole process take?</div>
-        <div class="faq-answer">
-            It depends on the type of business and the current workload. A sole proprietorship with local
-            ownership is the quickest &mdash; it could be approved within a few business days. A company with
-            foreign ownership takes longer because there are more review steps, including the business
-            permit and company incorporation. In general, expect anywhere from a few days to two weeks.
-        </div>
-    </div>
+  <!-- MANAGE YOUR BUSINESS -->
+  <div class="section-heading">Manage Your Business</div>
+  <div class="cards">
 
-    <div class="faq-item">
-        <div class="faq-question">Do I need a lawyer to register my business?</div>
-        <div class="faq-answer">
-            No, the system is designed so you can do it yourself. The online form guides you through every
-            step, and for companies, it can even generate your Articles of Association automatically. However,
-            if you're setting up a complex company structure or have specific legal requirements, consulting
-            a lawyer is always a good idea.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-orange">🔄</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Renew or Close a Business</h3>
+      <p>Renew your sole proprietorship or company registration before it expires, or formally close a business you no longer operate.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">What types of payment are accepted?</div>
-        <div class="faq-answer">
-            You can pay online using a debit or credit card through the secure iVeri payment system.
-            Alternatively, you can choose to pay in person at an OBFC office. If you choose to pay at
-            the counter, your application will be held until the payment is received.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-orange">📋</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Renew or Close a Licence</h3>
+      <p>Renew a business activity licence before its expiry date, or close a specific activity licence that is no longer needed.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">I'm registering a company but I'm the only shareholder. Is that okay?</div>
-        <div class="faq-answer">
-            Yes, Lesotho allows single-shareholder companies. You'll still need to complete the shareholder,
-            beneficial owner, and director sections, but they'll all refer to you. You can mark yourself
-            as both the sole shareholder and a director, which speeds things up.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-orange">✏️</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Update Your Business Data</h3>
+      <p>Update information about your business — address, contact details, business name changes, or ownership changes.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">What does "Check availability" do for business names?</div>
-        <div class="faq-answer">
-            When you type in your desired business name and click "Check availability," the system searches
-            the entire national business registry to see if that exact name (or one very similar to it) is
-            already in use. If it is, you need to choose something different. If it's available, you'll see
-            a green confirmation and can proceed.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-orange">📅</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Annual Filing</h3>
+      <p>Submit your company's annual return as required by law. Covers financial statements and director information updates.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">What happens if my application is rejected?</div>
-        <div class="faq-answer">
-            Outright rejections are rare. More commonly, you'll be asked to make corrections or provide
-            additional information. The reviewing officer will specify what needs to be changed, and you'll
-            get a chance to update and resubmit. If there's a fundamental issue (for example, the business
-            activity is not permitted), the officer will explain the reason clearly.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-orange">📆</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Change Financial Year</h3>
+      <p>Apply to change your company's financial year end date with the Companies Registry.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">I'm a foreign national. Do I need a business permit before I can register?</div>
-        <div class="faq-answer">
-            No, the business permit is part of the same application. You don't need to apply for it separately
-            or get it before starting the registration process. The permit application is simply an additional
-            section in the same online form. It will be reviewed alongside the rest of your application.
-        </div>
-    </div>
+  </div>
 
-    <div class="faq-item">
-        <div class="faq-question">Can I register more than one business activity?</div>
-        <div class="faq-answer">
-            Yes, you can add as many activities as you like. Each activity you add will be evaluated for
-            licensing, and the system will calculate the fees automatically. You'll receive a separate licence
-            for each activity (either a trading licence or an industrial licence, depending on the activity type).
-        </div>
-    </div>
+  <!-- COMPANY EVENTS -->
+  <div class="section-heading">Company Events &amp; Formal Procedures</div>
+  <div class="cards">
 
-    <div class="faq-item">
-        <div class="faq-question">What if I want to add activities later, after my business is registered?</div>
-        <div class="faq-answer">
-            You can apply to add new activities to your existing business registration through the OBFC portal.
-            This is a separate process from the initial registration, but it uses the same online system.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-red">⚖️</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Voluntary Dissolution</h3>
+      <p>Formally dissolve a company that is solvent and no longer needed. Covers the legal process and required documents.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">What's the difference between a trading licence and an industrial licence?</div>
-        <div class="faq-answer">
-            A <strong>trading licence</strong> covers activities related to buying and selling goods or
-            providing services &mdash; for example, running a retail shop, a restaurant, or a consulting
-            business. An <strong>industrial licence</strong> covers manufacturing, processing, or
-            production activities &mdash; for example, a factory, a bakery that produces goods for wholesale,
-            or a construction materials plant. The system determines which type of licence you need based
-            on the activity you select. You don't need to figure this out yourself.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-red">🏗️</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Lodge Merger Document</h3>
+      <p>Submit the required documents when two companies are merging into one entity under Lesotho law.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">Can I change my business type later (from sole proprietor to company)?</div>
-        <div class="faq-answer">
-            Converting a sole proprietorship to a company is a separate process that requires a new
-            registration. It's not something you can change within your existing application. If you think
-            you might want to form a company in the future, it may be worth starting as a company from
-            the beginning, even if it requires more paperwork now.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-red">🔁</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Lodge Conversion Document</h3>
+      <p>Convert your business entity type — for example from a sole proprietorship to a private company.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">Do I need to be physically present in Lesotho to register?</div>
-        <div class="faq-answer">
-            No. The entire application process is online, so you can complete it from anywhere in the
-            world as long as you have internet access. However, if you choose to pay at the counter rather
-            than online, you or someone on your behalf will need to visit an OBFC office in person to
-            make the payment.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-red">🔒</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>Appoint a Liquidator</h3>
+      <p>Formally appoint a liquidator to wind up a company's affairs when it cannot pay its debts.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">What file formats are accepted for document uploads?</div>
-        <div class="faq-answer">
-            The system accepts <strong>PDF, JPG, JPEG, and PNG</strong> files. Make sure your scanned
-            documents are clear and legible. Very large files may take longer to upload, so try to keep
-            individual files under 5MB if possible. If a scan is blurry or hard to read, it may cause
-            delays during the review process.
-        </div>
+    <div class="card">
+      <div class="card-icon icon-red">🗑️</div>
+      <span class="card-status status-coming">Coming soon</span>
+      <h3>De-register a Company</h3>
+      <p>Remove a company from the Companies Registry when it has ceased operations and fulfilled its legal obligations.</p>
+      <span class="card-link-soon">Coming soon</span>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-question">Who can I contact for help?</div>
-        <div class="faq-answer">
-            If you get stuck at any point, you can contact the One Business Service Centre (OBFC) for
-            assistance. Visit their office in person, call their helpline, or send an email through the
-            contact information available on the OBFC website at businessregistrations.gov.ls. The staff
-            are there to help you through the process, especially if this is your first time registering
-            a business.
-        </div>
-    </div>
+  </div>
 
-    <div class="back-top"><a href="#toc">Back to top</a></div>
-</section>
+</main>
 
-<!-- FOOTER -->
-<footer style="text-align: center; padding: 2rem 0; color: var(--text-light); font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 1rem;">
-    <p>
-        Register a Business &mdash; Lesotho One Business Service Centre (OBFC) User Guide
-    </p>
-    <p>
-        Last updated: February 2026
-    </p>
+<footer>
+  <p>These guides are produced by <a href="https://unctad.org" target="_blank">UNCTAD</a> in partnership with the Government of Lesotho.<br>
+  For portal support, contact <a href="https://businessregistrations.gov.ls" target="_blank">businessregistrations.gov.ls</a></p>
 </footer>
 
 </body>
