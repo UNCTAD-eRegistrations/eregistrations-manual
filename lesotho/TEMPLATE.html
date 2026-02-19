@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name Reservation - User Manual | OBFC Lesotho</title>
-    <meta name="description" content="User manual for Name Reservation on the Lesotho One Business Facilitation Centre (OBFC) eRegistrations platform.">
+    <title>{{SERVICE_NAME}} - User Manual | OBFC Lesotho</title>
+    <meta name="description" content="User manual for {{SERVICE_NAME}} on the Lesotho One Business Facilitation Centre (OBFC) eRegistrations platform.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* ============================================================
-           LESOTHO eREGISTRATIONS — USER MANUAL
+           LESOTHO eREGISTRATIONS — USER MANUAL TEMPLATE
            Design system: https://lesotho.eregistrations.dev/
-           Generated: February 2026
+           Generated: {{GENERATION_DATE}}
            ============================================================ */
 
         /* --- Reset & Base --- */
@@ -716,6 +716,85 @@
             font-family: 'Poppins', sans-serif;
         }
 
+        /* --- Screenshot Placeholder --- */
+        .screenshot-placeholder {
+            border: 2px dashed #D0D0D8;
+            border-radius: 10px;
+            background: #FAFAFA;
+            padding: 48px 24px;
+            text-align: center;
+            margin: 24px 0;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .screenshot-placeholder svg {
+            width: 40px;
+            height: 40px;
+            stroke: #CCC;
+            margin-bottom: 12px;
+        }
+
+        .screenshot-placeholder p {
+            margin: 0;
+        }
+
+        .screenshot-placeholder img {
+            margin: 0 auto;
+            border-radius: 6px;
+        }
+
+        /* --- Tab Group --- */
+        .tab-group {
+            margin: 28px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #F5F5F7;
+            border-bottom: 1px solid #E5E7EB;
+            overflow-x: auto;
+            gap: 0;
+        }
+
+        .tab-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 14px 24px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #555866;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover {
+            color: #1F2128;
+            background: rgba(255,255,255,0.5);
+        }
+
+        .tab-btn.active {
+            color: #4CAF74;
+            border-bottom-color: #4CAF74;
+            background: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .tab-panel {
+            display: none;
+            padding: 24px;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
         /* --- Timeline --- */
         .timeline {
             position: relative;
@@ -780,63 +859,6 @@
             font-size: 13px;
             color: #999;
             margin-top: 4px;
-        }
-
-        /* ============================================================
-           FAQ STYLES
-           ============================================================ */
-        .faq-item {
-            border: 1px solid #E5E7EB;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            width: 100%;
-            text-align: left;
-            background: #FFFFFF;
-            border: none;
-            padding: 18px 24px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            color: #1F2128;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            transition: background 0.2s ease;
-        }
-
-        .faq-question:hover {
-            background: #F5F5F7;
-        }
-
-        .faq-question::after {
-            content: "+";
-            font-size: 22px;
-            font-weight: 400;
-            color: #4CAF74;
-            flex-shrink: 0;
-            transition: transform 0.2s ease;
-        }
-
-        .faq-item.open .faq-question::after {
-            content: "\2212";
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 0 24px 18px;
-            font-size: 15px;
-            color: #555866;
-            line-height: 1.7;
-        }
-
-        .faq-item.open .faq-answer {
-            display: block;
         }
 
         /* ============================================================
@@ -947,6 +969,7 @@
             fill: #FFFFFF;
         }
 
+        /* Implemented by */
         .footer-implemented {
             padding: 28px 0;
             border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -976,6 +999,7 @@
             opacity: 1;
         }
 
+        /* Copyright */
         .footer-copyright {
             text-align: center;
             padding: 20px 0;
@@ -1204,6 +1228,29 @@
                 print-color-adjust: exact;
             }
 
+            .tab-group {
+                page-break-inside: avoid;
+            }
+
+            .tab-nav {
+                display: none;
+            }
+
+            .tab-panel {
+                display: block !important;
+                border-top: 1px solid #ddd;
+                padding-top: 12px;
+                margin-top: 8px;
+            }
+
+            .tab-panel::before {
+                content: attr(data-tab-label);
+                font-weight: 700;
+                font-size: 13pt;
+                display: block;
+                margin-bottom: 8px;
+            }
+
             .timeline::before {
                 background: #ccc !important;
                 -webkit-print-color-adjust: exact;
@@ -1215,6 +1262,11 @@
                 box-shadow: 0 0 0 3px #4CAF74 !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
+            }
+
+            .screenshot-placeholder {
+                border-color: #ccc;
+                page-break-inside: avoid;
             }
 
             .site-footer {
@@ -1235,14 +1287,6 @@
 
             a[href]::after {
                 content: none;
-            }
-
-            .faq-answer {
-                display: block !important;
-            }
-
-            .faq-question::after {
-                display: none;
             }
         }
     </style>
@@ -1278,7 +1322,7 @@
         <div class="container">
             <ol class="breadcrumb-list">
                 <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
-                <li><a href="https://services.businessregistrations.gov.ls/">Name Reservation</a></li>
+                <li><a href="{{SERVICE_URL}}">{{BREADCRUMB_NAME}}</a></li>
                 <li><span class="current">User Manual</span></li>
             </ol>
         </div>
@@ -1292,12 +1336,13 @@
             <div class="hero-inner">
                 <div class="hero-content">
                     <span class="hero-label">User Manual</span>
-                    <h1>Name Reservation</h1>
-                    <p class="hero-description">Reserve a unique business name before registering your company in Lesotho. This online service allows you to check name availability and secure your preferred business name through the One Business Facilitation Centre (OBFC).</p>
-                    <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Start Application &rarr;</a>
+                    <h1>{{SERVICE_NAME}}</h1>
+                    <p class="hero-description">{{SERVICE_DESCRIPTION}}</p>
+                    <a href="{{SERVICE_URL}}" class="btn-primary">Start Application &rarr;</a>
                 </div>
                 <div class="hero-image">
                     <div class="hero-icon-circle">
+                        <!-- Default document icon; replace per service if desired -->
                         <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
                             <rect x="12" y="6" width="40" height="52" rx="4" stroke-linecap="round" stroke-linejoin="round"/>
                             <line x1="22" y1="20" x2="42" y2="20" stroke-linecap="round"/>
@@ -1318,38 +1363,13 @@
         <div class="container">
             <h2>Table of Contents</h2>
             <div class="toc-grid">
-                <a href="#overview" class="toc-item">
+                {{TABLE_OF_CONTENTS}}
+                <!-- Example TOC item (for reference, remove in production):
+                <a href="#section-1" class="toc-item">
                     <span class="toc-number">1</span>
                     <span class="toc-label">Overview</span>
                 </a>
-                <a href="#requirements" class="toc-item">
-                    <span class="toc-number">2</span>
-                    <span class="toc-label">Requirements</span>
-                </a>
-                <a href="#costs" class="toc-item">
-                    <span class="toc-number">3</span>
-                    <span class="toc-label">Costs &amp; Fees</span>
-                </a>
-                <a href="#step-by-step" class="toc-item">
-                    <span class="toc-number">4</span>
-                    <span class="toc-label">Step-by-Step Guide</span>
-                </a>
-                <a href="#form-fields" class="toc-item">
-                    <span class="toc-number">5</span>
-                    <span class="toc-label">Form Fields Reference</span>
-                </a>
-                <a href="#after-submission" class="toc-item">
-                    <span class="toc-number">6</span>
-                    <span class="toc-label">After Submission</span>
-                </a>
-                <a href="#faq" class="toc-item">
-                    <span class="toc-number">7</span>
-                    <span class="toc-label">Frequently Asked Questions</span>
-                </a>
-                <a href="#contact" class="toc-item">
-                    <span class="toc-number">8</span>
-                    <span class="toc-label">Contact &amp; Support</span>
-                </a>
+                -->
             </div>
         </div>
     </section>
@@ -1360,86 +1380,129 @@
     <main class="manual-content">
         <div class="container">
 
-            <!-- ==================== SECTION 1: OVERVIEW ==================== -->
-            <div class="section" id="overview">
-                <h2>1. Overview</h2>
-                <p>The Name Reservation service allows you to reserve a unique business name before formally registering your company with the Registrar of Companies in Lesotho. A reserved name is held exclusively for you, ensuring no other business can register under the same name during the reservation period.</p>
+            {{MANUAL_CONTENT}}
 
-                <p>This service is available online through the OBFC eRegistrations platform. You can propose up to <strong>three alternative names</strong> and the system will check each one for availability in real time. Once you submit your application, a government officer will review and approve your preferred name.</p>
+            <!-- ==========================================================
+                 EXAMPLE CONTENT (remove in production, kept for reference)
+                 ==========================================================
+
+            <div class="section" id="section-1">
+                <h2>1. Overview</h2>
+                <p>This section provides an overview of the service and its purpose.</p>
 
                 <div class="info-box">
                     <div class="box-label">
                         <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Who is this for?
+                        Tip
                     </div>
-                    <p>This service is for anyone intending to register a business in Lesotho, including sole proprietors, partnerships, private companies, and public companies. Name reservation is a recommended first step before company registration.</p>
+                    <p>Make sure you have all required documents ready before starting your application.</p>
                 </div>
-
-                <h3>What you will need</h3>
-                <ul>
-                    <li>An OBFC online account (free to create)</li>
-                    <li>Up to three proposed business names</li>
-                    <li>Details about the type of business you intend to register</li>
-                    <li>Personal information of the business owner (name, date of birth, nationality)</li>
-                    <li>A copy of your National ID document</li>
-                    <li>Contact details and address</li>
-                </ul>
-
-                <h3>How long does it take?</h3>
-                <p>The online application takes approximately <strong>10 to 15 minutes</strong> to complete. Processing by the Registrar typically takes <strong>1 to 3 business days</strong> after submission.</p>
-            </div>
-
-            <!-- ==================== SECTION 2: REQUIREMENTS ==================== -->
-            <div class="section" id="requirements">
-                <h2>2. Requirements</h2>
-                <p>Before starting your application, make sure you have the following items ready:</p>
-
-                <h3>Documents</h3>
-                <ul class="checklist">
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>National ID</strong> &mdash; A scanned copy or clear photograph of your national identity document (passport or national ID card). Accepted formats: PDF, JPG, or PNG.</span>
-                    </li>
-                </ul>
-
-                <h3>Information</h3>
-                <ul class="checklist">
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>Proposed business names</strong> &mdash; Up to 3 name options in order of preference</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>Type of business</strong> &mdash; Whether the entity is a sole proprietor, partnership, or company</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>Type of company</strong> &mdash; If registering a company, whether it is private or public</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>Owner details</strong> &mdash; Full name, surname, gender, date of birth, and nationality</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>Contact details</strong> &mdash; Physical address, municipality, phone number, and email address</span>
-                    </li>
-                </ul>
 
                 <div class="warning-box">
                     <div class="box-label">
                         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                        Important
+                        Warning
                     </div>
-                    <p>The names you propose must be unique and not already registered by another business in Lesotho. The system will check each name in real time, but final approval is subject to review by the Registrar of Companies.</p>
+                    <p>Incomplete applications will be returned and may delay your registration.</p>
+                </div>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Note
+                    </div>
+                    <p>Processing times may vary depending on the complexity of the application.</p>
                 </div>
             </div>
 
-            <!-- ==================== SECTION 3: COSTS & FEES ==================== -->
-            <div class="section" id="costs">
-                <h2>3. Costs &amp; Fees</h2>
-                <p>The following fees apply to the name reservation service. Payment is made digitally through the online platform.</p>
+            <div class="section" id="section-2">
+                <h2>2. Requirements</h2>
+                <p>You will need the following documents and information:</p>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Valid national identity document (passport or national ID)</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Proof of address (utility bill or bank statement, less than 3 months old)</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Completed application form</span>
+                    </li>
+                </ul>
+            </div>
 
+            <div class="section" id="section-3">
+                <h2>3. Step-by-Step Process</h2>
+                <p>Follow these steps to complete your application:</p>
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Create an Account</h4>
+                            <p>Visit the OBFC portal and click "Register" to create your account. You will need a valid email address.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Fill in the Application Form</h4>
+                            <p>Complete all required fields in the online form. Fields marked with an asterisk (*) are mandatory.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Upload Documents</h4>
+                            <p>Upload all required supporting documents. Accepted formats: PDF, JPG, PNG (max 5MB each).</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="screenshot-placeholder">
+                    <svg viewBox="0 0 48 48" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="40" height="32" rx="3"/><polyline points="4,34 16,24 24,30"/><polyline points="26,28 34,20 44,30"/><circle cx="34" cy="16" r="3"/></svg>
+                    <p>Screenshot: Application form overview</p>
+                </div>
+            </div>
+
+            <div class="section" id="section-4">
+                <h2>4. Form Fields Reference</h2>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Business Name</td>
+                            <td>Text</td>
+                            <td class="required-yes">Yes</td>
+                            <td>The proposed trading name of the business</td>
+                        </tr>
+                        <tr>
+                            <td>Business Type</td>
+                            <td>Dropdown</td>
+                            <td class="required-yes">Yes</td>
+                            <td>Select the type of business entity</td>
+                        </tr>
+                        <tr>
+                            <td>Phone Number</td>
+                            <td>Text</td>
+                            <td class="required-no">No</td>
+                            <td>Contact phone number</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section" id="section-5">
+                <h2>5. Fees</h2>
                 <table class="cost-table">
                     <thead>
                         <tr>
@@ -1450,433 +1513,75 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Name Reservation Fee</td>
-                            <td class="amount">50.00</td>
-                            <td>Non-refundable processing fee</td>
+                            <td>Registration Fee</td>
+                            <td class="amount">500.00</td>
+                            <td>Non-refundable</td>
+                        </tr>
+                        <tr>
+                            <td>Certificate Fee</td>
+                            <td class="amount">200.00</td>
+                            <td>Per certified copy</td>
                         </tr>
                         <tr class="total-row">
                             <td>Total</td>
-                            <td class="amount">50.00</td>
+                            <td class="amount">700.00</td>
                             <td></td>
                         </tr>
                     </tbody>
                 </table>
-
-                <div class="note-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
-                        Payment
-                    </div>
-                    <p>Payment is processed digitally through the OBFC platform. You will be prompted to pay after submitting and validating your application form. The system accepts digital payment methods available through the platform.</p>
-                </div>
             </div>
 
-            <!-- ==================== SECTION 4: STEP-BY-STEP GUIDE ==================== -->
-            <div class="section" id="step-by-step">
-                <h2>4. Step-by-Step Guide</h2>
-                <p>Follow these steps to complete your name reservation application online.</p>
-
-                <ol class="steps">
-                    <li class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Create an Account or Log In</h4>
-                            <p>Visit <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a> and either create a new account or log into your existing one. You will need a valid email address to register.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Select Name Reservation Service</h4>
-                            <p>From the service catalogue, select <strong>Name Reservation</strong>. You will see an introductory page explaining the service and its requirements.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Choose Your Business Type</h4>
-                            <p>On the "Ready to start?" tab, select the <strong>type of business</strong> you want to register (e.g., Sole Proprietor, Partnership, Company). If you selected "Company", also specify the <strong>type of company</strong> (Private or Public) and the <strong>company classification</strong>.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Click "Start!" to Begin</h4>
-                            <p>After reviewing the information and selecting your business type, click the <strong>Start!</strong> button to proceed to the application form.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h4>Propose Your Business Names</h4>
-                            <p>On the "Name" tab, enter up to three proposed business names:</p>
-                            <ul style="margin-top: 8px; padding-left: 20px;">
-                                <li><strong>Proposed name #1</strong> &mdash; Your first-choice name (required)</li>
-                                <li><strong>Proposed name #2</strong> &mdash; Your second-choice name (optional)</li>
-                                <li><strong>Proposed name #3</strong> &mdash; Your third-choice name (optional)</li>
-                            </ul>
-                            <p style="margin-top: 8px;">After entering each name, click the corresponding <strong>Check</strong> button (Check #1, Check #2, or Check #3) to verify whether the name is already taken. The system will display whether the name exists or is available.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">6</div>
-                        <div class="step-content">
-                            <h4>Click "Next Tab" to Continue</h4>
-                            <p>Once you have entered and checked your proposed names, click <strong>Next tab</strong> to proceed to the owner details section.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">7</div>
-                        <div class="step-content">
-                            <h4>Enter Owner Information</h4>
-                            <p>On the "Owner" tab, fill in the personal details of the business owner:</p>
-                            <ul style="margin-top: 8px; padding-left: 20px;">
-                                <li><strong>Name</strong> and <strong>Surname</strong></li>
-                                <li><strong>Gender</strong> (select from dropdown)</li>
-                                <li><strong>Date of birth</strong></li>
-                                <li><strong>Nationality</strong> (select from dropdown)</li>
-                            </ul>
-                            <p style="margin-top: 8px;">Upload a scanned copy of your <strong>National ID</strong> document.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">8</div>
-                        <div class="step-content">
-                            <h4>Enter Contact &amp; Address Details</h4>
-                            <p>Still on the "Owner" tab, provide your contact and address information:</p>
-                            <ul style="margin-top: 8px; padding-left: 20px;">
-                                <li><strong>Address</strong> &mdash; Your physical address</li>
-                                <li><strong>Municipality</strong> &mdash; Select from the dropdown</li>
-                                <li><strong>Google Maps reference</strong> &mdash; A link or reference for your location (optional)</li>
-                                <li><strong>Phone</strong> number</li>
-                                <li><strong>Email</strong> address</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">9</div>
-                        <div class="step-content">
-                            <h4>Validate and Submit</h4>
-                            <p>Click <strong>Validate the form</strong> to check that all required fields are completed correctly. If there are any errors, the system will highlight them so you can correct them. Once validated, proceed to submit your application and complete the digital payment.</p>
-                        </div>
-                    </li>
-                </ol>
-
-                <div class="info-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Tip
-                    </div>
-                    <p>You can save your progress and return later to complete the application. Your data is saved automatically as you fill in each section.</p>
-                </div>
-
-                <div class="warning-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                        Warning
-                    </div>
-                    <p>You cannot propose the same name twice. Each of your three proposed names must be different from the others. The system will alert you if duplicate names are detected.</p>
-                </div>
-            </div>
-
-            <!-- ==================== SECTION 5: FORM FIELDS REFERENCE ==================== -->
-            <div class="section" id="form-fields">
-                <h2>5. Form Fields Reference</h2>
-                <p>Below is a complete reference of all fields you will encounter in the application form, organised by tab.</p>
-
-                <h3>Tab 1: Ready to Start?</h3>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field Name</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Type of business</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Select the type of business entity you want to register (e.g., Sole Proprietor, Partnership, Company)</td>
-                        </tr>
-                        <tr>
-                            <td>Type of company</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>If business type is Company, select whether it is Private or Public</td>
-                        </tr>
-                        <tr>
-                            <td>Company is</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Further classification of the company type</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>Tab 2: Name</h3>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field Name</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Proposed name #1</td>
-                            <td>Text</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Your first-choice business name. Click "Check #1" to verify availability.</td>
-                        </tr>
-                        <tr>
-                            <td>Proposed name #2</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Your second-choice business name. Click "Check #2" to verify availability.</td>
-                        </tr>
-                        <tr>
-                            <td>Proposed name #3</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Your third-choice business name. Click "Check #3" to verify availability.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>Tab 3: Owner</h3>
-                <h4>Personal Details</h4>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field Name</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Name</td>
-                            <td>Text</td>
-                            <td class="required-yes">Yes</td>
-                            <td>First name of the business owner</td>
-                        </tr>
-                        <tr>
-                            <td>Surname</td>
-                            <td>Text</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Last name / surname of the business owner</td>
-                        </tr>
-                        <tr>
-                            <td>Gender</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Gender of the business owner</td>
-                        </tr>
-                        <tr>
-                            <td>Date of birth</td>
-                            <td>Date</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Date of birth of the business owner</td>
-                        </tr>
-                        <tr>
-                            <td>Nationality</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Nationality of the business owner (select from list of countries)</td>
-                        </tr>
-                        <tr>
-                            <td>National ID</td>
-                            <td>File upload</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Scanned copy of national identity document (PDF, JPG, or PNG)</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h4>Address &amp; Contact</h4>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field Name</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Address</td>
-                            <td>Text</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Physical street address of the owner</td>
-                        </tr>
-                        <tr>
-                            <td>Municipality</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Municipality or district where the owner resides</td>
-                        </tr>
-                        <tr>
-                            <td>Google Maps reference</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>A Google Maps link or reference for your location</td>
-                        </tr>
-                        <tr>
-                            <td>Phone</td>
-                            <td>Text</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Contact phone number</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>Email</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Contact email address (used for notifications)</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- ==================== SECTION 6: AFTER SUBMISSION ==================== -->
-            <div class="section" id="after-submission">
-                <h2>6. After Submission</h2>
-                <p>Once you have submitted and paid for your name reservation application, it enters a review process. Here is what happens next:</p>
-
+            <div class="section" id="section-6">
+                <h2>6. Processing Timeline</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <h4>Application Submitted</h4>
-                        <p>Your application is received and a reference number is generated. You will receive a confirmation email with your reference number.</p>
+                        <p>Your application is received and a reference number is generated.</p>
                         <div class="timeline-meta">Day 0</div>
                     </div>
                     <div class="timeline-item">
-                        <h4>Name Review</h4>
-                        <p>A government officer at the Registrar of Companies reviews your proposed name(s) for compliance with naming rules and regulations. They verify that the name is not identical or deceptively similar to an existing registered name.</p>
-                        <div class="timeline-meta">Day 1&ndash;2</div>
+                        <h4>Document Verification</h4>
+                        <p>Officials review your submitted documents for completeness and accuracy.</p>
+                        <div class="timeline-meta">Day 1-2</div>
                     </div>
                     <div class="timeline-item">
-                        <h4>Decision</h4>
-                        <p>The officer approves or rejects each proposed name. If approved, one name will be confirmed as reserved for you. If all names are rejected, you will be notified with reasons and can submit a new application.</p>
-                        <div class="timeline-meta">Day 2&ndash;3</div>
+                        <h4>Approval</h4>
+                        <p>Your application is approved and processed.</p>
+                        <div class="timeline-meta">Day 3-5</div>
                     </div>
                     <div class="timeline-item pending">
-                        <h4>Name Reservation Certificate</h4>
-                        <p>Once approved, your name reservation certificate is issued and available for download from the platform. You can then proceed with your full business registration.</p>
-                        <div class="timeline-meta">Day 3</div>
-                    </div>
-                </div>
-
-                <div class="info-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Tracking your application
-                    </div>
-                    <p>You can track the status of your application at any time by logging into your account at <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a>. You will also receive email notifications when the status of your application changes.</p>
-                </div>
-
-                <h3>What if my name is rejected?</h3>
-                <p>If one or more of your proposed names are rejected, the officer will provide reasons for the rejection. Common reasons include:</p>
-                <ul>
-                    <li>The name is identical or too similar to an existing registered business</li>
-                    <li>The name contains restricted or prohibited words</li>
-                    <li>The name is misleading or offensive</li>
-                </ul>
-                <p>You may submit a new name reservation application with different proposed names. Each new application requires a separate fee payment.</p>
-            </div>
-
-            <!-- ==================== SECTION 7: FAQ ==================== -->
-            <div class="section" id="faq">
-                <h2>7. Frequently Asked Questions</h2>
-
-                <div class="faq-item open">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How long is a name reservation valid?</button>
-                    <div class="faq-answer">
-                        <p>A reserved name is typically held for a period specified by the Registrar of Companies. You should complete your full business registration within this period, or the reserved name may become available to others.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can I reserve more than one name at the same time?</button>
-                    <div class="faq-answer">
-                        <p>Each application allows you to propose up to three alternative names. The Registrar will approve one name per application. If you need to reserve names for different businesses, you must submit separate applications.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What names are not allowed?</button>
-                    <div class="faq-answer">
-                        <p>Names that are identical to existing registered businesses, names that could mislead the public, names containing offensive language, and names that imply government affiliation without authorisation are typically not allowed. The Registrar has final discretion over name approvals.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do I need to reserve a name before registering my business?</button>
-                    <div class="faq-answer">
-                        <p>Name reservation is recommended but the exact requirement depends on the type of business you are registering. For companies, reserving a name first ensures that your desired name is available and held for you during the registration process.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What does the "Check" button do?</button>
-                    <div class="faq-answer">
-                        <p>When you enter a proposed business name and click the "Check" button (Check #1, Check #2, or Check #3), the system queries the national business registry in real time to verify whether the name is already taken. It will indicate whether the name exists or is available. Note that even if the name shows as available, the final decision rests with the Registrar.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Can I change my reserved name later?</button>
-                    <div class="faq-answer">
-                        <p>Once a name is reserved, it cannot be changed. If you wish to use a different name, you must submit a new name reservation application and pay the applicable fee.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What is the difference between a private and public company?</button>
-                    <div class="faq-answer">
-                        <p>A <strong>private company</strong> restricts the transfer of its shares and limits the number of shareholders. A <strong>public company</strong> can offer shares to the general public and typically has more regulatory requirements. The type you select affects the naming rules and suffix required (e.g., "(Pty) Ltd" for private, "Ltd" for public).</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Is the name reservation fee refundable?</button>
-                    <div class="faq-answer">
-                        <p>No. The name reservation fee is a non-refundable processing fee, regardless of whether the name is approved or rejected.</p>
+                        <h4>Certificate Issued</h4>
+                        <p>Your certificate is issued and available for download.</p>
+                        <div class="timeline-meta">Day 5-7</div>
                     </div>
                 </div>
             </div>
 
-            <!-- ==================== SECTION 8: CONTACT & SUPPORT ==================== -->
-            <div class="section" id="contact">
-                <h2>8. Contact &amp; Support</h2>
-                <p>If you need help with your name reservation application or have questions about the process, the OBFC support team is available to assist you.</p>
-
-                <div class="info-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Contact Information
+            <div class="section" id="section-7">
+                <h2>7. Business Types</h2>
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'tab-sole')" data-tab="tab-sole">Sole Proprietor</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-partnership')" data-tab="tab-partnership">Partnership</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-company')" data-tab="tab-company">Company</button>
                     </div>
-                    <p><strong>One Business Facilitation Centre (OBFC)</strong></p>
-                    <p>LNDC Centre, Block A<br>Kingsway Road, Maseru, Lesotho</p>
-                    <p>Phone: <strong>+266 2231 7454</strong><br>
-                    Email: <strong>info@obfc.org.ls</strong></p>
-                    <p>Office Hours: Monday to Friday, 8:00 AM &ndash; 4:30 PM</p>
+                    <div class="tab-panel active" id="tab-sole" data-tab-label="Sole Proprietor">
+                        <h4>Sole Proprietor</h4>
+                        <p>A business owned and operated by a single individual. The simplest form of business registration.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-partnership" data-tab-label="Partnership">
+                        <h4>Partnership</h4>
+                        <p>A business owned by two or more individuals who share profits and liabilities.</p>
+                    </div>
+                    <div class="tab-panel" id="tab-company" data-tab-label="Company">
+                        <h4>Company</h4>
+                        <p>A limited liability company registered under the Companies Act.</p>
+                    </div>
                 </div>
-
-                <h3>Online Support</h3>
-                <ul>
-                    <li><strong>Help Centre:</strong> <a href="https://lesotho.eregistrations.dev/help/">lesotho.eregistrations.dev/help</a></li>
-                    <li><strong>Online Portal:</strong> <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a></li>
-                </ul>
-
-                <h3>In-Person Assistance</h3>
-                <p>You can also visit the OBFC offices in Maseru for in-person assistance with your application. Staff at the centre can help you navigate the online platform and answer any questions about the name reservation process.</p>
             </div>
+
+            END OF EXAMPLE CONTENT
+            ========================================================== -->
 
         </div>
     </main>
@@ -1958,7 +1663,7 @@
 
             <!-- Copyright -->
             <div class="footer-copyright">
-                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Generated: February 2026
+                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Generated: {{GENERATION_DATE}}
             </div>
         </div>
     </footer>
@@ -1968,12 +1673,18 @@
          ============================================================ -->
     <script>
         function switchTab(event, tabId) {
+            // Find the parent tab-group
             var group = event.target.closest('.tab-group');
             if (!group) return;
+
+            // Deactivate all tabs and panels within this group
             var btns = group.querySelectorAll('.tab-btn');
             var panels = group.querySelectorAll('.tab-panel');
+
             btns.forEach(function(btn) { btn.classList.remove('active'); });
             panels.forEach(function(panel) { panel.classList.remove('active'); });
+
+            // Activate the clicked tab and corresponding panel
             event.target.classList.add('active');
             var panel = group.querySelector('#' + tabId);
             if (panel) panel.classList.add('active');
