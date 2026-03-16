@@ -18,6 +18,14 @@ Each manual is a self-contained HTML file (inline CSS, remote images from the eR
 
 **Not manuals** (do not edit): `part1-bpa/`, `part2-ds/`, `part3-gdb/`, `part4-statistics/`, `part5-new-features/`, `assets/`, `search/`, `stylesheets/`, `javascripts/` — these are MkDocs-generated documentation.
 
+## Setup (one-time)
+
+```bash
+git clone -b gh-pages https://github.com/UNCTAD-eRegistrations/eregistrations-manual.git ~/eregistrations-manual
+```
+
+Then open `~/eregistrations-manual` in Claude Code desktop.
+
 ## Editing Manuals
 
 Use the **edit-manual** skill. Just describe what you want to change in plain English:
