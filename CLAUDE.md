@@ -21,10 +21,10 @@ Each manual is a self-contained HTML file (inline CSS, remote images from the eR
 ## Setup (one-time)
 
 ```bash
-git clone -b gh-pages https://github.com/UNCTAD-eRegistrations/eregistrations-manual.git ~/eregistrations-manual
+git clone -b gh-pages https://github.com/UNCTAD-eRegistrations/eregistrations-manual.git ~/Documents/eregistrations-manual
 ```
 
-Then open `~/eregistrations-manual` in Claude Code desktop.
+Then open `~/Documents/eregistrations-manual` in Claude Code desktop.
 
 ## Editing Manuals
 
