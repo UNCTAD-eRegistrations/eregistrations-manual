@@ -10,9 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* ============================================================
-           LESOTHO eREGISTRATIONS — USER MANUAL TEMPLATE
-           Design system: https://lesotho.eregistrations.dev/
-           Generated: February 2026
+           LESOTHO eREGISTRATIONS — USER MANUAL
+           Service: Renew or Close a Licence
+           Version: v1.1
+           Updated: March 2026
            ============================================================ */
 
         /* --- Reset & Base --- */
@@ -130,7 +131,10 @@
             transition: opacity 0.2s ease;
         }
 
-        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+        .header-nav a:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
 
         .btn-login {
             background: #4CAF74;
@@ -143,7 +147,10 @@
             transition: background 0.2s ease;
         }
 
-        .btn-login:hover { background: #3d9461; text-decoration: none !important; }
+        .btn-login:hover {
+            background: #3d9461;
+            text-decoration: none !important;
+        }
 
         /* ============================================================
            BREADCRUMB
@@ -198,9 +205,7 @@
         .hero::after {
             content: "";
             position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; right: 0; bottom: 0;
             width: 40%;
             background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
             pointer-events: none;
@@ -209,69 +214,75 @@
         .hero-inner {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             gap: 48px;
-            position: relative;
-            z-index: 1;
         }
 
-        .hero-content { flex: 1; max-width: 640px; }
+        .hero-content { flex: 1; min-width: 0; }
 
         .hero-label {
-            display: inline-block;
-            background: rgba(76,175,116,0.2);
-            border: 1px solid rgba(76,175,116,0.4);
-            border-radius: 9999px;
-            padding: 4px 16px;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
-            letter-spacing: 0.5px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
+            display: block;
         }
 
         .hero h1 {
             color: #FFFFFF;
             font-size: 42px;
-            line-height: 1.2;
             margin-bottom: 16px;
+            line-height: 1.2;
         }
 
         .hero-description {
             font-size: 18px;
             line-height: 1.7;
-            opacity: 0.9;
-            max-width: 520px;
+            color: rgba(255,255,255,0.85);
             margin-bottom: 28px;
+            max-width: 560px;
         }
 
         .btn-primary {
-            display: inline-block;
             background: #4CAF74;
             color: #FFFFFF;
             padding: 14px 32px;
             border-radius: 9999px;
-            font-family: 'Poppins', sans-serif;
             font-size: 16px;
             font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            text-decoration: none;
             transition: background 0.2s ease, transform 0.15s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary:hover {
             background: #3d9461;
-            text-decoration: none;
             color: #FFFFFF;
+            text-decoration: none;
             transform: translateY(-1px);
         }
 
-        .hero-image { flex-shrink: 0; }
+        .hero-image {
+            flex-shrink: 0;
+            width: 260px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
 
         .hero-icon-circle {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.08);
-            border: 2px solid rgba(255,255,255,0.15);
+            background: rgba(76,175,116,0.15);
+            border: 2px solid rgba(76,175,116,0.3);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -280,8 +291,8 @@
         .hero-icon-circle svg {
             width: 80px;
             height: 80px;
-            stroke: rgba(255,255,255,0.7);
             fill: none;
+            stroke: #4CAF74;
             stroke-width: 1.5;
         }
 
@@ -294,96 +305,89 @@
             border-bottom: 1px solid #E5E7EB;
         }
 
-        .toc h2 {
-            text-align: center;
-            margin-bottom: 32px;
-        }
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
 
         .toc-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-            max-width: 960px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 12px;
         }
 
         .toc-item {
             display: flex;
             align-items: center;
             gap: 14px;
-            padding: 16px 20px;
+            padding: 14px 20px;
             background: #FFFFFF;
             border: 1px solid #E5E7EB;
             border-radius: 10px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
             text-decoration: none;
-            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+            color: #1F2128;
+            font-weight: 500;
+            font-size: 16px;
         }
 
         .toc-item:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             border-color: #4CAF74;
+            box-shadow: 0 2px 8px rgba(76,175,116,0.12);
             text-decoration: none;
+            color: #1F2128;
         }
 
         .toc-number {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
-            background: #2B2A65;
+            background: #4CAF74;
             color: #FFFFFF;
-            font-family: 'Poppins', sans-serif;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .toc-label {
-            font-size: 15px;
-            font-weight: 500;
-            color: #1F2128;
-        }
+        .toc-label { flex: 1; line-height: 1.4; }
 
         /* ============================================================
            MANUAL CONTENT
            ============================================================ */
-        .manual-content {
-            padding: 48px 0 80px;
-        }
+        .manual-content { padding: 56px 0 80px; }
 
         .section {
             margin-bottom: 56px;
-            scroll-margin-top: 80px;
+            scroll-margin-top: 100px;
         }
 
         .section > h2 {
-            font-size: 28px;
-            padding-bottom: 12px;
-            margin-bottom: 24px;
+            font-size: 32px;
+            font-weight: 600;
+            padding-left: 20px;
             border-left: 4px solid #4CAF74;
-            padding-left: 16px;
+            margin-bottom: 24px;
+            line-height: 1.3;
         }
 
-        .section h3 {
-            font-size: 22px;
+        .section > h3 {
+            font-size: 24px;
+            font-weight: 600;
             margin-top: 32px;
-            margin-bottom: 14px;
-        }
-
-        .section p {
-            margin-bottom: 14px;
-        }
-
-        .section ul, .section ol {
-            padding-left: 24px;
             margin-bottom: 16px;
         }
 
-        .section li {
-            margin-bottom: 8px;
+        .section > h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
         }
+
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
 
         /* --- Steps --- */
         .steps {
@@ -428,6 +432,8 @@
         .step-content h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #1F2128; }
         .step-content p { margin-bottom: 8px; font-size: 16px; }
         .step-content p:last-child { margin-bottom: 0; }
+        .step-content ul { padding-left: 20px; margin-top: 8px; }
+        .step-content li { font-size: 16px; margin-bottom: 4px; }
 
         /* --- Info / Warning / Note Boxes --- */
         .info-box, .warning-box, .note-box {
@@ -479,7 +485,13 @@
 
         .checklist li:last-child { border-bottom: none; }
 
-        .checklist .check-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+        .checklist .check-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
         .checklist .check-icon svg { width: 24px; height: 24px; }
 
         /* --- Field Table --- */
@@ -507,12 +519,28 @@
             white-space: nowrap;
         }
 
-        .field-table td { padding: 12px 16px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
+        .field-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: top;
+        }
+
         .field-table tbody tr:last-child td { border-bottom: none; }
         .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
         .field-table tbody tr:hover { background: #F5F5F7; }
         .field-table .required-yes { color: #4CAF74; font-weight: 600; }
         .field-table .required-no { color: #999; }
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+        .badge-read { background: #EFF6FF; color: #3B82F6; }
+        .badge-input { background: #F0FDF4; color: #16A34A; }
+        .badge-auto { background: #FEF9C3; color: #CA8A04; }
 
         /* --- Cost Table --- */
         .cost-table {
@@ -538,11 +566,14 @@
             text-align: left;
         }
 
-        .cost-table td { padding: 14px 16px; border-bottom: 1px solid #F0F0F2; }
+        .cost-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #F0F0F2;
+        }
+
         .cost-table tbody tr:last-child td { border-bottom: none; }
         .cost-table tbody tr:nth-child(even) { background: #FAFAFA; }
         .cost-table .amount { font-weight: 700; color: #1F2128; font-family: 'Poppins', sans-serif; }
-
         .cost-table .total-row { background: #F5F5F7 !important; font-weight: 700; }
         .cost-table .total-row td { border-top: 2px solid #2B2A65; color: #1F2128; font-family: 'Poppins', sans-serif; }
 
@@ -598,9 +629,7 @@
         .timeline::before {
             content: "";
             position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
+            left: 15px; top: 0; bottom: 0;
             width: 3px;
             background: #E5E7EB;
             border-radius: 2px;
@@ -617,10 +646,8 @@
         .timeline-item::before {
             content: "";
             position: absolute;
-            left: -28px;
-            top: 4px;
-            width: 16px;
-            height: 16px;
+            left: -28px; top: 4px;
+            width: 16px; height: 16px;
             border-radius: 50%;
             background: #4CAF74;
             border: 3px solid #FFFFFF;
@@ -636,6 +663,202 @@
         .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
         .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
         .timeline-item .timeline-meta { font-size: 13px; color: #999; margin-top: 4px; }
+
+        /* --- Form Mockup Styles --- */
+        .form-mockup {
+            background: #FAFAFA;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        .form-mockup-header {
+            background: #2B2A65;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-mockup-body {
+            padding: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .form-field label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-field .field-value {
+            background: #FFFFFF;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: #1F2128;
+        }
+
+        .form-field .field-value.readonly {
+            background: #F5F5F7;
+            color: #555866;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 4px 0;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            color: #1F2128;
+            background: #FFFFFF;
+        }
+
+        .radio-option.selected {
+            border-color: #4CAF74;
+            background: #F0FDF4;
+        }
+
+        .radio-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid #D1D5DB;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .radio-option.selected .radio-dot {
+            border-color: #4CAF74;
+        }
+
+        .radio-option.selected .radio-dot::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4CAF74;
+        }
+
+        .datagrid-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .datagrid-table th {
+            background: #F5F5F7;
+            padding: 8px 10px;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #555866;
+            border-bottom: 1px solid #E5E7EB;
+            white-space: nowrap;
+        }
+
+        .datagrid-table td {
+            padding: 10px 10px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: middle;
+            color: #1F2128;
+        }
+
+        .datagrid-table tbody tr:last-child td { border-bottom: none; }
+        .datagrid-table tbody tr:hover { background: #F5F5F7; }
+
+        .checkbox-mock {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #D1D5DB;
+            border-radius: 4px;
+            background: #FFFFFF;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .checkbox-mock.checked {
+            background: #4CAF74;
+            border-color: #4CAF74;
+            position: relative;
+        }
+
+        .checkbox-mock.checked::after {
+            content: "✓";
+            color: white;
+            font-size: 12px;
+            position: absolute;
+            top: -1px;
+            left: 2px;
+        }
+
+        .fees-panel {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 8px;
+        }
+
+        .fees-panel-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: #1F2128;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .fees-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 0;
+            font-size: 14px;
+            color: #555866;
+            border-bottom: 1px solid #F5F5F7;
+        }
+
+        .fees-row:last-child { border-bottom: none; }
+        .fees-row.total { font-weight: 700; color: #1F2128; font-family: 'Poppins', sans-serif; padding-top: 10px; margin-top: 4px; border-top: 2px solid #2B2A65; border-bottom: none; }
 
         /* ============================================================
            FOOTER
@@ -665,8 +888,8 @@
 
         .footer-logo { margin-bottom: 16px; }
         .footer-logo img { height: 50px; width: auto; }
-
         .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+
         .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
         .footer-col a:hover { color: #4CAF74; text-decoration: none; }
 
@@ -683,8 +906,7 @@
         }
 
         .footer-contact-item svg {
-            width: 18px;
-            height: 18px;
+            width: 18px; height: 18px;
             flex-shrink: 0;
             stroke: #4CAF74;
             fill: none;
@@ -694,8 +916,7 @@
         .footer-social { display: flex; gap: 12px; margin-top: 8px; }
 
         .footer-social a {
-            width: 36px;
-            height: 36px;
+            width: 36px; height: 36px;
             border-radius: 50%;
             background: rgba(255,255,255,0.1);
             display: flex;
@@ -724,9 +945,6 @@
             color: rgba(255,255,255,0.5);
             font-weight: 500;
         }
-
-        .footer-implemented img { height: 36px; width: auto; opacity: 0.85; transition: opacity 0.2s ease; }
-        .footer-implemented img:hover { opacity: 1; }
 
         .footer-copyright {
             text-align: center;
@@ -762,6 +980,9 @@
             .field-table, .cost-table { font-size: 14px; }
             .field-table th, .field-table td, .cost-table th, .cost-table td { padding: 10px 12px; }
             .tab-btn { padding: 12px 16px; font-size: 13px; }
+            .datagrid-table { font-size: 12px; }
+            .datagrid-table th, .datagrid-table td { padding: 8px 6px; }
+            .form-row { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 480px) {
@@ -769,6 +990,7 @@
             .header-logos .coat-of-arms { height: 40px; }
             .hero h1 { font-size: 24px; }
             .footer-implemented { flex-direction: column; gap: 16px; }
+            .form-row { grid-template-columns: 1fr; }
         }
 
         /* ============================================================
@@ -798,6 +1020,7 @@
             .tab-panel::before { content: attr(data-tab-label); font-weight: 700; font-size: 13pt; display: block; margin-bottom: 8px; }
             .timeline::before { background: #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .timeline-item::before { background: #4CAF74 !important; box-shadow: 0 0 0 3px #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .form-mockup { page-break-inside: avoid; }
             .site-footer { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
             .footer-social { display: none; }
             a { color: #000; text-decoration: underline; }
@@ -836,8 +1059,8 @@
         <div class="container">
             <ol class="breadcrumb-list">
                 <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
-                <li><a href="https://services.businessregistrations.gov.ls/">Renew/Close License</a></li>
-                <li><span class="current">User Manual</span></li>
+                <li><a href="index.html">Lesotho Manuals</a></li>
+                <li><span class="current">Renew or Close a Licence</span></li>
             </ol>
         </div>
     </div>
@@ -849,7 +1072,7 @@
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content">
-                    <span class="hero-label">User Manual</span>
+                    <span class="hero-label">User Manual &mdash; Part A (Applicant)</span>
                     <h1>Renew or Close a Licence</h1>
                     <p class="hero-description">Manage your existing trading and industrial licences online. Renew before they expire or close licences you no longer need &mdash; all in a single application from anywhere in Lesotho.</p>
                     <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Start Application &rarr;</a>
@@ -929,55 +1152,55 @@
             <!-- ===== 1. OVERVIEW ===== -->
             <div class="section" id="overview">
                 <h2>1. Service Overview</h2>
-                <p>This online service allows you to <strong>renew</strong> or <strong>close (terminate)</strong> your existing business licences in Lesotho. It covers both:</p>
+                <p>The <strong>Renew or Close a Licence</strong> service on the Lesotho One Business Facilitation Centre (OBFC) portal lets you manage your existing business licences entirely online. You can <strong>renew</strong> licences approaching expiry or <strong>close (terminate)</strong> licences you no longer need &mdash; covering both:</p>
                 <ul>
                     <li><strong>Trading Licences</strong> &mdash; for retail, wholesale, hawking, and general trading businesses</li>
                     <li><strong>Industrial Licences</strong> &mdash; for manufacturing, processing, and industrial operations</li>
                 </ul>
-                <p>You can renew and close multiple licences in a single application. For example, if you own a textile factory in Maseru (industrial licence) and a shop in Maputsoe (trading licence), you can renew one and close the other in the same session.</p>
+                <p>You can process multiple licences in a single application. For example, if you own a textile factory in Maseru (industrial licence) and a hardware shop in Maputsoe (trading licence), you can renew one and close the other in the same session and make a single payment.</p>
 
                 <div class="info-box">
                     <div class="box-label">
                         <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
                         Who can use this service?
                     </div>
-                    <p>Any registered business owner in Lesotho whose trading or industrial licence is active or approaching expiry. You must have an eRegistrations account linked to your business.</p>
+                    <p>Any registered business owner in Lesotho whose trading or industrial licence is active or approaching expiry. You must have an eRegistrations account linked to your business at <strong>businessregistrations.gov.ls</strong>.</p>
                 </div>
 
-                <h3>Four Registration Types</h3>
-                <p>Depending on the type of licence and the action you choose, your application is processed under one of four registration categories:</p>
+                <h3>How the System Works</h3>
+                <p>When you log in, the system automatically retrieves your business and licence information from the government database. You do not need to enter your licence details manually. The form shows you a summary of your licences and invites you to select which ones to renew or close.</p>
+
+                <p>Depending on the actions you choose, your application is created under the appropriate registration type:</p>
                 <table class="field-table">
                     <thead>
                         <tr>
-                            <th>Registration</th>
+                            <th>Registration Name</th>
                             <th>Licence Type</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Renewal of Industrial Licence</td>
-                            <td>Industrial</td>
+                            <td>Renewal licences</td>
+                            <td>Industrial &amp; Trading</td>
                             <td>Renew</td>
                         </tr>
                         <tr>
-                            <td>Renewal of Trading Licence</td>
-                            <td>Trading</td>
-                            <td>Renew</td>
-                        </tr>
-                        <tr>
-                            <td>Termination of Industrial Licence</td>
-                            <td>Industrial</td>
-                            <td>Close</td>
-                        </tr>
-                        <tr>
-                            <td>Termination of Trading Licence</td>
-                            <td>Trading</td>
+                            <td>Termination licences</td>
+                            <td>Industrial &amp; Trading</td>
                             <td>Close</td>
                         </tr>
                     </tbody>
                 </table>
                 <p>The system determines the correct registration automatically based on your selections. You do not need to choose a registration type yourself.</p>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Part B &mdash; Processing Manual
+                    </div>
+                    <p>This is the <strong>citizen-facing guide (Part A)</strong>. For the government processing guide used by back-office officers, see <a href="renew-close-license-part-b.html">Part B &mdash; Processing Manual</a>.</p>
+                </div>
             </div>
 
             <!-- ===== 2. BEFORE YOU START ===== -->
@@ -987,11 +1210,11 @@
                 <ul class="checklist">
                     <li>
                         <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>A registered account on <strong>businessregistrations.gov.ls</strong></span>
+                        <span>A registered account on <strong>businessregistrations.gov.ls</strong> linked to your business</span>
                     </li>
                     <li>
                         <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>Your Licence ID number (printed on your current licence certificate)</span>
+                        <span>At least one active trading or industrial licence registered to your business</span>
                     </li>
                     <li>
                         <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -999,29 +1222,46 @@
                     </li>
                     <li>
                         <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>A valid payment method for any applicable fees</span>
+                        <span>A valid payment method (bank card or mobile money) for any applicable fees</span>
                     </li>
                 </ul>
 
                 <div class="warning-box">
                     <div class="box-label">
                         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                        Important Timeline
+                        Renew early to avoid penalty fees
                     </div>
                     <p>You can renew a licence up to <strong>90 days before</strong> its expiry date. If your licence has already expired, you may still renew it, but <strong>penalty fees</strong> will apply for every day past the expiry date. The earlier you renew, the less you pay.</p>
                 </div>
 
                 <h3>Estimated Processing Time</h3>
-                <ul>
-                    <li><strong>Renewal:</strong> 2&ndash;5 working days after payment and submission</li>
-                    <li><strong>Closure (Termination):</strong> 3&ndash;7 working days after submission</li>
-                </ul>
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Action</th>
+                            <th>Estimated Time</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Renewal</td>
+                            <td>2&ndash;5 working days</td>
+                            <td>After payment and submission</td>
+                        </tr>
+                        <tr>
+                            <td>Closure (Termination)</td>
+                            <td>3&ndash;7 working days</td>
+                            <td>After submission</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- ===== 3. RENEWAL VS CLOSURE ===== -->
             <div class="section" id="renew-vs-close">
                 <h2>3. Renewal vs. Closure</h2>
-                <p>This service lets you perform two distinct actions on your licences. Use the tabs below to understand the differences.</p>
+                <p>This service supports two distinct actions on your licences. Use the tabs below to understand the differences before you begin.</p>
 
                 <div class="tab-group">
                     <div class="tab-nav">
@@ -1030,18 +1270,18 @@
                     </div>
                     <div class="tab-panel active" id="tab-renew" data-tab-label="Renew a Licence">
                         <h4>Renewing a Licence</h4>
-                        <p>Choose renewal to <strong>extend your licence for another period</strong>. When you tick the "Renew" checkbox for a licence, the system will:</p>
+                        <p>Choose renewal to <strong>extend your licence for another operating period</strong>. When you tick the <strong>"Renew"</strong> checkbox next to a licence, the system will:</p>
                         <ol>
-                            <li>Check whether the licence is eligible for renewal (expiry within 90 days or already expired)</li>
+                            <li>Verify the licence is eligible for renewal (expiry within 90 days, or already expired)</li>
                             <li>Calculate the <strong>renewal fee</strong> based on the licence type and sector</li>
                             <li>Add a <strong>penalty fee</strong> if the licence has already expired (charged per day late)</li>
                             <li>Display the <strong>new start date</strong> and <strong>new expiry date</strong> (typically one year from the renewal date)</li>
                         </ol>
-                        <p>After approval, your updated licence certificate will be uploaded to your eRegistrations account for download.</p>
+                        <p>After approval and payment, your updated licence certificate is generated automatically and uploaded to your eRegistrations account for download.</p>
                     </div>
                     <div class="tab-panel" id="tab-close" data-tab-label="Close (Terminate) a Licence">
                         <h4>Closing a Licence</h4>
-                        <p>Choose closure to <strong>permanently terminate a licence</strong> you no longer need. When you tick the "Close" checkbox, the system will:</p>
+                        <p>Choose closure to <strong>permanently terminate a licence</strong> you no longer intend to use. When you tick the <strong>"Close"</strong> checkbox, the system will:</p>
                         <ol>
                             <li>Record the termination date as today</li>
                             <li>Calculate any <strong>termination processing fee</strong></li>
@@ -1051,9 +1291,9 @@
                         <div class="warning-box" style="margin-top: 16px;">
                             <div class="box-label">
                                 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                                This cannot be undone
+                                This action cannot be undone
                             </div>
-                            <p>Closing a licence is permanent. Once your termination request is approved, the licence is cancelled. If you have a bakery licence in Teyateyaneng and you close it, you will need to apply for a brand new licence to operate again.</p>
+                            <p>Closing a licence is <strong>permanent</strong>. Once your termination request is approved, the licence is cancelled. If you close a bakery licence in Teyateyaneng, you will need to apply for a brand-new licence to operate that business again.</p>
                         </div>
                     </div>
                 </div>
@@ -1061,9 +1301,9 @@
                 <div class="info-box">
                     <div class="box-label">
                         <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Mix and match
+                        You can mix and match in one application
                     </div>
-                    <p>You can renew some licences and close others in the same application. For example, renew your Maseru trading licence while closing your Mafeteng industrial licence. All fees are combined in a single payment.</p>
+                    <p>You can renew some licences and close others in the same session. For example, renew your Maseru trading licence while closing your Mafeteng industrial licence. All fees are combined and paid in a single transaction.</p>
                 </div>
             </div>
 
@@ -1079,11 +1319,11 @@
                     </li>
                     <li>
                         <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>Know your entity type (Sole Proprietor, Partnership, or Company)</span>
+                        <span>Know your entity type: Sole Proprietor, Partnership, or Company</span>
                     </li>
                     <li>
                         <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>Valid email address (for status notifications)</span>
+                        <span>Valid email address for status notification messages</span>
                     </li>
                 </ul>
 
@@ -1093,22 +1333,22 @@
                         <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
                         No document uploads required
                     </div>
-                    <p>This service does <strong>not require</strong> you to upload any supporting documents. All licence information is retrieved automatically from the government database based on your account. Simply log in and the system handles the rest.</p>
+                    <p>This service does <strong>not require you to upload any supporting documents</strong>. All licence and business information is retrieved automatically from the government database when you log in. Simply select your actions and proceed.</p>
                 </div>
 
-                <p>However, it is good practice to keep the following readily available in case officers request additional information:</p>
+                <p>However, it is good practice to keep the following available in case officers request additional information:</p>
                 <ul>
                     <li>Your national ID or passport</li>
                     <li>Original licence certificate (for reference)</li>
                     <li>Proof of business address (utility bill or lease agreement)</li>
-                    <li>Tax clearance certificate (if applicable)</li>
+                    <li>Tax clearance certificate, if applicable</li>
                 </ul>
             </div>
 
             <!-- ===== 5. FEES ===== -->
             <div class="section" id="fees">
                 <h2>5. Fees &amp; Penalties</h2>
-                <p>Fees are calculated automatically based on your licence type, business sector, and the number of days past expiry (if any). All fees are in <strong>Lesotho Loti (LSL)</strong>.</p>
+                <p>All fees are calculated automatically by the system based on your licence type, business sector, and the number of days past expiry (if any). Fees are displayed in the form before payment. All amounts are in <strong>Lesotho Loti (LSL)</strong>.</p>
 
                 <h3>Fee Types</h3>
                 <table class="cost-table">
@@ -1123,7 +1363,12 @@
                         <tr>
                             <td>Renewal Processing Fee</td>
                             <td>Trading &amp; Industrial</td>
-                            <td>Standard fee to renew a licence for the next period. Amount depends on licence category and sector.</td>
+                            <td>Standard fee to renew a licence for the next period. Amount varies by licence category and sector.</td>
+                        </tr>
+                        <tr>
+                            <td>Penalty Fee (Late Renewal)</td>
+                            <td>Trading &amp; Industrial</td>
+                            <td>Charged per day for each day the licence has been expired at the time of renewal. Automatically calculated from the expiry date to today.</td>
                         </tr>
                         <tr>
                             <td>Termination Processing Fee</td>
@@ -1131,241 +1376,473 @@
                             <td>Administrative fee for permanently closing a licence.</td>
                         </tr>
                         <tr>
-                            <td>Penalty Fee (Late Renewal)</td>
-                            <td>Trading &amp; Industrial</td>
-                            <td>Charged per day for each day the licence has been expired. Calculated automatically from the expiry date to today.</td>
-                        </tr>
-                        <tr>
                             <td>Penalty Fee (Termination)</td>
                             <td>Trading &amp; Industrial</td>
-                            <td>If you close an already-expired licence, penalty applies for the period between expiry and the termination date.</td>
+                            <td>If you close an already-expired licence, penalty applies for the period between expiry date and the termination date.</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h3>Fee Summary Sections</h3>
-                <p>The form separates fees by licence type so you can see exactly what you owe:</p>
+                <h3>Fees Summary Display</h3>
+                <p>The form separates your fees by licence type so you can see exactly what you owe. There are four fee summary panels:</p>
                 <table class="cost-table">
                     <thead>
                         <tr>
-                            <th>Summary Section</th>
+                            <th>Panel</th>
+                            <th>Visible When</th>
                             <th>Contents</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Industrial Licences Fees</td>
-                            <td>Renewal fee + Penalty fee for each industrial licence selected</td>
+                            <td>Industrial Licences &mdash; Renewal Fees</td>
+                            <td>You tick "Renew" on at least one industrial licence</td>
+                            <td>Renewal fee + Penalty fee per industrial licence selected for renewal</td>
                         </tr>
                         <tr>
-                            <td>Trading Licences Fees</td>
-                            <td>Renewal fee + Penalty fee for each trading licence selected</td>
+                            <td>Trading Licences &mdash; Renewal Fees</td>
+                            <td>You tick "Renew" on at least one trading licence</td>
+                            <td>Renewal fee + Penalty fee per trading licence selected for renewal</td>
                         </tr>
                         <tr>
-                            <td>Termination Fees (Industrial)</td>
-                            <td>Termination fee + Penalty for each industrial licence being closed</td>
+                            <td>Industrial Licences &mdash; Termination Fees</td>
+                            <td>You tick "Close" on at least one industrial licence</td>
+                            <td>Termination fee + Penalty fee per industrial licence being closed</td>
                         </tr>
                         <tr>
-                            <td>Termination Fees (Trading)</td>
-                            <td>Termination fee + Penalty for each trading licence being closed</td>
+                            <td>Trading Licences &mdash; Termination Fees</td>
+                            <td>You tick "Close" on at least one trading licence</td>
+                            <td>Termination fee + Penalty fee per trading licence being closed</td>
                         </tr>
                     </tbody>
                 </table>
+
+                <!-- Fee mockup -->
+                <div class="form-mockup">
+                    <div class="form-mockup-header">Example: Fees Summary Panel</div>
+                    <div class="form-mockup-body">
+                        <div class="fees-panel">
+                            <div class="fees-panel-title">Industrial Licences &mdash; Renewal Fees</div>
+                            <div class="fees-row">
+                                <span>MTI-IND-2024-001 (Maseru Textile Factory)</span>
+                                <span>Renewal fee: LSL 850 &nbsp;|&nbsp; Penalty: LSL 0</span>
+                            </div>
+                            <div class="fees-row total">
+                                <span>Total</span>
+                                <span>LSL 850.00</span>
+                            </div>
+                        </div>
+                        <div class="fees-panel" style="margin-top: 12px;">
+                            <div class="fees-panel-title">Trading Licences &mdash; Renewal Fees</div>
+                            <div class="fees-row">
+                                <span>MTI-TRD-2024-045 (Maputsoe Hardware Shop)</span>
+                                <span>Renewal fee: LSL 450 &nbsp;|&nbsp; Penalty: LSL 300 (30 days late)</span>
+                            </div>
+                            <div class="fees-row total">
+                                <span>Total</span>
+                                <span>LSL 750.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="note-box">
                     <div class="box-label">
                         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
                         Example
                     </div>
-                    <p>&rsquo;Mme Nthabiseng in Leribe has two trading licences. One expires in 15 days (no penalty) and one expired 30 days ago. She ticks "Renew" for both. The first has only the standard renewal fee. The second includes a penalty fee for 30 days of late renewal. Both fees are summed in the total.</p>
+                    <p>&rsquo;Mme Nthabiseng in Leribe has two trading licences. One expires in 15 days (no penalty yet) and one expired 30 days ago. She ticks "Renew" for both. The first shows only the standard renewal fee. The second shows the renewal fee plus a penalty for 30 days late. Both fees appear in the Trading Licences &mdash; Renewal Fees panel.</p>
                 </div>
             </div>
 
             <!-- ===== 6. STEP-BY-STEP ===== -->
             <div class="section" id="step-by-step">
                 <h2>6. Step-by-Step Guide</h2>
-                <p>Follow these steps to complete your licence renewal or closure:</p>
+                <p>Follow these steps to complete your licence renewal or closure on <strong>businessregistrations.gov.ls</strong>:</p>
 
+                <!-- Step 1 -->
                 <ol class="steps">
                     <li class="step">
                         <div class="step-number">1</div>
                         <div class="step-content">
                             <h4>Log In to Your Account</h4>
-                            <p>Go to <strong>businessregistrations.gov.ls</strong> and log in with your email and password. If you do not yet have an account, you must first register as a new user.</p>
+                            <p>Go to <a href="https://services.businessregistrations.gov.ls/" target="_blank"><strong>businessregistrations.gov.ls</strong></a> and log in with your email address and password. If you do not yet have an account, you must first register as a new user.</p>
+                            <div class="info-box" style="margin-top: 12px;">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                    First time?
+                                </div>
+                                <p style="margin: 0;">If you are logging in for the first time, make sure your account is linked to your business. Contact the OBFC help desk if you cannot see your business or licences.</p>
+                            </div>
                         </div>
                     </li>
+
+                    <!-- Step 2 -->
                     <li class="step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <h4>Select the Service</h4>
-                            <p>Navigate to the <strong>"Renew or close a license"</strong> service from the services catalogue. Click on it to open the application form.</p>
+                            <h4>Open the Service</h4>
+                            <p>From your dashboard, find and click the <strong>"Renew or Close a Licence"</strong> service card. The system immediately loads your business information and available licences. You will land on the application form.</p>
                         </div>
                     </li>
+
+                    <!-- Step 3 -->
                     <li class="step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <h4>Choose Your Entity Type</h4>
-                            <p>Select your entity type from the <strong>"Entity type (Licence)"</strong> dropdown. This tells the system which business records to search. Options include Sole Proprietor, Partnership, Company, and others.</p>
+                            <h4>Review Your Business Summary</h4>
+                            <p>The top of the form displays a read-only summary of your registered business pulled from the database. Verify that this is the correct business before proceeding.</p>
+                            <!-- Business summary mockup -->
+                            <div class="form-mockup">
+                                <div class="form-mockup-header">Your Business Summary</div>
+                                <div class="form-mockup-body">
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <label>Business Name</label>
+                                            <div class="field-value readonly">Nthabiseng General Trading</div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Type</label>
+                                            <div class="field-value readonly">Sole Proprietor</div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Activity</label>
+                                            <div class="field-value readonly">General Retail Trade</div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Renewal Date</label>
+                                            <div class="field-value readonly">31 March 2026</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>These fields are <strong>read-only</strong> &mdash; you cannot change them here. If any details are incorrect, contact the OBFC help desk before continuing.</p>
                         </div>
                     </li>
+
+                    <!-- Step 4 -->
                     <li class="step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <h4>Load Your Licences</h4>
-                            <p>Click the <strong>"List all your licences"</strong> button. The system will query the government database and load all trading and industrial licences registered under your business entity into a grid.</p>
+                            <h4>Choose What You Want to Do</h4>
+                            <p>Select one of the two options using the radio buttons:</p>
+                            <!-- Radio mockup -->
+                            <div class="form-mockup">
+                                <div class="form-mockup-header">What do you want to do?</div>
+                                <div class="form-mockup-body">
+                                    <div class="radio-group">
+                                        <div class="radio-option selected">
+                                            <div class="radio-dot"></div>
+                                            <div>
+                                                <strong>Renew my licence(s)</strong>
+                                                <div style="font-size: 13px; color: #555866; margin-top: 2px;">Extend one or more licences for another period</div>
+                                            </div>
+                                        </div>
+                                        <div class="radio-option">
+                                            <div class="radio-dot"></div>
+                                            <div>
+                                                <strong>Close (terminate) my licence(s)</strong>
+                                                <div style="font-size: 13px; color: #555866; margin-top: 2px;">Permanently cancel one or more licences</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>You can also choose both within the same application &mdash; in that case, select either option first and then use the checkboxes in the licence list to mix and match.</p>
                         </div>
                     </li>
+
+                    <!-- Step 5 -->
                     <li class="step">
                         <div class="step-number">5</div>
                         <div class="step-content">
-                            <h4>Review Your Licences</h4>
-                            <p>Each licence is displayed as a row in the grid showing its name, licence ID, type, sector, activity, expiry date, number of days left (or days late), and calculated fees. Review each licence carefully.</p>
+                            <h4>Select Your Licences</h4>
+                            <p>The <strong>List of licences</strong> table shows all licences registered to your business. For each licence, you can check <strong>"Renew"</strong>, <strong>"Close"</strong>, or leave it unchanged.</p>
+                            <!-- Datagrid mockup -->
+                            <div class="form-mockup">
+                                <div class="form-mockup-header">List of Licences</div>
+                                <div class="form-mockup-body" style="overflow-x: auto;">
+                                    <table class="datagrid-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Licence ID</th>
+                                                <th>Type</th>
+                                                <th>Sector</th>
+                                                <th>Activity</th>
+                                                <th>Expiry</th>
+                                                <th>New Expiry</th>
+                                                <th>Fee</th>
+                                                <th>Penalty</th>
+                                                <th>Renew</th>
+                                                <th>Close</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Nthabiseng Shop</td>
+                                                <td>MTI-TRD-045</td>
+                                                <td>Trading</td>
+                                                <td>Retail</td>
+                                                <td>General Retail</td>
+                                                <td style="color: #D4891A;">31 Jan 2026</td>
+                                                <td>31 Jan 2027</td>
+                                                <td>LSL 450</td>
+                                                <td>LSL 300</td>
+                                                <td><span class="checkbox-mock checked" style="position: relative;"></span></td>
+                                                <td><span class="checkbox-mock"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maseru Factory</td>
+                                                <td>MTI-IND-012</td>
+                                                <td>Industrial</td>
+                                                <td>Manufacturing</td>
+                                                <td>Textile Mfg</td>
+                                                <td>30 Jun 2026</td>
+                                                <td>30 Jun 2027</td>
+                                                <td>LSL 850</td>
+                                                <td>LSL 0</td>
+                                                <td><span class="checkbox-mock checked" style="position: relative;"></span></td>
+                                                <td><span class="checkbox-mock"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Mafeteng Outlet</td>
+                                                <td>MTI-TRD-078</td>
+                                                <td>Trading</td>
+                                                <td>Wholesale</td>
+                                                <td>Food Distribution</td>
+                                                <td>15 Dec 2025</td>
+                                                <td>&mdash;</td>
+                                                <td>LSL 200</td>
+                                                <td>LSL 540</td>
+                                                <td><span class="checkbox-mock"></span></td>
+                                                <td><span class="checkbox-mock checked" style="position: relative;"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>Tick <strong>"Renew"</strong> to extend a licence. The system fills in the <em>New Expiry</em>, <em>Fee</em>, and <em>Penalty</em> columns automatically.</li>
+                                <li>Tick <strong>"Close"</strong> to permanently terminate a licence.</li>
+                                <li>Leave both unchecked for licences you want to leave unchanged.</li>
+                                <li>You cannot check both "Renew" and "Close" for the same licence at the same time.</li>
+                            </ul>
                         </div>
                     </li>
+
+                    <!-- Step 6 -->
                     <li class="step">
                         <div class="step-number">6</div>
                         <div class="step-content">
-                            <h4>Select Renew or Close</h4>
-                            <p>For each licence, tick <strong>one</strong> checkbox: <strong>"Renew"</strong> to extend the licence, or <strong>"Close"</strong> to permanently terminate it. You can select different actions for different licences.</p>
+                            <h4>Review the Fees Summary</h4>
+                            <p>After selecting your licences, scroll down to review the <strong>fees summary panels</strong>. The system shows separate fee breakdowns for:</p>
+                            <ul>
+                                <li>Industrial licences being renewed (if any)</li>
+                                <li>Trading licences being renewed (if any)</li>
+                                <li>Industrial licences being terminated (if any)</li>
+                                <li>Trading licences being terminated (if any)</li>
+                            </ul>
+                            <p>Each panel lists the per-licence fee and penalty, plus a running total. Review carefully before proceeding.</p>
                         </div>
                     </li>
+
+                    <!-- Step 7 -->
                     <li class="step">
                         <div class="step-number">7</div>
                         <div class="step-content">
-                            <h4>Review Fee Summary</h4>
-                            <p>Scroll down to see the fee breakdown separated by industrial and trading licences. The system shows renewal fees, termination fees, and any penalty fees. Verify the total amount is correct.</p>
+                            <h4>Proceed to Payment</h4>
+                            <p>Click the <strong>"Go to payment"</strong> button at the bottom of the form. This takes you to the payment page where you can pay by bank card or mobile money.</p>
+                            <div class="warning-box" style="margin-top: 12px;">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                    Payment required before submission
+                                </div>
+                                <p style="margin: 0;">Your application will only be submitted to the government for processing <strong>after successful payment</strong>. Incomplete payments will leave your application in a pending state.</p>
+                            </div>
                         </div>
                     </li>
+
+                    <!-- Step 8 -->
                     <li class="step">
                         <div class="step-number">8</div>
                         <div class="step-content">
-                            <h4>Proceed to Payment</h4>
-                            <p>Click the <strong>"Go to payment"</strong> button at the bottom of the form. You will be directed to the digital payment gateway where you can pay the total fees.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">9</div>
-                        <div class="step-content">
                             <h4>Submit Your Application</h4>
-                            <p>After payment, you will see a confirmation page. Enter your <strong>email address</strong> for status notifications, tick the <strong>acknowledgement checkbox</strong> confirming the information is correct, and click <strong>"Submit"</strong> to send your application for processing.</p>
+                            <p>After payment, confirm the declaration on the submission page and click <strong>"Submit Application"</strong>. Your application will be sent to the OBFC processing team for review.</p>
+                            <p>You will receive a confirmation email with your application reference number. Keep this number for tracking.</p>
                         </div>
                     </li>
                 </ol>
             </div>
 
-            <!-- ===== 7. FORM FIELDS ===== -->
+            <!-- ===== 7. FORM FIELDS REFERENCE ===== -->
             <div class="section" id="form-fields">
                 <h2>7. Form Fields Reference</h2>
+                <p>The form is organised into several panels. The table below documents every field you will encounter, what it means, and whether it is editable.</p>
 
-                <h3>Licence Grid Fields</h3>
-                <p>Each licence loaded into the grid displays the following fields (all populated automatically from the government database):</p>
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Field types
+                    </div>
+                    <p style="margin-bottom: 6px;"><span class="badge badge-read">Read-only</span> &mdash; Loaded from the database; you cannot edit it.</p>
+                    <p style="margin-bottom: 6px;"><span class="badge badge-input">Your input</span> &mdash; You must make a selection or check a box.</p>
+                    <p style="margin: 0;"><span class="badge badge-auto">Auto-calculated</span> &mdash; Filled automatically based on your selections.</p>
+                </div>
+
+                <h3>Business Summary Panel</h3>
                 <table class="field-table">
                     <thead>
                         <tr>
-                            <th>Field Name</th>
+                            <th>Field</th>
                             <th>Type</th>
-                            <th>Editable</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Business name</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>Your registered business name as it appears in the government database</td>
+                        </tr>
+                        <tr>
+                            <td>Type</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>Business entity type (Sole Proprietor, Partnership, Company, etc.)</td>
+                        </tr>
+                        <tr>
+                            <td>Activity</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>Main business activity or sector</td>
+                        </tr>
+                        <tr>
+                            <td>Renewal</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>The renewal due date for your business</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>What Do You Want to Do?</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>What do you want to do?</td>
+                            <td><span class="badge badge-input">Your input</span></td>
+                            <td><strong>renew</strong> &mdash; Renew my licence(s)<br><strong>close</strong> &mdash; Close (terminate) my licence(s)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>List of Licences (Datagrid)</h3>
+                <p>Each row in the list represents one of your licences. Most columns are read-only; the Renew and Close columns are your inputs.</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Column</th>
+                            <th>Type</th>
                             <th>Description</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Name</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>The registered business name on the licence</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>Licence/business name on file</td>
                         </tr>
                         <tr>
                             <td>Licence ID</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Your unique licence identification number</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>Your unique licence identifier number</td>
                         </tr>
                         <tr>
                             <td>Type</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Trading or Industrial</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>Industrial or Trading</td>
                         </tr>
                         <tr>
                             <td>Sector</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Business sector (e.g., Retail, Manufacturing, Wholesale)</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>Business sector (e.g., Retail, Manufacturing)</td>
                         </tr>
                         <tr>
                             <td>Activity</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>The specific business activity covered by the licence</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>Specific activity the licence covers</td>
                         </tr>
                         <tr>
-                            <td>Expiry Date</td>
-                            <td>Date</td>
-                            <td class="required-no">No</td>
-                            <td>Current expiry date of the licence</td>
+                            <td>Expiry</td>
+                            <td><span class="badge badge-read">Read-only</span></td>
+                            <td>Current expiry date of the licence. Shown in orange/red if expired.</td>
                         </tr>
                         <tr>
-                            <td>Nr of Days Left / Days Late</td>
-                            <td>Number</td>
-                            <td class="required-no">No</td>
-                            <td>Days remaining until expiry, or days since expiry (calculated automatically)</td>
+                            <td>New expiry</td>
+                            <td><span class="badge badge-auto">Auto-calculated</span></td>
+                            <td>Calculated new expiry date if you tick "Renew". Typically one year from renewal date.</td>
                         </tr>
                         <tr>
                             <td>Fee</td>
-                            <td>Currency</td>
-                            <td class="required-no">No</td>
-                            <td>Renewal or termination processing fee (calculated by the system)</td>
+                            <td><span class="badge badge-auto">Auto-calculated</span></td>
+                            <td>Renewal or termination processing fee for this licence</td>
                         </tr>
                         <tr>
-                            <td>Penalty Fee</td>
-                            <td>Currency</td>
-                            <td class="required-no">No</td>
-                            <td>Late penalty fee if the licence has expired</td>
+                            <td>Penalty fee</td>
+                            <td><span class="badge badge-auto">Auto-calculated</span></td>
+                            <td>Penalty amount if the licence is expired. Calculated as: days late &times; daily penalty rate.</td>
                         </tr>
                         <tr>
                             <td>Renew</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Tick to renew this licence for another period</td>
+                            <td><span class="badge badge-input">Your input</span></td>
+                            <td>Check this box to include the licence in the renewal request</td>
                         </tr>
                         <tr>
                             <td>Close</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Tick to permanently terminate this licence</td>
+                            <td><span class="badge badge-input">Your input</span></td>
+                            <td>Check this box to permanently terminate this licence</td>
                         </tr>
                     </tbody>
                 </table>
 
-                <h3>Other Form Fields</h3>
+                <h3>Hidden / System Fields</h3>
+                <p>The form also contains several fields that are populated automatically and are not visible to you but are used internally by the system:</p>
                 <table class="field-table">
                     <thead>
                         <tr>
-                            <th>Field Name</th>
-                            <th>Type</th>
-                            <th>Required</th>
+                            <th>Field</th>
                             <th>Description</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Entity Type (Licence)</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Select your business entity type (Sole Proprietor, Partnership, Company, etc.)</td>
+                            <td>Business ID</td>
+                            <td>Your internal business registry identifier</td>
                         </tr>
                         <tr>
-                            <td>List All Your Licences</td>
-                            <td>Button</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Click to load all licences linked to your entity from the government database</td>
+                            <td>Entity type (Licence)</td>
+                            <td>Legal entity type used for fee calculation</td>
                         </tr>
                         <tr>
-                            <td>Go to Payment</td>
-                            <td>Button</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Click after selecting actions for your licences to proceed to the payment page</td>
+                            <td>Number of licences</td>
+                            <td>Total count of licences in the list</td>
+                        </tr>
+                        <tr>
+                            <td>Today 2</td>
+                            <td>Today's date, used for penalty calculation</td>
+                        </tr>
+                        <tr>
+                            <td>Number of days late</td>
+                            <td>Days past expiry, used to calculate penalty fees</td>
+                        </tr>
+                        <tr>
+                            <td>New start date / New start + 1 year</td>
+                            <td>Calculated renewal start and end dates</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1374,120 +1851,176 @@
             <!-- ===== 8. AFTER SUBMISSION ===== -->
             <div class="section" id="after-submission">
                 <h2>8. After Submission</h2>
-                <p>Once you submit your application, it goes through the following workflow stages:</p>
+                <p>Once you submit and pay, your application moves through a government review workflow. You can track your status at any time by logging in and opening your application.</p>
 
+                <h3>Workflow Timeline</h3>
                 <div class="timeline">
                     <div class="timeline-item">
                         <h4>Application Submitted</h4>
-                        <p>You complete the form, pay fees, and submit the application online. A reference number is generated.</p>
-                        <div class="timeline-meta">Day 0 &mdash; Applicant</div>
+                        <p>Your application is received and assigned a reference number. Payment is confirmed.</p>
+                        <div class="timeline-meta">Immediately after payment</div>
                     </div>
                     <div class="timeline-item">
-                        <h4>Review</h4>
-                        <p>A licensing officer reviews your application for correctness. They may send it back to you if there are issues that need correction.</p>
-                        <div class="timeline-meta">Day 1&ndash;2 &mdash; Government Officer</div>
+                        <h4>Review Desk</h4>
+                        <p>A reviewing officer checks your application for completeness. They may send it back to you for corrections, place it on file pending, validate it, or reject it. If sent back, you will receive an email notification.</p>
+                        <div class="timeline-meta">Typically 1&ndash;3 working days</div>
                     </div>
                     <div class="timeline-item">
-                        <h4>Approval</h4>
-                        <p>A senior officer gives final approval for the renewal or termination of your selected licences.</p>
-                        <div class="timeline-meta">Day 2&ndash;4 &mdash; Senior Officer</div>
+                        <h4>Approval Desk</h4>
+                        <p>A senior approver gives final sign-off on your validated application. The outcome is FILE VALIDATED or FILE REJECT.</p>
+                        <div class="timeline-meta">Typically 1&ndash;2 working days after review</div>
                     </div>
                     <div class="timeline-item">
-                        <h4>Licence Database Update</h4>
-                        <p>The system automatically updates the licence database with new dates (renewal) or closure status (termination).</p>
-                        <div class="timeline-meta">Automated &mdash; LICENCES update bot</div>
+                        <h4>Automated Data Update</h4>
+                        <p>After approval, an automated bot (LICENCES update) immediately updates the government database with your new licence status &mdash; renewing active licences or marking terminated licences as closed.</p>
+                        <div class="timeline-meta">Automatic &mdash; happens within minutes</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Licence Documents Generated</h4>
+                        <p>Another automated bot (LICENCES upload) generates your updated or renewed licence certificates and uploads them to your eRegistrations account.</p>
+                        <div class="timeline-meta">Automatic &mdash; download from your dashboard</div>
                     </div>
                     <div class="timeline-item pending">
-                        <h4>Certificate Upload</h4>
-                        <p>Your updated licence certificate is generated and uploaded to your eRegistrations account. You can download it as a PDF.</p>
-                        <div class="timeline-meta">Automated &mdash; LICENCES upload bot</div>
+                        <h4>Completion</h4>
+                        <p>Your renewed licence(s) are valid from the new start date. Terminated licences are officially closed. Download your certificate(s) from the portal.</p>
+                        <div class="timeline-meta">Final state</div>
                     </div>
                 </div>
 
-                <div class="info-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Track your progress
-                    </div>
-                    <p>You can log in at any time to see which stage your application is at. You will also receive email notifications at key stages if you provided your email address during submission.</p>
-                </div>
-
-                <div class="warning-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                        Application sent back?
-                    </div>
-                    <p>If the reviewing officer finds an issue (e.g., your licence details do not match records), the application will be sent back to you with a note explaining what needs to be corrected. You can then edit and resubmit at no additional cost.</p>
-                </div>
+                <h3>Application Status Meanings</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Meaning</th>
+                            <th>Action Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FILE PENDING</td>
+                            <td>Your application is in the queue for review or awaiting additional checks</td>
+                            <td>None &mdash; wait for processing</td>
+                        </tr>
+                        <tr>
+                            <td>SEND BACK TO CORRECTIONS</td>
+                            <td>The reviewing officer has found an issue and returned the application</td>
+                            <td>Log in, review the officer's comments, make corrections, and resubmit</td>
+                        </tr>
+                        <tr>
+                            <td>FILE VALIDATED</td>
+                            <td>Your application has been approved and processed</td>
+                            <td>Download your updated licence certificate from the portal</td>
+                        </tr>
+                        <tr>
+                            <td>FILE REJECT</td>
+                            <td>Your application was rejected</td>
+                            <td>Check the reason provided in the portal. Contact OBFC if you need clarification.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <!-- ===== 9. FAQ ===== -->
             <div class="section" id="faq">
                 <h2>9. Frequently Asked Questions</h2>
 
-                <h3>Can I renew some licences and close others in the same application?</h3>
-                <p>Yes. The system allows you to tick "Renew" for some licences and "Close" for others in the same session. The fees for all selected actions will be combined in a single payment.</p>
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'faq-renewal')">Renewal</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-closure')">Closure</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-fees')">Fees &amp; Payment</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-technical')">Technical</button>
+                    </div>
 
-                <h3>My licence expired more than 90 days ago. Can I still renew it?</h3>
-                <p>Yes, you can still renew an expired licence. However, penalty fees will be calculated for every day past the expiry date. The longer you wait, the higher the penalty. If your licence has been expired for a very long period, contact the Ministry of Trade directly for guidance.</p>
+                    <div class="tab-panel active" id="faq-renewal" data-tab-label="Renewal FAQ">
+                        <h4>When can I renew my licence?</h4>
+                        <p>You can renew a licence up to 90 days before its expiry date. The system automatically shows the "Renew" option when a licence is within this window, or if it has already expired.</p>
 
-                <h3>My licence does not appear when I click "List all your licences." What should I do?</h3>
-                <p>This may happen if your licence is registered under a different entity type or name. First, verify you selected the correct <strong>Entity type (Licence)</strong> in the dropdown. If the problem persists, contact the licensing office with your Licence ID number so they can verify your records in the system.</p>
+                        <h4 style="margin-top: 24px;">My licence expired months ago &mdash; can I still renew it?</h4>
+                        <p>Yes. You can renew an expired licence at any time. However, penalty fees will be charged for every day past the expiry date. The penalty amount is calculated and displayed in the form before you pay.</p>
 
-                <h3>What is the difference between a Trading Licence and an Industrial Licence?</h3>
-                <p>A <strong>Trading Licence</strong> covers buying and selling activities (retail, wholesale, hawking). An <strong>Industrial Licence</strong> covers manufacturing, processing, or industrial production. If you run a shop selling goods, you have a trading licence. If you operate a factory producing goods, you have an industrial licence. Some businesses may hold both.</p>
+                        <h4 style="margin-top: 24px;">What happens after my renewal is approved?</h4>
+                        <p>An automated system updates your licence record in the government database immediately and generates a new licence certificate. You can download the certificate from your eRegistrations account dashboard.</p>
 
-                <h3>How is the penalty fee calculated?</h3>
-                <p>The penalty fee is calculated automatically based on the <strong>number of days</strong> your licence has been expired. The system computes the difference between the expiry date and today's date. Each day of delay incurs a charge. The total penalty is displayed in the fee summary before you proceed to payment.</p>
+                        <h4 style="margin-top: 24px;">For how long is a renewed licence valid?</h4>
+                        <p>Typically one year from the renewal date. The new expiry date is calculated and shown in the licence list before you submit.</p>
+                    </div>
 
-                <h3>Can I cancel a closure (termination) after submitting?</h3>
-                <p>Once your termination request has been <strong>approved</strong> by the licensing authority, it cannot be reversed. However, if your application is still under review, you may contact the licensing office and request the application be sent back to you so you can modify it. Act quickly if you change your mind.</p>
+                    <div class="tab-panel" id="faq-closure" data-tab-label="Closure FAQ">
+                        <h4>Can I reverse a closure after submitting?</h4>
+                        <p>No. Once your termination application is submitted and approved, the licence cancellation is permanent. If you change your mind before the application is approved, contact the OBFC help desk immediately to request withdrawal.</p>
 
-                <h3>Do I need to visit a government office in person?</h3>
-                <p>No. This is a fully online service. You can complete the entire process &mdash; from selecting licences to paying fees and receiving your updated certificate &mdash; from your computer or mobile phone. You do not need to visit Maseru or any district office.</p>
+                        <h4 style="margin-top: 24px;">Do I need to pay fees to close a licence?</h4>
+                        <p>Yes, a small administrative termination fee applies. If the licence being closed has already expired, a penalty fee for the overdue period is also charged.</p>
 
-                <h3>How will I receive my renewed licence certificate?</h3>
-                <p>After your renewal is approved and processed, the updated licence certificate is automatically uploaded to your eRegistrations account. You can log in and download it as a PDF. You will receive an email notification when it is ready.</p>
+                        <h4 style="margin-top: 24px;">I want to close all my licences and cease trading entirely. Is that possible?</h4>
+                        <p>Yes. You can tick "Close" for all licences in one application. However, closing your licences does not automatically cancel your business registration. Contact the OBFC if you wish to deregister your business entirely.</p>
+                    </div>
 
-                <h3>I have licences in different districts. Can I handle them all here?</h3>
-                <p>Yes. The system loads <strong>all</strong> licences linked to your account regardless of district. Whether your businesses are in Maseru, Berea, Leribe, Qacha's Nek, or any other district, they will all appear in the list.</p>
+                    <div class="tab-panel" id="faq-fees" data-tab-label="Fees & Payment FAQ">
+                        <h4>How are penalty fees calculated?</h4>
+                        <p>The system counts the number of days from your licence expiry date to today and multiplies that by a daily penalty rate. The rate varies by licence type and sector. The exact amount is displayed in the form.</p>
 
-                <h3>What happens if my payment fails or is interrupted?</h3>
-                <p>If your payment does not complete successfully, your application will not be submitted. You can log back in and retry the payment. No duplicate charges will be applied. If money was deducted but the system did not register payment, contact the licensing office with your transaction reference number for manual verification.</p>
+                        <h4 style="margin-top: 24px;">Can I pay in cash?</h4>
+                        <p>This service requires digital payment through the portal (bank card or mobile money). Cash payments are not accepted through this online system.</p>
+
+                        <h4 style="margin-top: 24px;">My payment went through but my application shows as pending. Is this normal?</h4>
+                        <p>Yes, it is normal. Payment confirmation may take a few minutes to reflect. If your application is still in "pending payment" status after 30 minutes, contact the OBFC help desk with your payment confirmation reference.</p>
+
+                        <h4 style="margin-top: 24px;">Can I get a refund if my application is rejected?</h4>
+                        <p>Refund eligibility depends on the reason for rejection. Contact the OBFC help desk with your application reference number to discuss your specific situation.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-technical" data-tab-label="Technical FAQ">
+                        <h4>I can log in but I do not see any licences in the list. What should I do?</h4>
+                        <p>This usually means your account is not yet linked to your business, or your licences are registered under a different account. Contact the OBFC help desk and provide your Business ID or Licence ID.</p>
+
+                        <h4 style="margin-top: 24px;">The form shows a licence that belongs to a different business. What should I do?</h4>
+                        <p>Do not proceed. Log out and contact the OBFC help desk immediately. This could indicate a database linkage error that needs to be corrected by an administrator.</p>
+
+                        <h4 style="margin-top: 24px;">Can I save my progress and come back later?</h4>
+                        <p>Yes. The portal auto-saves your in-progress applications. You can return to finish your application at any time before submitting. However, fee calculations are based on today's date, so penalty fees may increase if you delay.</p>
+
+                        <h4 style="margin-top: 24px;">What browser should I use?</h4>
+                        <p>The portal works best on Google Chrome, Mozilla Firefox, Microsoft Edge, or Safari (latest versions). Avoid Internet Explorer.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- ===== 10. CONTACT ===== -->
             <div class="section" id="contact">
                 <h2>10. Help &amp; Contact</h2>
-                <p>If you need assistance with this service, you can reach the licensing authority through the following channels:</p>
+                <p>If you need help with your application, you can reach the OBFC support team through any of the following channels:</p>
 
                 <table class="field-table">
                     <thead>
                         <tr>
                             <th>Channel</th>
                             <th>Details</th>
+                            <th>Hours</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Website</td>
-                            <td><a href="https://businessregistrations.gov.ls">businessregistrations.gov.ls</a></td>
-                        </tr>
-                        <tr>
-                            <td>In Person</td>
-                            <td>LNDC Centre, Block A, Kingsway Road, Maseru</td>
+                            <td>Help desk portal</td>
+                            <td><a href="https://lesotho.eregistrations.dev/help/">lesotho.eregistrations.dev/help</a></td>
+                            <td>24/7 (self-service)</td>
                         </tr>
                         <tr>
                             <td>Phone</td>
-                            <td>+266 2231 7454</td>
+                            <td>+266 2231 7600</td>
+                            <td>Monday&ndash;Friday 08:00&ndash;17:00</td>
                         </tr>
                         <tr>
                             <td>Email</td>
-                            <td><a href="mailto:info@obfc.org.ls">info@obfc.org.ls</a></td>
+                            <td>info@obfc.gov.ls</td>
+                            <td>Responses within 2 business days</td>
                         </tr>
                         <tr>
-                            <td>Office Hours</td>
-                            <td>Monday to Friday, 08:00 &ndash; 16:30</td>
+                            <td>Walk-in</td>
+                            <td>OBFC Offices, Kingsway Road, Maseru</td>
+                            <td>Monday&ndash;Friday 08:00&ndash;16:30</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1495,9 +2028,9 @@
                 <div class="info-box">
                     <div class="box-label">
                         <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Tip
+                        Processing Manual (Part B)
                     </div>
-                    <p>Before visiting in person, try resolving your issue online first. Many common questions are answered in the FAQ above. The online system is available 24 hours a day, 7 days a week.</p>
+                    <p>If you are a government officer processing applications, please refer to the <a href="renew-close-license-part-b.html"><strong>Part B &mdash; Processing Manual</strong></a> for officer instructions, desk responsibilities, and bot documentation.</p>
                 </div>
             </div>
 
@@ -1510,78 +2043,63 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-
-                <!-- Column 1: Logo & About -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="https://lesotho.eregistrations.dev/_assets/v11/e8f8e0f4875113e3103aae78a6e2c99f11345f18.png" alt="OBFC Logo">
+                        <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
                     </div>
-                    <p>One Business Facilitation Centre (OBFC) provides a single window for business registration and licensing services in the Kingdom of Lesotho.</p>
-                </div>
-
-                <!-- Column 2: Contact Details -->
-                <div class="footer-col">
-                    <h5>Contact Details</h5>
-                    <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span>LNDC Centre, Block A<br>Kingsway Road, Maseru</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75l.72 3.59a1 1 0 0 1-.26.95L8.09 10.7a16 16 0 0 0 5.21 5.21l2.41-2.41a1 1 0 0 1 .95-.26l3.59.72a1 1 0 0 1 .75 1z"/></svg>
-                        <span>+266 2231 7454</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        <span>info@obfc.org.ls</span>
-                    </div>
-                </div>
-
-                <!-- Column 3: Social Channels -->
-                <div class="footer-col">
-                    <h5>Follow Us</h5>
-                    <p>Stay connected with OBFC for the latest updates on business services.</p>
+                    <p>One Business Facilitation Centre (OBFC) &mdash; The single entry point for all business registrations in the Kingdom of Lesotho.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook">
                             <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         </a>
-                        <a href="#" aria-label="Twitter / X">
-                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        </a>
-                        <a href="#" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
                         </a>
                     </div>
                 </div>
-
-                <!-- Column 4: Quick Links -->
                 <div class="footer-col">
-                    <h5>Quick Links</h5>
+                    <h5>Services</h5>
                     <ul class="footer-links">
-                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
-                        <li><a href="https://services.businessregistrations.gov.ls/">Login / Register</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/privacy/">Privacy Policy</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/terms/">Terms of Service</a></li>
+                        <li><a href="register-business.html">Register a Business</a></li>
+                        <li><a href="register-sole-proprietor.html">Register as Sole Proprietor</a></li>
+                        <li><a href="renew-close-license.html">Renew or Close a Licence</a></li>
+                        <li><a href="index.html">All Manuals</a></li>
                     </ul>
                 </div>
-
+                <div class="footer-col">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                        <li><a href="renew-close-license-part-b.html">Part B &mdash; Processing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Kingsway Road, Maseru, Lesotho</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.88 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.82 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.96-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+266 2231 7600</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@obfc.gov.ls</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Implemented by -->
             <div class="footer-implemented">
                 <span>Implemented by</span>
-                <a href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/742ddaa6ec00aadee1b93dffeefc513e3c77473c.png" alt="World Bank">
-                </a>
-                <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/fd2d79a17613c98a31e05becdb641ca8c82159b4.png" alt="UNCTAD">
-                </a>
+                <img src="https://unctad.org/sites/default/files/2021-07/2021-07_UNCTADLogo.png" alt="UNCTAD" style="height: 28px;">
             </div>
 
-            <!-- Copyright -->
+            <!-- Version footer -->
             <div class="footer-copyright">
-                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Generated: February 2026
+                Renew or Close a Licence &mdash; User Manual (Part A) &mdash; Version 1.1 &mdash; Updated March 2026 &nbsp;|&nbsp;
+                &copy; 2025&ndash;2026 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved.
             </div>
         </div>
     </footer>

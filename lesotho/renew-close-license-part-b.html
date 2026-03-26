@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renew or Close a Licence - Processing Manual (Part B) | OBFC Lesotho</title>
+    <meta name="description" content="Government officer processing manual for the Renew or Close a Licence service on the Lesotho OBFC eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           LESOTHO eREGISTRATIONS — PROCESSING MANUAL
+           Service: Renew or Close a Licence
+           Version: v1.0
+           Created: March 2026
+           Audience: Government officers (back-office)
+           ============================================================ */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        a { color: #4CAF74; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #3d9461; text-decoration: underline; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1F2128;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 42px; font-weight: 700; }
+        h2 { font-size: 32px; font-weight: 600; }
+        h3 { font-size: 24px; font-weight: 600; }
+        h4 { font-size: 20px; font-weight: 600; }
+        h5 { font-size: 16px; font-weight: 600; }
+
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: #1e1d4c;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .header-logos { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+        .header-logos img { height: 52px; width: auto; }
+        .header-logos .coat-of-arms { height: 56px; }
+
+        .header-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.2); flex-shrink: 0; }
+
+        .header-nav { display: flex; align-items: center; gap: 28px; }
+
+        .header-nav a {
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        .header-nav a:hover { color: #4CAF74; text-decoration: none; }
+
+        .badge-partb {
+            background: #4CAF74;
+            color: #FFFFFF;
+            padding: 4px 14px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 12px 0;
+        }
+
+        .breadcrumb-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #888;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+
+        .breadcrumb-list li + li::before {
+            content: "";
+            display: inline-block;
+            width: 5px; height: 5px;
+            border-top: 1.5px solid #aaa;
+            border-right: 1.5px solid #aaa;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .breadcrumb-list a { color: #4CAF74; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           OFFICER NOTICE BANNER
+           ============================================================ */
+        .officer-banner {
+            background: #FEF9C3;
+            border-bottom: 2px solid #F5A623;
+            padding: 14px 0;
+        }
+
+        .officer-banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #92400E;
+        }
+
+        .officer-banner svg { width: 20px; height: 20px; flex-shrink: 0; stroke: #D97706; fill: none; }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #1e1d4c 0%, #2B2A65 60%, #3a3980 100%);
+            color: #FFFFFF;
+            padding: 52px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 35%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+
+        .hero-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #F5A623;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            font-size: 36px;
+            margin-bottom: 14px;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.82);
+            margin-bottom: 24px;
+            max-width: 540px;
+        }
+
+        .btn-partb {
+            background: rgba(255,255,255,0.12);
+            color: #FFFFFF;
+            padding: 10px 24px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 500;
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.25);
+            transition: background 0.2s ease;
+        }
+
+        .btn-partb:hover {
+            background: rgba(255,255,255,0.2);
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .hero-image { flex-shrink: 0; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+
+        .hero-icon-circle {
+            width: 180px; height: 180px;
+            border-radius: 50%;
+            background: rgba(76,175,116,0.12);
+            border: 2px solid rgba(76,175,116,0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-circle svg { width: 72px; height: 72px; fill: none; stroke: #4CAF74; stroke-width: 1.5; }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc {
+            background: #F5F5F7;
+            padding: 40px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .toc h2 { font-size: 24px; margin-bottom: 20px; }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 10px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 18px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 9px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: #1F2128;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .toc-item:hover {
+            border-color: #4CAF74;
+            box-shadow: 0 2px 8px rgba(76,175,116,0.12);
+            text-decoration: none;
+            color: #1F2128;
+        }
+
+        .toc-number {
+            width: 28px; height: 28px;
+            border-radius: 50%;
+            background: #2B2A65;
+            color: #FFFFFF;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ============================================================
+           WORKFLOW OVERVIEW BAR
+           ============================================================ */
+        .workflow-bar {
+            background: #FFFFFF;
+            padding: 40px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .workflow-bar h2 { font-size: 22px; margin-bottom: 28px; text-align: center; }
+
+        .workflow-steps {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .wf-step {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+            position: relative;
+        }
+
+        .wf-step::after {
+            content: "";
+            position: absolute;
+            top: 28px;
+            right: -1px;
+            width: 50%;
+            height: 3px;
+            background: #E5E7EB;
+            z-index: 0;
+        }
+
+        .wf-step::before {
+            content: "";
+            position: absolute;
+            top: 28px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: #E5E7EB;
+            z-index: 0;
+        }
+
+        .wf-step:first-child::before { display: none; }
+        .wf-step:last-child::after { display: none; }
+
+        .wf-dot {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            position: relative;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+
+        .wf-dot.applicant { background: #4CAF74; }
+        .wf-dot.review { background: #2B2A65; }
+        .wf-dot.approval { background: #2B2A65; }
+        .wf-dot.bot { background: #F5A623; }
+
+        .wf-dot svg { width: 24px; height: 24px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
+
+        .wf-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1F2128;
+            margin-bottom: 4px;
+        }
+
+        .wf-sublabel { font-size: 12px; color: #888; line-height: 1.4; }
+
+        /* ============================================================
+           MAIN CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+
+        .section {
+            margin-bottom: 56px;
+            scroll-margin-top: 100px;
+        }
+
+        .section > h2 {
+            font-size: 28px;
+            font-weight: 600;
+            padding-left: 18px;
+            border-left: 4px solid #4CAF74;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .section > h3 { font-size: 21px; font-weight: 600; margin-top: 28px; margin-bottom: 14px; }
+        .section > h4 { font-size: 17px; font-weight: 600; margin-top: 20px; margin-bottom: 10px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 14px; }
+        .section ul, .section ol { padding-left: 22px; }
+        .section li { margin-bottom: 6px; }
+
+        /* --- Desk Card --- */
+        .desk-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 14px;
+            overflow: hidden;
+            margin: 24px 0;
+        }
+
+        .desk-card-header {
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .desk-card-header.user-role { background: #2B2A65; }
+        .desk-card-header.bot-role { background: #7C3AED; }
+
+        .desk-icon {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .desk-icon svg { width: 22px; height: 22px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
+
+        .desk-title { color: #FFFFFF; }
+        .desk-title h3 { color: #FFFFFF; font-size: 20px; margin-bottom: 2px; }
+        .desk-title p { color: rgba(255,255,255,0.75); font-size: 13px; margin: 0; }
+
+        .desk-badge {
+            margin-left: auto;
+            background: rgba(255,255,255,0.15);
+            color: #FFFFFF;
+            padding: 4px 14px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .desk-card-body { padding: 24px; }
+        .desk-card-body > * + * { margin-top: 16px; }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box, .warning-box, .note-box, .success-box {
+            padding: 18px 22px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .info-box { background: #F5F5F7; border-left: 4px solid #4CAF74; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+        .success-box { background: #F0FDF4; border-left: 4px solid #4CAF74; }
+
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label, .success-box .box-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .info-box .box-label { color: #4CAF74; }
+        .warning-box .box-label { color: #D4891A; }
+        .note-box .box-label { color: #4A90D9; }
+        .success-box .box-label { color: #16A34A; }
+        .box-label svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        /* --- Tables --- */
+        .field-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 14px;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .field-table thead { background: #2B2A65; color: #FFFFFF; }
+
+        .field-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 12px 14px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .field-table td {
+            padding: 11px 14px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: top;
+        }
+
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F5F5F7; }
+
+        /* Status badges */
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .status-pending { background: #FEF3C7; color: #92400E; }
+        .status-validated { background: #DCFCE7; color: #166534; }
+        .status-rejected { background: #FEE2E2; color: #991B1B; }
+        .status-corrections { background: #EFF6FF; color: #1D4ED8; }
+        .status-bot-fail { background: #F3E8FF; color: #6B21A8; }
+
+        /* --- Checklist --- */
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 14px 0;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #F0F0F2;
+            font-size: 15px;
+        }
+
+        .checklist li:last-child { border-bottom: none; }
+
+        .checklist .check-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 3px; }
+        .checklist .check-icon svg { width: 20px; height: 20px; }
+
+        /* --- Tab Group --- */
+        .tab-group {
+            margin: 24px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #F5F5F7;
+            border-bottom: 1px solid #E5E7EB;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 12px 22px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #555866;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
+
+        .tab-btn.active {
+            color: #4CAF74;
+            border-bottom-color: #4CAF74;
+            background: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .tab-panel { display: none; padding: 22px; }
+        .tab-panel.active { display: block; }
+
+        /* --- Step list --- */
+        .steps { counter-reset: step-counter; list-style: none; padding: 0; margin: 20px 0; }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding: 16px;
+            background: #FAFAFA;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            counter-increment: step-counter;
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: #2B2A65;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-number.bot { background: #7C3AED; }
+
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .step-content p { margin-bottom: 6px; font-size: 15px; }
+        .step-content p:last-child { margin-bottom: 0; }
+        .step-content ul { padding-left: 18px; margin-top: 6px; }
+        .step-content li { font-size: 15px; margin-bottom: 3px; }
+
+        /* --- Timeline --- */
+        .timeline { position: relative; margin: 28px 0; padding-left: 36px; }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 13px; top: 0; bottom: 0;
+            width: 3px;
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+
+        .timeline-item { position: relative; margin-bottom: 28px; padding-left: 20px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -25px; top: 4px;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: #4CAF74;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 0 0 3px #4CAF74;
+            z-index: 1;
+        }
+
+        .timeline-item.bot-step::before { background: #7C3AED; box-shadow: 0 0 0 3px #7C3AED; }
+        .timeline-item.applicant-step::before { background: #4CAF74; box-shadow: 0 0 0 3px #4CAF74; }
+
+        .timeline-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 3px; color: #1F2128; }
+        .timeline-item p { font-size: 14px; color: #555866; margin-bottom: 0; }
+        .timeline-item .tl-meta { font-size: 12px; color: #999; margin-top: 3px; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: #1e1d4c;
+            color: rgba(255,255,255,0.75);
+            padding: 40px 0 0;
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-col { flex: 1; min-width: 180px; }
+
+        .footer-col h5 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .footer-col a { color: rgba(255,255,255,0.7); }
+        .footer-col a:hover { color: #4CAF74; text-decoration: none; }
+
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 8px; font-size: 13px; }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 18px 0;
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            body { font-size: 15px; }
+            h1 { font-size: 28px; }
+            h2, .section > h2 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 10px; padding: 10px 16px; }
+            .header-nav { gap: 12px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 32px 0; }
+            .hero h1 { font-size: 24px; }
+            .hero-image { display: none; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .container { padding: 0 14px; }
+            .workflow-steps { gap: 0; }
+            .wf-dot { width: 44px; height: 44px; font-size: 14px; }
+            .step { flex-direction: column; gap: 10px; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================================
+           PRINT
+           ============================================================ */
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 10pt; color: #000; background: #FFF; }
+            .site-header { position: static; background: #1e1d4c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .officer-banner, .workflow-bar { page-break-inside: avoid; }
+            .desk-card { page-break-inside: avoid; }
+            .tab-nav { display: none; }
+            .tab-panel { display: block !important; }
+            .site-footer { background: #1e1d4c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logos">
+                <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                </a>
+                <div class="header-divider"></div>
+                <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/62e7e38d29393d9e912a3aa2888bec679106a457.png" alt="MTI" class="coat-of-arms">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <a href="renew-close-license.html">&larr; Part A (Citizen Manual)</a>
+                <a href="index.html">All Manuals</a>
+                <span class="badge-partb">Part B &mdash; Officers</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         OFFICER NOTICE
+         ============================================================ -->
+    <div class="officer-banner">
+        <div class="officer-banner-inner">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <strong>This document is for government officers only.</strong> It contains internal processing instructions for the Renew or Close a Licence service. For the citizen-facing guide, see <a href="renew-close-license.html">Part A</a>.
+        </div>
+    </div>
+
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                <li><a href="index.html">Lesotho Manuals</a></li>
+                <li><a href="renew-close-license.html">Renew or Close a Licence</a></li>
+                <li><span class="current">Part B &mdash; Processing Manual</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">Processing Manual &mdash; Part B (Officers)</span>
+                    <h1>Renew or Close a Licence</h1>
+                    <p class="hero-description">Back-office processing guide for OBFC officers. Covers the full workflow: Review desk, Approval desk, automated data update bot, and licence upload bot.</p>
+                    <a href="renew-close-license.html" class="btn-partb">&larr; View Citizen Manual (Part A)</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="6" width="48" height="52" rx="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20 20 h24 M20 30 h24 M20 40 h14"/>
+                            <circle cx="50" cy="48" r="10" stroke-linecap="round"/>
+                            <polyline points="46,48 49,51 54,45" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WORKFLOW OVERVIEW BAR
+         ============================================================ -->
+    <section class="workflow-bar">
+        <div class="container">
+            <h2>End-to-End Workflow</h2>
+            <div class="workflow-steps">
+                <div class="wf-step">
+                    <div class="wf-dot applicant">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="wf-label">Applicant</div>
+                    <div class="wf-sublabel">Fills form,<br>pays &amp; submits</div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-dot review">
+                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="wf-label">Review Desk</div>
+                    <div class="wf-sublabel">Validates<br>application</div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-dot approval">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="wf-label">Approval Desk</div>
+                    <div class="wf-sublabel">Final<br>sign-off</div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-dot bot">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                    </div>
+                    <div class="wf-label">LICENCES Update</div>
+                    <div class="wf-sublabel">Bot updates<br>database</div>
+                </div>
+                <div class="wf-step">
+                    <div class="wf-dot bot">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <div class="wf-label">LICENCES Upload</div>
+                    <div class="wf-sublabel">Bot generates<br>certificates</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#service-overview" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span>Service Overview</span>
+                </a>
+                <a href="#registrations" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span>Registrations &amp; Form Structure</span>
+                </a>
+                <a href="#review-desk" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span>Review Desk</span>
+                </a>
+                <a href="#approval-desk" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span>Approval Desk</span>
+                </a>
+                <a href="#bot-licences-update" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span>Bot: LICENCES Update</span>
+                </a>
+                <a href="#bot-licences-upload" class="toc-item">
+                    <span class="toc-number">6</span>
+                    <span>Bot: LICENCES Upload</span>
+                </a>
+                <a href="#statuses" class="toc-item">
+                    <span class="toc-number">7</span>
+                    <span>Status Reference</span>
+                </a>
+                <a href="#determinants" class="toc-item">
+                    <span class="toc-number">8</span>
+                    <span>Business Rules &amp; Determinants</span>
+                </a>
+                <a href="#bot-reference" class="toc-item">
+                    <span class="toc-number">9</span>
+                    <span>Bot Reference Table</span>
+                </a>
+                <a href="#troubleshooting" class="toc-item">
+                    <span class="toc-number">10</span>
+                    <span>Troubleshooting &amp; Support</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
+
+            <!-- ===== 1. SERVICE OVERVIEW ===== -->
+            <div class="section" id="service-overview">
+                <h2>1. Service Overview</h2>
+                <p>The <strong>Renew or Close a Licence</strong> service (Service ID: <code>478dc501-92aa-4ba4-b234-652e5474caf3</code>) allows registered business owners in Lesotho to renew or permanently terminate their trading and/or industrial licences through the OBFC online portal.</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Service name</td>
+                            <td>Renew or close a Licence</td>
+                        </tr>
+                        <tr>
+                            <td>Service ID</td>
+                            <td><code>478dc501-92aa-4ba4-b234-652e5474caf3</code></td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td><span class="status-badge status-validated">Active</span></td>
+                        </tr>
+                        <tr>
+                            <td>Registrations</td>
+                            <td>Renewal licences &bull; Termination licences</td>
+                        </tr>
+                        <tr>
+                            <td>Processing roles</td>
+                            <td>Review, Approval, LICENCES update (bot), LICENCES upload (bot)</td>
+                        </tr>
+                        <tr>
+                            <td>Total form fields</td>
+                            <td>92 components (applicant form)</td>
+                        </tr>
+                        <tr>
+                            <td>Document requirements</td>
+                            <td>None (all data retrieved from government database)</td>
+                        </tr>
+                        <tr>
+                            <td>DS URL</td>
+                            <td><a href="https://services.businessregistrations.gov.ls" target="_blank">services.businessregistrations.gov.ls</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>How the Service Operates</h3>
+                <p>When a citizen submits this service, the system creates one or two application registrations depending on whether they are renewing, terminating, or both. All licence data is pre-loaded from the government database &mdash; the citizen does not manually enter their licence details. Officers see the full populated form during review.</p>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Automated Post-Approval Processing
+                    </div>
+                    <p>After Approval, two bots run automatically. Officers do <strong>not</strong> need to trigger them manually. However, if a bot fails, officers must be able to identify the issue, retry the bot, or escalate.</p>
+                </div>
+            </div>
+
+            <!-- ===== 2. REGISTRATIONS & FORM STRUCTURE ===== -->
+            <div class="section" id="registrations">
+                <h2>2. Registrations &amp; Form Structure</h2>
+
+                <h3>Registrations</h3>
+                <p>This service has two registrations. The system creates the appropriate registration(s) based on the citizen's checkbox selections:</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Registration Name</th>
+                            <th>Registration ID</th>
+                            <th>Triggered When</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Renewal licences</td>
+                            <td><code>8d2b5307-cefb-4f39-ba79-c8baf8ed84f3</code></td>
+                            <td>Citizen ticks "Renew" on at least one licence</td>
+                        </tr>
+                        <tr>
+                            <td>Termination licences</td>
+                            <td><code>e47c9428-5248-4a35-8204-702c88f1ea6e</code></td>
+                            <td>Citizen ticks "Close" on at least one licence</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Applicant Form Panels</h3>
+                <p>The applicant form (92 components) is structured into the following visible sections:</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Panel Key</th>
+                            <th>Label / Purpose</th>
+                            <th>Key Fields</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>applicantBlock7</code></td>
+                            <td>Business Summary header</td>
+                            <td>Business name, Type, Activity, Renewal date</td>
+                        </tr>
+                        <tr>
+                            <td><code>applicantBlock2</code></td>
+                            <td>What do you want to do?</td>
+                            <td>Radio: <code>applicantWhatDoYouWantToDo</code> (renew | close)</td>
+                        </tr>
+                        <tr>
+                            <td><code>applicantBlock5</code></td>
+                            <td>List of licences</td>
+                            <td>Datagrid: <code>applicantBusinessLicens</code> (15 child fields per row)</td>
+                        </tr>
+                        <tr>
+                            <td><code>applicantBlock6</code></td>
+                            <td>Fees summary</td>
+                            <td>Industrial &amp; Trading renewal/termination fee sub-panels</td>
+                        </tr>
+                        <tr>
+                            <td><code>applicantBlock8</code></td>
+                            <td>Licence ID / sector data</td>
+                            <td>Licence ID, Sector, Number of days late (per selected licence)</td>
+                        </tr>
+                        <tr>
+                            <td><code>applicantBlock25</code></td>
+                            <td>Entity type</td>
+                            <td><code>applicantEntityTypeLicense</code> (Sole Proprietor / Partnership / Company)</td>
+                        </tr>
+                        <tr>
+                            <td><code>applicantBlock20</code></td>
+                            <td>Today's date</td>
+                            <td><code>applicantToday2</code> &mdash; used for penalty calculation</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Licence List Datagrid Fields</h3>
+                <p>Each row in the <code>applicantBusinessLicens</code> datagrid contains 15 fields:</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field Key</th>
+                            <th>Label</th>
+                            <th>Type</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><code>applicantBusinessName3</code></td><td>Name</td><td>Text</td><td>Licence / business name</td></tr>
+                        <tr><td><code>applicantIdNumber2</code></td><td>Licence ID</td><td>Text</td><td>Unique licence identifier</td></tr>
+                        <tr><td><code>applicantRegistration3</code></td><td>Type</td><td>Text</td><td>Industrial or Trading</td></tr>
+                        <tr><td><code>applicantSector</code></td><td>Sector</td><td>Text</td><td>Business sector</td></tr>
+                        <tr><td><code>applicantActivity</code></td><td>Activity</td><td>Text</td><td>Activity description</td></tr>
+                        <tr><td><code>applicantExpiryDate3</code></td><td>Expiry</td><td>DateTime</td><td>Current expiry date</td></tr>
+                        <tr><td><code>applicantNewExpiry2</code></td><td>New expiry</td><td>DateTime</td><td>Auto-calculated if renewing</td></tr>
+                        <tr><td><code>applicantProcessingFee2</code></td><td>Fee</td><td>Number</td><td>Renewal/termination fee (auto)</td></tr>
+                        <tr><td><code>applicantPenaltyFee2</code></td><td>Penalty fee</td><td>Number</td><td>Days late &times; daily rate (auto)</td></tr>
+                        <tr><td><code>applicantRenew2</code> / <code>applicantRenew4</code></td><td>Renew</td><td>Checkbox</td><td>Citizen input</td></tr>
+                        <tr><td><code>applicantCease3</code> / <code>applicantClose2</code></td><td>Close</td><td>Checkbox</td><td>Citizen input</td></tr>
+                        <tr><td><code>applicantNumberOfDaysLate2</code></td><td>Nr of days late</td><td>Number</td><td>Auto-calculated</td></tr>
+                        <tr><td><code>applicantNumberOfDaysLeftToExpire2</code></td><td>Nr of days left to expire</td><td>Number</td><td>Auto-calculated</td></tr>
+                        <tr><td><code>applicantActivity2</code></td><td>Activity (alt)</td><td>Text</td><td>Secondary activity field</td></tr>
+                        <tr><td><code>applicantTodayOTerminate2</code> / <code>applicantNewStart2</code> / <code>applicantNewStart1Year</code></td><td>Dates</td><td>DateTime</td><td>Termination date / new start dates (auto)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== 3. REVIEW DESK ===== -->
+            <div class="section" id="review-desk">
+                <h2>3. Review Desk</h2>
+
+                <div class="desk-card">
+                    <div class="desk-card-header user-role">
+                        <div class="desk-icon">
+                            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <div class="desk-title">
+                            <h3>Review Desk</h3>
+                            <p>Role ID: 64ae8a40-b7af-4120-bdbb-95d5e5add387 &nbsp;&bull;&nbsp; Start role &nbsp;&bull;&nbsp; Human (UserRole)</p>
+                        </div>
+                        <span class="desk-badge">Start Role</span>
+                    </div>
+                    <div class="desk-card-body">
+                        <p>The Review desk is the <strong>first desk</strong> after an application is submitted. Applications land here immediately after payment confirmation. The officer's task is to verify the application is complete and accurate before forwarding it for approval.</p>
+
+                        <h4>Registration Scope</h4>
+                        <p>The Review desk handles both registrations:</p>
+                        <ul>
+                            <li>Renewal licences (<code>8d2b5307...</code>)</li>
+                            <li>Termination licences (<code>e47c9428...</code>)</li>
+                        </ul>
+
+                        <h4>What the Officer Sees</h4>
+                        <p>At this desk, the officer has access to the full applicant form with all pre-loaded data. Key information to review:</p>
+                        <ul class="checklist">
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span><strong>Business Summary</strong> &mdash; Verify the business name, type, and activity match the registered entity</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span><strong>Licence list</strong> &mdash; Confirm the licences shown belong to the applicant's business and the Renew/Close checkboxes are correctly set</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span><strong>Fees</strong> &mdash; Check the calculated renewal/termination fees and penalty fees are correct for the selected licences</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span><strong>Payment</strong> &mdash; Confirm payment has been received and matches the total fee shown</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span><strong>Entity type</strong> &mdash; Ensure the entity type (Sole Proprietor / Partnership / Company) is recorded and consistent</span>
+                            </li>
+                        </ul>
+
+                        <h4>Available Statuses</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>When to Use</th>
+                                    <th>What Happens Next</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                    <td>Application is complete, correct, and ready for approval</td>
+                                    <td>Moves to the Approval Desk</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                                    <td>Application needs more time or additional checks before proceeding</td>
+                                    <td>Stays at Review Desk</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
+                                    <td>There is an issue the applicant must fix (e.g., wrong licence selected)</td>
+                                    <td>Returned to the applicant for amendment</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-rejected">FILE REJECT</span></td>
+                                    <td>Application cannot be processed (e.g., fraudulent request, ineligible licence)</td>
+                                    <td>Application closed; applicant notified</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="warning-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                Mixed Renewal &amp; Termination Applications
+                            </div>
+                            <p>If a citizen has checked both "Renew" and "Close" on different licences in the same session, the system creates <strong>two separate registrations</strong> (one Renewal, one Termination). Both will appear in your review queue and should be processed together. Validate or reject each registration consistently.</p>
+                        </div>
+
+                        <h4>Step-by-Step: Reviewing an Application</h4>
+                        <ol class="steps">
+                            <li class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Open the application from the queue</h4>
+                                    <p>Log in to the back-office portal and navigate to <strong>Renew or Close a Licence &rarr; Review</strong>. Select the application from the list.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Verify business and licence data</h4>
+                                    <p>Review the Business Summary panel. Confirm the business name, type, and activity. Check each licence row to ensure the Licence ID exists, the type is correct (Industrial / Trading), and the Renew/Close selection is appropriate.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Verify fee calculations</h4>
+                                    <p>Check the fees summary panels. Ensure the number of days late (if any) is correct, the penalty fee is properly calculated, and the total matches the payment received.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Set a status and proceed</h4>
+                                    <p>Select the appropriate status from the status dropdown. Add a comment if sending back for corrections or rejecting. Confirm to move the application forward.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 4. APPROVAL DESK ===== -->
+            <div class="section" id="approval-desk">
+                <h2>4. Approval Desk</h2>
+
+                <div class="desk-card">
+                    <div class="desk-card-header user-role">
+                        <div class="desk-icon">
+                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div class="desk-title">
+                            <h3>Approval Desk</h3>
+                            <p>Role ID: 2eb1f23c-fdff-4954-bbe3-156d08dd6b9c &nbsp;&bull;&nbsp; Human (UserRole)</p>
+                        </div>
+                        <span class="desk-badge">Senior Sign-off</span>
+                    </div>
+                    <div class="desk-card-body">
+                        <p>The Approval desk is the <strong>second and final human desk</strong>. Applications arrive here after being validated by the Review desk. The approver gives the final sign-off that authorises the licence renewal or termination.</p>
+
+                        <h4>Registration Scope</h4>
+                        <p>Handles both registrations: Renewal licences and Termination licences.</p>
+
+                        <h4>What the Officer Reviews</h4>
+                        <p>At this stage, the application has already been reviewed. The Approval desk officer should:</p>
+                        <ul>
+                            <li>Confirm the Review desk's validation is appropriate</li>
+                            <li>Verify the renewal/termination action is legally sound</li>
+                            <li>Check for any flagged issues or comments from the Reviewer</li>
+                            <li>Approve or reject the application</li>
+                        </ul>
+
+                        <h4>Available Statuses</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>When to Use</th>
+                                    <th>What Happens Next</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                    <td>Application fully approved; action authorised</td>
+                                    <td>Triggers the LICENCES update bot automatically</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                                    <td>Needs further review at approval level</td>
+                                    <td>Stays at Approval Desk</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
+                                    <td>Identified an issue that requires the applicant to amend</td>
+                                    <td>Returned to applicant; application returns to Review after resubmission</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-rejected">FILE REJECT</span></td>
+                                    <td>Application rejected at senior level</td>
+                                    <td>Application closed; applicant notified</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="success-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 10 8 14 16 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                After Approval
+                            </div>
+                            <p>Once you set <strong>FILE VALIDATED</strong>, the system <strong>automatically</strong> triggers the LICENCES update bot. You do not need to take any further action. Monitor the bot statuses to ensure they complete successfully (see Sections 5 and 6).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 5. BOT: LICENCES UPDATE ===== -->
+            <div class="section" id="bot-licences-update">
+                <h2>5. Bot: LICENCES Update</h2>
+
+                <div class="desk-card">
+                    <div class="desk-card-header bot-role">
+                        <div class="desk-icon">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                        </div>
+                        <div class="desk-title">
+                            <h3>ACTIVITIES PER BUSINESS update entries</h3>
+                            <p>Role ID: da643534-fbf9-4a42-a5b9-aaf5c3d68bb3 &nbsp;&bull;&nbsp; Short name: LICENCES update &nbsp;&bull;&nbsp; Bot type: data</p>
+                        </div>
+                        <span class="desk-badge">Automated Bot</span>
+                    </div>
+                    <div class="desk-card-body">
+                        <p>This is the first automated step after approval. The bot updates the government <strong>Activities Per Business (APB) database</strong> with the renewed or terminated licence statuses.</p>
+
+                        <h4>What the Bot Does</h4>
+                        <p>Depending on the citizen's selections:</p>
+                        <ul>
+                            <li><strong>Renewal:</strong> Updates each renewed licence's expiry date in the database to the new expiry date calculated during the application. Sets the licence status to active/renewed.</li>
+                            <li><strong>Termination:</strong> Marks each terminated licence as closed/cancelled in the database, recording the termination date (today's date at time of processing).</li>
+                        </ul>
+
+                        <h4>Bot Details</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Property</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bot name</td>
+                                    <td>ACTIVITIES PER BUSINESS update entries</td>
+                                </tr>
+                                <tr>
+                                    <td>Bot ID</td>
+                                    <td><code>848925c1-f720-4c6e-9da0-94c3244d1b8c</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Bot type</td>
+                                    <td>Data update</td>
+                                </tr>
+                                <tr>
+                                    <td>Bot service</td>
+                                    <td>GDB.GDB-APB(1.6)-update</td>
+                                </tr>
+                                <tr>
+                                    <td>Enabled</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>Repeat until successful</td>
+                                    <td>No (manual retry required on failure)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Bot Statuses</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Meaning</th>
+                                    <th>Action Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                    <td>Bot ran successfully; database updated</td>
+                                    <td>None &mdash; proceeds to LICENCES upload bot</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                                    <td>Bot is queued or running</td>
+                                    <td>Wait; check again after a few minutes</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-bot-fail">Bot failed</span></td>
+                                    <td>Bot encountered an error during execution</td>
+                                    <td>See troubleshooting steps below</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Troubleshooting: Bot Failed</h4>
+                        <ol class="steps">
+                            <li class="step">
+                                <div class="step-number bot">1</div>
+                                <div class="step-content">
+                                    <h4>Check the bot error log</h4>
+                                    <p>Open the application in the back-office and navigate to the LICENCES update bot step. Click the error details to see the specific failure reason.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">2</div>
+                                <div class="step-content">
+                                    <h4>Common failure reasons</h4>
+                                    <ul>
+                                        <li><strong>Licence ID not found in APB database</strong> &mdash; The licence may have been manually removed. Contact the database administrator.</li>
+                                        <li><strong>Database connection timeout</strong> &mdash; Retry the bot; usually resolves on its own.</li>
+                                        <li><strong>Mapping error</strong> &mdash; A field mapping may be outdated. Contact the system administrator.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">3</div>
+                                <div class="step-content">
+                                    <h4>Retry the bot</h4>
+                                    <p>If the error is transient (connection issue), use the <strong>Retry</strong> action in the bot step. If the error persists after two retries, escalate to the system administrator.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 6. BOT: LICENCES UPLOAD ===== -->
+            <div class="section" id="bot-licences-upload">
+                <h2>6. Bot: LICENCES Upload</h2>
+
+                <div class="desk-card">
+                    <div class="desk-card-header bot-role">
+                        <div class="desk-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </div>
+                        <div class="desk-title">
+                            <h3>LICENCES upload</h3>
+                            <p>Role ID: f562ec66-b84a-48aa-a258-fda273052f53 &nbsp;&bull;&nbsp; Short name: LICENSE upload &nbsp;&bull;&nbsp; Bot type: document</p>
+                        </div>
+                        <span class="desk-badge">Automated Bot</span>
+                    </div>
+                    <div class="desk-card-body">
+                        <p>This is the second and final automated step. After the LICENCES update bot successfully updates the database, this bot generates the <strong>updated licence certificate PDFs</strong> and uploads them to the citizen's application record for download.</p>
+
+                        <h4>What the Bot Does</h4>
+                        <ul>
+                            <li><strong>Renewed licences:</strong> Generates a new licence certificate PDF with the updated expiry date, new start date, and renewed status. Attaches it to the application.</li>
+                            <li><strong>Terminated licences:</strong> Generates a termination confirmation document. Attaches it to the application.</li>
+                            <li>Uploads all generated documents to the citizen's eRegistrations account so they can be downloaded from the portal.</li>
+                        </ul>
+
+                        <p>The full upload workflow involves three document bots that run as part of this role:</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Bot Name</th>
+                                    <th>Purpose</th>
+                                    <th>Bot Service</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>INDUSTRIAL LICENSE upload</td>
+                                    <td>Generates industrial licence certificate PDF</td>
+                                    <td>generic-pdf-generator</td>
+                                </tr>
+                                <tr>
+                                    <td>TRADING LICENSE upload</td>
+                                    <td>Generates trading licence certificate PDF</td>
+                                    <td>generic-pdf-generator</td>
+                                </tr>
+                                <tr>
+                                    <td>BUSINESS ID upload</td>
+                                    <td>Generates updated Business ID document if required</td>
+                                    <td>generic-pdf-generator</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Bot Statuses</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Meaning</th>
+                                    <th>Action Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                    <td>Documents generated and uploaded successfully</td>
+                                    <td>None &mdash; application processing complete</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                                    <td>Bot is queued or generating documents</td>
+                                    <td>Wait; PDF generation may take 1&ndash;2 minutes</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-bot-fail">Bot failed</span></td>
+                                    <td>PDF generation or upload failed</td>
+                                    <td>See troubleshooting steps below</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4>Troubleshooting: Bot Failed</h4>
+                        <div class="warning-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                If this bot fails, the citizen cannot download their certificate
+                            </div>
+                            <p>The database has already been updated (by the previous bot). The citizen's licence is legally renewed/terminated. However, they will not be able to download their certificate until this bot succeeds. Prioritise resolution.</p>
+                        </div>
+                        <ul>
+                            <li><strong>PDF template error</strong> &mdash; The template may have a formatting issue. Contact the system administrator to check the generic-pdf-generator template configuration.</li>
+                            <li><strong>Upload failure</strong> &mdash; The document storage service may be temporarily unavailable. Retry after 5 minutes.</li>
+                            <li><strong>Missing field mapping</strong> &mdash; A required field (e.g., new expiry date) may not be mapped correctly. Contact the administrator.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 7. STATUS REFERENCE ===== -->
+            <div class="section" id="statuses">
+                <h2>7. Status Reference</h2>
+                <p>The following statuses are used across all desks in this service:</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Desks</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                            <td>Review, Approval, Both Bots</td>
+                            <td>Application or bot run is queued / in progress. No action required unless it stalls for more than 24 hours.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                            <td>Review, Approval, Both Bots</td>
+                            <td>Desk approved / bot succeeded. Application moves to the next step automatically.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
+                            <td>Review, Approval</td>
+                            <td>Application returned to applicant with comments. Applicant must correct and resubmit.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-badge status-rejected">FILE REJECT</span></td>
+                            <td>Review, Approval</td>
+                            <td>Application permanently rejected. No further processing. Applicant is notified.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="status-badge status-bot-fail">Bot failed</span></td>
+                            <td>Both Bots</td>
+                            <td>Automated bot encountered an error. Officer must investigate and retry or escalate.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== 8. BUSINESS RULES & DETERMINANTS ===== -->
+            <div class="section" id="determinants">
+                <h2>8. Business Rules &amp; Determinants</h2>
+                <p>This service has <strong>34 determinants</strong> (business rules) that control field visibility, fee calculation, and workflow routing. The key rules officers should understand are summarised below.</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'det-routing')">Workflow Routing</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'det-fees')">Fee Calculation</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'det-grid')">Licence Grid</button>
+                    </div>
+
+                    <div class="tab-panel active" id="det-routing" data-tab-label="Workflow Routing Determinants">
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Determinant Name</th>
+                                    <th>Type</th>
+                                    <th>Effect</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Renew is activated</td>
+                                    <td>Radio</td>
+                                    <td>True when <code>applicantWhatDoYouWantToDo</code> = "renew". Shows renewal-specific panels.</td>
+                                </tr>
+                                <tr>
+                                    <td>Close licence</td>
+                                    <td>Radio</td>
+                                    <td>True when <code>applicantWhatDoYouWantToDo</code> = "close". Shows termination-specific panels.</td>
+                                </tr>
+                                <tr>
+                                    <td>User is logged in</td>
+                                    <td>Boolean</td>
+                                    <td>Controls whether the Submit button is enabled</td>
+                                </tr>
+                                <tr>
+                                    <td>Form is valid</td>
+                                    <td>Boolean</td>
+                                    <td>All required fields completed; enables submission</td>
+                                </tr>
+                                <tr>
+                                    <td>Acknowlegment on send page checked</td>
+                                    <td>Boolean</td>
+                                    <td>Citizen must check the declaration checkbox before submitting</td>
+                                </tr>
+                                <tr>
+                                    <td>Licence exists for this user</td>
+                                    <td>Radio</td>
+                                    <td>True when the applicant has at least one licence on file. If false, form shows an appropriate message.</td>
+                                </tr>
+                                <tr>
+                                    <td>Number Licences = 0</td>
+                                    <td>Numeric</td>
+                                    <td>Triggers when the business has no licences; shows "no licences found" message</td>
+                                </tr>
+                                <tr>
+                                    <td>Number Licences &gt; 0</td>
+                                    <td>Numeric</td>
+                                    <td>Shows the licence list datagrid when licences exist</td>
+                                </tr>
+                                <tr>
+                                    <td>Paid digitally</td>
+                                    <td>Boolean</td>
+                                    <td>True after successful digital payment; enables final submission</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-panel" id="det-fees" data-tab-label="Fee Calculation Determinants">
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Determinant Name</th>
+                                    <th>Condition</th>
+                                    <th>Effect</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Renewal industrial licences - Processing fees</td>
+                                    <td>Renewal fee total &gt; 0</td>
+                                    <td>Shows industrial renewal fees panel</td>
+                                </tr>
+                                <tr>
+                                    <td>Renewal industrial licences - Penalty fees</td>
+                                    <td>Penalty fee total &gt; 0</td>
+                                    <td>Shows industrial penalty fees row</td>
+                                </tr>
+                                <tr>
+                                    <td>Renewal trading licences - Processing fees</td>
+                                    <td>Trading renewal fee total &gt; 0</td>
+                                    <td>Shows trading renewal fees panel</td>
+                                </tr>
+                                <tr>
+                                    <td>Renewal trading licences - Penalty fees</td>
+                                    <td>Trading penalty total &gt; 0</td>
+                                    <td>Shows trading penalty fees row</td>
+                                </tr>
+                                <tr>
+                                    <td>Termination industrial licences - Processing fees</td>
+                                    <td>Industrial termination total &gt; 0</td>
+                                    <td>Shows industrial termination fees panel</td>
+                                </tr>
+                                <tr>
+                                    <td>Termination trading licences - Processing fees</td>
+                                    <td>Trading termination total &gt; 0</td>
+                                    <td>Shows trading termination fees panel</td>
+                                </tr>
+                                <tr>
+                                    <td>Number of days late &gt; 0</td>
+                                    <td>Days past expiry &gt; 0</td>
+                                    <td>Shows penalty fee fields; triggers penalty calculation</td>
+                                </tr>
+                                <tr>
+                                    <td>Nr industrial license to be renewed &gt; 0</td>
+                                    <td>Count of industrial rows selected for renewal &gt; 0</td>
+                                    <td>Shows industrial renewal fee summary</td>
+                                </tr>
+                                <tr>
+                                    <td>Nr trading license to be renewed &gt; 0</td>
+                                    <td>Count of trading rows selected for renewal &gt; 0</td>
+                                    <td>Shows trading renewal fee summary</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-panel" id="det-grid" data-tab-label="Licence Grid Determinants">
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Determinant Name</th>
+                                    <th>Type</th>
+                                    <th>Effect on Datagrid Row</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Industrial licences</td>
+                                    <td>Grid</td>
+                                    <td>Targets rows where licence type is Industrial</td>
+                                </tr>
+                                <tr>
+                                    <td>Industrial license</td>
+                                    <td>Grid</td>
+                                    <td>Secondary industrial grid condition</td>
+                                </tr>
+                                <tr>
+                                    <td>Trading licences</td>
+                                    <td>Grid</td>
+                                    <td>Targets rows where licence type is Trading</td>
+                                </tr>
+                                <tr>
+                                    <td>Renew Licence = ON</td>
+                                    <td>Grid</td>
+                                    <td>True when Renew checkbox is ticked in a row; triggers fee calculation</td>
+                                </tr>
+                                <tr>
+                                    <td>Renew Licence2 = ON</td>
+                                    <td>Grid</td>
+                                    <td>Alternative renew condition for secondary checkbox field</td>
+                                </tr>
+                                <tr>
+                                    <td>Terminate Licence = ON</td>
+                                    <td>Grid</td>
+                                    <td>True when Close checkbox is ticked; triggers termination calculation</td>
+                                </tr>
+                                <tr>
+                                    <td>Terminate Licence2 = ON</td>
+                                    <td>Grid</td>
+                                    <td>Alternative terminate condition</td>
+                                </tr>
+                                <tr>
+                                    <td>Licence expires in &lt;= 90 days</td>
+                                    <td>Grid</td>
+                                    <td>Shows "eligible for renewal" indicator; enables Renew checkbox</td>
+                                </tr>
+                                <tr>
+                                    <td>Licence expires in &gt;90 days</td>
+                                    <td>Grid</td>
+                                    <td>Shows "not yet eligible" message for that row</td>
+                                </tr>
+                                <tr>
+                                    <td>any licence expires in 90 days</td>
+                                    <td>Grid</td>
+                                    <td>Shows the global renewal eligibility notice banner</td>
+                                </tr>
+                                <tr>
+                                    <td>Licence ID NOT empty</td>
+                                    <td>Grid</td>
+                                    <td>Row has a valid licence ID; shows all row fields</td>
+                                </tr>
+                                <tr>
+                                    <td>Licence ID IS empty1</td>
+                                    <td>Grid</td>
+                                    <td>Row has no licence ID; hides fee fields, shows placeholder</td>
+                                </tr>
+                                <tr>
+                                    <td>nr of days left for licence &lt;=60</td>
+                                    <td>Grid</td>
+                                    <td>Highlights rows where the licence expires within 60 days</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 9. BOT REFERENCE TABLE ===== -->
+            <div class="section" id="bot-reference">
+                <h2>9. Bot Reference Table</h2>
+                <p>All bots used in this service, including internal bots:</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Bot Name</th>
+                            <th>Type</th>
+                            <th>Bot Service</th>
+                            <th>Role</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ACTIVITIES PER BUSINESS update entries</td>
+                            <td>data</td>
+                            <td>GDB.GDB-APB(1.6)-update</td>
+                            <td>LICENCES update</td>
+                            <td>Updates the APB government database with renewed/terminated licence statuses</td>
+                        </tr>
+                        <tr>
+                            <td>INDUSTRIAL LICENSE upload</td>
+                            <td>document</td>
+                            <td>generic-pdf-generator</td>
+                            <td>LICENCES upload</td>
+                            <td>Generates industrial licence certificate PDF</td>
+                        </tr>
+                        <tr>
+                            <td>TRADING LICENSE upload</td>
+                            <td>document</td>
+                            <td>generic-pdf-generator</td>
+                            <td>LICENCES upload</td>
+                            <td>Generates trading licence certificate PDF</td>
+                        </tr>
+                        <tr>
+                            <td>BUSINESS ID upload</td>
+                            <td>document</td>
+                            <td>generic-pdf-generator</td>
+                            <td>LICENCES upload</td>
+                            <td>Generates updated Business ID document</td>
+                        </tr>
+                        <tr>
+                            <td>INTERNAL existing Businesses + Licenses</td>
+                            <td>internal</td>
+                            <td>Service: 478dc501... (self)</td>
+                            <td>Pre-fill</td>
+                            <td>Loads existing business and licence data from the database into the applicant form on open</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Internal Bot
+                    </div>
+                    <p>The <strong>INTERNAL existing Businesses + Licenses</strong> bot runs automatically when the applicant opens the form. It retrieves the applicant's business record and all associated licences from the government database and pre-populates the form. This is why citizens do not need to enter their licence details manually.</p>
+                </div>
+            </div>
+
+            <!-- ===== 10. TROUBLESHOOTING ===== -->
+            <div class="section" id="troubleshooting">
+                <h2>10. Troubleshooting &amp; Support</h2>
+
+                <h3>Common Issues at Review / Approval</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Issue</th>
+                            <th>Likely Cause</th>
+                            <th>Recommended Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Applicant's licence list is empty</td>
+                            <td>Account not linked to business, or no licences in APB database</td>
+                            <td>Send back to corrections with instructions to contact OBFC help desk</td>
+                        </tr>
+                        <tr>
+                            <td>Incorrect business name shown</td>
+                            <td>Database linkage error</td>
+                            <td>Reject with note; refer to database administrator</td>
+                        </tr>
+                        <tr>
+                            <td>Penalty fee appears incorrect</td>
+                            <td>Expiry date or today's date field calculated incorrectly</td>
+                            <td>Manually verify using the expiry date and today's date. If the formula is wrong, send back for corrections and flag to system admin.</td>
+                        </tr>
+                        <tr>
+                            <td>Citizen has selected both Renew and Close for same licence</td>
+                            <td>Form validation gap</td>
+                            <td>Send back to corrections; instruct the citizen to select only one action per licence</td>
+                        </tr>
+                        <tr>
+                            <td>Payment received but application shows pending payment</td>
+                            <td>Payment gateway delay</td>
+                            <td>Wait up to 1 hour. If still pending, verify payment with the finance team and manually confirm if appropriate.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Escalation Contacts</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Issue Type</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>System / bot failures</td>
+                            <td>OBFC IT Support &mdash; itsupport@obfc.gov.ls</td>
+                        </tr>
+                        <tr>
+                            <td>Database / licence data errors</td>
+                            <td>APB Database Administrator &mdash; db@obfc.gov.ls</td>
+                        </tr>
+                        <tr>
+                            <td>Payment / financial queries</td>
+                            <td>Finance Unit &mdash; finance@obfc.gov.ls</td>
+                        </tr>
+                        <tr>
+                            <td>Policy / legal questions</td>
+                            <td>MTI Licensing Division &mdash; licensing@mti.gov.ls</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Citizen Manual
+                    </div>
+                    <p>For the citizen-facing guide to this service, see <a href="renew-close-license.html"><strong>Part A &mdash; Citizen Manual</strong></a>. This is useful for understanding what the applicant experiences before the application reaches your desk.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h5>Renew or Close a Licence</h5>
+                    <ul class="footer-links">
+                        <li><a href="renew-close-license.html">Part A &mdash; Citizen Manual</a></li>
+                        <li><a href="renew-close-license-part-b.html">Part B &mdash; Processing Manual</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Other Manuals</h5>
+                    <ul class="footer-links">
+                        <li><a href="register-business.html">Register a Business</a></li>
+                        <li><a href="register-sole-proprietor.html">Register as Sole Proprietor</a></li>
+                        <li><a href="index.html">All Manuals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Back-Office Portal</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://services.businessregistrations.gov.ls/" target="_blank">DS Portal Login</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                Renew or Close a Licence &mdash; Processing Manual (Part B) &mdash; Version 1.0 &mdash; Created March 2026 &nbsp;|&nbsp;
+                &copy; 2025&ndash;2026 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. For internal use only.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         TAB SWITCHING SCRIPT
+         ============================================================ -->
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
