@@ -828,39 +828,6 @@
     </section>
 
     <!-- ============================================================
-         WORKFLOW OVERVIEW BAR
-         ============================================================ -->
-    <section class="workflow-bar">
-        <div class="container">
-            <h2>End-to-End Workflow</h2>
-            <div class="workflow-steps">
-                <div class="wf-step">
-                    <div class="wf-dot applicant">
-                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    </div>
-                    <div class="wf-label">Applicant</div>
-                    <div class="wf-sublabel">Fills form,<br>pays &amp; submits</div>
-                </div>
-
-                <div class="wf-step">
-                    <div class="wf-dot bot">
-                        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-                    </div>
-                    <div class="wf-label">LICENCES Update</div>
-                    <div class="wf-sublabel">Bot updates<br>database</div>
-                </div>
-                <div class="wf-step">
-                    <div class="wf-dot bot">
-                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                    </div>
-                    <div class="wf-label">LICENCES Upload</div>
-                    <div class="wf-sublabel">Bot generates<br>certificates</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================================
          TABLE OF CONTENTS
          ============================================================ -->
     <section class="toc">
@@ -873,18 +840,14 @@
                 </a>
                 <a href="#bot-licences-update" class="toc-item">
                     <span class="toc-number">2</span>
-                    <span>Bot: LICENCES Update</span>
-                </a>
-                <a href="#bot-licences-upload" class="toc-item">
-                    <span class="toc-number">3</span>
-                    <span>Bot: LICENCES Upload</span>
+                    <span>List of roles</span>
                 </a>
                 <a href="#statuses" class="toc-item">
-                    <span class="toc-number">4</span>
+                    <span class="toc-number">3</span>
                     <span>Status Reference</span>
                 </a>
                 <a href="#troubleshooting" class="toc-item">
-                    <span class="toc-number">5</span>
+                    <span class="toc-number">4</span>
                     <span>Troubleshooting &amp; Support</span>
                 </a>
             </div>
@@ -916,67 +879,28 @@
             </div>
 
 
-            <!-- ===== 2. BOT: LICENCES UPDATE ===== -->
+            <!-- ===== 2. LIST OF ROLES ===== -->
             <div class="section" id="bot-licences-update">
-                <h2>2. Bot: LICENCES Update</h2>
+                <h2>2. List of roles</h2>
 
-                <div class="desk-card">
-                    <div class="desk-card-header bot-role">
-                        <div class="desk-icon">
-                            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-                        </div>
-                        <div class="desk-title">
-                            <h3>ACTIVITIES PER BUSINESS update entries</h3>
-                            <p>Role ID: da643534-fbf9-4a42-a5b9-aaf5c3d68bb3 &nbsp;&bull;&nbsp; Short name: LICENCES update &nbsp;&bull;&nbsp; Bot type: data</p>
-                        </div>
-                        <span class="desk-badge">Automated Bot</span>
+                <h3>Role types</h3>
+                <p>There are two types of roles in an eRegistrations service:</p>
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'role-human')">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            Human role
+                        </button>
+                        <button class="tab-btn" onclick="switchTab(event, 'role-bot')">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                            Automated role (bot)
+                        </button>
                     </div>
-                    <div class="desk-card-body">
-                        <p>This is the first automated step after approval. The bot updates the government <strong>Activities Per Business (APB) database</strong> with the renewed or terminated licence statuses.</p>
-
-                        <h4>What the Bot Does</h4>
-                        <p>Depending on the citizen's selections:</p>
-                        <ul>
-                            <li><strong>Renewal:</strong> Updates each renewed licence's expiry date in the database to the new expiry date calculated during the application. Sets the licence status to active/renewed.</li>
-                            <li><strong>Termination:</strong> Marks each terminated licence as closed/cancelled in the database, recording the termination date (today's date at time of processing).</li>
-                        </ul>
-
-                        <h4>Bot Details</h4>
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th>Property</th>
-                                    <th>Value</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Bot name</td>
-                                    <td>ACTIVITIES PER BUSINESS update entries</td>
-                                </tr>
-                                <tr>
-                                    <td>Bot ID</td>
-                                    <td><code>848925c1-f720-4c6e-9da0-94c3244d1b8c</code></td>
-                                </tr>
-                                <tr>
-                                    <td>Bot type</td>
-                                    <td>Data update</td>
-                                </tr>
-                                <tr>
-                                    <td>Bot service</td>
-                                    <td>GDB.GDB-APB(1.6)-update</td>
-                                </tr>
-                                <tr>
-                                    <td>Enabled</td>
-                                    <td>Yes</td>
-                                </tr>
-                                <tr>
-                                    <td>Repeat until successful</td>
-                                    <td>No (manual retry required on failure)</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
+                    <div class="tab-panel active" id="role-human">
+                        <p>Assigned to a government officer who manually reviews or approves applications. The officer sees the application form, can add comments, and sets a status to move the file forward or send it back.</p>
+                    </div>
+                    <div class="tab-panel" id="role-bot">
+                        <p>Executed automatically by the system — no officer action required. Bots perform tasks such as updating a government database or generating certificate PDFs. They run in sequence after the previous step succeeds.</p>
                         <h4>Bot Statuses</h4>
                         <table class="field-table">
                             <thead>
@@ -1004,7 +928,6 @@
                                 </tr>
                             </tbody>
                         </table>
-
                         <h4>Troubleshooting: Bot Failed</h4>
                         <ol class="steps">
                             <li class="step">
@@ -1035,109 +958,63 @@
                         </ol>
                     </div>
                 </div>
-            </div>
 
-            <!-- ===== 3. BOT: LICENCES UPLOAD ===== -->
-            <div class="section" id="bot-licences-upload">
-                <h2>3. Bot: LICENCES Upload</h2>
-
-                <div class="desk-card">
-                    <div class="desk-card-header bot-role">
-                        <div class="desk-icon">
+                <div class="workflow-steps">
+                    <div class="wf-step">
+                        <div class="wf-dot applicant">
+                            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="wf-label">Applicant</div>
+                        <div class="wf-sublabel">Fills form,<br>pays &amp; submits</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot bot">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                        </div>
+                        <div class="wf-label">LICENCES Update</div>
+                        <div class="wf-sublabel">Bot updates<br>database</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot bot">
                             <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                         </div>
-                        <div class="desk-title">
-                            <h3>LICENCES upload</h3>
-                            <p>Role ID: f562ec66-b84a-48aa-a258-fda273052f53 &nbsp;&bull;&nbsp; Short name: LICENSE upload &nbsp;&bull;&nbsp; Bot type: document</p>
-                        </div>
-                        <span class="desk-badge">Automated Bot</span>
-                    </div>
-                    <div class="desk-card-body">
-                        <p>This is the second and final automated step. After the LICENCES update bot successfully updates the database, this bot generates the <strong>updated licence certificate PDFs</strong> and uploads them to the citizen's application record for download.</p>
-
-                        <h4>What the Bot Does</h4>
-                        <ul>
-                            <li><strong>Renewed licences:</strong> Generates a new licence certificate PDF with the updated expiry date, new start date, and renewed status. Attaches it to the application.</li>
-                            <li><strong>Terminated licences:</strong> Generates a termination confirmation document. Attaches it to the application.</li>
-                            <li>Uploads all generated documents to the citizen's eRegistrations account so they can be downloaded from the portal.</li>
-                        </ul>
-
-                        <p>The full upload workflow involves three document bots that run as part of this role:</p>
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th>Bot Name</th>
-                                    <th>Purpose</th>
-                                    <th>Bot Service</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>INDUSTRIAL LICENSE upload</td>
-                                    <td>Generates industrial licence certificate PDF</td>
-                                    <td>generic-pdf-generator</td>
-                                </tr>
-                                <tr>
-                                    <td>TRADING LICENSE upload</td>
-                                    <td>Generates trading licence certificate PDF</td>
-                                    <td>generic-pdf-generator</td>
-                                </tr>
-                                <tr>
-                                    <td>BUSINESS ID upload</td>
-                                    <td>Generates updated Business ID document if required</td>
-                                    <td>generic-pdf-generator</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h4>Bot Statuses</h4>
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th>Meaning</th>
-                                    <th>Action Required</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
-                                    <td>Documents generated and uploaded successfully</td>
-                                    <td>None &mdash; application processing complete</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
-                                    <td>Bot is queued or generating documents</td>
-                                    <td>Wait; PDF generation may take 1&ndash;2 minutes</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="status-badge status-bot-fail">Bot failed</span></td>
-                                    <td>PDF generation or upload failed</td>
-                                    <td>See troubleshooting steps below</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <h4>Troubleshooting: Bot Failed</h4>
-                        <div class="warning-box">
-                            <div class="box-label">
-                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                                If this bot fails, the citizen cannot download their certificate
-                            </div>
-                            <p>The database has already been updated (by the previous bot). The citizen's licence is legally renewed/terminated. However, they will not be able to download their certificate until this bot succeeds. Prioritise resolution.</p>
-                        </div>
-                        <ul>
-                            <li><strong>PDF template error</strong> &mdash; The template may have a formatting issue. Contact the system administrator to check the generic-pdf-generator template configuration.</li>
-                            <li><strong>Upload failure</strong> &mdash; The document storage service may be temporarily unavailable. Retry after 5 minutes.</li>
-                            <li><strong>Missing field mapping</strong> &mdash; A required field (e.g., new expiry date) may not be mapped correctly. Contact the administrator.</li>
-                        </ul>
+                        <div class="wf-label">LICENCES Upload</div>
+                        <div class="wf-sublabel">Bot generates<br>certificates</div>
                     </div>
                 </div>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>LICENCES Update</h4>
+                            <p>This bot runs automatically after the citizen submits and pays. It updates the government <strong>Activities Per Business (APB) database</strong> with the renewed or terminated licence statuses.</p>
+                            <p>Depending on the citizen's selections:</p>
+                            <ul>
+                                <li><strong>Renewal:</strong> Updates each renewed licence's expiry date in the database to the new expiry date calculated during the application. Sets the licence status to active/renewed.</li>
+                                <li><strong>Termination:</strong> Marks each terminated licence as closed/cancelled in the database, recording the termination date (today's date at time of processing).</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>LICENCES Upload</h4>
+                            <p>Once the LICENCES Update bot completes successfully, this bot generates the <strong>updated licence certificate PDFs</strong> and uploads them to the citizen's application record for download.</p>
+                            <ul>
+                                <li><strong>Renewed licences:</strong> Generates a new licence certificate PDF with the updated expiry date, new start date, and renewed status. Attaches it to the application.</li>
+                                <li><strong>Terminated licences:</strong> Generates a termination confirmation document. Attaches it to the application.</li>
+                                <li>Uploads all generated documents to the citizen's eRegistrations account so they can be downloaded from the portal.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ol>
+
             </div>
 
-            <!-- ===== 4. STATUS REFERENCE ===== -->
+            <!-- ===== 3. STATUS REFERENCE ===== -->
             <div class="section" id="statuses">
-                <h2>4. Status Reference</h2>
+                <h2>3. Status Reference</h2>
                 <p>The following statuses are used across all desks in this service:</p>
                 <table class="field-table">
                     <thead>
@@ -1177,9 +1054,9 @@
                 </table>
             </div>
 
-            <!-- ===== 5. TROUBLESHOOTING ===== -->
+            <!-- ===== 4. TROUBLESHOOTING ===== -->
             <div class="section" id="troubleshooting">
-                <h2>5. Troubleshooting &amp; Support</h2>
+                <h2>4. Troubleshooting &amp; Support</h2>
 
                 <h3>Common Issues at Review / Approval</h3>
                 <table class="field-table">
