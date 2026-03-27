@@ -810,7 +810,7 @@
                 <div class="hero-content">
                     <span class="hero-label">Processing Manual &mdash; Part B (Officers)</span>
                     <h1>Renew or Close a Licence</h1>
-                    <p class="hero-description">Back-office processing guide for OBFC officers. Covers the full workflow: Review desk, Approval desk, automated data update bot, and licence upload bot.</p>
+                    <p class="hero-description">Back-office processing guide for OBFC officers. Covers the full automated workflow: licence data update bot and licence upload bot.</p>
                     <a href="renew-close-license.html" class="btn-partb">Start Processing &rarr;</a>
                 </div>
                 <div class="hero-image">
@@ -841,20 +841,7 @@
                     <div class="wf-label">Applicant</div>
                     <div class="wf-sublabel">Fills form,<br>pays &amp; submits</div>
                 </div>
-                <div class="wf-step">
-                    <div class="wf-dot review">
-                        <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    </div>
-                    <div class="wf-label">Review Desk</div>
-                    <div class="wf-sublabel">Validates<br>application</div>
-                </div>
-                <div class="wf-step">
-                    <div class="wf-dot approval">
-                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <div class="wf-label">Approval Desk</div>
-                    <div class="wf-sublabel">Final<br>sign-off</div>
-                </div>
+
                 <div class="wf-step">
                     <div class="wf-dot bot">
                         <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
@@ -884,40 +871,20 @@
                     <span class="toc-number">1</span>
                     <span>Service Overview</span>
                 </a>
-                <a href="#registrations" class="toc-item">
-                    <span class="toc-number">2</span>
-                    <span>Registrations &amp; Form Structure</span>
-                </a>
-                <a href="#review-desk" class="toc-item">
-                    <span class="toc-number">3</span>
-                    <span>Review Desk</span>
-                </a>
-                <a href="#approval-desk" class="toc-item">
-                    <span class="toc-number">4</span>
-                    <span>Approval Desk</span>
-                </a>
                 <a href="#bot-licences-update" class="toc-item">
-                    <span class="toc-number">5</span>
+                    <span class="toc-number">2</span>
                     <span>Bot: LICENCES Update</span>
                 </a>
                 <a href="#bot-licences-upload" class="toc-item">
-                    <span class="toc-number">6</span>
+                    <span class="toc-number">3</span>
                     <span>Bot: LICENCES Upload</span>
                 </a>
                 <a href="#statuses" class="toc-item">
-                    <span class="toc-number">7</span>
+                    <span class="toc-number">4</span>
                     <span>Status Reference</span>
                 </a>
-                <a href="#determinants" class="toc-item">
-                    <span class="toc-number">8</span>
-                    <span>Business Rules &amp; Determinants</span>
-                </a>
-                <a href="#bot-reference" class="toc-item">
-                    <span class="toc-number">9</span>
-                    <span>Bot Reference Table</span>
-                </a>
                 <a href="#troubleshooting" class="toc-item">
-                    <span class="toc-number">10</span>
+                    <span class="toc-number">5</span>
                     <span>Troubleshooting &amp; Support</span>
                 </a>
             </div>
@@ -933,225 +900,25 @@
             <!-- ===== 1. SERVICE OVERVIEW ===== -->
             <div class="section" id="service-overview">
                 <h2>1. Service Overview</h2>
-                <p>The <strong>Renew or Close a Licence</strong> service (Service ID: <code>478dc501-92aa-4ba4-b234-652e5474caf3</code>) allows registered business owners in Lesotho to renew or permanently terminate their trading and/or industrial licences through the OBFC online portal.</p>
+                <p>The <strong>Renew or Close a Licence</strong> service allows registered business owners in Lesotho to renew or permanently terminate their trading and/or industrial licences through the OBFC online portal.</p>
 
 
                 <h3>How the Service Operates</h3>
-                <p>When a citizen submits this service, the system creates one or two application registrations depending on whether they are renewing, terminating, or both. All licence data is pre-loaded from the government database &mdash; the citizen does not manually enter their licence details. Officers see the full populated form during review.</p>
+                <p>When a citizen submits this service, the system creates one or two application registrations depending on whether they are renewing, terminating, or both. All licence data is pre-loaded from the government database &mdash; the citizen does not manually enter their licence details. The process is fully automated — no officer review is required.</p>
 
                 <div class="info-box">
                     <div class="box-label">
                         <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Automated Post-Approval Processing
+                        Fully Automated Processing
                     </div>
-                    <p>After Approval, two bots run automatically. Officers do <strong>not</strong> need to trigger them manually. However, if a bot fails, officers must be able to identify the issue, retry the bot, or escalate.</p>
+                    <p>Once a citizen submits and pays, two bots run automatically. There is no officer step. If a bot fails, administrators must be able to identify the issue, retry the bot, or escalate.</p>
                 </div>
             </div>
 
 
-            <!-- ===== 2. REVIEW DESK ===== -->
-            <div class="section" id="review-desk">
-                <h2>2. Review Desk</h2>
-
-                <div class="desk-card">
-                    <div class="desk-card-header user-role">
-                        <div class="desk-icon">
-                            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                        </div>
-                        <div class="desk-title">
-                            <h3>Review Desk</h3>
-                            <p>Role ID: 64ae8a40-b7af-4120-bdbb-95d5e5add387 &nbsp;&bull;&nbsp; Start role &nbsp;&bull;&nbsp; Human (UserRole)</p>
-                        </div>
-                        <span class="desk-badge">Start Role</span>
-                    </div>
-                    <div class="desk-card-body">
-                        <p>The Review desk is the <strong>first desk</strong> after an application is submitted. Applications land here immediately after payment confirmation. The officer's task is to verify the application is complete and accurate before forwarding it for approval.</p>
-
-                        <h4>Registration Scope</h4>
-                        <p>The Review desk handles both registrations:</p>
-                        <ul>
-                            <li>Renewal licences (<code>8d2b5307...</code>)</li>
-                            <li>Termination licences (<code>e47c9428...</code>)</li>
-                        </ul>
-
-                        <h4>What the Officer Sees</h4>
-                        <p>At this desk, the officer has access to the full applicant form with all pre-loaded data. Key information to review:</p>
-                        <ul class="checklist">
-                            <li>
-                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span><strong>Business Summary</strong> &mdash; Verify the business name, type, and activity match the registered entity</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span><strong>Licence list</strong> &mdash; Confirm the licences shown belong to the applicant's business and the Renew/Close checkboxes are correctly set</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span><strong>Fees</strong> &mdash; Check the calculated renewal/termination fees and penalty fees are correct for the selected licences</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span><strong>Payment</strong> &mdash; Confirm payment has been received and matches the total fee shown</span>
-                            </li>
-                            <li>
-                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                                <span><strong>Entity type</strong> &mdash; Ensure the entity type (Sole Proprietor / Partnership / Company) is recorded and consistent</span>
-                            </li>
-                        </ul>
-
-                        <h4>Available Statuses</h4>
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th>When to Use</th>
-                                    <th>What Happens Next</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
-                                    <td>Application is complete, correct, and ready for approval</td>
-                                    <td>Moves to the Approval Desk</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
-                                    <td>Application needs more time or additional checks before proceeding</td>
-                                    <td>Stays at Review Desk</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
-                                    <td>There is an issue the applicant must fix (e.g., wrong licence selected)</td>
-                                    <td>Returned to the applicant for amendment</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="status-badge status-rejected">FILE REJECT</span></td>
-                                    <td>Application cannot be processed (e.g., fraudulent request, ineligible licence)</td>
-                                    <td>Application closed; applicant notified</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="warning-box">
-                            <div class="box-label">
-                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                                Mixed Renewal &amp; Termination Applications
-                            </div>
-                            <p>If a citizen has checked both "Renew" and "Close" on different licences in the same session, the system creates <strong>two separate registrations</strong> (one Renewal, one Termination). Both will appear in your review queue and should be processed together. Validate or reject each registration consistently.</p>
-                        </div>
-
-                        <h4>Step-by-Step: Reviewing an Application</h4>
-                        <ol class="steps">
-                            <li class="step">
-                                <div class="step-number">1</div>
-                                <div class="step-content">
-                                    <h4>Open the application from the queue</h4>
-                                    <p>Log in to the back-office portal and navigate to <strong>Renew or Close a Licence &rarr; Review</strong>. Select the application from the list.</p>
-                                </div>
-                            </li>
-                            <li class="step">
-                                <div class="step-number">2</div>
-                                <div class="step-content">
-                                    <h4>Verify business and licence data</h4>
-                                    <p>Review the Business Summary panel. Confirm the business name, type, and activity. Check each licence row to ensure the Licence ID exists, the type is correct (Industrial / Trading), and the Renew/Close selection is appropriate.</p>
-                                </div>
-                            </li>
-                            <li class="step">
-                                <div class="step-number">3</div>
-                                <div class="step-content">
-                                    <h4>Verify fee calculations</h4>
-                                    <p>Check the fees summary panels. Ensure the number of days late (if any) is correct, the penalty fee is properly calculated, and the total matches the payment received.</p>
-                                </div>
-                            </li>
-                            <li class="step">
-                                <div class="step-number">4</div>
-                                <div class="step-content">
-                                    <h4>Set a status and proceed</h4>
-                                    <p>Select the appropriate status from the status dropdown. Add a comment if sending back for corrections or rejecting. Confirm to move the application forward.</p>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== 3. APPROVAL DESK ===== -->
-            <div class="section" id="approval-desk">
-                <h2>3. Approval Desk</h2>
-
-                <div class="desk-card">
-                    <div class="desk-card-header user-role">
-                        <div class="desk-icon">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-                        </div>
-                        <div class="desk-title">
-                            <h3>Approval Desk</h3>
-                            <p>Role ID: 2eb1f23c-fdff-4954-bbe3-156d08dd6b9c &nbsp;&bull;&nbsp; Human (UserRole)</p>
-                        </div>
-                        <span class="desk-badge">Senior Sign-off</span>
-                    </div>
-                    <div class="desk-card-body">
-                        <p>The Approval desk is the <strong>second and final human desk</strong>. Applications arrive here after being validated by the Review desk. The approver gives the final sign-off that authorises the licence renewal or termination.</p>
-
-                        <h4>Registration Scope</h4>
-                        <p>Handles both registrations: Renewal licences and Termination licences.</p>
-
-                        <h4>What the Officer Reviews</h4>
-                        <p>At this stage, the application has already been reviewed. The Approval desk officer should:</p>
-                        <ul>
-                            <li>Confirm the Review desk's validation is appropriate</li>
-                            <li>Verify the renewal/termination action is legally sound</li>
-                            <li>Check for any flagged issues or comments from the Reviewer</li>
-                            <li>Approve or reject the application</li>
-                        </ul>
-
-                        <h4>Available Statuses</h4>
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th>Status</th>
-                                    <th>When to Use</th>
-                                    <th>What Happens Next</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
-                                    <td>Application fully approved; action authorised</td>
-                                    <td>Triggers the LICENCES update bot automatically</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
-                                    <td>Needs further review at approval level</td>
-                                    <td>Stays at Approval Desk</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
-                                    <td>Identified an issue that requires the applicant to amend</td>
-                                    <td>Returned to applicant; application returns to Review after resubmission</td>
-                                </tr>
-                                <tr>
-                                    <td><span class="status-badge status-rejected">FILE REJECT</span></td>
-                                    <td>Application rejected at senior level</td>
-                                    <td>Application closed; applicant notified</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="success-box">
-                            <div class="box-label">
-                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4 10 8 14 16 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                                After Approval
-                            </div>
-                            <p>Once you set <strong>FILE VALIDATED</strong>, the system <strong>automatically</strong> triggers the LICENCES update bot. You do not need to take any further action. Monitor the bot statuses to ensure they complete successfully (see Sections 5 and 6).</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== 4. BOT: LICENCES UPDATE ===== -->
+            <!-- ===== 2. BOT: LICENCES UPDATE ===== -->
             <div class="section" id="bot-licences-update">
-                <h2>4. Bot: LICENCES Update</h2>
+                <h2>2. Bot: LICENCES Update</h2>
 
                 <div class="desk-card">
                     <div class="desk-card-header bot-role">
@@ -1270,9 +1037,9 @@
                 </div>
             </div>
 
-            <!-- ===== 5. BOT: LICENCES UPLOAD ===== -->
+            <!-- ===== 3. BOT: LICENCES UPLOAD ===== -->
             <div class="section" id="bot-licences-upload">
-                <h2>5. Bot: LICENCES Upload</h2>
+                <h2>3. Bot: LICENCES Upload</h2>
 
                 <div class="desk-card">
                     <div class="desk-card-header bot-role">
@@ -1368,9 +1135,9 @@
                 </div>
             </div>
 
-            <!-- ===== 6. STATUS REFERENCE ===== -->
+            <!-- ===== 4. STATUS REFERENCE ===== -->
             <div class="section" id="statuses">
-                <h2>6. Status Reference</h2>
+                <h2>4. Status Reference</h2>
                 <p>The following statuses are used across all desks in this service:</p>
                 <table class="field-table">
                     <thead>
@@ -1410,9 +1177,9 @@
                 </table>
             </div>
 
-            <!-- ===== 7. TROUBLESHOOTING ===== -->
+            <!-- ===== 5. TROUBLESHOOTING ===== -->
             <div class="section" id="troubleshooting">
-                <h2>7. Troubleshooting &amp; Support</h2>
+                <h2>5. Troubleshooting &amp; Support</h2>
 
                 <h3>Common Issues at Review / Approval</h3>
                 <table class="field-table">
