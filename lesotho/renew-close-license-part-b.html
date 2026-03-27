@@ -56,12 +56,12 @@
            HEADER
            ============================================================ */
         .site-header {
-            background: #1e1d4c;
+            background: #2B2A65;
             padding: 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         .header-inner {
@@ -83,7 +83,7 @@
         .header-nav { display: flex; align-items: center; gap: 28px; }
 
         .header-nav a {
-            color: rgba(255,255,255,0.85);
+            color: #FFFFFF;
             font-size: 14px;
             font-weight: 400;
             white-space: nowrap;
@@ -163,9 +163,9 @@
            HERO
            ============================================================ */
         .hero {
-            background: linear-gradient(135deg, #1e1d4c 0%, #2B2A65 60%, #3a3980 100%);
+            background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%);
             color: #FFFFFF;
-            padding: 52px 0;
+            padding: 64px 0;
             position: relative;
             overflow: hidden;
         }
@@ -174,8 +174,8 @@
             content: "";
             position: absolute;
             top: 0; right: 0; bottom: 0;
-            width: 35%;
-            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.08) 0%, transparent 70%);
+            width: 40%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -183,12 +183,12 @@
         .hero-content { flex: 1; min-width: 0; }
 
         .hero-label {
-            font-size: 12px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #F5A623;
-            margin-bottom: 10px;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
             display: block;
         }
 
@@ -208,22 +208,25 @@
         }
 
         .btn-partb {
-            background: rgba(255,255,255,0.12);
+            background: #4CAF74;
             color: #FFFFFF;
-            padding: 10px 24px;
+            padding: 14px 32px;
             border-radius: 9999px;
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 16px;
+            font-weight: 600;
             font-family: 'Poppins', sans-serif;
             display: inline-block;
-            border: 1px solid rgba(255,255,255,0.25);
-            transition: background 0.2s ease;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-partb:hover {
-            background: rgba(255,255,255,0.2);
+            background: #3d9461;
             color: #FFFFFF;
             text-decoration: none;
+            transform: translateY(-1px);
         }
 
         .hero-image { flex-shrink: 0; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
@@ -678,7 +681,7 @@
            FOOTER
            ============================================================ */
         .site-footer {
-            background: #1e1d4c;
+            background: #2B2A65;
             color: rgba(255,255,255,0.75);
             padding: 40px 0 0;
             font-size: 14px;
@@ -741,12 +744,12 @@
         @media print {
             @page { margin: 2cm 1.5cm; size: A4; }
             body { font-size: 10pt; color: #000; background: #FFF; }
-            .site-header { position: static; background: #1e1d4c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .site-header { position: static; background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .officer-banner, .workflow-bar { page-break-inside: avoid; }
             .desk-card { page-break-inside: avoid; }
             .tab-nav { display: none; }
             .tab-panel { display: block !important; }
-            .site-footer { background: #1e1d4c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .site-footer { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
     </style>
 </head>
@@ -759,11 +762,11 @@
         <div class="header-inner">
             <div class="header-logos">
                 <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                    <img src="obfc-logo.webp" alt="OBFC Logo">
                 </a>
                 <div class="header-divider"></div>
                 <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/62e7e38d29393d9e912a3aa2888bec679106a457.png" alt="MTI" class="coat-of-arms">
+                    <img src="mti-logo.avif" alt="MTI One-Stop Business Facilitation Centre" class="coat-of-arms">
                 </a>
             </div>
             <nav class="header-nav">
@@ -808,7 +811,7 @@
                     <span class="hero-label">Processing Manual &mdash; Part B (Officers)</span>
                     <h1>Renew or Close a Licence</h1>
                     <p class="hero-description">Back-office processing guide for OBFC officers. Covers the full workflow: Review desk, Approval desk, automated data update bot, and licence upload bot.</p>
-                    <a href="renew-close-license.html" class="btn-partb">&larr; View Citizen Manual (Part A)</a>
+                    <a href="renew-close-license.html" class="btn-partb">Start Processing &rarr;</a>
                 </div>
                 <div class="hero-image">
                     <div class="hero-icon-circle">
@@ -932,48 +935,6 @@
                 <h2>1. Service Overview</h2>
                 <p>The <strong>Renew or Close a Licence</strong> service (Service ID: <code>478dc501-92aa-4ba4-b234-652e5474caf3</code>) allows registered business owners in Lesotho to renew or permanently terminate their trading and/or industrial licences through the OBFC online portal.</p>
 
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Property</th>
-                            <th>Value</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Service name</td>
-                            <td>Renew or close a Licence</td>
-                        </tr>
-                        <tr>
-                            <td>Service ID</td>
-                            <td><code>478dc501-92aa-4ba4-b234-652e5474caf3</code></td>
-                        </tr>
-                        <tr>
-                            <td>Status</td>
-                            <td><span class="status-badge status-validated">Active</span></td>
-                        </tr>
-                        <tr>
-                            <td>Registrations</td>
-                            <td>Renewal licences &bull; Termination licences</td>
-                        </tr>
-                        <tr>
-                            <td>Processing roles</td>
-                            <td>Review, Approval, LICENCES update (bot), LICENCES upload (bot)</td>
-                        </tr>
-                        <tr>
-                            <td>Total form fields</td>
-                            <td>92 components (applicant form)</td>
-                        </tr>
-                        <tr>
-                            <td>Document requirements</td>
-                            <td>None (all data retrieved from government database)</td>
-                        </tr>
-                        <tr>
-                            <td>DS URL</td>
-                            <td><a href="https://services.businessregistrations.gov.ls" target="_blank">services.businessregistrations.gov.ls</a></td>
-                        </tr>
-                    </tbody>
-                </table>
 
                 <h3>How the Service Operates</h3>
                 <p>When a citizen submits this service, the system creates one or two application registrations depending on whether they are renewing, terminating, or both. All licence data is pre-loaded from the government database &mdash; the citizen does not manually enter their licence details. Officers see the full populated form during review.</p>
@@ -987,117 +948,10 @@
                 </div>
             </div>
 
-            <!-- ===== 2. REGISTRATIONS & FORM STRUCTURE ===== -->
-            <div class="section" id="registrations">
-                <h2>2. Registrations &amp; Form Structure</h2>
 
-                <h3>Registrations</h3>
-                <p>This service has two registrations. The system creates the appropriate registration(s) based on the citizen's checkbox selections:</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Registration Name</th>
-                            <th>Registration ID</th>
-                            <th>Triggered When</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Renewal licences</td>
-                            <td><code>8d2b5307-cefb-4f39-ba79-c8baf8ed84f3</code></td>
-                            <td>Citizen ticks "Renew" on at least one licence</td>
-                        </tr>
-                        <tr>
-                            <td>Termination licences</td>
-                            <td><code>e47c9428-5248-4a35-8204-702c88f1ea6e</code></td>
-                            <td>Citizen ticks "Close" on at least one licence</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>Applicant Form Panels</h3>
-                <p>The applicant form (92 components) is structured into the following visible sections:</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Panel Key</th>
-                            <th>Label / Purpose</th>
-                            <th>Key Fields</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><code>applicantBlock7</code></td>
-                            <td>Business Summary header</td>
-                            <td>Business name, Type, Activity, Renewal date</td>
-                        </tr>
-                        <tr>
-                            <td><code>applicantBlock2</code></td>
-                            <td>What do you want to do?</td>
-                            <td>Radio: <code>applicantWhatDoYouWantToDo</code> (renew | close)</td>
-                        </tr>
-                        <tr>
-                            <td><code>applicantBlock5</code></td>
-                            <td>List of licences</td>
-                            <td>Datagrid: <code>applicantBusinessLicens</code> (15 child fields per row)</td>
-                        </tr>
-                        <tr>
-                            <td><code>applicantBlock6</code></td>
-                            <td>Fees summary</td>
-                            <td>Industrial &amp; Trading renewal/termination fee sub-panels</td>
-                        </tr>
-                        <tr>
-                            <td><code>applicantBlock8</code></td>
-                            <td>Licence ID / sector data</td>
-                            <td>Licence ID, Sector, Number of days late (per selected licence)</td>
-                        </tr>
-                        <tr>
-                            <td><code>applicantBlock25</code></td>
-                            <td>Entity type</td>
-                            <td><code>applicantEntityTypeLicense</code> (Sole Proprietor / Partnership / Company)</td>
-                        </tr>
-                        <tr>
-                            <td><code>applicantBlock20</code></td>
-                            <td>Today's date</td>
-                            <td><code>applicantToday2</code> &mdash; used for penalty calculation</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>Licence List Datagrid Fields</h3>
-                <p>Each row in the <code>applicantBusinessLicens</code> datagrid contains 15 fields:</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field Key</th>
-                            <th>Label</th>
-                            <th>Type</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><code>applicantBusinessName3</code></td><td>Name</td><td>Text</td><td>Licence / business name</td></tr>
-                        <tr><td><code>applicantIdNumber2</code></td><td>Licence ID</td><td>Text</td><td>Unique licence identifier</td></tr>
-                        <tr><td><code>applicantRegistration3</code></td><td>Type</td><td>Text</td><td>Industrial or Trading</td></tr>
-                        <tr><td><code>applicantSector</code></td><td>Sector</td><td>Text</td><td>Business sector</td></tr>
-                        <tr><td><code>applicantActivity</code></td><td>Activity</td><td>Text</td><td>Activity description</td></tr>
-                        <tr><td><code>applicantExpiryDate3</code></td><td>Expiry</td><td>DateTime</td><td>Current expiry date</td></tr>
-                        <tr><td><code>applicantNewExpiry2</code></td><td>New expiry</td><td>DateTime</td><td>Auto-calculated if renewing</td></tr>
-                        <tr><td><code>applicantProcessingFee2</code></td><td>Fee</td><td>Number</td><td>Renewal/termination fee (auto)</td></tr>
-                        <tr><td><code>applicantPenaltyFee2</code></td><td>Penalty fee</td><td>Number</td><td>Days late &times; daily rate (auto)</td></tr>
-                        <tr><td><code>applicantRenew2</code> / <code>applicantRenew4</code></td><td>Renew</td><td>Checkbox</td><td>Citizen input</td></tr>
-                        <tr><td><code>applicantCease3</code> / <code>applicantClose2</code></td><td>Close</td><td>Checkbox</td><td>Citizen input</td></tr>
-                        <tr><td><code>applicantNumberOfDaysLate2</code></td><td>Nr of days late</td><td>Number</td><td>Auto-calculated</td></tr>
-                        <tr><td><code>applicantNumberOfDaysLeftToExpire2</code></td><td>Nr of days left to expire</td><td>Number</td><td>Auto-calculated</td></tr>
-                        <tr><td><code>applicantActivity2</code></td><td>Activity (alt)</td><td>Text</td><td>Secondary activity field</td></tr>
-                        <tr><td><code>applicantTodayOTerminate2</code> / <code>applicantNewStart2</code> / <code>applicantNewStart1Year</code></td><td>Dates</td><td>DateTime</td><td>Termination date / new start dates (auto)</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- ===== 3. REVIEW DESK ===== -->
+            <!-- ===== 2. REVIEW DESK ===== -->
             <div class="section" id="review-desk">
-                <h2>3. Review Desk</h2>
+                <h2>2. Review Desk</h2>
 
                 <div class="desk-card">
                     <div class="desk-card-header user-role">
@@ -1221,9 +1075,9 @@
                 </div>
             </div>
 
-            <!-- ===== 4. APPROVAL DESK ===== -->
+            <!-- ===== 3. APPROVAL DESK ===== -->
             <div class="section" id="approval-desk">
-                <h2>4. Approval Desk</h2>
+                <h2>3. Approval Desk</h2>
 
                 <div class="desk-card">
                     <div class="desk-card-header user-role">
@@ -1295,9 +1149,9 @@
                 </div>
             </div>
 
-            <!-- ===== 5. BOT: LICENCES UPDATE ===== -->
+            <!-- ===== 4. BOT: LICENCES UPDATE ===== -->
             <div class="section" id="bot-licences-update">
-                <h2>5. Bot: LICENCES Update</h2>
+                <h2>4. Bot: LICENCES Update</h2>
 
                 <div class="desk-card">
                     <div class="desk-card-header bot-role">
@@ -1416,9 +1270,9 @@
                 </div>
             </div>
 
-            <!-- ===== 6. BOT: LICENCES UPLOAD ===== -->
+            <!-- ===== 5. BOT: LICENCES UPLOAD ===== -->
             <div class="section" id="bot-licences-upload">
-                <h2>6. Bot: LICENCES Upload</h2>
+                <h2>5. Bot: LICENCES Upload</h2>
 
                 <div class="desk-card">
                     <div class="desk-card-header bot-role">
@@ -1514,9 +1368,9 @@
                 </div>
             </div>
 
-            <!-- ===== 7. STATUS REFERENCE ===== -->
+            <!-- ===== 6. STATUS REFERENCE ===== -->
             <div class="section" id="statuses">
-                <h2>7. Status Reference</h2>
+                <h2>6. Status Reference</h2>
                 <p>The following statuses are used across all desks in this service:</p>
                 <table class="field-table">
                     <thead>
@@ -1556,282 +1410,9 @@
                 </table>
             </div>
 
-            <!-- ===== 8. BUSINESS RULES & DETERMINANTS ===== -->
-            <div class="section" id="determinants">
-                <h2>8. Business Rules &amp; Determinants</h2>
-                <p>This service has <strong>34 determinants</strong> (business rules) that control field visibility, fee calculation, and workflow routing. The key rules officers should understand are summarised below.</p>
-
-                <div class="tab-group">
-                    <div class="tab-nav">
-                        <button class="tab-btn active" onclick="switchTab(event, 'det-routing')">Workflow Routing</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'det-fees')">Fee Calculation</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'det-grid')">Licence Grid</button>
-                    </div>
-
-                    <div class="tab-panel active" id="det-routing" data-tab-label="Workflow Routing Determinants">
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th>Determinant Name</th>
-                                    <th>Type</th>
-                                    <th>Effect</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Renew is activated</td>
-                                    <td>Radio</td>
-                                    <td>True when <code>applicantWhatDoYouWantToDo</code> = "renew". Shows renewal-specific panels.</td>
-                                </tr>
-                                <tr>
-                                    <td>Close licence</td>
-                                    <td>Radio</td>
-                                    <td>True when <code>applicantWhatDoYouWantToDo</code> = "close". Shows termination-specific panels.</td>
-                                </tr>
-                                <tr>
-                                    <td>User is logged in</td>
-                                    <td>Boolean</td>
-                                    <td>Controls whether the Submit button is enabled</td>
-                                </tr>
-                                <tr>
-                                    <td>Form is valid</td>
-                                    <td>Boolean</td>
-                                    <td>All required fields completed; enables submission</td>
-                                </tr>
-                                <tr>
-                                    <td>Acknowlegment on send page checked</td>
-                                    <td>Boolean</td>
-                                    <td>Citizen must check the declaration checkbox before submitting</td>
-                                </tr>
-                                <tr>
-                                    <td>Licence exists for this user</td>
-                                    <td>Radio</td>
-                                    <td>True when the applicant has at least one licence on file. If false, form shows an appropriate message.</td>
-                                </tr>
-                                <tr>
-                                    <td>Number Licences = 0</td>
-                                    <td>Numeric</td>
-                                    <td>Triggers when the business has no licences; shows "no licences found" message</td>
-                                </tr>
-                                <tr>
-                                    <td>Number Licences &gt; 0</td>
-                                    <td>Numeric</td>
-                                    <td>Shows the licence list datagrid when licences exist</td>
-                                </tr>
-                                <tr>
-                                    <td>Paid digitally</td>
-                                    <td>Boolean</td>
-                                    <td>True after successful digital payment; enables final submission</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="tab-panel" id="det-fees" data-tab-label="Fee Calculation Determinants">
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th>Determinant Name</th>
-                                    <th>Condition</th>
-                                    <th>Effect</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Renewal industrial licences - Processing fees</td>
-                                    <td>Renewal fee total &gt; 0</td>
-                                    <td>Shows industrial renewal fees panel</td>
-                                </tr>
-                                <tr>
-                                    <td>Renewal industrial licences - Penalty fees</td>
-                                    <td>Penalty fee total &gt; 0</td>
-                                    <td>Shows industrial penalty fees row</td>
-                                </tr>
-                                <tr>
-                                    <td>Renewal trading licences - Processing fees</td>
-                                    <td>Trading renewal fee total &gt; 0</td>
-                                    <td>Shows trading renewal fees panel</td>
-                                </tr>
-                                <tr>
-                                    <td>Renewal trading licences - Penalty fees</td>
-                                    <td>Trading penalty total &gt; 0</td>
-                                    <td>Shows trading penalty fees row</td>
-                                </tr>
-                                <tr>
-                                    <td>Termination industrial licences - Processing fees</td>
-                                    <td>Industrial termination total &gt; 0</td>
-                                    <td>Shows industrial termination fees panel</td>
-                                </tr>
-                                <tr>
-                                    <td>Termination trading licences - Processing fees</td>
-                                    <td>Trading termination total &gt; 0</td>
-                                    <td>Shows trading termination fees panel</td>
-                                </tr>
-                                <tr>
-                                    <td>Number of days late &gt; 0</td>
-                                    <td>Days past expiry &gt; 0</td>
-                                    <td>Shows penalty fee fields; triggers penalty calculation</td>
-                                </tr>
-                                <tr>
-                                    <td>Nr industrial license to be renewed &gt; 0</td>
-                                    <td>Count of industrial rows selected for renewal &gt; 0</td>
-                                    <td>Shows industrial renewal fee summary</td>
-                                </tr>
-                                <tr>
-                                    <td>Nr trading license to be renewed &gt; 0</td>
-                                    <td>Count of trading rows selected for renewal &gt; 0</td>
-                                    <td>Shows trading renewal fee summary</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="tab-panel" id="det-grid" data-tab-label="Licence Grid Determinants">
-                        <table class="field-table">
-                            <thead>
-                                <tr>
-                                    <th>Determinant Name</th>
-                                    <th>Type</th>
-                                    <th>Effect on Datagrid Row</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Industrial licences</td>
-                                    <td>Grid</td>
-                                    <td>Targets rows where licence type is Industrial</td>
-                                </tr>
-                                <tr>
-                                    <td>Industrial license</td>
-                                    <td>Grid</td>
-                                    <td>Secondary industrial grid condition</td>
-                                </tr>
-                                <tr>
-                                    <td>Trading licences</td>
-                                    <td>Grid</td>
-                                    <td>Targets rows where licence type is Trading</td>
-                                </tr>
-                                <tr>
-                                    <td>Renew Licence = ON</td>
-                                    <td>Grid</td>
-                                    <td>True when Renew checkbox is ticked in a row; triggers fee calculation</td>
-                                </tr>
-                                <tr>
-                                    <td>Renew Licence2 = ON</td>
-                                    <td>Grid</td>
-                                    <td>Alternative renew condition for secondary checkbox field</td>
-                                </tr>
-                                <tr>
-                                    <td>Terminate Licence = ON</td>
-                                    <td>Grid</td>
-                                    <td>True when Close checkbox is ticked; triggers termination calculation</td>
-                                </tr>
-                                <tr>
-                                    <td>Terminate Licence2 = ON</td>
-                                    <td>Grid</td>
-                                    <td>Alternative terminate condition</td>
-                                </tr>
-                                <tr>
-                                    <td>Licence expires in &lt;= 90 days</td>
-                                    <td>Grid</td>
-                                    <td>Shows "eligible for renewal" indicator; enables Renew checkbox</td>
-                                </tr>
-                                <tr>
-                                    <td>Licence expires in &gt;90 days</td>
-                                    <td>Grid</td>
-                                    <td>Shows "not yet eligible" message for that row</td>
-                                </tr>
-                                <tr>
-                                    <td>any licence expires in 90 days</td>
-                                    <td>Grid</td>
-                                    <td>Shows the global renewal eligibility notice banner</td>
-                                </tr>
-                                <tr>
-                                    <td>Licence ID NOT empty</td>
-                                    <td>Grid</td>
-                                    <td>Row has a valid licence ID; shows all row fields</td>
-                                </tr>
-                                <tr>
-                                    <td>Licence ID IS empty1</td>
-                                    <td>Grid</td>
-                                    <td>Row has no licence ID; hides fee fields, shows placeholder</td>
-                                </tr>
-                                <tr>
-                                    <td>nr of days left for licence &lt;=60</td>
-                                    <td>Grid</td>
-                                    <td>Highlights rows where the licence expires within 60 days</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== 9. BOT REFERENCE TABLE ===== -->
-            <div class="section" id="bot-reference">
-                <h2>9. Bot Reference Table</h2>
-                <p>All bots used in this service, including internal bots:</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Bot Name</th>
-                            <th>Type</th>
-                            <th>Bot Service</th>
-                            <th>Role</th>
-                            <th>Purpose</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>ACTIVITIES PER BUSINESS update entries</td>
-                            <td>data</td>
-                            <td>GDB.GDB-APB(1.6)-update</td>
-                            <td>LICENCES update</td>
-                            <td>Updates the APB government database with renewed/terminated licence statuses</td>
-                        </tr>
-                        <tr>
-                            <td>INDUSTRIAL LICENSE upload</td>
-                            <td>document</td>
-                            <td>generic-pdf-generator</td>
-                            <td>LICENCES upload</td>
-                            <td>Generates industrial licence certificate PDF</td>
-                        </tr>
-                        <tr>
-                            <td>TRADING LICENSE upload</td>
-                            <td>document</td>
-                            <td>generic-pdf-generator</td>
-                            <td>LICENCES upload</td>
-                            <td>Generates trading licence certificate PDF</td>
-                        </tr>
-                        <tr>
-                            <td>BUSINESS ID upload</td>
-                            <td>document</td>
-                            <td>generic-pdf-generator</td>
-                            <td>LICENCES upload</td>
-                            <td>Generates updated Business ID document</td>
-                        </tr>
-                        <tr>
-                            <td>INTERNAL existing Businesses + Licenses</td>
-                            <td>internal</td>
-                            <td>Service: 478dc501... (self)</td>
-                            <td>Pre-fill</td>
-                            <td>Loads existing business and licence data from the database into the applicant form on open</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="info-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Internal Bot
-                    </div>
-                    <p>The <strong>INTERNAL existing Businesses + Licenses</strong> bot runs automatically when the applicant opens the form. It retrieves the applicant's business record and all associated licences from the government database and pre-populates the form. This is why citizens do not need to enter their licence details manually.</p>
-                </div>
-            </div>
-
-            <!-- ===== 10. TROUBLESHOOTING ===== -->
+            <!-- ===== 7. TROUBLESHOOTING ===== -->
             <div class="section" id="troubleshooting">
-                <h2>10. Troubleshooting &amp; Support</h2>
+                <h2>7. Troubleshooting &amp; Support</h2>
 
                 <h3>Common Issues at Review / Approval</h3>
                 <table class="field-table">
