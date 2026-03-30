@@ -600,7 +600,7 @@
                 </svg>
                 <input type="text" id="searchInput" placeholder="Search manuals... e.g. &quot;register business&quot;, &quot;investment&quot;" aria-label="Search service manuals" autocomplete="off">
             </div>
-            <p class="search-count" id="searchCount">Showing all 0 manuals</p>
+            <p class="search-count" id="searchCount">Showing all 1 manual</p>
         </div>
     </section>
 
@@ -615,7 +615,13 @@
 
             <div class="card-grid" id="cardGrid">
 
-                <!-- No manuals yet — add service cards here -->
+                <!-- 1. NIPC Registration -->
+                <div class="card" data-search="nipc registration investment company register nigeria">
+                    <div class="card-icon">&#127963;</div>
+                    <h4>NIPC Registration</h4>
+                    <p>Register your company with the Nigerian Investment Promotion Commission to access investment incentives.</p>
+                    <a href="nipc-registration.html" class="card-btn">View Manual &rarr;</a>
+                </div>
 
                 <!-- No Results message (hidden by default) -->
                 <div class="no-results" id="noResults" style="display: none;">
@@ -742,7 +748,7 @@
                 } else {
                     noResults.style.display = 'none';
                     if (!query) {
-                        searchCount.textContent = 'Showing all ' + visibleCount + ' manual' + (visibleCount === 1 ? '' : 's');
+                        searchCount.textContent = 'Showing all 1 manual';
                     } else {
                         searchCount.textContent = 'Showing ' + visibleCount + ' result' + (visibleCount === 1 ? '' : 's');
                     }
