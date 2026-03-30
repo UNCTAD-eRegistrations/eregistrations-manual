@@ -303,6 +303,14 @@
                     <span class="toc-number">5</span>
                     <span class="toc-label">After Submission</span>
                 </a>
+                <a href="#section-faq" class="toc-item">
+                    <span class="toc-number">6</span>
+                    <span class="toc-label">Frequently Asked Questions</span>
+                </a>
+                <a href="#section-contact" class="toc-item">
+                    <span class="toc-number">7</span>
+                    <span class="toc-label">Help &amp; Contact</span>
+                </a>
             </div>
         </div>
     </section>
@@ -777,6 +785,151 @@
                         Corrections requested
                     </div>
                     <p>If an officer sends your application back for corrections, you will receive a notification. Log in to your dashboard, make the required changes, and resubmit. Your application will then re-enter the review process.</p>
+                </div>
+
+                <h3>Application Status Meanings</h3>
+                <p>You can check your application status at any time from <strong>My Dashboard</strong>. Here is what each status means:</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Meaning</th>
+                            <th>Action Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FILE PENDING</td>
+                            <td>Your application is in the queue awaiting review by an officer</td>
+                            <td>None — wait for processing</td>
+                        </tr>
+                        <tr>
+                            <td>SEND BACK TO CORRECTIONS</td>
+                            <td>A reviewing officer has found an issue and returned the application to you</td>
+                            <td>Log in, review the officer's comments, make corrections, and resubmit</td>
+                        </tr>
+                        <tr>
+                            <td>FILE VALIDATED</td>
+                            <td>Your application has been approved at this stage and passed to the next reviewer</td>
+                            <td>None — wait for the next stage, or download your certificate if this is the final stage</td>
+                        </tr>
+                        <tr>
+                            <td>FILE REJECT</td>
+                            <td>Your application has been rejected</td>
+                            <td>Check the reason provided in the portal. Contact NIPC if you need clarification</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===================== SECTION 6: FAQ ===================== -->
+            <div class="section" id="section-faq">
+                <h2>6. Frequently Asked Questions</h2>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event,'faq-general')">General</button>
+                        <button class="tab-btn" onclick="switchTab(event,'faq-documents')">Documents</button>
+                        <button class="tab-btn" onclick="switchTab(event,'faq-payment')">Payment</button>
+                        <button class="tab-btn" onclick="switchTab(event,'faq-technical')">Technical</button>
+                    </div>
+
+                    <div class="tab-panel active" id="faq-general" data-tab-label="General FAQ">
+                        <h4>Who must register with NIPC?</h4>
+                        <p>Any company incorporated under Nigerian law (with a CAC Certificate of Incorporation) that wishes to benefit from NIPC investment incentives, pioneer status, or other investment facilitation services must register. Foreign-owned companies operating in Nigeria are also required to register.</p>
+
+                        <h4 style="margin-top:24px;">My company is already registered with NIPC. Can I use this service to update our details?</h4>
+                        <p>No. This service is for <strong>new registrations only</strong>. If your company already has an NIPC registration, use the <strong>NIPC Amendment</strong> service to update your details, or <strong>NIPC Renewal</strong> to renew your certificate.</p>
+
+                        <h4 style="margin-top:24px;">What happens after my application is approved?</h4>
+                        <p>Your company is automatically recorded in the NIPC registry and an <strong>NIPC Registration Certificate</strong> and <strong>Registration Receipt</strong> are generated. You can download them directly from your dashboard.</p>
+
+                        <h4 style="margin-top:24px;">How long does the registration process take?</h4>
+                        <p>Processing time depends on the review workload. You will be notified at each stage. Ensure your documents are complete and accurate to avoid delays caused by correction requests.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-documents" data-tab-label="Documents FAQ">
+                        <h4>My company has fewer than 5 employees. Do I still need a PenCom Certificate?</h4>
+                        <p>No. The PenCom Certificate is only required if your company has <strong>5 or more employees</strong> who are registered with PenCom. If you have fewer than 5 employees, this field will not be required in the form.</p>
+
+                        <h4 style="margin-top:24px;">What is a Certificate of Capital Importation (CCI) and when is it required?</h4>
+                        <p>A CCI is a document issued by a Nigerian commercial bank confirming that foreign currency has been brought into Nigeria and converted. It is required only if foreign investment has already been imported into the country. If the CCI has not yet been obtained, select <em>No</em> for that question in the Investment tab.</p>
+
+                        <h4 style="margin-top:24px;">Can I upload documents in Word or Excel format?</h4>
+                        <p>Yes. Accepted formats are: PDF, JPG, JPEG, PNG, BMP, DOC, DOCX, XLS, XLSX. Each file must not exceed <strong>5 MB</strong>. PDF is recommended for best compatibility.</p>
+
+                        <h4 style="margin-top:24px;">My Power of Attorney is in French. Is it accepted?</h4>
+                        <p>Documents must be submitted in English or accompanied by a certified English translation. Contact the NIPC help desk for guidance on specific document requirements.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-payment" data-tab-label="Payment FAQ">
+                        <h4>How much does NIPC Registration cost?</h4>
+                        <p>The registration fee is <strong>₦150,000</strong> (NIPC Business Registration fee). This fee is fixed and non-refundable.</p>
+
+                        <h4 style="margin-top:24px;">My payment went through but my application still shows as pending. Is this normal?</h4>
+                        <p>Yes. Payment confirmation may take a few minutes to reflect in the system. If your application is still in "pending payment" status after 30 minutes, contact the NIPC help desk with your payment confirmation reference number.</p>
+
+                        <h4 style="margin-top:24px;">Can I get a refund if my application is rejected?</h4>
+                        <p>The registration fee is non-refundable. Contact the NIPC help desk with your application reference number if you believe your rejection was made in error.</p>
+
+                        <h4 style="margin-top:24px;">What payment methods are accepted?</h4>
+                        <p>Payment is made digitally through the portal. Available options are displayed on the Payment page at the time of application. Cash payments are not accepted through this online system.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-technical" data-tab-label="Technical FAQ">
+                        <h4>Can I save my progress and come back later?</h4>
+                        <p>Yes. The portal auto-saves your in-progress application. You can return to finish at any time before submitting. Note that you must complete and submit the application in one session once you reach the payment page.</p>
+
+                        <h4 style="margin-top:24px;">The RC number field says my company is already registered with NIPC. What should I do?</h4>
+                        <p>This means your company already has an NIPC registration on file. Use the <strong>NIPC Renewal</strong> or <strong>NIPC Amendment</strong> service instead. If you believe this is an error, contact the NIPC help desk.</p>
+
+                        <h4 style="margin-top:24px;">I cannot add a shareholder in the form — the button is not working. What should I do?</h4>
+                        <p>Make sure you have filled in the <strong>Total of Shares</strong> field before trying to add shareholders. If the issue persists, try refreshing the page or switching to a supported browser.</p>
+
+                        <h4 style="margin-top:24px;">What browser should I use?</h4>
+                        <p>The portal works best on <strong>Google Chrome</strong>, Mozilla Firefox, Microsoft Edge, or Safari (latest versions). Avoid Internet Explorer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 7: HELP & CONTACT ===================== -->
+            <div class="section" id="section-contact">
+                <h2>7. Help &amp; Contact</h2>
+                <p>If you need assistance with your application, you can reach the NIPC support team through the following channels:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Details</th>
+                            <th>Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Help desk portal</td>
+                            <td><a href="https://nipc.gov.ng/contact/">nipc.gov.ng/contact</a></td>
+                            <td>24/7 (self-service)</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>info@nipc.gov.ng</td>
+                            <td>Responses within 2 business days</td>
+                        </tr>
+                        <tr>
+                            <td>Walk-in</td>
+                            <td>NIPC Offices, Area 11, Garki, Abuja, FCT</td>
+                            <td>Monday&ndash;Friday 08:00&ndash;17:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                        Include your reference number
+                    </div>
+                    <p>When contacting NIPC about an existing application, always include your <strong>application reference number</strong> to help the support team locate your file quickly.</p>
                 </div>
             </div>
 
