@@ -43,7 +43,8 @@ git pull origin gh-pages
 **Resolving the target:**
 1. One country? Use it. Multiple? Match from context or ask.
 2. Fuzzy-match description to filenames ("annual filing" → `annual-filing.html`)
-3. If ambiguous, list options and ask.
+3. **Multi-part manuals** — some services are split across files like `renew-close-license-part-a.html` and `renew-close-license-part-b.html`. If the user references a service without specifying a part, list the parts and ask which one(s) to edit. If they say "both", apply the change to each file separately.
+4. If ambiguous, list options and ask.
 
 ## Edit Workflow
 
@@ -65,9 +66,23 @@ If a manual's `<title>` or `<h1>` changes, also update the catalog (`<country>/i
 
 **Safe to change:** text, headings, steps, callout boxes (`info-box`, `note-box`, `warning-box`), links, contact info, typos, numbers.
 
-**Do NOT touch:** `<style>` blocks, HTML class names/IDs/data attributes, branding layout, image `src` URLs, Google Fonts imports, `<meta>` tags.
+**Do NOT touch (normally):** HTML class names/IDs/data attributes, branding layout, image `src` URLs, Google Fonts imports, `<meta>` tags.
+
+**CSS exceptions:** CSS values inside `<style>` blocks may be edited when the user explicitly asks to align the visual style of a file with another (e.g., font size, spacing, colors, layout). Read the reference file first, identify the exact differences, and apply only the differing values.
 
 **Structural edits:** read the file first to learn its actual CSS classes. Reuse them exactly — never invent new classes or inline styles.
+
+**Fallback for complex edits:** If the `Edit` tool fails to find a string in large HTML files (indentation or whitespace mismatch), use a Python one-liner via Bash:
+```bash
+python3 -c "
+with open('path/to/file.html', 'r') as f: content = f.read()
+old = '''...exact string...'''
+if old in content:
+    with open('path/to/file.html', 'w') as f: f.write(content.replace(old, '''...new string...''', 1))
+    print('REPLACED')
+else: print('NOT FOUND')
+"
+```
 
 ## Rollback
 
