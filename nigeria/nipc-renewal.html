@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIPC Renewal - User Manual | NIPC Nigeria</title>
+    <meta name="description" content="Step-by-step user manual for the NIPC Renewal service on the Nigerian Investment Promotion Commission (NIPC) eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.7; color: #555866; background: #FFFFFF; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: #008751; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #006640; text-decoration: underline; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        .site-header { background: #1a3a2a; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .header-nav { display: flex; align-items: center; gap: 32px; }
+        .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; text-decoration: none; white-space: nowrap; transition: opacity 0.2s ease; }
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+        .btn-login { background: #008751; color: #FFFFFF !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #006640; text-decoration: none !important; }
+
+        /* Breadcrumb */
+        .breadcrumb { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 14px 0; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #888; flex-wrap: wrap; }
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+        .breadcrumb-list li + li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-top: 1.5px solid #aaa; border-right: 1.5px solid #aaa; transform: rotate(45deg); flex-shrink: 0; }
+        .breadcrumb-list a { color: #008751; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1a3a2a 0%, #235235 100%); color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
+        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(0,135,81,0.15) 0%, transparent 70%); pointer-events: none; }
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: #4dbb8a; margin-bottom: 12px; display: block; }
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+        .hero-description { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 560px; }
+        .btn-primary { background: #008751; color: #FFFFFF; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; }
+        .btn-primary:hover { background: #006640; color: #FFFFFF; text-decoration: none; transform: translateY(-1px); }
+        .hero-image { flex-shrink: 0; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .hero-icon-circle { width: 200px; height: 200px; border-radius: 50%; background: rgba(0,135,81,0.15); border: 2px solid rgba(0,135,81,0.3); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: #4dbb8a; stroke-width: 1.5; }
+
+        /* TOC */
+        .toc { background: #F5F5F7; padding: 48px 0; border-bottom: 1px solid #E5E7EB; }
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+        .toc-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 10px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 16px; }
+        .toc-item:hover { border-color: #008751; box-shadow: 0 2px 8px rgba(0,135,81,0.12); text-decoration: none; color: #1F2128; }
+        .toc-number { width: 32px; height: 32px; border-radius: 50%; background: #008751; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* Manual Content */
+        .manual-content { padding: 56px 0 80px; }
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
+        .section > h2 { font-size: 32px; font-weight: 600; padding-left: 20px; border-left: 4px solid #008751; margin-bottom: 24px; line-height: 1.3; }
+        .section > h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; }
+        .section > h4 { font-size: 20px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* Steps */
+        .steps { list-style: none; padding: 0; margin: 24px 0; }
+        .step { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px; padding: 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; transition: box-shadow 0.2s ease; }
+        .step:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+        .step-number { width: 40px; height: 40px; border-radius: 50%; background: #008751; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #1F2128; }
+        .step-content p { margin-bottom: 8px; font-size: 16px; }
+        .step-content p:last-child { margin-bottom: 0; }
+
+        /* Info Boxes */
+        .info-box, .warning-box, .note-box { padding: 20px 24px; border-radius: 10px; margin: 24px 0; font-size: 16px; line-height: 1.6; }
+        .info-box { background: #F5F5F7; border-left: 4px solid #008751; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .info-box .box-label { color: #008751; }
+        .warning-box .box-label { color: #D4891A; }
+        .note-box .box-label { color: #4A90D9; }
+        .box-label svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* Checklist */
+        .checklist { list-style: none; padding: 0; margin: 20px 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 14px; padding: 10px 0; border-bottom: 1px solid #F0F0F2; font-size: 16px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .check-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+
+        /* Field Table */
+        .field-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 24px 0; font-size: 15px; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; }
+        .field-table thead { background: #1a3a2a; color: #FFFFFF; }
+        .field-table th { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 14px 16px; text-align: left; white-space: nowrap; }
+        .field-table td { padding: 12px 16px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F5F5F7; }
+        .required-yes { color: #008751; font-weight: 600; }
+        .required-no { color: #999; }
+
+        /* Timeline */
+        .timeline { position: relative; margin: 32px 0; padding-left: 40px; }
+        .timeline::before { content: ""; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: #E5E7EB; border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 32px; padding-left: 24px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before { content: ""; position: absolute; left: -28px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #008751; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #008751; z-index: 1; }
+        .timeline-item.bot::before { background: #4A90D9; box-shadow: 0 0 0 3px #4A90D9; }
+        .timeline-item.pending::before { background: #FFFFFF; box-shadow: 0 0 0 3px #D0D0D8; }
+        .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
+        .timeline-item .timeline-meta { font-size: 13px; color: #999; margin-top: 4px; }
+        .role-badge { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 9999px; margin-left: 8px; vertical-align: middle; }
+        .badge-bot { background: #EFF6FF; color: #1D4ED8; }
+        .badge-human { background: #F0FDF4; color: #166534; }
+
+        /* Tab Group */
+        .tab-group { margin: 28px 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; }
+        .tab-nav { display: flex; background: #F5F5F7; border-bottom: 1px solid #E5E7EB; overflow-x: auto; }
+        .tab-btn { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 24px; cursor: pointer; background: transparent; border: none; border-bottom: 3px solid transparent; color: #555866; white-space: nowrap; transition: all 0.2s ease; }
+        .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
+        .tab-btn.active { color: #008751; border-bottom-color: #008751; background: #FFFFFF; font-weight: 600; }
+        .tab-panel { display: none; padding: 24px; }
+        .tab-panel.active { display: block; }
+
+        /* Form Mockup */
+        .form-mockup { border: 1px solid #D1D5DB; border-radius: 12px; overflow: hidden; margin: 28px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); font-size: 14px; }
+        .form-mockup-bar { background: #1a3a2a; padding: 12px 20px; }
+        .bar-title { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; }
+        .form-mockup-tabs { display: flex; background: #F5F5F7; border-bottom: 1px solid #E5E7EB; overflow-x: auto; }
+        .mtab { padding: 10px 20px; font-size: 13px; font-weight: 500; color: #555866; cursor: default; border-bottom: 3px solid transparent; white-space: nowrap; font-family: 'Poppins', sans-serif; }
+        .mtab.active { color: #008751; border-bottom-color: #008751; background: #FFFFFF; font-weight: 600; }
+        .form-mockup-body { padding: 20px 24px; background: #FFFFFF; }
+        .mock-field { margin-bottom: 18px; }
+        .mock-field label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 5px; font-family: 'Poppins', sans-serif; }
+        .mock-field .req { color: #DC2626; margin-left: 3px; }
+        .mock-field .cond { color: #9CA3AF; font-size: 11px; font-weight: 400; margin-left: 6px; }
+        .mock-input { height: 38px; background: #F9FAFB; border: 1px solid #D1D5DB; border-radius: 6px; width: 100%; display: flex; align-items: center; padding: 0 12px; color: #9CA3AF; font-size: 13px; }
+        .mock-select { height: 38px; background: #F9FAFB; border: 1px solid #D1D5DB; border-radius: 6px; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; color: #9CA3AF; font-size: 13px; }
+        .mock-select::after { content: "▾"; color: #6B7280; }
+        .mock-radio { display: flex; flex-direction: column; gap: 8px; }
+        .mock-radio-option { display: flex; align-items: center; gap: 8px; font-size: 13px; color: #374151; }
+        .mock-radio-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #D1D5DB; flex-shrink: 0; }
+        .mock-upload { border: 2px dashed #D1D5DB; border-radius: 8px; padding: 20px; text-align: center; color: #9CA3AF; font-size: 13px; background: #FAFAFA; }
+        .mock-upload svg { width: 28px; height: 28px; stroke: #D1D5DB; margin: 0 auto 8px; display: block; }
+        .mock-grid { border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; font-size: 13px; margin-bottom: 16px; }
+        .mock-grid-header { display: grid; background: #F5F5F7; border-bottom: 1px solid #E5E7EB; }
+        .mock-grid-cell { padding: 8px 12px; font-weight: 600; color: #374151; font-family: 'Poppins', sans-serif; }
+        .mock-grid-row { display: grid; border-bottom: 1px solid #F0F0F2; }
+        .mock-grid-row:last-child { border-bottom: none; }
+        .mock-grid-data { padding: 8px 12px; color: #555866; }
+        .mock-date { height: 38px; background: #F9FAFB; border: 1px solid #D1D5DB; border-radius: 6px; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 12px; color: #9CA3AF; font-size: 13px; }
+        .mock-date::after { content: "📅"; font-size: 14px; }
+        .mock-section-title { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #1a3a2a; margin: 20px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #E5E7EB; }
+        .mock-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .mock-nav-bar { padding: 16px 24px; background: #F5F5F7; border-top: 1px solid #E5E7EB; display: flex; justify-content: space-between; align-items: center; }
+        .mock-btn { padding: 8px 20px; border-radius: 9999px; font-size: 13px; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: default; }
+        .mock-btn-primary { background: #008751; color: #FFFFFF; }
+        .mock-btn-secondary { background: #FFFFFF; color: #555866; border: 1px solid #D1D5DB; }
+        .mock-content-block { background: #F0FDF4; border: 1px solid #BBF7D0; border-radius: 8px; padding: 14px 16px; font-size: 14px; color: #166534; margin-bottom: 16px; }
+
+        /* FAQ */
+        .faq-item { border: 1px solid #E5E7EB; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+        .faq-question { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 600; padding: 18px 24px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #1F2128; background: #FFFFFF; user-select: none; }
+        .faq-question:hover { background: #F9FAFB; }
+        .faq-question::after { content: "+"; font-size: 22px; font-weight: 300; color: #008751; flex-shrink: 0; }
+        .faq-question.open::after { content: "−"; }
+        .faq-answer { padding: 0 24px 18px; font-size: 15px; line-height: 1.7; color: #555866; display: none; }
+        .faq-answer.open { display: block; }
+
+        /* Footer */
+        .site-footer { background: #1a3a2a; color: rgba(255,255,255,0.8); padding: 56px 0 0; font-size: 15px; }
+        .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 16px; font-weight: 600; margin-bottom: 18px; }
+        .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+        .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
+        .footer-col a:hover { color: #4dbb8a; text-decoration: none; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 14px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 14px; }
+        .footer-contact-item svg { width: 18px; height: 18px; flex-shrink: 0; stroke: #4dbb8a; fill: none; margin-top: 2px; }
+        .footer-implemented { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+        .footer-implemented span { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); font-weight: 500; }
+        .footer-copyright { text-align: center; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.45); }
+        .manual-version { background: rgba(0,0,0,0.2); text-align: center; padding: 12px 0; font-size: 12px; color: rgba(255,255,255,0.35); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 34px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .mock-two-col { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            .header-nav { display: none; }
+            .hero { padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 28px; }
+            .step { flex-direction: column; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+        }
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 11pt; color: #000; background: #FFF; }
+            .site-header { position: static; background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .hero { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-after: always; }
+            .btn-primary, .header-nav .btn-login { display: none; }
+            .hero-image { display: none; }
+            .toc { page-break-after: always; }
+            .section { page-break-inside: avoid; }
+            .faq-answer { display: block !important; }
+            .site-footer { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a href="https://nipc.gov.ng/" title="NIPC Nigeria">
+            <img src="nipc-logo.jpeg" alt="NIPC Logo" style="height:48px;width:auto;">
+        </a>
+        <nav class="header-nav">
+            <a href="https://nipc.gov.ng/about/">About</a>
+            <a href="https://nipc.gov.ng/contact/">Help &amp; Support</a>
+            <a href="https://bpa.gateway.nipc.gov.ng/" class="btn-login">Login | Register</a>
+        </nav>
+    </div>
+</header>
+
+<div class="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="https://nipc.gov.ng/">Home</a></li>
+            <li><a href="index.html">Service Manuals</a></li>
+            <li><span class="current">NIPC Renewal</span></li>
+        </ol>
+    </div>
+</div>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-label">User Manual</span>
+                <h1>NIPC Renewal</h1>
+                <p class="hero-description">Renew your NIPC pioneer status certificate online. Keep your investment registration active and continue to enjoy NIPC incentives and benefits in Nigeria. This guide walks you through every step.</p>
+                <a href="https://bpa.gateway.nipc.gov.ng/" class="btn-primary">Start Renewal &rarr;</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-icon-circle">
+                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M32 12 C20 12 11 21 11 32 C11 43 20 52 32 52" stroke-linecap="round"/>
+                        <path d="M32 52 C44 52 53 43 53 32 C53 21 44 12 32 12" stroke-linecap="round" stroke-dasharray="4 3"/>
+                        <polyline points="26,6 32,12 26,18" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="38,46 32,52 38,58" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="24" y1="30" x2="40" y2="30" stroke-linecap="round"/>
+                        <line x1="24" y1="36" x2="36" y2="36" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="toc">
+    <div class="container">
+        <h2>Table of Contents</h2>
+        <div class="toc-grid">
+            <a href="#section-overview" class="toc-item"><span class="toc-number">1</span><span class="toc-label">Overview</span></a>
+            <a href="#section-before" class="toc-item"><span class="toc-number">2</span><span class="toc-label">Before You Start</span></a>
+            <a href="#section-guide" class="toc-item"><span class="toc-number">3</span><span class="toc-label">Step 1 — Guide</span></a>
+            <a href="#section-update" class="toc-item"><span class="toc-number">4</span><span class="toc-label">Step 2 — Update Your Information</span></a>
+            <a href="#section-documents" class="toc-item"><span class="toc-number">5</span><span class="toc-label">Step 3 — Upload Documents</span></a>
+            <a href="#section-submit" class="toc-item"><span class="toc-number">6</span><span class="toc-label">Step 4 — Payment &amp; Submit</span></a>
+            <a href="#section-after" class="toc-item"><span class="toc-number">7</span><span class="toc-label">After Submission</span></a>
+            <a href="#section-faq" class="toc-item"><span class="toc-number">8</span><span class="toc-label">Frequently Asked Questions</span></a>
+            <a href="#section-contact" class="toc-item"><span class="toc-number">9</span><span class="toc-label">Help &amp; Contact</span></a>
+        </div>
+    </div>
+</section>
+
+<main class="manual-content">
+    <div class="container">
+
+        <!-- SECTION 1: OVERVIEW -->
+        <div class="section" id="section-overview">
+            <h2>1. Overview</h2>
+            <p>The <strong>NIPC Renewal</strong> service allows companies already registered with the Nigerian Investment Promotion Commission to renew their NIPC pioneer status certificate before it expires. Keeping your certificate current ensures you continue to benefit from investment incentives, tax reliefs, and other privileges provided under Nigerian investment law.</p>
+
+            <div class="info-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                    Who should use this service
+                </div>
+                <p>Any company that holds a valid NIPC registration certificate and needs to renew it. Your company's core details (name, RC number, NIPC registration number) are already on file — you only need to update your current investment figures and employee count.</p>
+            </div>
+
+            <div class="warning-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L18 17H2L10 3z"/><line x1="10" y1="10" x2="10" y2="13"/><circle cx="10" cy="15.5" r="0.5" fill="currentColor"/></svg>
+                    Renew before expiry
+                </div>
+                <p>Apply for renewal <strong>before your current certificate expires</strong>. Late applications may require additional review. Check your expiry date in the portal before starting.</p>
+            </div>
+
+            <h3>What you will receive</h3>
+            <ul>
+                <li>A renewed <strong>NIPC Certificate</strong> issued digitally and downloadable from your portal account.</li>
+                <li>An updated NIPC registration record reflecting your latest investment and employment data.</li>
+                <li>Continued access to all NIPC investment incentives and facilitation services.</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 2: BEFORE YOU START -->
+        <div class="section" id="section-before">
+            <h2>2. Before You Start</h2>
+            <p>Prepare the following before you begin. Having everything ready allows you to complete the form in one session.</p>
+
+            <ul class="checklist">
+                <li>
+                    <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#008751" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/></svg></span>
+                    <span><strong>NIPC portal login credentials</strong> — your username and password for the NIPC eRegistrations portal.</span>
+                </li>
+                <li>
+                    <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#008751" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/></svg></span>
+                    <span><strong>Current number of employees</strong> — total headcount at the time of renewal.</span>
+                </li>
+                <li>
+                    <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#008751" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/></svg></span>
+                    <span><strong>Updated investment figures</strong> — domestic and foreign investment amounts in both NGN and USD.</span>
+                </li>
+                <li>
+                    <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#008751" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/></svg></span>
+                    <span><strong>Country of origin</strong> for the primary investment.</span>
+                </li>
+                <li>
+                    <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#008751" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9,12 11,14 15,10"/></svg></span>
+                    <span><strong>Start date of operation</strong> — the date your company began operating under NIPC registration.</span>
+                </li>
+                <li>
+                    <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><circle cx="12" cy="16" r="1" fill="#F5A623"/></svg></span>
+                    <span><strong>PenCom certificate</strong> (if your company is registered with PenCom) — a PDF or image scan of your current pension compliance certificate.</span>
+                </li>
+                <li>
+                    <span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#F5A623" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><circle cx="12" cy="16" r="1" fill="#F5A623"/></svg></span>
+                    <span><strong>Certificate of Capital Importation (CCI)</strong> (if available) — issued by your Nigerian bank to confirm foreign capital inflows.</span>
+                </li>
+            </ul>
+
+            <div class="note-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                    Pre-filled fields
+                </div>
+                <p>Your company name, RC number, NIPC registration number, email, and original issue date are already pre-filled from your existing record. You do not need to re-enter these.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 3: STEP 1 — GUIDE -->
+        <div class="section" id="section-guide">
+            <h2>3. Step 1 — Guide</h2>
+            <p>After logging in to the NIPC portal and opening the NIPC Renewal service, you will first see the <strong>Guide</strong> tab. This tab provides introductory information about the renewal process.</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar"><span class="bar-title">NIPC Renewal</span></div>
+                <div class="form-mockup-tabs">
+                    <span class="mtab active">Guide</span>
+                    <span class="mtab">Update</span>
+                    <span class="mtab">Documents</span>
+                    <span class="mtab">Payment</span>
+                    <span class="mtab">Send</span>
+                </div>
+                <div class="form-mockup-body">
+                    <div class="mock-content-block">
+                        <strong>Welcome to the NIPC Renewal process.</strong> Please review the information below and click <em>Next</em> to begin updating your investment record. Ensure all information you provide is accurate and up to date.
+                    </div>
+                </div>
+                <div class="mock-nav-bar">
+                    <span></span>
+                    <span class="mock-btn mock-btn-primary">Next &rarr;</span>
+                </div>
+            </div>
+
+            <p>Read the guidance message carefully, then click <strong>Next</strong> to proceed to the Update tab.</p>
+
+            <div class="info-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                    Save your progress
+                </div>
+                <p>You can save your progress at any time and return later. Log back in to the portal and continue from where you left off — no data is lost.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 4: STEP 2 — UPDATE -->
+        <div class="section" id="section-update">
+            <h2>4. Step 2 — Update Your Information</h2>
+            <p>The <strong>Update</strong> tab is the main data entry section. You will update your employee count, confirm PenCom compliance, provide updated investment figures, and confirm CCI availability.</p>
+
+            <h3>4.1 Workforce &amp; PenCom</h3>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar"><span class="bar-title">NIPC Renewal — Workforce &amp; Pension</span></div>
+                <div class="form-mockup-body">
+                    <div class="mock-section-title">Workforce &amp; Pension Compliance</div>
+                    <div class="mock-field">
+                        <label>Current number of employees <span class="req">*</span></label>
+                        <div class="mock-input">e.g. 47</div>
+                    </div>
+                    <div class="mock-field">
+                        <label>Are they already registered with PenCom? <span class="req">*</span></label>
+                        <div class="mock-radio">
+                            <div class="mock-radio-option"><div class="mock-radio-dot"></div> Yes</div>
+                            <div class="mock-radio-option"><div class="mock-radio-dot"></div> No</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="field-table">
+                <thead><tr><th>Field</th><th>What to Enter</th><th>Required</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Current number of employees</strong></td>
+                        <td>Total employees currently working in your company (full-time and part-time). Example: <em>47</em>. Enter <em>0</em> if none.</td>
+                        <td class="required-yes">Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Registered with PenCom?</strong></td>
+                        <td>Select <em>Yes</em> if your company has a valid National Pension Commission compliance certificate. Select <em>No</em> if not registered.</td>
+                        <td class="required-yes">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L18 17H2L10 3z"/><line x1="10" y1="10" x2="10" y2="13"/><circle cx="10" cy="15.5" r="0.5" fill="currentColor"/></svg>
+                    PenCom answer affects next steps
+                </div>
+                <p>Answering <strong>Yes</strong> will require you to upload your PenCom certificate in the Documents tab. Answering <strong>No</strong> skips that upload.</p>
+            </div>
+
+            <h3>4.2 Investment Data</h3>
+            <p>Enter your updated domestic and foreign investment amounts in both Nigerian Naira (NGN) and US Dollars (USD).</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar"><span class="bar-title">NIPC Renewal — Investment Data</span></div>
+                <div class="form-mockup-body">
+                    <div class="mock-section-title">Investment Summary (auto-calculated)</div>
+                    <div class="mock-grid">
+                        <div class="mock-grid-header" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div class="mock-grid-cell">Category</div>
+                            <div class="mock-grid-cell">NGN</div>
+                            <div class="mock-grid-cell">USD</div>
+                        </div>
+                        <div class="mock-grid-row" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div class="mock-grid-data">Domestic</div>
+                            <div class="mock-grid-data" style="color:#9CA3AF;">—</div>
+                            <div class="mock-grid-data" style="color:#9CA3AF;">—</div>
+                        </div>
+                        <div class="mock-grid-row" style="grid-template-columns: 1fr 1fr 1fr;">
+                            <div class="mock-grid-data">Foreign</div>
+                            <div class="mock-grid-data" style="color:#9CA3AF;">—</div>
+                            <div class="mock-grid-data" style="color:#9CA3AF;">—</div>
+                        </div>
+                        <div class="mock-grid-row" style="grid-template-columns: 1fr 1fr 1fr; font-weight:600; background:#F5F5F7;">
+                            <div class="mock-grid-data">Total</div>
+                            <div class="mock-grid-data" style="color:#9CA3AF;">—</div>
+                            <div class="mock-grid-data" style="color:#9CA3AF;">—</div>
+                        </div>
+                    </div>
+                    <div class="mock-section-title">Enter Amounts</div>
+                    <div class="mock-two-col">
+                        <div class="mock-field"><label>Domestic Investment (NGN)</label><div class="mock-input">e.g. 50000000</div></div>
+                        <div class="mock-field"><label>Domestic Investment (USD)</label><div class="mock-input">e.g. 65000</div></div>
+                        <div class="mock-field"><label>Foreign Investment (NGN)</label><div class="mock-input">e.g. 150000000</div></div>
+                        <div class="mock-field"><label>Foreign Investment (USD)</label><div class="mock-input">e.g. 195000</div></div>
+                        <div class="mock-field"><label>Total Investment (NGN)</label><div class="mock-input">e.g. 200000000</div></div>
+                        <div class="mock-field"><label>Total Investment (USD)</label><div class="mock-input">e.g. 260000</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <table class="field-table">
+                <thead><tr><th>Field</th><th>What to Enter</th><th>Required</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Domestic Investment (NGN)</strong></td><td>Capital from Nigerian sources in Naira. Numbers only. Example: <em>50000000</em></td><td class="required-yes">Yes</td></tr>
+                    <tr><td><strong>Domestic Investment (USD)</strong></td><td>Equivalent domestic investment in US Dollars at current exchange rate.</td><td class="required-yes">Yes</td></tr>
+                    <tr><td><strong>Foreign Investment (NGN)</strong></td><td>Capital from foreign sources converted to Naira. Enter <em>0</em> if no foreign investment.</td><td class="required-yes">Yes</td></tr>
+                    <tr><td><strong>Foreign Investment (USD)</strong></td><td>Foreign investment in US Dollars. Enter <em>0</em> if none.</td><td class="required-yes">Yes</td></tr>
+                    <tr><td><strong>Total Investment (NGN)</strong></td><td>Domestic + Foreign in NGN. Must match the sum of the two values above.</td><td class="required-yes">Yes</td></tr>
+                    <tr><td><strong>Total Investment (USD)</strong></td><td>Domestic + Foreign in USD.</td><td class="required-yes">Yes</td></tr>
+                </tbody>
+            </table>
+
+            <h3>4.3 Country of Origin, CCI &amp; Start Date</h3>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar"><span class="bar-title">NIPC Renewal — Origin &amp; Dates</span></div>
+                <div class="form-mockup-body">
+                    <div class="mock-field">
+                        <label>Country of origin <span class="req">*</span></label>
+                        <div class="mock-select">Select country</div>
+                    </div>
+                    <div class="mock-field">
+                        <label>Has the Certificate of Capital Importation (CCI) been made available? <span class="req">*</span></label>
+                        <div class="mock-radio">
+                            <div class="mock-radio-option"><div class="mock-radio-dot"></div> Yes</div>
+                            <div class="mock-radio-option"><div class="mock-radio-dot"></div> No</div>
+                        </div>
+                    </div>
+                    <div class="mock-field">
+                        <label>Start date of operation <span class="req">*</span></label>
+                        <div class="mock-date">DD / MM / YYYY</div>
+                    </div>
+                </div>
+                <div class="mock-nav-bar">
+                    <span class="mock-btn mock-btn-secondary">&larr; Back</span>
+                    <span class="mock-btn mock-btn-primary">Next &rarr;</span>
+                </div>
+            </div>
+
+            <table class="field-table">
+                <thead><tr><th>Field</th><th>What to Enter</th><th>Required</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Country of origin</strong></td>
+                        <td>The country from which the primary investment originated. For Nigerian-only investments, select <em>Nigeria</em>. For joint ventures, select the main foreign partner's country.</td>
+                        <td class="required-yes">Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CCI available?</strong></td>
+                        <td>A Certificate of Capital Importation (CCI) is issued by your Nigerian bank to certify that foreign capital was officially imported. Select <em>Yes</em> if you have one — you will upload it in the next step. Select <em>No</em> if you don't have one — you can still proceed.</td>
+                        <td class="required-yes">Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Start date of operation</strong></td>
+                        <td>The date your company officially started operations under NIPC registration. Use the calendar picker or type in DD/MM/YYYY format. Example: <em>15/03/2018</em></td>
+                        <td class="required-yes">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L18 17H2L10 3z"/><line x1="10" y1="10" x2="10" y2="13"/><circle cx="10" cy="15.5" r="0.5" fill="currentColor"/></svg>
+                    CCI answer affects next steps
+                </div>
+                <p>Answering <strong>Yes</strong> to the CCI question requires you to upload the certificate in the Documents tab. Answering <strong>No</strong> skips that upload and proceeds directly to payment.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 5: STEP 3 — DOCUMENTS -->
+        <div class="section" id="section-documents">
+            <h2>5. Step 3 — Upload Documents</h2>
+            <p>In the <strong>Documents</strong> tab, upload the supporting certificates required for your renewal. Which documents appear depends on your answers in the Update tab.</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar"><span class="bar-title">NIPC Renewal — Documents</span></div>
+                <div class="form-mockup-tabs">
+                    <span class="mtab">Guide</span>
+                    <span class="mtab">Update</span>
+                    <span class="mtab active">Documents</span>
+                    <span class="mtab">Payment</span>
+                    <span class="mtab">Send</span>
+                </div>
+                <div class="form-mockup-body">
+                    <div class="mock-field">
+                        <label>PenCom Certificate <span class="req">*</span> <span class="cond">(shown if registered with PenCom = Yes)</span></label>
+                        <div class="mock-upload">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                            Click to upload or drag and drop your PenCom Certificate<br>
+                            <small>PDF, JPG, PNG — max 5 MB</small>
+                        </div>
+                    </div>
+                    <div class="mock-field">
+                        <label>Certificate of Capital Importation <span class="req">*</span> <span class="cond">(shown if CCI available = Yes)</span></label>
+                        <div class="mock-upload">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                            Click to upload or drag and drop your CCI document<br>
+                            <small>PDF preferred — max 5 MB</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="mock-nav-bar">
+                    <span class="mock-btn mock-btn-secondary">&larr; Back</span>
+                    <span class="mock-btn mock-btn-primary">Next &rarr;</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                    PenCom Certificate
+                </div>
+                <p>This document confirms that your company is enrolled in a Contributory Pension Scheme and is up to date with contributions. Obtain it from your Pension Fund Administrator (PFA) or from the PenCom portal at <em>pencom.gov.ng</em>. Upload a clear scan or digital PDF.</p>
+            </div>
+
+            <div class="info-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                    Certificate of Capital Importation (CCI)
+                </div>
+                <p>A CCI is issued by your Nigerian commercial bank to certify that foreign capital was officially imported through the Nigerian banking system. Contact your relationship manager at your Nigerian bank to obtain this. PDF format is preferred.</p>
+            </div>
+
+            <div class="note-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                    No documents required?
+                </div>
+                <p>If you answered <strong>No</strong> to both PenCom and CCI, the Documents tab will be empty and you proceed straight to payment. The NIPC reviewer may still request documents during the review process if needed.</p>
+            </div>
+
+            <h3>Common upload mistakes to avoid</h3>
+            <ul>
+                <li><strong>Wrong format</strong> — Only PDF, JPG, and PNG are accepted. Convert Word documents to PDF before uploading.</li>
+                <li><strong>File too large</strong> — Maximum 5 MB per document. Compress your PDF if needed using any free online tool.</li>
+                <li><strong>Expired certificate</strong> — Ensure your PenCom certificate is current. Reviewers will verify its validity date.</li>
+                <li><strong>Wrong slot</strong> — Double-check each upload field to make sure the correct document is in the correct slot.</li>
+            </ul>
+        </div>
+
+        <!-- SECTION 6: PAYMENT & SUBMIT -->
+        <div class="section" id="section-submit">
+            <h2>6. Step 4 — Payment &amp; Submit</h2>
+            <p>After completing the Update and Documents tabs, proceed to <strong>Payment</strong> and then <strong>Send</strong> to formally submit your application.</p>
+
+            <ol class="steps">
+                <li class="step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <h4>Review your application</h4>
+                        <p>Before paying, review all information you have entered — investment figures, employee count, and uploaded documents. Use the <strong>Back</strong> button to correct anything before proceeding.</p>
+                    </div>
+                </li>
+                <li class="step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <h4>Proceed to payment</h4>
+                        <p>Click <strong>Go to Payment</strong>. The system will calculate the renewal fee based on your investment data. You will see the amount due before confirming.</p>
+                    </div>
+                </li>
+                <li class="step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <h4>Complete payment</h4>
+                        <p>Pay the renewal fee online using your debit card, bank transfer, or other accepted methods. Keep your payment confirmation reference number for your records.</p>
+                    </div>
+                </li>
+                <li class="step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <h4>Submit your application</h4>
+                        <p>After payment, click <strong>Send</strong> to formally submit your renewal application. You will receive a confirmation with your application reference number.</p>
+                    </div>
+                </li>
+            </ol>
+
+            <div class="info-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                    Payment processed automatically
+                </div>
+                <p>After payment is submitted, an automated bot will create a treasury record within minutes. No action is required — just wait for the NIPC review team to process your application.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 7: AFTER SUBMISSION -->
+        <div class="section" id="section-after">
+            <h2>7. After Submission</h2>
+            <p>Once submitted, your renewal application enters the NIPC processing workflow. Here is what happens at each stage:</p>
+
+            <div class="timeline">
+                <div class="timeline-item bot">
+                    <h4>NIPC Treasury <span class="role-badge badge-bot">Automated</span></h4>
+                    <p>An automated system creates a treasury record for your payment immediately after submission. No action is required from you.</p>
+                    <p class="timeline-meta">Typical duration: 5–15 minutes</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>NIPC Review <span class="role-badge badge-human">Human Review</span></h4>
+                    <p>An NIPC officer reviews your application — checking investment figures, employee count, and uploaded documents for accuracy and compliance. If corrections are needed, you will receive a notification to make changes and resubmit.</p>
+                    <p class="timeline-meta">Typical duration: 3–7 business days</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>NIPC Approval <span class="role-badge badge-human">Senior Approval</span></h4>
+                    <p>A senior NIPC officer reviews and approves the renewed registration. The new renewal date and expiry date for your certificate are set at this stage.</p>
+                    <p class="timeline-meta">Typical duration: 2–4 business days</p>
+                </div>
+                <div class="timeline-item bot">
+                    <h4>NIPC Registry <span class="role-badge badge-bot">Automated</span></h4>
+                    <p>An automated system updates the official NIPC registry with your renewed registration data. This happens immediately after approval.</p>
+                    <p class="timeline-meta">Typical duration: A few minutes</p>
+                </div>
+                <div class="timeline-item bot">
+                    <h4>Certificate Generation <span class="role-badge badge-bot">Automated</span></h4>
+                    <p>Your renewed NIPC Certificate is automatically generated as a PDF and uploaded to your portal account. You will receive a notification when it is ready.</p>
+                    <p class="timeline-meta">Typical duration: A few minutes</p>
+                </div>
+                <div class="timeline-item pending">
+                    <h4>Certificate Available</h4>
+                    <p>Log in to the NIPC portal, open your renewal application, and download your new certificate. It will reflect your updated investment data and new expiry date.</p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L18 17H2L10 3z"/><line x1="10" y1="10" x2="10" y2="13"/><circle cx="10" cy="15.5" r="0.5" fill="currentColor"/></svg>
+                    If corrections are requested
+                </div>
+                <p>If the NIPC reviewer sends your application back for corrections, you will receive an email notification. Log in to the portal, review the reviewer's comments, make the requested changes, and resubmit. Do not start a new application — always continue from your existing one.</p>
+            </div>
+        </div>
+
+        <!-- SECTION 8: FAQ -->
+        <div class="section" id="section-faq">
+            <h2>8. Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How often do I need to renew my NIPC registration?</div>
+                <div class="faq-answer">NIPC pioneer status certificates have a fixed validity period. You must renew before the expiry date shown on your current certificate. Log in to your portal account to check your current expiry date at any time.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">My company has no foreign investment. Do I still need to answer the CCI question?</div>
+                <div class="faq-answer">Yes, the question is required. Simply select <strong>No</strong> — "CCI has NOT been made available." You will not be asked to upload a CCI document and your application will proceed normally.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">What is PenCom and does my company need to register?</div>
+                <div class="faq-answer">PenCom (the National Pension Commission) regulates pension fund administration in Nigeria. Companies with 3 or more employees are required to enrol them in a Contributory Pension Scheme (CPS). If your company has 3+ employees, you should be registered with PenCom. Visit <em>pencom.gov.ng</em> for more information on registration.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">My investment figures have changed significantly. Is that a problem?</div>
+                <div class="faq-answer">No — the renewal process is designed to capture updated figures. Enter your current accurate investment amounts. The NIPC reviewer will compare them with your previous record. Significant changes may prompt clarification questions from the reviewer, but will not automatically delay your renewal.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How long does the entire renewal process take?</div>
+                <div class="faq-answer">The total processing time is typically <strong>5–15 business days</strong> from the date of submission, assuming all information is correct and no corrections are needed. NIPC Review takes 3–7 days, Approval takes 2–4 days, and certificate generation after approval is automated (minutes).</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">I submitted my application but made a mistake. Can I correct it?</div>
+                <div class="faq-answer">Once submitted, you cannot edit your application directly. The NIPC reviewer will send it back for corrections if an issue is found. If the error is critical and the application hasn't been reviewed yet, contact NIPC support immediately using the details in Section 9.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Where can I download my renewed certificate?</div>
+                <div class="faq-answer">Once approved and generated, you will receive an email notification. Log in to the NIPC portal, open your renewal application, and look for the Documents section — your renewed NIPC Certificate will be available as a downloadable PDF.</div>
+            </div>
+        </div>
+
+        <!-- SECTION 9: CONTACT -->
+        <div class="section" id="section-contact">
+            <h2>9. Help &amp; Contact</h2>
+            <p>If you encounter problems or have questions not covered by this manual, contact NIPC using the details below.</p>
+
+            <table class="field-table">
+                <thead><tr><th>Channel</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>NIPC Website</strong></td><td><a href="https://nipc.gov.ng">nipc.gov.ng</a></td></tr>
+                    <tr><td><strong>Help &amp; Support</strong></td><td><a href="https://nipc.gov.ng/contact/">nipc.gov.ng/contact/</a></td></tr>
+                    <tr><td><strong>NIPC Headquarters</strong></td><td>No. 1440 Tigris Crescent, Off Aguiyi-Ironsi Street, Maitama, Abuja, FCT — Nigeria</td></tr>
+                    <tr><td><strong>Portal Login</strong></td><td><a href="https://bpa.gateway.nipc.gov.ng/">bpa.gateway.nipc.gov.ng</a></td></tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <div class="box-label">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                    When contacting support
+                </div>
+                <p>Have your <strong>application reference number</strong> and <strong>NIPC registration number</strong> ready. This allows the support team to locate your file quickly and assist you more efficiently.</p>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>NIPC Nigeria</h5>
+                <p>The Nigerian Investment Promotion Commission (NIPC) promotes, coordinates, and monitors all investments in Nigeria.</p>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="https://nipc.gov.ng/about/">About NIPC</a></li>
+                    <li><a href="https://nipc.gov.ng/incentives/">Incentives</a></li>
+                    <li><a href="index.html">All Service Manuals</a></li>
+                    <li><a href="nipc-registration.html">NIPC Registration Manual</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>eRegistrations Portal</h5>
+                <ul class="footer-links">
+                    <li><a href="https://bpa.gateway.nipc.gov.ng/">Login / Register</a></li>
+                    <li><a href="https://nipc.gov.ng/contact/">Technical Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>No. 1440 Tigris Crescent, Maitama, Abuja, FCT</span>
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span><a href="https://nipc.gov.ng/contact/">Contact Form</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-implemented">
+            <span>Implemented by</span>
+            <img src="https://unctad.org/sites/default/files/2019-10/logo_0.png" alt="UNCTAD" style="height:28px;opacity:0.7;">
+        </div>
+        <div class="footer-copyright">&copy; 2026 Nigerian Investment Promotion Commission. All rights reserved.</div>
+    </div>
+    <div class="manual-version">
+        <p>Manual v1.0 &mdash; Generated 2026-03-31 &mdash; Source: nigeria/5779c1e3-8ce9-7ec7-6bac-14f60344cbdd</p>
+        <p>Generated by /service-manual skill v3.4.0</p>
+    </div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+    el.classList.toggle('open');
+    el.nextElementSibling.classList.toggle('open');
+}
+</script>
+
+</body>
+</html>
