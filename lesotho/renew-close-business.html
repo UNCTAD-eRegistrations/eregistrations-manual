@@ -841,6 +841,124 @@
             a { color: #000; text-decoration: underline; }
             a[href]::after { content: none; }
         }
+
+        /* --- Form Mockup Styles --- */
+        .form-mockup {
+            background: #FAFAFA;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        .form-mockup-header {
+            background: #2B2A65;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-mockup-body {
+            padding: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .form-field label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-field .field-value {
+            background: #FFFFFF;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: #1F2128;
+        }
+
+        .form-field .field-value.readonly {
+            background: #F5F5F7;
+            color: #555866;
+        }
+
+        .datagrid-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .datagrid-table th {
+            background: #F5F5F7;
+            padding: 8px 10px;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #555866;
+            border-bottom: 1px solid #E5E7EB;
+            white-space: nowrap;
+        }
+
+        .datagrid-table td {
+            padding: 10px 10px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: middle;
+            color: #1F2128;
+        }
+
+        .datagrid-table tbody tr:last-child td { border-bottom: none; }
+        .datagrid-table tbody tr:hover { background: #F5F5F7; }
+
+        .checkbox-mock {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #D1D5DB;
+            border-radius: 4px;
+            background: #FFFFFF;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .checkbox-mock.checked {
+            background: #4CAF74;
+            border-color: #4CAF74;
+            position: relative;
+        }
+
+        .checkbox-mock.checked::after {
+            content: "✓";
+            color: white;
+            font-size: 12px;
+            position: absolute;
+            top: -1px;
+            left: 2px;
+        }
+
     </style>
 </head>
 <body>
@@ -852,11 +970,11 @@
         <div class="header-inner">
             <div class="header-logos">
                 <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                    <img src="obfc-logo.webp" alt="OBFC Logo">
                 </a>
                 <div class="header-divider"></div>
                 <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/62e7e38d29393d9e912a3aa2888bec679106a457.png" alt="MTI One-Stop Business Facilitation Centre" class="coat-of-arms">
+                    <img src="mti-logo.avif" alt="MTI One-Stop Business Facilitation Centre" class="coat-of-arms">
                 </a>
             </div>
             <nav class="header-nav">
@@ -874,8 +992,8 @@
         <div class="container">
             <ol class="breadcrumb-list">
                 <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
-                <li><a href="https://services.businessregistrations.gov.ls/">Renew/Close Business</a></li>
-                <li><span class="current">User Manual</span></li>
+                <li><a href="index.html">Lesotho Manuals</a></li>
+                <li><span class="current">Renew or Close a Business</span></li>
             </ol>
         </div>
     </div>
@@ -887,9 +1005,9 @@
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content">
-                    <span class="hero-label">User Manual</span>
+                    <span class="hero-label">User Manual &mdash; Applicant</span>
                     <h1>Renew or Close a Business</h1>
-                    <p class="hero-description">Complete guide to renewing your Business ID, renewing trading or industrial licences, or closing (terminating) your business and licences through the OBFC online portal in the Kingdom of Lesotho.</p>
+                    <p class="hero-description">Complete guide to renewing your Business ID or closing (terminating) your business through the OBFC online portal in the Kingdom of Lesotho.</p>
                     <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Start Application &rarr;</a>
                 </div>
                 <div class="hero-image">
@@ -960,11 +1078,9 @@
                  ============================ -->
             <div class="section" id="overview">
                 <h2>1. Overview</h2>
-                <p>The <strong>Renew or Close a Business</strong> service allows registered businesses in Lesotho to manage the lifecycle of their Business ID and licences through the OBFC online portal. This single service handles both <strong>renewal</strong> and <strong>termination (closure)</strong> of:</p>
+                <p>The <strong>Renew or Close a Business</strong> service allows registered businesses in Lesotho to manage the lifecycle of their Business ID through the OBFC online portal. This service handles both <strong>renewal</strong> and <strong>termination (closure)</strong> of:</p>
                 <ul>
                     <li><strong>Business ID</strong> &mdash; the unique identifier for your registered business</li>
-                    <li><strong>Trading Licences</strong> &mdash; licences required for commercial trading activities</li>
-                    <li><strong>Industrial Licences</strong> &mdash; licences required for industrial and manufacturing operations</li>
                 </ul>
 
                 <div class="info-box">
@@ -972,11 +1088,11 @@
                         <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
                         Good to know
                     </div>
-                    <p>You can renew and terminate different items in a single application. For example, you may renew your Business ID while simultaneously closing a trading licence you no longer need.</p>
+                    <p>This service covers your Business ID only. To renew or close trading or industrial licences, use the separate <strong>"Renew or Close a Licence"</strong> service.</p>
                 </div>
 
                 <h3>What this service covers</h3>
-                <p>This service encompasses seven distinct registrations that are processed together in one application:</p>
+                <p>This service handles two distinct registrations:</p>
 
                 <table class="field-table">
                     <thead>
@@ -993,29 +1109,9 @@
                             <td>Extend the validity of your Business ID</td>
                         </tr>
                         <tr>
-                            <td>Renewal Trading Licences</td>
-                            <td>Renew</td>
-                            <td>Extend the validity of your trading licence(s)</td>
-                        </tr>
-                        <tr>
-                            <td>Renewal Industrial Licences</td>
-                            <td>Renew</td>
-                            <td>Extend the validity of your industrial licence(s)</td>
-                        </tr>
-                        <tr>
                             <td>Termination Business ID</td>
                             <td>Close</td>
                             <td>Permanently close your Business ID</td>
-                        </tr>
-                        <tr>
-                            <td>Termination Trading Licences</td>
-                            <td>Close</td>
-                            <td>Permanently close a trading licence</td>
-                        </tr>
-                        <tr>
-                            <td>Termination Industrial Licences</td>
-                            <td>Close</td>
-                            <td>Permanently close an industrial licence</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1035,27 +1131,26 @@
                     </div>
                     <div class="tab-panel active" id="tab-renewal" data-tab-label="Renewal">
                         <h4>Renewal</h4>
-                        <p>Renewal extends the validity period of your Business ID or licence. Choose renewal when:</p>
+                        <p>Renewal extends the validity period of your Business ID. Choose renewal when:</p>
                         <ul>
-                            <li>Your Business ID or licence is approaching its expiry date</li>
-                            <li>Your Business ID or licence has already expired and you wish to continue operating</li>
+                            <li>Your Business ID is approaching its expiry date</li>
+                            <li>Your Business ID has already expired and you wish to continue operating</li>
                             <li>You want to maintain your business registration and continue trading</li>
                         </ul>
-                        <p><strong>Renewal period:</strong> Business IDs are renewed for 3 years. Trading and industrial licences are typically renewed for 1 year.</p>
+                        <p><strong>Renewal period:</strong> Business IDs are renewed for 3 years from the renewal date.</p>
                         <div class="warning-box">
                             <div class="box-label">
                                 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
                                 Warning
                             </div>
-                            <p>If your Business ID or licence has expired, <strong>penalty fees</strong> will apply in addition to the standard renewal fees. The penalty amount depends on how many days past the expiry date you are.</p>
+                            <p>If your Business ID has expired, <strong>penalty fees</strong> will apply in addition to the standard renewal fee. The penalty amount depends on how many days past the expiry date you are.</p>
                         </div>
                     </div>
                     <div class="tab-panel" id="tab-closure" data-tab-label="Closure (Termination)">
                         <h4>Closure (Termination)</h4>
-                        <p>Closure permanently terminates your Business ID or licence. Choose termination when:</p>
+                        <p>Closure permanently terminates your Business ID. Choose termination when:</p>
                         <ul>
                             <li>You are ceasing all business operations permanently</li>
-                            <li>You no longer need a specific trading or industrial licence</li>
                             <li>Your business is being dissolved</li>
                         </ul>
                         <div class="warning-box">
@@ -1063,18 +1158,18 @@
                                 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
                                 Warning
                             </div>
-                            <p><strong>Termination is permanent.</strong> Once your Business ID or licence is terminated, you cannot reverse the action. You would need to apply for a new registration if you wish to resume operations.</p>
+                            <p><strong>Termination is permanent.</strong> Once your Business ID is terminated, you cannot reverse the action. You would need to register a new business if you wish to resume operations.</p>
                         </div>
                     </div>
                 </div>
 
-                <h3>Can I do both in one application?</h3>
-                <p>Yes. The system allows you to select different actions for different items. For example, you may:</p>
-                <ul>
-                    <li>Renew your Business ID while closing an industrial licence</li>
-                    <li>Renew one trading licence while closing another</li>
-                    <li>Close your Business ID along with all associated licences</li>
-                </ul>
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Need to manage licences too?
+                    </div>
+                    <p>This service only handles your Business ID. To renew or close trading or industrial licences, use the <strong>"Renew or Close a Licence"</strong> service separately.</p>
+                </div>
             </div>
 
             <!-- ============================
@@ -1092,7 +1187,7 @@
                     </li>
                     <li>
                         <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>An existing Business ID</strong> &mdash; The system will automatically retrieve your registered businesses and licences linked to your account</span>
+                        <span><strong>An existing Business ID</strong> &mdash; The system will automatically retrieve your registered businesses linked to your account</span>
                     </li>
                     <li>
                         <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
@@ -1109,7 +1204,7 @@
                         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
                         Note
                     </div>
-                    <p>No document uploads are required for this service. The system automatically retrieves your business and licence data from the national registry.</p>
+                    <p>No document uploads are required for this service. The system automatically retrieves your business data from the national registry.</p>
                 </div>
 
                 <h3>Entity types supported</h3>
@@ -1149,42 +1244,12 @@
                         <tr>
                             <td>Business ID Penalty Fee</td>
                             <td>Late renewal of Business ID</td>
-                            <td>Applied when Business ID has already expired</td>
-                        </tr>
-                        <tr>
-                            <td>Trading Licence Renewal Fee</td>
-                            <td>Renewal of trading licence(s)</td>
-                            <td>Per licence renewal</td>
-                        </tr>
-                        <tr>
-                            <td>Trading Licence Penalty Fee</td>
-                            <td>Late renewal of trading licence(s)</td>
-                            <td>Applied when licence has expired</td>
-                        </tr>
-                        <tr>
-                            <td>Industrial Licence Renewal Fee</td>
-                            <td>Renewal of industrial licence(s)</td>
-                            <td>Per licence renewal</td>
-                        </tr>
-                        <tr>
-                            <td>Industrial Licence Penalty Fee</td>
-                            <td>Late renewal of industrial licence(s)</td>
-                            <td>Applied when licence has expired</td>
+                            <td>Applied when Business ID has already expired; charged per day late</td>
                         </tr>
                         <tr>
                             <td>Business ID Termination Fee</td>
                             <td>Closure of Business ID</td>
                             <td>Processing fee for permanent closure</td>
-                        </tr>
-                        <tr>
-                            <td>Trading Licence Termination Fee</td>
-                            <td>Closure of trading licence(s)</td>
-                            <td>Processing fee for licence termination</td>
-                        </tr>
-                        <tr>
-                            <td>Industrial Licence Termination Fee</td>
-                            <td>Closure of industrial licence(s)</td>
-                            <td>Processing fee for licence termination</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1194,7 +1259,7 @@
                         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
                         Penalty fees
                     </div>
-                    <p>Penalty fees are automatically calculated based on the number of days past the expiry date. The longer you wait to renew after expiry, the higher the penalty. <strong>Renew before expiry to avoid penalties.</strong> The system will alert you when your Business ID or licence is within 90 days of expiry.</p>
+                    <p>Penalty fees are automatically calculated based on the number of days past the expiry date. The longer you wait to renew after expiry, the higher the penalty. <strong>Renew before expiry to avoid penalties.</strong></p>
                 </div>
 
                 <div class="info-box">
@@ -1211,7 +1276,7 @@
                  ============================ -->
             <div class="section" id="step-by-step">
                 <h2>5. Step-by-Step Guide</h2>
-                <p>Follow these steps to renew or close your business, trading licences, or industrial licences.</p>
+                <p>Follow these steps to renew or close your Business ID on <strong>businessregistrations.gov.ls</strong>.</p>
 
                 <ol class="steps">
                     <li class="step">
@@ -1235,13 +1300,7 @@
                         <div class="step-content">
                             <h4>Load Your Businesses</h4>
                             <p>Click the <strong>"List all your businesses"</strong> button. The system will automatically retrieve all businesses registered to your account from the national database. This may take a few moments.</p>
-                            <div class="info-box">
-                                <div class="box-label">
-                                    <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                                    Tip
-                                </div>
-                                <p>If you own a company, you will also see a button <strong>"List all your licences"</strong> to load licences connected to that company entity.</p>
-                            </div>
+
                         </div>
                     </li>
 
@@ -1249,78 +1308,76 @@
                         <div class="step-number">4</div>
                         <div class="step-content">
                             <h4>Review Your Businesses</h4>
-                            <p>The system displays your businesses in a table showing:</p>
+                            <p>The system displays your businesses in a table. For each business, choose <strong>Renew</strong> to extend its validity, <strong>Close</strong> to permanently terminate it, or leave both unchecked to take no action.</p>
+                            <div class="form-mockup">
+                                <div class="form-mockup-header">Your Businesses</div>
+                                <div class="form-mockup-body" style="overflow-x: auto;">
+                                    <table class="datagrid-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Business Name</th>
+                                                <th>Business ID</th>
+                                                <th>Entity Type</th>
+                                                <th>Expiry Date</th>
+                                                <th>Days Left</th>
+                                                <th>Renew</th>
+                                                <th>Close</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Nthabiseng General Trading</td>
+                                                <td>BID-20451</td>
+                                                <td>Sole Proprietor</td>
+                                                <td style="color: #D4891A;">15 Feb 2026</td>
+                                                <td style="color: #D4891A;">46 days left</td>
+                                                <td><span class="checkbox-mock checked" style="position: relative;"></span></td>
+                                                <td><span class="checkbox-mock"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Maseru Tech Solutions</td>
+                                                <td>BID-18832</td>
+                                                <td>Private Company</td>
+                                                <td>30 Jun 2026</td>
+                                                <td>181 days left</td>
+                                                <td><span class="checkbox-mock"></span></td>
+                                                <td><span class="checkbox-mock"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Leribe Hardware Shop</td>
+                                                <td>BID-09274</td>
+                                                <td>Sole Proprietor</td>
+                                                <td style="color: #E53E3E;">10 Oct 2025</td>
+                                                <td style="color: #E53E3E;">83 days overdue</td>
+                                                <td><span class="checkbox-mock"></span></td>
+                                                <td><span class="checkbox-mock checked" style="position: relative;"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
                             <ul>
-                                <li><strong>Business Name</strong></li>
-                                <li><strong>Business ID number</strong></li>
-                                <li><strong>Expiry date</strong></li>
-                                <li><strong>Entity type</strong> (Sole Proprietor, Company, etc.)</li>
-                                <li>Number of days until expiry or days since expiry</li>
+                                <li>Tick <strong>"Renew"</strong> to extend the Business ID validity (typically 3 years).</li>
+                                <li>Tick <strong>"Close"</strong> to permanently terminate that Business ID.</li>
+                                <li>You cannot check both "Renew" and "Close" for the same business.</li>
+                                <li>Expired businesses are shown in red &mdash; penalty fees will apply if you renew or close them.</li>
                             </ul>
-                            <p>The total number of businesses is shown at the top of the section.</p>
                         </div>
                     </li>
+
+
+
+
 
                     <li class="step">
                         <div class="step-number">5</div>
                         <div class="step-content">
-                            <h4>Select Actions for Each Business</h4>
-                            <p>For each business in the list, select the action you want to take:</p>
-                            <ul>
-                                <li><strong>Renew</strong> &mdash; tick the "Renew" checkbox to extend the validity of that Business ID</li>
-                                <li><strong>Close</strong> &mdash; tick the "Close" checkbox to permanently terminate that Business ID</li>
-                            </ul>
-                            <p>You can select different actions for different businesses. You may also leave businesses unchanged by not selecting either option.</p>
-                            <div class="warning-box">
-                                <div class="box-label">
-                                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                                    Important
-                                </div>
-                                <p>You cannot select both "Renew" and "Close" for the same business. These are mutually exclusive actions.</p>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="step">
-                        <div class="step-number">6</div>
-                        <div class="step-content">
-                            <h4>Review Your Licences</h4>
-                            <p>Below the business list, the system displays your licences in a separate table showing:</p>
-                            <ul>
-                                <li><strong>Licence ID number</strong></li>
-                                <li><strong>Licence name / description</strong></li>
-                                <li><strong>Type</strong> (Trading or Industrial)</li>
-                                <li><strong>Sector and Activity</strong></li>
-                                <li><strong>Expiry date</strong></li>
-                                <li>Number of days until expiry or days since expiry</li>
-                            </ul>
-                            <p>The total number of licences is shown at the top of the section.</p>
-                        </div>
-                    </li>
-
-                    <li class="step">
-                        <div class="step-number">7</div>
-                        <div class="step-content">
-                            <h4>Select Actions for Each Licence</h4>
-                            <p>For each licence, select the action you want to take:</p>
-                            <ul>
-                                <li><strong>Renew</strong> &mdash; tick the "Renew" checkbox to extend the validity of that licence</li>
-                                <li><strong>Close</strong> &mdash; tick the "Close" checkbox to permanently terminate that licence</li>
-                            </ul>
-                        </div>
-                    </li>
-
-                    <li class="step">
-                        <div class="step-number">8</div>
-                        <div class="step-content">
                             <h4>Review Fees</h4>
                             <p>Click <strong>"Go to payment"</strong> to proceed to the fees summary. The system displays a detailed breakdown of all fees, including:</p>
                             <ul>
-                                <li>Renewal fees for each selected Business ID</li>
-                                <li>Penalty fees for any expired items</li>
-                                <li>Renewal fees for each selected trading licence</li>
-                                <li>Renewal fees for each selected industrial licence</li>
-                                <li>Termination fees for any items marked for closure</li>
+                                <li>Renewal fee for your Business ID (if renewing)</li>
+                                <li>Penalty fees if your Business ID has already expired</li>
+                                <li>Termination fee (if closing)</li>
                                 <li><strong>Total amount due</strong></li>
                             </ul>
                             <p>Review the fee breakdown carefully before proceeding.</p>
@@ -1328,7 +1385,7 @@
                     </li>
 
                     <li class="step">
-                        <div class="step-number">9</div>
+                        <div class="step-number">6</div>
                         <div class="step-content">
                             <h4>Complete Payment</h4>
                             <p>Pay the total fees through the digital payment system integrated into the portal. Follow the on-screen payment instructions to complete the transaction.</p>
@@ -1336,7 +1393,7 @@
                     </li>
 
                     <li class="step">
-                        <div class="step-number">10</div>
+                        <div class="step-number">7</div>
                         <div class="step-content">
                             <h4>Confirm and Submit</h4>
                             <p>On the final page, review the acknowledgment statement, tick the confirmation checkbox, and click <strong>"Submit"</strong> to send your application for processing.</p>
@@ -1378,12 +1435,12 @@
                     </div>
                     <div class="timeline-item">
                         <h4>System Update</h4>
-                        <p>The system automatically updates the national business registry. Business IDs and licences are either renewed with new expiry dates or marked as terminated.</p>
+                        <p>The system automatically updates the national business registry. Your Business ID is either renewed with a new expiry date or marked as terminated.</p>
                         <div class="timeline-meta">Day 3&ndash;4</div>
                     </div>
                     <div class="timeline-item pending">
                         <h4>Certificates Issued</h4>
-                        <p>Updated Business ID certificates and renewed licences are generated and made available for download from your portal account.</p>
+                        <p>Your updated Business ID certificate is generated and made available for download from your portal account.</p>
                         <div class="timeline-meta">Day 4&ndash;5</div>
                     </div>
                 </div>
@@ -1421,19 +1478,9 @@
                             <td>Automatically updates the business registry database</td>
                         </tr>
                         <tr>
-                            <td>LICENCES update</td>
-                            <td>Automated</td>
-                            <td>Automatically updates licence records</td>
-                        </tr>
-                        <tr>
                             <td>BUSINESS ID upload</td>
                             <td>Automated</td>
                             <td>Generates updated Business ID certificate</td>
-                        </tr>
-                        <tr>
-                            <td>LICENCES upload</td>
-                            <td>Automated</td>
-                            <td>Generates updated licence certificates</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1471,14 +1518,11 @@
                 <h4>What happens when I close (terminate) a Business ID?</h4>
                 <p>Termination is permanent. Your Business ID will be marked as closed in the national registry and you will no longer be able to operate under that registration. If you wish to start a new business in the future, you will need to submit a new business registration application.</p>
 
-                <h4>Can I renew some licences and close others?</h4>
-                <p>Yes. The system allows you to select different actions for each item individually. You can renew your Business ID, renew one licence, and close another all within the same application.</p>
-
-                <h4>What if my businesses or licences do not appear in the list?</h4>
+                <h4>What if my businesses do not appear in the list?</h4>
                 <p>Make sure you click the <strong>"List all your businesses"</strong> button to load your data from the registry. If they still do not appear, it may be because they are registered under a different account or entity. Contact OBFC support for assistance.</p>
 
                 <h4>How are fees calculated?</h4>
-                <p>Fees are calculated automatically by the system based on the type of action (renewal or termination), the type of registration (Business ID, trading licence, or industrial licence), and whether any penalties apply. The exact amounts are displayed on the Fees page before you submit.</p>
+                <p>Fees are calculated automatically based on your selected action (renewal or termination) and whether any penalty applies for late renewal. The exact amounts are displayed on the Fees page before you submit.</p>
 
                 <h4>Can I pay in person instead of online?</h4>
                 <p>The system supports digital payment through the portal. For alternative payment arrangements, please contact the OBFC directly.</p>
@@ -1486,59 +1530,56 @@
                 <h4>How long does processing take?</h4>
                 <p>Typical processing time is 3 to 5 business days from submission to completion. This includes review, approval, and automated system updates.</p>
 
-                <h4>Will I receive new certificates after renewal?</h4>
-                <p>Yes. After approval, the system automatically generates updated Business ID certificates and licence certificates with new expiry dates. These are available for download from your portal account.</p>
+                <h4>Will I receive a new certificate after renewal?</h4>
+                <p>Yes. After approval, the system automatically generates an updated Business ID certificate with the new expiry date. It is available for download from your portal account.</p>
 
-                <h4>What is the difference between trading and industrial licences?</h4>
-                <p>Trading licences cover commercial trading activities (buying and selling goods, retail, wholesale, etc.), while industrial licences cover manufacturing, processing, and industrial production activities. Your licence type depends on the nature of your business operations.</p>
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Need to manage licences?
+                    </div>
+                    <p>This service only covers your Business ID. To renew or close trading or industrial licences, use the <strong>"Renew or Close a Licence"</strong> service on the OBFC portal.</p>
+                </div>
             </div>
 
             <!-- ============================
                  SECTION 8: CONTACT & SUPPORT
                  ============================ -->
             <div class="section" id="contact">
-                <h2>8. Contact &amp; Support</h2>
-                <p>If you need assistance with your renewal or closure application, the OBFC team is ready to help.</p>
+                <h2>8. Help &amp; Contact</h2>
+                <p>If you need help with your application, you can reach the OBFC support team through any of the following channels:</p>
 
                 <table class="field-table">
                     <thead>
                         <tr>
                             <th>Channel</th>
                             <th>Details</th>
-                            <th>Availability</th>
+                            <th>Hours</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>In person</strong></td>
-                            <td>LNDC Centre, Block A, Kingsway Road, Maseru</td>
-                            <td>Monday &ndash; Friday, 8:00 AM &ndash; 4:30 PM</td>
+                            <td>Help desk portal</td>
+                            <td><a href="https://lesotho.eregistrations.dev/help/">lesotho.eregistrations.dev/help</a></td>
+                            <td>24/7 (self-service)</td>
                         </tr>
                         <tr>
-                            <td><strong>Phone</strong></td>
-                            <td>+266 2231 7454</td>
-                            <td>Monday &ndash; Friday, 8:00 AM &ndash; 4:30 PM</td>
+                            <td>Phone</td>
+                            <td>+266 2231 7600</td>
+                            <td>Monday&ndash;Friday 08:00&ndash;17:00</td>
                         </tr>
                         <tr>
-                            <td><strong>Email</strong></td>
-                            <td><a href="mailto:info@obfc.org.ls">info@obfc.org.ls</a></td>
-                            <td>24/7 (responses within 1&ndash;2 business days)</td>
+                            <td>Email</td>
+                            <td>info@obfc.gov.ls</td>
+                            <td>Responses within 2 business days</td>
                         </tr>
                         <tr>
-                            <td><strong>Online portal</strong></td>
-                            <td><a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a></td>
-                            <td>24/7</td>
+                            <td>Walk-in</td>
+                            <td>OBFC Offices, Kingsway Road, Maseru</td>
+                            <td>Monday&ndash;Friday 08:00&ndash;16:30</td>
                         </tr>
                     </tbody>
                 </table>
-
-                <div class="info-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        When contacting support
-                    </div>
-                    <p>Have your <strong>Business ID number</strong> and <strong>application reference number</strong> ready when contacting support. This will help the team locate your records quickly.</p>
-                </div>
             </div>
 
         </div>
@@ -1550,78 +1591,62 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-
-                <!-- Column 1: Logo & About -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="https://lesotho.eregistrations.dev/_assets/v11/e8f8e0f4875113e3103aae78a6e2c99f11345f18.png" alt="OBFC Logo">
+                        <img src="obfc-logo.webp" alt="OBFC Logo">
                     </div>
-                    <p>One Business Facilitation Centre (OBFC) provides a single window for business registration and licensing services in the Kingdom of Lesotho.</p>
-                </div>
-
-                <!-- Column 2: Contact Details -->
-                <div class="footer-col">
-                    <h5>Contact Details</h5>
-                    <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span>LNDC Centre, Block A<br>Kingsway Road, Maseru</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75l.72 3.59a1 1 0 0 1-.26.95L8.09 10.7a16 16 0 0 0 5.21 5.21l2.41-2.41a1 1 0 0 1 .95-.26l3.59.72a1 1 0 0 1 .75 1z"/></svg>
-                        <span>+266 2231 7454</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        <span>info@obfc.org.ls</span>
-                    </div>
-                </div>
-
-                <!-- Column 3: Social Channels -->
-                <div class="footer-col">
-                    <h5>Follow Us</h5>
-                    <p>Stay connected with OBFC for the latest updates on business services.</p>
+                    <p>One Business Facilitation Centre (OBFC) &mdash; The single entry point for all business registrations in the Kingdom of Lesotho.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook">
                             <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         </a>
-                        <a href="#" aria-label="Twitter / X">
-                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                        </a>
-                        <a href="#" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        <a href="#" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
                         </a>
                     </div>
                 </div>
-
-                <!-- Column 4: Quick Links -->
                 <div class="footer-col">
-                    <h5>Quick Links</h5>
+                    <h5>Services</h5>
                     <ul class="footer-links">
-                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
-                        <li><a href="https://services.businessregistrations.gov.ls/">Login / Register</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/privacy/">Privacy Policy</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/terms/">Terms of Service</a></li>
+                        <li><a href="register-business.html">Register a Business</a></li>
+                        <li><a href="register-sole-proprietor.html">Register as Sole Proprietor</a></li>
+                        <li><a href="renew-close-license.html">Renew or Close a License</a></li>
+                        <li><a href="index.html">All Manuals</a></li>
                     </ul>
                 </div>
-
+                <div class="footer-col">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                        <li><a href="renew-close-business.html">Renew or Close a Business</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Kingsway Road, Maseru, Lesotho</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.88 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.82 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.96-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>+266 2231 7454</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@obfc.org.ls</span>
+                    </div>
+                </div>
             </div>
 
-            <!-- Implemented by -->
             <div class="footer-implemented">
                 <span>Implemented by</span>
-                <a href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/742ddaa6ec00aadee1b93dffeefc513e3c77473c.png" alt="World Bank">
-                </a>
-                <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/fd2d79a17613c98a31e05becdb641ca8c82159b4.png" alt="UNCTAD">
-                </a>
+                <img src="unctad-logo.avif" alt="UNCTAD" style="height: 28px;">
             </div>
 
-            <!-- Copyright -->
             <div class="footer-copyright">
-                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Generated: February 2026
+                Renew or Close a Business &mdash; User Manual (Applicant) &mdash; Version 1.0 &mdash; Updated April 2026 &nbsp;|&nbsp;
+                &copy; 2025&ndash;2026 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved.
             </div>
         </div>
     </footer>
