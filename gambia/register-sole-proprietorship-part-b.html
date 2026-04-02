@@ -21,8 +21,8 @@
         html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
         body { font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif; font-size: 17px; line-height: 1.7; color: #555866; background: #FFFFFF; }
         img { max-width: 100%; height: auto; display: block; }
-        a { color: #4CAF74; text-decoration: none; transition: color 0.2s ease; }
-        a:hover { color: #3d9461; text-decoration: underline; }
+        a { color: #3464B0; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #2a5290; text-decoration: underline; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
         h1 { font-size: 42px; font-weight: 700; }
         h2 { font-size: 32px; font-weight: 600; }
@@ -34,19 +34,19 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* --- Header --- */
-        .site-header { background: #2B2A65; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .site-header { background: #3464B0; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
         .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
         .header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .header-brand-icon { width: 44px; height: 44px; background: rgba(76,175,116,0.2); border: 1.5px solid rgba(76,175,116,0.4); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .header-brand-icon svg { width: 24px; height: 24px; fill: none; stroke: #4CAF74; stroke-width: 1.8; }
+        .header-brand-icon { width: 44px; height: 44px; background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.3); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .header-brand-icon svg { width: 24px; height: 24px; fill: none; stroke: #FFFFFF; stroke-width: 1.8; }
         .header-brand-text { display: flex; flex-direction: column; }
         .header-brand-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; line-height: 1.2; }
         .header-brand-subtitle { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px; text-transform: uppercase; font-weight: 400; }
         .header-nav { display: flex; align-items: center; gap: 32px; }
         .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; white-space: nowrap; transition: opacity 0.2s ease; }
         .header-nav a:hover { opacity: 0.85; text-decoration: none; }
-        .btn-login { background: #4CAF74; color: #FFFFFF !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
-        .btn-login:hover { background: #3d9461; text-decoration: none !important; }
+        .btn-login { background: #FFFFFF; color: #3464B0 !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #EEF2FF; text-decoration: none !important; }
 
         /* --- Officer banner --- */
         .officer-banner { background: #FEF9C3; border-bottom: 2px solid #F5A623; padding: 14px 0; }
@@ -58,36 +58,36 @@
         .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #888; flex-wrap: wrap; }
         .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
         .breadcrumb-list li + li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-top: 1.5px solid #aaa; border-right: 1.5px solid #aaa; transform: rotate(45deg); flex-shrink: 0; }
-        .breadcrumb-list a { color: #4CAF74; font-weight: 400; }
+        .breadcrumb-list a { color: #3464B0; font-weight: 400; }
         .breadcrumb-list .current { color: #555866; font-weight: 500; }
 
         /* --- Hero --- */
-        .hero { background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%); color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
-        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%); pointer-events: none; }
+        .hero { background: #3464B0; color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
+        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.06) 0%, transparent 70%); pointer-events: none; }
         .hero-inner { display: flex; align-items: center; gap: 48px; }
         .hero-content { flex: 1; min-width: 0; }
-        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: #4CAF74; margin-bottom: 12px; display: block; }
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.8); margin-bottom: 12px; display: block; }
         .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
         .hero-description { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 560px; }
-        .btn-primary { background: #4CAF74; color: #FFFFFF; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; border: none; cursor: pointer; }
-        .btn-primary:hover { background: #3d9461; color: #FFFFFF; text-decoration: none; transform: translateY(-1px); }
+        .btn-primary { background: #FFFFFF; color: #0C1A3D; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; border: none; cursor: pointer; }
+        .btn-primary:hover { background: rgba(255,255,255,0.88); color: #0C1A3D; text-decoration: none; transform: translateY(-1px); }
         .hero-image { flex-shrink: 0; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
-        .hero-icon-circle { width: 180px; height: 180px; border-radius: 50%; background: rgba(76,175,116,0.15); border: 2px solid rgba(76,175,116,0.3); display: flex; align-items: center; justify-content: center; }
-        .hero-icon-circle svg { width: 72px; height: 72px; fill: none; stroke: #4CAF74; stroke-width: 1.5; }
+        .hero-icon-circle { width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle svg { width: 72px; height: 72px; fill: none; stroke: rgba(255,255,255,0.85); stroke-width: 1.5; }
 
         /* --- TOC --- */
         .toc { background: #F5F5F7; padding: 40px 0; border-bottom: 1px solid #E5E7EB; }
         .toc h2 { font-size: 24px; margin-bottom: 20px; }
         .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
         .toc-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 15px; }
-        .toc-item:hover { border-color: #4CAF74; box-shadow: 0 2px 6px rgba(76,175,116,0.12); text-decoration: none; color: #1F2128; }
-        .toc-number { width: 28px; height: 28px; border-radius: 50%; background: #2B2A65; color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
+        .toc-item:hover { border-color: #3464B0; box-shadow: 0 2px 6px rgba(52,100,176,0.12); text-decoration: none; color: #1F2128; }
+        .toc-number { width: 28px; height: 28px; border-radius: 50%; background: #3464B0; color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
         .toc-label { flex: 1; line-height: 1.4; }
 
         /* --- Content --- */
         .manual-content { padding: 48px 0 72px; }
         .section { margin-bottom: 52px; scroll-margin-top: 100px; }
-        .section > h2 { font-size: 28px; font-weight: 600; padding-left: 16px; border-left: 4px solid #4CAF74; margin-bottom: 20px; line-height: 1.3; }
+        .section > h2 { font-size: 28px; font-weight: 600; padding-left: 16px; border-left: 4px solid #3464B0; margin-bottom: 20px; line-height: 1.3; }
         .section > h3 { font-size: 20px; font-weight: 600; margin-top: 28px; margin-bottom: 14px; }
         .section > h4 { font-size: 17px; font-weight: 600; margin-top: 20px; margin-bottom: 10px; }
         .section > p, .section > ul, .section > ol { margin-bottom: 14px; }
@@ -96,18 +96,18 @@
 
         /* --- Boxes --- */
         .info-box, .warning-box, .note-box { padding: 16px 20px; border-radius: 8px; margin: 20px 0; font-size: 15px; line-height: 1.6; }
-        .info-box { background: #F5F5F7; border-left: 4px solid #4CAF74; }
+        .info-box { background: #F5F5F7; border-left: 4px solid #3464B0; }
         .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
         .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
         .info-box .box-label, .warning-box .box-label, .note-box .box-label { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
-        .info-box .box-label { color: #4CAF74; }
+        .info-box .box-label { color: #3464B0; }
         .warning-box .box-label { color: #D4891A; }
         .note-box .box-label { color: #4A90D9; }
         .box-label svg { width: 16px; height: 16px; flex-shrink: 0; }
 
         /* --- Field Table --- */
         .field-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; font-size: 14px; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; }
-        .field-table thead { background: #2B2A65; color: #FFFFFF; }
+        .field-table thead { background: #0C1A3D; color: #FFFFFF; }
         .field-table th { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 14px; text-align: left; white-space: nowrap; }
         .field-table td { padding: 10px 14px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
         .field-table tbody tr:last-child td { border-bottom: none; }
@@ -134,14 +134,14 @@
         .tab-nav { display: flex; background: #F5F5F7; border-bottom: 1px solid #E5E7EB; overflow-x: auto; }
         .tab-btn { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500; padding: 12px 22px; cursor: pointer; background: transparent; border: none; border-bottom: 3px solid transparent; color: #555866; white-space: nowrap; transition: all 0.2s ease; }
         .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
-        .tab-btn.active { color: #4CAF74; border-bottom-color: #4CAF74; background: #FFFFFF; font-weight: 600; }
+        .tab-btn.active { color: #3464B0; border-bottom-color: #3464B0; background: #FFFFFF; font-weight: 600; }
         .tab-panel { display: none; padding: 22px; }
         .tab-panel.active { display: block; }
 
         /* --- Steps --- */
         .steps { counter-reset: step-counter; list-style: none; padding: 0; margin: 20px 0; }
         .step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; padding: 16px; background: #FAFAFA; border: 1px solid #E5E7EB; border-radius: 10px; }
-        .step-number { counter-increment: step-counter; width: 34px; height: 34px; border-radius: 50%; background: #2B2A65; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .step-number { counter-increment: step-counter; width: 34px; height: 34px; border-radius: 50%; background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
         .step-number.bot { background: #7C3AED; }
         .step-content { flex: 1; min-width: 0; }
         .step-content h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
@@ -157,8 +157,8 @@
         .wf-step:not(:first-child)::before { content: ""; position: absolute; top: 22px; left: -1px; width: 50%; height: 3px; background: #E5E7EB; z-index: 0; }
         .wf-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
         .wf-dot svg { width: 22px; height: 22px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
-        .wf-dot.applicant { background: #4CAF74; }
-        .wf-dot.officer { background: #2B2A65; }
+        .wf-dot.applicant { background: #3464B0; }
+        .wf-dot.officer { background: #0C1A3D; }
         .wf-dot.bot { background: #7C3AED; }
         .wf-label { font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #1F2128; text-align: center; }
         .wf-sublabel { font-size: 10px; color: #888; text-align: center; line-height: 1.4; }
@@ -181,20 +181,20 @@
         .timeline::before { content: ""; position: absolute; left: 13px; top: 0; bottom: 0; width: 3px; background: #E5E7EB; border-radius: 2px; }
         .timeline-item { position: relative; margin-bottom: 28px; padding-left: 20px; }
         .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-item::before { content: ""; position: absolute; left: -25px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #4CAF74; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #4CAF74; z-index: 1; }
+        .timeline-item::before { content: ""; position: absolute; left: -25px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #3464B0; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #3464B0; z-index: 1; }
         .timeline-item.bot-step::before { background: #7C3AED; box-shadow: 0 0 0 3px #7C3AED; }
-        .timeline-item.applicant-step::before { background: #4CAF74; box-shadow: 0 0 0 3px #4CAF74; }
+        .timeline-item.applicant-step::before { background: #3464B0; box-shadow: 0 0 0 3px #3464B0; }
         .timeline-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 3px; color: #1F2128; }
         .timeline-item p { font-size: 14px; color: #555866; margin-bottom: 0; }
         .timeline-item .tl-meta { font-size: 12px; color: #999; margin-top: 3px; }
 
         /* --- Footer --- */
-        .site-footer { background: #2B2A65; color: rgba(255,255,255,0.75); padding: 40px 0 0; font-size: 14px; }
+        .site-footer { background: #0C1A3D; color: rgba(255,255,255,0.75); padding: 40px 0 0; font-size: 14px; }
         .footer-inner { display: flex; flex-wrap: wrap; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .footer-col { flex: 1; min-width: 180px; }
         .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 14px; font-weight: 600; margin-bottom: 14px; }
         .footer-col a { color: rgba(255,255,255,0.7); }
-        .footer-col a:hover { color: #4CAF74; text-decoration: none; }
+        .footer-col a:hover { color: #3464B0; text-decoration: none; }
         .footer-links { list-style: none; padding: 0; }
         .footer-links li { margin-bottom: 8px; font-size: 13px; }
         .footer-copyright { text-align: center; padding: 18px 0; font-size: 12px; color: rgba(255,255,255,0.4); }
@@ -222,11 +222,11 @@
         @media print {
             @page { margin: 2cm 1.5cm; size: A4; }
             body { font-size: 10pt; color: #000; background: #FFF; }
-            .site-header { position: static; background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .site-header { position: static; background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .officer-banner { page-break-inside: avoid; }
             .tab-nav { display: none; }
             .tab-panel { display: block !important; }
-            .site-footer { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .site-footer { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
     </style>
 </head>
@@ -361,8 +361,8 @@
                 <p>The service starts with a single citizen payment (BR Payment), then splits into four parallel workflows &mdash; one per agency. Each workflow runs independently through its own human desks and automated bots.</p>
 
                 <div class="wf-legend">
-                    <div class="wf-legend-item"><div class="wf-legend-dot" style="background:#4CAF74;"></div> Applicant / Start</div>
-                    <div class="wf-legend-item"><div class="wf-legend-dot" style="background:#2B2A65;"></div> Human officer desk</div>
+                    <div class="wf-legend-item"><div class="wf-legend-dot" style="background:#3464B0;"></div> Applicant / Start</div>
+                    <div class="wf-legend-item"><div class="wf-legend-dot" style="background:#0C1A3D;"></div> Human officer desk</div>
                     <div class="wf-legend-item"><div class="wf-legend-dot" style="background:#7C3AED;"></div> Automated bot</div>
                 </div>
 
@@ -620,12 +620,12 @@
                                     <h4>BR Review</h4>
                                     <p>The RGD reviewing officer opens the application and verifies that all required information is present and correct. Check the following:</p>
                                     <ul class="checklist">
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Applicant&rsquo;s full name matches their identity document (National ID, Passport, or Driver&rsquo;s License)</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Date of birth and nationality are provided and consistent with identity document</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business name is provided (own name, reserved name, or proposed name) and the name availability check has been performed</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business address and description of activities are complete and plausible</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Applicant does not already have a registered sole proprietorship (the system flags this, but verify if unclear)</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Payment confirmed in the system</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Applicant&rsquo;s full name matches their identity document (National ID, Passport, or Driver&rsquo;s License)</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Date of birth and nationality are provided and consistent with identity document</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business name is provided (own name, reserved name, or proposed name) and the name availability check has been performed</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business address and description of activities are complete and plausible</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Applicant does not already have a registered sole proprietorship (the system flags this, but verify if unclear)</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Payment confirmed in the system</span></li>
                                     </ul>
                                     <p>If the proposed business name is similar to an existing name, consult the registry. Minor differences (e.g. spelling) may still conflict &mdash; use your judgement or consult the Legal Unit.</p>
                                 </div>
@@ -671,9 +671,9 @@
                                     <h4>TIN Review</h4>
                                     <p>The GRA reviewing officer checks the TIN registration request. Verify:</p>
                                     <ul class="checklist">
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>If applicant already has a TIN in the GRA database, the system should have pre-filled it &mdash; confirm the existing TIN is correct</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>If no existing TIN, confirm applicant identity details are sufficient for TIN generation</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business activity and address are consistent with the BR registration details</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>If applicant already has a TIN in the GRA database, the system should have pre-filled it &mdash; confirm the existing TIN is correct</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>If no existing TIN, confirm applicant identity details are sufficient for TIN generation</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business activity and address are consistent with the BR registration details</span></li>
                                     </ul>
                                 </div>
                             </li>
@@ -717,9 +717,9 @@
                                     <h4>SSHFC Review</h4>
                                     <p>The SSHFC reviewing officer verifies the employer registration details. Check:</p>
                                     <ul class="checklist">
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business owner details match the BR registration data</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Number of employees declared is plausible given the business type and size</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business address and activity description are complete</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business owner details match the BR registration data</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Number of employees declared is plausible given the business type and size</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business address and activity description are complete</span></li>
                                     </ul>
                                 </div>
                             </li>
@@ -763,10 +763,10 @@
                                     <h4>KMC Review</h4>
                                     <p>The KMC reviewing officer checks the trading license application. Verify:</p>
                                     <ul class="checklist">
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business address is within the KMC area and the correct fee category has been applied</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business activity category is correct (accommodation, retail, communications, automobile, etc.)</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Fee calculation parameters (e.g. number of rooms, machines, vehicles, booths) are plausible and match the declared business description</span></li>
-                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Stock value (if applicable) has been correctly declared and the appropriate tariff tier applied</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business address is within the KMC area and the correct fee category has been applied</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business activity category is correct (accommodation, retail, communications, automobile, etc.)</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Fee calculation parameters (e.g. number of rooms, machines, vehicles, booths) are plausible and match the declared business description</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Stock value (if applicable) has been correctly declared and the appropriate tariff tier applied</span></li>
                                     </ul>
                                 </div>
                             </li>
