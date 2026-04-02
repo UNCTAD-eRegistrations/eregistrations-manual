@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register a Sole Proprietorship - User Manual | Gambia Easy Business</title>
+    <meta name="description" content="User manual for Register a Sole Proprietorship on the Gambia Easy Business eRegistrations platform. Register your business, get your TIN, employer registration, and KMC Trading License in one application.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           GAMBIA eREGISTRATIONS — USER MANUAL
+           Service: Register a Sole Proprietorship
+           Version: v1.0
+           Updated: April 2026
+           ============================================================ */
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: #4CAF74;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #3d9461;
+            text-decoration: underline;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1F2128;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: #2B2A65;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .header-logos img { height: 52px; width: auto; }
+        .header-logos .coat-of-arms { height: 56px; }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .header-brand-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(76,175,116,0.2);
+            border: 1.5px solid rgba(76,175,116,0.4);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .header-brand-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: #4CAF74;
+            stroke-width: 1.8;
+        }
+
+        .header-brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-brand-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #FFFFFF;
+            line-height: 1.2;
+        }
+
+        .header-brand-subtitle {
+            font-size: 11px;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .header-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.25);
+            flex-shrink: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .header-nav a {
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 400;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
+
+        .header-nav a:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        .btn-login {
+            background: #4CAF74;
+            color: #FFFFFF !important;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            transition: background 0.2s ease;
+        }
+
+        .btn-login:hover {
+            background: #3d9461;
+            text-decoration: none !important;
+        }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 14px 0;
+        }
+
+        .breadcrumb-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #888;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumb-list li + li::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-top: 1.5px solid #aaa;
+            border-right: 1.5px solid #aaa;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .breadcrumb-list a { color: #4CAF74; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%);
+            color: #FFFFFF;
+            padding: 64px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 40%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-content { flex: 1; min-width: 0; }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            font-size: 42px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .btn-primary {
+            background: #4CAF74;
+            color: #FFFFFF;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #3d9461;
+            color: #FFFFFF;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 260px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-icon-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(76,175,116,0.15);
+            border: 2px solid rgba(76,175,116,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-circle svg {
+            width: 80px;
+            height: 80px;
+            fill: none;
+            stroke: #4CAF74;
+            stroke-width: 1.5;
+        }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc {
+            background: #F5F5F7;
+            padding: 48px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: #1F2128;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .toc-item:hover {
+            border-color: #4CAF74;
+            box-shadow: 0 2px 8px rgba(76,175,116,0.12);
+            text-decoration: none;
+            color: #1F2128;
+        }
+
+        .toc-number {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+
+        .section {
+            margin-bottom: 56px;
+            scroll-margin-top: 100px;
+        }
+
+        .section > h2 {
+            font-size: 32px;
+            font-weight: 600;
+            padding-left: 20px;
+            border-left: 4px solid #4CAF74;
+            margin-bottom: 24px;
+            line-height: 1.3;
+        }
+
+        .section > h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .section > h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* --- Registration Cards --- */
+        .reg-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .reg-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 20px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .reg-card:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+
+        .reg-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(76,175,116,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        .reg-card-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: none;
+            stroke: #4CAF74;
+            stroke-width: 1.8;
+        }
+
+        .reg-card h5 {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1F2128;
+            margin-bottom: 6px;
+        }
+
+        .reg-card p {
+            font-size: 14px;
+            color: #555866;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .reg-card .reg-authority {
+            font-size: 12px;
+            color: #4CAF74;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        /* --- Steps --- */
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin: 24px 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            padding: 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .step:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+
+        .step-number {
+            counter-increment: step-counter;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #1F2128; }
+        .step-content p { margin-bottom: 8px; font-size: 16px; }
+        .step-content p:last-child { margin-bottom: 0; }
+        .step-content ul { padding-left: 20px; margin-top: 8px; }
+        .step-content li { font-size: 16px; margin-bottom: 4px; }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box, .warning-box, .note-box {
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin: 24px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .info-box { background: #F5F5F7; border-left: 4px solid #4CAF74; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box .box-label { color: #4CAF74; }
+        .warning-box .box-label { color: #D4891A; }
+        .note-box .box-label { color: #4A90D9; }
+
+        .box-label svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* --- Checklist --- */
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 10px 0;
+            border-bottom: 1px solid #F0F0F2;
+            font-size: 16px;
+        }
+
+        .checklist li:last-child { border-bottom: none; }
+
+        .checklist .check-icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .checklist .check-icon svg { width: 24px; height: 24px; }
+
+        /* --- Field Table --- */
+        .field-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 24px 0;
+            font-size: 15px;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .field-table thead { background: #2B2A65; color: #FFFFFF; }
+
+        .field-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 16px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .field-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: top;
+        }
+
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F5F5F7; }
+        .field-table .required-yes { color: #4CAF74; font-weight: 600; }
+        .field-table .required-no { color: #999; }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+        .badge-read { background: #EFF6FF; color: #3B82F6; }
+        .badge-input { background: #F0FDF4; color: #16A34A; }
+        .badge-auto { background: #FEF9C3; color: #CA8A04; }
+        .badge-optional { background: #F3F4F6; color: #6B7280; }
+
+        /* --- Cost Table --- */
+        .cost-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 24px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 16px;
+        }
+
+        .cost-table thead { background: #2B2A65; color: #FFFFFF; }
+
+        .cost-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 14px 16px;
+            text-align: left;
+        }
+
+        .cost-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #F0F0F2;
+        }
+
+        .cost-table tbody tr:last-child td { border-bottom: none; }
+        .cost-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .cost-table .amount { font-weight: 700; color: #1F2128; font-family: 'Poppins', sans-serif; }
+        .cost-table .total-row { background: #F5F5F7 !important; font-weight: 700; }
+        .cost-table .total-row td { border-top: 2px solid #2B2A65; color: #1F2128; font-family: 'Poppins', sans-serif; }
+
+        /* --- Tab Group --- */
+        .tab-group {
+            margin: 28px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #F5F5F7;
+            border-bottom: 1px solid #E5E7EB;
+            overflow-x: auto;
+            gap: 0;
+        }
+
+        .tab-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 14px 24px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #555866;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
+
+        .tab-btn.active {
+            color: #4CAF74;
+            border-bottom-color: #4CAF74;
+            background: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .tab-panel { display: none; padding: 24px; }
+        .tab-panel.active { display: block; }
+
+        /* --- Timeline --- */
+        .timeline {
+            position: relative;
+            margin: 32px 0;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 15px; top: 0; bottom: 0;
+            width: 3px;
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+            padding-left: 24px;
+        }
+
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -28px; top: 4px;
+            width: 16px; height: 16px;
+            border-radius: 50%;
+            background: #4CAF74;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 0 0 3px #4CAF74;
+            z-index: 1;
+        }
+
+        .timeline-item.pending::before {
+            background: #FFFFFF;
+            box-shadow: 0 0 0 3px #D0D0D8;
+        }
+
+        .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
+        .timeline-item .timeline-meta { font-size: 13px; color: #999; margin-top: 4px; }
+
+        /* --- Form Mockup Styles --- */
+        .form-mockup {
+            background: #FAFAFA;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        .form-mockup-header {
+            background: #2B2A65;
+            color: #FFFFFF;
+            padding: 12px 20px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-mockup-body {
+            padding: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .form-field label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-field .field-value {
+            background: #FFFFFF;
+            border: 1px solid #D1D5DB;
+            border-radius: 6px;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: #1F2128;
+        }
+
+        .form-field .field-value.readonly {
+            background: #F5F5F7;
+            color: #555866;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 4px 0;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            color: #1F2128;
+            background: #FFFFFF;
+        }
+
+        .radio-option.selected {
+            border-color: #4CAF74;
+            background: #F0FDF4;
+        }
+
+        .radio-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid #D1D5DB;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .radio-option.selected .radio-dot {
+            border-color: #4CAF74;
+        }
+
+        .radio-option.selected .radio-dot::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4CAF74;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: #2B2A65;
+            color: rgba(255,255,255,0.8);
+            padding: 56px 0 0;
+            font-size: 15px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .footer-col h5 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo { margin-bottom: 16px; }
+        .footer-logo img { height: 50px; width: auto; }
+        .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+
+        .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
+        .footer-col a:hover { color: #4CAF74; text-decoration: none; }
+
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 14px; }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-contact-item svg {
+            width: 18px; height: 18px;
+            flex-shrink: 0;
+            stroke: #4CAF74;
+            fill: none;
+            margin-top: 2px;
+        }
+
+        .footer-social { display: flex; gap: 12px; margin-top: 8px; }
+
+        .footer-social a {
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .footer-social a:hover { background: #4CAF74; }
+        .footer-social svg { width: 18px; height: 18px; fill: #FFFFFF; }
+
+        .footer-implemented {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .footer-implemented span {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.5);
+            font-weight: 500;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 34px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-description { max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 32px; }
+            h2, .section > h2 { font-size: 26px; }
+            h3 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 12px; padding: 10px 16px; }
+            .header-nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 28px; }
+            .step { flex-direction: column; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+            .field-table, .cost-table { font-size: 14px; }
+            .field-table th, .field-table td, .cost-table th, .cost-table td { padding: 10px 12px; }
+            .tab-btn { padding: 12px 16px; font-size: 13px; }
+            .reg-cards { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .header-brand-title { font-size: 14px; }
+            .hero h1 { font-size: 24px; }
+            .footer-implemented { flex-direction: column; gap: 16px; }
+            .reg-cards { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================================
+           PRINT STYLES
+           ============================================================ */
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 11pt; line-height: 1.5; color: #000; background: #FFF; }
+            .site-header { position: static; box-shadow: none; background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .header-nav .btn-login { display: none; }
+            .hero { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 32px 0; page-break-after: always; }
+            .hero h1 { font-size: 28pt; }
+            .btn-primary { display: none; }
+            .hero-image { display: none; }
+            .toc { page-break-after: always; background: #F5F5F7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .toc-item { break-inside: avoid; }
+            .section { page-break-inside: avoid; }
+            .section > h2 { page-break-after: avoid; border-left-color: #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .step { page-break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+            .step-number { background: #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .info-box, .warning-box, .note-box { page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .field-table, .cost-table { page-break-inside: avoid; font-size: 9pt; }
+            .field-table thead, .cost-table thead { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .tab-group { page-break-inside: avoid; }
+            .tab-nav { display: none; }
+            .tab-panel { display: block !important; border-top: 1px solid #ddd; padding-top: 12px; margin-top: 8px; }
+            .tab-panel::before { content: attr(data-tab-label); font-weight: 700; font-size: 13pt; display: block; margin-bottom: 8px; }
+            .timeline::before { background: #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { background: #4CAF74 !important; box-shadow: 0 0 0 3px #4CAF74 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .form-mockup { page-break-inside: avoid; }
+            .site-footer { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
+            .footer-social { display: none; }
+            a { color: #000; text-decoration: underline; }
+            a[href]::after { content: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="https://easybusiness.gov.gm/" class="header-brand" title="Gambia Easy Business">
+                <div class="header-brand-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="9,22 9,12 15,12 15,22" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="header-brand-text">
+                    <span class="header-brand-title">Gambia Easy Business</span>
+                    <span class="header-brand-subtitle">Republic of The Gambia</span>
+                </div>
+            </a>
+            <nav class="header-nav">
+                <a href="https://easybusiness.gov.gm/about/">About</a>
+                <a href="https://easybusiness.gov.gm/help/">Help &amp; Support</a>
+                <a href="https://services.easybusiness.gov.gm/" class="btn-login">Login | Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://easybusiness.gov.gm/">Home</a></li>
+                <li><a href="index.html">Gambia Manuals</a></li>
+                <li><span class="current">Register a Sole Proprietorship</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">User Manual &mdash; Applicant</span>
+                    <h1>Register a Sole Proprietorship</h1>
+                    <p class="hero-description">Register your sole proprietorship in The Gambia through a single online application &mdash; covering your Business Registration, Tax Identification Number, Employer Registration, and KMC Trading License all at once.</p>
+                    <a href="https://services.easybusiness.gov.gm/" class="btn-primary">Start Application &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 56V36a4 4 0 0 1 4-4h16a4 4 0 0 1 4 4v20" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 56V26L32 8l24 18v30H8z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="24" y1="20" x2="40" y2="20" stroke-linecap="round"/>
+                            <line x1="32" y1="14" x2="32" y2="26" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#overview" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span class="toc-label">Service Overview</span>
+                </a>
+                <a href="#before-you-start" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span class="toc-label">Before You Start</span>
+                </a>
+                <a href="#whats-included" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span class="toc-label">What&rsquo;s Included (4 Registrations)</span>
+                </a>
+                <a href="#requirements" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span class="toc-label">Requirements &amp; Documents</span>
+                </a>
+                <a href="#fees" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span class="toc-label">Fees</span>
+                </a>
+                <a href="#step-by-step" class="toc-item">
+                    <span class="toc-number">6</span>
+                    <span class="toc-label">Step-by-Step Guide</span>
+                </a>
+                <a href="#after-submission" class="toc-item">
+                    <span class="toc-number">7</span>
+                    <span class="toc-label">After Submission</span>
+                </a>
+                <a href="#faq" class="toc-item">
+                    <span class="toc-number">8</span>
+                    <span class="toc-label">FAQ</span>
+                </a>
+                <a href="#contact" class="toc-item">
+                    <span class="toc-number">9</span>
+                    <span class="toc-label">Help &amp; Contact</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MANUAL CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
+
+            <!-- ===== 1. OVERVIEW ===== -->
+            <div class="section" id="overview">
+                <h2>1. Service Overview</h2>
+                <p>The <strong>Register a Sole Proprietorship</strong> service on the Gambia Easy Business portal is a <strong>one-stop registration</strong> that processes four government registrations in a single online application. Instead of visiting multiple agencies and filling in separate forms, you complete everything in one place and pay once.</p>
+
+                <p>A sole proprietorship is the simplest business structure in The Gambia &mdash; a business owned and operated by one individual, with no legal distinction between the owner and the business.</p>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        One application, four registrations
+                    </div>
+                    <p>Your single application simultaneously covers your Business Registration, Tax Identification Number (TIN), Employer Registration, and &mdash; if your business operates in the Kanifing Municipal Council area &mdash; your KMC Trading License. All results are delivered to your eRegistrations account.</p>
+                </div>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        One sole proprietorship per person
+                    </div>
+                    <p>Gambian law allows a maximum of <strong>one sole proprietorship per individual</strong>. If you already have a sole proprietorship registered in The Gambia, the system will detect this and prevent a duplicate registration. If you need to register a second business, consider registering a company instead.</p>
+                </div>
+
+                <h3>How the Service Works</h3>
+                <p>When you log in and open the service, the system pre-fills any information already linked to your account (name, ID details, existing TIN, etc.). You then complete the remaining details about your business, review the fees, pay, and submit. The government processes your application and issues your registration certificates &mdash; all accessible from your eRegistrations dashboard.</p>
+            </div>
+
+            <!-- ===== 2. BEFORE YOU START ===== -->
+            <div class="section" id="before-you-start">
+                <h2>2. Before You Start</h2>
+
+                <h3>What You Need</h3>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>A registered account on <strong>services.easybusiness.gov.gm</strong></span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>A valid proof of identity: <strong>National ID</strong>, <strong>Passport</strong>, or <strong>Driver&rsquo;s License</strong></span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Your business address and a description of your planned business activities</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>A computer or smartphone with internet access</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>A valid payment method for the applicable registration fees</span>
+                    </li>
+                </ul>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Optional: reserve a business name first
+                    </div>
+                    <p>If you wish to operate under a business name other than your own full name, you must first <strong>reserve a business name</strong> through the Name Reservation service. Once reserved, you can select your reserved name when completing this application. If you are happy to trade under your own full name, no reservation is needed.</p>
+                </div>
+
+                <h3>Estimated Processing Time</h3>
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Registration</th>
+                            <th>Estimated Time</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Business Registration</td>
+                            <td>2&ndash;5 working days</td>
+                            <td>Subject to name availability check by the Registrar</td>
+                        </tr>
+                        <tr>
+                            <td>Tax Identification Number (TIN)</td>
+                            <td>Same day or 1&ndash;2 days</td>
+                            <td>TIN is generated automatically after approval</td>
+                        </tr>
+                        <tr>
+                            <td>Employer Registration</td>
+                            <td>2&ndash;3 working days</td>
+                            <td>Only triggered if you have at least one employee</td>
+                        </tr>
+                        <tr>
+                            <td>KMC Trading License</td>
+                            <td>3&ndash;7 working days</td>
+                            <td>Only applies if business address is in Kanifing Municipal Council area</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== 3. WHAT'S INCLUDED ===== -->
+            <div class="section" id="whats-included">
+                <h2>3. What&rsquo;s Included (4 Registrations)</h2>
+                <p>Your application simultaneously processes up to four registrations from four different government bodies. Use the tabs below to understand each one.</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'tab-br')">Business Registration</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-tin')">TIN</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-er')">Employer Registration</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'tab-kmc')">KMC Trading License</button>
+                    </div>
+
+                    <div class="tab-panel active" id="tab-br" data-tab-label="Business Registration">
+                        <h4>Business Registration</h4>
+                        <p><strong>Issued by:</strong> Registrar General&rsquo;s Department (RGD), Ministry of Justice</p>
+                        <p>This is the core registration that legally establishes your sole proprietorship in The Gambia. Upon approval, you receive a <strong>Certificate of Business Registration</strong> and an official <strong>Business Registration Number</strong>.</p>
+                        <p>The Registrar&rsquo;s office will review your application, check that your business name is available (if you chose one), and verify your identity. If the name is similar to an existing business, the officer may contact you or request a name change before approving.</p>
+                        <div class="info-box" style="margin-top: 16px;">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                Business name check
+                            </div>
+                            <p style="margin:0;">The system automatically checks whether your proposed business name is already registered. If it conflicts with an existing name, you will be notified during the application and asked to provide an alternative.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="tab-tin" data-tab-label="Tax Identification Number">
+                        <h4>Tax Identification Number (TIN)</h4>
+                        <p><strong>Issued by:</strong> Gambia Revenue Authority (GRA)</p>
+                        <p>Every business operating in The Gambia is required to have a <strong>Tax Identification Number</strong>. The TIN is used for all tax-related interactions with the Gambia Revenue Authority, including filing returns and paying taxes.</p>
+                        <p>If you already have a personal TIN registered with the GRA, the system will detect this and link it to your new business automatically. If you do not yet have a TIN, one will be generated for you as part of this application.</p>
+                        <p>Upon completion, a <strong>TIN Card</strong> is generated and made available for download from your eRegistrations dashboard.</p>
+                    </div>
+
+                    <div class="tab-panel" id="tab-er" data-tab-label="Employer Registration">
+                        <h4>Employer Registration</h4>
+                        <p><strong>Issued by:</strong> Social Security and Housing Finance Corporation (SSHFC)</p>
+                        <p>If your sole proprietorship will employ at least one person, you are required to register as an employer with the SSHFC. This registration ensures your employees are covered by the Social Security scheme.</p>
+                        <p>The system includes Employer Registration automatically in your application. If you indicate during the application that you have no employees, this registration step will be completed with zero employees recorded and can be updated later when you hire staff.</p>
+                        <div class="note-box" style="margin-top: 16px;">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                                Update later
+                            </div>
+                            <p style="margin:0;">You can update your number of employees at any time after registration through the Update Information for Sole Proprietorship service on the portal.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="tab-kmc" data-tab-label="KMC Trading License">
+                        <h4>KMC Trading License</h4>
+                        <p><strong>Issued by:</strong> Kanifing Municipal Council (KMC)</p>
+                        <p>If your business is <strong>physically located within the Kanifing Municipal Council area</strong> (Serrekunda, Bakau, Fajara, Kanifing, and surrounding communities), you are required to obtain a KMC Trading License to operate legally.</p>
+                        <p>The system automatically determines whether your business address falls within the KMC jurisdiction. If it does, the KMC Trading License registration is included in your application. If your business is located outside the KMC area, this step is skipped.</p>
+                        <p>The KMC Trading License fee is calculated based on your <strong>business type and activity</strong> (e.g., accommodation per room, retail trade per outlet, food service, communications, etc.). The fee is displayed clearly before payment.</p>
+                        <div class="warning-box" style="margin-top: 16px;">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                Annual renewal required
+                            </div>
+                            <p style="margin:0;">The KMC Trading License must be <strong>renewed annually</strong>. You will be notified through the portal when your license is approaching its expiry date.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reg-cards">
+                    <div class="reg-card">
+                        <div class="reg-card-icon">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8" stroke-linecap="round"/><line x1="8" y1="12" x2="16" y2="12" stroke-linecap="round"/><line x1="8" y1="16" x2="12" y2="16" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="reg-authority">Registrar General&rsquo;s Dept.</div>
+                        <h5>Business Registration</h5>
+                        <p>Official legal registration of your sole proprietorship. Includes Certificate of Business Registration.</p>
+                    </div>
+                    <div class="reg-card">
+                        <div class="reg-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="reg-authority">Gambia Revenue Authority</div>
+                        <h5>Tax Identification Number</h5>
+                        <p>Mandatory TIN for all tax transactions. Issued automatically upon approval. TIN Card available to download.</p>
+                    </div>
+                    <div class="reg-card">
+                        <div class="reg-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="reg-authority">SSHFC</div>
+                        <h5>Employer Registration</h5>
+                        <p>Social Security registration for your employees. Required if you employ any staff.</p>
+                    </div>
+                    <div class="reg-card">
+                        <div class="reg-card-icon">
+                            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9,22 9,12 15,12 15,22" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <div class="reg-authority">Kanifing Municipal Council</div>
+                        <h5>KMC Trading License</h5>
+                        <p>Required for businesses in the KMC area (Serrekunda, Bakau, etc.). Annual fee based on business type.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 4. REQUIREMENTS ===== -->
+            <div class="section" id="requirements">
+                <h2>4. Requirements &amp; Documents</h2>
+
+                <h3>Identity Documents</h3>
+                <p>You must provide <strong>one</strong> of the following as proof of identity. The document type you select determines which document number field is shown in the form.</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th>Who Can Use It</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>National ID</strong></td>
+                            <td>Gambian citizens</td>
+                            <td>Recommended for Gambian nationals. The system cross-checks your ID number against existing records.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Passport</strong></td>
+                            <td>All applicants</td>
+                            <td>Accepted for both nationals and foreign residents.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Driver&rsquo;s License</strong></td>
+                            <td>All applicants</td>
+                            <td>Accepted as a secondary identity document.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Account &amp; Business Information Required</h3>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Your <strong>full name</strong> (first, middle if applicable, and last name) as it appears on your ID</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Your <strong>date of birth</strong></span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Your <strong>nationality</strong> and <strong>residential address</strong></span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Your <strong>business name</strong> (your own full name, or a registered/reserved business name)</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>A <strong>description of your business activities</strong></span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Your <strong>business address</strong> (determines KMC license requirement)</span>
+                    </li>
+                </ul>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Applying on behalf of someone else
+                    </div>
+                    <p>You may complete this application on behalf of another person (e.g., as an agent or representative). In that case, select <strong>"Application is for someone else"</strong> at the start of the form and enter the business owner&rsquo;s details. You will be asked to specify whether the representative will have full or limited access rights to the application.</p>
+                </div>
+            </div>
+
+            <!-- ===== 5. FEES ===== -->
+            <div class="section" id="fees">
+                <h2>5. Fees</h2>
+                <p>All fees are <strong>calculated automatically</strong> by the system based on your business type, location, and activities. The exact amounts are displayed in the application before you proceed to payment. All amounts are in <strong>Gambian Dalasi (GMD)</strong>.</p>
+
+                <h3>Fee Structure by Registration</h3>
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Registration</th>
+                            <th>Fee Basis</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Business Registration</strong></td>
+                            <td>Fixed registration fee</td>
+                            <td>Standard government fee for sole proprietorship registration at the Registrar General&rsquo;s Department</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tax Identification Number</strong></td>
+                            <td>No fee</td>
+                            <td>TIN registration is free of charge</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Employer Registration</strong></td>
+                            <td>Fixed registration fee</td>
+                            <td>Standard SSHFC employer registration fee</td>
+                        </tr>
+                        <tr>
+                            <td><strong>KMC Trading License</strong></td>
+                            <td>Variable &mdash; based on business type</td>
+                            <td>Fee varies by category: accommodation (per room), retail trade, food service, communications (per booth), automobile industry (per plant/truck), and others. Calculated from your declared business activities.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Single payment
+                    </div>
+                    <p>All applicable fees from all registrations are combined into a <strong>single payment</strong>. You will see an itemised fee breakdown before paying, so you know exactly what you are paying for.</p>
+                </div>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        KMC licence fee example
+                    </div>
+                    <p>Amie runs a small guesthouse in Serrekunda with 6 rooms, and also operates a communications booth. The KMC Trading License fee would be calculated as: <em>accommodation fee &times; 6 rooms</em> + <em>communications fee &times; 1 booth</em>. Both are shown itemised in the fee summary before payment.</p>
+                </div>
+            </div>
+
+            <!-- ===== 6. STEP-BY-STEP ===== -->
+            <div class="section" id="step-by-step">
+                <h2>6. Step-by-Step Guide</h2>
+                <p>Follow these steps to complete your sole proprietorship registration on <strong>services.easybusiness.gov.gm</strong>:</p>
+
+                <ol class="steps">
+                    <!-- Step 1 -->
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Log In to Your Account</h4>
+                            <p>Go to <a href="https://services.easybusiness.gov.gm/" target="_blank"><strong>services.easybusiness.gov.gm</strong></a> and log in with your email and password. If you do not yet have an account, click <strong>&ldquo;Register&rdquo;</strong> to create one.</p>
+                            <div class="info-box" style="margin-top: 12px;">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                    New user?
+                                </div>
+                                <p style="margin: 0;">When creating your account, use the same details as on your identity document. The system will cross-check your name and ID number during the registration process.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Step 2 -->
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Open the Service</h4>
+                            <p>From your dashboard, find and click the <strong>&ldquo;Register a Sole Proprietorship&rdquo;</strong> service card. The form opens and any information already linked to your account is pre-filled automatically.</p>
+                            <div class="warning-box" style="margin-top: 12px;">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                    Already registered?
+                                </div>
+                                <p style="margin:0;">If the system detects that you already have an active sole proprietorship in The Gambia, the application will inform you and prevent submission. Each person may hold only one sole proprietorship.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Step 3 -->
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Select Who You Are Applying For</h4>
+                            <p>The first question asks whether the application is for <strong>yourself</strong> or <strong>someone else</strong>.</p>
+                            <div class="form-mockup">
+                                <div class="form-mockup-header">Application is for</div>
+                                <div class="form-mockup-body">
+                                    <div class="radio-group">
+                                        <div class="radio-option selected">
+                                            <div class="radio-dot"></div>
+                                            <div>
+                                                <strong>Myself</strong>
+                                                <div style="font-size: 13px; color: #555866; margin-top: 2px;">I am the business owner and I am submitting this application for myself</div>
+                                            </div>
+                                        </div>
+                                        <div class="radio-option">
+                                            <div class="radio-dot"></div>
+                                            <div>
+                                                <strong>Someone else</strong>
+                                                <div style="font-size: 13px; color: #555866; margin-top: 2px;">I am an agent or representative completing this application on behalf of the business owner</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>If you select <strong>&ldquo;Someone else&rdquo;</strong>, you will be asked to enter the business owner&rsquo;s personal details and specify the level of access rights the representative will have.</p>
+                        </div>
+                    </li>
+
+                    <!-- Step 4 -->
+                    <li class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Enter Personal Information</h4>
+                            <p>Complete your personal details. Many fields may already be pre-filled from your account profile.</p>
+                            <div class="form-mockup">
+                                <div class="form-mockup-header">Personal Details</div>
+                                <div class="form-mockup-body">
+                                    <div class="form-row">
+                                        <div class="form-field">
+                                            <label>First Name</label>
+                                            <div class="field-value">Amie</div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Middle Name</label>
+                                            <div class="field-value"></div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Last Name</label>
+                                            <div class="field-value">Colley</div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Date of Birth</label>
+                                            <div class="field-value">15 June 1988</div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Nationality</label>
+                                            <div class="field-value">Gambian</div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Document Type</label>
+                                            <div class="field-value">National ID</div>
+                                        </div>
+                                        <div class="form-field">
+                                            <label>Document Number</label>
+                                            <div class="field-value">GMB-1234567</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>Check that all pre-filled information is accurate before proceeding. If any details are wrong, update your account profile or contact support before continuing.</p>
+                        </div>
+                    </li>
+
+                    <!-- Step 5 -->
+                    <li class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Enter Business Information</h4>
+                            <p>Provide the details of the sole proprietorship you wish to register.</p>
+
+                            <h4 style="margin-top: 20px; font-size: 16px;">Business Name</h4>
+                            <p>Choose one of three options:</p>
+                            <div class="form-mockup">
+                                <div class="form-mockup-header">Business Name</div>
+                                <div class="form-mockup-body">
+                                    <div class="radio-group">
+                                        <div class="radio-option">
+                                            <div class="radio-dot"></div>
+                                            <div>
+                                                <strong>Use my full name</strong>
+                                                <div style="font-size: 13px; color: #555866; margin-top: 2px;">The business will be registered under &ldquo;Amie Colley&rdquo;</div>
+                                            </div>
+                                        </div>
+                                        <div class="radio-option selected">
+                                            <div class="radio-dot"></div>
+                                            <div>
+                                                <strong>Use a reserved business name</strong>
+                                                <div style="font-size: 13px; color: #555866; margin-top: 2px;">Select a name you previously reserved through the Name Reservation service</div>
+                                            </div>
+                                        </div>
+                                        <div class="radio-option">
+                                            <div class="radio-dot"></div>
+                                            <div>
+                                                <strong>Propose a new business name</strong>
+                                                <div style="font-size: 13px; color: #555866; margin-top: 2px;">Enter a name and check its availability before submitting</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 style="margin-top: 20px; font-size: 16px;">Business Address &amp; Activities</h4>
+                            <p>Enter your business&rsquo;s physical address. The system uses this to determine whether your business falls within the <strong>KMC area</strong> (which adds the Trading License registration). Also provide a clear description of what your business does.</p>
+
+                            <div class="form-mockup">
+                                <div class="form-mockup-header">Business Details</div>
+                                <div class="form-mockup-body">
+                                    <div class="form-row">
+                                        <div class="form-field" style="grid-column: span 2;">
+                                            <label>Business Address</label>
+                                            <div class="field-value">Lot 47, Churchill&rsquo;s Town, Serrekunda, Kanifing</div>
+                                        </div>
+                                        <div class="form-field" style="grid-column: span 2;">
+                                            <label>Description of Activities</label>
+                                            <div class="field-value">Retail sale of groceries, household goods, and clothing</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Step 6 -->
+                    <li class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Review Included Registrations &amp; Fees</h4>
+                            <p>After completing the form, the system displays a summary of all the registrations that will be processed and the associated fees. Review this carefully.</p>
+                            <ul>
+                                <li>All applicable registrations are listed with their issuing authority</li>
+                                <li>Fees are itemised per registration</li>
+                                <li>The KMC Trading License section shows the fee breakdown by business activity type (only if your address is in the KMC area)</li>
+                                <li>A total amount due is shown at the bottom</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <!-- Step 7 -->
+                    <li class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Accept the Declaration &amp; Proceed to Payment</h4>
+                            <p>Before submitting, you must tick the <strong>declaration checkbox</strong> confirming that the information provided is true and correct to the best of your knowledge. You acknowledge that providing false information may lead to prosecution.</p>
+                            <p>Click <strong>&ldquo;Proceed to Payment&rdquo;</strong> to go to the payment page. Payment can be made by bank card or other available digital payment methods.</p>
+                            <div class="warning-box" style="margin-top: 12px;">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                    Payment required before processing
+                                </div>
+                                <p style="margin: 0;">Your application is only sent for government review <strong>after successful payment</strong>. An incomplete payment will leave your application in a pending state &mdash; do not close your browser during the payment process.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Step 8 -->
+                    <li class="step">
+                        <div class="step-number">8</div>
+                        <div class="step-content">
+                            <h4>Submit &amp; Receive Confirmation</h4>
+                            <p>After successful payment, your application is automatically submitted to the relevant government bodies for review. You will receive:</p>
+                            <ul>
+                                <li>An <strong>on-screen confirmation</strong> with your application reference number</li>
+                                <li>A <strong>confirmation email</strong> summarising what was submitted</li>
+                            </ul>
+                            <p>Keep your reference number. You can use it to track the status of your application by logging back into the portal and opening your application from your dashboard.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- ===== 7. AFTER SUBMISSION ===== -->
+            <div class="section" id="after-submission">
+                <h2>7. After Submission</h2>
+                <p>Once submitted and paid, your application enters the government review workflow. You can monitor the status at any time by logging in and viewing your application on the dashboard.</p>
+
+                <h3>Processing Workflow</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Application Submitted &amp; Payment Confirmed</h4>
+                        <p>Your application is received by all relevant agencies simultaneously. Payment confirmation triggers the review process.</p>
+                        <div class="timeline-meta">Immediately after successful payment</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Business Registration Review (RGD)</h4>
+                        <p>The Registrar General&rsquo;s Department reviews your application, verifies your identity, and checks the availability of your proposed business name. The officer may approve, return for corrections, or request additional information.</p>
+                        <div class="timeline-meta">2&ndash;5 working days</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Business Registration Approval &amp; TIN Generation</h4>
+                        <p>Once the BR officer approves your application, the system automatically generates your <strong>Business Registration Certificate</strong> and, in parallel, triggers the TIN registration with the Gambia Revenue Authority. Your TIN is generated automatically.</p>
+                        <div class="timeline-meta">Automatic upon BR approval</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Employer Registration &amp; KMC Processing</h4>
+                        <p>The SSHFC processes your Employer Registration and the Kanifing Municipal Council processes your Trading License application (if applicable). These may proceed in parallel with or after the BR approval.</p>
+                        <div class="timeline-meta">2&ndash;7 working days depending on agency</div>
+                    </div>
+                    <div class="timeline-item pending">
+                        <h4>Completion &mdash; All Certificates Available</h4>
+                        <p>All approved certificates and registration documents are uploaded to your eRegistrations account. Download them from your dashboard at any time.</p>
+                        <div class="timeline-meta">Final state &mdash; you will receive an email notification</div>
+                    </div>
+                </div>
+
+                <h3>Application Status Meanings</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Meaning</th>
+                            <th>Action Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>FILE PENDING</strong></td>
+                            <td>Your application is in the queue awaiting review by a government officer</td>
+                            <td>None &mdash; wait for processing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SEND BACK TO CORRECTIONS</strong></td>
+                            <td>An officer has identified an issue and returned the application to you</td>
+                            <td>Log in, read the officer&rsquo;s comments, make the required corrections, and resubmit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FILE VALIDATED</strong></td>
+                            <td>Your application has been reviewed and approved</td>
+                            <td>Download your certificates from the portal dashboard</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FILE REJECT</strong></td>
+                            <td>Your application has been rejected</td>
+                            <td>Check the reason in the portal. Contact support if you need clarification or wish to appeal.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Documents You Will Receive</h3>
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Certificate of Business Registration</strong> &mdash; issued by the Registrar General&rsquo;s Department</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>TIN Card</strong> &mdash; issued by the Gambia Revenue Authority</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Employer Registration Confirmation</strong> &mdash; issued by SSHFC</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>KMC Trading License Certificate</strong> &mdash; issued by Kanifing Municipal Council (if applicable)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- ===== 8. FAQ ===== -->
+            <div class="section" id="faq">
+                <h2>8. Frequently Asked Questions</h2>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'faq-general')">General</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-name')">Business Name</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-kmc')">KMC License</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-technical')">Technical</button>
+                    </div>
+
+                    <div class="tab-panel active" id="faq-general" data-tab-label="General FAQ">
+                        <h4>Who is eligible to register a sole proprietorship in The Gambia?</h4>
+                        <p>Any individual &mdash; Gambian national or foreign resident with a valid permit to work in The Gambia &mdash; may register a sole proprietorship. Each person is limited to one sole proprietorship at a time.</p>
+
+                        <h4 style="margin-top: 24px;">Do I need to visit any government office?</h4>
+                        <p>No. The entire process &mdash; from application to certificate delivery &mdash; is handled online through the Gambia Easy Business portal. You do not need to visit the Registrar General&rsquo;s Department, GRA, SSHFC, or KMC offices unless specifically requested by an officer.</p>
+
+                        <h4 style="margin-top: 24px;">Can a foreigner register a sole proprietorship?</h4>
+                        <p>Yes. Foreign nationals may register a sole proprietorship. The system supports non-Gambian applicants and accepts Passport as the identity document. Foreigners must have a valid residence/work permit in The Gambia.</p>
+
+                        <h4 style="margin-top: 24px;">What happens if my application is sent back for corrections?</h4>
+                        <p>Log in to the portal, open your application, and look for the officer&rsquo;s comments explaining what needs to be corrected. Make the changes and resubmit. You do not need to pay again for a resubmission after corrections.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-name" data-tab-label="Business Name FAQ">
+                        <h4>Do I have to register a business name?</h4>
+                        <p>No. You can operate under your own full name at no additional cost. Registering a distinct business name is optional but recommended if you want to trade under a brand name that is different from your personal name.</p>
+
+                        <h4 style="margin-top: 24px;">How do I reserve a business name before applying?</h4>
+                        <p>Use the <strong>Reserve a Business Name</strong> service on the Gambia Easy Business portal. Once your reservation is approved, return to this service and select your reserved name in the business name section of the form.</p>
+
+                        <h4 style="margin-top: 24px;">What if my proposed business name is rejected?</h4>
+                        <p>The officer reviewing your application will indicate the reason for rejection (e.g., name already in use, name is misleading or offensive). The application will be sent back to you for corrections, and you can propose a different name without restarting the entire process.</p>
+
+                        <h4 style="margin-top: 24px;">Can I check name availability before submitting?</h4>
+                        <p>Yes. When you enter a proposed business name in the form, a <strong>&ldquo;Check Availability&rdquo;</strong> button allows you to verify the name against the existing business register before submitting your application.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-kmc" data-tab-label="KMC License FAQ">
+                        <h4>How do I know if my business needs a KMC Trading License?</h4>
+                        <p>The system determines this automatically based on the business address you enter. If your address falls within the Kanifing Municipal Council jurisdiction (including Serrekunda, Bakau, Fajara, Kanifing, and surrounding areas), the KMC license is included in your application.</p>
+
+                        <h4 style="margin-top: 24px;">What is the KMC Trading License fee based on?</h4>
+                        <p>The fee is calculated according to your business type and scale, using KMC&rsquo;s published tariff schedule. Examples include: accommodation businesses (fee per room), automobile industry (fee per plant or per truck), carpentry (fee per machine), communications (fee per booth), and other categories. The exact amount is displayed in the fee summary before you pay.</p>
+
+                        <h4 style="margin-top: 24px;">My business is not in Kanifing &mdash; do I need a trading license?</h4>
+                        <p>For businesses outside the KMC area, a KMC Trading License is not required through this portal. Other local authorities may have their own licensing requirements &mdash; check with your local council.</p>
+
+                        <h4 style="margin-top: 24px;">When does my KMC Trading License expire?</h4>
+                        <p>KMC Trading Licenses are valid for one year from the date of issue. You will receive a notification through the portal when your license is approaching its expiry date, and you can renew it through the relevant renewal service.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-technical" data-tab-label="Technical FAQ">
+                        <h4>Can I save my application and come back later?</h4>
+                        <p>Yes. The portal auto-saves your progress as you complete each section. You can log out and return to your in-progress application at any time from your dashboard.</p>
+
+                        <h4 style="margin-top: 24px;">My payment went through but my application status has not updated. What should I do?</h4>
+                        <p>Payment confirmation can sometimes take a few minutes to reflect in the system. If your application still shows &ldquo;pending payment&rdquo; after 30 minutes, contact the Gambia Easy Business help desk with your payment reference number.</p>
+
+                        <h4 style="margin-top: 24px;">What browser should I use?</h4>
+                        <p>The portal works best on the latest versions of Google Chrome, Mozilla Firefox, Microsoft Edge, or Safari. Avoid using Internet Explorer.</p>
+
+                        <h4 style="margin-top: 24px;">Can I download my certificates after they are issued?</h4>
+                        <p>Yes. All issued certificates and registration documents are stored in your eRegistrations account and can be downloaded at any time from your dashboard, even months after issuance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 9. CONTACT ===== -->
+            <div class="section" id="contact">
+                <h2>9. Help &amp; Contact</h2>
+                <p>If you need assistance with your application, you can reach the Gambia Easy Business support team through the following channels:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Details</th>
+                            <th>Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Help desk portal</td>
+                            <td><a href="https://easybusiness.gov.gm/help/">easybusiness.gov.gm/help</a></td>
+                            <td>24/7 (self-service)</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>info@easybusiness.gov.gm</td>
+                            <td>Responses within 2 business days</td>
+                        </tr>
+                        <tr>
+                            <td>Registrar General&rsquo;s Dept.</td>
+                            <td>Ministry of Justice, Banjul</td>
+                            <td>Monday&ndash;Friday 08:00&ndash;16:00</td>
+                        </tr>
+                        <tr>
+                            <td>Gambia Revenue Authority</td>
+                            <td>Banjul, The Gambia</td>
+                            <td>Monday&ndash;Friday 08:00&ndash;16:00</td>
+                        </tr>
+                        <tr>
+                            <td>Kanifing Municipal Council</td>
+                            <td>KMC Offices, Kanifing</td>
+                            <td>Monday&ndash;Friday 08:00&ndash;16:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Gambia Easy Business</h5>
+                    <p>The official one-stop platform for business registrations in the Republic of The Gambia &mdash; simplifying access to government services for entrepreneurs and investors.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="register-sole-proprietorship.html">Register a Sole Proprietorship</a></li>
+                        <li><a href="index.html">All Manuals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://easybusiness.gov.gm/about/">About Gambia Easy Business</a></li>
+                        <li><a href="https://easybusiness.gov.gm/help/">Help &amp; Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Banjul, Republic of The Gambia</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@easybusiness.gov.gm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <img src="../lesotho/unctad-logo.avif" alt="UNCTAD" style="height: 28px;">
+            </div>
+
+            <div class="footer-copyright">
+                Register a Sole Proprietorship &mdash; User Manual (Applicant) &mdash; Version 1.0 &mdash; Updated April 2026 &nbsp;|&nbsp;
+                &copy; 2026 Gambia Easy Business, Republic of The Gambia. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         TAB SWITCHING SCRIPT
+         ============================================================ -->
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

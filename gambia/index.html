@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Manuals | Gambia Easy Business</title>
+    <meta name="description" content="Complete user manuals for all Gambia Easy Business eRegistrations services in the Republic of The Gambia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           GAMBIA eREGISTRATIONS — SERVICE MANUALS CATALOG
+           ============================================================ */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif; font-size: 18px; line-height: 1.7; color: #555866; background: #FFFFFF; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: #4CAF74; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #3d9461; text-decoration: underline; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
+        h1 { font-size: 48px; font-weight: 700; }
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* --- Header --- */
+        .site-header { background: #2B2A65; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .header-brand-icon { width: 44px; height: 44px; background: rgba(76,175,116,0.2); border: 1.5px solid rgba(76,175,116,0.4); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .header-brand-icon svg { width: 24px; height: 24px; fill: none; stroke: #4CAF74; stroke-width: 1.8; }
+        .header-brand-text { display: flex; flex-direction: column; }
+        .header-brand-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; line-height: 1.2; }
+        .header-brand-subtitle { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px; text-transform: uppercase; font-weight: 400; }
+        .header-nav { display: flex; align-items: center; gap: 32px; }
+        .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; text-decoration: none; white-space: nowrap; transition: opacity 0.2s ease; }
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+        .btn-login { background: #4CAF74; color: #FFFFFF !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #3d9461; text-decoration: none !important; }
+
+        /* --- Hero --- */
+        .hero { background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%); color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
+        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%); pointer-events: none; }
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: #4CAF74; margin-bottom: 12px; display: block; }
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+        .hero-description { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 0; max-width: 560px; }
+        .hero-image { flex-shrink: 0; width: 200px; height: 200px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .hero-icon-circle { width: 160px; height: 160px; border-radius: 50%; background: rgba(76,175,116,0.15); border: 2px solid rgba(76,175,116,0.3); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle svg { width: 64px; height: 64px; fill: none; stroke: #4CAF74; stroke-width: 1.5; }
+
+        /* --- Search --- */
+        .search-section { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 24px 0; }
+        .search-bar { display: flex; align-items: center; gap: 12px; background: #F5F5F7; border: 1.5px solid #E5E7EB; border-radius: 12px; padding: 8px 8px 8px 20px; max-width: 600px; transition: border-color 0.2s ease; }
+        .search-bar:focus-within { border-color: #4CAF74; }
+        .search-bar svg { width: 20px; height: 20px; stroke: #999; fill: none; flex-shrink: 0; }
+        .search-bar input { flex: 1; border: none; background: transparent; font-size: 15px; color: #1F2128; font-family: 'Roboto', sans-serif; outline: none; }
+        .search-bar input::placeholder { color: #AAA; }
+        .search-count { font-size: 14px; color: #999; margin-top: 10px; margin-bottom: 0; }
+
+        /* --- Catalog --- */
+        .catalog-section { padding: 56px 0 80px; }
+        .section-title { font-size: 28px; font-weight: 600; margin-bottom: 8px; }
+        .section-subtitle { font-size: 16px; color: #6B7280; margin-bottom: 32px; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+        .card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 0; transition: box-shadow 0.2s ease, transform 0.15s ease; }
+        .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+        .card-icon { font-size: 36px; margin-bottom: 16px; line-height: 1; }
+        .card h4 { font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #1F2128; line-height: 1.4; }
+        .card p { font-size: 14px; line-height: 1.6; color: #6B7280; margin-bottom: 20px; flex: 1; }
+        .card-btn { display: inline-flex; align-items: center; gap: 6px; background: #4CAF74; color: #FFFFFF; padding: 10px 20px; border-radius: 9999px; font-size: 14px; font-weight: 500; font-family: 'Poppins', sans-serif; text-decoration: none; transition: background 0.2s ease; align-self: flex-start; }
+        .card-btn:hover { background: #3d9461; color: #FFFFFF; text-decoration: none; }
+        .card.coming-soon { background: #F5F5F5; border-color: #E8E8E8; }
+        .card.coming-soon:hover { box-shadow: none; transform: none; }
+        .card.coming-soon .card-icon { opacity: 0.4; }
+        .card.coming-soon h4 { color: #999; }
+        .card.coming-soon p { color: #AAA; }
+        .coming-soon-badge { display: inline-block; background: #E0E0E0; color: #888; padding: 4px 14px; border-radius: 9999px; font-size: 12px; font-weight: 500; font-family: 'Poppins', sans-serif; letter-spacing: 0.5px; text-transform: uppercase; align-self: flex-start; }
+        .no-results { grid-column: 1 / -1; text-align: center; padding: 48px 24px; color: #999; font-size: 16px; }
+        .no-results svg { width: 48px; height: 48px; stroke: #CCC; fill: none; margin: 0 auto 16px; display: block; }
+
+        /* --- Footer --- */
+        .site-footer { background: #2B2A65; color: rgba(255,255,255,0.8); padding: 56px 0 0; font-size: 15px; }
+        .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 16px; font-weight: 600; margin-bottom: 18px; }
+        .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+        .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
+        .footer-col a:hover { color: #4CAF74; text-decoration: none; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 14px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 14px; }
+        .footer-contact-item svg { width: 18px; height: 18px; flex-shrink: 0; stroke: #4CAF74; fill: none; margin-top: 2px; }
+        .footer-social { display: flex; gap: 12px; margin-top: 8px; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: background 0.2s ease; }
+        .footer-social a:hover { background: #4CAF74; }
+        .footer-social svg { width: 18px; height: 18px; fill: #FFFFFF; }
+        .footer-implemented { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+        .footer-implemented span { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); font-weight: 500; }
+        .footer-copyright { text-align: center; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.45); }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 34px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-description { max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 32px; }
+            .header-inner { flex-direction: column; gap: 12px; padding: 10px 16px; }
+            .header-nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 28px; }
+            .card-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 24px; }
+            .footer-implemented { flex-direction: column; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="https://easybusiness.gov.gm/" class="header-brand" title="Gambia Easy Business">
+                <div class="header-brand-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+                        <polyline points="9,22 9,12 15,12 15,22" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="header-brand-text">
+                    <span class="header-brand-title">Gambia Easy Business</span>
+                    <span class="header-brand-subtitle">Republic of The Gambia</span>
+                </div>
+            </a>
+            <nav class="header-nav">
+                <a href="https://easybusiness.gov.gm/about/">About</a>
+                <a href="https://easybusiness.gov.gm/help/">Help &amp; Support</a>
+                <a href="https://services.easybusiness.gov.gm/" class="btn-login">Login | Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">Gambia Easy Business</span>
+                    <h1>Service Manuals</h1>
+                    <p class="hero-description">Complete guides for all Gambia Easy Business services. Step-by-step instructions to help you navigate business registration and compliance in The Gambia.</p>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="4" width="34" height="46" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <rect x="22" y="14" width="34" height="46" rx="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="30" y1="28" x2="48" y2="28" stroke-linecap="round"/>
+                            <line x1="30" y1="36" x2="48" y2="36" stroke-linecap="round"/>
+                            <line x1="30" y1="44" x2="42" y2="44" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEARCH -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-bar" role="search">
+                <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search manuals&hellip; e.g. &quot;sole proprietorship&quot;, &quot;TIN&quot;" aria-label="Search service manuals" autocomplete="off">
+            </div>
+            <p class="search-count" id="searchCount">Showing all 1 manual</p>
+        </div>
+    </section>
+
+    <!-- SERVICE CARDS -->
+    <section class="catalog-section">
+        <div class="container">
+            <h2 class="section-title">Available Services</h2>
+            <p class="section-subtitle">Click any service to view its complete step-by-step user manual.</p>
+
+            <div class="card-grid" id="cardGrid">
+
+                <!-- Register a Sole Proprietorship -->
+                <div class="card" data-search="register sole proprietorship business registration tin employer kmc trading license gambia">
+                    <div class="card-icon">&#127968;</div>
+                    <h4>Register a Sole Proprietorship</h4>
+                    <p>One-stop registration covering Business Registration, TIN, Employer Registration, and KMC Trading License (if applicable) &mdash; all in a single online application.</p>
+                    <a href="register-sole-proprietorship.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- Coming Soon: Reserve a Business Name -->
+                <div class="card coming-soon" data-search="reserve business name name reservation">
+                    <div class="card-icon">&#128221;</div>
+                    <h4>Reserve a Business Name</h4>
+                    <p>Reserve a business name before starting your sole proprietorship or company registration.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- Coming Soon: Register a Company -->
+                <div class="card coming-soon" data-search="register company incorporate limited liability">
+                    <div class="card-icon">&#127963;</div>
+                    <h4>Register a Company</h4>
+                    <p>Register a private or public limited company in The Gambia.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- Coming Soon: Annual Return for a Sole Proprietorship -->
+                <div class="card coming-soon" data-search="annual return sole proprietorship renewal compliance">
+                    <div class="card-icon">&#128197;</div>
+                    <h4>Annual Return for a Sole Proprietorship</h4>
+                    <p>File your annual return to keep your sole proprietorship in good standing.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- Coming Soon: Update Information for Sole Proprietorship -->
+                <div class="card coming-soon" data-search="update information sole proprietorship change address employees">
+                    <div class="card-icon">&#9998;&#65039;</div>
+                    <h4>Update Information for Sole Proprietorship</h4>
+                    <p>Update your business address, employee count, or other registered details.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- Coming Soon: Close a Sole Proprietorship -->
+                <div class="card coming-soon" data-search="close deregister sole proprietorship cessation">
+                    <div class="card-icon">&#128683;</div>
+                    <h4>Close a Sole Proprietorship</h4>
+                    <p>Formally close and deregister your sole proprietorship from the business register.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- Coming Soon: Register a Trading License -->
+                <div class="card coming-soon" data-search="register trading license KMC kanifing">
+                    <div class="card-icon">&#128196;</div>
+                    <h4>Register a Trading License</h4>
+                    <p>Apply for a KMC Trading License for businesses in the Kanifing Municipal Council area.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <div id="noResults" class="no-results" style="display: none;">
+                    <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <p>No manuals match your search. Try different keywords.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>Gambia Easy Business</h5>
+                    <p>The official one-stop platform for business registrations in the Republic of The Gambia &mdash; simplifying access to government services for entrepreneurs and investors.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Manuals</h5>
+                    <ul class="footer-links">
+                        <li><a href="register-sole-proprietorship.html">Register a Sole Proprietorship</a></li>
+                        <li><a href="index.html">All Manuals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Banjul, Republic of The Gambia</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@easybusiness.gov.gm</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <img src="../lesotho/unctad-logo.avif" alt="UNCTAD" style="height: 28px;">
+            </div>
+
+            <div class="footer-copyright">
+                &copy; 2026 Gambia Easy Business, Republic of The Gambia. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var searchInput = document.getElementById('searchInput');
+        var searchCount = document.getElementById('searchCount');
+        var cards = document.querySelectorAll('.card[data-search]');
+        var noResults = document.getElementById('noResults');
+        var total = cards.length;
+
+        searchInput.addEventListener('input', function() {
+            var q = this.value.trim().toLowerCase();
+            var visible = 0;
+            cards.forEach(function(card) {
+                var text = (card.dataset.search + ' ' + card.querySelector('h4').textContent).toLowerCase();
+                var show = !q || text.includes(q);
+                card.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+            noResults.style.display = visible === 0 ? 'block' : 'none';
+            searchCount.textContent = q
+                ? 'Showing ' + visible + ' of ' + total + ' manual' + (total !== 1 ? 's' : '')
+                : 'Showing all ' + total + ' manual' + (total !== 1 ? 's' : '');
+        });
+    </script>
+
+</body>
+</html>
