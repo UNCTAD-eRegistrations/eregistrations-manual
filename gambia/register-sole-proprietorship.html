@@ -116,25 +116,7 @@
             text-decoration: none;
         }
 
-        .header-brand-icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(255,255,255,0.15);
-            border: 1.5px solid rgba(255,255,255,0.3);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .header-brand-icon svg {
-            width: 24px;
-            height: 24px;
-            fill: none;
-            stroke: #FFFFFF;
-            stroke-width: 1.8;
-        }
+        .header-logo { height: 48px; width: auto; flex-shrink: 0; }
 
         .header-brand-text {
             display: flex;
@@ -614,7 +596,7 @@
             overflow: hidden;
         }
 
-        .field-table thead { background: #0C1A3D; color: #FFFFFF; }
+        .field-table thead { background: #3464B0; color: #FFFFFF; }
 
         .field-table th {
             font-family: 'Poppins', sans-serif;
@@ -664,7 +646,7 @@
             font-size: 16px;
         }
 
-        .cost-table thead { background: #0C1A3D; color: #FFFFFF; }
+        .cost-table thead { background: #3464B0; color: #FFFFFF; }
 
         .cost-table th {
             font-family: 'Poppins', sans-serif;
@@ -785,7 +767,7 @@
         }
 
         .form-mockup-header {
-            background: #0C1A3D;
+            background: #3464B0;
             color: #FFFFFF;
             padding: 12px 20px;
             font-family: 'Poppins', sans-serif;
@@ -887,7 +869,7 @@
            FOOTER
            ============================================================ */
         .site-footer {
-            background: #0C1A3D;
+            background: #3464B0;
             color: rgba(255,255,255,0.8);
             padding: 56px 0 0;
             font-size: 15px;
@@ -1021,7 +1003,7 @@
             body { font-size: 11pt; line-height: 1.5; color: #000; background: #FFF; }
             .site-header { position: static; box-shadow: none; background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .header-nav .btn-login { display: none; }
-            .hero { background: #0C1A3D !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 32px 0; page-break-after: always; }
+            .hero { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 32px 0; page-break-after: always; }
             .hero h1 { font-size: 28pt; }
             .btn-primary { display: none; }
             .hero-image { display: none; }
@@ -1033,7 +1015,7 @@
             .step-number { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .info-box, .warning-box, .note-box { page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .field-table, .cost-table { page-break-inside: avoid; font-size: 9pt; }
-            .field-table thead, .cost-table thead { background: #0C1A3D !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .field-table thead, .cost-table thead { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .tab-group { page-break-inside: avoid; }
             .tab-nav { display: none; }
             .tab-panel { display: block !important; border-top: 1px solid #ddd; padding-top: 12px; margin-top: 8px; }
@@ -1041,7 +1023,7 @@
             .timeline::before { background: #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .timeline-item::before { background: #3464B0 !important; box-shadow: 0 0 0 3px #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .form-mockup { page-break-inside: avoid; }
-            .site-footer { background: #0C1A3D !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
+            .site-footer { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
             .footer-social { display: none; }
             a { color: #000; text-decoration: underline; }
             a[href]::after { content: none; }
@@ -1056,12 +1038,7 @@
     <header class="site-header">
         <div class="header-inner">
             <a href="https://easybusiness.gov.gm/" class="header-brand" title="Gambia Easy Business">
-                <div class="header-brand-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round" stroke-linejoin="round"/>
-                        <polyline points="9,22 9,12 15,12 15,22" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
+                <img src="gambia-logo.png" alt="Gambia Coat of Arms" class="header-logo">
                 <div class="header-brand-text">
                     <span class="header-brand-title">Gambia Easy Business</span>
                     <span class="header-brand-subtitle">Republic of The Gambia</span>
