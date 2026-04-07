@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Annual Report - User Manual | OBFC Lesotho</title>
+    <meta name="description" content="User manual for the File Annual Report service on the Lesotho One Business Facilitation Centre (OBFC) eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           LESOTHO eREGISTRATIONS — USER MANUAL TEMPLATE
+           Design system: https://lesotho.eregistrations.dev/
+           Generated: April 2026
+           ============================================================ */
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: #4CAF74;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #3d9461;
+            text-decoration: underline;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1F2128;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        h4 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        h5 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        strong {
+            color: #1F2128;
+            font-weight: 600;
+        }
+
+        ul, ol {
+            margin: 0 0 1em 1.5em;
+        }
+
+        li {
+            margin-bottom: 0.4em;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: #2B2A65;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .header-logos {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .header-logos img {
+            height: 52px;
+            width: auto;
+        }
+
+        .header-logos .coat-of-arms {
+            height: 56px;
+        }
+
+        .header-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.25);
+            flex-shrink: 0;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .header-nav a {
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 400;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
+
+        .header-nav a:hover {
+            opacity: 0.85;
+            text-decoration: none;
+        }
+
+        .btn-login {
+            background: #4CAF74;
+            color: #FFFFFF !important;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            transition: background 0.2s ease;
+        }
+
+        .btn-login:hover {
+            background: #3d9461;
+            text-decoration: none !important;
+        }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 14px 0;
+        }
+
+        .breadcrumb-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #888;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumb-list li + li::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-top: 1.5px solid #aaa;
+            border-right: 1.5px solid #aaa;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .breadcrumb-list a {
+            color: #4CAF74;
+            font-weight: 400;
+        }
+
+        .breadcrumb-list .current {
+            color: #555866;
+            font-weight: 500;
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%);
+            color: #FFFFFF;
+            padding: 64px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 40%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 {
+            color: #FFFFFF;
+            font-size: 42px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .btn-primary {
+            background: #4CAF74;
+            color: #FFFFFF;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #3d9461;
+            color: #FFFFFF;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 260px;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-icon-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(76,175,116,0.15);
+            border: 2px solid rgba(76,175,116,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-circle svg {
+            width: 80px;
+            height: 80px;
+            fill: none;
+            stroke: #4CAF74;
+            stroke-width: 1.5;
+        }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc {
+            background: #F5F5F7;
+            padding: 48px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .toc h2 {
+            margin-bottom: 28px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 1px solid #E5E7EB;
+            text-decoration: none;
+            color: #1F2128;
+            font-size: 15px;
+            font-weight: 500;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .toc-item:hover {
+            border-color: #4CAF74;
+            box-shadow: 0 2px 8px rgba(76,175,116,0.12);
+            color: #1F2128;
+            text-decoration: none;
+        }
+
+        .toc-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: #4CAF74;
+            background: rgba(76,175,116,0.1);
+            border-radius: 6px;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+           MAIN CONTENT
+           ============================================================ */
+        .manual-content {
+            padding: 0;
+        }
+
+        .section {
+            padding: 56px 0;
+            border-bottom: 1px solid #F0F0F2;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section > h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
+            border-left: 4px solid #4CAF74;
+            padding-left: 16px;
+        }
+
+        /* --- Steps --- */
+        .step {
+            display: flex;
+            gap: 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+
+        .step-number {
+            background: #2B2A65;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 8px;
+            padding: 6px 14px;
+            flex-shrink: 0;
+            align-self: flex-start;
+            white-space: nowrap;
+        }
+
+        .step-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .step-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1F2128;
+        }
+
+        .step-content h4 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1F2128;
+        }
+
+        .step-content p {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .step-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box,
+        .warning-box,
+        .note-box {
+            padding: 20px 24px;
+            border-radius: 10px;
+            margin: 24px 0;
+            font-size: 16px;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .info-box {
+            background: #F5F5F7;
+            border-left: 4px solid #4CAF74;
+        }
+
+        .warning-box {
+            background: #FFF8F0;
+            border-left: 4px solid #F5A623;
+        }
+
+        .note-box {
+            background: #F0F6FF;
+            border-left: 4px solid #4A90D9;
+        }
+
+        .info-box .box-label,
+        .warning-box .box-label,
+        .note-box .box-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-box .box-label {
+            color: #4CAF74;
+        }
+
+        .warning-box .box-label {
+            color: #D4891A;
+        }
+
+        .note-box .box-label {
+            color: #4A90D9;
+        }
+
+        .box-label svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+        }
+
+        /* --- Checklist --- */
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid #F0F0F2;
+            font-size: 16px;
+        }
+
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+
+        .checklist-icon {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
+            color: #4CAF74;
+            margin-top: 2px;
+        }
+
+        /* --- Badge --- */
+        .badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            padding: 2px 10px;
+            border-radius: 9999px;
+        }
+
+        .badge-required {
+            background: #FFF0F0;
+            color: #C0392B;
+            border: 1px solid #F5C6C6;
+        }
+
+        .badge-optional {
+            background: #F5F5F7;
+            color: #888;
+            border: 1px solid #E5E7EB;
+        }
+
+        /* --- Tables --- */
+        .field-table,
+        .cost-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+            margin: 20px 0 28px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #E5E7EB;
+        }
+
+        .field-table thead,
+        .cost-table thead {
+            background: #2B2A65;
+            color: #FFFFFF;
+        }
+
+        .field-table th,
+        .cost-table th {
+            padding: 14px 16px;
+            text-align: left;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        .field-table td,
+        .cost-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: top;
+        }
+
+        .field-table tr:last-child td,
+        .cost-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .field-table tr:nth-child(even),
+        .cost-table tr:nth-child(even) {
+            background: #FAFAFA;
+        }
+
+        .cost-table .amount {
+            font-weight: 700;
+            color: #1F2128;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- FAQ --- */
+        .faq-item {
+            padding: 24px 0;
+            border-bottom: 1px solid #F0F0F2;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1F2128;
+        }
+
+        .faq-item p {
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        /* --- Timeline --- */
+        .timeline {
+            position: relative;
+            margin: 32px 0;
+            padding-left: 40px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #E5E7EB;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+            padding-left: 24px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #4CAF74;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 0 0 3px #4CAF74;
+            z-index: 1;
+        }
+
+        .timeline-item h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1F2128;
+        }
+
+        .timeline-item p {
+            font-size: 15px;
+            color: #555866;
+            margin-bottom: 0;
+        }
+
+        /* --- Registration Tags --- */
+        .registration-tag {
+            display: inline-block;
+            background: rgba(43,42,101,0.08);
+            color: #2B2A65;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            margin-bottom: 8px;
+        }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: #2B2A65;
+            color: rgba(255,255,255,0.8);
+            padding: 56px 0 0;
+            font-size: 15px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .footer-col h5 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .footer-logo {
+            margin-bottom: 16px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-contact-item svg {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            stroke: rgba(255,255,255,0.5);
+            fill: none;
+            margin-top: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #4CAF74;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background: #4CAF74;
+        }
+
+        .footer-social svg {
+            width: 16px;
+            height: 16px;
+            fill: rgba(255,255,255,0.8);
+        }
+
+        .footer-implemented {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+        }
+
+        .footer-implemented img {
+            height: 28px;
+            width: auto;
+            opacity: 0.7;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 34px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-description { max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 32px; }
+            h2, .section > h2 { font-size: 26px; }
+            h3 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 12px; padding: 10px 16px; }
+            .header-nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 28px; }
+            .step { flex-direction: column; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+            .field-table, .cost-table { font-size: 14px; }
+            .field-table th, .field-table td, .cost-table th, .cost-table td { padding: 10px 12px; }
+        }
+
+        @media (max-width: 480px) {
+            .header-logos img { height: 36px; }
+            .header-logos .coat-of-arms { height: 40px; }
+            .hero h1 { font-size: 24px; }
+            .footer-implemented { flex-direction: column; gap: 16px; }
+        }
+
+        /* ============================================================
+           PRINT STYLES
+           ============================================================ */
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+
+            body { font-size: 11pt; line-height: 1.5; color: #000; background: #FFF; }
+
+            .site-header {
+                position: static; box-shadow: none;
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+            }
+
+            .header-nav .btn-login { display: none; }
+
+            .hero {
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+                padding: 32px 0; page-break-after: always;
+            }
+
+            .hero h1 { font-size: 28pt; }
+            .btn-primary { display: none; }
+            .hero-image { display: none; }
+
+            .toc {
+                page-break-after: always;
+                background: #F5F5F7 !important;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+            }
+
+            .section { page-break-inside: avoid; }
+
+            .section > h2 {
+                page-break-after: avoid;
+                border-left-color: #4CAF74 !important;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+            }
+
+            .step {
+                page-break-inside: avoid;
+                box-shadow: none; border: 1px solid #ddd;
+            }
+
+            .step-number {
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+            }
+
+            .info-box, .warning-box, .note-box {
+                page-break-inside: avoid;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+            }
+
+            .field-table, .cost-table { page-break-inside: avoid; font-size: 9pt; }
+
+            .field-table thead, .cost-table thead {
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+            }
+
+            .site-footer {
+                background: #2B2A65 !important;
+                -webkit-print-color-adjust: exact; print-color-adjust: exact;
+                page-break-before: always;
+            }
+
+            .footer-social { display: none; }
+
+            a { color: #000; text-decoration: underline; }
+            a[href]::after { content: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logos">
+                <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                </a>
+                <div class="header-divider"></div>
+                <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/62e7e38d29393d9e912a3aa2888bec679106a457.png" alt="MTI One-Stop Business Facilitation Centre" class="coat-of-arms">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <a href="https://lesotho.eregistrations.dev/about/">About</a>
+                <a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a>
+                <a href="https://services.businessregistrations.gov.ls/" class="btn-login">Login | Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                <li><a href="index.html">Lesotho Manuals</a></li>
+                <li><span class="current">File Annual Report</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">User Manual</span>
+                    <h1>File Annual Report</h1>
+                    <p class="hero-description">Submit your company&rsquo;s annual financial statements and keep your company records up to date with the Companies Registry through the OBFC eRegistrations platform.</p>
+                    <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Start Application &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="6" width="40" height="52" rx="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="22" y1="20" x2="42" y2="20" stroke-linecap="round"/>
+                            <line x1="22" y1="28" x2="42" y2="28" stroke-linecap="round"/>
+                            <line x1="22" y1="36" x2="36" y2="36" stroke-linecap="round"/>
+                            <polyline points="38,44 42,48 50,38" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#section-1" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span class="toc-label">Overview</span>
+                </a>
+                <a href="#section-2" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span class="toc-label">Who Must File</span>
+                </a>
+                <a href="#section-3" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span class="toc-label">Requirements</span>
+                </a>
+                <a href="#section-4" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span class="toc-label">Costs &amp; Fees</span>
+                </a>
+                <a href="#section-5" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span class="toc-label">Step-by-Step Guide</span>
+                </a>
+                <a href="#section-6" class="toc-item">
+                    <span class="toc-number">6</span>
+                    <span class="toc-label">Form Fields Reference</span>
+                </a>
+                <a href="#section-7" class="toc-item">
+                    <span class="toc-number">7</span>
+                    <span class="toc-label">Deadlines &amp; Penalties</span>
+                </a>
+                <a href="#section-8" class="toc-item">
+                    <span class="toc-number">8</span>
+                    <span class="toc-label">After Submission</span>
+                </a>
+                <a href="#section-9" class="toc-item">
+                    <span class="toc-number">9</span>
+                    <span class="toc-label">FAQ</span>
+                </a>
+                <a href="#section-10" class="toc-item">
+                    <span class="toc-number">10</span>
+                    <span class="toc-label">Contact &amp; Support</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MANUAL CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
+
+            <!-- ===================== SECTION 1: OVERVIEW ===================== -->
+            <div class="section" id="section-1">
+                <h2>1. Overview</h2>
+                <p>The <strong>File Annual Report</strong> service allows registered companies in the Kingdom of Lesotho to fulfil their annual compliance obligations electronically through the One Business Facilitation Centre (OBFC) eRegistrations platform. It replaces the need to visit government offices in person.</p>
+
+                <p>This service covers two registrations:</p>
+                <ul>
+                    <li><strong>Annual Filing</strong> &mdash; Submit your company&rsquo;s financial statements for each fiscal year due.</li>
+                    <li><strong>Update of Data</strong> &mdash; Update your company&rsquo;s contact information, address, and other details in the Companies Registry without submitting a full annual filing.</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Key Benefits
+                    </div>
+                    <p>File online 24/7 without visiting any office. Track the status of your filings in real time and file for multiple years in a single session.</p>
+                </div>
+
+                <h3>Processing Workflow</h3>
+                <p>Once submitted, your annual filing goes through the following steps:</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Submission</h4>
+                        <p>You submit your annual filing online with the required financial statements attached.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Officer Review</h4>
+                        <p>An OBFC officer reviews your submission and verifies the uploaded financial statements. The officer may approve or return the filing for corrections.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Register in Companies Database</h4>
+                        <p>Once approved, the filing is automatically registered in the Companies database (automated process).</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Register in Accounts Database</h4>
+                        <p>The filing is also registered in the Accounts database (automated process). Your annual report obligation for that year is now fulfilled.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 2: WHO MUST FILE ===================== -->
+            <div class="section" id="section-2">
+                <h2>2. Who Must File</h2>
+                <p>All companies registered with the Lesotho Companies Registry are required to file annual reports. This obligation applies to:</p>
+
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <svg class="checklist-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>Private companies (Pty Ltd)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <svg class="checklist-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>Public companies (Ltd)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <svg class="checklist-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>External (foreign) companies operating in Lesotho</span>
+                    </div>
+                    <div class="checklist-item">
+                        <svg class="checklist-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>Any other entity registered under the Companies Act, 2011</span>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                        Important
+                    </div>
+                    <p>You must be a registered user on the eRegistrations platform and linked to your company to submit an annual report. If you do not yet have an account, create one first at <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a>.</p>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 3: REQUIREMENTS ===================== -->
+            <div class="section" id="section-3">
+                <h2>3. Requirements</h2>
+                <p>Before starting your filing, ensure you have the following ready.</p>
+
+                <h3>Documents Required</h3>
+                <p><span class="registration-tag">Annual Filing</span></p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th>Required</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Financial Statement</strong></td>
+                            <td><span class="badge badge-required">Required</span></td>
+                            <td>Your company&rsquo;s financial statements (audited or unaudited) for each fiscal year being filed. Upload as PDF. One upload per year is required.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><span class="registration-tag">Update of Data</span></p>
+                <p>No documents are required to update company contact data. Simply update the relevant fields in the form.</p>
+
+                <h3>Information You Will Need</h3>
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <svg class="checklist-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>Company registration number (Business ID)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <svg class="checklist-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>Applicant personal details (name, ID number, nationality, date of birth, gender)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <svg class="checklist-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>Company contact email address</span>
+                    </div>
+                    <div class="checklist-item">
+                        <svg class="checklist-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>Company address (district, town, street/building details)</span>
+                    </div>
+                    <div class="checklist-item">
+                        <svg class="checklist-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                        <span>Financial statements (PDF) for each year with a pending filing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 4: COSTS & FEES ===================== -->
+            <div class="section" id="section-4">
+                <h2>4. Costs &amp; Fees</h2>
+                <p>The File Annual Report service is provided at no cost through the OBFC eRegistrations platform.</p>
+
+                <table class="cost-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Fee</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Annual filing submission</td>
+                            <td><strong>Free</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Company data update</td>
+                            <td><strong>Free</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Note
+                    </div>
+                    <p>While the online filing is free, late submission may attract penalties under the Companies Act, 2011. See <a href="#section-7">Deadlines &amp; Penalties</a> for details.</p>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 5: STEP-BY-STEP GUIDE ===================== -->
+            <div class="section" id="section-5">
+                <h2>5. Step-by-Step Guide</h2>
+                <p>Follow these steps to complete your annual report online.</p>
+
+                <div class="step">
+                    <div class="step-number">Step 1</div>
+                    <div class="step-content">
+                        <h3>Log In to the Platform</h3>
+                        <p>Visit <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a> and log in with your registered email and password. If you do not have an account, register first and ensure your profile is linked to your company.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">Step 2</div>
+                    <div class="step-content">
+                        <h3>Select the File Annual Report Service</h3>
+                        <p>From your dashboard or the services catalogue, locate and select the <strong>File Annual Report</strong> service. The system will automatically load your company information and display any pending or completed filings.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">Step 3</div>
+                    <div class="step-content">
+                        <h3>Review Your Company Information</h3>
+                        <p>The <strong>Company Information</strong> tab displays your company&rsquo;s current details from the registry, including:</p>
+                        <ul>
+                            <li>Company name, registration number, and legal type</li>
+                            <li>Capital amount and expiration date</li>
+                            <li>Business sector and activities</li>
+                            <li>List of owners with names and ID numbers</li>
+                            <li>Contact details (email, phone) and address (district, town, street)</li>
+                        </ul>
+                        <div class="info-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                Update of Data
+                            </div>
+                            <p>To update contact or address information only (without filing financial statements), modify the relevant fields on this tab and click <strong>&ldquo;Update contact information&rdquo;</strong>. This submits an <em>Update of Data</em> registration without requiring a financial statement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">Step 4</div>
+                    <div class="step-content">
+                        <h3>Proceed to Annual Filings Tab</h3>
+                        <p>Click <strong>&ldquo;Proceed to annual filing&rdquo;</strong> to navigate to the <strong>Annual Filings</strong> tab. You will see two sub-tabs:</p>
+                        <ul>
+                            <li><strong>Filings Due</strong> &mdash; All pending filings for your company, with the year and due date for each.</li>
+                            <li><strong>Filings Completed</strong> &mdash; Previously submitted filings with their filing dates and uploaded statements.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">Step 5</div>
+                    <div class="step-content">
+                        <h3>Upload Financial Statements</h3>
+                        <p>For each year shown in the <strong>Filings Due</strong> tab:</p>
+                        <ol>
+                            <li>Tick the <strong>&ldquo;Upload statements&rdquo;</strong> checkbox next to the relevant year.</li>
+                            <li>Click the file upload field and select your company&rsquo;s financial statements (PDF recommended).</li>
+                            <li>Repeat for each year you wish to file.</li>
+                        </ol>
+                        <div class="warning-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                                Important
+                            </div>
+                            <p>The <strong>Financial Statement</strong> upload is required for each year you are filing. You cannot submit the Annual Filing registration without attaching a document.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">Step 6</div>
+                    <div class="step-content">
+                        <h3>Confirm and Submit</h3>
+                        <p>Review your information and tick the confirmation checkbox (<em>&ldquo;I confirm the company details&rdquo;</em>). Click <strong>&ldquo;File your annual statements&rdquo;</strong> to submit. The system validates your form before final submission.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">Step 7</div>
+                    <div class="step-content">
+                        <h3>Track Your Filing</h3>
+                        <p>After submission, track the status of your filing through your dashboard. You will be notified if the reviewing officer requires corrections or additional information.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 6: FORM FIELDS REFERENCE ===================== -->
+            <div class="section" id="section-6">
+                <h2>6. Form Fields Reference</h2>
+                <p>The form is organised into tabs. Below is a reference of the key fields you will encounter.</p>
+
+                <h3>Applicant Information</h3>
+                <p>Your personal details as the person submitting the filing.</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>File number</td>
+                            <td>Text</td>
+                            <td>Unique file reference number (auto-generated).</td>
+                        </tr>
+                        <tr>
+                            <td>Full name</td>
+                            <td>Text</td>
+                            <td>Your full name as the applicant.</td>
+                        </tr>
+                        <tr>
+                            <td>Nationality</td>
+                            <td>Text</td>
+                            <td>Your nationality.</td>
+                        </tr>
+                        <tr>
+                            <td>Date of birth</td>
+                            <td>Date</td>
+                            <td>Your date of birth.</td>
+                        </tr>
+                        <tr>
+                            <td>ID number</td>
+                            <td>Text</td>
+                            <td>Your national ID or passport number.</td>
+                        </tr>
+                        <tr>
+                            <td>Gender</td>
+                            <td>Select</td>
+                            <td>Your gender.</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>Text</td>
+                            <td>Your personal email address.</td>
+                        </tr>
+                        <tr>
+                            <td>Phone number</td>
+                            <td>Text</td>
+                            <td>Your phone number.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Company Information (Read-only from Registry)</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Business ID</td>
+                            <td>Text</td>
+                            <td>Company registration number (auto-populated from registry).</td>
+                        </tr>
+                        <tr>
+                            <td>Company name</td>
+                            <td>Text</td>
+                            <td>The registered name of your company.</td>
+                        </tr>
+                        <tr>
+                            <td>Legal type</td>
+                            <td>Select</td>
+                            <td>The legal form of your company.</td>
+                        </tr>
+                        <tr>
+                            <td>Legal person number</td>
+                            <td>Text</td>
+                            <td>The legal person identification number.</td>
+                        </tr>
+                        <tr>
+                            <td>Capital</td>
+                            <td>Number</td>
+                            <td>The registered share capital amount.</td>
+                        </tr>
+                        <tr>
+                            <td>Expiration date</td>
+                            <td>Date</td>
+                            <td>Company registration expiry (if applicable).</td>
+                        </tr>
+                        <tr>
+                            <td>Sector</td>
+                            <td>Select</td>
+                            <td>Business sector.</td>
+                        </tr>
+                        <tr>
+                            <td>Activity</td>
+                            <td>Select</td>
+                            <td>Primary business activity.</td>
+                        </tr>
+                        <tr>
+                            <td>Owners</td>
+                            <td>Grid</td>
+                            <td>List of company owners/shareholders with names and ID numbers.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Contact Information <span class="registration-tag">Update of Data</span></h3>
+                <p>Fields you can modify to update company contact details in the registry.</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Email</td>
+                            <td>Text</td>
+                            <td><span class="badge badge-required">Required</span></td>
+                            <td>Company contact email address.</td>
+                        </tr>
+                        <tr>
+                            <td>Country code</td>
+                            <td>Select</td>
+                            <td><span class="badge badge-optional">Optional</span></td>
+                            <td>Phone country dialling code.</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</td>
+                            <td>Text</td>
+                            <td><span class="badge badge-optional">Optional</span></td>
+                            <td>Company phone number.</td>
+                        </tr>
+                        <tr>
+                            <td>District</td>
+                            <td>Select</td>
+                            <td><span class="badge badge-required">Required</span></td>
+                            <td>The district where the company is located.</td>
+                        </tr>
+                        <tr>
+                            <td>Town</td>
+                            <td>Select</td>
+                            <td><span class="badge badge-required">Required</span></td>
+                            <td>The town within the selected district.</td>
+                        </tr>
+                        <tr>
+                            <td>Street / building / floor</td>
+                            <td>Text</td>
+                            <td><span class="badge badge-required">Required</span></td>
+                            <td>Full street address details.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Annual Filings Grid <span class="registration-tag">Annual Filing</span></h3>
+                <p>The filings grid shows your pending and completed filings. For each row in <strong>Filings Due</strong>:</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Required</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Year</td>
+                            <td>Number</td>
+                            <td><span class="badge badge-optional">Auto</span></td>
+                            <td>The fiscal year for the filing (auto-populated).</td>
+                        </tr>
+                        <tr>
+                            <td>Due date</td>
+                            <td>Date</td>
+                            <td><span class="badge badge-optional">Auto</span></td>
+                            <td>The filing deadline for this year (auto-populated by the registry).</td>
+                        </tr>
+                        <tr>
+                            <td>Upload statements (checkbox)</td>
+                            <td>Checkbox</td>
+                            <td><span class="badge badge-optional">Optional</span></td>
+                            <td>Tick this to enable the file upload field for this year.</td>
+                        </tr>
+                        <tr>
+                            <td>Upload financial statements</td>
+                            <td>File</td>
+                            <td><span class="badge badge-required">Required</span></td>
+                            <td>Upload the financial statements document for this year. Appears after ticking the checkbox above. PDF format recommended.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===================== SECTION 7: DEADLINES & PENALTIES ===================== -->
+            <div class="section" id="section-7">
+                <h2>7. Deadlines &amp; Penalties</h2>
+                <p>Companies are required to file their annual returns by the due date assigned by the Companies Registry. Key points:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Filing frequency</strong></td>
+                            <td>Annual &mdash; once per fiscal year per company.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Due date</strong></td>
+                            <td>As shown in your <strong>Filings Due</strong> grid. Due dates are set by the Companies Registry based on your company&rsquo;s registration date.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Late filing</strong></td>
+                            <td>Companies that fail to file by the due date may be subject to penalties under the Companies Act, 2011. Persistent non-compliance may result in the company being struck off the register.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multiple years outstanding</strong></td>
+                            <td>If you have filings due for several years, you can submit them all in one session. Each year requires its own financial statements upload.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                        Warning
+                    </div>
+                    <p>Failure to file annual reports can lead to your company being deregistered. File on time every year to maintain your company&rsquo;s good standing with the registry.</p>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 8: AFTER SUBMISSION ===================== -->
+            <div class="section" id="section-8">
+                <h2>8. After Submission</h2>
+                <p>Once you have submitted, here is what happens next:</p>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Confirmation</h3>
+                        <p>You will receive a confirmation that your filing has been submitted. It will appear in your application tracker on the platform.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Officer Review</h3>
+                        <p>An OBFC officer reviews your filing and the uploaded financial statements. This review typically takes a few business days.</p>
+                        <ul>
+                            <li><strong>If approved:</strong> Your filing proceeds to automatic registration in the databases.</li>
+                            <li><strong>If returned:</strong> You will be notified with details on what corrections are required. Log in, make the changes, and resubmit.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Automatic Registration</h3>
+                        <p>Once approved, the system automatically updates both the Companies database and the Accounts database. No further action is required from you.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Completion</h3>
+                        <p>Your filing moves to the <strong>Filings Completed</strong> tab, showing the filing date and uploaded statements. The annual report obligation for that year is now fulfilled.</p>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Data Updates
+                    </div>
+                    <p>If you submitted an <strong>Update of Data</strong> request alongside your annual filing, those contact/address changes will be reflected in the Companies Registry once processed.</p>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 9: FAQ ===================== -->
+            <div class="section" id="section-9">
+                <h2>9. Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <h4>Q: Can I file for multiple years at once?</h4>
+                    <p>A: Yes. All years with pending filings appear in the <strong>Filings Due</strong> tab. Upload financial statements for each year and submit them all in one session.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: What file format should my financial statements be in?</h4>
+                    <p>A: PDF is the recommended format. The system accepts common document formats, but PDF ensures the best compatibility and preserves formatting.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: My filing was returned for corrections. What do I do?</h4>
+                    <p>A: Log in and check your application tracker. The reviewing officer will have noted what needs correcting. Make the required changes, re-upload documents if needed, and resubmit.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: Can I update my company&rsquo;s address without submitting financial statements?</h4>
+                    <p>A: Yes. On the Company Information tab, update your address fields and click <strong>&ldquo;Update contact information&rdquo;</strong>. This submits an <em>Update of Data</em> registration without requiring any financial statement.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: I see no entries in &ldquo;Filings Due&rdquo;. What does this mean?</h4>
+                    <p>A: This means your company is up to date with all annual report obligations. No action is required until the next filing period.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: How do I know if my filing has been approved?</h4>
+                    <p>A: Track the status through your application tracker on the platform. Once registered in both databases, the filing moves to the <strong>Filings Completed</strong> tab. You may also receive email notifications about status changes.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Q: What happens if an automated registration step fails?</h4>
+                    <p>A: In rare cases, the automatic database registration may encounter an issue. The filing is then routed to a system administrator for resolution. You do not need to take any action &mdash; the OBFC team will resolve it.</p>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 10: CONTACT & SUPPORT ===================== -->
+            <div class="section" id="section-10">
+                <h2>10. Contact &amp; Support</h2>
+                <p>If you need help or encounter technical issues, contact the One Business Facilitation Centre:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Online platform</strong></td>
+                            <td><a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Website</strong></td>
+                            <td><a href="https://lesotho.eregistrations.dev/">lesotho.eregistrations.dev</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Email</strong></td>
+                            <td><a href="mailto:info@obfc.org.ls">info@obfc.org.ls</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Phone</strong></td>
+                            <td>+266 2231 7454</td>
+                        </tr>
+                        <tr>
+                            <td><strong>In Person</strong></td>
+                            <td>LNDC Centre, Block A, Kingsway Road, Maseru, Lesotho</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Office Hours
+                    </div>
+                    <p>The OBFC is open Monday to Friday, 8:00 AM to 5:00 PM. The online platform is available 24 hours a day, 7 days a week.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Column 1: Logo & About -->
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="https://lesotho.eregistrations.dev/_assets/v11/e8f8e0f4875113e3103aae78a6e2c99f11345f18.png" alt="OBFC Logo">
+                    </div>
+                    <p>One Business Facilitation Centre (OBFC) provides a single window for business registration and licensing services in the Kingdom of Lesotho.</p>
+                </div>
+
+                <!-- Column 2: Contact Details -->
+                <div class="footer-col">
+                    <h5>Contact Details</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>LNDC Centre, Block A<br>Kingsway Road, Maseru</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92V21a2 2 0 0 1-2.18 2A19.86 19.86 0 0 1 3 5.18 2 2 0 0 1 5 3h4.09a1 1 0 0 1 1 .75l.72 3.59a1 1 0 0 1-.26.95L8.09 10.7a16 16 0 0 0 5.21 5.21l2.41-2.41a1 1 0 0 1 .95-.26l3.59.72a1 1 0 0 1 .75 1z"/></svg>
+                        <span>+266 2231 7454</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@obfc.org.ls</span>
+                    </div>
+                </div>
+
+                <!-- Column 3: Social Channels -->
+                <div class="footer-col">
+                    <h5>Follow Us</h5>
+                    <p>Stay connected with OBFC for the latest updates on business services.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter / X">
+                            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Column 4: Quick Links -->
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                        <li><a href="https://services.businessregistrations.gov.ls/">Login / Register</a></li>
+                        <li><a href="index.html">All Manuals</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Implemented by -->
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <a href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/742ddaa6ec00aadee1b93dffeefc513e3c77473c.png" alt="World Bank">
+                </a>
+                <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://lesotho.eregistrations.dev/_assets/v11/fd2d79a17613c98a31e05becdb641ca8c82159b4.png" alt="UNCTAD">
+                </a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright">
+                &copy; 2026 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tab switching script -->
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
