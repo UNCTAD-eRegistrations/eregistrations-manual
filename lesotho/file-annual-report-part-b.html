@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Annual Report - Processing Manual (Part B) | OBFC Lesotho</title>
+    <meta name="description" content="Government officer processing manual for the File Annual Report service on the Lesotho OBFC eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           LESOTHO eREGISTRATIONS — PROCESSING MANUAL
+           Service: File Annual Report
+           Version: v1.0
+           Created: April 2026
+           Audience: Government officers (back-office)
+           ============================================================ */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: #4CAF74; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #3d9461; text-decoration: underline; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: #1F2128;
+            line-height: 1.3;
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 42px; font-weight: 700; }
+        h2 { font-size: 32px; font-weight: 600; }
+        h3 { font-size: 24px; font-weight: 600; }
+        h4 { font-size: 20px; font-weight: 600; }
+        h5 { font-size: 16px; font-weight: 600; }
+
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+        ul, ol { padding-left: 22px; margin-bottom: 1em; }
+        li { margin-bottom: 5px; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header {
+            background: #2B2A65;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .header-logos { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+        .header-logos img { height: 52px; width: auto; }
+        .header-logos .coat-of-arms { height: 56px; }
+        .header-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.25); flex-shrink: 0; }
+        .header-nav { display: flex; align-items: center; gap: 32px; }
+
+        .header-nav a {
+            color: #FFFFFF;
+            font-size: 15px;
+            font-weight: 400;
+            white-space: nowrap;
+            transition: opacity 0.2s ease;
+        }
+
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+
+        .btn-login {
+            background: #4CAF74;
+            color: #FFFFFF !important;
+            padding: 8px 20px;
+            border-radius: 9999px;
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            transition: background 0.2s ease;
+        }
+
+        .btn-login:hover { background: #3d9461; text-decoration: none !important; }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb {
+            background: #FFFFFF;
+            border-bottom: 1px solid #E5E7EB;
+            padding: 14px 0;
+        }
+
+        .breadcrumb-list {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #888;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+
+        .breadcrumb-list li + li::before {
+            content: "";
+            display: inline-block;
+            width: 6px; height: 6px;
+            border-top: 1.5px solid #aaa;
+            border-right: 1.5px solid #aaa;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .breadcrumb-list a { color: #4CAF74; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           OFFICER NOTICE BANNER
+           ============================================================ */
+        .officer-banner {
+            background: #FEF9C3;
+            border-bottom: 2px solid #F5A623;
+            padding: 14px 0;
+        }
+
+        .officer-banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #92400E;
+        }
+
+        .officer-banner svg { width: 20px; height: 20px; flex-shrink: 0; stroke: #D97706; fill: none; }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero {
+            background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%);
+            color: #FFFFFF;
+            padding: 64px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0; right: 0; bottom: 0;
+            width: 40%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+
+        .hero-label {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4CAF74;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+
+        .hero-description {
+            font-size: 18px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
+            max-width: 560px;
+        }
+
+        .btn-primary {
+            background: #4CAF74;
+            color: #FFFFFF;
+            padding: 14px 32px;
+            border-radius: 9999px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.15s ease;
+        }
+
+        .btn-primary:hover { background: #3d9461; color: #FFFFFF; text-decoration: none; transform: translateY(-1px); }
+
+        .hero-image {
+            flex-shrink: 0;
+            width: 260px; height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-icon-circle {
+            width: 200px; height: 200px;
+            border-radius: 50%;
+            background: rgba(76,175,116,0.15);
+            border: 2px solid rgba(76,175,116,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: #4CAF74; stroke-width: 1.5; }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc {
+            background: #F5F5F7;
+            padding: 48px 0;
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 20px;
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            text-decoration: none;
+            color: #1F2128;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        .toc-item:hover {
+            border-color: #4CAF74;
+            box-shadow: 0 2px 8px rgba(76,175,116,0.12);
+            text-decoration: none;
+            color: #1F2128;
+        }
+
+        .toc-number {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: #4CAF74;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ============================================================
+           WORKFLOW
+           ============================================================ */
+        .workflow-steps {
+            display: flex;
+            align-items: flex-start;
+            gap: 0;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            margin-top: 32px;
+        }
+
+        .wf-step {
+            flex: 1;
+            min-width: 140px;
+            text-align: center;
+            position: relative;
+        }
+
+        .wf-step::after {
+            content: "";
+            position: absolute;
+            top: 28px; right: -1px;
+            width: 50%; height: 3px;
+            background: #E5E7EB;
+            z-index: 0;
+        }
+
+        .wf-step::before {
+            content: "";
+            position: absolute;
+            top: 28px; left: 0;
+            width: 50%; height: 3px;
+            background: #E5E7EB;
+            z-index: 0;
+        }
+
+        .wf-step:first-child::before { display: none; }
+        .wf-step:last-child::after { display: none; }
+
+        .wf-dot {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            position: relative;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: #FFFFFF;
+        }
+
+        .wf-dot.applicant { background: #4CAF74; }
+        .wf-dot.review { background: #2B2A65; }
+        .wf-dot.bot { background: #7C3AED; }
+        .wf-dot.problem { background: #DC2626; }
+
+        .wf-dot svg { width: 24px; height: 24px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
+
+        .wf-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: #1F2128;
+            margin-bottom: 4px;
+        }
+
+        .wf-sublabel { font-size: 12px; color: #888; line-height: 1.4; }
+
+        /* ============================================================
+           MAIN CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+
+        .section {
+            margin-bottom: 56px;
+            scroll-margin-top: 100px;
+        }
+
+        .section > h2 {
+            font-size: 28px;
+            font-weight: 600;
+            padding-left: 18px;
+            border-left: 4px solid #4CAF74;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .section > h3 { font-size: 21px; font-weight: 600; margin-top: 28px; margin-bottom: 14px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 14px; }
+
+        /* --- Desk Card --- */
+        .desk-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 14px;
+            overflow: hidden;
+            margin: 24px 0;
+        }
+
+        .desk-card-header {
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .desk-card-header.user-role { background: #2B2A65; }
+        .desk-card-header.bot-role { background: #7C3AED; }
+        .desk-card-header.problem-role { background: #DC2626; }
+
+        .desk-icon {
+            width: 48px; height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .desk-icon svg { width: 22px; height: 22px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
+
+        .desk-title { color: #FFFFFF; }
+        .desk-title h3 { color: #FFFFFF; font-size: 20px; margin-bottom: 2px; }
+        .desk-title p { color: rgba(255,255,255,0.75); font-size: 13px; margin: 0; }
+
+        .desk-badge {
+            margin-left: auto;
+            background: rgba(255,255,255,0.15);
+            color: #FFFFFF;
+            padding: 4px 14px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .desk-card-body { padding: 24px; }
+        .desk-card-body > * + * { margin-top: 16px; }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box, .warning-box, .note-box, .success-box {
+            padding: 18px 22px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .info-box { background: #F5F5F7; border-left: 4px solid #4CAF74; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+        .success-box { background: #F0FDF4; border-left: 4px solid #4CAF74; }
+
+        .box-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .info-box .box-label { color: #4CAF74; }
+        .warning-box .box-label { color: #D4891A; }
+        .note-box .box-label { color: #4A90D9; }
+        .success-box .box-label { color: #16A34A; }
+        .box-label svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        /* --- Tables --- */
+        .field-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 20px 0;
+            font-size: 14px;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .field-table thead { background: #2B2A65; color: #FFFFFF; }
+
+        .field-table th {
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 12px 14px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .field-table td {
+            padding: 11px 14px;
+            border-bottom: 1px solid #F0F0F2;
+            vertical-align: top;
+        }
+
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F5F5F7; }
+
+        /* Status badges */
+        .status-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 11px;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .status-pending { background: #EFF6FF; color: #1D4ED8; }
+        .status-validated { background: #DCFCE7; color: #166534; }
+        .status-rejected { background: #FEE2E2; color: #991B1B; }
+        .status-corrections { background: #FFEDD5; color: #9A3412; }
+        .status-bot-fail { background: #FEE2E2; color: #991B1B; }
+
+        /* --- Tab Group --- */
+        .tab-group {
+            margin: 24px 0;
+            border: 1px solid #E5E7EB;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .tab-nav {
+            display: flex;
+            background: #F5F5F7;
+            border-bottom: 1px solid #E5E7EB;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            padding: 12px 22px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: #555866;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
+
+        .tab-btn.active {
+            color: #4CAF74;
+            border-bottom-color: #4CAF74;
+            background: #FFFFFF;
+            font-weight: 600;
+        }
+
+        .tab-panel { display: none; padding: 22px; }
+        .tab-panel.active { display: block; }
+
+        /* --- Step list --- */
+        .steps { list-style: none; padding: 0; margin: 20px 0; }
+
+        .step {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding: 16px;
+            background: #FAFAFA;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+        }
+
+        .step-number {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: #2B2A65;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-number.bot { background: #7C3AED; }
+
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .step-content p { margin-bottom: 6px; font-size: 15px; }
+        .step-content p:last-child { margin-bottom: 0; }
+        .step-content ul { padding-left: 18px; margin-top: 6px; }
+        .step-content li { font-size: 15px; margin-bottom: 3px; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer {
+            background: #2B2A65;
+            color: rgba(255,255,255,0.75);
+            padding: 40px 0 0;
+            font-size: 14px;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-col { flex: 1; min-width: 180px; }
+
+        .footer-col h5 {
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .footer-col a { color: rgba(255,255,255,0.7); }
+        .footer-col a:hover { color: #4CAF74; text-decoration: none; }
+
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 8px; font-size: 13px; }
+
+        .footer-implemented {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding: 18px 0;
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            body { font-size: 15px; }
+            h1 { font-size: 28px; }
+            h2, .section > h2 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 10px; padding: 10px 16px; }
+            .header-nav { gap: 12px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 32px 0; }
+            .hero h1 { font-size: 24px; }
+            .hero-image { display: none; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .container { padding: 0 14px; }
+            .step { flex-direction: column; gap: 10px; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================================
+           PRINT
+           ============================================================ */
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 10pt; color: #000; background: #FFF; }
+            .site-header { position: static; background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .officer-banner { page-break-inside: avoid; }
+            .desk-card { page-break-inside: avoid; }
+            .tab-nav { display: none; }
+            .tab-panel { display: block !important; }
+            .site-footer { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logos">
+                <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
+                    <img src="obfc-logo.webp" alt="OBFC Logo">
+                </a>
+                <div class="header-divider"></div>
+                <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
+                    <img src="mti-logo.avif" alt="MTI One-Stop Business Facilitation Centre" class="coat-of-arms">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <a href="https://lesotho.eregistrations.dev/about/">About</a>
+                <a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a>
+                <a href="https://services.businessregistrations.gov.ls/" class="btn-login">DS Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         OFFICER NOTICE BANNER
+         ============================================================ -->
+    <div class="officer-banner">
+        <div class="officer-banner-inner">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <span><strong>For OBFC officers only.</strong> This is the back-office processing manual. For the citizen guide, see <a href="file-annual-report.html">Part A &mdash; Citizen Manual</a>.</span>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                <li><a href="index.html">Lesotho Manuals</a></li>
+                <li><a href="file-annual-report.html">File Annual Report</a></li>
+                <li><span class="current">Part B &mdash; Processing Manual</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">Processing Manual &mdash; Officers</span>
+                    <h1>File Annual Report</h1>
+                    <p class="hero-description">Back-office processing guide for OBFC officers. Covers the full workflow: officer review of filed statements, automated registration in the COMPANIES and ACCOUNTS databases.</p>
+                    <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Open DS Portal &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="6" width="40" height="52" rx="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="22" y1="20" x2="42" y2="20" stroke-linecap="round"/>
+                            <line x1="22" y1="28" x2="42" y2="28" stroke-linecap="round"/>
+                            <line x1="22" y1="36" x2="36" y2="36" stroke-linecap="round"/>
+                            <polyline points="38,44 42,48 50,38" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#service-overview" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span class="toc-label">Service Overview</span>
+                </a>
+                <a href="#service-workflow" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span class="toc-label">Service Workflow</span>
+                </a>
+                <a href="#type-of-roles" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span class="toc-label">Type of Roles</span>
+                </a>
+                <a href="#description-of-roles" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span class="toc-label">Description of Roles</span>
+                </a>
+                <a href="#assistance" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span class="toc-label">Assistance</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
+
+            <!-- ===== 1. SERVICE OVERVIEW ===== -->
+            <div class="section" id="service-overview">
+                <h2>1. Service Overview</h2>
+                <p>The <strong>File Annual Report</strong> service on the Lesotho OBFC eRegistrations platform allows registered companies to submit their annual financial statements and update company records electronically. It covers two registrations:</p>
+                <ul>
+                    <li><strong>Annual Filing</strong> &mdash; The citizen uploads financial statements for one or more pending fiscal years.</li>
+                    <li><strong>Update of Data</strong> &mdash; The citizen updates company contact/address information in the registry without filing financial statements.</li>
+                </ul>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        How the system loads data
+                    </div>
+                    <p>When a citizen opens the service, several bots run automatically in the background: <strong>vRIGHTS list</strong> retrieves companies linked to the user, <strong>COMPANIES read</strong> fetches the company&rsquo;s current registry data, and <strong>ACCOUNTS list</strong> loads the list of fiscal years with their filing status (due or completed). The citizen sees this data pre-filled in the form &mdash; they do not need to enter it manually.</p>
+                </div>
+
+                <h3>Documents generated by the service</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Document</th>
+                            <th>Bot</th>
+                            <th>When generated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Application Form</strong></td>
+                            <td>APPLICATION FORM display</td>
+                            <td>On submission — displays the filled application form as a PDF for officer review.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Extract of Companies Registry</strong></td>
+                            <td>EXTRACT OF COMPANIES REGISTRY upload</td>
+                            <td>After COMPANIES database update — generated and attached to the application.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Filing Notice</strong></td>
+                            <td>FILING NOTICE upload</td>
+                            <td>After ACCOUNTS database update — generated and attached to confirm the filing.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== 2. SERVICE WORKFLOW ===== -->
+            <div class="section" id="service-workflow">
+                <h2>2. Service Workflow</h2>
+                <p>The service follows a linear flow from citizen submission through officer review to automated database registration. The PROBLEM roles only activate if a bot fails.</p>
+
+                <div class="workflow-steps">
+                    <div class="wf-step">
+                        <div class="wf-dot applicant">
+                            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="wf-label">Applicant</div>
+                        <div class="wf-sublabel">Fills form &amp;<br>submits</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot review">
+                            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <div class="wf-label">Review Filing</div>
+                        <div class="wf-sublabel">Officer reviews<br>statements</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot bot">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                        </div>
+                        <div class="wf-label">COMPANIES<br>Database</div>
+                        <div class="wf-sublabel">Bot updates<br>company records</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot bot">
+                            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </div>
+                        <div class="wf-label">ACCOUNTS<br>Database</div>
+                        <div class="wf-sublabel">Bot registers<br>filing &amp; notice</div>
+                    </div>
+                </div>
+
+                <div class="note-box" style="margin-top: 32px;">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Parallel registrations
+                    </div>
+                    <p>An <strong>Annual Filing</strong> submission triggers both the COMPANIES and ACCOUNTS bot roles sequentially. An <strong>Update of Data</strong> submission (contact/address only) also goes through Review Filing and the COMPANIES database bot, but does not require a financial statement upload.</p>
+                </div>
+            </div>
+
+            <!-- ===== 3. TYPE OF ROLES ===== -->
+            <div class="section" id="type-of-roles">
+                <h2>3. Type of Roles</h2>
+                <p>There are two types of roles in an eRegistrations service:</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'role-human')">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            Human role
+                        </button>
+                        <button class="tab-btn" onclick="switchTab(event, 'role-bot')">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                            Automated role (bot)
+                        </button>
+                    </div>
+                    <div class="tab-panel active" id="role-human">
+                        <p>Assigned to a government officer who manually reviews or processes an application. The officer sees the application form, can add comments, and sets a status to move the file forward or send it back to the citizen.</p>
+                        <h4>Role Statuses</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Meaning</th>
+                                    <th>Next step</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                                    <td>Application is queued and awaiting officer action.</td>
+                                    <td>No action required unless it stalls for more than 24 hours.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                    <td>Officer approved the application. Moves to the next role.</td>
+                                    <td>System automatically triggers the COMPANIES database bot.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
+                                    <td>Application returned to the citizen with comments for correction.</td>
+                                    <td>Citizen must correct and resubmit. File returns to Review Filing.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-rejected">FILE REJECT</span></td>
+                                    <td>Application permanently rejected. No further processing.</td>
+                                    <td>Citizen is notified. No action required from officer.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-panel" id="role-bot">
+                        <p>Executed automatically by the system — no officer action is required. Bots perform tasks such as updating a government database or generating certificate PDFs. They run sequentially after the previous step succeeds.</p>
+                        <h4>Bot Statuses</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Meaning</th>
+                                    <th>Action Required</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                                    <td>Bot is queued or running.</td>
+                                    <td>None. Monitor if still pending after 30 minutes.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                    <td>Bot ran successfully; database updated or document generated.</td>
+                                    <td>None &mdash; the next role starts automatically.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-bot-fail">BOT FAILED</span></td>
+                                    <td>Bot encountered an error during execution.</td>
+                                    <td>File is routed to the corresponding PROBLEM role for manual resolution.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 4. DESCRIPTION OF ROLES ===== -->
+            <div class="section" id="description-of-roles">
+                <h2>4. Description of Roles</h2>
+
+                <!-- Role 1: Review Filing -->
+                <div class="desk-card">
+                    <div class="desk-card-header user-role">
+                        <div class="desk-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="desk-title">
+                            <h3>Review Filing</h3>
+                            <p>Human role &mdash; OBFC Processing Officer</p>
+                        </div>
+                        <span class="desk-badge">Step 1</span>
+                    </div>
+                    <div class="desk-card-body">
+                        <p>This is the first and only human role in the service. An OBFC processing officer reviews the citizen&rsquo;s submission: the completed form, the uploaded financial statements for each fiscal year, and the company information. The officer verifies that the filing is complete and the documents are valid.</p>
+
+                        <h4>What to check</h4>
+                        <ol class="steps">
+                            <li class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Verify company identity</h4>
+                                    <p>Confirm the filing is for the correct company. Check the company name, registration number (Business ID), and legal type against the registry.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Check financial statements for each year</h4>
+                                    <p>For each year listed in the Filings Due grid, verify that a financial statement document has been uploaded. Open and review each attachment to confirm it is legible and corresponds to the declared year.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Check Update of Data fields (if applicable)</h4>
+                                    <p>If the citizen also updated contact or address information, verify that the new district, town, email, and phone values are plausible and complete.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Set status</h4>
+                                    <p>
+                                        <strong>Approve:</strong> Set status to <span class="status-badge status-validated">FILE VALIDATED</span>. The system triggers the COMPANIES database bot automatically.<br><br>
+                                        <strong>Send back:</strong> Set status to <span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span> with a clear comment explaining what needs to be corrected (e.g., missing statement for year X, illegible document).<br><br>
+                                        <strong>Reject:</strong> Set status to <span class="status-badge status-rejected">FILE REJECT</span> only for fraudulent or fundamentally invalid applications.
+                                    </p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <div class="warning-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>
+                                Multiple years
+                            </div>
+                            <p>A single application can contain financial statements for multiple years. Each year must have its own uploaded document. If any year is missing its document, send the entire application back for corrections.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2: Register in COMPANIES database -->
+                <div class="desk-card">
+                    <div class="desk-card-header bot-role">
+                        <div class="desk-icon">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                        </div>
+                        <div class="desk-title">
+                            <h3>Register in COMPANIES database</h3>
+                            <p>Automated bot role &mdash; runs after officer approval</p>
+                        </div>
+                        <span class="desk-badge">Step 2</span>
+                    </div>
+                    <div class="desk-card-body">
+                        <p>This bot role runs automatically once the officer sets <span class="status-badge status-validated">FILE VALIDATED</span>. It updates the company&rsquo;s records in the government GDB (General Database) and generates the Extract of Companies Registry document.</p>
+
+                        <h4>Bots in this role</h4>
+                        <ol class="steps">
+                            <li class="step">
+                                <div class="step-number bot">1</div>
+                                <div class="step-content">
+                                    <h4>LEGAL PERSON - update (Main office address)</h4>
+                                    <p>Updates the main office address for the legal person record in the GDB. Runs if the citizen submitted an Update of Data with new address information.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">2</div>
+                                <div class="step-content">
+                                    <h4>BUSINESS - update (Main office address)</h4>
+                                    <p>Updates the main office address for the business record in the GDB. Ensures both the legal person and business records are kept consistent.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">3</div>
+                                <div class="step-content">
+                                    <h4>EXTRACT OF COMPANIES REGISTRY upload</h4>
+                                    <p>Generates a PDF Extract of the Companies Registry reflecting the current state of the company after the update, and uploads it to the application record.</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h4>If this bot role fails</h4>
+                        <p>The file is routed to the <strong>PROBLEM Companies update</strong> role (system administrator). Common causes and actions:</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Likely cause</th>
+                                    <th>Recommended action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Company ID not found in GDB</td>
+                                    <td>Verify the Business ID in the application. If correct, contact the database administrator.</td>
+                                </tr>
+                                <tr>
+                                    <td>Database connection timeout</td>
+                                    <td>Retry the bot. Usually resolves on its own within a few minutes.</td>
+                                </tr>
+                                <tr>
+                                    <td>Mapping error</td>
+                                    <td>A field mapping may be outdated. Contact the system administrator.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Role 3: Register in ACCOUNTS database -->
+                <div class="desk-card">
+                    <div class="desk-card-header bot-role">
+                        <div class="desk-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </div>
+                        <div class="desk-title">
+                            <h3>Register in ACCOUNTS database</h3>
+                            <p>Automated bot role &mdash; runs after COMPANIES update succeeds</p>
+                        </div>
+                        <span class="desk-badge">Step 3</span>
+                    </div>
+                    <div class="desk-card-body">
+                        <p>This bot role runs automatically once the COMPANIES database bot role succeeds. It records the annual filing in the ACCOUNTS database and generates the Filing Notice document.</p>
+
+                        <h4>Bots in this role</h4>
+                        <ol class="steps">
+                            <li class="step">
+                                <div class="step-number bot">1</div>
+                                <div class="step-content">
+                                    <h4>ACCOUNTS update</h4>
+                                    <p>Updates the filing entries in the ACCOUNTS database. For each fiscal year included in the submission, marks the year as filed and records the filing date. This satisfies the company&rsquo;s annual report obligation for those years.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">2</div>
+                                <div class="step-content">
+                                    <h4>FILING NOTICE upload</h4>
+                                    <p>Generates a PDF Filing Notice confirming the annual report has been received and registered, and uploads it to the application record. The citizen can download this notice from their eRegistrations account as proof of filing.</p>
+                                </div>
+                            </li>
+                        </ol>
+
+                        <h4>If this bot role fails</h4>
+                        <p>The file is routed to the <strong>PROBLEM Update accounts</strong> role (system administrator). Common causes and actions:</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr>
+                                    <th>Likely cause</th>
+                                    <th>Recommended action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Fiscal year not found in ACCOUNTS database</td>
+                                    <td>Verify the filing year in the application. Check that the year exists in the ACCOUNTS system. Contact the database administrator if missing.</td>
+                                </tr>
+                                <tr>
+                                    <td>Filing already recorded for this year</td>
+                                    <td>Check if a duplicate submission was processed. If so, reject the current application and notify the citizen.</td>
+                                </tr>
+                                <tr>
+                                    <td>Database connection timeout</td>
+                                    <td>Retry the bot. Usually resolves automatically.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="success-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                                Completion
+                            </div>
+                            <p>When this role succeeds, the filing is complete. The application shows <span class="status-badge status-validated">FILE VALIDATED</span> on all roles, the fiscal year moves to &ldquo;Filings Completed&rdquo; in the citizen&rsquo;s dashboard, and the Filing Notice is available for download.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 5. ASSISTANCE ===== -->
+            <div class="section" id="assistance">
+                <h2>5. Assistance</h2>
+
+                <h3>Common Issues</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Issue</th>
+                            <th>Likely Cause</th>
+                            <th>Recommended Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>No filings appear in the citizen&rsquo;s Filings Due tab</td>
+                            <td>ACCOUNTS list bot did not run, or no outstanding filings in the database</td>
+                            <td>Ask citizen to reload. If empty, check with database administrator whether filing years are configured for the company.</td>
+                        </tr>
+                        <tr>
+                            <td>Application stuck in Review Filing for more than 24 hours</td>
+                            <td>No officer has picked up the file</td>
+                            <td>Assign to the relevant processing officer or supervisor.</td>
+                        </tr>
+                        <tr>
+                            <td>COMPANIES bot failed — company not found</td>
+                            <td>Business ID mismatch between eRegistrations and GDB</td>
+                            <td>Verify the Business ID in the application against the GDB. Contact database administrator to reconcile.</td>
+                        </tr>
+                        <tr>
+                            <td>ACCOUNTS bot failed — duplicate filing</td>
+                            <td>Year already recorded in ACCOUNTS database</td>
+                            <td>Verify whether a prior filing for the same year exists. If duplicate, reject with explanation.</td>
+                        </tr>
+                        <tr>
+                            <td>Filing Notice not generated</td>
+                            <td>FILING NOTICE upload bot failed</td>
+                            <td>Retry from the PROBLEM Update accounts role. If the issue persists, contact OBFC IT Support.</td>
+                        </tr>
+                        <tr>
+                            <td>Citizen cannot see their company in the form</td>
+                            <td>Account not linked to the company in vRIGHTS</td>
+                            <td>Send back to corrections and ask the citizen to contact the OBFC help desk to have their account linked.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Support Contacts</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Issue Type</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>System / bot failures</td>
+                            <td>OBFC IT Support</td>
+                        </tr>
+                        <tr>
+                            <td>GDB / COMPANIES database errors</td>
+                            <td>Database Administrator</td>
+                        </tr>
+                        <tr>
+                            <td>ACCOUNTS database errors</td>
+                            <td>Database Administrator</td>
+                        </tr>
+                        <tr>
+                            <td>Account linking issues (vRIGHTS)</td>
+                            <td>OBFC Help Desk</td>
+                        </tr>
+                        <tr>
+                            <td>Policy / legal questions about filing obligations</td>
+                            <td>OBFC Companies Registry Unit</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h5>File Annual Report</h5>
+                    <ul class="footer-links">
+                        <li><a href="file-annual-report.html">Part A &mdash; Citizen Manual</a></li>
+                        <li><a href="file-annual-report-part-b.html">Part B &mdash; Processing Manual</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Other Manuals</h5>
+                    <ul class="footer-links">
+                        <li><a href="register-business.html">Register a Business</a></li>
+                        <li><a href="renew-close-license.html">Renew or Close a Licence</a></li>
+                        <li><a href="index.html">All Manuals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Back-Office Portal</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://services.businessregistrations.gov.ls/" target="_blank">DS Portal Login</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <img src="unctad-logo.avif" alt="UNCTAD" style="height: 28px;">
+            </div>
+
+            <div class="footer-copyright">
+                File Annual Report &mdash; Processing Manual (Part B) &mdash; Version 1.0 &mdash; April 2026 &nbsp;|&nbsp;
+                &copy; 2025&ndash;2026 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. For internal use only.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
