@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Business Name — Part B Processing Manual | Gambia Easy Business</title>
+    <meta name="description" content="Back-office processing manual for the Reserve a Business Name service — Gambia Easy Business eRegistrations platform. Officer guide covering all roles and workflow stages.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           GAMBIA eREGISTRATIONS — PROCESSING MANUAL (PART B)
+           Service: Reserve a Business Name
+           Version: v1.0
+           Updated: April 2026
+           ============================================================ */
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.7; color: #555866; background: #FFFFFF; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: #3464B0; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #2a5290; text-decoration: underline; }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+
+        /* --- Layout --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header { background: #3464B0; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .header-logo { height: 48px; width: auto; flex-shrink: 0; }
+        .header-brand-text { display: flex; flex-direction: column; }
+        .header-brand-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; line-height: 1.2; }
+        .header-brand-subtitle { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px; text-transform: uppercase; font-weight: 400; }
+        .header-nav { display: flex; align-items: center; gap: 32px; }
+        .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; text-decoration: none; white-space: nowrap; transition: opacity 0.2s ease; }
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+        .btn-login { background: #FFFFFF; color: #3464B0 !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #EEF2FF; text-decoration: none !important; }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 14px 0; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #888; flex-wrap: wrap; }
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+        .breadcrumb-list li + li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-top: 1.5px solid #aaa; border-right: 1.5px solid #aaa; transform: rotate(45deg); flex-shrink: 0; }
+        .breadcrumb-list a { color: #3464B0; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero { background: #3464B0; color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
+        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.06) 0%, transparent 70%); pointer-events: none; }
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.8); margin-bottom: 12px; display: block; }
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+        .hero-description { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 560px; }
+        .btn-primary { background: #FFFFFF; color: #0C1A3D; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; border: none; cursor: pointer; }
+        .btn-primary:hover { background: rgba(255,255,255,0.88); color: #0C1A3D; text-decoration: none; transform: translateY(-1px); }
+        .hero-image { flex-shrink: 0; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .hero-icon-circle { width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: rgba(255,255,255,0.85); stroke-width: 1.5; }
+
+        /* Part B hero accent */
+        .hero-partb-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); border-radius: 9999px; padding: 4px 14px; font-size: 13px; font-weight: 600; color: #FFFFFF; margin-bottom: 16px; font-family: 'Poppins', sans-serif; letter-spacing: 0.3px; }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc { background: #F5F5F7; padding: 48px 0; border-bottom: 1px solid #E5E7EB; }
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+        .toc-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 10px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 16px; }
+        .toc-item:hover { border-color: #3464B0; box-shadow: 0 2px 8px rgba(52,100,176,0.12); text-decoration: none; color: #1F2128; }
+        .toc-number { width: 32px; height: 32px; border-radius: 50%; background: #3464B0; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
+        .section > h2 { font-size: 32px; font-weight: 600; padding-left: 20px; border-left: 4px solid #3464B0; margin-bottom: 24px; line-height: 1.3; }
+        .section > h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; }
+        .section > h4 { font-size: 20px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* --- Info/Warning/Tip Boxes --- */
+        .info-box, .warning-box, .tip-box { border-radius: 10px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 14px; align-items: flex-start; }
+        .info-box { background: #EFF6FF; border: 1px solid #BFDBFE; }
+        .info-box .box-icon { color: #2563EB; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .warning-box { background: #FFFBEB; border: 1px solid #FCD34D; }
+        .warning-box .box-icon { color: #D97706; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .tip-box { background: #F0FDF4; border: 1px solid #BBF7D0; }
+        .tip-box .box-icon { color: #16A34A; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .box-body { flex: 1; font-size: 16px; line-height: 1.6; }
+        .box-body strong { display: block; margin-bottom: 4px; font-size: 15px; }
+        .box-body p { margin-bottom: 0; }
+
+        /* ============================================================
+           WORKFLOW STEPS
+           ============================================================ */
+        .workflow-steps { display: flex; flex-direction: column; gap: 0; margin-top: 32px; }
+        .wf-step { display: flex; gap: 20px; padding: 20px 0; position: relative; }
+        .wf-step:not(:last-child)::after { content: ""; position: absolute; left: 19px; top: 52px; bottom: -8px; width: 2px; background: #E5E7EB; }
+        .wf-step-icon { width: 40px; height: 40px; border-radius: 50%; background: #3464B0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; flex-shrink: 0; position: relative; z-index: 1; }
+        .wf-step-icon.bot { background: #0F766E; }
+        .wf-step-icon.applicant { background: #6D28D9; }
+        .wf-step-icon.complete { background: #15803D; }
+        .wf-step-content { flex: 1; padding-top: 6px; }
+        .wf-step-content h4 { margin-bottom: 4px; font-size: 16px; }
+        .wf-step-content p { font-size: 14px; color: #555866; margin-bottom: 0; }
+        .wf-badge { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-left: 8px; }
+        .wf-badge.human { background: #EFF6FF; color: #1D4ED8; }
+        .wf-badge.bot { background: #F0FDFA; color: #0F766E; }
+        .wf-badge.start { background: #F5F3FF; color: #6D28D9; }
+
+        /* ============================================================
+           TAB GROUP
+           ============================================================ */
+        .tab-group { border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; margin: 24px 0; }
+        .tab-group-header { display: flex; background: #F5F5F7; border-bottom: 1px solid #E5E7EB; }
+        .tab-btn { padding: 14px 24px; font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; color: #555866; background: transparent; border: none; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.2s; }
+        .tab-btn.active { color: #3464B0; border-bottom-color: #3464B0; background: #FFFFFF; font-weight: 600; }
+        .tab-panel { display: none; padding: 28px; }
+        .tab-panel.active { display: block; }
+
+        /* ============================================================
+           STATUS BADGES
+           ============================================================ */
+        .status-badge { display: inline-block; padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .status-pending { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+        .status-validated { background: #F0FDF4; color: #15803D; border: 1px solid #86EFAC; }
+        .status-corrections { background: #FFEDD5; color: #9A3412; border: 1px solid #FDBA74; }
+        .status-reject { background: #FEE2E2; color: #991B1B; border: 1px solid #FCA5A5; }
+        .status-bot-pending { background: #F5F3FF; color: #6D28D9; border: 1px solid #C4B5FD; }
+        .status-bot-completed { background: #F0FDFA; color: #0F766E; border: 1px solid #99F6E4; }
+        .status-bot-failed { background: #FEF2F2; color: #991B1B; border: 1px solid #FCA5A5; }
+
+        /* --- Status Table --- */
+        .status-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+        .status-table th { background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px; padding: 12px 16px; text-align: left; }
+        .status-table td { padding: 14px 16px; border-bottom: 1px solid #E5E7EB; vertical-align: middle; }
+        .status-table tr:nth-child(even) td { background: #F9FAFB; }
+
+        /* ============================================================
+           ROLE STEPS (PART B)
+           ============================================================ */
+        .steps { display: flex; flex-direction: column; gap: 24px; margin: 24px 0; }
+        .step { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 28px; position: relative; }
+        .step-number { position: absolute; top: -14px; left: 24px; background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 13px; padding: 4px 14px; border-radius: 9999px; }
+        .step-number.bot { background: #0F766E; }
+        .step h4 { margin-top: 8px; margin-bottom: 8px; font-size: 18px; }
+        .step p { font-size: 15px; color: #555866; }
+        .step ul, .step ol { padding-left: 22px; font-size: 15px; color: #555866; }
+        .step li { margin-bottom: 6px; }
+        .role-type-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .role-type-badge.human { background: #EFF6FF; color: #1D4ED8; border: 1px solid #BFDBFE; }
+        .role-type-badge.bot { background: #F0FDFA; color: #0F766E; border: 1px solid #99F6E4; }
+        .role-statuses { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; margin-bottom: 4px; }
+        .step-divider { border: none; border-top: 1px solid #E5E7EB; margin: 16px 0; }
+
+        /* --- Issue table --- */
+        .issue-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 15px; }
+        .issue-table th { background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px; padding: 12px 16px; text-align: left; }
+        .issue-table td { padding: 12px 16px; border-bottom: 1px solid #E5E7EB; vertical-align: top; font-size: 14px; }
+        .issue-table tr:nth-child(even) td { background: #F9FAFB; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .manual-version { background: #F5F5F7; border-top: 1px solid #E5E7EB; padding: 24px 0; text-align: center; }
+        .manual-version p { font-size: 13px; color: #888; margin-bottom: 4px; }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .hero h1 { font-size: 28px; }
+            .hero-image { display: none; }
+            .hero-inner { flex-direction: column; }
+            .header-nav { gap: 16px; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .tab-btn { padding: 10px 14px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================ HEADER ============================================================ -->
+<header class="site-header">
+    <div class="header-inner">
+        <a href="https://easybusiness.gov.gm/" class="header-brand">
+            <img src="gambia-logo.png" alt="Gambia Coat of Arms" class="header-logo">
+            <div class="header-brand-text">
+                <span class="header-brand-title">Gambia Easy Business</span>
+                <span class="header-brand-subtitle">Republic of The Gambia</span>
+            </div>
+        </a>
+        <nav class="header-nav">
+            <a href="https://easybusiness.gov.gm/about/">About</a>
+            <a href="https://easybusiness.gov.gm/help/">Help &amp; Support</a>
+            <a href="https://services.easybusiness.gov.gm/" class="btn-login">Login | Register</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ============================================================ BREADCRUMB ============================================================ -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="https://easybusiness.gov.gm/">Home</a></li>
+            <li><a href="../gambia/">Gambia Manuals</a></li>
+            <li><a href="reserve-business-name.html">Reserve a Business Name</a></li>
+            <li><span class="current">Part B — Processing Manual</span></li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ============================================================ HERO ============================================================ -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-content">
+<span class="hero-label">Process Application — Officers</span>
+                <h1>Reserve a Business Name</h1>
+                <p class="hero-description">This manual is intended for Business Registry officers responsible for processing name reservation applications. It describes the full processing workflow, each role's responsibilities, available status transitions, and guidance for handling common issues.</p>
+                <a href="https://services.easybusiness.gov.gm/" class="btn-primary">Start Processing &#8594;</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-icon-circle">
+                    <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="14" y="8" width="44" height="56" rx="4"/>
+                        <line x1="22" y1="22" x2="50" y2="22"/>
+                        <line x1="22" y1="32" x2="50" y2="32"/>
+                        <line x1="22" y1="42" x2="38" y2="42"/>
+                        <circle cx="52" cy="56" r="12"/>
+                        <polyline points="47,56 51,60 58,52"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ TABLE OF CONTENTS ============================================================ -->
+<section class="toc">
+    <div class="container">
+        <h2>In This Manual</h2>
+        <div class="toc-grid">
+            <a href="#service-overview" class="toc-item"><span class="toc-number">1</span><span class="toc-label">Service Overview</span></a>
+            <a href="#service-workflow" class="toc-item"><span class="toc-number">2</span><span class="toc-label">Service Workflow</span></a>
+            <a href="#types-of-roles" class="toc-item"><span class="toc-number">3</span><span class="toc-label">Types of Roles</span></a>
+            <a href="#description-of-roles" class="toc-item"><span class="toc-number">4</span><span class="toc-label">Description of Roles</span></a>
+            <a href="#assistance" class="toc-item"><span class="toc-number">5</span><span class="toc-label">Assistance</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ MANUAL CONTENT ============================================================ -->
+<main class="manual-content">
+    <div class="container">
+
+        <!-- SECTION 1: SERVICE OVERVIEW -->
+        <section id="service-overview" class="section">
+            <h2>1. Service Overview</h2>
+            <p>The <strong>Reserve a Business Name</strong> service enables clients to secure a unique business name in the Gambia Business Registry before completing a formal business registration. The name reservation holds the client's chosen name in the registry for a defined period, during which no other party may register or reserve an identical or confusingly similar name.</p>
+            <p>This service is delivered entirely online through the <a href="https://services.easybusiness.gov.gm/" target="_blank" rel="noopener">Gambia Easy Business platform</a>. The client submits the application, pays the applicable fee, and the processing workflow is then handled by Business Registry officers through the back-office portal.</p>
+
+            <h3>Who submits this application?</h3>
+            <p>The application is submitted by one of the following:</p>
+            <ul>
+                <li>An individual applying for their own business name reservation</li>
+                <li>An authorised representative (such as a lawyer or business consultant) applying on behalf of a client</li>
+            </ul>
+            <p>In either case, the personal details of the person submitting the form are collected, along with a valid identity document. If the application is on behalf of someone else, an authorisation letter is required.</p>
+
+            <h3>What the client receives</h3>
+            <p>Upon successful processing, the system automatically generates an official <strong>Business Name Reservation Certificate</strong> (PDF), which is made available for download in the client's account. The certificate confirms that the name is reserved in the client's favour for the applicable reservation period.</p>
+
+            <h3>Registration covered</h3>
+            <table class="status-table">
+                <thead>
+                    <tr><th>Registration name</th><th>Registration ID</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Reservation of Business Name</td>
+                        <td><code>2c9280878dfeb31a018e089091e30456</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION 2: SERVICE WORKFLOW -->
+        <section id="service-workflow" class="section">
+            <h2>2. Service Workflow</h2>
+            <p>The following diagram shows the complete processing sequence for a name reservation application, from client submission through to certificate delivery. Human roles are shown in blue; automated bot roles are shown in teal; the client is shown in purple.</p>
+
+            <div class="workflow-steps">
+
+                <div class="wf-step">
+                    <div class="wf-step-icon applicant">&#9654;</div>
+                    <div class="wf-step-content">
+                        <h4>Client submits application <span class="wf-badge start">Client</span></h4>
+                        <p>The client completes the online form, checks the availability of the proposed business name, uploads the required identity documents, accepts the declaration, and submits. The application is assigned a unique reference number and enters the processing queue pending payment confirmation.</p>
+                    </div>
+                </div>
+
+                <div class="wf-step">
+                    <div class="wf-step-icon">1</div>
+                    <div class="wf-step-content">
+                        <h4>BR Payment — Payment Confirmation <span class="wf-badge human">Human</span></h4>
+                        <p>The Payment Officer confirms that the application fee has been received. For online payments, this may be automatic. For cash payments made at the counter, the officer records the payment details (payment date, receipt number, payment slip) and validates the file to advance it to the Review stage.</p>
+                    </div>
+                </div>
+
+                <div class="wf-step">
+                    <div class="wf-step-icon">2</div>
+                    <div class="wf-step-content">
+                        <h4>BR Review — Application Review <span class="wf-badge human">Human</span></h4>
+                        <p>The Review Officer checks the application for completeness and accuracy: verifies the client's personal details against the identity document, checks the proposed business name against the registry for conflicts, and reviews all uploaded documents. The officer validates the file, sends it back for corrections, or rejects it.</p>
+                    </div>
+                </div>
+
+                <div class="wf-step">
+                    <div class="wf-step-icon">3</div>
+                    <div class="wf-step-content">
+                        <h4>BR Approval — Final Approval <span class="wf-badge human">Human</span></h4>
+                        <p>The Approving Officer conducts the final check before the name is formally reserved. This includes a secondary name availability check and a review of any comments from the Review Officer. The officer approves the file, sends it back for corrections, or rejects it.</p>
+                    </div>
+                </div>
+
+                <div class="wf-step">
+                    <div class="wf-step-icon bot">&#9881;</div>
+                    <div class="wf-step-content">
+                        <h4>BR Reservation — Automated Registration <span class="wf-badge bot">Bot</span></h4>
+                        <p>Once approved, the system automatically creates the business name reservation record in the Business Names database (GDB). No officer action is required. If the bot fails, the file is escalated to the PROBLEM BR reservation role for manual intervention.</p>
+                    </div>
+                </div>
+
+                <div class="wf-step">
+                    <div class="wf-step-icon bot">&#9881;</div>
+                    <div class="wf-step-content">
+                        <h4>BR Certificate — Automated Certificate Generation <span class="wf-badge bot">Bot</span></h4>
+                        <p>The system automatically generates the Business Name Reservation Certificate as a PDF and uploads it to the client's file. The client is notified by email. If the bot fails, the file is escalated to the PROBLEM BR Certificate role for manual intervention.</p>
+                    </div>
+                </div>
+
+                <div class="wf-step">
+                    <div class="wf-step-icon complete">&#10003;</div>
+                    <div class="wf-step-content">
+                        <h4>Application complete <span class="wf-badge" style="background:#F0FDF4;color:#15803D;">Completed</span></h4>
+                        <p>The reservation certificate is available in the client's account. The file is marked as completed. The client may now proceed with a full business registration using the reserved name.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: TYPES OF ROLES -->
+        <section id="types-of-roles" class="section">
+            <h2>3. Types of Roles</h2>
+            <p>The processing workflow for this service uses two types of roles: human desk roles and automated bot roles. Understanding the difference will help you know what is expected of you and when to escalate an issue.</p>
+
+            <div class="tab-group" id="roleTypeTabs">
+                <div class="tab-group-header">
+                    <button class="tab-btn active" onclick="switchTab(event, 'tab-human')">Human Role</button>
+                    <button class="tab-btn" onclick="switchTab(event, 'tab-bot')">Automated Role (Bot)</button>
+                </div>
+
+                <!-- HUMAN ROLE TAB -->
+                <div id="tab-human" class="tab-panel active">
+                    <h4>What is a Human Role?</h4>
+                    <p>A human desk role is assigned to a specific Business Registry officer or group of officers. When a file arrives at a human role, it appears in the officer's processing queue. The officer is responsible for reviewing the file, taking the appropriate action, and setting a status to advance (or return) the file.</p>
+                    <p>Human roles in this service include:</p>
+                    <ul>
+                        <li><strong>BR Payment</strong> — confirms receipt of payment</li>
+                        <li><strong>BR Review</strong> — reviews the application and documents</li>
+                        <li><strong>BR Approval</strong> — makes the final approval decision</li>
+                    </ul>
+
+                    <hr class="step-divider">
+
+                    <h4>Human Role Statuses</h4>
+                    <p>When processing a file, a human officer selects one of the following statuses to determine what happens next:</p>
+                    <table class="status-table">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Meaning</th>
+                                <th>What happens next</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                                <td>The application has arrived and is waiting to be processed by the officer</td>
+                                <td>No action yet taken — file stays in the current role's queue</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                <td>The officer has reviewed and approved the file at this stage</td>
+                                <td>The file advances to the next stage in the workflow</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
+                                <td>The officer has identified issues and is returning the file to the client for correction</td>
+                                <td>The client is notified, makes corrections, and resubmits; the file returns to this role for re-review</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-badge status-reject">FILE REJECT</span></td>
+                                <td>The officer has determined that the application does not meet requirements and is formally rejecting it</td>
+                                <td>The client is notified of the rejection and the reason; the file is closed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- BOT ROLE TAB -->
+                <div id="tab-bot" class="tab-panel">
+                    <h4>What is an Automated Role (Bot)?</h4>
+                    <p>A bot role is executed automatically by the system without any human action required. When the file arrives at a bot role, the system performs a pre-configured task — such as creating a database record or generating a document — and then either advances the file automatically or escalates it to a PROBLEM role if something goes wrong.</p>
+                    <p>Bot roles in this service include:</p>
+                    <ul>
+                        <li><strong>BR Reservation</strong> — automatically creates the name reservation record in the Business Names database</li>
+                        <li><strong>BR Certificate</strong> — automatically generates and uploads the reservation certificate PDF</li>
+                    </ul>
+                    <p>As an officer, you do not need to take any action when the file is at a bot role. However, if a bot fails and the file arrives at a PROBLEM role, you will need to investigate and take corrective action.</p>
+
+                    <hr class="step-divider">
+
+                    <h4>Bot Role Statuses</h4>
+                    <table class="status-table">
+                        <thead>
+                            <tr>
+                                <th>Status</th>
+                                <th>Meaning</th>
+                                <th>Action required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="status-badge status-bot-pending">BOT PENDING</span></td>
+                                <td>The bot is currently processing the task</td>
+                                <td>None — wait for the bot to complete; this is normally very fast</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                <td>The bot completed its task successfully</td>
+                                <td>None — the file advances automatically to the next stage</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-badge status-bot-failed">BOT FAILED</span></td>
+                                <td>The bot encountered an error and could not complete its task</td>
+                                <td>Escalate to the corresponding PROBLEM role; investigate the error and resolve manually</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="warning-box" style="margin-top: 20px;">
+                        <span class="box-icon">&#9888;</span>
+                        <div class="box-body">
+                            <strong>Bot failures require prompt attention</strong>
+                            <p>If a bot fails, the name may not have been recorded in the registry or the certificate may not have been generated. This means the client's reservation is not yet official. Escalate bot failures to a supervisor immediately so the PROBLEM role officer can resolve the issue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: DESCRIPTION OF ROLES -->
+        <section id="description-of-roles" class="section">
+            <h2>4. Description of Roles</h2>
+            <p>This section provides detailed guidance for each role in the processing workflow. Roles are presented in the order they occur during processing.</p>
+
+            <div class="steps">
+
+                <!-- ROLE 1: BR PAYMENT -->
+                <div class="step">
+                    <div class="step-number">Role 1</div>
+                    <h4>BR Payment</h4>
+                    <span class="role-type-badge human">&#128100; Human Role</span>
+                    <p><strong>Purpose:</strong> Confirm that the application fee for the name reservation has been received before the application proceeds to substantive review.</p>
+
+                    <h5 style="margin-top: 16px; font-size: 16px;">Responsibilities</h5>
+                    <ul>
+                        <li>Open the application file in the processing queue</li>
+                        <li>Check whether payment was made online (digital) or at the counter (cash/front desk)</li>
+                        <li>If payment was made online: verify that the digital payment reference is recorded in the file. If confirmed, validate the file.</li>
+                        <li>If payment was made at the counter: verify the physical receipt, confirm the bank name, payment date, and receipt number are entered in the payment form, and ensure the payment slip (bank receipt scan) is uploaded. Once all details are correct, validate the file.</li>
+                        <li>If payment cannot be confirmed: contact the client or use the Send Back to Corrections status to request the missing payment evidence.</li>
+                    </ul>
+
+                    <hr class="step-divider">
+                    <h5 style="font-size: 16px;">What to check</h5>
+                    <ul>
+                        <li>Payment amount matches the applicable fee for a name reservation</li>
+                        <li>Payment date is within an acceptable window (not a future date)</li>
+                        <li>Receipt number is present and legible</li>
+                        <li>Uploaded payment slip is readable</li>
+                    </ul>
+
+                    <hr class="step-divider">
+                    <h5 style="font-size: 16px;">Available status transitions</h5>
+                    <div class="role-statuses">
+                        <span class="status-badge status-pending">FILE PENDING</span>
+                        <span class="status-badge status-validated">FILE VALIDATED</span>
+                        <span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span>
+                        <span class="status-badge status-reject">FILE REJECT</span>
+                    </div>
+                    <p style="font-size: 14px; margin-top: 12px; color: #555866;">Typical processing time: same day to 1 business day. This role is the start role — all new applications arrive here first.</p>
+                </div>
+
+                <!-- ROLE 2: BR REVIEW -->
+                <div class="step">
+                    <div class="step-number">Role 2</div>
+                    <h4>BR Review</h4>
+                    <span class="role-type-badge human">&#128100; Human Role</span>
+                    <p><strong>Purpose:</strong> Conduct a thorough review of the application to confirm that the client's personal information is accurate, the proposed name is eligible for reservation, and all required documents are in order.</p>
+
+                    <h5 style="margin-top: 16px; font-size: 16px;">Responsibilities</h5>
+                    <ul>
+                        <li>Open the file and review the client's personal information against the uploaded identity document</li>
+                        <li>Verify the proposed business name: run an availability check from within the review form to confirm the name does not conflict with existing registered businesses or currently reserved names</li>
+                        <li>Review the list of similar reserved and registered names surfaced by the system and assess whether any of them are confusingly similar to the proposed name</li>
+                        <li>Check that the document uploads are legible and the document type matches the one declared by the client</li>
+                        <li>Check the intended business type (sole proprietorship or other) is consistent with the proposed name</li>
+                        <li>If the application is complete and the name is eligible: set status to FILE VALIDATED to advance to Approval</li>
+                        <li>If corrections are needed: use SEND BACK TO CORRECTIONS and clearly note what needs to be fixed</li>
+                        <li>If the application is fundamentally ineligible (e.g., prohibited name, fraudulent documents): use FILE REJECT and document the reason</li>
+                    </ul>
+
+                    <hr class="step-divider">
+                    <h5 style="font-size: 16px;">What to check</h5>
+                    <ul>
+                        <li>Full name matches the identity document exactly</li>
+                        <li>Document number matches the uploaded scan</li>
+                        <li>Date of birth is consistent with the document</li>
+                        <li>Nationality and document type are consistent with the uploaded document</li>
+                        <li>Name availability result shows no conflicts in either NAMES or BUSINESSES databases</li>
+                        <li>If similar names are found in the registry, assess whether they are genuinely different or confusingly similar</li>
+                        <li>No restricted terms in the proposed name without appropriate justification</li>
+                    </ul>
+
+                    <hr class="step-divider">
+                    <h5 style="font-size: 16px;">Available status transitions</h5>
+                    <div class="role-statuses">
+                        <span class="status-badge status-pending">FILE PENDING</span>
+                        <span class="status-badge status-validated">FILE VALIDATED</span>
+                        <span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span>
+                        <span class="status-badge status-reject">FILE REJECT</span>
+                    </div>
+                    <p style="font-size: 14px; margin-top: 12px; color: #555866;">Typical processing time: 1–2 business days.</p>
+                </div>
+
+                <!-- ROLE 3: BR APPROVAL -->
+                <div class="step">
+                    <div class="step-number">Role 3</div>
+                    <h4>BR Approval</h4>
+                    <span class="role-type-badge human">&#128100; Human Role</span>
+                    <p><strong>Purpose:</strong> Provide final oversight and make the authoritative decision on whether the business name reservation should be granted. This is the last human checkpoint before the system records the reservation.</p>
+
+                    <h5 style="margin-top: 16px; font-size: 16px;">Responsibilities</h5>
+                    <ul>
+                        <li>Review the application file and any notes or comments added by the Review Officer</li>
+                        <li>Perform a final name availability check from within the approval form to confirm no new conflicting registrations or reservations have occurred since the Review stage</li>
+                        <li>Review the list of similar reserved and registered names surfaced by the system</li>
+                        <li>Review the client's personal details and uploaded documents</li>
+                        <li>If satisfied the application meets all requirements: set status to FILE VALIDATED to trigger the automated reservation bot</li>
+                        <li>If issues remain: use SEND BACK TO CORRECTIONS (to the client) or FILE REJECT (if ineligible)</li>
+                        <li>Add a comment explaining the decision if rejecting or sending back for corrections</li>
+                    </ul>
+
+                    <hr class="step-divider">
+                    <h5 style="font-size: 16px;">What to check</h5>
+                    <ul>
+                        <li>All Review Officer concerns have been addressed if the file was previously returned for corrections</li>
+                        <li>The proposed name remains available in both the NAMES and BUSINESSES registries at the time of final approval</li>
+                        <li>No similar registered business names exist that could create confusion</li>
+                        <li>Documents are complete and verified</li>
+                    </ul>
+
+                    <hr class="step-divider">
+                    <h5 style="font-size: 16px;">Available status transitions</h5>
+                    <div class="role-statuses">
+                        <span class="status-badge status-pending">FILE PENDING</span>
+                        <span class="status-badge status-validated">FILE VALIDATED</span>
+                        <span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span>
+                        <span class="status-badge status-reject">FILE REJECT</span>
+                    </div>
+                    <p style="font-size: 14px; margin-top: 12px; color: #555866;">Typical processing time: 1–2 business days.</p>
+                </div>
+
+                <!-- ROLE 4: BR RESERVATION (BOT) -->
+                <div class="step">
+                    <div class="step-number bot">Role 4</div>
+                    <h4>BR Reservation</h4>
+                    <span class="role-type-badge bot">&#9881; Automated Role (Bot)</span>
+                    <p><strong>Purpose:</strong> Automatically create the official business name reservation record in the Gambia Business Names database (GDB) immediately after final approval.</p>
+
+                    <h5 style="margin-top: 16px; font-size: 16px;">What the bot does</h5>
+                    <ul>
+                        <li>Creates a new entry in the Business Names registry with the approved name, the client's details, and the reservation period</li>
+                        <li>Associates the reservation with the relevant registration type (sole proprietorship or other business type, as indicated by the client)</li>
+                        <li>Sets the status to FILE VALIDATED upon successful completion, advancing the file to the BR Certificate bot</li>
+                        <li>If the bot encounters an error (e.g., database connectivity issue, data mapping error), it sets the status to BOT FAILED and the file is routed to the PROBLEM BR reservation role</li>
+                    </ul>
+
+                    <hr class="step-divider">
+                    <h5 style="font-size: 16px;">Bot statuses</h5>
+                    <div class="role-statuses">
+                        <span class="status-badge status-bot-pending">FILE PENDING</span>
+                        <span class="status-badge status-validated">FILE VALIDATED</span>
+                        <span class="status-badge status-bot-failed">BOT FAILED</span>
+                    </div>
+                    <p style="font-size: 14px; margin-top: 12px; color: #555866;">Typical processing time: immediate (seconds). No officer action required unless the bot fails.</p>
+
+                    <div class="info-box" style="margin-top: 16px;">
+                        <span class="box-icon">&#8505;</span>
+                        <div class="box-body">
+                            <strong>If this bot fails</strong>
+                            <p>The name reservation has NOT been recorded in the registry. The file will be routed to the PROBLEM BR reservation role. A supervisor or senior officer must investigate the failure, resolve the underlying issue, and manually trigger the reservation or escalate to the system administrator.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROLE 5: BR CERTIFICATE (BOT) -->
+                <div class="step">
+                    <div class="step-number bot">Role 5</div>
+                    <h4>BR Certificate</h4>
+                    <span class="role-type-badge bot">&#9881; Automated Role (Bot)</span>
+                    <p><strong>Purpose:</strong> Automatically generate the official Business Name Reservation Certificate as a PDF document and make it available to the client for download.</p>
+
+                    <h5 style="margin-top: 16px; font-size: 16px;">What the bot does</h5>
+                    <ul>
+                        <li>Uses the approved application data (client name, reserved business name, reservation date, expiry date, reference number) to generate a formatted certificate PDF</li>
+                        <li>Uploads the certificate to the client's application file</li>
+                        <li>Triggers an email notification to the client informing them that their certificate is ready for download</li>
+                        <li>Sets the status to FILE VALIDATED upon successful completion, marking the application as complete</li>
+                        <li>If the bot encounters an error (e.g., PDF generation failure, template error), it sets the status to BOT FAILED and the file is routed to the PROBLEM BR Certificate role</li>
+                    </ul>
+
+                    <hr class="step-divider">
+                    <h5 style="font-size: 16px;">Bot statuses</h5>
+                    <div class="role-statuses">
+                        <span class="status-badge status-bot-pending">FILE PENDING</span>
+                        <span class="status-badge status-validated">FILE VALIDATED</span>
+                        <span class="status-badge status-bot-failed">BOT FAILED</span>
+                    </div>
+                    <p style="font-size: 14px; margin-top: 12px; color: #555866;">Typical processing time: immediate (seconds). No officer action required unless the bot fails.</p>
+
+                    <div class="info-box" style="margin-top: 16px;">
+                        <span class="box-icon">&#8505;</span>
+                        <div class="box-body">
+                            <strong>If this bot fails</strong>
+                            <p>The name reservation has been successfully recorded (by BR Reservation) but the certificate has not been generated. The file will be routed to the PROBLEM BR Certificate role. Note that the client's name IS reserved — only the certificate document is missing. A supervisor must investigate and either retrigger the certificate generation or produce the certificate manually.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.steps -->
+        </section>
+
+        <!-- SECTION 5: ASSISTANCE -->
+        <section id="assistance" class="section">
+            <h2>5. Assistance</h2>
+
+            <h3>Common issues and resolutions</h3>
+            <table class="issue-table">
+                <thead>
+                    <tr>
+                        <th>Issue</th>
+                        <th>Likely cause</th>
+                        <th>Recommended resolution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Client name does not match identity document</td>
+                        <td>Client entered a nickname, abbreviated name, or made a typo</td>
+                        <td>Send back to corrections requesting the client enter their full legal name exactly as on the document</td>
+                    </tr>
+                    <tr>
+                        <td>Document upload is illegible or blurry</td>
+                        <td>Poor scan quality, low resolution photo, or incorrect file uploaded</td>
+                        <td>Send back to corrections requesting a clearer scan. Specify which document needs to be re-uploaded.</td>
+                    </tr>
+                    <tr>
+                        <td>Proposed name is similar to an existing name</td>
+                        <td>Client did not notice the similarity during the online check, or the similar name was registered after the client's check</td>
+                        <td>Use your judgement to assess confusing similarity. If genuinely similar, reject with a clear explanation. If clearly different despite similar words, you may proceed at your discretion.</td>
+                    </tr>
+                    <tr>
+                        <td>Payment cannot be verified</td>
+                        <td>Payment slip is missing, receipt number is incorrect, or cash payment was not recorded</td>
+                        <td>For online payments: check the payment transaction log. For cash payments: contact the finance desk to confirm receipt. Send back for corrections if documentation is missing.</td>
+                    </tr>
+                    <tr>
+                        <td>BR Reservation bot has failed</td>
+                        <td>Database connectivity issue, data mapping error, or API timeout</td>
+                        <td>Escalate to a supervisor immediately. Do not mark the file as rejected. The PROBLEM BR reservation role officer should investigate the bot logs and coordinate with the system administrator.</td>
+                    </tr>
+                    <tr>
+                        <td>BR Certificate bot has failed</td>
+                        <td>PDF template error, missing data field, or file upload service unavailable</td>
+                        <td>Escalate to the PROBLEM BR Certificate role. The name reservation IS recorded but the certificate must be generated manually or the bot retriggered. The client should be informed of the delay.</td>
+                    </tr>
+                    <tr>
+                        <td>Client claims they did not receive the certificate email</td>
+                        <td>Email address was entered incorrectly, or the email was filtered as spam</td>
+                        <td>Advise the client to check their spam folder. Confirm the email address on file. The certificate can be downloaded directly from the client's account at services.easybusiness.gov.gm.</td>
+                    </tr>
+                    <tr>
+                        <td>Client wants to change the proposed name after submission</td>
+                        <td>Client made an error or changed their mind after submitting</td>
+                        <td>If the file has not yet been validated, use SEND BACK TO CORRECTIONS so the client can amend the name. If the file has already been approved, a new application must be submitted.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Support contacts</h3>
+            <ul>
+                <li><strong>Technical platform issues</strong> — Contact the Gambia Easy Business support team via <a href="https://easybusiness.gov.gm/help/" target="_blank" rel="noopener">easybusiness.gov.gm/help</a></li>
+                <li><strong>Registry policy questions</strong> — Contact the Business Registry, Ministry of Trade, Industry, Regional Integration and Employment (MOTIE), Gambia</li>
+                <li><strong>Bot failures and system errors</strong> — Escalate to your supervisor or the designated system administrator for the Gambia Easy Business platform</li>
+            </ul>
+
+            <h3>Related manuals</h3>
+            <ul>
+                <li><a href="reserve-business-name.html">Reserve a Business Name — Citizen Guide (Part A)</a></li>
+                <li><a href="register-sole-proprietorship.html">Register a Sole Proprietorship — Citizen Guide (Part A)</a></li>
+                <li><a href="register-sole-proprietorship-part-b.html">Register a Sole Proprietorship — Processing Manual (Part B)</a></li>
+            </ul>
+        </section>
+
+    </div><!-- /.container -->
+</main>
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer class="manual-version">
+    <p>Manual v1.0 — Part B — Generated 2026-04-07 — Source: gambia/2c9280878dfeb31a018e089091e10455</p>
+    <p>Generated by /service-manual skill v3.4.0</p>
+</footer>
+
+<!-- ============================================================ TAB SCRIPT ============================================================ -->
+<script>
+function switchTab(event, panelId) {
+    const tabGroup = event.currentTarget.closest('.tab-group');
+    tabGroup.querySelectorAll('.tab-btn').forEach(function(btn) { btn.classList.remove('active'); });
+    tabGroup.querySelectorAll('.tab-panel').forEach(function(panel) { panel.classList.remove('active'); });
+    event.currentTarget.classList.add('active');
+    document.getElementById(panelId).classList.add('active');
+}
+</script>
+
+</body>
+</html>

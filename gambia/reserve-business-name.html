@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Business Name - User Manual | Gambia Easy Business</title>
+    <meta name="description" content="Step-by-step citizen guide for reserving a business name on the Gambia Easy Business eRegistrations platform. Check availability and secure your preferred business name.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           GAMBIA eREGISTRATIONS — USER MANUAL
+           Service: Reserve a Business Name
+           Version: v1.0
+           Updated: April 2026
+           ============================================================ */
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.7; color: #555866; background: #FFFFFF; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: #3464B0; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #2a5290; text-decoration: underline; }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+
+        /* --- Layout --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header { background: #3464B0; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .header-logo { height: 48px; width: auto; flex-shrink: 0; }
+        .header-brand-text { display: flex; flex-direction: column; }
+        .header-brand-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; line-height: 1.2; }
+        .header-brand-subtitle { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px; text-transform: uppercase; font-weight: 400; }
+        .header-nav { display: flex; align-items: center; gap: 32px; }
+        .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; text-decoration: none; white-space: nowrap; transition: opacity 0.2s ease; }
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+        .btn-login { background: #FFFFFF; color: #3464B0 !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #EEF2FF; text-decoration: none !important; }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 14px 0; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #888; flex-wrap: wrap; }
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+        .breadcrumb-list li + li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-top: 1.5px solid #aaa; border-right: 1.5px solid #aaa; transform: rotate(45deg); flex-shrink: 0; }
+        .breadcrumb-list a { color: #3464B0; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero { background: #3464B0; color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
+        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.06) 0%, transparent 70%); pointer-events: none; }
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.8); margin-bottom: 12px; display: block; }
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+        .hero-description { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 560px; }
+        .btn-primary { background: #FFFFFF; color: #0C1A3D; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; border: none; cursor: pointer; }
+        .btn-primary:hover { background: rgba(255,255,255,0.88); color: #0C1A3D; text-decoration: none; transform: translateY(-1px); }
+        .hero-image { flex-shrink: 0; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .hero-icon-circle { width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: rgba(255,255,255,0.85); stroke-width: 1.5; }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc { background: #F5F5F7; padding: 48px 0; border-bottom: 1px solid #E5E7EB; }
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+        .toc-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 10px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 16px; }
+        .toc-item:hover { border-color: #3464B0; box-shadow: 0 2px 8px rgba(52,100,176,0.12); text-decoration: none; color: #1F2128; }
+        .toc-number { width: 32px; height: 32px; border-radius: 50%; background: #3464B0; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
+        .section > h2 { font-size: 32px; font-weight: 600; padding-left: 20px; border-left: 4px solid #3464B0; margin-bottom: 24px; line-height: 1.3; }
+        .section > h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; }
+        .section > h4 { font-size: 20px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* --- Info/Warning/Tip Boxes --- */
+        .info-box, .warning-box, .tip-box, .success-box { border-radius: 10px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 14px; align-items: flex-start; }
+        .info-box { background: #EFF6FF; border: 1px solid #BFDBFE; }
+        .info-box .box-icon { color: #2563EB; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .warning-box { background: #FFFBEB; border: 1px solid #FCD34D; }
+        .warning-box .box-icon { color: #D97706; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .tip-box { background: #F0FDF4; border: 1px solid #BBF7D0; }
+        .tip-box .box-icon { color: #16A34A; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .success-box { background: #F0FDF4; border: 1px solid #86EFAC; }
+        .success-box .box-icon { color: #15803D; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .box-body { flex: 1; font-size: 16px; line-height: 1.6; }
+        .box-body strong { display: block; margin-bottom: 4px; font-size: 15px; }
+        .box-body p { margin-bottom: 0; }
+
+        /* --- Checklist --- */
+        .checklist { list-style: none; padding: 0; margin: 16px 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #F3F4F6; font-size: 16px; }
+        .checklist li:last-child { border-bottom: none; }
+        .check-icon { width: 22px; height: 22px; border-radius: 50%; background: #3464B0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+
+        /* --- Field Table --- */
+        .field-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
+        .field-table th { background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px; padding: 12px 16px; text-align: left; }
+        .field-table td { padding: 12px 16px; border-bottom: 1px solid #E5E7EB; vertical-align: top; }
+        .field-table tr:nth-child(even) td { background: #F9FAFB; }
+        .field-table tr:hover td { background: #EFF6FF; }
+        .req-badge { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+        .req-badge.required { background: #FEE2E2; color: #DC2626; }
+        .req-badge.optional { background: #F3F4F6; color: #6B7280; }
+
+        /* --- Timeline --- */
+        .timeline { list-style: none; padding: 0; margin: 24px 0; position: relative; }
+        .timeline::before { content: ""; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px; background: #E5E7EB; }
+        .timeline-item { display: flex; gap: 20px; padding: 8px 0 24px; position: relative; }
+        .timeline-dot { width: 40px; height: 40px; border-radius: 50%; background: #3464B0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; flex-shrink: 0; position: relative; z-index: 1; }
+        .timeline-dot.bot { background: #0F766E; }
+        .timeline-body { flex: 1; padding-top: 8px; }
+        .timeline-body h5 { font-size: 17px; margin-bottom: 4px; }
+        .timeline-body p { font-size: 15px; color: #555866; margin-bottom: 0; }
+
+        /* --- FAQ --- */
+        .faq-item { border: 1px solid #E5E7EB; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+        .faq-q { background: #F5F5F7; padding: 16px 20px; font-weight: 600; font-size: 16px; color: #1F2128; font-family: 'Poppins', sans-serif; cursor: default; }
+        .faq-a { padding: 16px 20px; font-size: 15px; line-height: 1.7; border-top: 1px solid #E5E7EB; background: #FFFFFF; }
+        .faq-a p { margin-bottom: 0; }
+
+        /* --- Costs Table --- */
+        .costs-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        .costs-table th { background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px; padding: 14px 20px; text-align: left; }
+        .costs-table td { padding: 14px 20px; border-bottom: 1px solid #E5E7EB; vertical-align: middle; }
+        .costs-table tr:nth-child(even) td { background: #F9FAFB; }
+        .costs-total td { font-weight: 700; color: #1F2128; font-size: 17px; background: #EFF6FF !important; border-top: 2px solid #3464B0; }
+
+        /* --- Process Stages --- */
+        .process-stages { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 24px 0; }
+        .stage-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 20px 16px; text-align: center; }
+        .stage-icon { width: 48px; height: 48px; border-radius: 50%; background: #EFF6FF; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+        .stage-icon svg { width: 24px; height: 24px; fill: none; stroke: #3464B0; stroke-width: 1.8; }
+        .stage-label { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; color: #1F2128; margin-bottom: 4px; }
+        .stage-time { font-size: 12px; color: #555866; }
+
+        /* ============================================================
+           FORM MOCKUPS
+           ============================================================ */
+        .form-mockup { border: 1px solid #E0E0E0; border-radius: 12px; overflow: hidden; margin: 24px 0 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .form-mockup-bar { background: #3464B0; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+        .form-mockup-bar .bar-title { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 15px; }
+        .form-mockup-tabs { background: #F5F5F7; border-bottom: 1px solid #E0E0E0; padding: 0 20px; display: flex; gap: 4px; overflow-x: auto; }
+        .mtab { padding: 10px 18px; font-size: 14px; color: #555866; cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap; font-family: 'Poppins', sans-serif; }
+        .mtab.active { color: #3464B0; border-bottom-color: #3464B0; font-weight: 600; }
+        .form-mockup-body { padding: 24px 20px; background: #FFFFFF; }
+        .mock-field { margin-bottom: 20px; }
+        .mock-label { font-size: 13px; font-weight: 600; color: #1F2128; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; font-family: 'Poppins', sans-serif; }
+        .mock-required { color: #DC2626; }
+        .mock-input { height: 40px; background: #F9FAFB; border: 1.5px solid #D1D5DB; border-radius: 8px; width: 100%; max-width: 480px; }
+        .mock-input.tall { height: 80px; }
+        .mock-select { height: 40px; background: #F9FAFB; border: 1.5px solid #D1D5DB; border-radius: 8px; width: 100%; max-width: 480px; display: flex; align-items: center; padding: 0 12px; justify-content: space-between; font-size: 14px; color: #9CA3AF; }
+        .mock-select::after { content: "▾"; color: #9CA3AF; font-size: 12px; }
+        .mock-radio { display: flex; flex-direction: column; gap: 10px; }
+        .mock-radio-option { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555866; }
+        .mock-radio-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #D1D5DB; flex-shrink: 0; }
+        .mock-radio-dot.selected { border-color: #3464B0; background: radial-gradient(circle, #3464B0 40%, transparent 41%); }
+        .mock-btn { display: inline-flex; align-items: center; gap: 8px; background: #3464B0; color: #FFFFFF; padding: 10px 20px; border-radius: 9999px; font-size: 14px; font-weight: 600; font-family: 'Poppins', sans-serif; cursor: pointer; }
+        .mock-btn.secondary { background: #F5F5F7; color: #3464B0; border: 1.5px solid #3464B0; }
+        .mock-available { background: #DCFCE7; border: 1.5px solid #16A34A; border-radius: 8px; padding: 10px 16px; font-size: 14px; color: #15803D; display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+        .mock-not-available { background: #FEE2E2; border: 1.5px solid #DC2626; border-radius: 8px; padding: 10px 16px; font-size: 14px; color: #991B1B; display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+        .mock-section-title { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; color: #3464B0; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #E5E7EB; }
+        .mock-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 600px) { .mock-cols { grid-template-columns: 1fr; } }
+        .mock-hint { font-size: 12px; color: #6B7280; margin-top: 4px; }
+        .mock-check-row { display: flex; align-items: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+        .mock-status-row { margin-top: 8px; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .manual-version { background: #F5F5F7; border-top: 1px solid #E5E7EB; padding: 24px 0; text-align: center; }
+        .manual-version p { font-size: 13px; color: #888; margin-bottom: 4px; }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .hero h1 { font-size: 28px; }
+            .hero-image { display: none; }
+            .hero-inner { flex-direction: column; }
+            .header-nav { gap: 16px; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .costs-table, .field-table { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================ HEADER ============================================================ -->
+<header class="site-header">
+    <div class="header-inner">
+        <a href="https://easybusiness.gov.gm/" class="header-brand">
+            <img src="gambia-logo.png" alt="Gambia Coat of Arms" class="header-logo">
+            <div class="header-brand-text">
+                <span class="header-brand-title">Gambia Easy Business</span>
+                <span class="header-brand-subtitle">Republic of The Gambia</span>
+            </div>
+        </a>
+        <nav class="header-nav">
+            <a href="https://easybusiness.gov.gm/about/">About</a>
+            <a href="https://easybusiness.gov.gm/help/">Help &amp; Support</a>
+            <a href="https://services.easybusiness.gov.gm/" class="btn-login">Login | Register</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ============================================================ BREADCRUMB ============================================================ -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="https://easybusiness.gov.gm/">Home</a></li>
+            <li><a href="../gambia/">Gambia Manuals</a></li>
+            <li><span class="current">Reserve a Business Name</span></li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ============================================================ HERO ============================================================ -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-label">Citizen Service Guide</span>
+                <h1>Reserve a Business Name</h1>
+                <p class="hero-description">Secure your preferred business name before registering your company or sole proprietorship. This guide walks you through every step of the online reservation process — from checking name availability to receiving your official reservation certificate.</p>
+                <a href="https://services.easybusiness.gov.gm/" class="btn-primary">Start your reservation &#8594;</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-icon-circle">
+                    <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="14" y="8" width="44" height="56" rx="4"/>
+                        <line x1="22" y1="22" x2="50" y2="22"/>
+                        <line x1="22" y1="32" x2="50" y2="32"/>
+                        <line x1="22" y1="42" x2="38" y2="42"/>
+                        <circle cx="52" cy="56" r="12"/>
+                        <polyline points="47,56 51,60 58,52"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ TABLE OF CONTENTS ============================================================ -->
+<section class="toc">
+    <div class="container">
+        <h2>In This Guide</h2>
+        <div class="toc-grid">
+            <a href="#introduction" class="toc-item"><span class="toc-number">1</span><span class="toc-label">Introduction</span></a>
+            <a href="#before-you-begin" class="toc-item"><span class="toc-number">2</span><span class="toc-label">Before You Begin</span></a>
+            <a href="#step1" class="toc-item"><span class="toc-number">3</span><span class="toc-label">Step 1 — How You're Applying</span></a>
+            <a href="#step2" class="toc-item"><span class="toc-number">4</span><span class="toc-label">Step 2 — Your Personal Information</span></a>
+            <a href="#step3" class="toc-item"><span class="toc-number">5</span><span class="toc-label">Step 3 — Business Name Purpose</span></a>
+            <a href="#step4" class="toc-item"><span class="toc-number">6</span><span class="toc-label">Step 4 — Proposed Business Name</span></a>
+            <a href="#step5" class="toc-item"><span class="toc-number">7</span><span class="toc-label">Step 5 — Documents</span></a>
+            <a href="#step6" class="toc-item"><span class="toc-number">8</span><span class="toc-label">Step 6 — Review &amp; Submit</span></a>
+            <a href="#after-submission" class="toc-item"><span class="toc-number">9</span><span class="toc-label">After Submission</span></a>
+            <a href="#processing-timeline" class="toc-item"><span class="toc-number">10</span><span class="toc-label">Processing Timeline</span></a>
+            <a href="#costs" class="toc-item"><span class="toc-number">11</span><span class="toc-label">Costs &amp; Fees</span></a>
+            <a href="#faq" class="toc-item"><span class="toc-number">12</span><span class="toc-label">Frequently Asked Questions</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ MANUAL CONTENT ============================================================ -->
+<main class="manual-content">
+    <div class="container">
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <section id="introduction" class="section">
+            <h2>Introduction</h2>
+            <p>The <strong>Reserve a Business Name</strong> service allows you to secure a unique business name in the Gambia Business Registry before you complete your formal business registration. Think of it as "holding your spot" — once a name is reserved in your favour, no one else can register or reserve that same name during the reservation period.</p>
+            <p>This service is provided online through <a href="https://services.easybusiness.gov.gm/" target="_blank" rel="noopener">Gambia Easy Business</a>, the Government of The Gambia's digital business registration platform. You can complete the entire process from anywhere with an internet connection — no need to visit an office.</p>
+
+            <h3>Who should use this service?</h3>
+            <p>You should use this service if you:</p>
+            <ul>
+                <li>Have chosen a business name and want to make sure it is available before investing time in a full registration</li>
+                <li>Plan to register a sole proprietorship, company, or other business entity and want to lock in your preferred name first</li>
+                <li>Are applying on behalf of someone else (as an authorised representative) who wants a business name reserved</li>
+            </ul>
+
+            <h3>What you will receive</h3>
+            <p>Upon successful approval of your application, the system will automatically generate an official <strong>Business Name Reservation Certificate</strong>. This certificate confirms that your chosen name is reserved in the Gambia Business Registry for a set period, giving you time to complete your full business registration before the reservation expires.</p>
+
+            <div class="info-box">
+                <span class="box-icon">&#8505;</span>
+                <div class="box-body">
+                    <strong>Important to know</strong>
+                    <p>A name reservation does not constitute business registration. You still need to complete the relevant registration (e.g., Register a Sole Proprietorship or Register a Company) before you can legally operate your business under this name.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: BEFORE YOU BEGIN -->
+        <section id="before-you-begin" class="section">
+            <h2>Before You Begin</h2>
+            <p>Gathering everything you need before you start will make the process much faster. Please have the following ready:</p>
+
+            <ul class="checklist">
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>A valid identity document</strong> — either your National ID card, Passport, or Driver's License. You will need to enter the document number exactly as it appears on your document.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>Your full legal name</strong> — as it appears on your identity document (first name, any middle names, and last name).
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>Your date of birth</strong> — you will be asked to select this from a calendar picker.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>Your contact details</strong> — a working mobile phone number (with country code) and an active email address. The system will send status updates to your email, so make sure it is correct.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>Your Personal TIN</strong> (optional) — if you have a Tax Identification Number issued by the Gambia Revenue Authority, have it handy. It is not mandatory for a name reservation but may be pre-filled if you are a registered taxpayer.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>Your proposed business name(s)</strong> — think of one or two alternatives in case your first choice is already taken. The name must be unique and not identical or confusingly similar to an existing registered or reserved name.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>The intended business type</strong> — you will need to indicate whether the name is being reserved for a sole proprietorship or another business type (e.g., a company or partnership).
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>A scanned copy of your identity document</strong> (PDF or JPEG, max 5 MB) — you will be asked to upload this as supporting documentation.
+                    </div>
+                </li>
+            </ul>
+
+            <div class="tip-box">
+                <span class="box-icon">&#9654;</span>
+                <div class="box-body">
+                    <strong>Tip: Create your account first</strong>
+                    <p>If you have never used Gambia Easy Business before, register for an account at <a href="https://services.easybusiness.gov.gm/" target="_blank" rel="noopener">services.easybusiness.gov.gm</a> before starting your application. This will save your progress and allow you to track your application status online.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: STEP 1 - HOW YOU'RE APPLYING -->
+        <section id="step1" class="section">
+            <h2>Step 1 — How You're Applying</h2>
+            <p>The first section of the form asks two quick questions to establish who the application is for and what level of access you will have to the file.</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar">
+                    <span class="bar-title">Reserve a Business Name — Application Details</span>
+                </div>
+                <div class="form-mockup-tabs">
+                    <span class="mtab active">Application Details</span>
+                    <span class="mtab">Personal Information</span>
+                    <span class="mtab">Business Name</span>
+                    <span class="mtab">Documents</span>
+                    <span class="mtab">Review &amp; Submit</span>
+                </div>
+                <div class="form-mockup-body">
+                    <div class="mock-section-title">How are you applying?</div>
+
+                    <div class="mock-field">
+                        <div class="mock-label">Application for <span class="mock-required">*</span></div>
+                        <div class="mock-radio">
+                            <div class="mock-radio-option">
+                                <div class="mock-radio-dot selected"></div>
+                                <span>Myself — I am applying for my own business name</span>
+                            </div>
+                            <div class="mock-radio-option">
+                                <div class="mock-radio-dot"></div>
+                                <span>Someone else — I am applying on behalf of another person</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mock-field">
+                        <div class="mock-label">Will you receive user rights? <span class="mock-required">*</span></div>
+                        <div class="mock-radio">
+                            <div class="mock-radio-option">
+                                <div class="mock-radio-dot selected"></div>
+                                <span>Yes — I will have online access to this application and its status</span>
+                            </div>
+                            <div class="mock-radio-option">
+                                <div class="mock-radio-dot"></div>
+                                <span>No — I will not need online access</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Application for</h3>
+            <p>Choose who the reservation is for:</p>
+            <ul>
+                <li><strong>Myself</strong> — Select this if you are reserving a business name for yourself. Your personal information will be used as the applicant's details.</li>
+                <li><strong>Someone else</strong> — Select this if you are an authorised representative applying on behalf of another person (for example, a lawyer or business consultant acting for a client). You will still need to provide your own personal details as the representative, and the system may ask for additional information about the person on whose behalf you are applying.</li>
+            </ul>
+
+            <h3>Will you receive user rights?</h3>
+            <p>"User rights" means access to the online portal to track, view, and manage this specific application file. In most cases, you should select <strong>Yes</strong>. This allows you to:</p>
+            <ul>
+                <li>Log in and check the status of your application at any time</li>
+                <li>Receive notifications and respond to any requests for corrections</li>
+                <li>Download your reservation certificate once it is issued</li>
+            </ul>
+            <p>Select <strong>No</strong> only if you are a representative filing on someone else's behalf and that other person will manage their own file directly.</p>
+
+            <div class="warning-box">
+                <span class="box-icon">&#9888;</span>
+                <div class="box-body">
+                    <strong>Both fields are required</strong>
+                    <p>You must answer both questions before the system will let you proceed to the next step. The answers you give here affect how the rest of the form is presented to you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: STEP 2 - PERSONAL INFORMATION -->
+        <section id="step2" class="section">
+            <h2>Step 2 — Your Personal Information</h2>
+            <p>This section collects the personal details of the person making the application. Enter your information exactly as it appears on your official identity document — this is important because it will be verified against registry records.</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar">
+                    <span class="bar-title">Personal Information</span>
+                </div>
+                <div class="form-mockup-body">
+                    <div class="mock-section-title">Applicant Details</div>
+                    <div class="mock-cols">
+                        <div class="mock-field">
+                            <div class="mock-label">First name <span class="mock-required">*</span></div>
+                            <div class="mock-input"></div>
+                        </div>
+                        <div class="mock-field">
+                            <div class="mock-label">Middle name</div>
+                            <div class="mock-input"></div>
+                            <div class="mock-hint">Optional</div>
+                        </div>
+                    </div>
+                    <div class="mock-cols">
+                        <div class="mock-field">
+                            <div class="mock-label">Last name <span class="mock-required">*</span></div>
+                            <div class="mock-input"></div>
+                        </div>
+                        <div class="mock-field">
+                            <div class="mock-label">Date of birth <span class="mock-required">*</span></div>
+                            <div class="mock-input"></div>
+                            <div class="mock-hint">DD / MM / YYYY</div>
+                        </div>
+                    </div>
+                    <div class="mock-cols">
+                        <div class="mock-field">
+                            <div class="mock-label">Nationality <span class="mock-required">*</span></div>
+                            <div class="mock-select">Select nationality</div>
+                        </div>
+                        <div class="mock-field">
+                            <div class="mock-label">Gender <span class="mock-required">*</span></div>
+                            <div class="mock-select">Select gender</div>
+                        </div>
+                    </div>
+                    <div class="mock-cols">
+                        <div class="mock-field">
+                            <div class="mock-label">Document type <span class="mock-required">*</span></div>
+                            <div class="mock-select">Select document type</div>
+                        </div>
+                        <div class="mock-field">
+                            <div class="mock-label">Document N° <span class="mock-required">*</span></div>
+                            <div class="mock-input"></div>
+                            <div class="mock-hint">ID number, passport number, etc.</div>
+                        </div>
+                    </div>
+                    <div class="mock-field">
+                        <div class="mock-label">Personal TIN</div>
+                        <div class="mock-input"></div>
+                        <div class="mock-hint">Optional — your Gambia Revenue Authority tax identification number</div>
+                    </div>
+                    <div class="mock-section-title" style="margin-top: 16px;">Contact Details</div>
+                    <div class="mock-cols">
+                        <div class="mock-field">
+                            <div class="mock-label">Country code <span class="mock-required">*</span></div>
+                            <div class="mock-select">+220 (Gambia)</div>
+                        </div>
+                        <div class="mock-field">
+                            <div class="mock-label">Phone <span class="mock-required">*</span></div>
+                            <div class="mock-input"></div>
+                        </div>
+                    </div>
+                    <div class="mock-field">
+                        <div class="mock-label">Email <span class="mock-required">*</span></div>
+                        <div class="mock-input"></div>
+                        <div class="mock-hint">You will receive application status updates at this address</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Field-by-field guide</h3>
+            <table class="field-table">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>What to enter</th>
+                        <th>Required?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>First name</strong></td>
+                        <td>Your first (given) name exactly as it appears on your ID document. Do not use nicknames or abbreviations.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Middle name</strong></td>
+                        <td>Your middle name(s), if any. Leave blank if you do not have one.</td>
+                        <td><span class="req-badge optional">Optional</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Last name</strong></td>
+                        <td>Your family name (surname) as it appears on your ID document.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Date of birth</strong></td>
+                        <td>Select your date of birth using the date picker (day / month / year). Make sure this matches your identity document.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nationality</strong></td>
+                        <td>Select your nationality from the dropdown list. Both Gambian nationals and foreign nationals may apply.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gender</strong></td>
+                        <td>Select your gender from the dropdown list.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Document type</strong></td>
+                        <td>Choose the type of identity document you are presenting: <em>National ID</em>, <em>Passport</em>, or <em>Driver's License</em>. The label of the next field will change to match your selection.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Document N°</strong></td>
+                        <td>Enter your document number exactly as it appears on your chosen ID — including any letters, hyphens, or spaces. Errors here are a common cause of delays.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Personal TIN</strong></td>
+                        <td>If you have a Tax Identification Number from the Gambia Revenue Authority, enter it here. It is not mandatory for a name reservation.</td>
+                        <td><span class="req-badge optional">Optional</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Country code</strong></td>
+                        <td>Select the international dialling code for your country. For Gambia, this is +220.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phone</strong></td>
+                        <td>Enter your mobile phone number without the country code (the system adds the code separately). Example: 7701234 for a Gambian number.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Email</strong></td>
+                        <td>Enter a valid email address you actively use. You will receive confirmation and status updates here. Double-check for typos — a wrong email means you will miss important updates about your application.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="warning-box">
+                <span class="box-icon">&#9888;</span>
+                <div class="box-body">
+                    <strong>Common mistakes to avoid</strong>
+                    <ul style="margin: 8px 0 0; padding-left: 20px;">
+                        <li>Using a nickname or shortened version of your name instead of your legal name</li>
+                        <li>Copying your ID number incorrectly (extra spaces, wrong characters)</li>
+                        <li>Entering a phone number with the country code prefix included (e.g. "2207701234" instead of "7701234")</li>
+                        <li>Typos in your email address — there is no way to correct it after submission without contacting support</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: STEP 3 - BUSINESS NAME PURPOSE -->
+        <section id="step3" class="section">
+            <h2>Step 3 — Business Name Purpose</h2>
+            <p>Before you enter your proposed name, you need to tell the system what type of business the name will be used for. This is important because different business types are registered under different legal frameworks in The Gambia.</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar">
+                    <span class="bar-title">Business Name Purpose</span>
+                </div>
+                <div class="form-mockup-body">
+                    <div class="mock-section-title">Intended use of the business name</div>
+                    <div class="mock-field">
+                        <div class="mock-label">Business name is reserved for <span class="mock-required">*</span></div>
+                        <div class="mock-radio">
+                            <div class="mock-radio-option">
+                                <div class="mock-radio-dot selected"></div>
+                                <span>Sole Proprietorship — a business owned and operated by one individual</span>
+                            </div>
+                            <div class="mock-radio-option">
+                                <div class="mock-radio-dot"></div>
+                                <span>Other business type — company, partnership, or other entity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Why does this matter?</h3>
+            <p>The business type you select here determines how the reserved name will be categorised in the Business Registry and which naming rules apply. For example:</p>
+            <ul>
+                <li>A <strong>Sole Proprietorship</strong> name will typically follow naming conventions specific to individual traders.</li>
+                <li><strong>Other business types</strong> (such as limited companies or partnerships) may have additional naming requirements, such as including "Ltd" or "LLP" as part of the name.</li>
+            </ul>
+            <p>If you are not yet sure exactly which business structure you will use, choose the option that best matches your intended plan. You can always discuss this with a business registration officer if you need guidance.</p>
+
+            <div class="info-box">
+                <span class="box-icon">&#8505;</span>
+                <div class="box-body">
+                    <strong>One reservation per application</strong>
+                    <p>Each application covers the reservation of one business name for one business type. If you need to reserve names for multiple business types, you will need to submit separate applications.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: STEP 4 - PROPOSED BUSINESS NAME -->
+        <section id="step4" class="section">
+            <h2>Step 4 — Your Proposed Business Name</h2>
+            <p>This is the most important part of the form. You will enter the business name you want to reserve and check whether it is available in the registry.</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar">
+                    <span class="bar-title">Proposed Business Name</span>
+                </div>
+                <div class="form-mockup-body">
+                    <div class="mock-section-title">Enter and verify your proposed name</div>
+                    <div class="mock-field">
+                        <div class="mock-label">Proposed name <span class="mock-required">*</span></div>
+                        <div class="mock-input"></div>
+                        <div class="mock-hint">Enter the full business name you wish to reserve</div>
+                    </div>
+                    <div class="mock-check-row">
+                        <div class="mock-btn">Check availability</div>
+                        <span style="font-size: 14px; color: #6B7280;">Click after entering your name above</span>
+                    </div>
+                    <div class="mock-status-row">
+                        <div class="mock-available">&#10003; &nbsp; <strong>Available</strong> — This name is not currently registered or reserved. You may proceed.</div>
+                    </div>
+                    <div class="mock-status-row" style="margin-top: 8px;">
+                        <div class="mock-not-available">&#10005; &nbsp; <strong>Not available</strong> — This name already exists in the registry. Please choose a different name.</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>How to enter your proposed name</h3>
+            <p>Type your proposed business name in the text field. Enter it exactly as you want it to appear on your reservation certificate, including any capitalisation, punctuation, or spacing. For example: <em>Jollof Trading Enterprise</em>.</p>
+
+            <h3>How the availability check works</h3>
+            <p>After typing your proposed name, click the <strong>"Check availability"</strong> button. The system will instantly search two databases:</p>
+            <ul>
+                <li><strong>Reserved names</strong> — names that other applicants have already reserved and which have not yet expired</li>
+                <li><strong>Registered businesses</strong> — names of businesses that are already officially registered in The Gambia</li>
+            </ul>
+            <p>The check looks for both exact matches and names that are confusingly similar to yours. The result will appear directly below the button:</p>
+            <ul>
+                <li><strong style="color: #15803D;">Available (green)</strong> — Your proposed name is not in the registry. You can proceed with this name.</li>
+                <li><strong style="color: #991B1B;">Not available (red)</strong> — Your proposed name already exists in the registry. You must enter a different name and check again before you can submit.</li>
+            </ul>
+
+            <div class="warning-box">
+                <span class="box-icon">&#9888;</span>
+                <div class="box-body">
+                    <strong>You must check availability before submitting</strong>
+                    <p>The system will not allow you to submit your application until you have clicked "Check availability" and received a result for your proposed name. If you change the name after checking, you must check again.</p>
+                </div>
+            </div>
+
+            <h3>Tips for choosing a good business name</h3>
+            <ul>
+                <li><strong>Be unique</strong> — Avoid names that are identical to or closely resemble an existing registered or reserved business name. Even a different spelling of a well-known name may be rejected.</li>
+                <li><strong>Be descriptive but distinct</strong> — A name like "Gambia Travel Services" is very generic and more likely to conflict with existing registrations. A name like "SunPath Travel Agency" is more distinctive.</li>
+                <li><strong>Avoid restricted terms</strong> — Certain words like "Government", "National", "Royal", "Bank", or "Insurance" require special approval. If your name includes such terms, the reviewing officer may query it.</li>
+                <li><strong>Plan alternatives</strong> — Think of two or three options before you start. If your first choice is not available, you can change the name in the same application and check again.</li>
+            </ul>
+
+            <div class="tip-box">
+                <span class="box-icon">&#9654;</span>
+                <div class="box-body">
+                    <strong>What if my name isn't available?</strong>
+                    <p>Simply clear the name field, type a different name, and click "Check availability" again. You can do this as many times as you like before submitting. The system will only allow you to submit once you have a confirmed "Available" result.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: STEP 5 - DOCUMENTS -->
+        <section id="step5" class="section">
+            <h2>Step 5 — Documents</h2>
+            <p>You will need to upload supporting documents to verify your identity. All documents must be clear, readable scans or photographs of the original documents.</p>
+
+            <h3>Required documents</h3>
+            <table class="field-table">
+                <thead>
+                    <tr>
+                        <th>Document</th>
+                        <th>Details</th>
+                        <th>Required?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Identity Document</strong></td>
+                        <td>A scan or clear photo of your National ID card, Passport, or Driver's License (whichever you selected as your document type in Step 2). Both sides of a National ID card should be included if possible.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Application supporting documents</strong></td>
+                        <td>Any additional documents that support your application, such as an authorisation letter if you are applying on behalf of someone else.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>File format requirements</h3>
+            <ul>
+                <li>Accepted formats: <strong>PDF, JPEG, PNG</strong></li>
+                <li>Maximum file size: <strong>5 MB per file</strong></li>
+                <li>Make sure the document is not blurry and all text is clearly legible</li>
+                <li>Do not upload password-protected files</li>
+            </ul>
+
+            <div class="tip-box">
+                <span class="box-icon">&#9654;</span>
+                <div class="box-body">
+                    <strong>Scanning tips</strong>
+                    <p>If you are using a smartphone to photograph your documents, ensure good lighting and place the document on a flat, dark surface. Use a free scanning app for a cleaner result. The reviewing officer needs to be able to read every detail clearly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: STEP 6 - REVIEW AND SUBMIT -->
+        <section id="step6" class="section">
+            <h2>Step 6 — Review &amp; Submit</h2>
+            <p>Before submitting, the system will show you a summary of everything you have entered. This is your last chance to check for mistakes before your application is sent to the Business Registry for processing.</p>
+
+            <h3>What to check before submitting</h3>
+            <ul>
+                <li>Your full name matches your identity document exactly</li>
+                <li>Your document number is correct</li>
+                <li>Your email address is spelled correctly</li>
+                <li>The proposed business name is exactly as you intend it to appear on your certificate</li>
+                <li>The availability check for your business name shows "Available"</li>
+                <li>All required documents are uploaded and the files are readable</li>
+            </ul>
+
+            <h3>Declaration</h3>
+            <p>Before you can click the final submit button, you must check the declaration box confirming that:</p>
+            <ul>
+                <li>The information you have provided is true and correct to the best of your knowledge</li>
+                <li>You understand that providing false or misleading information may result in legal consequences</li>
+            </ul>
+            <p>Read the declaration carefully and only check the box if you agree.</p>
+
+            <div class="info-box">
+                <span class="box-icon">&#8505;</span>
+                <div class="box-body">
+                    <strong>After you click Submit</strong>
+                    <p>Your application will be assigned a unique reference number. Note this number — you can use it to track your application status at any time by logging into <a href="https://services.easybusiness.gov.gm/" target="_blank" rel="noopener">services.easybusiness.gov.gm</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: AFTER SUBMISSION -->
+        <section id="after-submission" class="section">
+            <h2>After Submission</h2>
+            <p>Once you have submitted your application, it enters a multi-step review process handled by the Business Registry team. Here is what happens at each stage:</p>
+
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <div class="timeline-dot" style="background: #6D28D9;">1</div>
+                    <div class="timeline-body">
+                        <h5>Application Submitted</h5>
+                        <p>Your application is received and assigned a reference number. You will receive a confirmation email. The application is now pending payment confirmation.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-dot">2</div>
+                    <div class="timeline-body">
+                        <h5>BR Payment — Payment Confirmation</h5>
+                        <p>A Payment Officer confirms receipt of the application fee. If you paid online, this step is handled automatically. If you paid at the counter (cash), the Payment Officer will record your payment details. Once confirmed, the file moves to the Review stage.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-dot">3</div>
+                    <div class="timeline-body">
+                        <h5>BR Review — Application Review</h5>
+                        <p>A Review Officer checks your application for completeness and accuracy. They verify your personal information, check the proposed name against the registry, and review your uploaded documents. The officer may:</p>
+                        <ul style="margin-top: 8px; font-size: 15px; padding-left: 20px;">
+                            <li>Validate the file and forward it for approval</li>
+                            <li>Send it back to you for corrections if information is missing or incorrect</li>
+                            <li>Reject it if it does not meet eligibility requirements</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-dot">4</div>
+                    <div class="timeline-body">
+                        <h5>BR Approval — Final Approval</h5>
+                        <p>An Approving Officer makes the final decision on your application. They conduct a final check of the name and all supporting documents. They can approve, reject, or send the application back for further corrections.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-dot bot">5</div>
+                    <div class="timeline-body">
+                        <h5>BR Reservation (Automated)</h5>
+                        <p>Once approved, the system automatically registers your business name reservation in the official Business Names database. No action is required from you at this stage.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-dot bot">6</div>
+                    <div class="timeline-body">
+                        <h5>BR Certificate (Automated)</h5>
+                        <p>The system automatically generates your official Business Name Reservation Certificate as a PDF document. You will receive an email notification once your certificate is ready.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-dot" style="background: #15803D;">7</div>
+                    <div class="timeline-body">
+                        <h5>Certificate Available for Download</h5>
+                        <p>Your reservation certificate is now available in your account. Log in to <a href="https://services.easybusiness.gov.gm/" target="_blank" rel="noopener">services.easybusiness.gov.gm</a>, open your application, and download your certificate. Keep it safely — you may need to present it when completing your full business registration.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>If your application is sent back for corrections</h3>
+            <p>If the Review or Approval officer finds an issue with your application, you will receive an email notification. Log in to your account, open your application, make the required corrections, and resubmit. The corrections will be reviewed again by the same officer.</p>
+
+            <h3>If your application is rejected</h3>
+            <p>If your application is rejected, you will receive an email explaining the reason. Common reasons for rejection include:</p>
+            <ul>
+                <li>The proposed name is too similar to an existing registered name</li>
+                <li>The name contains restricted or prohibited terms</li>
+                <li>Submitted documents could not be verified</li>
+            </ul>
+            <p>If you believe the rejection is incorrect, contact the Business Registry at <a href="https://easybusiness.gov.gm/help/" target="_blank" rel="noopener">easybusiness.gov.gm/help</a> to discuss your options.</p>
+        </section>
+
+        <!-- SECTION 10: PROCESSING TIMELINE -->
+        <section id="processing-timeline" class="section">
+            <h2>Processing Timeline</h2>
+            <p>The following table shows the estimated processing time for each stage. Actual times may vary depending on the volume of applications and how quickly you respond to any requests for corrections.</p>
+
+            <table class="costs-table">
+                <thead>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Who is responsible</th>
+                        <th>Estimated time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Payment confirmation</td>
+                        <td>BR Payment Officer</td>
+                        <td>Same day – 1 business day</td>
+                    </tr>
+                    <tr>
+                        <td>Application review</td>
+                        <td>BR Review Officer</td>
+                        <td>1 – 2 business days</td>
+                    </tr>
+                    <tr>
+                        <td>Final approval</td>
+                        <td>BR Approval Officer</td>
+                        <td>1 – 2 business days</td>
+                    </tr>
+                    <tr>
+                        <td>Name reservation (automated)</td>
+                        <td>System (automatic)</td>
+                        <td>Immediate after approval</td>
+                    </tr>
+                    <tr>
+                        <td>Certificate generation (automated)</td>
+                        <td>System (automatic)</td>
+                        <td>Immediate after reservation</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>In total, you can expect to receive your reservation certificate within <strong>2–5 business days</strong> of submitting a complete application, provided no corrections are required.</p>
+
+            <div class="tip-box">
+                <span class="box-icon">&#9654;</span>
+                <div class="box-body">
+                    <strong>Track your application status</strong>
+                    <p>You can check where your application is in the process at any time by logging in to <a href="https://services.easybusiness.gov.gm/" target="_blank" rel="noopener">services.easybusiness.gov.gm</a> and viewing your application file. Each stage will show its current status.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 11: COSTS AND FEES -->
+        <section id="costs" class="section">
+            <h2>Costs &amp; Fees</h2>
+            <p>A fee is payable for the reservation of a business name. This fee covers the administrative processing of your application by the Business Registry.</p>
+
+            <table class="costs-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Reservation of Business Name</strong></td>
+                        <td>Application fee for reserving a business name in the Gambia Business Registry</td>
+                        <td>Please refer to the current fee schedule on the <a href="https://easybusiness.gov.gm/" target="_blank" rel="noopener">Easy Business portal</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>How to pay</h3>
+            <p>Payment can be made through the following methods:</p>
+            <ul>
+                <li><strong>Online payment</strong> — Pay securely during the application process using the available digital payment options on the platform.</li>
+                <li><strong>Cash at the counter</strong> — If you prefer to pay in person, visit the Business Registry office and pay at the front desk. Bring your application reference number. The Payment Officer will record your payment in the system.</li>
+            </ul>
+
+            <div class="info-box">
+                <span class="box-icon">&#8505;</span>
+                <div class="box-body">
+                    <strong>Payment is required to proceed</strong>
+                    <p>Your application will not advance to the review stage until payment is confirmed by a Payment Officer. If you pay online, confirmation is typically immediate. If you pay at the counter, allow 1 business day for the officer to record your payment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 12: FAQ -->
+        <section id="faq" class="section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">How long will my business name be reserved?</div>
+                <div class="faq-a"><p>The reservation period is specified on your reservation certificate. During this period, no one else can register or reserve the same name. You must complete your formal business registration before the reservation expires, otherwise the name will become available to others.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What if my proposed name is not available?</div>
+                <div class="faq-a"><p>Simply clear the name field, enter a different proposed name, and click "Check availability" again. You can try as many names as you like. Only names that show as "Available" can be submitted. Consider having two or three alternative names ready before you start.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Can I reserve more than one business name at the same time?</div>
+                <div class="faq-a"><p>Each application covers one business name. If you wish to reserve multiple names, you will need to submit separate applications for each name and pay the applicable fee for each.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">When will I receive my reservation certificate?</div>
+                <div class="faq-a"><p>Your certificate is generated automatically as soon as your application is approved and the name reservation is recorded in the registry. This typically happens within 2–5 business days of a complete submission. You will receive an email notification and can download the certificate from your account.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What does the reservation certificate allow me to do?</div>
+                <div class="faq-a"><p>The certificate confirms that your chosen business name is reserved in your name for a defined period. It does not authorise you to operate a business — it simply holds the name while you complete the formal business registration process. You should proceed with registering your business (as a sole proprietorship, company, or other entity) before the reservation expires.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Can I change my proposed name after I have submitted the application?</div>
+                <div class="faq-a"><p>Once submitted, you cannot change the proposed name unless an officer sends your application back for corrections. If your application is still being processed and you realise you need a different name, contact the Business Registry as soon as possible at <a href="https://easybusiness.gov.gm/help/" target="_blank" rel="noopener">easybusiness.gov.gm/help</a>.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">What happens if my application is rejected?</div>
+                <div class="faq-a"><p>You will receive an email with the reason for rejection. Common reasons include the name being too similar to an existing one, containing restricted terms, or issues with verification documents. If you disagree with the decision, you may contact the Business Registry to discuss your options. You are also free to submit a new application with a different name.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Do I need to be a Gambian citizen to reserve a business name?</div>
+                <div class="faq-a"><p>No. Both Gambian nationals and foreign nationals can apply to reserve a business name in The Gambia. You will need a valid identity document (passport or National ID) regardless of your nationality. The applicable business registration requirements that follow the reservation may differ for non-citizens.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">I am applying on behalf of someone else. What do I need?</div>
+                <div class="faq-a"><p>Select "Someone else" in Step 1 and provide your own personal information as the representative. You will also need to upload an authorisation letter or power of attorney confirming that the person whose name is being reserved has authorised you to act on their behalf. The name on the reservation certificate will be for the person you are representing.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Who do I contact if I need help?</div>
+                <div class="faq-a"><p>Visit the Help &amp; Support page at <a href="https://easybusiness.gov.gm/help/" target="_blank" rel="noopener">easybusiness.gov.gm/help</a> for guidance, FAQs, and contact information for the Business Registry support team.</p></div>
+            </div>
+        </section>
+
+    </div><!-- /.container -->
+</main>
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer class="manual-version">
+    <p>Manual v1.0 — Generated 2026-04-07 — Source: gambia/2c9280878dfeb31a018e089091e10455</p>
+    <p>Generated by /service-manual skill v3.4.0</p>
+</footer>
+
+</body>
+</html>
