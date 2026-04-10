@@ -4,28 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Your Business Data - User Manual | OBFC Lesotho</title>
-    <meta name="description" content="User manual for Update Your Business Data on the Lesotho One Business Facilitation Centre (OBFC) eRegistrations platform.">
+    <meta name="description" content="User manual for Update Your Business Data on the Lesotho One Business Facilitation Centre (OBFC) eRegistrations platform. Modify your registered business information online for sole proprietorships and companies.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         /* ============================================================
            LESOTHO eREGISTRATIONS — USER MANUAL
-           Design system: https://lesotho.eregistrations.dev/
-           Generated: February 2026
+           Service: Update Your Business Data
+           Version: v1.0
+           Updated: April 2026
            ============================================================ */
 
         /* --- Reset & Base --- */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html {
-            scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-        }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
         body {
             font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
@@ -35,31 +29,13 @@
             background: #FFFFFF;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+        img { max-width: 100%; height: auto; display: block; }
 
-        a {
-            color: #4CAF74;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        a:hover {
-            color: #3d9461;
-            text-decoration: underline;
-        }
+        a { color: #4CAF74; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #3d9461; text-decoration: underline; }
 
         /* --- Typography --- */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            color: #1F2128;
-            line-height: 1.3;
-            margin-bottom: 0.5em;
-        }
-
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
         h1 { font-size: 48px; font-weight: 700; }
         h2 { font-size: 36px; font-weight: 600; }
         h3 { font-size: 32px; font-weight: 600; }
@@ -69,11 +45,7 @@
         strong { color: #1F2128; font-weight: 600; }
 
         /* --- Layout --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         /* ============================================================
            HEADER
@@ -97,28 +69,13 @@
             gap: 24px;
         }
 
-        .header-logos {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex-shrink: 0;
-        }
-
+        .header-logos { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
         .header-logos img { height: 52px; width: auto; }
         .header-logos .coat-of-arms { height: 56px; }
 
-        .header-divider {
-            width: 1px;
-            height: 40px;
-            background: rgba(255,255,255,0.25);
-            flex-shrink: 0;
-        }
+        .header-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.25); flex-shrink: 0; }
 
-        .header-nav {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
+        .header-nav { display: flex; align-items: center; gap: 32px; }
 
         .header-nav a {
             color: #FFFFFF;
@@ -147,11 +104,7 @@
         /* ============================================================
            BREADCRUMB
            ============================================================ */
-        .breadcrumb {
-            background: #FFFFFF;
-            border-bottom: 1px solid #E5E7EB;
-            padding: 14px 0;
-        }
+        .breadcrumb { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 14px 0; }
 
         .breadcrumb-list {
             list-style: none;
@@ -163,11 +116,7 @@
             flex-wrap: wrap;
         }
 
-        .breadcrumb-list li {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
 
         .breadcrumb-list li + li::before {
             content: "";
@@ -241,12 +190,7 @@
             cursor: pointer;
         }
 
-        .btn-primary:hover {
-            background: #3d9461;
-            color: #FFFFFF;
-            text-decoration: none;
-            transform: translateY(-1px);
-        }
+        .btn-primary:hover { background: #3d9461; color: #FFFFFF; text-decoration: none; transform: translateY(-1px); }
 
         .hero-image {
             flex-shrink: 0;
@@ -270,30 +214,15 @@
             justify-content: center;
         }
 
-        .hero-icon-circle svg {
-            width: 80px;
-            height: 80px;
-            fill: none;
-            stroke: #4CAF74;
-            stroke-width: 1.5;
-        }
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: #4CAF74; stroke-width: 1.5; }
 
         /* ============================================================
            TABLE OF CONTENTS
            ============================================================ */
-        .toc {
-            background: #F5F5F7;
-            padding: 48px 0;
-            border-bottom: 1px solid #E5E7EB;
-        }
-
+        .toc { background: #F5F5F7; padding: 48px 0; border-bottom: 1px solid #E5E7EB; }
         .toc h2 { font-size: 28px; margin-bottom: 24px; }
 
-        .toc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 12px;
-        }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
 
         .toc-item {
             display: flex;
@@ -310,12 +239,7 @@
             font-size: 16px;
         }
 
-        .toc-item:hover {
-            border-color: #4CAF74;
-            box-shadow: 0 2px 8px rgba(76,175,116,0.12);
-            text-decoration: none;
-            color: #1F2128;
-        }
+        .toc-item:hover { border-color: #4CAF74; box-shadow: 0 2px 8px rgba(76,175,116,0.12); text-decoration: none; color: #1F2128; }
 
         .toc-number {
             width: 32px;
@@ -339,10 +263,7 @@
            ============================================================ */
         .manual-content { padding: 56px 0 80px; }
 
-        .section {
-            margin-bottom: 56px;
-            scroll-margin-top: 100px;
-        }
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
 
         .section > h2 {
             font-size: 32px;
@@ -353,31 +274,14 @@
             line-height: 1.3;
         }
 
-        .section > h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-top: 32px;
-            margin-bottom: 16px;
-        }
-
-        .section > h4 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-top: 24px;
-            margin-bottom: 12px;
-        }
-
+        .section > h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; }
+        .section > h4 { font-size: 20px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; }
         .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
         .section ul, .section ol { padding-left: 24px; }
         .section li { margin-bottom: 8px; }
 
         /* --- Steps --- */
-        .steps {
-            counter-reset: step-counter;
-            list-style: none;
-            padding: 0;
-            margin: 24px 0;
-        }
+        .steps { counter-reset: step-counter; list-style: none; padding: 0; margin: 24px 0; }
 
         .step {
             display: flex;
@@ -459,9 +363,14 @@
         }
 
         .checklist li:last-child { border-bottom: none; }
-
         .checklist .check-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
         .checklist .check-icon svg { width: 24px; height: 24px; }
+
+        /* --- Badge --- */
+        .badge { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; font-family: 'Poppins', sans-serif; }
+        .badge-read { background: #EFF6FF; color: #3B82F6; }
+        .badge-input { background: #F0FDF4; color: #16A34A; }
+        .badge-auto { background: #FEF9C3; color: #CA8A04; }
 
         /* --- Field Table --- */
         .field-table {
@@ -488,12 +397,7 @@
             white-space: nowrap;
         }
 
-        .field-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid #F0F0F2;
-            vertical-align: top;
-        }
-
+        .field-table td { padding: 12px 16px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
         .field-table tbody tr:last-child td { border-bottom: none; }
         .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
         .field-table tbody tr:hover { background: #F5F5F7; }
@@ -527,28 +431,12 @@
         .cost-table td { padding: 14px 16px; border-bottom: 1px solid #F0F0F2; }
         .cost-table tbody tr:last-child td { border-bottom: none; }
         .cost-table tbody tr:nth-child(even) { background: #FAFAFA; }
-
-        .cost-table .amount {
-            font-weight: 700;
-            color: #1F2128;
-            font-family: 'Poppins', sans-serif;
-        }
-
+        .cost-table .amount { font-weight: 700; color: #1F2128; font-family: 'Poppins', sans-serif; }
         .cost-table .total-row { background: #F5F5F7 !important; font-weight: 700; }
-
-        .cost-table .total-row td {
-            border-top: 2px solid #2B2A65;
-            color: #1F2128;
-            font-family: 'Poppins', sans-serif;
-        }
+        .cost-table .total-row td { border-top: 2px solid #2B2A65; color: #1F2128; font-family: 'Poppins', sans-serif; }
 
         /* --- Tab Group --- */
-        .tab-group {
-            margin: 28px 0;
-            border: 1px solid #E5E7EB;
-            border-radius: 12px;
-            overflow: hidden;
-        }
+        .tab-group { margin: 28px 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; }
 
         .tab-nav {
             display: flex;
@@ -574,22 +462,107 @@
 
         .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
 
-        .tab-btn.active {
-            color: #4CAF74;
-            border-bottom-color: #4CAF74;
-            background: #FFFFFF;
-            font-weight: 600;
-        }
+        .tab-btn.active { color: #4CAF74; border-bottom-color: #4CAF74; background: #FFFFFF; font-weight: 600; }
 
         .tab-panel { display: none; padding: 24px; }
         .tab-panel.active { display: block; }
 
-        /* --- Timeline --- */
-        .timeline {
-            position: relative;
-            margin: 32px 0;
-            padding-left: 40px;
+        /* --- Form Mockup --- */
+        .form-mockup {
+            background: #F5F5F7;
+            border: 1px solid #E5E7EB;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 16px 0;
+            font-size: 14px;
         }
+
+        .form-mockup-header {
+            background: #2B2A65;
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 16px;
+            letter-spacing: 0.3px;
+        }
+
+        .form-mockup-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+        .form-field { display: flex; flex-direction: column; gap: 4px; }
+
+        .form-field label {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #888;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-field .field-value { background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 6px; padding: 8px 12px; font-size: 14px; color: #1F2128; }
+        .form-field .field-value.readonly { background: #F5F5F7; color: #555866; }
+
+        .radio-group { display: flex; flex-direction: column; gap: 10px; padding: 4px 0; }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            border: 2px solid #E5E7EB;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            color: #1F2128;
+            background: #FFFFFF;
+        }
+
+        .radio-option.selected { border-color: #4CAF74; background: #F0FDF4; }
+
+        .radio-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid #D1D5DB;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .radio-option.selected .radio-dot { border-color: #4CAF74; }
+
+        .radio-option.selected .radio-dot::after {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4CAF74;
+        }
+
+        .checkbox-mock {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #D1D5DB;
+            border-radius: 4px;
+            background: #FFFFFF;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .checkbox-mock.checked {
+            background: #4CAF74;
+            border-color: #4CAF74;
+            position: relative;
+        }
+
+        .checkbox-mock.checked::after { content: "✓"; color: white; font-size: 12px; position: absolute; top: -1px; left: 2px; }
+
+        /* --- Timeline --- */
+        .timeline { position: relative; margin: 32px 0; padding-left: 40px; }
 
         .timeline::before {
             content: "";
@@ -600,12 +573,7 @@
             border-radius: 2px;
         }
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 32px;
-            padding-left: 24px;
-        }
-
+        .timeline-item { position: relative; margin-bottom: 32px; padding-left: 24px; }
         .timeline-item:last-child { margin-bottom: 0; }
 
         .timeline-item::before {
@@ -620,10 +588,7 @@
             z-index: 1;
         }
 
-        .timeline-item.pending::before {
-            background: #FFFFFF;
-            box-shadow: 0 0 0 3px #D0D0D8;
-        }
+        .timeline-item.pending::before { background: #FFFFFF; box-shadow: 0 0 0 3px #D0D0D8; }
 
         .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
         .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
@@ -632,12 +597,7 @@
         /* ============================================================
            FOOTER
            ============================================================ */
-        .site-footer {
-            background: #2B2A65;
-            color: rgba(255,255,255,0.8);
-            padding: 56px 0 0;
-            font-size: 15px;
-        }
+        .site-footer { background: #2B2A65; color: rgba(255,255,255,0.8); padding: 56px 0 0; font-size: 15px; }
 
         .footer-grid {
             display: grid;
@@ -647,39 +607,19 @@
             border-bottom: 1px solid rgba(255,255,255,0.12);
         }
 
-        .footer-col h5 {
-            font-family: 'Poppins', sans-serif;
-            color: #FFFFFF;
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 18px;
-        }
-
+        .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 16px; font-weight: 600; margin-bottom: 18px; }
         .footer-logo { margin-bottom: 16px; }
         .footer-logo img { height: 50px; width: auto; }
         .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
         .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
         .footer-col a:hover { color: #4CAF74; text-decoration: none; }
-
         .footer-links { list-style: none; padding: 0; }
         .footer-links li { margin-bottom: 10px; }
         .footer-links a { font-size: 14px; }
 
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 12px;
-            font-size: 14px;
-        }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 14px; }
 
-        .footer-contact-item svg {
-            width: 18px; height: 18px;
-            flex-shrink: 0;
-            stroke: #4CAF74;
-            fill: none;
-            margin-top: 2px;
-        }
+        .footer-contact-item svg { width: 18px; height: 18px; flex-shrink: 0; stroke: #4CAF74; fill: none; margin-top: 2px; }
 
         .footer-social { display: flex; gap: 12px; margin-top: 8px; }
 
@@ -687,9 +627,7 @@
             width: 36px; height: 36px;
             border-radius: 50%;
             background: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: flex; align-items: center; justify-content: center;
             transition: background 0.2s ease;
         }
 
@@ -706,28 +644,11 @@
             flex-wrap: wrap;
         }
 
-        .footer-implemented span {
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: rgba(255,255,255,0.5);
-            font-weight: 500;
-        }
-
-        .footer-implemented img {
-            height: 36px; width: auto;
-            opacity: 0.85;
-            transition: opacity 0.2s ease;
-        }
-
+        .footer-implemented span { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); font-weight: 500; }
+        .footer-implemented img { height: 36px; width: auto; opacity: 0.85; transition: opacity 0.2s ease; }
         .footer-implemented img:hover { opacity: 1; }
 
-        .footer-copyright {
-            text-align: center;
-            padding: 20px 0;
-            font-size: 13px;
-            color: rgba(255,255,255,0.45);
-        }
+        .footer-copyright { text-align: center; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.45); }
 
         /* ============================================================
            RESPONSIVE
@@ -756,6 +677,7 @@
             .field-table, .cost-table { font-size: 14px; }
             .field-table th, .field-table td, .cost-table th, .cost-table td { padding: 10px 12px; }
             .tab-btn { padding: 12px 16px; font-size: 13px; }
+            .form-row { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
@@ -796,6 +718,7 @@
             .footer-social { display: none; }
             a { color: #000; text-decoration: underline; }
             a[href]::after { content: none; }
+            .form-mockup { page-break-inside: avoid; }
         }
     </style>
 </head>
@@ -808,11 +731,11 @@
         <div class="header-inner">
             <div class="header-logos">
                 <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/83b89d968e865c9d23a548390d2f71bd27ec2ecd.png" alt="OBFC Logo">
+                    <img src="obfc-logo.webp" alt="OBFC Logo">
                 </a>
                 <div class="header-divider"></div>
                 <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/62e7e38d29393d9e912a3aa2888bec679106a457.png" alt="MTI One-Stop Business Facilitation Centre" class="coat-of-arms">
+                    <img src="mti-logo.avif" alt="MTI One-Stop Business Facilitation Centre" class="coat-of-arms">
                 </a>
             </div>
             <nav class="header-nav">
@@ -830,8 +753,8 @@
         <div class="container">
             <ol class="breadcrumb-list">
                 <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
-                <li><a href="https://services.businessregistrations.gov.ls/">Update Business Data</a></li>
-                <li><span class="current">User Manual</span></li>
+                <li><a href="index.html">Lesotho OBFC Manuals</a></li>
+                <li><span class="current">Update Your Business Data</span></li>
             </ol>
         </div>
     </div>
@@ -845,7 +768,7 @@
                 <div class="hero-content">
                     <span class="hero-label">User Manual</span>
                     <h1>Update Your Business Data</h1>
-                    <p class="hero-description">This guide explains how to submit a modification request to update your registered business information through the Lesotho One Business Facilitation Centre (OBFC) online platform. You can change your business name, activities, addresses, capital structure, shareholders, and managers.</p>
+                    <p class="hero-description">Keep your registered business information up to date — online, without visiting a government office. Whether you are a sole proprietor or a company, this service lets you modify your business name, activities, addresses, and more through the OBFC eRegistrations platform.</p>
                     <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Start Application &rarr;</a>
                 </div>
                 <div class="hero-image">
@@ -899,11 +822,7 @@
                 </a>
                 <a href="#faq" class="toc-item">
                     <span class="toc-number">8</span>
-                    <span class="toc-label">Frequently Asked Questions</span>
-                </a>
-                <a href="#contact" class="toc-item">
-                    <span class="toc-number">9</span>
-                    <span class="toc-label">Contact &amp; Support</span>
+                    <span class="toc-label">FAQ &amp; Contact</span>
                 </a>
             </div>
         </div>
@@ -918,15 +837,15 @@
             <!-- ==================== 1. OVERVIEW ==================== -->
             <div class="section" id="overview">
                 <h2>1. Overview</h2>
-                <p>The <strong>Update Your Business Data</strong> service allows registered businesses in Lesotho to modify their official business information held at the One Business Facilitation Centre (OBFC). Instead of visiting government offices in person, you can submit modification requests online through the eRegistrations platform.</p>
-                <p>This service covers a wide range of changes, from simple updates like a new business name or address to more complex modifications such as restructuring your share capital or changing shareholders and managers.</p>
+                <p>The <strong>Update Your Business Data</strong> service allows registered businesses in Lesotho to submit modification requests through the One Business Facilitation Centre (OBFC) online platform. Instead of visiting government offices in person, you can update your official registration information from anywhere, at any time.</p>
+                <p>This service handles a single registration type — <strong>Modification</strong> — and is available to both sole proprietors and incorporated companies. The form is dynamic: it detects your business type and only shows the sections that apply to you.</p>
 
                 <div class="info-box">
                     <div class="box-label">
                         <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
                         Who can use this service
                     </div>
-                    <p>Any business owner or authorised representative of a company registered in Lesotho can use this service. You must have an active account on the OBFC eRegistrations platform and a valid Business ID to proceed.</p>
+                    <p>Any business owner or authorised representative of a business or company registered in Lesotho. You must have an active account on the OBFC eRegistrations platform and know your Business ID.</p>
                 </div>
 
                 <div class="note-box">
@@ -934,42 +853,122 @@
                         <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
                         Note
                     </div>
-                    <p>You do not need to update all categories at once. The system allows you to select only the specific areas you wish to modify during each application.</p>
+                    <p>You do not need to update all categories at once. Select only the specific areas you wish to modify. Each category has its own independent form section and confirmation step.</p>
                 </div>
+
+                <h3>Sole Proprietorship vs. Company</h3>
+                <p>The modifications available to you depend on your business type:</p>
+                <ul>
+                    <li><strong>Sole Proprietorship</strong> &mdash; You can update your business name, activities, addresses, and turnover/employee information. Capital, shareholders, managers, and company type sections do not apply.</li>
+                    <li><strong>Company (Pty Ltd or other)</strong> &mdash; You have access to all modification categories, including capital structure, shareholders, managers, and company type in addition to the sections available to sole proprietors.</li>
+                </ul>
             </div>
 
             <!-- ==================== 2. WHAT CAN BE UPDATED ==================== -->
             <div class="section" id="what-can-be-updated">
                 <h2>2. What Can Be Updated</h2>
-                <p>When you begin a modification request, the system will present a list of data categories. You can select one or more of the following areas to update:</p>
+                <p>Select your business type below to see which data categories you can modify.</p>
 
                 <div class="tab-group">
                     <div class="tab-nav">
-                        <button class="tab-btn active" onclick="switchTab(event, 'tab-identity')" data-tab="tab-identity">Identity &amp; Name</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'tab-activities')" data-tab="tab-activities">Activities</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'tab-addresses')" data-tab="tab-addresses">Addresses</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'tab-financials')" data-tab="tab-financials">Capital &amp; Shares</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'tab-people')" data-tab="tab-people">People</button>
+                        <button class="tab-btn active" onclick="switchTab(event, 'upd-sole')">Sole Proprietorship</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'upd-company')">Company</button>
                     </div>
-                    <div class="tab-panel active" id="tab-identity" data-tab-label="Identity &amp; Name">
-                        <h4>Business Name</h4>
-                        <p>Change the registered name of your business or company. The system will check that your proposed new name is available and not already registered by another entity. You can also update business names associated with specific activities.</p>
+
+                    <div class="tab-panel active" id="upd-sole" data-tab-label="What Can Be Updated — Sole Proprietorship">
+                        <p>As a sole proprietor, you can modify the following categories by ticking the relevant checkboxes when you start the modification request:</p>
+
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Category</th><th>What You Can Change</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Business Name</strong></td>
+                                    <td>Change the registered trading name of your business. A name availability check is performed automatically.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Business Names (per Activity)</strong></td>
+                                    <td>Update or add a trading name associated with a specific business activity.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Activities</strong></td>
+                                    <td>Add new business activities (by sector) or close (discontinue) existing ones. Licensing fees may apply for new activities.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Main Office</strong></td>
+                                    <td>Update the address, district, town, telephone, and email of your principal place of business.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Branches (Operating Offices)</strong></td>
+                                    <td>Add, modify, or remove branch office locations with full contact details.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Turnover &amp; Employees</strong></td>
+                                    <td>Update your annual turnover figure and total number of employees.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="info-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                Not applicable
+                            </div>
+                            <p>Capital, shareholders, managers, and company type sections are <strong>not available</strong> for sole proprietorships and will not appear in your form.</p>
+                        </div>
                     </div>
-                    <div class="tab-panel" id="tab-activities" data-tab-label="Activities">
-                        <h4>Business Activities</h4>
-                        <p>Add new business activities (by sector and activity type), close existing activities, or update business names linked to individual activities. If your new activity requires a trading licence, the system will prompt you for the relevant details.</p>
-                    </div>
-                    <div class="tab-panel" id="tab-addresses" data-tab-label="Addresses">
-                        <h4>Main Office &amp; Branches</h4>
-                        <p>Update the address, district, town, telephone, and email of your main office. You can also add, modify, or remove branch (operating) offices with full contact details for each.</p>
-                    </div>
-                    <div class="tab-panel" id="tab-financials" data-tab-label="Capital &amp; Shares">
-                        <h4>Capital &amp; Share Structure</h4>
-                        <p>Modify your company's capital amount, update the number and value of ordinary shares, and add or change preferred share classes. The system displays your current capital alongside the proposed modifications for easy comparison.</p>
-                    </div>
-                    <div class="tab-panel" id="tab-people" data-tab-label="People">
-                        <h4>Shareholders &amp; Managers</h4>
-                        <p>Add new shareholders or managers, modify existing ones (update personal details, shareholding, or roles), or remove them from the register. For each person, you can specify whether they are a natural person or a legal entity (company/corporate).</p>
+
+                    <div class="tab-panel" id="upd-company" data-tab-label="What Can Be Updated — Company">
+                        <p>As a registered company, you have access to all modification categories. Tick the checkboxes for the areas you want to update when you start the modification request:</p>
+
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Category</th><th>What You Can Change</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Business / Company Name</strong></td>
+                                    <td>Change the registered company name. The system checks availability across the OBFC registry.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Business Names (per Activity)</strong></td>
+                                    <td>Update or add trading names associated with specific business activities.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Activities</strong></td>
+                                    <td>Add new business activities or close existing ones. Licensing fees apply for new licensed activities.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Main Office</strong></td>
+                                    <td>Update the address, district, town, telephone, and email of the company's principal office.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Branches (Operating Offices)</strong></td>
+                                    <td>Add, modify, or remove branch office locations.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Capital</strong></td>
+                                    <td>Modify the registered capital amount and share structure (ordinary shares, preferred share classes, value per share).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Shareholders</strong></td>
+                                    <td>Add new shareholders, modify details of existing ones, or remove shareholders. Both natural persons and legal entities are supported.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Managers</strong></td>
+                                    <td>Add, modify, or remove managers (directors, secretaries, officers). Specify roles, mandate type, and personal details.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Company Type</strong></td>
+                                    <td>Change the legal type of your company (e.g., Private Company to Public Company).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Turnover &amp; Employees</strong></td>
+                                    <td>Update your annual turnover figure and total number of employees.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -977,646 +976,743 @@
             <!-- ==================== 3. REQUIREMENTS ==================== -->
             <div class="section" id="requirements">
                 <h2>3. Requirements</h2>
-                <p>Before you begin, make sure you have the following ready:</p>
+                <p>Make sure you have everything ready before you start. The items you need depend on your business type and the categories you wish to modify.</p>
 
-                <h3>Account &amp; Access</h3>
-                <ul class="checklist">
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>An active account on the OBFC eRegistrations platform</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>Your Business ID (displayed in your dashboard after initial registration)</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>A computer or mobile device with internet access</span>
-                    </li>
-                </ul>
-
-                <h3>Documents You May Need</h3>
-                <ul class="checklist">
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>ID Document</strong> &mdash; National ID or passport for any new or modified shareholders/managers (PDF, JPG, or PNG, max 5 MB)</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>Corporate Documents</strong> &mdash; If adding a legal entity as a shareholder, provide incorporation documents</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span><strong>Details of proposed changes</strong> &mdash; New name, address, activity codes, share amounts, etc.</span>
-                    </li>
-                </ul>
-
-                <div class="warning-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                        Important
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'req-sole')">Sole Proprietorship</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'req-company')">Company</button>
                     </div>
-                    <p>Ensure all information is accurate before submitting. Incorrect or incomplete applications may be sent back for corrections, which will delay processing.</p>
+
+                    <div class="tab-panel active" id="req-sole" data-tab-label="Requirements — Sole Proprietorship">
+                        <h4>Account &amp; Access</h4>
+                        <ul class="checklist">
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span>An active account on the OBFC eRegistrations platform (<a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a>)</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span>Your <strong>Business ID</strong> (shown on your dashboard and on your registration certificate)</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span>A device with internet access (computer, tablet, or smartphone)</span>
+                            </li>
+                        </ul>
+
+                        <h4>Documents</h4>
+                        <p>For most sole proprietorship modifications, <strong>no supporting documents are required</strong>. The system already holds your personal details from the national identity database.</p>
+                        <p>However, if you are adding a new business activity that requires a trading licence, you may need to provide activity-specific information (such as the proposed trading name and sector).</p>
+
+                        <div class="info-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                Tip
+                            </div>
+                            <p>Before starting, note down the exact changes you want to make — for example, the new business name, new activity sector, or updated office address — so you can fill in the form without interruption.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="req-company" data-tab-label="Requirements — Company">
+                        <h4>Account &amp; Access</h4>
+                        <ul class="checklist">
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span>An active account on the OBFC eRegistrations platform (<a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a>)</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span>Your <strong>Business ID</strong> (shown on your dashboard and registration certificate)</span>
+                            </li>
+                            <li>
+                                <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#4CAF74"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                <span>A device with internet access</span>
+                            </li>
+                        </ul>
+
+                        <h4>Documents (depending on modifications selected)</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Modification</th><th>Document Required</th><th>Format</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Adding a new shareholder (natural person)</td>
+                                    <td>National ID or Passport of the new shareholder</td>
+                                    <td>PDF, JPG, PNG — max 5 MB</td>
+                                </tr>
+                                <tr>
+                                    <td>Adding a new shareholder (legal entity)</td>
+                                    <td>Certificate of Incorporation or equivalent corporate registration document</td>
+                                    <td>PDF — max 5 MB</td>
+                                </tr>
+                                <tr>
+                                    <td>Adding or modifying a manager</td>
+                                    <td>National ID or Passport of the manager</td>
+                                    <td>PDF, JPG, PNG — max 5 MB</td>
+                                </tr>
+                                <tr>
+                                    <td>Name / Activities / Address / Capital changes</td>
+                                    <td>No document upload required</td>
+                                    <td>—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="warning-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                Important
+                            </div>
+                            <p>Scan all required documents <strong>before starting</strong> the modification form. The system does not auto-save document uploads between sessions, and an interrupted session may require you to restart from the beginning.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- ==================== 4. COSTS & FEES ==================== -->
             <div class="section" id="costs">
                 <h2>4. Costs &amp; Fees</h2>
-                <p>The fees for updating business data depend on the type of modification you are making. Some changes, such as adding a new business activity, may involve a trading licence fee calculated by the system based on the activity type.</p>
+                <p>All fees are displayed by the application form before you submit. All amounts are in <strong>Lesotho Loti (LSL)</strong> and are paid online through the portal.</p>
 
-                <table class="cost-table">
-                    <thead>
-                        <tr>
-                            <th>Modification Type</th>
-                            <th>Fee (LSL)</th>
-                            <th>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Business name change</td>
-                            <td class="amount">Varies</td>
-                            <td>Depends on business type; name availability check is free</td>
-                        </tr>
-                        <tr>
-                            <td>Add new activity</td>
-                            <td class="amount">Varies</td>
-                            <td>Licensing fee calculated automatically based on activity/sector</td>
-                        </tr>
-                        <tr>
-                            <td>Close an activity</td>
-                            <td class="amount">Free</td>
-                            <td>No fee for closing an existing activity</td>
-                        </tr>
-                        <tr>
-                            <td>Address update (main office / branches)</td>
-                            <td class="amount">Free</td>
-                            <td>No fee for address modifications</td>
-                        </tr>
-                        <tr>
-                            <td>Capital / share structure change</td>
-                            <td class="amount">Varies</td>
-                            <td>Depends on the magnitude of the change</td>
-                        </tr>
-                        <tr>
-                            <td>Shareholder / manager changes</td>
-                            <td class="amount">Varies</td>
-                            <td>Adding, modifying, or removing individuals</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="info-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        How fees are calculated
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'fees-sole')">Sole Proprietorship</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'fees-company')">Company</button>
                     </div>
-                    <p>The system automatically calculates applicable fees based on the modifications you select. Licensing fees for new activities are determined by the sector and activity type. You will see the full breakdown before confirming your application.</p>
+
+                    <div class="tab-panel active" id="fees-sole" data-tab-label="Fees — Sole Proprietorship">
+                        <h4>Sole Proprietorship Fee Schedule</h4>
+                        <p>Most modifications for sole proprietorships are <strong>free of charge</strong>. A fee only applies if you are adding a new business activity that requires a trading or industrial licence.</p>
+
+                        <table class="cost-table">
+                            <thead>
+                                <tr><th>Modification Type</th><th>Fee (LSL)</th><th>Notes</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Business name change</td>
+                                    <td class="amount">Free</td>
+                                    <td>Name availability check is also free</td>
+                                </tr>
+                                <tr>
+                                    <td>Business names per activity</td>
+                                    <td class="amount">Free</td>
+                                    <td>Name availability check is also free</td>
+                                </tr>
+                                <tr>
+                                    <td>Add new activity — Trading Licence</td>
+                                    <td class="amount">LSL 500 – 3,000</td>
+                                    <td>Fee calculated automatically based on sector and activity type</td>
+                                </tr>
+                                <tr>
+                                    <td>Add new activity — Industrial Licence</td>
+                                    <td class="amount">LSL 500 – 4,000</td>
+                                    <td>Fee calculated automatically based on activity type</td>
+                                </tr>
+                                <tr>
+                                    <td>Close an existing activity</td>
+                                    <td class="amount">Free</td>
+                                    <td>No fee for discontinuing an activity</td>
+                                </tr>
+                                <tr>
+                                    <td>Main office address update</td>
+                                    <td class="amount">Free</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Branch offices update</td>
+                                    <td class="amount">Free</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Turnover &amp; employees update</td>
+                                    <td class="amount">Free</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="note-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                                Example
+                            </div>
+                            <p>'Me Lineo wants to add a retail clothing activity to her tailoring business. The system detects this requires a Trading Licence and calculates a fee of LSL 500. She sees the fee on the summary screen before paying and submitting.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="fees-company" data-tab-label="Fees — Company">
+                        <h4>Company Fee Schedule</h4>
+                        <p>Fees for company modifications vary by category. The system calculates all applicable fees automatically based on your selections and displays the full breakdown before you confirm payment.</p>
+
+                        <table class="cost-table">
+                            <thead>
+                                <tr><th>Modification Type</th><th>Fee (LSL)</th><th>Notes</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Business / company name change</td>
+                                    <td class="amount">Varies</td>
+                                    <td>Name availability check is free; fee applies on approval</td>
+                                </tr>
+                                <tr>
+                                    <td>Add new activity — Trading Licence</td>
+                                    <td class="amount">LSL 500 – 3,000</td>
+                                    <td>Calculated automatically based on sector and activity type</td>
+                                </tr>
+                                <tr>
+                                    <td>Add new activity — Industrial Licence</td>
+                                    <td class="amount">LSL 500 – 4,000</td>
+                                    <td>Calculated automatically based on activity type</td>
+                                </tr>
+                                <tr>
+                                    <td>Add new activity — Special Licence</td>
+                                    <td class="amount">LSL 5,000 – 15,000</td>
+                                    <td>Applies to specific regulated sectors</td>
+                                </tr>
+                                <tr>
+                                    <td>Close an existing activity</td>
+                                    <td class="amount">Free</td>
+                                    <td>No fee for discontinuing an activity</td>
+                                </tr>
+                                <tr>
+                                    <td>Main office / branch address update</td>
+                                    <td class="amount">Free</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Capital structure modification</td>
+                                    <td class="amount">Varies</td>
+                                    <td>Fee based on the nature and magnitude of the change</td>
+                                </tr>
+                                <tr>
+                                    <td>Shareholder changes</td>
+                                    <td class="amount">Varies</td>
+                                    <td>Adding, modifying, or removing shareholders</td>
+                                </tr>
+                                <tr>
+                                    <td>Manager changes</td>
+                                    <td class="amount">Varies</td>
+                                    <td>Adding, modifying, or removing managers</td>
+                                </tr>
+                                <tr>
+                                    <td>Company type change</td>
+                                    <td class="amount">Varies</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td>Turnover &amp; employees update</td>
+                                    <td class="amount">Free</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="info-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                How fees are calculated
+                            </div>
+                            <p>The system calculates fees automatically as you fill in the form. You will see a <strong>full fee breakdown</strong> on the summary screen before you confirm and pay. No hidden charges are added after submission.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- ==================== 5. STEP-BY-STEP GUIDE ==================== -->
             <div class="section" id="step-by-step">
                 <h2>5. Step-by-Step Guide</h2>
-                <p>Follow these steps to submit a business data modification request:</p>
+                <p>Follow the guide for your business type. Both paths start the same way — by logging in and selecting the service. The form then adapts to your specific business type.</p>
 
-                <ol class="steps">
-                    <li class="step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Log In to Your Account</h4>
-                            <p>Visit <a href="https://services.businessregistrations.gov.ls/">services.businessregistrations.gov.ls</a> and sign in with your email and password. If you do not have an account, you must register first.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Select "Update Your Business Data"</h4>
-                            <p>From your dashboard, locate the <strong>Update your business data</strong> service and click on it to start a new modification request. Your Business ID and business type will be loaded automatically.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Choose What to Update</h4>
-                            <p>The form displays a list of checkboxes for each category of data you can modify. Tick the ones you need:</p>
-                            <ul>
-                                <li><strong>Name of business</strong> &mdash; change the registered business name</li>
-                                <li><strong>Business names (per activity)</strong> &mdash; update trading names for specific activities</li>
-                                <li><strong>Activities</strong> &mdash; add new activities or close existing ones</li>
-                                <li><strong>Main office</strong> &mdash; update your principal address and contact details</li>
-                                <li><strong>Branches</strong> &mdash; add, modify, or remove operating offices</li>
-                                <li><strong>Capital</strong> &mdash; change the capital amount and share structure</li>
-                                <li><strong>Shareholders</strong> &mdash; add, modify, or remove shareholders</li>
-                                <li><strong>Managers</strong> &mdash; add, modify, or remove managers</li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Complete Each Modification Section</h4>
-                            <p>For each category you selected, a dedicated form section will appear. Fill in the required information. The form is dynamic: fields and options appear based on your selections. See <a href="#form-details">Section 6</a> for details on each section.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h4>Confirm Each Section</h4>
-                            <p>At the end of each modification section, you must tick a confirmation checkbox (for example, "I confirm the modification of the business name"). This ensures you have reviewed the changes before proceeding.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">6</div>
-                        <div class="step-content">
-                            <h4>Upload Supporting Documents</h4>
-                            <p>If your modifications involve new shareholders or managers, upload the required identity documents (national ID or passport) and any corporate documents for legal entities.</p>
-                        </div>
-                    </li>
-                    <li class="step">
-                        <div class="step-number">7</div>
-                        <div class="step-content">
-                            <h4>Review and Submit</h4>
-                            <p>Review all your changes one final time. Once satisfied, submit your application. You will receive a confirmation and a reference number for tracking.</p>
-                        </div>
-                    </li>
-                </ol>
-
-                <div class="warning-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                        Warning
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'steps-sole')">Sole Proprietorship</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'steps-company')">Company</button>
                     </div>
-                    <p>You cannot edit your application after submission. Make sure all information is correct and all supporting documents are uploaded before clicking Submit.</p>
+
+                    <!-- SOLE PROPRIETORSHIP STEPS -->
+                    <div class="tab-panel active" id="steps-sole" data-tab-label="Step-by-Step — Sole Proprietorship">
+                        <ol class="steps">
+                            <li class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Log In to Your Account</h4>
+                                    <p>Go to <a href="https://services.businessregistrations.gov.ls/" target="_blank"><strong>services.businessregistrations.gov.ls</strong></a> and log in with your email and password. If you do not yet have an account, click <strong>"Register"</strong> to create one first &mdash; it is free and takes about 3 minutes.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Open the "Update Your Business Data" Service</h4>
+                                    <p>From your dashboard, find the <strong>"Update your business data"</strong> service card and click it to start a new modification request.</p>
+                                    <div class="form-mockup" style="margin-top: 12px;">
+                                        <div class="form-mockup-header">My Dashboard — Available Services</div>
+                                        <div class="form-mockup-body">
+                                            <div class="radio-group">
+                                                <div class="radio-option selected">
+                                                    <div class="radio-dot"></div>
+                                                    <div>
+                                                        <strong>Update your business data</strong>
+                                                        <div style="font-size: 13px; color: #555866; margin-top: 2px;">Modify your registered business information</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>System Loads Your Business Data</h4>
+                                    <p>The system automatically retrieves your registered business information. You will see a read-only summary of your current data including your Business ID, business name, and business type. Verify the information is correct.</p>
+                                    <div class="form-mockup" style="margin-top: 12px;">
+                                        <div class="form-mockup-header">Your Registered Business</div>
+                                        <div class="form-mockup-body">
+                                            <div class="form-row">
+                                                <div class="form-field">
+                                                    <label>Business ID</label>
+                                                    <div class="field-value readonly">LS-SP-2024-00123</div>
+                                                </div>
+                                                <div class="form-field">
+                                                    <label>Business Type</label>
+                                                    <div class="field-value readonly">Sole Proprietorship</div>
+                                                </div>
+                                            </div>
+                                            <div class="form-field">
+                                                <label>Registered Business Name</label>
+                                                <div class="field-value readonly">Lineo's Tailoring &amp; Design</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Select What You Want to Update</h4>
+                                    <p>Tick the checkboxes next to each data category you wish to modify. You can select one or several at the same time. Only the sections relevant to sole proprietorships will appear.</p>
+                                    <div class="form-mockup" style="margin-top: 12px;">
+                                        <div class="form-mockup-header">What would you like to update?</div>
+                                        <div class="form-mockup-body" style="gap: 8px;">
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock checked"></span> Name of business
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Business names (per activity)
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock checked"></span> Activities
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Main office
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Branches
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Turnover &amp; employees
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>Fill In Each Selected Section</h4>
+                                    <p>A dedicated form section appears for each category you selected. Fill in the new details. The form is dynamic &mdash; fields appear and hide based on your answers. See <a href="#form-details">Section 6</a> for a detailed breakdown of each form section.</p>
+                                    <div class="info-box" style="margin-top: 12px;">
+                                        <div class="box-label">
+                                            <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                            At the end of each section
+                                        </div>
+                                        <p style="margin:0;">Each section ends with a <strong>confirmation checkbox</strong> (e.g., "I confirm the modification of the business name"). You must tick it before moving on.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">6</div>
+                                <div class="step-content">
+                                    <h4>Review the Summary</h4>
+                                    <p>Once all selected sections are complete, you will see a full summary of all proposed changes and any applicable fees. Review everything carefully at this stage, as you cannot edit after submitting.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">7</div>
+                                <div class="step-content">
+                                    <h4>Confirm and Submit</h4>
+                                    <p>Tick the final acknowledgement checkbox and click <strong>"Submit"</strong>. Your modification request is sent to OBFC for review. You will receive a confirmation with a reference number.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- COMPANY STEPS -->
+                    <div class="tab-panel" id="steps-company" data-tab-label="Step-by-Step — Company">
+                        <ol class="steps">
+                            <li class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Log In to Your Account</h4>
+                                    <p>Go to <a href="https://services.businessregistrations.gov.ls/" target="_blank"><strong>services.businessregistrations.gov.ls</strong></a> and log in. The person submitting the modification should be an authorised representative of the company (e.g., a director).</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Open the "Update Your Business Data" Service</h4>
+                                    <p>From your dashboard, find and click the <strong>"Update your business data"</strong> service card to begin a modification request.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>System Loads Your Company Data</h4>
+                                    <p>The system retrieves your registered company data automatically. Review the read-only summary — Business ID, company name, and type — to confirm you are modifying the correct entity.</p>
+                                    <div class="form-mockup" style="margin-top: 12px;">
+                                        <div class="form-mockup-header">Your Registered Company</div>
+                                        <div class="form-mockup-body">
+                                            <div class="form-row">
+                                                <div class="form-field">
+                                                    <label>Business ID</label>
+                                                    <div class="field-value readonly">LS-CO-2023-00456</div>
+                                                </div>
+                                                <div class="form-field">
+                                                    <label>Business Type</label>
+                                                    <div class="field-value readonly">Company</div>
+                                                </div>
+                                            </div>
+                                            <div class="form-field">
+                                                <label>Registered Company Name</label>
+                                                <div class="field-value readonly">Maseru Solar Solutions (Pty) Ltd</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Select What You Want to Update</h4>
+                                    <p>Tick the checkboxes next to each category you wish to modify. Companies have access to all available categories.</p>
+                                    <div class="form-mockup" style="margin-top: 12px;">
+                                        <div class="form-mockup-header">What would you like to update?</div>
+                                        <div class="form-mockup-body" style="gap: 8px;">
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Name of company
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Business names (per activity)
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock checked"></span> Activities
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Main office
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Branches
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock checked"></span> Capital
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock checked"></span> Shareholders
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Managers
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Company type
+                                            </label>
+                                            <label style="display:flex; align-items:center; gap:10px; font-size:15px; cursor:pointer;">
+                                                <span class="checkbox-mock"></span> Turnover &amp; employees
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>Fill In Each Selected Section</h4>
+                                    <p>A dedicated form section will appear for each category you ticked. Fill in the new details carefully. For capital and shareholder changes, the system displays your current registered data alongside the proposed modifications for easy comparison.</p>
+                                    <div class="info-box" style="margin-top: 12px;">
+                                        <div class="box-label">
+                                            <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                            Capital &amp; Shareholders
+                                        </div>
+                                        <p style="margin:0;">If you change the capital amount, the system will check that the total value of your shareholders' holdings matches the declared capital. If you change the capital, you may also need to update the shareholders section.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">6</div>
+                                <div class="step-content">
+                                    <h4>Upload Supporting Documents</h4>
+                                    <p>If your modifications involve new or modified shareholders or managers, upload the required identity documents (national ID or passport) and corporate documents for legal entity shareholders. Each file must be PDF, JPG, or PNG and no larger than 5 MB.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">7</div>
+                                <div class="step-content">
+                                    <h4>Confirm Each Section</h4>
+                                    <p>Each section ends with a <strong>confirmation checkbox</strong> (e.g., "I confirm the modification of the shareholders"). Tick it before moving to the next section. This confirms that you have reviewed the changes.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">8</div>
+                                <div class="step-content">
+                                    <h4>Review Summary &amp; Pay</h4>
+                                    <p>A full summary page shows all proposed changes and the total fees due. Verify all information. If activity licensing fees apply, they are listed here per activity.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number">9</div>
+                                <div class="step-content">
+                                    <h4>Confirm and Submit</h4>
+                                    <p>Tick the final acknowledgement checkbox and click <strong>"Submit"</strong>. Your modification request enters the OBFC review workflow. You will receive a confirmation email with a reference number.</p>
+                                    <div class="warning-box" style="margin-top: 12px;">
+                                        <div class="box-label">
+                                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                            Warning
+                                        </div>
+                                        <p style="margin:0;">You cannot edit your application after submission. If you need to make changes, contact OBFC support with your reference number.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
             <!-- ==================== 6. DETAILED FORM SECTIONS ==================== -->
             <div class="section" id="form-details">
                 <h2>6. Detailed Form Sections</h2>
-                <p>Below is a breakdown of the key fields in each modification section. Fields marked as required must be completed before you can submit.</p>
+                <p>Below is a field-by-field breakdown of each modification section. Use the tabs to view sections common to both business types, or sections available to companies only.</p>
 
-                <!-- 6.1 Business Name -->
-                <h3>6.1 Update Business Name</h3>
-                <p>To change your business name, you will be asked to enter a proposed new name. The system will check if the name is already in use.</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Business name 1 (proposed)</td>
-                            <td>Text</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Enter the new name you want for your business</td>
-                        </tr>
-                        <tr>
-                            <td>Business name 2 (alternative)</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Provide an alternative name in case the first is unavailable</td>
-                        </tr>
-                        <tr>
-                            <td>Check Availability</td>
-                            <td>Button</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Click to verify your proposed name is not already registered</td>
-                        </tr>
-                        <tr>
-                            <td>Confirmation checkbox</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>"I confirm the modification of the business name"</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- 6.2 Activities -->
-                <h3>6.2 Update Activities</h3>
-                <p>You can add new business activities or close (discontinue) existing ones. The system displays your current registered activities and allows you to build a modified list.</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Current activities</td>
-                            <td>Data grid</td>
-                            <td class="required-no">No</td>
-                            <td>Read-only list of your currently registered activities</td>
-                        </tr>
-                        <tr>
-                            <td>Sector</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Select the economic sector for the new activity</td>
-                        </tr>
-                        <tr>
-                            <td>Activity</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Select the specific activity within the chosen sector</td>
-                        </tr>
-                        <tr>
-                            <td>Business name for activity</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Optionally register a trading name for this activity</td>
-                        </tr>
-                        <tr>
-                            <td>Close (discontinue)</td>
-                            <td>Checkbox</td>
-                            <td class="required-no">No</td>
-                            <td>Tick to close an existing activity</td>
-                        </tr>
-                        <tr>
-                            <td>Licensing fee (LSL)</td>
-                            <td>Number</td>
-                            <td class="required-no">No</td>
-                            <td>Automatically calculated fee if a licence is required</td>
-                        </tr>
-                        <tr>
-                            <td>Confirmation checkbox</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>"I confirm the updated list of activities"</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="info-box">
-                    <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                        Tip
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'forms-common')">Common Sections (Both Types)</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'forms-company-only')">Company Only Sections</button>
                     </div>
-                    <p>If you also wish to update the <strong>turnover</strong> or <strong>number of employees</strong> linked to an activity, answer "Yes" when prompted. This is optional and does not affect the modification itself.</p>
+
+                    <!-- COMMON SECTIONS -->
+                    <div class="tab-panel active" id="forms-common" data-tab-label="Form Sections — Common (Both Business Types)">
+
+                        <h4>6.1 Update Business Name</h4>
+                        <p>Enter a proposed new name for your business. The system checks availability against the OBFC registry in real time.</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Current name</td><td>Text</td><td><span class="badge badge-read">Read only</span></td><td class="required-no">—</td><td>Your current registered name (pre-filled, cannot be edited)</td></tr>
+                                <tr><td>Business name 1 (proposed)</td><td>Text</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Enter the new name you want for your business</td></tr>
+                                <tr><td>Business name 2 (alternative)</td><td>Text</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Alternative name in case your first choice is unavailable</td></tr>
+                                <tr><td>Check Availability</td><td>Button</td><td><span class="badge badge-auto">Automatic</span></td><td class="required-yes">Yes</td><td>Click to verify your proposed name is not already registered</td></tr>
+                                <tr><td>Availability result</td><td>Status</td><td><span class="badge badge-auto">Automatic</span></td><td class="required-no">—</td><td>System shows whether the name is available or taken</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the modification of the business name"</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4>6.2 Update Business Names (Per Activity)</h4>
+                        <p>Add or update the trading name associated with each of your registered activities. The system displays your current activities and lets you propose new names for each.</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Current activities list</td><td>Grid</td><td><span class="badge badge-read">Read only</span></td><td class="required-no">—</td><td>Your currently registered activities (pre-filled)</td></tr>
+                                <tr><td>Proposed business name</td><td>Text</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Enter the new trading name for the selected activity</td></tr>
+                                <tr><td>Check Availability</td><td>Button</td><td><span class="badge badge-auto">Automatic</span></td><td class="required-yes">Yes</td><td>Verify the proposed name is available</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the updated list of business names"</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4>6.3 Update Activities</h4>
+                        <p>Add new business activities or close (discontinue) existing ones. You can also update the business name linked to each activity.</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Current activities</td><td>Grid</td><td><span class="badge badge-read">Read only</span></td><td class="required-no">—</td><td>Your existing registered activities</td></tr>
+                                <tr><td>Close (discontinue) activity</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Tick to discontinue an existing activity</td></tr>
+                                <tr><td>Sector (new activity)</td><td>Dropdown</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Select the economic sector for the new activity</td></tr>
+                                <tr><td>Activity</td><td>Dropdown</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Select the specific activity within the chosen sector</td></tr>
+                                <tr><td>Business name for activity</td><td>Text</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Optionally register a trading name for this activity</td></tr>
+                                <tr><td>Licensing fee</td><td>Number</td><td><span class="badge badge-auto">Automatic</span></td><td class="required-no">—</td><td>Auto-calculated based on activity and sector (if a licence is required)</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the updated list of activities"</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4>6.4 Update Main Office</h4>
+                        <p>Update the address and contact details of your principal place of business.</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Address</td><td>Text</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Street address of the main office</td></tr>
+                                <tr><td>District</td><td>Dropdown</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Select the district in Lesotho</td></tr>
+                                <tr><td>Town</td><td>Dropdown</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Select the town within the chosen district</td></tr>
+                                <tr><td>Phone code</td><td>Dropdown</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Country dialling code (defaults to +266 for Lesotho)</td></tr>
+                                <tr><td>Telephone</td><td>Text</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Contact phone number</td></tr>
+                                <tr><td>Email</td><td>Text</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Contact email address</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the modification of the main office"</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4>6.5 Update Branches (Operating Offices)</h4>
+                        <p>Add new branch offices, modify existing ones, or remove branches that are no longer operational.</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Current branches</td><td>Grid</td><td><span class="badge badge-read">Read only</span></td><td class="required-no">—</td><td>List of your currently registered branches</td></tr>
+                                <tr><td>Address / District / Town</td><td>Text &amp; Dropdown</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Full address details for each new or modified branch</td></tr>
+                                <tr><td>Telephone / Email</td><td>Text</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Contact details for the branch</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the updated list of branches"</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4>6.6 Update Turnover &amp; Employees</h4>
+                        <p>Update your reported annual turnover and total number of employees. This information is used for statistical purposes.</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Annual turnover (LSL)</td><td>Number</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Estimated annual business turnover in Lesotho Loti</td></tr>
+                                <tr><td>Number of employees</td><td>Number</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Total full-time and part-time employees</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the updated turnover and employee information"</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- COMPANY-ONLY SECTIONS -->
+                    <div class="tab-panel" id="forms-company-only" data-tab-label="Form Sections — Company Only">
+
+                        <div class="info-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                Company only
+                            </div>
+                            <p>The sections below apply exclusively to registered companies. They will not appear for sole proprietorships.</p>
+                        </div>
+
+                        <h4>6.7 Update Capital</h4>
+                        <p>Modify your company's registered capital amount and share structure. The form shows your current capital data alongside fields for the proposed changes.</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Current capital (LSL)</td><td>Number</td><td><span class="badge badge-read">Read only</span></td><td class="required-no">—</td><td>Your currently registered capital amount</td></tr>
+                                <tr><td>Modified capital (LSL)</td><td>Number</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Enter the new capital amount</td></tr>
+                                <tr><td>Number of ordinary shares</td><td>Number</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Total number of ordinary shares after modification</td></tr>
+                                <tr><td>Value per ordinary share (LSL)</td><td>Number</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Value of each ordinary share</td></tr>
+                                <tr><td>Will preferred shares be offered?</td><td>Radio</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Select "Yes" to add or modify preferred share classes</td></tr>
+                                <tr><td>Preferred share classes</td><td>Edit grid</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Class name, number of shares, and value per share for each class (if applicable)</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the modification of the capital"</td></tr>
+                            </tbody>
+                        </table>
+
+                        <div class="warning-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                Capital Validation
+                            </div>
+                            <p>The system validates that the total value of all shareholders' shares equals the declared capital. If the values do not match, you will not be able to submit. You may need to update the Shareholders section as well.</p>
+                        </div>
+
+                        <h4>6.8 Update Shareholders</h4>
+                        <p>Add new shareholders, modify the details of existing ones, or remove shareholders. Both natural persons and legal entities (companies/corporates) are supported.</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Current shareholders</td><td>Grid</td><td><span class="badge badge-read">Read only</span></td><td class="required-no">—</td><td>Your currently registered shareholders</td></tr>
+                                <tr><td>Action (existing shareholder)</td><td>Radio</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Choose to modify or remove each existing shareholder</td></tr>
+                                <tr><td>Shareholder type</td><td>Radio</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"Natural person" or "Legal entity (company/corporate)"</td></tr>
+                                <tr><td>Personal details (natural person)</td><td>Various</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>National ID, date of birth, first name, surname, nationality, gender, address</td></tr>
+                                <tr><td>Corporate details (legal entity)</td><td>Various</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Company name, country of incorporation, company type, incorporation number and date</td></tr>
+                                <tr><td>Type of shares</td><td>Radio</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Ordinary or preferred shares held by this shareholder</td></tr>
+                                <tr><td>Number of shares / Value per share</td><td>Number</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Shareholding details for this individual or entity</td></tr>
+                                <tr><td>ID Document</td><td>File upload</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Copy of the shareholder's national ID or passport (PDF, JPG, PNG — max 5 MB)</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the modification of the shareholders"</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4>6.9 Update Managers</h4>
+                        <p>Add, modify, or remove managers (directors, secretaries, officers) of your company.</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Current managers</td><td>Grid</td><td><span class="badge badge-read">Read only</span></td><td class="required-no">—</td><td>Your currently registered managers</td></tr>
+                                <tr><td>Action (existing manager)</td><td>Radio</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Choose to modify or remove each existing manager</td></tr>
+                                <tr><td>Personal details</td><td>Various</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>National ID, date of birth, first name, surname, nationality, gender</td></tr>
+                                <tr><td>Relationship / Role</td><td>Dropdown</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Director, Secretary, or other officer role</td></tr>
+                                <tr><td>Type of mandate</td><td>Radio</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"Fixed term" or "Open-ended" mandate</td></tr>
+                                <tr><td>Address &amp; contact</td><td>Various</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Country, address, district, town, telephone, email</td></tr>
+                                <tr><td>ID Document</td><td>File upload</td><td><span class="badge badge-input">You enter</span></td><td class="required-no">No</td><td>Copy of the manager's national ID or passport (PDF, JPG, PNG — max 5 MB)</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the modification of the managers"</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h4>6.10 Update Company Type</h4>
+                        <p>Change the legal classification of your company (e.g., from a Private Company to a Public Company).</p>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Field</th><th>Type</th><th>Source</th><th>Required</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Current company type</td><td>Text</td><td><span class="badge badge-read">Read only</span></td><td class="required-no">—</td><td>Your currently registered company type (e.g., Private Company Pty Ltd)</td></tr>
+                                <tr><td>New company type</td><td>Dropdown</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>Select the new legal type from the available options</td></tr>
+                                <tr><td>Confirmation checkbox</td><td>Checkbox</td><td><span class="badge badge-input">You enter</span></td><td class="required-yes">Yes</td><td>"I confirm the modification of the company type"</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-
-                <!-- 6.3 Business Names per Activity -->
-                <h3>6.3 Update Business Names (Per Activity)</h3>
-                <p>If you selected "Business names (per activity)", you can add or change the trading name associated with each of your business activities. The process is similar to updating activities, but focused on the name linked to each one.</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Proposed business name</td>
-                            <td>Text</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Enter the new trading name for the selected activity</td>
-                        </tr>
-                        <tr>
-                            <td>Check Availability</td>
-                            <td>Button</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Verify the proposed name is available</td>
-                        </tr>
-                        <tr>
-                            <td>Confirmation checkbox</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>"I confirm the updated list of business names"</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- 6.4 Main Office -->
-                <h3>6.4 Update Main Office</h3>
-                <p>Update your principal place of business with new address and contact details.</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Address</td>
-                            <td>Text</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Street address of the main office</td>
-                        </tr>
-                        <tr>
-                            <td>District</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Select the district in Lesotho</td>
-                        </tr>
-                        <tr>
-                            <td>Town</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Select the town within the chosen district</td>
-                        </tr>
-                        <tr>
-                            <td>Phone code</td>
-                            <td>Dropdown</td>
-                            <td class="required-no">No</td>
-                            <td>Country dialling code (defaults to +266)</td>
-                        </tr>
-                        <tr>
-                            <td>Telephone</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Contact phone number</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Contact email address</td>
-                        </tr>
-                        <tr>
-                            <td>Confirmation checkbox</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>"I confirm the modification of the main office"</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- 6.5 Branches -->
-                <h3>6.5 Update Branches</h3>
-                <p>Add new branch offices, modify existing ones, or remove branches that are no longer operational. Each branch requires a full address, district, town, and contact details.</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Current list of operating offices</td>
-                            <td>Data grid</td>
-                            <td class="required-no">No</td>
-                            <td>Read-only list of current branches</td>
-                        </tr>
-                        <tr>
-                            <td>Address / District / Town</td>
-                            <td>Text / Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Full address details for each new or modified branch</td>
-                        </tr>
-                        <tr>
-                            <td>Telephone / Email</td>
-                            <td>Text</td>
-                            <td class="required-no">No</td>
-                            <td>Contact details for the branch</td>
-                        </tr>
-                        <tr>
-                            <td>Confirmation checkbox</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>"I confirm the updated list of branches"</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- 6.6 Capital -->
-                <h3>6.6 Update Capital</h3>
-                <p>Modify your company's registered capital and share structure. The form shows your current capital and share details alongside fields for the proposed changes.</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Current capital</td>
-                            <td>Number</td>
-                            <td class="required-no">No</td>
-                            <td>Your currently registered capital (read-only)</td>
-                        </tr>
-                        <tr>
-                            <td>Modified capital</td>
-                            <td>Number</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Enter the new capital amount</td>
-                        </tr>
-                        <tr>
-                            <td>Number of ordinary shares</td>
-                            <td>Number</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Total number of ordinary shares after modification</td>
-                        </tr>
-                        <tr>
-                            <td>Value per ordinary share</td>
-                            <td>Number</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Value of each ordinary share in LSL</td>
-                        </tr>
-                        <tr>
-                            <td>Will preferred shares be offered?</td>
-                            <td>Radio</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Select "Yes" to add or modify preferred share classes</td>
-                        </tr>
-                        <tr>
-                            <td>Preferred share classes</td>
-                            <td>Edit grid</td>
-                            <td class="required-no">No</td>
-                            <td>Class name, number of shares, and value per share for each class</td>
-                        </tr>
-                        <tr>
-                            <td>Confirmation checkbox</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>"I confirm the modification of the capital"</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- 6.7 Shareholders -->
-                <h3>6.7 Update Shareholders</h3>
-                <p>Add new shareholders, modify details of existing ones, or remove shareholders. You can manage both natural persons and legal entities (companies).</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Current shareholders</td>
-                            <td>Data grid</td>
-                            <td class="required-no">No</td>
-                            <td>Read-only list of current shareholders</td>
-                        </tr>
-                        <tr>
-                            <td>Modify / Remove shareholder</td>
-                            <td>Checkbox</td>
-                            <td class="required-no">No</td>
-                            <td>Select whether to modify or remove each existing shareholder</td>
-                        </tr>
-                        <tr>
-                            <td>The shareholder is</td>
-                            <td>Radio</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Natural person or Legal entity (company/corporate)</td>
-                        </tr>
-                        <tr>
-                            <td>Personal details (natural person)</td>
-                            <td>Various</td>
-                            <td class="required-yes">Yes</td>
-                            <td>National ID, date of birth, first name, surname, nationality, gender</td>
-                        </tr>
-                        <tr>
-                            <td>Corporate details (legal entity)</td>
-                            <td>Various</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Company name, country of incorporation, type, incorporation number and date</td>
-                        </tr>
-                        <tr>
-                            <td>Address &amp; contact</td>
-                            <td>Various</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Country, address, district, town, phone, email</td>
-                        </tr>
-                        <tr>
-                            <td>Type of shares</td>
-                            <td>Radio</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Ordinary or preferred shares held by this shareholder</td>
-                        </tr>
-                        <tr>
-                            <td>Number of shares / Value per share</td>
-                            <td>Number</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Shareholding details for this person</td>
-                        </tr>
-                        <tr>
-                            <td>ID Document</td>
-                            <td>File upload</td>
-                            <td class="required-no">No</td>
-                            <td>Upload a copy of the shareholder's ID (PDF, JPG, PNG)</td>
-                        </tr>
-                        <tr>
-                            <td>Confirmation checkbox</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>"I confirm the modification of the shareholders"</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- 6.8 Managers -->
-                <h3>6.8 Update Managers</h3>
-                <p>Add, modify, or remove managers (directors, officers) of your business. The process is similar to shareholder updates, with fields for personal details, relationship/role, and contact information.</p>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Field</th>
-                            <th>Type</th>
-                            <th>Required</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Current managers</td>
-                            <td>Data grid</td>
-                            <td class="required-no">No</td>
-                            <td>Read-only list of current managers</td>
-                        </tr>
-                        <tr>
-                            <td>Modify / Remove manager</td>
-                            <td>Checkbox</td>
-                            <td class="required-no">No</td>
-                            <td>Select whether to modify or remove each existing manager</td>
-                        </tr>
-                        <tr>
-                            <td>Personal details</td>
-                            <td>Various</td>
-                            <td class="required-yes">Yes</td>
-                            <td>National ID, date of birth, name, surname, nationality, gender</td>
-                        </tr>
-                        <tr>
-                            <td>Relationship (role)</td>
-                            <td>Dropdown</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Select the manager's role (e.g., Director, Secretary, etc.)</td>
-                        </tr>
-                        <tr>
-                            <td>Address &amp; contact</td>
-                            <td>Various</td>
-                            <td class="required-yes">Yes</td>
-                            <td>Country, address, district, town, phone, email</td>
-                        </tr>
-                        <tr>
-                            <td>ID Document</td>
-                            <td>File upload</td>
-                            <td class="required-no">No</td>
-                            <td>Upload a copy of the manager's ID document</td>
-                        </tr>
-                        <tr>
-                            <td>Confirmation checkbox</td>
-                            <td>Checkbox</td>
-                            <td class="required-yes">Yes</td>
-                            <td>"I confirm the modification of the managers"</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
 
             <!-- ==================== 7. AFTER SUBMISSION ==================== -->
             <div class="section" id="after-submission">
                 <h2>7. After Submission</h2>
-                <p>Once you submit your modification request, it goes through a review and approval workflow. Here is what to expect:</p>
+                <p>Once you submit your modification request, it enters a structured review and approval workflow. Both sole proprietorships and companies follow the same process.</p>
 
                 <div class="timeline">
                     <div class="timeline-item">
                         <h4>Application Submitted</h4>
-                        <p>Your modification request is received by the OBFC system. You will get a reference number and confirmation email.</p>
+                        <p>Your modification request is received by OBFC. You receive a reference number and confirmation by email. Track progress from your dashboard.</p>
                         <div class="timeline-meta">Day 0</div>
                     </div>
                     <div class="timeline-item">
-                        <h4>Review Modifications</h4>
-                        <p>An OBFC officer reviews your submitted modifications for completeness and accuracy. They verify documents and check that proposed names are available.</p>
+                        <h4>Review (OBFC Officer)</h4>
+                        <p>An OBFC review officer checks the application for completeness and accuracy — verifying documents, checking name availability results, and validating the modifications.</p>
                         <div class="timeline-meta">Day 1&ndash;3</div>
                     </div>
                     <div class="timeline-item">
-                        <h4>Approve Modifications</h4>
-                        <p>A senior officer reviews and approves the validated modifications. If any issues are found, your application may be sent back for corrections.</p>
+                        <h4>Approval (Senior Officer)</h4>
+                        <p>A senior OBFC officer reviews the validated application and either approves it or sends it back for corrections. If sent back, you will be notified by email with the officer's comments.</p>
                         <div class="timeline-meta">Day 3&ndash;5</div>
                     </div>
                     <div class="timeline-item">
                         <h4>Automatic Processing</h4>
-                        <p>Once approved, the system automatically updates your business registration data, including shareholders, managers, activities, business names, and related records.</p>
+                        <p>Once approved, the system automatically updates your registration data — business name, activities, addresses, shareholders, managers, and all linked records.</p>
                         <div class="timeline-meta">Day 5&ndash;6</div>
                     </div>
                     <div class="timeline-item pending">
                         <h4>Updated Certificate Issued</h4>
-                        <p>An updated business registration certificate reflecting your changes is generated and made available for download from your dashboard.</p>
+                        <p>An updated business registration certificate reflecting your changes is generated and available for download from your dashboard.</p>
                         <div class="timeline-meta">Day 6&ndash;7</div>
                     </div>
                 </div>
@@ -1624,30 +1720,31 @@
                 <h3>Possible Outcomes</h3>
                 <table class="field-table">
                     <thead>
-                        <tr>
-                            <th>Status</th>
-                            <th>What It Means</th>
-                            <th>What to Do</th>
-                        </tr>
+                        <tr><th>Status</th><th>What It Means</th><th>What to Do</th></tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><strong>File Validated</strong></td>
-                            <td>Your application has passed initial review</td>
-                            <td>No action needed; it proceeds to approval</td>
+                            <td>Your application passed the review stage</td>
+                            <td>No action needed — it proceeds to approval</td>
                         </tr>
                         <tr>
                             <td><strong>File Pending</strong></td>
                             <td>Additional review or information is required</td>
-                            <td>Check your email for requests from the reviewing officer</td>
+                            <td>Check your email for messages from the reviewing officer</td>
                         </tr>
                         <tr>
-                            <td><strong>Send Back to Corrections</strong></td>
+                            <td><strong>Sent Back for Corrections</strong></td>
                             <td>Issues were found and your application has been returned</td>
-                            <td>Log in, review the officer's comments, correct the issues, and resubmit</td>
+                            <td>Log in, open the returned application, correct the flagged items, and resubmit</td>
                         </tr>
                         <tr>
-                            <td><strong>File Rejected</strong></td>
+                            <td><strong>Approved</strong></td>
+                            <td>Your modifications have been accepted and applied</td>
+                            <td>Download your updated certificate from the dashboard</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rejected</strong></td>
                             <td>The modification request was denied</td>
                             <td>Review the rejection reason, correct the issue, and submit a new request</td>
                         </tr>
@@ -1659,51 +1756,78 @@
                         <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
                         Track your application
                     </div>
-                    <p>You can track the status of your modification request at any time by logging into your account and viewing your application history on the dashboard.</p>
+                    <p>You can monitor the status of your modification request at any time by logging into your account and checking your application history on the dashboard.</p>
                 </div>
             </div>
 
-            <!-- ==================== 8. FAQ ==================== -->
+            <!-- ==================== 8. FAQ & CONTACT ==================== -->
             <div class="section" id="faq">
-                <h2>8. Frequently Asked Questions</h2>
+                <h2>8. FAQ &amp; Contact</h2>
 
-                <h4>Can I update multiple categories at the same time?</h4>
-                <p>Yes. When you start the modification request, you can select as many categories as you need (e.g., name, activities, shareholders, and address all at once). Each will have its own form section.</p>
+                <h3>Frequently Asked Questions</h3>
 
-                <h4>How do I know if a proposed business name is available?</h4>
-                <p>After entering your proposed name, click the <strong>Check Availability</strong> button. The system will instantly tell you whether the name is available or already in use. If it is taken, you can try a different name.</p>
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'faq-general')">General</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-company-q')">Company</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-sole-q')">Sole Proprietorship</button>
+                    </div>
 
-                <h4>What happens if my application is sent back for corrections?</h4>
-                <p>You will receive an email notification. Log in to your account, open the returned application, review the officer's comments, make the necessary corrections, and resubmit. Your application will then re-enter the review queue.</p>
+                    <div class="tab-panel active" id="faq-general" data-tab-label="FAQ — General">
+                        <h4>Can I update multiple categories at the same time?</h4>
+                        <p>Yes. When you start the modification request, you can tick as many categories as needed. Each selected category will have its own dedicated form section within the same application.</p>
 
-                <h4>Can I cancel a modification request after submission?</h4>
-                <p>Once submitted, you cannot cancel or edit the request directly. Contact the OBFC helpline for assistance if you need to withdraw a pending application.</p>
+                        <h4>How do I know if a proposed business name is available?</h4>
+                        <p>After entering your proposed name, click the <strong>Check Availability</strong> button. The system instantly searches the OBFC registry and tells you if the name is available or already in use. If taken, you can enter a different name and check again.</p>
 
-                <h4>What file formats are accepted for document uploads?</h4>
-                <p>The system accepts <strong>PDF</strong>, <strong>JPG</strong>, and <strong>PNG</strong> files. Each file should be no larger than 5 MB. Ensure documents are legible and not password-protected.</p>
+                        <h4>What happens if my application is sent back for corrections?</h4>
+                        <p>You will receive an email notification. Log in to your account, open the returned application, review the officer's comments (shown alongside the relevant fields), make the necessary corrections, and resubmit. Your application will then re-enter the review queue.</p>
 
-                <h4>Do I need to update my shareholders if I change the capital?</h4>
-                <p>If the capital change affects individual shareholdings (e.g., new shares issued), you should also update the shareholders section to reflect the new distribution. The system will validate that the total value of shares matches the declared capital.</p>
+                        <h4>Can I cancel a modification request after submission?</h4>
+                        <p>Once submitted, you cannot cancel or edit the request directly through the platform. Contact the OBFC helpline for assistance if you need to withdraw a pending application.</p>
 
-                <h4>How long does the process take?</h4>
-                <p>Most modification requests are processed within 5 to 7 working days, provided all information is complete and correct. Applications that require corrections will take longer.</p>
+                        <h4>What file formats are accepted for document uploads?</h4>
+                        <p>The system accepts <strong>PDF</strong>, <strong>JPG</strong>, and <strong>PNG</strong> files. Each file must be no larger than 5 MB. Make sure documents are legible, not password-protected, and clearly show all required information.</p>
 
-                <h4>Is there a fee for address changes only?</h4>
-                <p>No. Updating your main office address or branch addresses does not incur a fee.</p>
-            </div>
+                        <h4>How long does the process take?</h4>
+                        <p>Most modification requests are processed within <strong>5 to 7 working days</strong>, provided all information is complete and accurate. Applications that require corrections will take longer depending on how quickly corrections are submitted.</p>
 
-            <!-- ==================== 9. CONTACT & SUPPORT ==================== -->
-            <div class="section" id="contact">
-                <h2>9. Contact &amp; Support</h2>
+                        <h4>Is there a fee for address-only changes?</h4>
+                        <p>No. Updating your main office address or branch addresses does not incur any fee for either sole proprietorships or companies.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-company-q" data-tab-label="FAQ — Company">
+                        <h4>Do I need to update shareholders if I change the capital?</h4>
+                        <p>If the capital change affects individual shareholdings (e.g., new shares are issued or the value per share changes), you should also update the Shareholders section. The system validates that the total declared value of all shareholders' shares equals the modified capital. If they do not match, you cannot submit.</p>
+
+                        <h4>Can I add a legal entity (company) as a shareholder?</h4>
+                        <p>Yes. When adding a new shareholder, select "Legal entity (company/corporate)" as the shareholder type. You will be asked for the company name, country of incorporation, company type, and incorporation details. Upload the relevant corporate registration document.</p>
+
+                        <h4>What is the difference between "fixed" and "open-ended" mandate for managers?</h4>
+                        <p>A <strong>fixed mandate</strong> means the manager's appointment is for a defined term (e.g., 2 years). An <strong>open-ended mandate</strong> means the appointment has no fixed end date and continues until the manager is removed or resigns.</p>
+
+                        <h4>Can I change from a Private Company to a Public Company?</h4>
+                        <p>Yes, through the "Company Type" modification category. Be aware that changing company type may have legal and regulatory implications beyond this modification. Consult a legal adviser if needed.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-sole-q" data-tab-label="FAQ — Sole Proprietorship">
+                        <h4>Can I add shareholders as a sole proprietor?</h4>
+                        <p>No. The shareholder, manager, and capital sections are only available for incorporated companies. If you want to bring in partners or investors with formal ownership rights, you would need to convert your sole proprietorship into a company &mdash; a separate process.</p>
+
+                        <h4>Do I need to upload any documents to update my sole proprietorship?</h4>
+                        <p>For most modifications (name, address, activities, turnover), <strong>no documents are required</strong>. Your personal details are already on record from the national identity database. If you add a new activity requiring a licence, you may need to provide activity-specific details, but no document uploads are needed.</p>
+
+                        <h4>Can I change my sole proprietorship to a company using this service?</h4>
+                        <p>No. Converting from a sole proprietorship to a company is a different procedure. Please contact OBFC support for guidance on business conversion.</p>
+                    </div>
+                </div>
+
+                <h3>Contact &amp; Support</h3>
                 <p>If you need help at any point during the modification process, the OBFC support team is available to assist you.</p>
 
                 <table class="field-table">
                     <thead>
-                        <tr>
-                            <th>Channel</th>
-                            <th>Details</th>
-                            <th>Availability</th>
-                        </tr>
+                        <tr><th>Channel</th><th>Details</th><th>Availability</th></tr>
                     </thead>
                     <tbody>
                         <tr>
@@ -1751,7 +1875,7 @@
                 <!-- Column 1: Logo & About -->
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="https://lesotho.eregistrations.dev/_assets/v11/e8f8e0f4875113e3103aae78a6e2c99f11345f18.png" alt="OBFC Logo">
+                        <img src="obfc-logo.webp" alt="OBFC Logo">
                     </div>
                     <p>One Business Facilitation Centre (OBFC) provides a single window for business registration and licensing services in the Kingdom of Lesotho.</p>
                 </div>
@@ -1776,7 +1900,7 @@
                 <!-- Column 3: Social Channels -->
                 <div class="footer-col">
                     <h5>Follow Us</h5>
-                    <p>Stay connected with OBFC for the latest updates on business services.</p>
+                    <p>Stay connected with OBFC for the latest updates on business services in Lesotho.</p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook">
                             <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
@@ -1797,6 +1921,7 @@
                         <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
                         <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
                         <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                        <li><a href="index.html">All Lesotho Manuals</a></li>
                         <li><a href="https://services.businessregistrations.gov.ls/">Login / Register</a></li>
                         <li><a href="https://lesotho.eregistrations.dev/privacy/">Privacy Policy</a></li>
                         <li><a href="https://lesotho.eregistrations.dev/terms/">Terms of Service</a></li>
@@ -1808,17 +1933,14 @@
             <!-- Implemented by -->
             <div class="footer-implemented">
                 <span>Implemented by</span>
-                <a href="https://www.worldbank.org/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/742ddaa6ec00aadee1b93dffeefc513e3c77473c.png" alt="World Bank">
-                </a>
                 <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
-                    <img src="https://lesotho.eregistrations.dev/_assets/v11/fd2d79a17613c98a31e05becdb641ca8c82159b4.png" alt="UNCTAD">
+                    <img src="unctad-logo.avif" alt="UNCTAD" style="height: 28px;">
                 </a>
             </div>
 
             <!-- Copyright -->
             <div class="footer-copyright">
-                &copy; 2025 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Generated: February 2026
+                &copy; 2026 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved. | Updated: April 2026
             </div>
         </div>
     </footer>
