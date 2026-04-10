@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Your Business Data - Processing Manual (Part B) | OBFC Lesotho</title>
+    <meta name="description" content="Government officer processing manual for the Update Your Business Data service on the Lesotho OBFC eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           LESOTHO eREGISTRATIONS — PROCESSING MANUAL
+           Service: Update Your Business Data
+           Version: v1.0
+           Created: April 2026
+           Audience: Government officers (back-office)
+           ============================================================ */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+
+        a { color: #4CAF74; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #3d9461; text-decoration: underline; }
+
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
+        h1 { font-size: 42px; font-weight: 700; }
+        h2 { font-size: 32px; font-weight: 600; }
+        h3 { font-size: 24px; font-weight: 600; }
+        h4 { font-size: 20px; font-weight: 600; }
+        h5 { font-size: 16px; font-weight: 600; }
+
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header { background: #2B2A65; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+
+        .header-logos { display: flex; align-items: center; gap: 16px; flex-shrink: 0; }
+        .header-logos img { height: 52px; width: auto; }
+        .header-logos .coat-of-arms { height: 56px; }
+
+        .header-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.25); flex-shrink: 0; }
+
+        .header-nav { display: flex; align-items: center; gap: 32px; }
+
+        .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; white-space: nowrap; transition: opacity 0.2s ease; }
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+
+        .btn-login { background: #4CAF74; color: #FFFFFF !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #3d9461; text-decoration: none !important; }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 14px 0; }
+
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #888; flex-wrap: wrap; }
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+
+        .breadcrumb-list li + li::before {
+            content: "";
+            display: inline-block;
+            width: 6px; height: 6px;
+            border-top: 1.5px solid #aaa;
+            border-right: 1.5px solid #aaa;
+            transform: rotate(45deg);
+            flex-shrink: 0;
+        }
+
+        .breadcrumb-list a { color: #4CAF74; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           OFFICER NOTICE BANNER
+           ============================================================ */
+        .officer-banner { background: #FEF9C3; border-bottom: 2px solid #F5A623; padding: 14px 0; }
+
+        .officer-banner-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #92400E; }
+
+        .officer-banner svg { width: 20px; height: 20px; flex-shrink: 0; stroke: #D97706; fill: none; }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero { background: linear-gradient(135deg, #2B2A65 0%, #3a3980 100%); color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
+
+        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(76,175,116,0.1) 0%, transparent 70%); pointer-events: none; }
+
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: #4CAF74; margin-bottom: 12px; display: block; }
+
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+
+        .hero-description { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 560px; }
+
+        .btn-primary { background: #4CAF74; color: #FFFFFF; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; border: none; cursor: pointer; }
+        .btn-primary:hover { background: #3d9461; color: #FFFFFF; text-decoration: none; transform: translateY(-1px); }
+
+        .hero-image { flex-shrink: 0; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+
+        .hero-icon-circle { width: 180px; height: 180px; border-radius: 50%; background: rgba(76,175,116,0.15); border: 2px solid rgba(76,175,116,0.3); display: flex; align-items: center; justify-content: center; }
+
+        .hero-icon-circle svg { width: 72px; height: 72px; fill: none; stroke: #4CAF74; stroke-width: 1.5; }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc { background: #F5F5F7; padding: 40px 0; border-bottom: 1px solid #E5E7EB; }
+        .toc h2 { font-size: 24px; margin-bottom: 20px; }
+
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+
+        .toc-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 15px; }
+        .toc-item:hover { border-color: #4CAF74; box-shadow: 0 2px 6px rgba(76,175,116,0.12); text-decoration: none; color: #1F2128; }
+
+        .toc-number { width: 28px; height: 28px; border-radius: 50%; background: #2B2A65; color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
+
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content { padding: 48px 0 72px; }
+        .section { margin-bottom: 52px; scroll-margin-top: 100px; }
+
+        .section > h2 { font-size: 28px; font-weight: 600; padding-left: 16px; border-left: 4px solid #4CAF74; margin-bottom: 20px; line-height: 1.3; }
+        .section > h3 { font-size: 20px; font-weight: 600; margin-top: 28px; margin-bottom: 14px; }
+        .section > h4 { font-size: 17px; font-weight: 600; margin-top: 20px; margin-bottom: 10px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 14px; }
+        .section ul, .section ol { padding-left: 22px; }
+        .section li { margin-bottom: 6px; }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box, .warning-box, .note-box { padding: 16px 20px; border-radius: 8px; margin: 20px 0; font-size: 15px; line-height: 1.6; }
+        .info-box { background: #F5F5F7; border-left: 4px solid #4CAF74; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
+        .info-box .box-label { color: #4CAF74; }
+        .warning-box .box-label { color: #D4891A; }
+        .note-box .box-label { color: #4A90D9; }
+        .box-label svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+        /* --- Field Table --- */
+        .field-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; font-size: 14px; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; }
+        .field-table thead { background: #2B2A65; color: #FFFFFF; }
+        .field-table th { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 14px; text-align: left; white-space: nowrap; }
+        .field-table td { padding: 10px 14px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F5F5F7; }
+
+        /* --- Status Badges --- */
+        .status-badge { display: inline-block; padding: 3px 10px; border-radius: 9999px; font-size: 11px; font-weight: 700; font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+        .status-pending { background: #EFF6FF; color: #1D4ED8; }
+        .status-validated { background: #DCFCE7; color: #166534; }
+        .status-rejected { background: #FEE2E2; color: #991B1B; }
+        .status-corrections { background: #FFEDD5; color: #9A3412; }
+        .status-bot-fail { background: #FEE2E2; color: #991B1B; }
+
+        /* --- Checklist --- */
+        .checklist { list-style: none; padding: 0; margin: 14px 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px solid #F0F0F2; font-size: 15px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .check-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 3px; }
+        .checklist .check-icon svg { width: 20px; height: 20px; }
+
+        /* --- Tab Group --- */
+        .tab-group { margin: 24px 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; }
+        .tab-nav { display: flex; background: #F5F5F7; border-bottom: 1px solid #E5E7EB; overflow-x: auto; }
+        .tab-btn { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500; padding: 12px 22px; cursor: pointer; background: transparent; border: none; border-bottom: 3px solid transparent; color: #555866; white-space: nowrap; transition: all 0.2s ease; }
+        .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
+        .tab-btn.active { color: #4CAF74; border-bottom-color: #4CAF74; background: #FFFFFF; font-weight: 600; }
+        .tab-panel { display: none; padding: 22px; }
+        .tab-panel.active { display: block; }
+
+        /* --- Step list --- */
+        .steps { counter-reset: step-counter; list-style: none; padding: 0; margin: 20px 0; }
+
+        .step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 16px; padding: 16px; background: #FAFAFA; border: 1px solid #E5E7EB; border-radius: 10px; }
+
+        .step-number { counter-increment: step-counter; width: 34px; height: 34px; border-radius: 50%; background: #2B2A65; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .step-number.bot { background: #7C3AED; }
+
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .step-content p { margin-bottom: 6px; font-size: 15px; }
+        .step-content p:last-child { margin-bottom: 0; }
+        .step-content ul { padding-left: 18px; margin-top: 6px; }
+        .step-content li { font-size: 15px; margin-bottom: 3px; }
+
+        /* --- Workflow bar --- */
+        .workflow-steps { display: flex; align-items: flex-start; gap: 0; margin: 28px 0; flex-wrap: wrap; }
+
+        .wf-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; min-width: 100px; position: relative; }
+
+        .wf-step:not(:last-child)::after { content: ""; position: absolute; top: 22px; right: -1px; width: 50%; height: 3px; background: #E5E7EB; z-index: 0; }
+        .wf-step:not(:first-child)::before { content: ""; position: absolute; top: 22px; left: -1px; width: 50%; height: 3px; background: #E5E7EB; z-index: 0; }
+
+        .wf-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .wf-dot svg { width: 22px; height: 22px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
+        .wf-dot.applicant { background: #4CAF74; }
+        .wf-dot.officer { background: #2B2A65; }
+        .wf-dot.bot { background: #7C3AED; }
+
+        .wf-label { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; color: #1F2128; text-align: center; }
+        .wf-sublabel { font-size: 11px; color: #888; text-align: center; line-height: 1.4; }
+
+        /* --- Timeline --- */
+        .timeline { position: relative; margin: 28px 0; padding-left: 36px; }
+
+        .timeline::before { content: ""; position: absolute; left: 13px; top: 0; bottom: 0; width: 3px; background: #E5E7EB; border-radius: 2px; }
+
+        .timeline-item { position: relative; margin-bottom: 28px; padding-left: 20px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+
+        .timeline-item::before { content: ""; position: absolute; left: -25px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #4CAF74; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #4CAF74; z-index: 1; }
+        .timeline-item.bot-step::before { background: #7C3AED; box-shadow: 0 0 0 3px #7C3AED; }
+        .timeline-item.applicant-step::before { background: #4CAF74; box-shadow: 0 0 0 3px #4CAF74; }
+
+        .timeline-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 3px; color: #1F2128; }
+        .timeline-item p { font-size: 14px; color: #555866; margin-bottom: 0; }
+        .timeline-item .tl-meta { font-size: 12px; color: #999; margin-top: 3px; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer { background: #2B2A65; color: rgba(255,255,255,0.75); padding: 40px 0 0; font-size: 14px; }
+
+        .footer-inner { display: flex; flex-wrap: wrap; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+        .footer-col { flex: 1; min-width: 180px; }
+        .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 14px; font-weight: 600; margin-bottom: 14px; }
+        .footer-col a { color: rgba(255,255,255,0.7); }
+        .footer-col a:hover { color: #4CAF74; text-decoration: none; }
+
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 8px; font-size: 13px; }
+
+        .footer-copyright { text-align: center; padding: 18px 0; font-size: 12px; color: rgba(255,255,255,0.4); }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            body { font-size: 15px; }
+            h1 { font-size: 28px; }
+            h2, .section > h2 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 10px; padding: 10px 16px; }
+            .header-nav { gap: 12px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 32px 0; }
+            .hero h1 { font-size: 24px; }
+            .hero-image { display: none; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .container { padding: 0 14px; }
+            .wf-step { min-width: 80px; }
+            .step { flex-direction: column; gap: 10px; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================================
+           PRINT
+           ============================================================ */
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 10pt; color: #000; background: #FFF; }
+            .site-header { position: static; background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .officer-banner { page-break-inside: avoid; }
+            .tab-nav { display: none; }
+            .tab-panel { display: block !important; }
+            .site-footer { background: #2B2A65 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-logos">
+                <a href="https://lesotho.eregistrations.dev/" title="OBFC Lesotho">
+                    <img src="obfc-logo.webp" alt="OBFC Logo">
+                </a>
+                <div class="header-divider"></div>
+                <a href="https://lesotho.eregistrations.dev/" title="Kingdom of Lesotho">
+                    <img src="mti-logo.avif" alt="MTI One-Stop Business Facilitation Centre" class="coat-of-arms">
+                </a>
+            </div>
+            <nav class="header-nav">
+                <a href="https://lesotho.eregistrations.dev/about/">About</a>
+                <a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a>
+                <a href="https://services.businessregistrations.gov.ls/" class="btn-login">DS Portal</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         OFFICER NOTICE BANNER
+         ============================================================ -->
+    <div class="officer-banner">
+        <div class="officer-banner-inner">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <strong>For internal use only.</strong>&nbsp; This manual is intended for OBFC government officers processing business modification applications in the back-office portal.
+        </div>
+    </div>
+
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                <li><a href="index.html">Lesotho Manuals</a></li>
+                <li><a href="update-business-data.html">Update Your Business Data</a></li>
+                <li><span class="current">Part B &mdash; Processing Manual</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">Process Application &mdash; Officers</span>
+                    <h1>Update Your Business Data</h1>
+                    <p class="hero-description">Back-office processing guide for OBFC officers. Covers the full review and approval workflow for business modification requests submitted by sole proprietors and companies, including the automated bots that update the registry and generate updated certificates.</p>
+                    <a href="https://services.businessregistrations.gov.ls/" class="btn-primary">Open DS Portal &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="6" width="40" height="52" rx="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M36 20L28 28L26 34L32 32L40 24Z" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="38,44 42,48 50,38" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#service-overview" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span class="toc-label">Service Overview</span>
+                </a>
+                <a href="#service-workflow" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span class="toc-label">Service Workflow</span>
+                </a>
+                <a href="#type-of-roles" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span class="toc-label">Type of Roles</span>
+                </a>
+                <a href="#description-of-roles" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span class="toc-label">Description of Roles</span>
+                </a>
+                <a href="#assistance" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span class="toc-label">Assistance</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MAIN CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
+
+            <!-- ===== 1. SERVICE OVERVIEW ===== -->
+            <div class="section" id="service-overview">
+                <h2>1. Service Overview</h2>
+                <p>The <strong>Update Your Business Data</strong> service allows registered businesses in Lesotho to submit modification requests online through the OBFC eRegistrations portal. There is one registration type: <strong>Modification</strong>.</p>
+                <p>Both sole proprietorships and companies use the same service. The applicant selects the data categories they wish to modify, fills in the relevant sections, and submits. The application then enters the officer review queue.</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr><th>Business Type</th><th>Categories available for modification</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sole Proprietorship</strong></td>
+                            <td>Name, Business names per activity, Activities, Main office, Branches, Turnover &amp; employees</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Company</strong></td>
+                            <td>Name, Business names per activity, Activities, Main office, Branches, Capital, Shareholders, Managers, Company type, Turnover &amp; employees</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Same workflow, different checklists
+                    </div>
+                    <p>Both sole proprietorships and companies go through the same <strong>Review Desk → Approval Desk → Bot</strong> sequence. The difference is in what the officer checks: sole proprietorship files have no document uploads to review, while company files may include ID documents for new shareholders or managers.</p>
+                </div>
+            </div>
+
+            <!-- ===== 2. SERVICE WORKFLOW ===== -->
+            <div class="section" id="service-workflow">
+                <h2>2. Service Workflow</h2>
+                <p>The workflow runs from citizen submission through two human desks to two automated bots. The chart below shows all steps in sequence.</p>
+
+                <div class="workflow-steps">
+                    <div class="wf-step">
+                        <div class="wf-dot applicant">
+                            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="wf-label">Applicant</div>
+                        <div class="wf-sublabel">Fills form<br>&amp; submits</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot officer">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div class="wf-label">Review Desk</div>
+                        <div class="wf-sublabel">Officer reviews<br>modifications</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot officer">
+                            <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        </div>
+                        <div class="wf-label">Approval Desk</div>
+                        <div class="wf-sublabel">Senior officer<br>final sign-off</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot bot">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                        </div>
+                        <div class="wf-label">MODIFICATION Update</div>
+                        <div class="wf-sublabel">Bot updates<br>registry</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot bot">
+                            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </div>
+                        <div class="wf-label">MODIFICATION Upload</div>
+                        <div class="wf-sublabel">Bot generates<br>certificate</div>
+                    </div>
+                </div>
+
+                <h3>Full Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-item applicant-step">
+                        <h4>Applicant Submits</h4>
+                        <p>The citizen completes the modification form online, selecting which data categories to update, filling in the proposed changes, confirming each section, and submitting. If licensing fees apply (e.g. new activity), payment is made online before or at submission. The application enters the back-office queue.</p>
+                        <div class="tl-meta">Triggered by citizen</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Review Desk</h4>
+                        <p>A reviewing officer opens the application and checks each selected modification category for completeness, accuracy, and validity. For company files with new shareholders or managers, the officer also verifies uploaded identity documents. The officer can validate, send back for corrections, or reject.</p>
+                        <div class="tl-meta">Human officer &mdash; typically 1&ndash;3 working days</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Approval Desk</h4>
+                        <p>A senior officer gives final sign-off on the reviewed application. Verifies that the Review Desk has correctly checked all modification categories. Once approved (FILE VALIDATED), the bots trigger automatically.</p>
+                        <div class="tl-meta">Human officer &mdash; typically 1&ndash;2 working days after review</div>
+                    </div>
+                    <div class="timeline-item bot-step">
+                        <h4>MODIFICATION Update Bot</h4>
+                        <p>Automatically updates the business or company record in the OBFC national business registry with all approved changes: name, activities, addresses, capital structure, shareholders, managers, company type, and related records.</p>
+                        <div class="tl-meta">Automated &mdash; runs immediately after Approval Desk validates</div>
+                    </div>
+                    <div class="timeline-item bot-step">
+                        <h4>MODIFICATION Upload Bot</h4>
+                        <p>Generates an updated registration certificate PDF reflecting all approved modifications and uploads it to the citizen's eRegistrations account. The citizen is notified by email that their updated certificate is available for download.</p>
+                        <div class="tl-meta">Automated &mdash; runs after MODIFICATION Update succeeds</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 3. TYPE OF ROLES ===== -->
+            <div class="section" id="type-of-roles">
+                <h2>3. Type of Roles</h2>
+                <p>There are two types of roles in an eRegistrations service:</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'role-human')">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            Human role
+                        </button>
+                        <button class="tab-btn" onclick="switchTab(event, 'role-bot')">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                            Automated role (bot)
+                        </button>
+                    </div>
+
+                    <div class="tab-panel active" id="role-human">
+                        <p>Assigned to a government officer who manually reviews or approves applications. The officer sees the full modification form, the proposed changes for each category, uploaded documents, and payment confirmation. They can add comments and set a status to move the file forward or return it to the applicant.</p>
+                        <h4>Role Statuses</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Status</th><th>Meaning</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                                    <td>Application is queued or in progress at this desk. No action required unless it has been stalled for more than 24 hours.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                    <td>Desk approved the application. It moves automatically to the next step in the workflow.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
+                                    <td>Application returned to the applicant with officer comments. The applicant must correct the flagged issue and resubmit.</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-rejected">FILE REJECT</span></td>
+                                    <td>Application permanently rejected. No further processing. The applicant is notified and must submit a new modification request.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-panel" id="role-bot">
+                        <p>Executed automatically by the system — no officer action required. Bots run in sequence after the previous step succeeds. They update the registry database and generate the updated certificate PDF.</p>
+                        <h4>Bot Statuses</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Status</th><th>Meaning</th><th>Action Required</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
+                                    <td>Bot ran successfully</td>
+                                    <td>None — proceeds to next step automatically</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-pending">FILE PENDING</span></td>
+                                    <td>Bot is queued or currently running</td>
+                                    <td>Wait; check again after a few minutes</td>
+                                </tr>
+                                <tr>
+                                    <td><span class="status-badge status-bot-fail">Bot failed</span></td>
+                                    <td>Bot encountered an error during execution</td>
+                                    <td>See troubleshooting steps in Section 5</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h4>Troubleshooting: Bot Failed</h4>
+                        <ol class="steps">
+                            <li class="step">
+                                <div class="step-number bot">1</div>
+                                <div class="step-content">
+                                    <h4>Check the bot error log</h4>
+                                    <p>Open the application in the back-office portal and navigate to the failed bot step. Click the error details icon to see the specific failure reason and error message.</p>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">2</div>
+                                <div class="step-content">
+                                    <h4>Common failure reasons</h4>
+                                    <ul>
+                                        <li><strong>Business ID not found in registry</strong> — The business record may have been corrupted or removed. Contact the database administrator.</li>
+                                        <li><strong>Capital mismatch</strong> — Total value of shares does not equal declared capital in the registry. May require sending back to corrections.</li>
+                                        <li><strong>Database connection timeout</strong> — Retry the bot; usually resolves on its own after a few minutes.</li>
+                                        <li><strong>Mapping error</strong> — A field mapping may be outdated. Contact the system administrator.</li>
+                                        <li><strong>Name conflict detected post-approval</strong> — A concurrent application may have registered the same business name. Contact the supervisor.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">3</div>
+                                <div class="step-content">
+                                    <h4>Retry the bot</h4>
+                                    <p>If the error is transient (e.g. connection issue), use the <strong>Retry</strong> action in the bot step. If the error persists after two retries, escalate to the system administrator with the full error log.</p>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 4. DESCRIPTION OF ROLES ===== -->
+            <div class="section" id="description-of-roles">
+                <h2>4. Description of Roles</h2>
+
+                <ol class="steps">
+                    <!-- STEP 1: Review Desk -->
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Review Desk</h4>
+                            <p>The reviewing officer opens the modification application and verifies each selected category for completeness, accuracy, and eligibility. The checklist differs by business type:</p>
+
+                            <div class="tab-group" style="margin-top: 12px;">
+                                <div class="tab-nav">
+                                    <button class="tab-btn active" onclick="switchTab(event, 'review-sole')">Sole Proprietorship</button>
+                                    <button class="tab-btn" onclick="switchTab(event, 'review-company')">Company</button>
+                                </div>
+
+                                <div class="tab-panel active" id="review-sole" data-tab-label="Review — Sole Proprietorship">
+                                    <p style="margin-bottom: 12px;"><strong>General</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Business type confirmed as <strong>Sole Proprietorship</strong></span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Business ID matches the registered entity in the system</span>
+                                        </li>
+                                    </ul>
+                                    <p style="margin: 12px 0 8px;"><strong>If "Name" was selected</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Proposed business name is filled in and availability check was performed</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Name is not already registered by another entity</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Applicant confirmed the name modification</span>
+                                        </li>
+                                    </ul>
+                                    <p style="margin: 12px 0 8px;"><strong>If "Activities" was selected</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>New activities have a valid sector and activity type selected</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Licensing fees are correctly calculated by the system for licensed activities</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Activities marked for closure are existing registered activities</span>
+                                        </li>
+                                    </ul>
+                                    <p style="margin: 12px 0 8px;"><strong>If "Main Office" or "Branches" was selected</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Address, district, and town fields are filled and valid</span>
+                                        </li>
+                                    </ul>
+                                    <div class="note-box" style="margin-top: 12px;">
+                                        <div class="box-label">
+                                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                                            No document uploads
+                                        </div>
+                                        <p style="margin:0;">Sole proprietorship modification files do <strong>not</strong> include document uploads. No identity or corporate documents need to be checked.</p>
+                                    </div>
+                                </div>
+
+                                <div class="tab-panel" id="review-company" data-tab-label="Review — Company">
+                                    <p style="margin-bottom: 12px;"><strong>General</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Business type confirmed as <strong>Company</strong></span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Business ID matches the registered company in the system</span>
+                                        </li>
+                                    </ul>
+                                    <p style="margin: 12px 0 8px;"><strong>If "Name" was selected</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Proposed company name filled, availability check performed, name is available</span>
+                                        </li>
+                                    </ul>
+                                    <p style="margin: 12px 0 8px;"><strong>If "Activities" was selected</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>New activities have valid sector and activity type; licensing fees correctly calculated</span>
+                                        </li>
+                                    </ul>
+                                    <p style="margin: 12px 0 8px;"><strong>If "Capital" was selected</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Modified capital amount is filled</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Number of ordinary shares × value per share = declared capital (system validates this)</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Preferred share classes, if present, are complete (class name, number, value)</span>
+                                        </li>
+                                    </ul>
+                                    <p style="margin: 12px 0 8px;"><strong>If "Shareholders" was selected</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Personal details complete for each new/modified natural person shareholder</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>ID Document uploaded for each new/modified shareholder — legible, not expired</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>For legal entity shareholders: corporate registration document uploaded</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Total value of final shareholders' holdings equals the declared capital</span>
+                                        </li>
+                                    </ul>
+                                    <p style="margin: 12px 0 8px;"><strong>If "Managers" was selected</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Personal details complete for each new/modified manager</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>ID Document uploaded for each new/modified manager — legible, not expired</span>
+                                        </li>
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>Role and mandate type assigned to each manager</span>
+                                        </li>
+                                    </ul>
+                                    <p style="margin: 12px 0 8px;"><strong>If "Company Type" was selected</strong></p>
+                                    <ul class="checklist">
+                                        <li>
+                                            <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#2B2A65"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                                            <span>New company type selected and is a valid conversion from the current type</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <p style="margin-top: 16px;">If anything is missing or incorrect, use <strong>SEND BACK TO CORRECTIONS</strong> with a clear note specifying which modification category has an issue and what needs to be corrected. Only use <strong>FILE REJECT</strong> for cases that cannot be corrected (e.g. fraudulent documents or modification not permitted by law).</p>
+                        </div>
+                    </li>
+
+                    <!-- STEP 2: Approval Desk -->
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Approval Desk</h4>
+                            <p>The approving officer performs a final check on the reviewed application before giving sign-off. This is typically a senior officer or supervisor. The approver confirms that:</p>
+                            <ul>
+                                <li>The Review Desk officer has correctly checked all selected modification categories</li>
+                                <li>All documents are present and verified (company files)</li>
+                                <li>The proposed modifications are lawful and consistent with the company's registered information</li>
+                                <li>Any fees have been paid in full</li>
+                            </ul>
+                            <p>If satisfied, set the status to <strong>FILE VALIDATED</strong>. This triggers the MODIFICATION Update bot immediately. If there are concerns, use <strong>FILE REJECT</strong> with a written justification, or return to the Review Desk for re-examination.</p>
+                        </div>
+                    </li>
+
+                    <!-- STEP 3: MODIFICATION Update Bot -->
+                    <li class="step">
+                        <div class="step-number bot">3</div>
+                        <div class="step-content">
+                            <h4>MODIFICATION Update Bot</h4>
+                            <p>This bot runs automatically after the Approval Desk validates the file. It applies all approved modifications to the business or company record in the OBFC national registry database:</p>
+                            <ul>
+                                <li><strong>Name:</strong> Updates the business/company name in the registry</li>
+                                <li><strong>Activities:</strong> Adds new activities, removes discontinued ones, updates trading names per activity</li>
+                                <li><strong>Main Office / Branches:</strong> Updates address, district, town, and contact details</li>
+                                <li><strong>Capital:</strong> Updates declared capital, share structure, and preferred share classes</li>
+                                <li><strong>Shareholders:</strong> Adds new shareholders, modifies or removes existing ones with updated shareholdings</li>
+                                <li><strong>Managers:</strong> Adds new managers, modifies or removes existing ones with updated roles</li>
+                                <li><strong>Company Type:</strong> Updates the legal classification of the company</li>
+                            </ul>
+                            <p>No officer action is required. Monitor the status in the back-office portal. If the bot fails, see troubleshooting steps in Section 3 or Section 5.</p>
+                        </div>
+                    </li>
+
+                    <!-- STEP 4: MODIFICATION Upload Bot -->
+                    <li class="step">
+                        <div class="step-number bot">4</div>
+                        <div class="step-content">
+                            <h4>MODIFICATION Upload Bot</h4>
+                            <p>Once the MODIFICATION Update bot completes successfully, this bot generates an updated registration certificate PDF and uploads it to the citizen's eRegistrations account dashboard. The certificate reflects all approved modifications.</p>
+                            <p>The citizen receives an email notification that the updated certificate is ready for download. No officer action is required. If this bot fails after the Update bot has succeeded, retry first before escalating.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- ===== 5. ASSISTANCE ===== -->
+            <div class="section" id="assistance">
+                <h2>5. Assistance</h2>
+
+                <h3>Common Issues</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr><th>Issue</th><th>Likely Cause</th><th>Recommended Action</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Proposed business name shown as available in form but now conflicts with another registration</td>
+                            <td>A concurrent application registered the same name between the applicant's check and the review</td>
+                            <td>Send back to corrections asking the applicant to propose a different name and run the availability check again</td>
+                        </tr>
+                        <tr>
+                            <td>Capital declared does not match total of shareholders' holdings</td>
+                            <td>Applicant modified capital without updating shareholders, or entered incorrect share values</td>
+                            <td>Send back to corrections specifying that the capital total must equal the sum of all shareholders' share values</td>
+                        </tr>
+                        <tr>
+                            <td>Uploaded ID document is unreadable, expired, or incorrect file</td>
+                            <td>Poor scan quality, wrong file, or expired document uploaded</td>
+                            <td>Send back to corrections specifying which document (shareholder or manager) needs to be re-uploaded and why</td>
+                        </tr>
+                        <tr>
+                            <td>Applicant selected an activity that does not match the company's permitted sectors</td>
+                            <td>Incorrect sector or activity type selected</td>
+                            <td>Send back to corrections with a note identifying the incorrect activity and the correct sector to use</td>
+                        </tr>
+                        <tr>
+                            <td>Payment confirmed but licensing fee shows as unpaid</td>
+                            <td>Payment gateway delay</td>
+                            <td>Wait up to 1 hour for the payment to synchronise. If still unresolved, verify payment with the finance team and confirm manually if appropriate.</td>
+                        </tr>
+                        <tr>
+                            <td>MODIFICATION Update bot failed — "Business ID not found"</td>
+                            <td>Business record may have been corrupted or the Business ID was incorrectly retrieved</td>
+                            <td>Contact the database administrator to verify the record. Do not retry without confirmation.</td>
+                        </tr>
+                        <tr>
+                            <td>MODIFICATION Update bot failed — "Capital mismatch"</td>
+                            <td>The capital and shareholders' share values do not reconcile in the registry</td>
+                            <td>Review the capital and shareholders sections; send back to corrections if a data inconsistency exists</td>
+                        </tr>
+                        <tr>
+                            <td>MODIFICATION Upload bot failed — certificate not generated</td>
+                            <td>Template error or missing data from the Update bot</td>
+                            <td>Confirm the Update bot completed successfully first. Then retry the Upload bot. If it still fails, contact IT Support with the full error log.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Support Contacts</h3>
+                <table class="field-table">
+                    <thead>
+                        <tr><th>Issue Type</th><th>Contact</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>System / bot failures</td>
+                            <td>OBFC IT Support</td>
+                        </tr>
+                        <tr>
+                            <td>Registry / business record data errors</td>
+                            <td>OBFC Database Administrator</td>
+                        </tr>
+                        <tr>
+                            <td>Payment discrepancies</td>
+                            <td>OBFC Finance Team</td>
+                        </tr>
+                        <tr>
+                            <td>Legal queries on permitted modifications</td>
+                            <td>OBFC Legal / Compliance Team</td>
+                        </tr>
+                        <tr>
+                            <td>Applicant disputes or complaints</td>
+                            <td>OBFC Customer Relations</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h5>Lesotho OBFC</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>This Service</h5>
+                    <ul class="footer-links">
+                        <li><a href="update-business-data.html">Part A &mdash; Citizen Manual</a></li>
+                        <li><a href="update-business-data-part-b.html">Part B &mdash; Processing Manual</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>All Manuals</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Lesotho Manual Catalog</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                Update Your Business Data &mdash; Processing Manual (Part B) &mdash; Version 1.0 &mdash; Created April 2026 &nbsp;|&nbsp;
+                &copy; 2026 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         TAB SWITCHING SCRIPT
+         ============================================================ -->
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
