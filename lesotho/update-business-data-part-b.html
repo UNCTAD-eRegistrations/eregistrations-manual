@@ -111,16 +111,16 @@
 
         .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
 
-        .hero-description { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 560px; }
+        .hero-description { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 56px; max-width: 560px; }
 
         .btn-primary { background: #4CAF74; color: #FFFFFF; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; border: none; cursor: pointer; }
         .btn-primary:hover { background: #3d9461; color: #FFFFFF; text-decoration: none; transform: translateY(-1px); }
 
-        .hero-image { flex-shrink: 0; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .hero-image { flex-shrink: 0; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
 
-        .hero-icon-circle { width: 180px; height: 180px; border-radius: 50%; background: rgba(76,175,116,0.15); border: 2px solid rgba(76,175,116,0.3); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle { width: 200px; height: 200px; border-radius: 50%; background: rgba(76,175,116,0.15); border: 2px solid rgba(76,175,116,0.3); display: flex; align-items: center; justify-content: center; }
 
-        .hero-icon-circle svg { width: 72px; height: 72px; fill: none; stroke: #4CAF74; stroke-width: 1.5; }
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: #4CAF74; stroke-width: 1.5; }
 
         /* ============================================================
            TABLE OF CONTENTS
@@ -128,30 +128,30 @@
         .toc { background: #F5F5F7; padding: 40px 0; border-bottom: 1px solid #E5E7EB; }
         .toc h2 { font-size: 24px; margin-bottom: 20px; }
 
-        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
 
-        .toc-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 15px; }
-        .toc-item:hover { border-color: #4CAF74; box-shadow: 0 2px 6px rgba(76,175,116,0.12); text-decoration: none; color: #1F2128; }
+        .toc-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 10px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 16px; }
+        .toc-item:hover { border-color: #4CAF74; box-shadow: 0 2px 8px rgba(76,175,116,0.12); text-decoration: none; color: #1F2128; }
 
-        .toc-number { width: 28px; height: 28px; border-radius: 50%; background: #2B2A65; color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
+        .toc-number { width: 32px; height: 32px; border-radius: 50%; background: #4CAF74; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
 
         .toc-label { flex: 1; line-height: 1.4; }
 
         /* ============================================================
            MANUAL CONTENT
            ============================================================ */
-        .manual-content { padding: 48px 0 72px; }
-        .section { margin-bottom: 52px; scroll-margin-top: 100px; }
+        .manual-content { padding: 56px 0 80px; }
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
 
-        .section > h2 { font-size: 28px; font-weight: 600; padding-left: 16px; border-left: 4px solid #4CAF74; margin-bottom: 20px; line-height: 1.3; }
-        .section > h3 { font-size: 20px; font-weight: 600; margin-top: 28px; margin-bottom: 14px; }
+        .section > h2 { font-size: 28px; font-weight: 600; padding-left: 18px; border-left: 4px solid #4CAF74; margin-bottom: 20px; line-height: 1.3; }
+        .section > h3 { font-size: 21px; font-weight: 600; margin-top: 28px; margin-bottom: 14px; }
         .section > h4 { font-size: 17px; font-weight: 600; margin-top: 20px; margin-bottom: 10px; }
         .section > p, .section > ul, .section > ol { margin-bottom: 14px; }
         .section ul, .section ol { padding-left: 22px; }
         .section li { margin-bottom: 6px; }
 
         /* --- Info / Warning / Note Boxes --- */
-        .info-box, .warning-box, .note-box { padding: 16px 20px; border-radius: 8px; margin: 20px 0; font-size: 15px; line-height: 1.6; }
+        .info-box, .warning-box, .note-box, .success-box { padding: 18px 22px; border-radius: 10px; margin: 20px 0; font-size: 15px; line-height: 1.6; }
         .info-box { background: #F5F5F7; border-left: 4px solid #4CAF74; }
         .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
         .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
@@ -160,13 +160,15 @@
         .info-box .box-label { color: #4CAF74; }
         .warning-box .box-label { color: #D4891A; }
         .note-box .box-label { color: #4A90D9; }
+        .success-box { background: #F0FDF4; border-left: 4px solid #4CAF74; }
+        .success-box .box-label { color: #16A34A; }
         .box-label svg { width: 16px; height: 16px; flex-shrink: 0; }
 
         /* --- Field Table --- */
-        .field-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; font-size: 14px; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; }
+        .field-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; font-size: 14px; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; }
         .field-table thead { background: #2B2A65; color: #FFFFFF; }
         .field-table th { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 14px; text-align: left; white-space: nowrap; }
-        .field-table td { padding: 10px 14px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
+        .field-table td { padding: 11px 14px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
         .field-table tbody tr:last-child td { border-bottom: none; }
         .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
         .field-table tbody tr:hover { background: #F5F5F7; }
@@ -211,21 +213,23 @@
         .step-content li { font-size: 15px; margin-bottom: 3px; }
 
         /* --- Workflow bar --- */
-        .workflow-steps { display: flex; align-items: flex-start; gap: 0; margin: 28px 0; flex-wrap: wrap; }
+        .workflow-steps { display: flex; align-items: flex-start; gap: 0; overflow-x: auto; padding-bottom: 8px; margin-top: 32px; }
 
-        .wf-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; min-width: 100px; position: relative; }
+        .wf-step { flex: 1; min-width: 140px; text-align: center; position: relative; }
 
-        .wf-step:not(:last-child)::after { content: ""; position: absolute; top: 22px; right: -1px; width: 50%; height: 3px; background: #E5E7EB; z-index: 0; }
-        .wf-step:not(:first-child)::before { content: ""; position: absolute; top: 22px; left: -1px; width: 50%; height: 3px; background: #E5E7EB; z-index: 0; }
+        .wf-step::after { content: ""; position: absolute; top: 28px; right: -1px; width: 50%; height: 3px; background: #E5E7EB; z-index: 0; }
+        .wf-step::before { content: ""; position: absolute; top: 28px; left: 0; width: 50%; height: 3px; background: #E5E7EB; z-index: 0; }
+        .wf-step:first-child::before { display: none; }
+        .wf-step:last-child::after { display: none; }
 
-        .wf-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
-        .wf-dot svg { width: 22px; height: 22px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
+        .wf-dot { width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; position: relative; z-index: 1; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 18px; color: #FFFFFF; }
+        .wf-dot svg { width: 24px; height: 24px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
         .wf-dot.applicant { background: #4CAF74; }
         .wf-dot.officer { background: #2B2A65; }
-        .wf-dot.bot { background: #7C3AED; }
+        .wf-dot.bot { background: #F5A623; }
 
-        .wf-label { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; color: #1F2128; text-align: center; }
-        .wf-sublabel { font-size: 11px; color: #888; text-align: center; line-height: 1.4; }
+        .wf-label { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; color: #1F2128; margin-bottom: 4px; }
+        .wf-sublabel { font-size: 12px; color: #888; line-height: 1.4; }
 
         /* --- Timeline --- */
         .timeline { position: relative; margin: 28px 0; padding-left: 36px; }
@@ -316,19 +320,6 @@
             </nav>
         </div>
     </header>
-
-    <!-- ============================================================
-         OFFICER NOTICE BANNER
-         ============================================================ -->
-    <div class="officer-banner">
-        <div class="officer-banner-inner">
-            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-            <strong>For internal use only.</strong>&nbsp; This manual is intended for OBFC government officers processing business modification applications in the back-office portal.
-        </div>
-    </div>
 
     <!-- ============================================================
          BREADCRUMB
@@ -919,30 +910,31 @@
         <div class="container">
             <div class="footer-inner">
                 <div class="footer-col">
-                    <h5>Lesotho OBFC</h5>
-                    <ul class="footer-links">
-                        <li><a href="https://lesotho.eregistrations.dev/">Home</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/about/">About OBFC</a></li>
-                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>This Service</h5>
+                    <h5>Update Your Business Data</h5>
                     <ul class="footer-links">
                         <li><a href="update-business-data.html">Part A &mdash; Citizen Manual</a></li>
                         <li><a href="update-business-data-part-b.html">Part B &mdash; Processing Manual</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>All Manuals</h5>
+                    <h5>Other Manuals</h5>
                     <ul class="footer-links">
-                        <li><a href="index.html">Lesotho Manual Catalog</a></li>
+                        <li><a href="register-business.html">Register a Business</a></li>
+                        <li><a href="renew-close-license.html">Renew or Close a Licence</a></li>
+                        <li><a href="index.html">All Manuals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Back-Office Portal</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://services.businessregistrations.gov.ls/" target="_blank">DS Portal Login</a></li>
+                        <li><a href="https://lesotho.eregistrations.dev/help/">Help &amp; Support</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-copyright">
                 Update Your Business Data &mdash; Processing Manual (Part B) &mdash; Version 1.0 &mdash; Created April 2026 &nbsp;|&nbsp;
-                &copy; 2026 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. All rights reserved.
+                &copy; 2025&ndash;2026 One Business Facilitation Centre (OBFC), Kingdom of Lesotho. For internal use only.
             </div>
         </div>
     </footer>
