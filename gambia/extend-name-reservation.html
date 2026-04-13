@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extend a Name Reservation - User Manual | Gambia Easy Business</title>
+    <meta name="description" content="Step-by-step citizen guide for extending a business name reservation on the Gambia Easy Business eRegistrations platform. Keep your reserved name before it expires.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           GAMBIA eREGISTRATIONS — USER MANUAL
+           Service: Extend a Name Reservation
+           Version: v1.0
+           Updated: April 2026
+           ============================================================ */
+
+        /* --- Reset & Base --- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.7; color: #555866; background: #FFFFFF; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: #3464B0; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #2a5290; text-decoration: underline; }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+
+        /* --- Layout --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header { background: #3464B0; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .header-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .header-logo { height: 48px; width: auto; flex-shrink: 0; }
+        .header-brand-text { display: flex; flex-direction: column; }
+        .header-brand-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; line-height: 1.2; }
+        .header-brand-subtitle { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px; text-transform: uppercase; font-weight: 400; }
+        .header-nav { display: flex; align-items: center; gap: 32px; }
+        .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; text-decoration: none; white-space: nowrap; transition: opacity 0.2s ease; }
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+        .btn-login { background: #FFFFFF; color: #3464B0 !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #EEF2FF; text-decoration: none !important; }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 14px 0; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #888; flex-wrap: wrap; }
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+        .breadcrumb-list li + li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-top: 1.5px solid #aaa; border-right: 1.5px solid #aaa; transform: rotate(45deg); flex-shrink: 0; }
+        .breadcrumb-list a { color: #3464B0; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           HERO
+           ============================================================ */
+        .hero { background: #3464B0; color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
+        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.06) 0%, transparent 70%); pointer-events: none; }
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.8); margin-bottom: 12px; display: block; }
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+        .hero-description { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 560px; }
+        .btn-primary { background: #FFFFFF; color: #0C1A3D; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; border: none; cursor: pointer; }
+        .btn-primary:hover { background: rgba(255,255,255,0.88); color: #0C1A3D; text-decoration: none; transform: translateY(-1px); }
+        .hero-image { flex-shrink: 0; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .hero-icon-circle { width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: rgba(255,255,255,0.85); stroke-width: 1.5; }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc { background: #F5F5F7; padding: 48px 0; border-bottom: 1px solid #E5E7EB; }
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+        .toc-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 10px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 16px; }
+        .toc-item:hover { border-color: #3464B0; box-shadow: 0 2px 8px rgba(52,100,176,0.12); text-decoration: none; color: #1F2128; }
+        .toc-number { width: 32px; height: 32px; border-radius: 50%; background: #3464B0; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
+        .section > h2 { font-size: 32px; font-weight: 600; padding-left: 20px; border-left: 4px solid #3464B0; margin-bottom: 24px; line-height: 1.3; }
+        .section > h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; }
+        .section > h4 { font-size: 20px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* --- Info/Warning/Tip Boxes --- */
+        .info-box, .warning-box, .tip-box, .success-box { border-radius: 10px; padding: 16px 20px; margin: 20px 0; display: flex; gap: 14px; align-items: flex-start; }
+        .info-box { background: #EFF6FF; border: 1px solid #BFDBFE; }
+        .info-box .box-icon { color: #2563EB; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .warning-box { background: #FFFBEB; border: 1px solid #FCD34D; }
+        .warning-box .box-icon { color: #D97706; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .tip-box { background: #F0FDF4; border: 1px solid #BBF7D0; }
+        .tip-box .box-icon { color: #16A34A; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .success-box { background: #F0FDF4; border: 1px solid #86EFAC; }
+        .success-box .box-icon { color: #15803D; font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+        .box-body { flex: 1; font-size: 16px; line-height: 1.6; }
+        .box-body strong { display: block; margin-bottom: 4px; font-size: 15px; }
+        .box-body p { margin-bottom: 0; }
+
+        /* --- Checklist --- */
+        .checklist { list-style: none; padding: 0; margin: 16px 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid #F3F4F6; font-size: 16px; }
+        .checklist li:last-child { border-bottom: none; }
+        .check-icon { width: 22px; height: 22px; border-radius: 50%; background: #3464B0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+
+        /* --- Field Table --- */
+        .field-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
+        .field-table th { background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px; padding: 12px 16px; text-align: left; }
+        .field-table td { padding: 12px 16px; border-bottom: 1px solid #E5E7EB; vertical-align: top; }
+        .field-table tr:nth-child(even) td { background: #F9FAFB; }
+        .field-table tr:hover td { background: #EFF6FF; }
+        .req-badge { display: inline-block; padding: 2px 8px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+        .req-badge.required { background: #FEE2E2; color: #DC2626; }
+        .req-badge.optional { background: #F3F4F6; color: #6B7280; }
+        .req-badge.readonly { background: #EFF6FF; color: #3464B0; }
+
+        /* --- Timeline --- */
+        .timeline { list-style: none; padding: 0; margin: 24px 0; position: relative; }
+        .timeline::before { content: ""; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px; background: #E5E7EB; }
+        .timeline-item { display: flex; gap: 20px; padding: 8px 0 24px; position: relative; }
+        .timeline-dot { width: 40px; height: 40px; border-radius: 50%; background: #3464B0; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; flex-shrink: 0; position: relative; z-index: 1; }
+        .timeline-dot.bot { background: #0F766E; }
+        .timeline-body { flex: 1; padding-top: 8px; }
+        .timeline-body h5 { font-size: 17px; margin-bottom: 4px; }
+        .timeline-body p { font-size: 15px; color: #555866; margin-bottom: 0; }
+
+        /* --- FAQ --- */
+        .faq-item { border: 1px solid #E5E7EB; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+        .faq-q { background: #F5F5F7; padding: 16px 20px; font-weight: 600; font-size: 16px; color: #1F2128; font-family: 'Poppins', sans-serif; cursor: default; }
+        .faq-a { padding: 16px 20px; font-size: 15px; line-height: 1.7; border-top: 1px solid #E5E7EB; background: #FFFFFF; }
+        .faq-a p { margin-bottom: 0; }
+
+        /* --- Costs Table --- */
+        .costs-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 16px; }
+        .costs-table th { background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px; padding: 14px 20px; text-align: left; }
+        .costs-table td { padding: 14px 20px; border-bottom: 1px solid #E5E7EB; vertical-align: middle; }
+        .costs-table tr:nth-child(even) td { background: #F9FAFB; }
+        .costs-total td { font-weight: 700; color: #1F2128; font-size: 17px; background: #EFF6FF !important; border-top: 2px solid #3464B0; }
+
+        /* --- Process Stages --- */
+        .process-stages { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 24px 0; }
+        .stage-card { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 20px 16px; text-align: center; }
+        .stage-icon { width: 48px; height: 48px; border-radius: 50%; background: #EFF6FF; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
+        .stage-icon svg { width: 24px; height: 24px; fill: none; stroke: #3464B0; stroke-width: 1.8; }
+        .stage-label { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; color: #1F2128; margin-bottom: 4px; }
+        .stage-time { font-size: 12px; color: #555866; }
+
+        /* ============================================================
+           FORM MOCKUPS
+           ============================================================ */
+        .form-mockup { border: 1px solid #E0E0E0; border-radius: 12px; overflow: hidden; margin: 24px 0 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .form-mockup-bar { background: #3464B0; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
+        .form-mockup-bar .bar-title { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 15px; }
+        .form-mockup-tabs { background: #F5F5F7; border-bottom: 1px solid #E0E0E0; padding: 0 20px; display: flex; gap: 4px; overflow-x: auto; }
+        .mtab { padding: 10px 18px; font-size: 14px; color: #555866; cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap; font-family: 'Poppins', sans-serif; }
+        .mtab.active { color: #3464B0; border-bottom-color: #3464B0; font-weight: 600; }
+        .form-mockup-body { padding: 24px 20px; background: #FFFFFF; }
+        .mock-field { margin-bottom: 20px; }
+        .mock-label { font-size: 13px; font-weight: 600; color: #1F2128; margin-bottom: 6px; display: flex; align-items: center; gap: 4px; font-family: 'Poppins', sans-serif; }
+        .mock-required { color: #DC2626; }
+        .mock-input { height: 40px; background: #F9FAFB; border: 1.5px solid #D1D5DB; border-radius: 8px; width: 100%; max-width: 480px; }
+        .mock-input.readonly { background: #F3F4F6; border-color: #E5E7EB; }
+        .mock-hint { font-size: 12px; color: #9CA3AF; margin-top: 4px; }
+        .mock-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .mock-cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .mock-section-title { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; color: #1F2128; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #E5E7EB; }
+        .mock-select { height: 40px; background: #F9FAFB; border: 1.5px solid #D1D5DB; border-radius: 8px; display: flex; align-items: center; padding: 0 12px; font-size: 14px; color: #9CA3AF; max-width: 480px; }
+        .mock-radio { display: flex; flex-direction: column; gap: 10px; }
+        .mock-radio-option { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #555866; }
+        .mock-radio-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #D1D5DB; flex-shrink: 0; margin-top: 2px; }
+        .mock-radio-dot.selected { border-color: #3464B0; background: #3464B0; box-shadow: inset 0 0 0 3px #FFFFFF; }
+        .mock-checkbox { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #555866; padding: 12px 16px; background: #F9FAFB; border: 1.5px solid #D1D5DB; border-radius: 8px; }
+        .mock-checkbox-box { width: 18px; height: 18px; border: 2px solid #3464B0; border-radius: 4px; background: #3464B0; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 11px; }
+        .mock-button { display: inline-flex; align-items: center; gap: 8px; background: #3464B0; color: #FFFFFF; padding: 10px 24px; border-radius: 9999px; font-size: 14px; font-weight: 600; font-family: 'Poppins', sans-serif; margin-top: 8px; }
+        .mock-file { height: 80px; background: #F9FAFB; border: 2px dashed #D1D5DB; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #9CA3AF; max-width: 480px; }
+        .mock-fee-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #F3F4F6; font-size: 15px; }
+        .mock-fee-row:last-child { border-bottom: none; font-weight: 700; color: #1F2128; padding-top: 14px; }
+        .mock-fee-label { color: #555866; }
+        .mock-fee-amount { font-family: 'Poppins', sans-serif; font-weight: 600; color: #1F2128; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .manual-version { text-align: center; padding: 24px; font-size: 12px; color: #9CA3AF; border-top: 1px solid #E5E7EB; }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            .hero h1 { font-size: 28px; }
+            .hero-image { display: none; }
+            .hero-inner { flex-direction: column; gap: 24px; }
+            .header-nav { display: none; }
+            .mock-cols, .mock-cols-3 { grid-template-columns: 1fr; }
+            .costs-table, .field-table { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================================ HEADER ============================================================ -->
+<header class="site-header">
+    <div class="header-inner">
+        <a href="https://easybusiness.gov.gm/" class="header-brand">
+            <img src="gambia-logo.png" alt="Gambia Coat of Arms" class="header-logo">
+            <div class="header-brand-text">
+                <span class="header-brand-title">Gambia Easy Business</span>
+                <span class="header-brand-subtitle">Republic of The Gambia</span>
+            </div>
+        </a>
+        <nav class="header-nav">
+            <a href="https://easybusiness.gov.gm/about/">About</a>
+            <a href="https://easybusiness.gov.gm/help/">Help &amp; Support</a>
+            <a href="https://services.easybusiness.gov.gm/" class="btn-login">Login | Register</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ============================================================ BREADCRUMB ============================================================ -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb-list">
+            <li><a href="https://easybusiness.gov.gm/">Home</a></li>
+            <li><a href="../gambia/">Gambia Manuals</a></li>
+            <li><span class="current">Extend a Name Reservation</span></li>
+        </ol>
+    </div>
+</nav>
+
+<!-- ============================================================ HERO ============================================================ -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-label">Citizen Service Guide</span>
+                <h1>Extend a Name Reservation</h1>
+                <p class="hero-description">Keep your reserved business name secured beyond its initial expiry date. This guide walks you through the online extension process — from confirming your reservation details to receiving your updated certificate.</p>
+                <a href="https://services.easybusiness.gov.gm/" class="btn-primary">Extend your reservation &#8594;</a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-icon-circle">
+                    <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="12" y="10" width="44" height="52" rx="4"/>
+                        <line x1="20" y1="24" x2="48" y2="24"/>
+                        <line x1="20" y1="34" x2="48" y2="34"/>
+                        <line x1="20" y1="44" x2="36" y2="44"/>
+                        <circle cx="54" cy="56" r="14"/>
+                        <line x1="54" y1="49" x2="54" y2="56"/>
+                        <line x1="54" y1="56" x2="59" y2="56"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ TABLE OF CONTENTS ============================================================ -->
+<section class="toc">
+    <div class="container">
+        <h2>In This Guide</h2>
+        <div class="toc-grid">
+            <a href="#introduction" class="toc-item"><span class="toc-number">1</span><span class="toc-label">Introduction</span></a>
+            <a href="#before-you-begin" class="toc-item"><span class="toc-number">2</span><span class="toc-label">Before You Begin</span></a>
+            <a href="#step1" class="toc-item"><span class="toc-number">3</span><span class="toc-label">Step 1 — Your Reservation Details</span></a>
+            <a href="#step2" class="toc-item"><span class="toc-number">4</span><span class="toc-label">Step 2 — Payment</span></a>
+            <a href="#step3" class="toc-item"><span class="toc-number">5</span><span class="toc-label">Step 3 — Submit Your Application</span></a>
+            <a href="#after-submission" class="toc-item"><span class="toc-number">6</span><span class="toc-label">After Submission</span></a>
+            <a href="#processing-timeline" class="toc-item"><span class="toc-number">7</span><span class="toc-label">Processing Timeline</span></a>
+            <a href="#costs" class="toc-item"><span class="toc-number">8</span><span class="toc-label">Costs &amp; Fees</span></a>
+            <a href="#faq" class="toc-item"><span class="toc-number">9</span><span class="toc-label">Frequently Asked Questions</span></a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================ MANUAL CONTENT ============================================================ -->
+<main class="manual-content">
+    <div class="container">
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <section id="introduction" class="section">
+            <h2>Introduction</h2>
+            <p>When you reserve a business name in The Gambia, the reservation is valid for a limited period. If you have not yet completed your full business registration before the reservation expires, you can apply to <strong>extend the name reservation</strong> to give yourself more time.</p>
+            <p>The extension process is entirely online via the <a href="https://services.easybusiness.gov.gm/" target="_blank" rel="noopener">Gambia Easy Business portal</a>. Because your reservation details are already on file, the form is mostly pre-filled — you simply confirm the information, pay the extension fee, and submit. The system will issue an updated reservation certificate once your application is processed.</p>
+
+            <div class="info-box">
+                <span class="box-icon">&#9432;</span>
+                <div class="box-body">
+                    <strong>Who can use this service?</strong>
+                    <p>Only the registered owner of the name reservation can extend it. You must be logged in to the Easy Business portal with the account that holds the reservation. If you are not the owner, you will not be able to proceed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: BEFORE YOU BEGIN -->
+        <section id="before-you-begin" class="section">
+            <h2>Before You Begin</h2>
+            <p>The extension process is straightforward. Before you start, make sure you have the following ready:</p>
+
+            <ul class="checklist">
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>Your Easy Business account</strong> — you must be logged in. The system verifies that you are the owner of the reservation before allowing any action.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>Your existing name reservation</strong> — the reservation must be active (not yet expired or cancelled). You can check your reservation status by logging in and viewing your applications dashboard.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">&#10003;</span>
+                    <div>
+                        <strong>Proof of payment</strong> — a scanned copy or photograph (PDF, JPG, JPEG, PNG, or BMP) of your payment receipt for the extension fee. You will need to upload this during the payment step.
+                    </div>
+                </li>
+            </ul>
+
+            <div class="warning-box">
+                <span class="box-icon">&#9888;</span>
+                <div class="box-body">
+                    <strong>Apply before your reservation expires</strong>
+                    <p>Do not wait until after the expiry date. Once a reservation expires, you may no longer be able to extend it and would need to submit a new reservation application — and the name may have been taken by someone else in the meantime. Apply for an extension as soon as you know you will need more time.</p>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="box-icon">&#9654;</span>
+                <div class="box-body">
+                    <strong>Tip: Log in before you start</strong>
+                    <p>Go to <a href="https://services.easybusiness.gov.gm/" target="_blank" rel="noopener">services.easybusiness.gov.gm</a>, log in to your account, and navigate to the "Extend a Name Reservation" service. If you are not logged in, the system will redirect you to the login page.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: STEP 1 - RESERVATION DETAILS -->
+        <section id="step1" class="section">
+            <h2>Step 1 — Your Reservation Details</h2>
+            <p>Once you open the service, the form displays the details of your existing name reservation. All fields on this page are pre-filled by the system from your reservation record — you do not need to type anything. Review them carefully to confirm you are extending the correct reservation.</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar">
+                    <span class="bar-title">Extend a Name Reservation — Reservation Details</span>
+                </div>
+                <div class="form-mockup-tabs">
+                    <span class="mtab active">Reservation Details</span>
+                    <span class="mtab">Payment</span>
+                    <span class="mtab">Submit</span>
+                </div>
+                <div class="form-mockup-body">
+                    <div class="mock-section-title">Current Reservation</div>
+
+                    <div class="mock-cols-3">
+                        <div class="mock-field">
+                            <div class="mock-label">Business name</div>
+                            <div class="mock-input readonly"></div>
+                            <div class="mock-hint">Pre-filled — read only</div>
+                        </div>
+                        <div class="mock-field">
+                            <div class="mock-label">Reservation N°</div>
+                            <div class="mock-input readonly"></div>
+                            <div class="mock-hint">Pre-filled — read only</div>
+                        </div>
+                        <div class="mock-field">
+                            <div class="mock-label">Expiry date</div>
+                            <div class="mock-input readonly"></div>
+                            <div class="mock-hint">Current expiry — read only</div>
+                        </div>
+                    </div>
+
+                    <div class="mock-section-title" style="margin-top: 8px;">After Extension</div>
+
+                    <div class="mock-field">
+                        <div class="mock-label">New expiry date</div>
+                        <div class="mock-input readonly" style="max-width: 320px;"></div>
+                        <div class="mock-hint">Calculated automatically — read only</div>
+                    </div>
+
+                    <div class="mock-field" style="margin-top: 24px;">
+                        <div class="mock-checkbox">
+                            <div class="mock-checkbox-box">&#10003;</div>
+                            <span>I, <em>[Your Full Name]</em>, confirm the extension of the name reservation. <span style="color: #DC2626;">*</span></span>
+                        </div>
+                    </div>
+
+                    <div class="mock-button">Go to payment &#8594;</div>
+                </div>
+            </div>
+
+            <h3>Field-by-field guide</h3>
+            <table class="field-table">
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>What it shows</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Business name</strong></td>
+                        <td>The business name you previously reserved. This is display-only — you cannot change the name through this form.</td>
+                        <td><span class="req-badge readonly">Read only</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reservation N°</strong></td>
+                        <td>Your unique reservation reference number, issued when the original reservation was approved.</td>
+                        <td><span class="req-badge readonly">Read only</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Expiry date</strong></td>
+                        <td>The current expiry date of your reservation — the date by which you must register the business or extend the reservation.</td>
+                        <td><span class="req-badge readonly">Read only</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>New expiry date</strong></td>
+                        <td>The new expiry date that will apply once the extension is approved. This is calculated automatically by the system based on the standard extension period.</td>
+                        <td><span class="req-badge readonly">Read only</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Confirmation checkbox</strong></td>
+                        <td>A mandatory declaration confirming that you, as the owner, are requesting the extension of this name reservation. Your full legal name is embedded in the checkbox label.</td>
+                        <td><span class="req-badge required">Required</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <span class="box-icon">&#9432;</span>
+                <div class="box-body">
+                    <strong>Nothing looks right?</strong>
+                    <p>If the details shown do not match your reservation, do not proceed. Contact the Business Registry support team via <a href="https://easybusiness.gov.gm/help/" target="_blank" rel="noopener">easybusiness.gov.gm/help</a> before submitting, as errors may be difficult to correct after submission.</p>
+                </div>
+            </div>
+
+            <p>Once you have reviewed the details and checked the confirmation box, click <strong>Go to payment</strong> to proceed to the next step.</p>
+        </section>
+
+        <!-- SECTION 4: STEP 2 - PAYMENT -->
+        <section id="step2" class="section">
+            <h2>Step 2 — Payment</h2>
+            <p>The payment page shows the fee due for the extension of your name reservation. You are required to upload proof that you have paid this fee before your application can be submitted.</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar">
+                    <span class="bar-title">Extend a Name Reservation — Payment</span>
+                </div>
+                <div class="form-mockup-tabs">
+                    <span class="mtab">Reservation Details</span>
+                    <span class="mtab active">Payment</span>
+                    <span class="mtab">Submit</span>
+                </div>
+                <div class="form-mockup-body">
+                    <div class="mock-section-title">Fees Due</div>
+
+                    <div class="mock-fee-row">
+                        <span class="mock-fee-label">Extension of Name Reservation</span>
+                        <span class="mock-fee-amount">See fee schedule</span>
+                    </div>
+                    <div class="mock-fee-row">
+                        <span class="mock-fee-label"><strong>Total to pay</strong></span>
+                        <span class="mock-fee-amount">GMD —</span>
+                    </div>
+
+                    <div class="mock-section-title" style="margin-top: 24px;">Proof of Payment</div>
+
+                    <div class="mock-field">
+                        <div class="mock-label">Payment receipt <span class="mock-required">*</span></div>
+                        <div class="mock-file">&#128206; Click to upload or drag file here<br><span style="font-size: 11px;">PDF, JPG, JPEG, PNG, BMP accepted</span></div>
+                        <div class="mock-hint">Upload a scan or clear photograph of your payment receipt</div>
+                    </div>
+
+                    <div class="mock-button">Go to send page &#8594;</div>
+                </div>
+            </div>
+
+            <h3>How to pay</h3>
+            <p>The extension fee must be paid to the Business Registry before uploading your receipt. Accepted payment methods include:</p>
+            <ul>
+                <li><strong>Bank transfer or counter payment</strong> — pay at your bank or at the Business Registry counter, then scan or photograph the stamped receipt.</li>
+                <li><strong>Digital payment</strong> — if an online payment option is active on the portal, you may be able to pay directly through the system.</li>
+            </ul>
+            <p>For current payment instructions and bank details, visit <a href="https://easybusiness.gov.gm/" target="_blank" rel="noopener">easybusiness.gov.gm</a> or contact the Business Registry.</p>
+
+            <h3>Uploading your payment receipt</h3>
+            <p>Once you have paid, upload your receipt by clicking the upload area or dragging your file onto it. Accepted formats are: <strong>PDF, JPG, JPEG, PNG, BMP</strong>. Make sure the receipt is clearly legible — blurry or cropped images may delay processing.</p>
+
+            <div class="warning-box">
+                <span class="box-icon">&#9888;</span>
+                <div class="box-body">
+                    <strong>The receipt upload is mandatory</strong>
+                    <p>You cannot proceed to the final submission step without uploading a valid proof of payment. Do not upload unrelated documents in this field — it will cause your application to be rejected or sent back for corrections.</p>
+                </div>
+            </div>
+
+            <p>After uploading your receipt, click <strong>Go to send page</strong> to move to the final submission step.</p>
+        </section>
+
+        <!-- SECTION 5: STEP 3 - SUBMIT -->
+        <section id="step3" class="section">
+            <h2>Step 3 — Submit Your Application</h2>
+            <p>The final step before submission asks you to make a formal legal declaration. Read it carefully before ticking the box.</p>
+
+            <div class="form-mockup">
+                <div class="form-mockup-bar">
+                    <span class="bar-title">Extend a Name Reservation — Submit</span>
+                </div>
+                <div class="form-mockup-tabs">
+                    <span class="mtab">Reservation Details</span>
+                    <span class="mtab">Payment</span>
+                    <span class="mtab active">Submit</span>
+                </div>
+                <div class="form-mockup-body">
+                    <div class="mock-section-title">Solemn Declaration</div>
+
+                    <div class="mock-field">
+                        <div class="mock-checkbox">
+                            <div class="mock-checkbox-box">&#10003;</div>
+                            <span>I solemnly declare that the information herein contained is, to the best of my knowledge and belief true and correct. I acknowledge that should the information provided be found to be misleading or false, I may be prosecuted. <span style="color: #DC2626;">*</span></span>
+                        </div>
+                    </div>
+
+                    <div class="mock-button" style="margin-top: 24px;">Submit application &#8594;</div>
+                </div>
+            </div>
+
+            <h3>The solemn declaration</h3>
+            <p>By ticking this box you are making a formal legal declaration that the information you have provided is true and correct to the best of your knowledge. This is a statutory requirement for all applications submitted to the Business Registry.</p>
+
+            <div class="warning-box">
+                <span class="box-icon">&#9888;</span>
+                <div class="box-body">
+                    <strong>This is a legally binding statement</strong>
+                    <p>Providing false or misleading information in a business registration application is an offence under Gambian law. Only tick this box if you are confident all the information in your application is accurate.</p>
+                </div>
+            </div>
+
+            <p>Once you have ticked the declaration box, click <strong>Submit application</strong>. Your application will be sent to the Business Registry for processing. You will receive an email confirmation at the address associated with your account.</p>
+
+            <div class="success-box">
+                <span class="box-icon">&#10003;</span>
+                <div class="box-body">
+                    <strong>Application submitted successfully</strong>
+                    <p>After submission you will see a confirmation screen with your application reference number. Keep this number — it lets you track your application status and contact the Registry if needed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: AFTER SUBMISSION -->
+        <section id="after-submission" class="section">
+            <h2>After Submission</h2>
+            <p>Once your application is submitted, the Business Registry processes it through the following stages. You can track progress at any time by logging in to the Easy Business portal and checking your applications dashboard.</p>
+
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <div class="timeline-dot">1</div>
+                    <div class="timeline-body">
+                        <h5>Payment Verification</h5>
+                        <p>A payment officer confirms receipt and validity of your proof of payment. If you paid online, this step may be handled automatically. If you paid at a counter or by bank transfer, an officer will review and record the payment details. Once confirmed, your file moves to the next stage.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-dot bot">&#9881;</div>
+                    <div class="timeline-body">
+                        <h5>Reservation Extension (Automated)</h5>
+                        <p>The system automatically updates your business name reservation record with the new expiry date. This is performed by an automated bot — no manual intervention is required at this stage.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-dot bot">&#9881;</div>
+                    <div class="timeline-body">
+                        <h5>Certificate Generation (Automated)</h5>
+                        <p>Once the reservation has been updated, the system automatically generates a new Name Reservation Certificate reflecting the extended expiry date.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-dot">&#10003;</div>
+                    <div class="timeline-body">
+                        <h5>Certificate Available</h5>
+                        <p>You will receive an email notification when your updated certificate is ready. Log in to your Easy Business account, open your application, and download the <strong>BNR Certificate</strong> from your file.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="info-box">
+                <span class="box-icon">&#9432;</span>
+                <div class="box-body">
+                    <strong>What if there is a problem?</strong>
+                    <p>If the automated processing encounters an issue, your file may be assigned to a Registry officer for manual review. You may receive a request to provide additional information or to correct your submission. Follow the instructions in the email notification you receive.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: PROCESSING TIMELINE -->
+        <section id="processing-timeline" class="section">
+            <h2>Processing Timeline</h2>
+            <p>The extension of a name reservation is a streamlined process. Most of the processing is automated and happens quickly once payment is verified.</p>
+
+            <div class="process-stages">
+                <div class="stage-card">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="stage-label">Payment Verification</div>
+                    <div class="stage-time">1–2 business days</div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="stage-label">Reservation Update</div>
+                    <div class="stage-time">Automated — minutes</div>
+                </div>
+                <div class="stage-card">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <div class="stage-label">Certificate Issued</div>
+                    <div class="stage-time">Automated — minutes</div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <span class="box-icon">&#9654;</span>
+                <div class="box-body">
+                    <strong>Expected total processing time</strong>
+                    <p>In most cases your extension certificate is available within <strong>1–3 business days</strong> from the date of submission, depending on how quickly your payment is verified. You will be notified by email at each stage.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: COSTS & FEES -->
+        <section id="costs" class="section">
+            <h2>Costs &amp; Fees</h2>
+            <p>A fee is payable for extending a business name reservation. This fee covers the administrative processing of your extension request by the Business Registry.</p>
+
+            <table class="costs-table">
+                <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Extension of Name Reservation</strong></td>
+                        <td>Fee for extending the validity period of an existing business name reservation</td>
+                        <td>Please refer to the current fee schedule on the <a href="https://easybusiness.gov.gm/" target="_blank" rel="noopener">Easy Business portal</a></td>
+                    </tr>
+                    <tr class="costs-total">
+                        <td colspan="2"><strong>Total</strong></td>
+                        <td>As per current fee schedule (GMD)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <span class="box-icon">&#9432;</span>
+                <div class="box-body">
+                    <strong>Where to find the current fee</strong>
+                    <p>The exact fee amount is displayed on the payment page when you open the service online. You can also find the current fee schedule at <a href="https://easybusiness.gov.gm/" target="_blank" rel="noopener">easybusiness.gov.gm</a> or by contacting the Business Registry directly.</p>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <span class="box-icon">&#9888;</span>
+                <div class="box-body">
+                    <strong>Fees are non-refundable</strong>
+                    <p>Once paid, the extension fee is non-refundable, even if your application is subsequently rejected. Make sure your reservation is still active and that you are applying for the correct name before making payment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: FAQ -->
+        <section id="faq" class="section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">My reservation has already expired. Can I still extend it?</div>
+                <div class="faq-a"><p>In most cases, you cannot extend a reservation that has already expired. The system will only display active reservations for extension. If your reservation has expired, you will need to submit a new "Reserve a Business Name" application. There is no guarantee the name will still be available, so act promptly before the expiry date.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">I am the owner of the reservation but I cannot see it in the extension form. What should I do?</div>
+                <div class="faq-a"><p>First, make sure you are logged in with the same account that was used for the original reservation. If you are logged in with the correct account and still cannot see the reservation, contact the Business Registry support team at <a href="https://easybusiness.gov.gm/help/" target="_blank" rel="noopener">easybusiness.gov.gm/help</a> for assistance.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Can I change the business name when extending the reservation?</div>
+                <div class="faq-a"><p>No. The extension service only extends the validity period of your existing name reservation. You cannot change the reserved name through this form. If you wish to reserve a different name, you must submit a new "Reserve a Business Name" application.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How many times can I extend a name reservation?</div>
+                <div class="faq-a"><p>The Business Registry's policy on the maximum number of extensions permitted is subject to change. For the most current policy, visit <a href="https://easybusiness.gov.gm/" target="_blank" rel="noopener">easybusiness.gov.gm</a> or contact the Registry. In general, it is advisable to complete your full business registration rather than repeatedly extending a reservation.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">How long does the extension add to my reservation?</div>
+                <div class="faq-a"><p>The new expiry date is calculated automatically by the system and is shown on the form before you confirm. The system typically extends the reservation by the same period as the original reservation. The exact new expiry date will be displayed in the "New expiry date" field before you submit.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Will I receive a new certificate?</div>
+                <div class="faq-a"><p>Yes. Once your extension is processed, the system automatically generates an updated Name Reservation Certificate (BNR Certificate) reflecting the new expiry date. You can download it from your Easy Business account dashboard when it is ready.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">I uploaded the wrong payment receipt. What can I do?</div>
+                <div class="faq-a"><p>If your application has not yet been processed, contact the Business Registry support team as soon as possible via <a href="https://easybusiness.gov.gm/help/" target="_blank" rel="noopener">easybusiness.gov.gm/help</a>. If a payment officer has already reviewed and rejected your receipt, you may receive a notification to correct and resubmit your proof of payment.</p></div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">Who do I contact if I need help?</div>
+                <div class="faq-a"><p>Visit the Help &amp; Support page at <a href="https://easybusiness.gov.gm/help/" target="_blank" rel="noopener">easybusiness.gov.gm/help</a> for guidance, FAQs, and contact information for the Business Registry support team.</p></div>
+            </div>
+        </section>
+
+    </div><!-- /.container -->
+</main>
+
+<!-- ============================================================ FOOTER ============================================================ -->
+<footer class="manual-version">
+    <p>Manual v1.0 — Generated 2026-04-13 — Source: gambia/776deebb-65fb-0def-f35e-1906f75550b2</p>
+    <p>Generated by /service-manual skill v3.4.0</p>
+</footer>
+
+</body>
+</html>
