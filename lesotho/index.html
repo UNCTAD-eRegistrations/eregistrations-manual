@@ -387,6 +387,40 @@
             text-decoration: none;
         }
 
+        .card-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-self: flex-start;
+        }
+
+        .card-actions .card-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .card-btn-officer {
+            background: #2B2A65;
+        }
+
+        .card-btn-officer:hover {
+            background: #1f1e4d;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .card-btn-disabled {
+            background: #E0E0E0;
+            color: #999 !important;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .card-btn-disabled:hover {
+            background: #E0E0E0;
+            text-decoration: none;
+        }
+
         /* --- Coming Soon Card --- */
         .card.coming-soon {
             background: #F5F5F5;
@@ -783,7 +817,7 @@
                 </svg>
                 <input type="text" id="searchInput" placeholder="Search manuals... e.g. &quot;register company&quot;, &quot;renew licence&quot;" aria-label="Search service manuals" autocomplete="off">
             </div>
-            <p class="search-count" id="searchCount">Showing all 12 manuals</p>
+            <p class="search-count" id="searchCount">Showing all 8 manuals</p>
         </div>
     </section>
 
@@ -800,141 +834,76 @@
 
                 <!-- 1. Register a Business -->
                 <div class="card" data-search="register a business register new business obfc single window sole proprietorship">
-                    <div class="card-icon">&#127970;</div>
                     <h4>Register a Business</h4>
                     <p>Register a new business in Lesotho through the OBFC single window.</p>
-                    <a href="register-business.html" class="card-btn">View Manual &rarr;</a>
+                    <div class="card-actions"><a href="register-business.html" class="card-btn">Applicant &rarr;</a><a href="register-business-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
                 </div>
 
-                <!-- 2. Name Reservation -->
-                <div class="card" data-search="name reservation reserve company name incorporation">
-                    <div class="card-icon">&#128221;</div>
-                    <h4>Name Reservation</h4>
-                    <p>Reserve a company name before incorporation.</p>
-                    <a href="name-reservation.html" class="card-btn">View Manual &rarr;</a>
-                </div>
 
-                <!-- 3. Register a Company -->
-                <div class="card" data-search="register a company incorporate private public company incorporation memorandum">
-                    <div class="card-icon">&#127963;</div>
-                    <h4>Register a Company</h4>
-                    <p>Incorporate a private or public company.</p>
-                    <a href="register-company.html" class="card-btn">View Manual &rarr;</a>
-                </div>
 
-                <!-- 4. Register an External Company -->
-                <div class="card" data-search="register external company foreign company operate lesotho international">
-                    <div class="card-icon">&#127758;</div>
-                    <h4>Register an External Company</h4>
-                    <p>Register a foreign company to operate in Lesotho.</p>
-                    <a href="register-external-company.html" class="card-btn">View Manual &rarr;</a>
-                </div>
 
                 <!-- 5. Verify your Identity -->
                 <div class="card" data-search="verify identity verification business registration services kyc know your customer">
-                    <div class="card-icon">&#128100;</div>
                     <h4>Verify Identity</h4>
                     <p>Verify your identity for business registration services.</p>
-                    <a href="verify-identity.html" class="card-btn">View Manual &rarr;</a>
+                    <div class="card-actions"><a href="verify-identity.html" class="card-btn">Applicant &rarr;</a><span class="card-btn card-btn-officer card-btn-disabled">Officer &rarr;</span></div>
                 </div>
 
                 <!-- 6. Update your Business Data -->
                 <div class="card" data-search="update business data registered information change details address activities">
-                    <div class="card-icon">&#9998;</div>
                     <h4>Update Business Data</h4>
                     <p>Update your registered business information.</p>
-                    <a href="update-business-data.html" class="card-btn">View Manual &rarr;</a>
+                    <div class="card-actions"><a href="update-business-data.html" class="card-btn">Applicant &rarr;</a><a href="update-business-data-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
                 </div>
 
                 <!-- 7. Renew or Close a Business -->
                 <div class="card" data-search="renew close business licences renew licence closure annual renewal">
-                    <div class="card-icon">&#128260;</div>
                     <h4>Renew or Close a Business</h4>
                     <p>Renew licences or close your business.</p>
-                    <a href="renew-close-business.html" class="card-btn">View Manual &rarr;</a>
+                    <div class="card-actions"><a href="renew-close-business.html" class="card-btn">Applicant &rarr;</a><a href="renew-close-business-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
                 </div>
 
                 <!-- 8. Renew or Close a Licence -->
                 <div class="card" data-search="renew close licence specific licence renewal closure trading licence">
-                    <div class="card-icon">&#128196;</div>
                     <h4>Renew or Close a Licence</h4>
                     <p>Renew or close a specific licence.</p>
-                    <a href="renew-close-license.html" class="card-btn">View Manual &rarr;</a>
+                    <div class="card-actions"><a href="renew-close-license.html" class="card-btn">Applicant &rarr;</a><a href="renew-close-license-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
                 </div>
 
                 <!-- 9. File Annual Report -->
                 <div class="card" data-search="annual filing submit company returns annual returns compliance financial statements file annual report">
-                    <div class="card-icon">&#128197;</div>
                     <h4>File Annual Report</h4>
                     <p>Submit your company's annual financial statements and update company records with the Companies Registry.</p>
-                    <a href="file-annual-report.html" class="card-btn">View Manual &rarr;</a>
+                    <div class="card-actions"><a href="file-annual-report.html" class="card-btn">Applicant &rarr;</a><a href="file-annual-report-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
                 </div>
 
-                <!-- 10. Change Financial Year -->
-                <div class="card" data-search="change financial year end date company fiscal year accounting period">
-                    <div class="card-icon">&#128200;</div>
-                    <h4>Change Financial Year</h4>
-                    <p>Change your company's financial year end date.</p>
-                    <a href="change-financial-year.html" class="card-btn">View Manual &rarr;</a>
-                </div>
 
                 <!-- 11. Manage User Rights -->
                 <div class="card" data-search="delegate user rights account access another person permissions representative">
-                    <div class="card-icon">&#128101;</div>
                     <h4>Delegate User Rights</h4>
                     <p>Delegate account access to another person.</p>
-                    <a href="delegate-user-rights.html" class="card-btn">View Manual &rarr;</a>
+                    <div class="card-actions"><a href="delegate-user-rights.html" class="card-btn">Applicant &rarr;</a><span class="card-btn card-btn-officer card-btn-disabled">Officer &rarr;</span></div>
                 </div>
 
                 <!-- 12. My Dashboard -->
                 <div class="card" data-search="my dashboard navigate manage account dashboard overview portal profile applications">
-                    <div class="card-icon">&#128202;</div>
                     <h4>My Dashboard</h4>
                     <p>Navigate and manage your account dashboard.</p>
-                    <a href="my-dashboard.html" class="card-btn">View Manual &rarr;</a>
+                    <a href="my-dashboard.html" class="card-btn">Applicant &rarr;</a>
                 </div>
 
                 <!-- ========== Coming Soon ========== -->
 
-                <!-- CS 1. De-register a Company -->
-                <div class="card coming-soon" data-search="de-register company deregister remove strike off">
-                    <div class="card-icon">&#128683;</div>
-                    <h4>De-register a Company</h4>
-                    <p>Remove a company from the register.</p>
-                    <span class="coming-soon-badge">Coming Soon</span>
-                </div>
 
-                <!-- CS 2. Voluntary Dissolution -->
-                <div class="card coming-soon" data-search="voluntary dissolution dissolve wind up winding">
-                    <div class="card-icon">&#128465;</div>
-                    <h4>Voluntary Dissolution</h4>
-                    <p>Voluntarily dissolve and wind up a company.</p>
-                    <span class="coming-soon-badge">Coming Soon</span>
-                </div>
 
                 <!-- CS 3. Lodge a Merger Document -->
                 <div class="card coming-soon" data-search="lodge merger document merge companies amalgamation">
-                    <div class="card-icon">&#128279;</div>
                     <h4>Lodge a Merger Document</h4>
                     <p>Submit documents for a company merger.</p>
                     <span class="coming-soon-badge">Coming Soon</span>
                 </div>
 
-                <!-- CS 4. Lodge a Conversion Document -->
-                <div class="card coming-soon" data-search="lodge conversion document convert company type">
-                    <div class="card-icon">&#128257;</div>
-                    <h4>Lodge a Conversion Document</h4>
-                    <p>Submit documents to convert a company type.</p>
-                    <span class="coming-soon-badge">Coming Soon</span>
-                </div>
 
-                <!-- CS 5. Appoint a Liquidator -->
-                <div class="card coming-soon" data-search="appoint liquidator liquidation winding up">
-                    <div class="card-icon">&#9878;</div>
-                    <h4>Appoint a Liquidator</h4>
-                    <p>Appoint a liquidator for company winding up.</p>
-                    <span class="coming-soon-badge">Coming Soon</span>
-                </div>
 
                 <!-- No Results message (hidden by default) -->
                 <div class="no-results" id="noResults" style="display: none;">
@@ -1070,7 +1039,7 @@
                 } else {
                     noResults.style.display = 'none';
                     if (!query) {
-                        searchCount.textContent = 'Showing all 12 manuals';
+                        searchCount.textContent = 'Showing all 8 manuals';
                     } else {
                         searchCount.textContent = 'Showing ' + visibleCount + ' result' + (visibleCount === 1 ? '' : 's');
                     }
