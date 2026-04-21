@@ -247,12 +247,18 @@
             padding: 40px 0 0;
         }
 
+        .search-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1F2128;
+            margin-bottom: 12px;
+        }
+
         .search-bar {
             display: flex;
             align-items: center;
             gap: 12px;
             max-width: 560px;
-            margin: 0 auto;
             background: #FFFFFF;
             border: 2px solid #E0E0E0;
             border-radius: 9999px;
@@ -305,7 +311,7 @@
             font-size: 28px;
             font-weight: 600;
             color: #1F2128;
-            margin-bottom: 8px;
+            margin-bottom: 28px;
         }
 
         .section-subtitle {
@@ -369,55 +375,59 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            background: #4CAF74;
-            color: #FFFFFF;
-            padding: 10px 20px;
+            background: #FFFFFF;
+            color: #4CAF74;
+            border: 2px solid #4CAF74;
+            padding: 3px 20px;
             border-radius: 9999px;
             font-size: 14px;
             font-weight: 500;
             font-family: 'Poppins', sans-serif;
             text-decoration: none;
-            transition: background 0.2s ease;
+            transition: background 0.2s ease, color 0.2s ease;
             align-self: flex-start;
         }
 
         .card-btn:hover {
-            background: #3d9461;
+            background: #4CAF74;
             color: #FFFFFF;
             text-decoration: none;
         }
 
         .card-actions {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 8px;
-            align-self: flex-start;
+            align-self: stretch;
         }
 
         .card-actions .card-btn {
-            width: 100%;
+            min-width: 100px;
             justify-content: center;
         }
 
         .card-btn-officer {
-            background: #2B2A65;
+            background: #FFFFFF;
+            color: #2B2A65;
+            border-color: #2B2A65;
         }
 
         .card-btn-officer:hover {
-            background: #1f1e4d;
+            background: #2B2A65;
             color: #FFFFFF;
             text-decoration: none;
         }
 
         .card-btn-disabled {
-            background: #E0E0E0;
-            color: #999 !important;
+            background: #FFFFFF;
+            color: #BBBBBB !important;
+            border-color: #DDDDDD;
             cursor: default;
             pointer-events: none;
         }
 
         .card-btn-disabled:hover {
-            background: #E0E0E0;
+            background: #FFFFFF;
             text-decoration: none;
         }
 
@@ -810,14 +820,14 @@
          ============================================================ -->
     <section class="search-section">
         <div class="container">
+            <h2 class="search-title">Search Manuals</h2>
             <div class="search-bar" role="search">
                 <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"/>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"/>
                 </svg>
-                <input type="text" id="searchInput" placeholder="Search manuals... e.g. &quot;register company&quot;, &quot;renew licence&quot;" aria-label="Search service manuals" autocomplete="off">
+                <input type="text" id="searchInput" placeholder="Search by service name..." aria-label="Search service manuals" autocomplete="off">
             </div>
-            <p class="search-count" id="searchCount">Showing all 8 manuals</p>
         </div>
     </section>
 
@@ -828,80 +838,74 @@
         <div class="container">
 
             <h2 class="section-title">Digital Services</h2>
-            <p class="section-subtitle">Click any service to view its complete step-by-step user manual.</p>
 
             <div class="card-grid" id="cardGrid">
 
-                <!-- 1. Register a Business -->
+                <!-- 1. Create a User Account (Coming Soon) -->
+                <div class="card coming-soon" data-search="create user account register account sign up new account portal access">
+                    <h4>Create a User Account</h4>
+                    <p>Create a new user account to access OBFC digital services.</p>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+
+                <!-- 2. Verify Your Identity -->
+                <div class="card" data-search="verify identity verification business registration services kyc know your customer">
+                    <h4>Verify Your Identity</h4>
+                    <p>Verify your identity for business registration services.</p>
+                    <div class="card-actions"><a href="verify-identity.html" class="card-btn">Applicant</a><span class="card-btn card-btn-officer card-btn-disabled">Officer</span></div>
+                </div>
+
+                <!-- 3. Register a Business -->
                 <div class="card" data-search="register a business register new business obfc single window sole proprietorship">
                     <h4>Register a Business</h4>
                     <p>Register a new business in Lesotho through the OBFC single window.</p>
-                    <div class="card-actions"><a href="register-business.html" class="card-btn">Applicant &rarr;</a><a href="register-business-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
+                    <div class="card-actions"><a href="register-business.html" class="card-btn">Applicant</a><a href="register-business-part-b.html" class="card-btn card-btn-officer">Officer</a></div>
                 </div>
 
-
-
-
-                <!-- 5. Verify your Identity -->
-                <div class="card" data-search="verify identity verification business registration services kyc know your customer">
-                    <h4>Verify Identity</h4>
-                    <p>Verify your identity for business registration services.</p>
-                    <div class="card-actions"><a href="verify-identity.html" class="card-btn">Applicant &rarr;</a><span class="card-btn card-btn-officer card-btn-disabled">Officer &rarr;</span></div>
-                </div>
-
-                <!-- 6. Update your Business Data -->
-                <div class="card" data-search="update business data registered information change details address activities">
-                    <h4>Update Business Data</h4>
-                    <p>Update your registered business information.</p>
-                    <div class="card-actions"><a href="update-business-data.html" class="card-btn">Applicant &rarr;</a><a href="update-business-data-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
-                </div>
-
-                <!-- 7. Renew or Close a Business -->
+                <!-- 4. Renew or Close a Business -->
                 <div class="card" data-search="renew close business licences renew licence closure annual renewal">
                     <h4>Renew or Close a Business</h4>
                     <p>Renew licences or close your business.</p>
-                    <div class="card-actions"><a href="renew-close-business.html" class="card-btn">Applicant &rarr;</a><a href="renew-close-business-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
+                    <div class="card-actions"><a href="renew-close-business.html" class="card-btn">Applicant</a><a href="renew-close-business-part-b.html" class="card-btn card-btn-officer">Officer</a></div>
                 </div>
 
-                <!-- 8. Renew or Close a Licence -->
+                <!-- 5. Renew or Close a Licence -->
                 <div class="card" data-search="renew close licence specific licence renewal closure trading licence">
                     <h4>Renew or Close a Licence</h4>
                     <p>Renew or close a specific licence.</p>
-                    <div class="card-actions"><a href="renew-close-license.html" class="card-btn">Applicant &rarr;</a><a href="renew-close-license-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
+                    <div class="card-actions"><a href="renew-close-license.html" class="card-btn">Applicant</a><a href="renew-close-license-part-b.html" class="card-btn card-btn-officer">Officer</a></div>
                 </div>
 
-                <!-- 9. File Annual Report -->
+                <!-- 6. Update Business Data -->
+                <div class="card" data-search="update business data registered information change details address activities">
+                    <h4>Update Business Data</h4>
+                    <p>Update your registered business information.</p>
+                    <div class="card-actions"><a href="update-business-data.html" class="card-btn">Applicant</a><a href="update-business-data-part-b.html" class="card-btn card-btn-officer">Officer</a></div>
+                </div>
+
+                <!-- 7. Submit Annual Filing -->
                 <div class="card" data-search="annual filing submit company returns annual returns compliance financial statements file annual report">
-                    <h4>File Annual Report</h4>
+                    <h4>Submit Annual Filing</h4>
                     <p>Submit your company's annual financial statements and update company records with the Companies Registry.</p>
-                    <div class="card-actions"><a href="file-annual-report.html" class="card-btn">Applicant &rarr;</a><a href="file-annual-report-part-b.html" class="card-btn card-btn-officer">Officer &rarr;</a></div>
+                    <div class="card-actions"><a href="file-annual-report.html" class="card-btn">Applicant</a><a href="file-annual-report-part-b.html" class="card-btn card-btn-officer">Officer</a></div>
                 </div>
 
-
-                <!-- 11. Manage User Rights -->
-                <div class="card" data-search="delegate user rights account access another person permissions representative">
-                    <h4>Delegate User Rights</h4>
+                <!-- 8. Manage User Rights -->
+                <div class="card" data-search="manage user rights account access another person permissions representative delegate">
+                    <h4>Manage User Rights</h4>
                     <p>Delegate account access to another person.</p>
-                    <div class="card-actions"><a href="delegate-user-rights.html" class="card-btn">Applicant &rarr;</a><span class="card-btn card-btn-officer card-btn-disabled">Officer &rarr;</span></div>
+                    <div class="card-actions"><a href="delegate-user-rights.html" class="card-btn">Applicant</a><span class="card-btn card-btn-officer card-btn-disabled">Officer</span></div>
                 </div>
 
-                <!-- 12. My Dashboard -->
+                <!-- 9. My Dashboard -->
                 <div class="card" data-search="my dashboard navigate manage account dashboard overview portal profile applications">
                     <h4>My Dashboard</h4>
                     <p>Navigate and manage your account dashboard.</p>
-                    <a href="my-dashboard.html" class="card-btn">Applicant &rarr;</a>
+                    <a href="my-dashboard.html" class="card-btn">Applicant</a>
                 </div>
 
                 <!-- ========== Coming Soon ========== -->
 
-
-
-                <!-- CS 3. Lodge a Merger Document -->
-                <div class="card coming-soon" data-search="lodge merger document merge companies amalgamation">
-                    <h4>Lodge a Merger Document</h4>
-                    <p>Submit documents for a company merger.</p>
-                    <span class="coming-soon-badge">Coming Soon</span>
-                </div>
 
 
 
@@ -1007,7 +1011,6 @@
         (function() {
             var searchInput = document.getElementById('searchInput');
             var cardGrid = document.getElementById('cardGrid');
-            var searchCount = document.getElementById('searchCount');
             var noResults = document.getElementById('noResults');
 
             searchInput.addEventListener('input', function() {
@@ -1035,14 +1038,8 @@
 
                 if (visibleCount === 0) {
                     noResults.style.display = '';
-                    searchCount.textContent = 'No results found';
                 } else {
                     noResults.style.display = 'none';
-                    if (!query) {
-                        searchCount.textContent = 'Showing all 8 manuals';
-                    } else {
-                        searchCount.textContent = 'Showing ' + visibleCount + ' result' + (visibleCount === 1 ? '' : 's');
-                    }
                 }
             });
 
