@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register a Trading License — Processing Manual (Part B) | Gambia Easy Business</title>
+    <title>Register a Trading License - Processing Manual (Part B) | Gambia Easy Business</title>
     <meta name="description" content="Government officer processing manual for the Register a Trading License service on the Gambia Easy Business eRegistrations platform. KMC desk-by-desk reference.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,23 +12,22 @@
         /* ============================================================
            GAMBIA eREGISTRATIONS — PROCESSING MANUAL (PART B)
            Service: Register a Trading License (KMC)
-           Version: v1.0
-           Generated: 2026-06-24
-           Audience: Government officers (KMC back-office)
+           Restructured to Lesotho register-business-part-b template
            ============================================================ */
 
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-        body { font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif; font-size: 17px; line-height: 1.7; color: #555866; background: #FFFFFF; }
+        body { font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif; font-size: 18px; line-height: 1.7; color: #555866; background: #FFFFFF; }
         img { max-width: 100%; height: auto; display: block; }
         a { color: #3464B0; text-decoration: none; transition: color 0.2s ease; }
         a:hover { color: #2a5290; text-decoration: underline; }
+
         h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
-        h1 { font-size: 42px; font-weight: 700; }
-        h2 { font-size: 32px; font-weight: 600; }
-        h3 { font-size: 24px; font-weight: 600; }
-        h4 { font-size: 20px; font-weight: 600; }
-        h5 { font-size: 16px; font-weight: 600; }
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
         p { margin-bottom: 1em; }
         strong { color: #1F2128; font-weight: 600; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
@@ -44,7 +43,8 @@
         .header-nav { display: flex; align-items: center; gap: 32px; }
         .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; text-decoration: none; white-space: nowrap; transition: opacity 0.2s ease; }
         .header-nav a:hover { opacity: 0.85; text-decoration: none; }
-        .btn-login { background: #FFFFFF; color: #3464B0 !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; }
+        .btn-login { background: #FFFFFF; color: #3464B0 !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #EEF2FF; text-decoration: none !important; }
 
         /* --- Officer banner --- */
         .officer-banner { background: #FEF9C3; border-bottom: 2px solid #F5A623; padding: 14px 0; }
@@ -64,71 +64,72 @@
         .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.06) 0%, transparent 70%); pointer-events: none; }
         .hero-inner { display: flex; align-items: center; gap: 48px; }
         .hero-content { flex: 1; min-width: 0; }
-        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.8); margin-bottom: 12px; display: block; }
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.85); margin-bottom: 12px; display: block; }
         .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
-        .hero-description { font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 600px; }
-        .btn-primary { background: #FFFFFF; color: #0C1A3D; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; border: none; cursor: pointer; }
-        .btn-primary:hover { background: rgba(255,255,255,0.88); color: #0C1A3D; text-decoration: none; }
-        .hero-image { flex-shrink: 0; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
-        .hero-icon-circle { width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; }
-        .hero-icon-circle svg { width: 72px; height: 72px; fill: none; stroke: rgba(255,255,255,0.85); stroke-width: 1.5; }
+        .hero-description { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 600px; }
+        .btn-primary { background: #FFFFFF; color: #1F2128; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; border: none; cursor: pointer; }
+        .btn-primary:hover { background: rgba(255,255,255,0.9); color: #1F2128; text-decoration: none; transform: translateY(-1px); }
+        .hero-image { flex-shrink: 0; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .hero-icon-circle { width: 200px; height: 200px; border-radius: 50%; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: rgba(255,255,255,0.9); stroke-width: 1.5; }
 
         /* --- TOC --- */
-        .toc { background: #F5F5F7; padding: 40px 0; border-bottom: 1px solid #E5E7EB; }
-        .toc h2 { font-size: 24px; margin-bottom: 20px; }
-        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 10px; }
-        .toc-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 8px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 15px; }
-        .toc-item:hover { border-color: #3464B0; box-shadow: 0 2px 6px rgba(52,100,176,0.12); text-decoration: none; color: #1F2128; }
-        .toc-number { width: 28px; height: 28px; border-radius: 50%; background: #3464B0; color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
-        .toc-number.bot { background: #7C3AED; }
+        .toc { background: #F5F5F7; padding: 48px 0; border-bottom: 1px solid #E5E7EB; }
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+        .toc-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 10px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 16px; }
+        .toc-item:hover { border-color: #3464B0; box-shadow: 0 2px 8px rgba(52,100,176,0.12); text-decoration: none; color: #1F2128; }
+        .toc-number { width: 32px; height: 32px; border-radius: 50%; background: #3464B0; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
         .toc-label { flex: 1; line-height: 1.4; }
 
         /* --- Content --- */
-        .manual-content { padding: 48px 0 72px; }
-        .section { margin-bottom: 52px; scroll-margin-top: 100px; }
-        .section > h2 { font-size: 28px; font-weight: 600; padding-left: 16px; border-left: 4px solid #3464B0; margin-bottom: 20px; line-height: 1.3; }
-        .section > h3 { font-size: 20px; font-weight: 600; margin-top: 28px; margin-bottom: 14px; }
-        .section > h4 { font-size: 17px; font-weight: 600; margin-top: 20px; margin-bottom: 10px; }
-        .section > p, .section > ul, .section > ol { margin-bottom: 14px; }
-        .section ul, .section ol { padding-left: 22px; }
-        .section li { margin-bottom: 6px; }
+        .manual-content { padding: 56px 0 80px; }
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
+        .section > h2 { font-size: 32px; font-weight: 600; padding-left: 20px; border-left: 4px solid #3464B0; margin-bottom: 24px; line-height: 1.3; }
+        .section > h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; }
+        .section > h4 { font-size: 20px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
 
-        /* --- Desk section --- */
-        .desk-section { background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 28px; margin-bottom: 28px; }
-        .desk-section.bot-desk { border-left: 4px solid #7C3AED; }
-        .desk-section.user-desk { border-left: 4px solid #3464B0; }
-        .desk-header { display: flex; align-items: center; gap: 14px; padding-bottom: 16px; margin-bottom: 18px; border-bottom: 1px solid #F0F0F2; flex-wrap: wrap; }
-        .desk-number { width: 40px; height: 40px; border-radius: 50%; background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 17px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-        .desk-number.bot { background: #7C3AED; }
-        .desk-title { flex: 1; min-width: 200px; }
-        .desk-title h3 { margin: 0 0 4px 0; font-size: 22px; line-height: 1.2; }
-        .desk-title .desk-meta { font-size: 13px; color: #888; }
-        .desk-badges { display: flex; gap: 6px; flex-wrap: wrap; }
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 600; font-family: 'Poppins', sans-serif; }
-        .badge-user { background: #DBEAFE; color: #1E40AF; }
-        .badge-bot { background: #F3E8FF; color: #7C3AED; }
-        .badge-start { background: #FEF3C7; color: #92400E; }
-        .badge-end { background: #DCFCE7; color: #166534; }
-        .badge-sort { background: #F3F4F6; color: #6B7280; }
+        /* --- Steps --- */
+        .steps { counter-reset: step-counter; list-style: none; padding: 0; margin: 24px 0; }
+        .step { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px; padding: 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; transition: box-shadow 0.2s ease; }
+        .step:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+        .step-number { counter-increment: step-counter; width: 40px; height: 40px; border-radius: 50%; background: #3464B0; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .step-number.bot { background: #7C3AED; }
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #1F2128; }
+        .step-content p { margin-bottom: 8px; font-size: 16px; }
+        .step-content p:last-child { margin-bottom: 0; }
+        .step-content ul { padding-left: 20px; margin-top: 8px; }
+        .step-content li { font-size: 16px; margin-bottom: 4px; }
 
-        /* --- Boxes --- */
-        .info-box, .warning-box, .note-box, .tip-box { padding: 16px 20px; border-radius: 8px; margin: 18px 0; font-size: 15px; line-height: 1.6; }
+        /* --- Info / Warning / Note / Tip Boxes --- */
+        .info-box, .warning-box, .note-box, .tip-box { padding: 20px 24px; border-radius: 10px; margin: 24px 0; font-size: 16px; line-height: 1.6; position: relative; }
         .info-box { background: #F5F5F7; border-left: 4px solid #3464B0; }
         .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
         .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
         .tip-box { background: #F0FDF4; border-left: 4px solid #16A34A; }
-        .info-box .box-label, .warning-box .box-label, .note-box .box-label, .tip-box .box-label { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: flex; align-items: center; gap: 7px; }
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label, .tip-box .box-label { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
         .info-box .box-label { color: #3464B0; }
         .warning-box .box-label { color: #D4891A; }
         .note-box .box-label { color: #4A90D9; }
         .tip-box .box-label { color: #15803D; }
-        .box-label svg { width: 16px; height: 16px; flex-shrink: 0; }
+        .box-label svg { width: 18px; height: 18px; flex-shrink: 0; }
 
-        /* --- Tables --- */
-        .field-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 18px 0; font-size: 14px; border: 1px solid #E5E7EB; border-radius: 8px; overflow: hidden; }
+        /* --- Checklist --- */
+        .checklist { list-style: none; padding: 0; margin: 20px 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 14px; padding: 10px 0; border-bottom: 1px solid #F0F0F2; font-size: 16px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .check-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+        .checklist .check-icon svg { width: 24px; height: 24px; }
+
+        /* --- Field Table --- */
+        .field-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 24px 0; font-size: 15px; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; }
         .field-table thead { background: #3464B0; color: #FFFFFF; }
-        .field-table th { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 12px 14px; text-align: left; }
-        .field-table td { padding: 10px 14px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
+        .field-table th { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 14px 16px; text-align: left; white-space: nowrap; }
+        .field-table td { padding: 12px 16px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
         .field-table tbody tr:last-child td { border-bottom: none; }
         .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
         .field-table tbody tr:hover { background: #F5F5F7; }
@@ -141,117 +142,126 @@
         .status-corrections { background: #FFEDD5; color: #9A3412; }
         .status-bot-fail { background: #FEE2E2; color: #991B1B; }
 
-        /* --- Form Mockup (role forms) --- */
-        .form-mockup { background: #FAFAFA; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; margin: 18px 0; font-size: 13px; }
-        .form-mockup-header { background: #3464B0; color: #FFFFFF; padding: 10px 16px; font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
-        .form-mockup-body { padding: 16px; }
-        .form-section-title { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; color: #1F2128; margin: 12px 0 8px; padding-bottom: 5px; border-bottom: 1px solid #E5E7EB; }
-        .form-section-title:first-child { margin-top: 0; }
-        .form-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-bottom: 10px; }
-        .form-field { display: flex; flex-direction: column; gap: 3px; }
-        .form-field label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #888; font-family: 'Poppins', sans-serif; }
-        .form-field .field-value { background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 5px; padding: 7px 10px; font-size: 13px; color: #1F2128; min-height: 32px; display: flex; align-items: center; }
-        .form-field .field-value.readonly { background: #F5F5F7; color: #555866; font-style: italic; }
-        .form-field.reviewer-field .field-value { border-color: #3464B0; border-width: 2px; background: #F0F6FF; }
-        .form-field.reviewer-field label::after { content: " — officer input"; color: #3464B0; font-weight: 500; text-transform: none; letter-spacing: 0; }
-        .form-field.readonly-field label::after { content: " (read-only)"; color: #888; font-weight: 500; text-transform: none; letter-spacing: 0; }
+        /* --- Tab Group (Lesotho pattern) --- */
+        .tab-group { margin: 28px 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; }
+        .tab-nav { display: flex; background: #F5F5F7; border-bottom: 1px solid #E5E7EB; overflow-x: auto; gap: 0; }
+        .tab-btn { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 24px; cursor: pointer; background: transparent; border: none; border-bottom: 3px solid transparent; color: #555866; white-space: nowrap; transition: all 0.2s ease; }
+        .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
+        .tab-btn.active { color: #3464B0; border-bottom-color: #3464B0; background: #FFFFFF; font-weight: 600; }
+        .tab-panel { display: none; padding: 24px; }
+        .tab-panel.active { display: block; }
 
-        /* Mock grid in officer form */
-        .mock-grid { background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 5px; margin-top: 8px; overflow: hidden; }
-        .mock-grid-row { display: grid; grid-template-columns: 1fr 1fr 100px 100px; gap: 0; padding: 8px 12px; border-bottom: 1px solid #F0F0F2; font-size: 12px; }
-        .mock-grid-row:last-child { border-bottom: none; }
-        .mock-grid-row.header { background: #F5F5F7; font-weight: 600; color: #555866; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .mock-grid-row.editable { background: #F0F6FF; }
-
-        /* Action buttons */
-        .action-buttons { display: flex; gap: 10px; margin-top: 14px; padding-top: 14px; border-top: 1px solid #E5E7EB; flex-wrap: wrap; }
-        .action-btn { padding: 8px 16px; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; }
-        .action-btn.validate { background: #16A34A; color: #FFFFFF; }
-        .action-btn.corrections { background: #F5A623; color: #FFFFFF; }
-        .action-btn.reject { background: #DC2626; color: #FFFFFF; }
-        .action-btn.print { background: #FFFFFF; color: #3464B0; border: 1.5px solid #3464B0; }
-
-        /* --- Workflow diagram --- */
-        .wf-diagram { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 12px; padding: 28px 20px; margin: 24px 0; overflow-x: auto; }
-        .wf-row { display: flex; align-items: flex-start; gap: 0; flex-wrap: nowrap; justify-content: flex-start; }
-        .wf-step { display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 110px; flex: 1; position: relative; }
-        .wf-step:not(:last-child)::after { content: ""; position: absolute; top: 23px; right: -50%; width: 100%; height: 3px; background: #C7D2FE; z-index: 0; }
-        .wf-dot { width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; font-family: 'Poppins', sans-serif; font-weight: 700; color: #FFFFFF; font-size: 14px; }
+        /* --- Workflow timeline (horizontal swimlane) --- */
+        .workflow-steps { display: flex; align-items: flex-start; gap: 0; margin: 32px 0; flex-wrap: wrap; }
+        .wf-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; min-width: 110px; position: relative; }
+        .wf-step:not(:last-child)::after { content: ""; position: absolute; top: 24px; right: -1px; width: 50%; height: 3px; background: #C7D2FE; z-index: 0; }
+        .wf-step:not(:first-child)::before { content: ""; position: absolute; top: 24px; left: -1px; width: 50%; height: 3px; background: #C7D2FE; z-index: 0; }
+        .wf-dot { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .wf-dot svg { width: 22px; height: 22px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
         .wf-dot.applicant { background: #16A34A; }
         .wf-dot.officer { background: #3464B0; }
         .wf-dot.bot { background: #7C3AED; }
-        .wf-label { font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 600; color: #1F2128; text-align: center; line-height: 1.3; max-width: 110px; }
-        .wf-sublabel { font-size: 10px; color: #888; text-align: center; line-height: 1.3; max-width: 110px; }
+        .wf-label { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; color: #1F2128; text-align: center; max-width: 110px; line-height: 1.3; }
+        .wf-sublabel { font-size: 11px; color: #888; text-align: center; line-height: 1.3; max-width: 110px; }
 
-        .wf-legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid #E5E7EB; }
-        .wf-legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #555866; }
-        .wf-legend-dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
-
-        /* Loops */
-        .wf-loops { margin-top: 20px; padding: 14px 16px; background: #FFF8F0; border-left: 4px solid #F5A623; border-radius: 6px; font-size: 13px; color: #92400E; }
-        .wf-loops strong { color: #92400E; font-weight: 700; }
-
-        /* --- Checklist --- */
-        .checklist { list-style: none; padding: 0; margin: 14px 0; }
-        .checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px solid #F0F0F2; font-size: 15px; }
-        .checklist li:last-child { border-bottom: none; }
-        .checklist .check-icon { width: 20px; height: 20px; flex-shrink: 0; margin-top: 3px; }
-        .checklist .check-icon svg { width: 20px; height: 20px; }
+        /* --- Timeline --- */
+        .timeline { position: relative; margin: 32px 0; padding-left: 40px; }
+        .timeline::before { content: ""; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: #E5E7EB; border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 32px; padding-left: 24px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before { content: ""; position: absolute; left: -28px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #3464B0; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #3464B0; z-index: 1; }
+        .timeline-item.bot-step::before { background: #7C3AED; box-shadow: 0 0 0 3px #7C3AED; }
+        .timeline-item.applicant-step::before { background: #16A34A; box-shadow: 0 0 0 3px #16A34A; }
+        .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
+        .timeline-item .timeline-meta { font-size: 13px; color: #999; margin-top: 4px; }
+        .timeline-item .branch { font-size: 13px; color: #92400E; margin-top: 6px; padding: 6px 10px; background: #FFF8F0; border-left: 3px solid #F5A623; border-radius: 4px; }
 
         /* --- Footer --- */
-        .site-footer { background: #3464B0; color: rgba(255,255,255,0.75); padding: 40px 0 0; font-size: 14px; }
-        .footer-inner { display: flex; flex-wrap: wrap; gap: 32px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .footer-col { flex: 1; min-width: 180px; }
-        .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 14px; font-weight: 600; margin-bottom: 14px; }
-        .footer-col p { font-size: 13px; line-height: 1.6; }
-        .footer-col a { color: rgba(255,255,255,0.75); }
+        .site-footer { background: #3464B0; color: rgba(255,255,255,0.8); padding: 56px 0 0; font-size: 15px; }
+        .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 16px; font-weight: 600; margin-bottom: 18px; }
+        .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+        .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
         .footer-col a:hover { color: #FFFFFF; text-decoration: none; }
         .footer-links { list-style: none; padding: 0; }
-        .footer-links li { margin-bottom: 8px; font-size: 13px; }
-        .footer-copyright { text-align: center; padding: 18px 0; font-size: 12px; color: rgba(255,255,255,0.4); }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 14px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 14px; }
+        .footer-contact-item svg { width: 18px; height: 18px; flex-shrink: 0; stroke: rgba(255,255,255,0.7); fill: none; margin-top: 2px; }
+        .footer-social { display: flex; gap: 12px; margin-top: 8px; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: background 0.2s ease; }
+        .footer-social a:hover { background: rgba(255,255,255,0.2); }
+        .footer-social svg { width: 18px; height: 18px; fill: #FFFFFF; }
+        .footer-implemented { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+        .footer-implemented span { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); font-weight: 500; }
+        .footer-copyright { text-align: center; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.45); }
         .manual-version { background: #2A4F8E; color: rgba(255,255,255,0.55); padding: 14px 0; text-align: center; font-size: 12px; font-family: 'Poppins', sans-serif; }
         .manual-version p { margin: 2px 0; }
 
-        /* Responsive */
+        /* --- Responsive --- */
         @media (max-width: 1024px) {
-            .hero h1 { font-size: 32px; }
+            .hero h1 { font-size: 34px; }
             .hero-inner { flex-direction: column; text-align: center; }
+            .hero-description { max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
             .toc-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
-            body { font-size: 15px; }
-            h1 { font-size: 26px; }
-            h2, .section > h2 { font-size: 22px; }
-            .header-inner { flex-direction: column; gap: 10px; padding: 10px 16px; }
-            .header-nav { gap: 14px; flex-wrap: wrap; justify-content: center; }
-            .hero { padding: 36px 0; }
+            body { font-size: 16px; }
+            h1 { font-size: 32px; }
+            h2, .section > h2 { font-size: 26px; }
+            h3 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 12px; padding: 10px 16px; }
+            .header-nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 40px 0; }
             .hero-image { display: none; }
-            .container { padding: 0 14px; }
-            .desk-section { padding: 18px; }
-            .mock-grid-row { grid-template-columns: 1fr 1fr; }
-            .wf-diagram { padding: 16px 8px; }
+            .hero h1 { font-size: 28px; }
+            .step { flex-direction: column; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+            .field-table { font-size: 14px; }
+            .field-table th, .field-table td { padding: 10px 12px; }
+            .tab-btn { padding: 12px 16px; font-size: 13px; }
             .wf-step { min-width: 80px; }
         }
+        @media (max-width: 480px) {
+            .header-brand-title { font-size: 14px; }
+            .hero h1 { font-size: 24px; }
+            .footer-implemented { flex-direction: column; gap: 16px; }
+        }
 
-        /* Print */
+        /* --- Print --- */
         @media print {
             @page { margin: 2cm 1.5cm; size: A4; }
             body { font-size: 11pt; line-height: 1.5; color: #000; background: #FFF; }
             .site-header { position: static; box-shadow: none; background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .header-nav .btn-login { display: none; }
             .officer-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .hero { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 28px 0; page-break-after: always; }
-            .hero h1 { font-size: 24pt; }
+            .hero { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 32px 0; page-break-after: always; }
+            .hero h1 { font-size: 28pt; }
             .btn-primary { display: none; }
             .hero-image { display: none; }
             .toc { page-break-after: always; background: #F5F5F7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .section, .desk-section { page-break-inside: avoid; }
-            .desk-section.bot-desk, .desk-section.user-desk { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            .field-table, .form-mockup { page-break-inside: avoid; font-size: 9pt; }
+            .toc-item { break-inside: avoid; }
+            .section { page-break-inside: avoid; }
+            .section > h2 { page-break-after: avoid; border-left-color: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .step { page-break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+            .step-number { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .step-number.bot { background: #7C3AED !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .info-box, .warning-box, .note-box, .tip-box { page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .field-table { page-break-inside: avoid; font-size: 9pt; }
             .field-table thead { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .tab-group { page-break-inside: avoid; }
+            .tab-nav { display: none; }
+            .tab-panel { display: block !important; border-top: 1px solid #ddd; padding-top: 12px; margin-top: 8px; }
+            .tab-panel::before { content: attr(data-tab-label); font-weight: 700; font-size: 13pt; display: block; margin-bottom: 8px; }
+            .timeline::before { background: #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { background: #3464B0 !important; box-shadow: 0 0 0 3px #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .site-footer { background: #3464B0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
+            .footer-social { display: none; }
             a { color: #000; text-decoration: underline; }
-            .wf-diagram { page-break-inside: avoid; }
+            a[href]::after { content: none; }
         }
     </style>
 </head>
@@ -269,17 +279,20 @@
             </a>
             <nav class="header-nav">
                 <a href="index.html">All Manuals</a>
-                <a href="register-trading-license.html">Part A (Applicant)</a>
+                <a href="register-trading-license.html">Citizen Manual (Part A)</a>
                 <a href="https://services.easybusiness.gov.gm/" class="btn-login">Officer Login</a>
             </nav>
         </div>
     </header>
 
-    <!-- Officer banner -->
+    <!-- OFFICER BANNER -->
     <div class="officer-banner">
         <div class="officer-banner-inner">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><circle cx="12" cy="16" r="0.5" fill="currentColor"/></svg>
-            <span><strong>Internal manual for KMC officers.</strong> Citizens should refer to the <a href="register-trading-license.html" style="color: #92400E; text-decoration: underline;">Part A applicant manual</a>.</span>
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+            <span><strong>For internal use only.</strong>&nbsp; This manual is intended for KMC government officers processing Trading License applications in the back-office portal. Citizens should refer to the <a href="register-trading-license.html" style="color: #92400E; text-decoration: underline;">Part A applicant manual</a>.</span>
         </div>
     </div>
 
@@ -290,7 +303,7 @@
                 <li><a href="https://easybusiness.gov.gm/">Home</a></li>
                 <li><a href="index.html">Gambia Manuals</a></li>
                 <li><a href="register-trading-license.html">Register a Trading License</a></li>
-                <li><span class="current">Part B &mdash; Processing</span></li>
+                <li><span class="current">Part B &mdash; Processing Manual</span></li>
             </ol>
         </div>
     </div>
@@ -300,10 +313,10 @@
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content">
-                    <span class="hero-label">Processing Manual &mdash; KMC Officers (Part B)</span>
+                    <span class="hero-label">Process Application &mdash; Officers</span>
                     <h1>Register a Trading License</h1>
-                    <p class="hero-description">Desk-by-desk reference for KMC staff processing Trading License applications. Covers the six workflow desks &mdash; KMC Review, KMC Approval, KMC Payment, KMC Registration (bot), KMC Certificate (bot), and Applicant corrections &mdash; including each desk&rsquo;s role form, available actions, attached bots, and reviewer tips.</p>
-                    <a href="register-trading-license.html" class="btn-primary">Read Part A (Applicant) &rarr;</a>
+                    <p class="hero-description">Back-office processing guide for KMC officers. Covers the full workflow for KMC Trading License applications &mdash; the three officer desks (Review, Approval, Payment), the two automated bot desks (Registration, Certificate), and the applicant feedback loop &mdash; including each role&rsquo;s actions, statuses, and attached bots.</p>
+                    <a href="https://services.easybusiness.gov.gm/" class="btn-primary">Open Officer Portal &rarr;</a>
                 </div>
                 <div class="hero-image">
                     <div class="hero-icon-circle">
@@ -326,16 +339,11 @@
         <div class="container">
             <h2>Table of Contents</h2>
             <div class="toc-grid">
-                <a href="#workflow" class="toc-item"><span class="toc-number">1</span><span class="toc-label">Workflow Overview</span></a>
-                <a href="#desk-review" class="toc-item"><span class="toc-number">2</span><span class="toc-label">Desk 1 &mdash; KMC Review</span></a>
-                <a href="#desk-approval" class="toc-item"><span class="toc-number">3</span><span class="toc-label">Desk 2 &mdash; KMC Approval</span></a>
-                <a href="#desk-payment" class="toc-item"><span class="toc-number">4</span><span class="toc-label">Desk 3 &mdash; KMC Payment</span></a>
-                <a href="#desk-registration" class="toc-item"><span class="toc-number bot">5</span><span class="toc-label">Desk 4 &mdash; KMC Registration (bot)</span></a>
-                <a href="#desk-certificate" class="toc-item"><span class="toc-number bot">6</span><span class="toc-label">Desk 5 &mdash; KMC Certificate (bot)</span></a>
-                <a href="#desk-applicant" class="toc-item"><span class="toc-number">7</span><span class="toc-label">Desk 6 &mdash; Applicant feedback loop</span></a>
-                <a href="#bot-reference" class="toc-item"><span class="toc-number">8</span><span class="toc-label">Bot Reference Table</span></a>
-                <a href="#determinants" class="toc-item"><span class="toc-number">9</span><span class="toc-label">Key Determinants &amp; Routing</span></a>
-                <a href="#tips" class="toc-item"><span class="toc-number">10</span><span class="toc-label">Officer Tips &amp; Escalation</span></a>
+                <a href="#service-overview" class="toc-item"><span class="toc-number">1</span><span class="toc-label">Service Overview</span></a>
+                <a href="#service-workflow" class="toc-item"><span class="toc-number">2</span><span class="toc-label">Service Workflow</span></a>
+                <a href="#type-of-roles" class="toc-item"><span class="toc-number">3</span><span class="toc-label">Type of Roles</span></a>
+                <a href="#description-of-roles" class="toc-item"><span class="toc-number">4</span><span class="toc-label">Description of Roles</span></a>
+                <a href="#assistance" class="toc-item"><span class="toc-number">5</span><span class="toc-label">Assistance</span></a>
             </div>
         </div>
     </section>
@@ -344,949 +352,546 @@
     <main class="manual-content">
         <div class="container">
 
-            <!-- ===== 1. WORKFLOW OVERVIEW ===== -->
-            <div class="section" id="workflow">
-                <h2>1. Workflow Overview</h2>
-                <p>Applications for KMC Trading Licenses move through <strong>six desks</strong> in a fixed sequence. Three desks are operated by KMC officers (Review, Approval, Payment), two by automation bots (Registration, Certificate), and the Applicant role handles the feedback loop when corrections are requested.</p>
+            <!-- ===== 1. SERVICE OVERVIEW ===== -->
+            <div class="section" id="service-overview">
+                <h2>1. Service Overview</h2>
+                <p>The <strong>Register a Trading License</strong> service on the Gambia Easy Business portal lets citizens apply online for an annual KMC Trading License &mdash; the operating licence required for any business physically located within the <strong>Kanifing Municipal Council (KMC)</strong> jurisdiction. After a citizen submits and pays through the portal, the application enters the <strong>KMC back-office queue</strong> and is processed by three officer desks and two automated bots.</p>
 
-                <h3>Desk sequence</h3>
-                <div class="wf-diagram">
-                    <div class="wf-row">
-                        <div class="wf-step">
-                            <div class="wf-dot applicant">A</div>
-                            <div class="wf-label">Applicant submits</div>
-                            <div class="wf-sublabel">sort 299</div>
-                        </div>
-                        <div class="wf-step">
-                            <div class="wf-dot officer">1</div>
-                            <div class="wf-label">KMC Review</div>
-                            <div class="wf-sublabel">UserRole &middot; start</div>
-                        </div>
-                        <div class="wf-step">
-                            <div class="wf-dot officer">2</div>
-                            <div class="wf-label">KMC Approval</div>
-                            <div class="wf-sublabel">UserRole</div>
-                        </div>
-                        <div class="wf-step">
-                            <div class="wf-dot officer">3</div>
-                            <div class="wf-label">KMC Payment</div>
-                            <div class="wf-sublabel">UserRole</div>
-                        </div>
-                        <div class="wf-step">
-                            <div class="wf-dot bot">4</div>
-                            <div class="wf-label">KMC Registration</div>
-                            <div class="wf-sublabel">BotRole</div>
-                        </div>
-                        <div class="wf-step">
-                            <div class="wf-dot bot">5</div>
-                            <div class="wf-label">KMC Certificate</div>
-                            <div class="wf-sublabel">BotRole &middot; end</div>
-                        </div>
-                    </div>
+                <p>This service is processed entirely by <strong>KMC officers</strong>. Three desks are operated by humans (KMC Review, KMC Approval, KMC Payment), two are fully automated (KMC Registration, KMC Certificate), and the Applicant role handles the feedback loop when corrections are requested.</p>
 
-                    <div class="wf-legend">
-                        <div class="wf-legend-item"><span class="wf-legend-dot" style="background: #16A34A;"></span> Applicant action</div>
-                        <div class="wf-legend-item"><span class="wf-legend-dot" style="background: #3464B0;"></span> Officer desk (UserRole)</div>
-                        <div class="wf-legend-item"><span class="wf-legend-dot" style="background: #7C3AED;"></span> Automated step (BotRole)</div>
-                    </div>
+                <h3>What the citizen receives</h3>
+                <p>A digitally generated, signed <strong>KMC Trading License Certificate</strong> in PDF format, valid for one year, uploaded to the citizen&rsquo;s portal account at the end of the workflow.</p>
 
-                    <div class="wf-loops">
-                        <strong>Loops &amp; back-routes:</strong>
-                        <ul style="margin: 8px 0 0 18px; padding: 0;">
-                            <li><strong>KMC Review</strong> &rarr; <em>SEND BACK TO CORRECTIONS</em> or <em>FILE REJECT</em> &rarr; routes back to <strong>Applicant</strong> for corrections.</li>
-                            <li><strong>KMC Approval</strong> &rarr; <em>SEND BACK TO CORRECTIONS</em> &rarr; routes back to <strong>KMC Review</strong> (internal correction loop). <em>FILE REJECT</em> &rarr; routes to <strong>Applicant</strong>.</li>
-                            <li><strong>KMC Payment</strong> &rarr; <em>SEND BACK TO CORRECTIONS</em> or <em>FILE REJECT</em> &rarr; routes back to <strong>Applicant</strong>.</li>
-                            <li>After <strong>Applicant</strong> resubmits a correction, the file re-enters the workflow at <strong>KMC Review</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
+                <h3>Registry rows created on completion</h3>
+                <p>When the workflow completes successfully, the following entries are written to the GDB registry databases by the KMC Registration bot chain:</p>
+                <ul>
+                    <li><strong>TRADING LICENSES (6.6)</strong> &mdash; one new licence record with the assigned licence N&deg;, issued/renewal dates, activities, and total fee.</li>
+                    <li><strong>TRADING LICENSE FEES (4.4)</strong> &mdash; the invoice payment record, back-linked to the new licence N&deg;.</li>
+                    <li><strong>KMC PAYMENTS (1.9)</strong> &mdash; one row per instalment payment received at the Payment desk.</li>
+                    <li><strong>NATURAL PERSONS (6.9)</strong> &mdash; created or updated for the applicant and (when applicable) the representative.</li>
+                    <li><strong>RELATIONS RIGHTS (5.1)</strong> &mdash; one or two rights entries linking the applicant (and representative, if any) to the new licence.</li>
+                </ul>
 
-                <h3>Roles at a glance</h3>
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Role</th>
-                            <th>Type</th>
-                            <th>Visible to Applicant</th>
-                            <th>Sort order</th>
-                            <th>Start?</th>
-                            <th>Linked Registrations</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>KMC Review</strong></td>
-                            <td><span class="badge badge-user">UserRole</span></td>
-                            <td>Yes</td>
-                            <td>0</td>
-                            <td><span class="badge badge-start">Start</span></td>
-                            <td>Registration of KMC Trading License</td>
-                        </tr>
-                        <tr>
-                            <td><strong>KMC Approval</strong></td>
-                            <td><span class="badge badge-user">UserRole</span></td>
-                            <td>Yes</td>
-                            <td>1</td>
-                            <td>&mdash;</td>
-                            <td>Registration of KMC Trading License</td>
-                        </tr>
-                        <tr>
-                            <td><strong>KMC Payment</strong></td>
-                            <td><span class="badge badge-user">UserRole</span></td>
-                            <td>Yes</td>
-                            <td>2</td>
-                            <td>&mdash;</td>
-                            <td>Registration of KMC Trading License</td>
-                        </tr>
-                        <tr>
-                            <td><strong>KMC Registration</strong></td>
-                            <td><span class="badge badge-bot">BotRole</span></td>
-                            <td>No</td>
-                            <td>3</td>
-                            <td>&mdash;</td>
-                            <td>Registration of KMC Trading License</td>
-                        </tr>
-                        <tr>
-                            <td><strong>KMC Certificate</strong></td>
-                            <td><span class="badge badge-bot">BotRole</span></td>
-                            <td>No</td>
-                            <td>4</td>
-                            <td><span class="badge badge-end">End</span></td>
-                            <td>Registration of KMC Trading License</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Applicant</strong></td>
-                            <td><span class="badge badge-user">UserRole</span></td>
-                            <td>Yes</td>
-                            <td>299</td>
-                            <td>&mdash;</td>
-                            <td>&mdash;</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h3>Statuses used across the workflow</h3>
-                <table class="field-table">
-                    <thead>
-                        <tr><th>Status</th><th>Used at</th><th>Effect</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><span class="status-badge status-pending">FILE PENDING</span></td><td>All desks (default on arrival)</td><td>File is in queue or under review at the named desk.</td></tr>
-                        <tr><td><span class="status-badge status-validated">FILE VALIDATED</span></td><td>All desks</td><td>Desk approved the file. Forwards to next desk in sequence.</td></tr>
-                        <tr><td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td><td>Review, Approval, Payment</td><td>Returns the file to the previous step (Applicant or KMC Review).</td></tr>
-                        <tr><td><span class="status-badge status-rejected">FILE REJECT</span></td><td>Review, Approval, Payment</td><td>Terminal-style rejection routed back to Applicant.</td></tr>
-                        <tr><td><span class="status-badge status-bot-fail">Bot failed</span></td><td>KMC Registration, KMC Certificate</td><td>Automation error. File is paused for support intervention.</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- ===== 2. KMC REVIEW ===== -->
-            <div class="section" id="desk-review">
-                <h2>2. Desk 1 &mdash; KMC Review</h2>
-                <div class="desk-section user-desk">
-                    <div class="desk-header">
-                        <div class="desk-number">1</div>
-                        <div class="desk-title">
-                            <h3>KMC Review</h3>
-                            <div class="desk-meta">UserRole &middot; start role &middot; sort order 0 &middot; visible to applicant</div>
-                        </div>
-                        <div class="desk-badges">
-                            <span class="badge badge-user">UserRole</span>
-                            <span class="badge badge-start">Start</span>
-                            <span class="badge badge-sort">Sort 0</span>
-                        </div>
-                    </div>
-
-                    <h4>What arrives at this desk</h4>
-                    <p>A freshly submitted application from a citizen. The file contains the License Owner, Business Details, and License Details tabs filled by the applicant, along with the uploaded ID and TIN documents. This is the <strong>first officer-handled desk</strong> in the workflow.</p>
-
-                    <h4>What you do here</h4>
-                    <p>As a KMC Review officer you must:</p>
-                    <ol>
-                        <li>Open the file and read the applicant's three tabs end-to-end.</li>
-                        <li>Cross-check the declared activities against KMC records and any inspection notes.</li>
-                        <li>Confirm the business address falls within the KMC jurisdiction.</li>
-                        <li>For each row in the Trading Licence grid, look up the schedule fee and record any multiplier.</li>
-                        <li>Capture inspection details (date, zone) if a site inspection was carried out.</li>
-                        <li>Write a comment for the approving officer summarising your findings.</li>
-                        <li>Click <strong>Validate application</strong> to forward to KMC Approval, or send back / reject if needed.</li>
-                    </ol>
-
-                    <h4>Role form (what you see)</h4>
-                    <div class="form-mockup">
-                        <div class="form-mockup-header">KMC Review &mdash; Officer Form</div>
-                        <div class="form-mockup-body">
-                            <div class="form-section-title">Reviewing officer</div>
-                            <div class="form-row">
-                                <div class="form-field reviewer-field"><label>First name</label><div class="field-value">Lamin</div></div>
-                                <div class="form-field reviewer-field"><label>Middle name</label><div class="field-value"></div></div>
-                                <div class="form-field reviewer-field"><label>Last name</label><div class="field-value">Touray</div></div>
-                                <div class="form-field reviewer-field"><label>Function</label><div class="field-value">Licensing Officer</div></div>
-                                <div class="form-field reviewer-field"><label>Zone</label><div class="field-value">Bakoteh Zone</div></div>
-                                <div class="form-field reviewer-field"><label>Date of inspection</label><div class="field-value">18 June 2026</div></div>
-                            </div>
-
-                            <div class="form-section-title">Trading licence (mirrors applicant declaration; editable by reviewer)</div>
-                            <div class="mock-grid">
-                                <div class="mock-grid-row header">
-                                    <span>Sector</span>
-                                    <span>Activity</span>
-                                    <span>Counter</span>
-                                    <span>Licensing fee</span>
-                                </div>
-                                <div class="mock-grid-row editable">
-                                    <span>Accommodation</span>
-                                    <span>Per room</span>
-                                    <span>6 rooms</span>
-                                    <span>GMD 9,000</span>
-                                </div>
-                                <div class="mock-grid-row editable">
-                                    <span>Communications</span>
-                                    <span>Per booth</span>
-                                    <span>1 booth</span>
-                                    <span>GMD 1,500</span>
-                                </div>
-                            </div>
-
-                            <div class="form-section-title">Fee calculation (per row)</div>
-                            <div class="form-row">
-                                <div class="form-field reviewer-field"><label>Licensing fee in schedule</label><div class="field-value">1,500</div></div>
-                                <div class="form-field reviewer-field"><label>Multiplier?</label><div class="field-value">Yes</div></div>
-                                <div class="form-field reviewer-field"><label>Nr of items when multiplier</label><div class="field-value">6</div></div>
-                                <div class="form-field reviewer-field"><label>Multiplier value</label><div class="field-value">6</div></div>
-                            </div>
-
-                            <div class="form-section-title">Stock value (for retail categories)</div>
-                            <div class="form-row">
-                                <div class="form-field reviewer-field"><label>Stock value (GMD)</label><div class="field-value">0</div></div>
-                                <div class="form-field reviewer-field"><label>Category</label><div class="field-value">N/A</div></div>
-                                <div class="form-field reviewer-field"><label>Partial recovery fee</label><div class="field-value">0</div></div>
-                            </div>
-
-                            <div class="form-section-title">Comment for approving officer</div>
-                            <div class="form-row">
-                                <div class="form-field reviewer-field" style="grid-column: span 4;"><label>Comment</label><div class="field-value" style="min-height: 60px; align-items: flex-start; padding-top: 10px;">Inspected 18 June. 6 rooms confirmed; 1 communications booth on-site. Schedule fees correctly applied. Recommend approval.</div></div>
-                            </div>
-
-                            <div class="form-section-title">Returned for corrections by KMC Approval</div>
-                            <div class="form-row">
-                                <div class="form-field readonly-field"><label>Returned for corrections</label><div class="field-value readonly">(empty &mdash; first pass)</div></div>
-                            </div>
-
-                            <div class="action-buttons">
-                                <span class="action-btn validate">Validate application</span>
-                                <span class="action-btn corrections">Send back to corrections</span>
-                                <span class="action-btn reject">Reject</span>
-                                <span class="action-btn print">Print KMC Report</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4>Available actions &amp; destinations</h4>
-                    <table class="field-table">
-                        <thead>
-                            <tr><th>Status</th><th>Next desk</th><th>When to use</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
-                                <td>KMC Approval</td>
-                                <td>Declaration is accurate, fees are correctly computed, recommend approval.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-pending">FILE PENDING</span></td>
-                                <td>(stays at Review)</td>
-                                <td>Default state &mdash; while you investigate or wait on inspection. Do not leave files in this state for long.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
-                                <td>Applicant</td>
-                                <td>Declaration is incomplete or inconsistent; ask the applicant to amend &amp; resubmit.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-rejected">FILE REJECT</span></td>
-                                <td>Applicant</td>
-                                <td>Application is not eligible (wrong jurisdiction, fraudulent declaration, etc.).</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h4>Attached automations on this desk</h4>
-                    <ul>
-                        <li><strong>FORM copy &mdash; sectors and activities to KMC Review</strong> &mdash; internal bot that copies the applicant&rsquo;s declared activity grid into the reviewer&rsquo;s editable grid when the file lands at this desk.</li>
-                        <li><strong>KMC FEES read fee and multiplier &mdash; Review</strong> &mdash; data bot reading from the GDB <code>KMC FEES (1.7)</code> database to pre-populate schedule fees and multipliers for each declared activity.</li>
-                        <li><strong>NATURAL PERSONS read owners registered ID and email and address</strong> &mdash; data bot reading from the GDB <code>NATURAL PERSONS (6.9)</code> database to cross-check the applicant&rsquo;s ID, email and address against existing records.</li>
-                        <li><strong>v-RIGHTS read business details</strong> &mdash; data bot reading from <code>VIEW-RIGHTS</code> to confirm which businesses the applicant is authorised to act for.</li>
-                        <li><strong>KMC Report display</strong> &mdash; document bot that generates a printable inspection report on demand (the &ldquo;Template report&rdquo; button).</li>
-                    </ul>
-
-                    <div class="tip-box">
-                        <div class="box-label">
-                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4,11 9,16 17,5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            Reviewer tips
-                        </div>
-                        <ul style="margin: 0 0 0 18px; padding: 0;">
-                            <li>Always confirm the business address is within KMC before validating &mdash; if it&rsquo;s in Banjul or Brikama, reject with a clear note.</li>
-                            <li>If a declared count seems implausible (e.g. 200 rooms for a residential address), trigger a site inspection and use Send Back to Corrections rather than guessing.</li>
-                            <li>Use the &ldquo;Comment for approving officer&rdquo; field generously &mdash; it&rsquo;s the only context the next desk sees.</li>
-                            <li>The fee calculation panel auto-fills from the KMC FEES bot, but you can override if a special arrangement applies. Document any override in the comment.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== 3. KMC APPROVAL ===== -->
-            <div class="section" id="desk-approval">
-                <h2>3. Desk 2 &mdash; KMC Approval</h2>
-                <div class="desk-section user-desk">
-                    <div class="desk-header">
-                        <div class="desk-number">2</div>
-                        <div class="desk-title">
-                            <h3>KMC Approval</h3>
-                            <div class="desk-meta">UserRole &middot; sort order 1 &middot; visible to applicant</div>
-                        </div>
-                        <div class="desk-badges">
-                            <span class="badge badge-user">UserRole</span>
-                            <span class="badge badge-sort">Sort 1</span>
-                        </div>
-                    </div>
-
-                    <h4>What arrives at this desk</h4>
-                    <p>Files validated by the KMC Review officer. You see the full declaration, the reviewer&rsquo;s computed fees, their inspection notes, and their comment.</p>
-
-                    <h4>What you do here</h4>
-                    <p>As a KMC Approval officer:</p>
-                    <ol>
-                        <li>Re-check the activity grid and fees prepared by the reviewer.</li>
-                        <li>Validate the total cost computation against the KMC schedule.</li>
-                        <li>Decide whether to <strong>issue an invoice</strong> (Issue invoice? = Yes) or hold (Yes/No).</li>
-                        <li>Generate the invoice number and pick the invoice issue / due dates.</li>
-                        <li>Click <strong>Validate application</strong> to forward to KMC Payment, or send back to Review for corrections.</li>
-                    </ol>
-
-                    <h4>Role form (what you see)</h4>
-                    <div class="form-mockup">
-                        <div class="form-mockup-header">KMC Approval &mdash; Officer Form</div>
-                        <div class="form-mockup-body">
-                            <div class="form-section-title">Comment for approving officer</div>
-                            <div class="form-row">
-                                <div class="form-field reviewer-field" style="grid-column: span 4;"><label>Comment</label><div class="field-value" style="min-height: 50px; align-items: flex-start; padding-top: 10px;">Endorsed. Recommend issuing invoice for GMD 10,500.</div></div>
-                            </div>
-
-                            <div class="form-section-title">Trade licence (from Review)</div>
-                            <div class="mock-grid">
-                                <div class="mock-grid-row header">
-                                    <span>Sector</span><span>Activity</span><span>Counter</span><span>Fee</span>
-                                </div>
-                                <div class="mock-grid-row">
-                                    <span>Accommodation</span><span>Per room</span><span>6 rooms</span><span>GMD 9,000</span>
-                                </div>
-                                <div class="mock-grid-row">
-                                    <span>Communications</span><span>Per booth</span><span>1 booth</span><span>GMD 1,500</span>
-                                </div>
-                            </div>
-
-                            <div class="form-section-title">Stock value / category (if retail)</div>
-                            <div class="form-row">
-                                <div class="form-field reviewer-field"><label>Stock value</label><div class="field-value">0</div></div>
-                                <div class="form-field reviewer-field"><label>Category</label><div class="field-value">N/A</div></div>
-                                <div class="form-field reviewer-field"><label>Partial recovery fee</label><div class="field-value">0</div></div>
-                            </div>
-
-                            <div class="form-section-title">Invoice issuance</div>
-                            <div class="form-row">
-                                <div class="form-field reviewer-field"><label>Issue invoice?</label><div class="field-value">Yes</div></div>
-                                <div class="form-field reviewer-field"><label>Total KMC fees</label><div class="field-value">GMD 10,500</div></div>
-                                <div class="form-field reviewer-field"><label>Invoice N&deg;</label><div class="field-value">KMC-INV-2026-08812</div></div>
-                                <div class="form-field"><label>(button)</label><div class="field-value" style="background: #3464B0; color: #FFFFFF; justify-content: center; cursor: pointer;">Print invoice</div></div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-field reviewer-field"><label>Invoice issue date</label><div class="field-value">24 June 2026</div></div>
-                                <div class="form-field reviewer-field"><label>Invoice due date</label><div class="field-value">14 July 2026</div></div>
-                                <div class="form-field readonly-field"><label>Returned to KMC Review with corrections</label><div class="field-value readonly">(empty)</div></div>
-                            </div>
-
-                            <div class="action-buttons">
-                                <span class="action-btn validate">Validate application</span>
-                                <span class="action-btn corrections">Request corrections</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4>Available actions &amp; destinations</h4>
-                    <table class="field-table">
-                        <thead>
-                            <tr><th>Status</th><th>Next desk</th><th>When to use</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
-                                <td>KMC Payment</td>
-                                <td>Invoice issued, fees confirmed. Send to applicant to pay.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
-                                <td>KMC Review (internal loop)</td>
-                                <td>Reviewer made a mistake in the activity grid or fee calculation. Sends back to Review &mdash; <em>not</em> to the applicant.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-rejected">FILE REJECT</span></td>
-                                <td>Applicant</td>
-                                <td>Application has substantive issues that cannot be fixed by Review (e.g. ineligibility detected at this level).</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-pending">FILE PENDING</span></td>
-                                <td>(stays here)</td>
-                                <td>Default state during your review. Do not leave files in this state for long.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h4>Attached automations on this desk</h4>
-                    <ul>
-                        <li><strong>KMC REVIEW copy &mdash; sectors and activities to KMC Approval</strong> &mdash; internal bot that copies the Review&rsquo;s validated activity grid into the Approval form so you don&rsquo;t re-enter it.</li>
-                        <li><strong>KMC FEES read fee and multiplier &mdash; Approval</strong> &mdash; data bot re-reading the KMC FEES database to confirm schedule values at the Approval stage.</li>
-                        <li><strong>KMC Invoice display</strong> &mdash; document bot that generates the printable invoice PDF when you click &ldquo;Print invoice&rdquo;.</li>
-                        <li><strong>KMC APPROVAL send &mdash; corrected sectors and activities to KMC Review</strong> &mdash; internal bot that pushes corrected activity rows back to Review when you click &ldquo;Send back to corrections&rdquo;.</li>
-                        <li><strong>KMC APPROVAL copy &mdash; sent back for corrections</strong> &mdash; internal bot that sets the &ldquo;sent back for corrections&rdquo; flag visible on the Applicant side.</li>
-                        <li><strong>KMC Report 2 display</strong> &mdash; document bot for an alternative inspection report template.</li>
-                    </ul>
-
-                    <div class="tip-box">
-                        <div class="box-label">
-                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4,11 9,16 17,5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            Approval tips
-                        </div>
-                        <ul style="margin: 0 0 0 18px; padding: 0;">
-                            <li>You can override fee values directly on the Approval form if the reviewer applied the wrong schedule row &mdash; document why in the comment.</li>
-                            <li>Setting Issue invoice = <strong>Yes</strong> unlocks the invoice number / dates and triggers the KMC Invoice display bot. Issue invoice = <strong>No</strong> holds the file.</li>
-                            <li>If you spot a calculation error, prefer <em>SEND BACK TO CORRECTIONS</em> (internal loop to Review) over <em>FILE REJECT</em> &mdash; that way the applicant doesn&rsquo;t lose time.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== 4. KMC PAYMENT ===== -->
-            <div class="section" id="desk-payment">
-                <h2>4. Desk 3 &mdash; KMC Payment</h2>
-                <div class="desk-section user-desk">
-                    <div class="desk-header">
-                        <div class="desk-number">3</div>
-                        <div class="desk-title">
-                            <h3>KMC Payment</h3>
-                            <div class="desk-meta">UserRole &middot; sort order 2 &middot; visible to applicant</div>
-                        </div>
-                        <div class="desk-badges">
-                            <span class="badge badge-user">UserRole</span>
-                            <span class="badge badge-sort">Sort 2</span>
-                        </div>
-                    </div>
-
-                    <h4>What arrives at this desk</h4>
-                    <p>An approved file with an issued invoice. The applicant sees the invoice on their dashboard and pays through the portal. As a Payment officer your role is to confirm each instalment payment and validate the file once the invoice is fully paid.</p>
-
-                    <h4>What you do here</h4>
-                    <ol>
-                        <li>For each instalment payment, the system records it in the &ldquo;KMC payments&rdquo; grid with a Payment N&deg;, date, amount paid, and remaining balance.</li>
-                        <li>Click <strong>Confirm payment</strong> on each instalment row to mark it as received.</li>
-                        <li>When the remaining balance reaches zero, the &ldquo;Fully paid&rdquo; checkbox auto-ticks. Capture the issued / renewal dates and license number.</li>
-                        <li>Click <strong>Validate application</strong> &mdash; this triggers the automated registration step.</li>
-                    </ol>
-
-                    <h4>Role form (what you see)</h4>
-                    <div class="form-mockup">
-                        <div class="form-mockup-header">KMC Payment &mdash; Officer Form</div>
-                        <div class="form-mockup-body">
-                            <div class="form-section-title">Invoice summary (read-only)</div>
-                            <div class="form-row">
-                                <div class="form-field readonly-field"><label>Invoice N&deg;</label><div class="field-value readonly">KMC-INV-2026-08812</div></div>
-                                <div class="form-field readonly-field"><label>KMC licensing fees</label><div class="field-value readonly">GMD 10,500</div></div>
-                                <div class="form-field readonly-field"><label>Payment due date</label><div class="field-value readonly">14 Jul 2026</div></div>
-                                <div class="form-field"><label>&nbsp;</label><div class="field-value" style="background: #3464B0; color: #FFFFFF; justify-content: center; cursor: pointer;">Print invoice</div></div>
-                            </div>
-
-                            <div class="form-section-title">KMC payments (instalment grid)</div>
-                            <div class="mock-grid">
-                                <div class="mock-grid-row header">
-                                    <span>Payment N&deg;</span>
-                                    <span>Date</span>
-                                    <span>Amount paid</span>
-                                    <span>Remaining</span>
-                                </div>
-                                <div class="mock-grid-row editable">
-                                    <span>PAY-001</span>
-                                    <span>02 Jul 2026</span>
-                                    <span>GMD 6,000</span>
-                                    <span>GMD 4,500</span>
-                                </div>
-                                <div class="mock-grid-row editable">
-                                    <span>PAY-002</span>
-                                    <span>10 Jul 2026</span>
-                                    <span>GMD 4,500</span>
-                                    <span style="color: #15803D;"><strong>0 (paid)</strong></span>
-                                </div>
-                            </div>
-
-                            <div class="form-section-title">Totals &amp; licence finalisation (auto-populated)</div>
-                            <div class="form-row">
-                                <div class="form-field readonly-field"><label>Total amount paid</label><div class="field-value readonly">GMD 10,500</div></div>
-                                <div class="form-field readonly-field"><label>Total remaining</label><div class="field-value readonly">GMD 0</div></div>
-                                <div class="form-field reviewer-field"><label>License issued</label><div class="field-value">10 Jul 2026</div></div>
-                                <div class="form-field reviewer-field"><label>License N&deg;</label><div class="field-value">KMC-TL-2026-04432</div></div>
-                                <div class="form-field reviewer-field"><label>License renewal</label><div class="field-value">10 Jul 2027</div></div>
-                                <div class="form-field reviewer-field"><label>KMC Registrar name</label><div class="field-value">Ousman Jallow</div></div>
-                            </div>
-
-                            <div class="action-buttons">
-                                <span class="action-btn validate">Validate application</span>
-                                <span class="action-btn corrections">Send back to corrections</span>
-                                <span class="action-btn reject">Reject</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4>Available actions &amp; destinations</h4>
-                    <table class="field-table">
-                        <thead>
-                            <tr><th>Status</th><th>Next desk</th><th>When to use</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
-                                <td>KMC Registration (bot)</td>
-                                <td>Invoice fully paid, all data captured. Hand off to automation.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-pending">FILE PENDING</span></td>
-                                <td>(stays here)</td>
-                                <td>Default while waiting for further instalments to come in.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td>
-                                <td>Applicant</td>
-                                <td>Rare &mdash; e.g. an issue with the invoice payment reference that the applicant must clarify.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-rejected">FILE REJECT</span></td>
-                                <td>Applicant</td>
-                                <td>Use only for serious fraud / non-payment cases beyond your remit.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h4>Attached automations on this desk</h4>
-                    <ul>
-                        <li><strong>KMC PAYMENTS save payment instalments &mdash; KMC Payment</strong> &mdash; data bot writing each instalment to GDB <code>KMC PAYMENTS (1.9)</code>.</li>
-                        <li><strong>KMC PAYMENTS copy &mdash; amount paid</strong> &mdash; internal bot that propagates the running total into the totals panel.</li>
-                        <li><strong>KMC PAYMENTS copy &mdash; 1st payment date to license issued date</strong> &mdash; internal bot that initialises the license &ldquo;Issued&rdquo; date from the first instalment.</li>
-                        <li><strong>FORM copy &mdash; license details to certificates</strong> &mdash; internal bot that copies the activity grid into the Part A &ldquo;License details from KMC Approval after invoice is fully paid&rdquo; section visible to the applicant.</li>
-                    </ul>
-
-                    <div class="tip-box">
-                        <div class="box-label">
-                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4,11 9,16 17,5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            Payment desk tips
-                        </div>
-                        <ul style="margin: 0 0 0 18px; padding: 0;">
-                            <li>Don&rsquo;t click <strong>Validate application</strong> until the &ldquo;Total remaining&rdquo; field is exactly zero. If you forward early, the registration bot will fail.</li>
-                            <li>Each instalment amount must be less than or equal to the remaining balance &mdash; the form enforces this rule. Reject overpayments and ask for a refund instead.</li>
-                            <li>If a payment has been received but the amount looks wrong, contact KMC Finance before confirming &mdash; once confirmed it&rsquo;s recorded in GDB.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== 5. KMC REGISTRATION (BOT) ===== -->
-            <div class="section" id="desk-registration">
-                <h2>5. Desk 4 &mdash; KMC Registration (automated)</h2>
-                <div class="desk-section bot-desk">
-                    <div class="desk-header">
-                        <div class="desk-number bot">4</div>
-                        <div class="desk-title">
-                            <h3>KMC Registration</h3>
-                            <div class="desk-meta">BotRole &middot; sort order 3 &middot; not visible to applicant</div>
-                        </div>
-                        <div class="desk-badges">
-                            <span class="badge badge-bot">BotRole</span>
-                            <span class="badge badge-sort">Sort 3</span>
-                        </div>
-                    </div>
-
-                    <h4>What this desk does</h4>
-                    <p>This is the first of two automated desks. No human form &mdash; just a chain of data bots that <strong>write the licence into the registry databases</strong> and link it to the applicant&rsquo;s rights records. It runs automatically as soon as KMC Payment validates a fully-paid file.</p>
-
-                    <h4>Bots that run, in order</h4>
-                    <table class="field-table">
-                        <thead>
-                            <tr><th>#</th><th>Bot</th><th>Action</th><th>Target GDB database</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td><strong>NATURAL PERSONS create or update &mdash; representative</strong></td>
-                                <td>Create / update</td>
-                                <td>NATURAL PERSONS (6.9)</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td><strong>TRADING LICENSE PAYMENTS create or update</strong></td>
-                                <td>Create / update</td>
-                                <td>TRADING LICENSE FEES (4.4)</td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td><strong>TRADING LICENSES create</strong></td>
-                                <td>Create the licence entry</td>
-                                <td>TRADING LICENSES (6.6)</td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td><strong>RIGHTS create trading licence relations &mdash; applicant</strong></td>
-                                <td>Create rights entry</td>
-                                <td>RELATIONS RIGHTS (5.1)</td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td><strong>RIGHTS create trading license relations &mdash; representative</strong></td>
-                                <td>Create rights entry</td>
-                                <td>RELATIONS RIGHTS (5.1)</td>
-                            </tr>
-                            <tr>
-                                <td>6</td>
-                                <td><strong>TRADING LICENSE PAYMENTS update entries with license nr</strong></td>
-                                <td>Update payment entries with the new licence N&deg;</td>
-                                <td>TRADING LICENSE FEES (4.4)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h4>Conditional execution</h4>
-                    <p>Bot #1 (representative create/update) only runs when the application was submitted by someone other than the owner &mdash; gated on the determinant <em>&ldquo;Application for someone else&rdquo;</em>. Bot #5 (representative rights) is similarly gated. If the applicant submitted for themselves, those two bots are skipped.</p>
-
-                    <h4>Available statuses</h4>
-                    <table class="field-table">
-                        <thead>
-                            <tr><th>Status</th><th>Next desk</th><th>Meaning</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
-                                <td>KMC Certificate (bot)</td>
-                                <td>All bots completed successfully. Licence is now in the registry.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-pending">FILE PENDING</span></td>
-                                <td>(stays here briefly)</td>
-                                <td>Bot chain in progress &mdash; typically seconds.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-bot-fail">Bot failed</span></td>
-                                <td>(paused for support)</td>
-                                <td>One of the bots returned an error (GDB unavailable, schema mismatch, etc.). Escalate to support.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="warning-box">
-                        <div class="box-label">
-                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
-                            What to do if &ldquo;Bot failed&rdquo;
-                        </div>
-                        <p style="margin: 0;">Open the application&rsquo;s audit log to see which bot failed and why. The most common causes are: (a) GDB connectivity issue &mdash; retry the bot from the audit panel; (b) missing required field on the applicant data &mdash; send the file back to KMC Payment with a note; (c) duplicate license number &mdash; have the Payment officer regenerate the license N&deg; before retrying.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== 6. KMC CERTIFICATE (BOT) ===== -->
-            <div class="section" id="desk-certificate">
-                <h2>6. Desk 5 &mdash; KMC Certificate (automated)</h2>
-                <div class="desk-section bot-desk">
-                    <div class="desk-header">
-                        <div class="desk-number bot">5</div>
-                        <div class="desk-title">
-                            <h3>KMC Certificate</h3>
-                            <div class="desk-meta">BotRole &middot; sort order 4 &middot; not visible to applicant</div>
-                        </div>
-                        <div class="desk-badges">
-                            <span class="badge badge-bot">BotRole</span>
-                            <span class="badge badge-sort">Sort 4</span>
-                            <span class="badge badge-end">End</span>
-                        </div>
-                    </div>
-
-                    <h4>What this desk does</h4>
-                    <p>The final automated step. A single document bot generates the signed <strong>KMC Trading License Certificate PDF</strong> and uploads it to the applicant&rsquo;s file. After this runs, the application is complete &mdash; the applicant can download the certificate from their dashboard.</p>
-
-                    <h4>Bot that runs</h4>
-                    <table class="field-table">
-                        <thead>
-                            <tr><th>Bot</th><th>Type</th><th>Action</th><th>Template</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>KMC Certificate upload</strong></td>
-                                <td>document</td>
-                                <td>document_generate_and_upload</td>
-                                <td>KMC Licensing Certificate &mdash; Trading License (template id <code>963c76d4&hellip;</code>)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h4>Available statuses</h4>
-                    <table class="field-table">
-                        <thead>
-                            <tr><th>Status</th><th>Effect</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><span class="status-badge status-validated">FILE VALIDATED</span></td>
-                                <td>Certificate uploaded. Application reaches final state. Applicant is notified.</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-pending">FILE PENDING</span></td>
-                                <td>PDF generation in progress (typically seconds).</td>
-                            </tr>
-                            <tr>
-                                <td><span class="status-badge status-bot-fail">Bot failed</span></td>
-                                <td>PDF generator returned an error. Escalate to support &mdash; usually a template issue or a missing data field.</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="info-box">
-                        <div class="box-label">
-                            <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
-                            Template-driven content
-                        </div>
-                        <p style="margin: 0;">The certificate template includes all 13 activity-row variants (Per room, Per truck, Per machine, Per booth, Per show, Per premise, Per boat, Per cold store, Per borehole, Per billboard, Per vehicle, Per CU M&sup3;, Per plant) so the PDF renders correctly regardless of the activities declared. Each variant is driven by a corresponding determinant tagged &ldquo;(generated by copying)&rdquo; in the determinant list.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== 7. APPLICANT FEEDBACK LOOP ===== -->
-            <div class="section" id="desk-applicant">
-                <h2>7. Desk 6 &mdash; Applicant (feedback loop)</h2>
-                <div class="desk-section user-desk">
-                    <div class="desk-header">
-                        <div class="desk-number">6</div>
-                        <div class="desk-title">
-                            <h3>Applicant</h3>
-                            <div class="desk-meta">UserRole &middot; sort order 299 &middot; visible to applicant</div>
-                        </div>
-                        <div class="desk-badges">
-                            <span class="badge badge-user">UserRole</span>
-                            <span class="badge badge-sort">Sort 299</span>
-                        </div>
-                    </div>
-
-                    <h4>When the file lands here</h4>
-                    <p>The Applicant role receives files routed back from <strong>KMC Review</strong>, <strong>KMC Approval</strong> (only for rejects), or <strong>KMC Payment</strong> via the SEND BACK TO CORRECTIONS / FILE REJECT statuses. The applicant sees the officer&rsquo;s comment and the &ldquo;Sent back for corrections &mdash; KMC Approval&rdquo; flag on their Part A form.</p>
-
-                    <h4>What the applicant does</h4>
-                    <ul>
-                        <li>Opens the application from the dashboard.</li>
-                        <li>Reads the officer comment (rendered on a prominent banner).</li>
-                        <li>Edits the relevant tab(s) and re-uploads documents if requested.</li>
-                        <li>Re-submits, which routes the file back to <strong>KMC Review</strong>.</li>
-                    </ul>
-
-                    <h4>Available statuses</h4>
-                    <table class="field-table">
-                        <thead>
-                            <tr><th>Status</th><th>Effect</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td><span class="status-badge status-pending">FILE PENDING</span></td><td>Default while the applicant prepares the corrections.</td></tr>
-                            <tr><td><span class="status-badge status-validated">FILE VALIDATED</span></td><td>Resubmission &mdash; file moves back to KMC Review.</td></tr>
-                        </tbody>
-                    </table>
-
-                    <div class="note-box">
-                        <div class="box-label">
-                            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
-                            Internal flags
-                        </div>
-                        <p style="margin: 0;">Two hidden text fields drive the loop logic: <code>applicantSentBackForCorrectionsKmcReview</code> on Part A (toggled when Approval sends back), and the comment fields <code>kmcReviewCommentForApprovingOfficer</code> / <code>kmcApprovalCommentForApprovingOfficer</code> on the officer forms. These are written by internal bots when the SEND BACK action is taken.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== 8. BOT REFERENCE TABLE ===== -->
-            <div class="section" id="bot-reference">
-                <h2>8. Bot Reference Table</h2>
-                <p>The service ships with <strong>25 bots in total</strong>. The table below lists each one, its desk, type, category, and what it does.</p>
-
-                <table class="field-table">
-                    <thead>
-                        <tr>
-                            <th>Bot</th>
-                            <th>Type</th>
-                            <th>Desk</th>
-                            <th>Category</th>
-                            <th>What it does</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>NATURAL PERSONS read owners registered ID and email and address</td><td>data</td><td>KMC Review</td><td>read</td><td>Looks up the applicant in the NATURAL PERSONS GDB to cross-check ID, email, address.</td></tr>
-                        <tr><td>v-RIGHTS read business details</td><td>data</td><td>KMC Review</td><td>read</td><td>Reads active businesses linked to the user from VIEW-RIGHTS.</td></tr>
-                        <tr><td>KMC FEES read fee and multiplier &mdash; Review</td><td>data</td><td>KMC Review</td><td>read</td><td>Reads schedule fee &amp; multiplier per activity from the KMC FEES GDB.</td></tr>
-                        <tr><td>FORM copy &mdash; sectors and activities to KMC Review</td><td>internal</td><td>KMC Review</td><td>copy</td><td>Copies the applicant&rsquo;s activity grid into the reviewer&rsquo;s editable grid.</td></tr>
-                        <tr><td>KMC Report display</td><td>document</td><td>KMC Review</td><td>generate &amp; display</td><td>Generates a printable inspection report (Template report button).</td></tr>
-                        <tr><td>KMC Report 2 display</td><td>document</td><td>KMC Review</td><td>generate &amp; display</td><td>Alternative inspection report template.</td></tr>
-                        <tr><td>KMC FEES read fee and multiplier &mdash; Approval</td><td>data</td><td>KMC Approval</td><td>read</td><td>Re-reads KMC FEES at the Approval stage.</td></tr>
-                        <tr><td>KMC REVIEW copy &mdash; sectors and activities to KMC Approval</td><td>internal</td><td>KMC Approval</td><td>copy</td><td>Pushes Review&rsquo;s validated grid into the Approval form.</td></tr>
-                        <tr><td>KMC Invoice display</td><td>document</td><td>KMC Approval</td><td>generate &amp; display</td><td>Generates the printable KMC invoice PDF.</td></tr>
-                        <tr><td>KMC APPROVAL send &mdash; corrected sectors and activities to KMC Review</td><td>internal</td><td>KMC Approval</td><td>copy</td><td>Returns corrected activity rows to KMC Review on send-back.</td></tr>
-                        <tr><td>KMC APPROVAL copy &mdash; sent back for corrections</td><td>internal</td><td>KMC Approval</td><td>flag</td><td>Sets the &ldquo;sent back for corrections&rdquo; flag on Part A.</td></tr>
-                        <tr><td>KMC PAYMENTS save payment instalments &mdash; KMC Payment</td><td>data</td><td>KMC Payment</td><td>create</td><td>Writes each instalment to GDB KMC PAYMENTS.</td></tr>
-                        <tr><td>KMC PAYMENTS copy &mdash; amount paid</td><td>internal</td><td>KMC Payment</td><td>copy</td><td>Propagates the running total of paid amounts into the totals panel.</td></tr>
-                        <tr><td>KMC PAYMENTS copy &mdash; 1st payment date to license issued date</td><td>internal</td><td>KMC Payment</td><td>copy</td><td>Initialises &ldquo;Issued&rdquo; date from the first instalment date.</td></tr>
-                        <tr><td>FORM copy &mdash; license details to certificates</td><td>internal</td><td>KMC Payment</td><td>copy</td><td>Mirrors the validated activity grid into the Part A &ldquo;license details after invoice paid&rdquo; section.</td></tr>
-                        <tr><td>NATURAL PERSONS create or update &mdash; applicant</td><td>data</td><td>(general)</td><td>create</td><td>Writes the applicant&rsquo;s identity to GDB NATURAL PERSONS.</td></tr>
-                        <tr><td>NATURAL PERSONS create or update &mdash; representative</td><td>data</td><td>KMC Registration</td><td>create</td><td>Writes the representative&rsquo;s identity (when applicable).</td></tr>
-                        <tr><td>TRADING LICENSE PAYMENTS create or update</td><td>data</td><td>KMC Registration</td><td>create</td><td>Records the payments against the licence in GDB TRADING LICENSE FEES.</td></tr>
-                        <tr><td>TRADING LICENSES create</td><td>data</td><td>KMC Registration</td><td>create</td><td>Creates the licence record in GDB TRADING LICENSES (6.6).</td></tr>
-                        <tr><td>RIGHTS create trading licence relations &mdash; applicant</td><td>data</td><td>KMC Registration</td><td>create</td><td>Creates rights linking the applicant to the new licence.</td></tr>
-                        <tr><td>RIGHTS create trading license relations &mdash; representative</td><td>data</td><td>KMC Registration</td><td>create</td><td>Creates rights linking the representative to the licence (when applicable).</td></tr>
-                        <tr><td>TRADING LICENSE PAYMENTS update entries with license nr</td><td>data</td><td>KMC Registration</td><td>update</td><td>Back-links payment rows to the newly assigned licence number.</td></tr>
-                        <tr><td>KMC Certificate upload</td><td>document</td><td>KMC Certificate</td><td>generate &amp; upload</td><td>Generates and uploads the signed Trading License Certificate PDF.</td></tr>
-                        <tr><td>KMC Certificate display</td><td>document</td><td>(general)</td><td>generate &amp; display</td><td>On-demand certificate render (for re-downloads).</td></tr>
-                        <tr><td>INTERNAL test &mdash; bring values to certificate in part A</td><td>internal</td><td>(test)</td><td>copy</td><td>Diagnostic helper used in test environments.</td></tr>
-                    </tbody>
-                </table>
-
-                <div class="note-box">
+                <div class="info-box">
                     <div class="box-label">
-                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
-                        GDB databases this service writes to
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Same workflow for all owner types
                     </div>
-                    <p style="margin: 0;">
-                        <strong>NATURAL PERSONS (6.9)</strong> &mdash; applicant &amp; representative identities &middot;
-                        <strong>TRADING LICENSES (6.6)</strong> &mdash; the licence itself &middot;
-                        <strong>TRADING LICENSE FEES (4.4)</strong> &mdash; invoice payment records &middot;
-                        <strong>KMC PAYMENTS (1.9)</strong> &mdash; per-instalment payment history &middot;
-                        <strong>RELATIONS RIGHTS (5.1)</strong> &mdash; rights linking persons to licences &middot;
-                        <strong>KMC FEES (1.7)</strong> &mdash; reference schedule (read-only).
-                    </p>
+                    <p>The same six-desk workflow processes applications submitted by a natural person owner, by a representative acting for someone else, and for businesses already registered with the Business Registry or GRA. What differs is which prerequisite documents the Review desk checks, and whether the representative-related bots run at the Registration desk. The desk sequence and statuses are identical.</p>
                 </div>
             </div>
 
-            <!-- ===== 9. DETERMINANTS ===== -->
-            <div class="section" id="determinants">
-                <h2>9. Key Determinants &amp; Routing</h2>
-                <p>The service is driven by <strong>146 determinants</strong>. The vast majority drive activity-row visibility (one set per sector/activity per officer desk &mdash; e.g. &ldquo;Accommodation facilities &mdash; Per room (Approval)&rdquo;). Below are the non-grid determinants that materially affect routing and form behaviour.</p>
+            <!-- ===== 2. SERVICE WORKFLOW ===== -->
+            <div class="section" id="service-workflow">
+                <h2>2. Service Workflow</h2>
+                <p>The workflow runs from citizen submission through three officer desks (Review, Approval, Payment), two automated bot desks (Registration, Certificate), and a feedback loop back to the Applicant when corrections are required. The diagram below shows all steps in sequence, followed by a detailed timeline that lists every transition including the send-back / reject branches.</p>
 
-                <h3>Applicant routing</h3>
-                <table class="field-table">
-                    <thead>
-                        <tr><th>Determinant</th><th>Target field</th><th>Effect</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Application for myself / Application for someone else</td><td><code>applicantApplicationSubmittedFor</code></td><td>Shows the &ldquo;Will you receive user rights?&rdquo; question and toggles the representative rights bot during registration.</td></tr>
-                        <tr><td>Representative will have rights</td><td><code>applicantWillYouReceiveUserRights</code></td><td>Drives the rights entries the registration bot creates.</td></tr>
-                        <tr><td>Address of individual is / is NOT in The Gambia</td><td><code>applicantIsTheAddressInTheGambia</code></td><td>Switches the address fields between Region/District (in-country) and Country (foreign).</td></tr>
-                        <tr><td>Applicant nationality = / != Gambia</td><td><code>applicantNationality</code></td><td>May surface document-type restrictions and conditional content.</td></tr>
-                    </tbody>
-                </table>
+                <div class="workflow-steps">
+                    <div class="wf-step">
+                        <div class="wf-dot applicant">
+                            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="wf-label">Applicant</div>
+                        <div class="wf-sublabel">Fills form,<br>pays &amp; submits</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot officer">
+                            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </div>
+                        <div class="wf-label">KMC Review</div>
+                        <div class="wf-sublabel">Officer verifies<br>declaration</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot officer">
+                            <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        </div>
+                        <div class="wf-label">KMC Approval</div>
+                        <div class="wf-sublabel">Senior officer<br>issues invoice</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot officer">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><line x1="6" y1="12" x2="6.01" y2="12"/><line x1="18" y1="12" x2="18.01" y2="12"/></svg>
+                        </div>
+                        <div class="wf-label">KMC Payment</div>
+                        <div class="wf-sublabel">Officer confirms<br>instalments</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot bot">
+                            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                        </div>
+                        <div class="wf-label">KMC Registration</div>
+                        <div class="wf-sublabel">Bots update<br>registry</div>
+                    </div>
+                    <div class="wf-step">
+                        <div class="wf-dot bot">
+                            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </div>
+                        <div class="wf-label">KMC Certificate</div>
+                        <div class="wf-sublabel">Bot generates<br>certificate</div>
+                    </div>
+                </div>
 
-                <h3>Business registration cross-checks</h3>
-                <table class="field-table">
-                    <thead>
-                        <tr><th>Determinant</th><th>Target field</th><th>Effect</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Business is / is NOT registered with Business Registry</td><td><code>applicantRegisteredWithTheBusinessRegistry</code></td><td>Shows/hides the BR number field and triggers the registry lookup.</td></tr>
-                        <tr><td>Business is / is NOT registered with GRA</td><td><code>applicantRegisteredWithTheGambiaRevenueAuthorityYesNo</code></td><td>Shows/hides the TIN N&deg; field.</td></tr>
-                        <tr><td>Business is Individual</td><td><code>applicantSelectABusinessCategory</code></td><td>Classification check &mdash; surfaces specific guidance for sole proprietorships.</td></tr>
-                        <tr><td>Read business data = true</td><td><code>applicantStatusReadBusiness</code></td><td>Indicates that the v-RIGHTS bot completed and the business panel is pre-populated.</td></tr>
-                    </tbody>
-                </table>
-
-                <h3>KMC invoice &amp; payments routing</h3>
-                <table class="field-table">
-                    <thead>
-                        <tr><th>Determinant</th><th>Target field</th><th>Effect</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Issue KMC invoice = yes / = no</td><td><code>kmcApprovalIssueInvoice</code></td><td>Gate on whether the invoice generator bot runs at Approval.</td></tr>
-                        <tr><td>KMC invoice number received, field not empty</td><td><code>kmcApprovalInvoiceN</code></td><td>Surfaces invoice info to the Payment desk.</td></tr>
-                        <tr><td>KMC invoice is fully paid / not fully paid yet</td><td><code>kmcApprovalTotalCost</code></td><td>Drives when the file is allowed to move past KMC Payment.</td></tr>
-                        <tr><td>Total remaining to be paid &gt; 0</td><td><code>kmcPaymentNumber</code></td><td>Blocks Validate application at KMC Payment until balance is zero.</td></tr>
-                        <tr><td>The 1st row in KMC payment instalments grid</td><td><code>kmcPaymentKmcPayments_nrOfRows</code></td><td>Drives the &ldquo;1st payment date &rarr; license issued date&rdquo; copy bot.</td></tr>
-                    </tbody>
-                </table>
-
-                <h3>Correction loop flags</h3>
-                <table class="field-table">
-                    <thead>
-                        <tr><th>Determinant</th><th>Target field</th><th>Effect</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Sent back from KMC Approval</td><td><code>applicantSentBackForCorrectionsKmcReview</code></td><td>Shows the &ldquo;corrections required&rdquo; banner on Part A.</td></tr>
-                        <tr><td>Comment added by KMC Review / KMC Approval</td><td><code>kmcReviewCommentForApprovingOfficer</code>, <code>kmcApprovalCommentForApprovingOfficer</code></td><td>Surfaces the officer&rsquo;s comment to the next desk and the applicant.</td></tr>
-                    </tbody>
-                </table>
-
-                <h3>Stock value bands (for retail categories)</h3>
-                <p>Six numeric bands per desk (Review &amp; Approval) drive how the stock-value tariff is applied:</p>
-                <ul>
-                    <li><strong>Stock value = 0</strong> &mdash; no stock declared, no stock-based fee.</li>
-                    <li><strong>Stock value &gt; 0</strong> &mdash; some stock declared, triggers stock-based logic.</li>
-                    <li><strong>&lt;= 100,000 GMD</strong> &mdash; lowest band.</li>
-                    <li><strong>&gt; 100,000 GMD</strong> &mdash; above lowest band.</li>
-                    <li><strong>&lt;= 200,000 GMD</strong> &mdash; mid band.</li>
-                    <li><strong>&gt; 200,000 GMD</strong> &mdash; highest band.</li>
-                </ul>
+                <h3>Full Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-item applicant-step">
+                        <h4>Applicant Submits &amp; Pays</h4>
+                        <p>The citizen completes the application form online (License Owner, Business Details, License Details tabs), uploads any required documents, pays the application fee, and submits. The file enters the KMC back-office queue at sort order 0.</p>
+                        <div class="timeline-meta">Triggered by citizen</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>KMC Review (UserRole, sort 0, start)</h4>
+                        <p>A KMC Review officer opens the file and verifies the declared activities, cross-checks the business address against KMC jurisdiction, and calculates schedule fees per activity row. They write a comment for the approving officer and forward, or send back / reject.</p>
+                        <div class="timeline-meta">Human officer &mdash; typically 1&ndash;3 working days</div>
+                        <div class="branch"><strong>Branches:</strong> <em>SEND BACK TO CORRECTIONS</em> &rarr; back to Applicant. <em>FILE REJECT</em> &rarr; back to Applicant (terminal-style).</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>KMC Approval (UserRole, sort 1)</h4>
+                        <p>A senior officer re-checks the activity grid and fees, decides whether to <strong>Issue invoice</strong>, captures the invoice N&deg; / issue date / due date, and forwards to KMC Payment.</p>
+                        <div class="timeline-meta">Human officer &mdash; typically 1&ndash;2 working days after Review</div>
+                        <div class="branch"><strong>Branches:</strong> <em>SEND BACK TO CORRECTIONS</em> &rarr; internal loop back to <strong>KMC Review</strong> (not to the applicant). <em>FILE REJECT</em> &rarr; back to Applicant.</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>KMC Payment (UserRole, sort 2)</h4>
+                        <p>The applicant pays the invoice through the portal; for each instalment row the Payment officer confirms receipt. When the &ldquo;Total remaining&rdquo; field reaches zero, the officer captures the License N&deg;, issued date, and renewal date, then validates the file.</p>
+                        <div class="timeline-meta">Human officer &mdash; depends on applicant payment speed</div>
+                        <div class="branch"><strong>Branches:</strong> <em>SEND BACK TO CORRECTIONS</em> or <em>FILE REJECT</em> &rarr; back to Applicant (rare &mdash; only for payment-reference issues or fraud).</div>
+                    </div>
+                    <div class="timeline-item bot-step">
+                        <h4>KMC Registration (BotRole, sort 3)</h4>
+                        <p>Six data bots run in sequence to write the licence into the registry databases (NATURAL PERSONS, TRADING LICENSE FEES, TRADING LICENSES, RELATIONS RIGHTS) and back-link payment rows to the new licence N&deg;.</p>
+                        <div class="timeline-meta">Automated &mdash; typically seconds; runs immediately after Payment validates</div>
+                    </div>
+                    <div class="timeline-item bot-step">
+                        <h4>KMC Certificate (BotRole, sort 4, end)</h4>
+                        <p>The <strong>KMC Certificate upload</strong> document bot generates the signed KMC Trading License Certificate PDF using the licensing certificate template and uploads it to the applicant&rsquo;s file. The applicant is notified and can download the certificate from their dashboard.</p>
+                        <div class="timeline-meta">Automated &mdash; runs after KMC Registration succeeds</div>
+                    </div>
+                    <div class="timeline-item applicant-step">
+                        <h4>Applicant Feedback Loop (UserRole, sort 299)</h4>
+                        <p>When a desk sends a file back, it lands on the Applicant role. The applicant sees the officer comment on a banner, edits the relevant tabs, re-uploads documents if asked, and resubmits &mdash; which routes the file back to <strong>KMC Review</strong>.</p>
+                        <div class="timeline-meta">Human applicant &mdash; only when a correction is requested</div>
+                    </div>
+                </div>
             </div>
 
-            <!-- ===== 10. OFFICER TIPS & ESCALATION ===== -->
-            <div class="section" id="tips">
-                <h2>10. Officer Tips &amp; Escalation</h2>
+            <!-- ===== 3. TYPE OF ROLES ===== -->
+            <div class="section" id="type-of-roles">
+                <h2>3. Type of Roles</h2>
+                <p>This service has two types of roles. The Trading License workflow uses both.</p>
 
-                <h3>General principles</h3>
-                <ul class="checklist">
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>Always read the previous desk&rsquo;s comment before validating &mdash; many errors are caught by following the trail upstream.</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>Use SEND BACK TO CORRECTIONS in preference to FILE REJECT when the issue is fixable &mdash; reject is for substantive ineligibility.</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>Don&rsquo;t click Validate at KMC Payment until &ldquo;Total remaining&rdquo; is exactly zero. Forwarding early triggers a bot failure at KMC Registration.</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>The activity grid auto-fills via internal copy bots, but any field can be overridden. When you override, leave a comment explaining why.</span>
-                    </li>
-                    <li>
-                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-                        <span>Print the inspection report and the invoice for the case file even though the PDFs are stored digitally &mdash; useful for KMC archive and disputes.</span>
-                    </li>
-                </ul>
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'role-human')">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            Human Roles
+                        </button>
+                        <button class="tab-btn" onclick="switchTab(event, 'role-bot')">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle; margin-right:6px;"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                            Bot Roles
+                        </button>
+                    </div>
 
-                <h3>When to escalate</h3>
+                    <div class="tab-panel active" id="role-human" data-tab-label="Human Roles">
+                        <p>A <strong>UserRole</strong> is assigned to a logged-in officer (or, for the Applicant role, to the citizen). The user sees a role form with editable fields, the file&rsquo;s shared data, and a set of action buttons that map to status transitions.</p>
+                        <h4>Human-handled desks in this service</h4>
+                        <ul>
+                            <li><strong>KMC Review</strong> &mdash; first officer desk. Verifies the declaration, computes schedule fees, captures inspection notes, and writes a comment for Approval.</li>
+                            <li><strong>KMC Approval</strong> &mdash; senior officer desk. Re-checks fees, decides whether to issue the invoice, and captures invoice metadata.</li>
+                            <li><strong>KMC Payment</strong> &mdash; finance desk. Confirms each invoice instalment and captures the issued/renewal dates and licence N&deg;.</li>
+                            <li><strong>Applicant</strong> &mdash; feedback-loop role. Receives files sent back for corrections, edits and resubmits.</li>
+                        </ul>
+                        <h4>Statuses available at human desks</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Status</th><th>Meaning &amp; effect</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="status-badge status-pending">FILE PENDING</span></td><td>Default state on arrival. Officer is investigating or waiting on data. Don&rsquo;t leave files in this state for long.</td></tr>
+                                <tr><td><span class="status-badge status-validated">FILE VALIDATED</span></td><td>Desk approved the file. Moves forward to the next desk automatically.</td></tr>
+                                <tr><td><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span></td><td>File returned with comments. Destination depends on the desk &mdash; Approval sends back to Review, others send back to the Applicant.</td></tr>
+                                <tr><td><span class="status-badge status-rejected">FILE REJECT</span></td><td>Application refused. Routed back to the Applicant; applicant must submit a new application.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-panel" id="role-bot" data-tab-label="Bot Roles">
+                        <p>A <strong>BotRole</strong> is executed automatically by the system &mdash; no officer action required. Bots run in sequence after the previous desk validates the file. The service uses 25 bots in total, grouped into four categories below.</p>
+                        <h4>Bot categories in this service</h4>
+                        <ol class="steps">
+                            <li class="step">
+                                <div class="step-number bot">D</div>
+                                <div class="step-content">
+                                    <h4>Data bots (read)</h4>
+                                    <p>Read records from a GDB database into the current file. Used at the human desks to pre-populate fields.</p>
+                                    <ul>
+                                        <li><strong>NATURAL PERSONS read owners registered ID and email and address</strong> &mdash; reads applicant identity from GDB NATURAL PERSONS (6.9).</li>
+                                        <li><strong>v-RIGHTS read business details</strong> &mdash; reads active businesses linked to the user from VIEW-RIGHTS.</li>
+                                        <li><strong>KMC FEES read fee and multiplier &mdash; Review</strong> &mdash; reads schedule fee per activity from GDB KMC FEES (1.7) at the Review desk.</li>
+                                        <li><strong>KMC FEES read fee and multiplier &mdash; Approval</strong> &mdash; re-reads KMC FEES at the Approval desk.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">D</div>
+                                <div class="step-content">
+                                    <h4>Data bots (create / update)</h4>
+                                    <p>Write or update records in a GDB database. Concentrated at the KMC Registration desk &mdash; they are the bots that create the actual licence in the registry.</p>
+                                    <ul>
+                                        <li><strong>KMC PAYMENTS save payment instalments &mdash; KMC Payment</strong> &mdash; writes each instalment row to GDB KMC PAYMENTS (1.9).</li>
+                                        <li><strong>NATURAL PERSONS create or update &mdash; applicant</strong> &mdash; writes the applicant&rsquo;s identity into GDB NATURAL PERSONS.</li>
+                                        <li><strong>NATURAL PERSONS create or update &mdash; representative</strong> &mdash; same, for the representative (when applicable).</li>
+                                        <li><strong>TRADING LICENSE PAYMENTS create or update</strong> &mdash; writes the invoice payment record to GDB TRADING LICENSE FEES (4.4).</li>
+                                        <li><strong>TRADING LICENSES create</strong> &mdash; creates the licence row in GDB TRADING LICENSES (6.6).</li>
+                                        <li><strong>RIGHTS create trading licence relations &mdash; applicant</strong> &mdash; rights row linking the applicant to the new licence.</li>
+                                        <li><strong>RIGHTS create trading license relations &mdash; representative</strong> &mdash; rights row linking the representative (when applicable).</li>
+                                        <li><strong>TRADING LICENSE PAYMENTS update entries with license nr</strong> &mdash; back-links payment rows to the new licence N&deg;.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">I</div>
+                                <div class="step-content">
+                                    <h4>Internal bots (copy / flag)</h4>
+                                    <p>Move data between fields within the file, or set flags that control conditional content. They don&rsquo;t touch external databases.</p>
+                                    <ul>
+                                        <li><strong>FORM copy &mdash; sectors and activities to KMC Review</strong> &mdash; copies the applicant&rsquo;s activity grid into the reviewer&rsquo;s editable grid.</li>
+                                        <li><strong>KMC REVIEW copy &mdash; sectors and activities to KMC Approval</strong> &mdash; pushes Review&rsquo;s validated grid into the Approval form.</li>
+                                        <li><strong>KMC APPROVAL send &mdash; corrected sectors and activities to KMC Review</strong> &mdash; returns corrected rows on send-back.</li>
+                                        <li><strong>KMC APPROVAL copy &mdash; sent back for corrections</strong> &mdash; sets the &ldquo;sent back&rdquo; flag visible on Part A.</li>
+                                        <li><strong>KMC PAYMENTS copy &mdash; amount paid</strong> &mdash; propagates the running total into the totals panel.</li>
+                                        <li><strong>KMC PAYMENTS copy &mdash; 1st payment date to license issued date</strong> &mdash; initialises issued date from the first instalment.</li>
+                                        <li><strong>FORM copy &mdash; license details to certificates</strong> &mdash; mirrors the activity grid into the Part A &ldquo;license details after invoice paid&rdquo; section.</li>
+                                        <li><strong>INTERNAL test &mdash; bring values to certificate in part A</strong> &mdash; diagnostic helper used in test environments.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="step">
+                                <div class="step-number bot">P</div>
+                                <div class="step-content">
+                                    <h4>Document bots (PDF generation)</h4>
+                                    <p>Generate a PDF from a print template and either display it (for officer download on demand) or upload it as a final certificate.</p>
+                                    <ul>
+                                        <li><strong>KMC Report display</strong> &mdash; generates a printable inspection report on demand at the Review desk.</li>
+                                        <li><strong>KMC Report 2 display</strong> &mdash; alternative inspection report template available at Review.</li>
+                                        <li><strong>KMC Invoice display</strong> &mdash; generates the printable KMC invoice PDF at the Approval desk.</li>
+                                        <li><strong>KMC Certificate display</strong> &mdash; on-demand certificate render (for re-downloads).</li>
+                                        <li><strong>KMC Certificate upload</strong> &mdash; generates and uploads the final signed Trading License Certificate PDF at the KMC Certificate desk.</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ol>
+                        <h4>Statuses available at bot desks</h4>
+                        <table class="field-table">
+                            <thead>
+                                <tr><th>Status</th><th>Meaning</th><th>Action required</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><span class="status-badge status-validated">FILE VALIDATED</span></td><td>Bot chain ran successfully</td><td>None &mdash; proceeds to next desk automatically.</td></tr>
+                                <tr><td><span class="status-badge status-pending">FILE PENDING</span></td><td>Bot is queued or running</td><td>Wait; typically completes in seconds.</td></tr>
+                                <tr><td><span class="status-badge status-bot-fail">Bot failed</span></td><td>One of the bots returned an error</td><td>Open the audit log, identify which bot failed, follow the troubleshooting steps in &sect; 5.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 4. DESCRIPTION OF ROLES ===== -->
+            <div class="section" id="description-of-roles">
+                <h2>4. Description of Roles</h2>
+                <p>The six roles below are listed in workflow order. Each step describes what arrives at the desk, what the role does, the available status transitions, and the bots that fire at that desk.</p>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>KMC Review (UserRole &middot; sort 0 &middot; start)</h4>
+                            <p>The first officer-handled desk. A freshly submitted application arrives with the three applicant tabs (License Owner, Business Details, License Details) filled in. The reviewer&rsquo;s job is to verify the declaration, compute fees, and forward to Approval.</p>
+                            <p><strong>What you do here:</strong></p>
+                            <ul>
+                                <li>Read the applicant&rsquo;s three tabs end-to-end.</li>
+                                <li>Confirm the business address falls within the KMC jurisdiction.</li>
+                                <li>Cross-check declared activities against KMC records / inspection notes.</li>
+                                <li>For each row in the Trading Licence grid, look up the schedule fee and record any multiplier (the KMC FEES bot pre-fills these but you can override).</li>
+                                <li>Capture inspection details (date, zone) if a site inspection was carried out.</li>
+                                <li>Write a comment for the approving officer summarising your findings.</li>
+                            </ul>
+                            <p>The detail of what to check depends on the type of owner / business declared:</p>
+                            <div class="tab-group" style="margin-top: 12px;">
+                                <div class="tab-nav">
+                                    <button class="tab-btn active" onclick="switchTab(event, 'review-natural')">Natural person owner</button>
+                                    <button class="tab-btn" onclick="switchTab(event, 'review-registered-business')">Registered business (RGD)</button>
+                                    <button class="tab-btn" onclick="switchTab(event, 'review-registered-company')">Registered with GRA (TIN)</button>
+                                </div>
+                                <div class="tab-panel active" id="review-natural" data-tab-label="Review &mdash; Natural person owner">
+                                    <ul class="checklist">
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Owner name, ID, email and address match the NATURAL PERSONS GDB record (cross-checked by the read bot).</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Address of individual is in The Gambia (region/district filled) or, if foreign, the country field is set.</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Declared activities map onto valid KMC FEES schedule rows; no missing sector/activity combinations.</span></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-panel" id="review-registered-business" data-tab-label="Review &mdash; Registered with Business Registry">
+                                    <ul class="checklist">
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>The Business Registry (BR) number is filled and looks up correctly via the v-RIGHTS bot.</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>The applicant has rights on the named business (RELATIONS RIGHTS lookup) &mdash; otherwise treat as representative.</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Business category and the activity grid match what&rsquo;s permitted under the BR registration.</span></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-panel" id="review-registered-company" data-tab-label="Review &mdash; Registered with GRA">
+                                    <ul class="checklist">
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>The TIN N&deg; is filled and matches the business name and address on the file.</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>If the business is also registered with the Business Registry, both BR and TIN are filled.</span></li>
+                                        <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#3464B0"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Stock value &mdash; if the business is in a retail category, the appropriate band determinant is set.</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <p><strong>Status transitions available:</strong></p>
+                            <ul>
+                                <li><span class="status-badge status-validated">FILE VALIDATED</span> &rarr; KMC Approval. Use when the declaration is accurate and fees are correctly computed.</li>
+                                <li><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span> &rarr; Applicant. Use when the declaration is incomplete or inconsistent and the applicant must amend &amp; resubmit.</li>
+                                <li><span class="status-badge status-rejected">FILE REJECT</span> &rarr; Applicant. Use only when the application is not eligible (wrong jurisdiction, fraudulent declaration).</li>
+                                <li><span class="status-badge status-pending">FILE PENDING</span> &mdash; default state while investigating. Don&rsquo;t leave files here for long.</li>
+                            </ul>
+                            <p><strong>Bots that fire at this desk:</strong> FORM copy &mdash; sectors and activities to KMC Review (internal copy on arrival); KMC FEES read fee and multiplier &mdash; Review (data read); NATURAL PERSONS read owners registered ID and email and address (data read); v-RIGHTS read business details (data read); KMC Report display, KMC Report 2 display (document bots, on demand).</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>KMC Approval (UserRole &middot; sort 1)</h4>
+                            <p>A senior officer&rsquo;s desk. Files validated by Review arrive here. You see the full declaration, the reviewer&rsquo;s computed fees, their inspection notes, and their comment. Your job is to confirm the fee calculation and decide whether to issue the invoice.</p>
+                            <p><strong>What you do here:</strong></p>
+                            <ul>
+                                <li>Re-check the activity grid and fees prepared by the reviewer (any field can be overridden &mdash; leave a comment if you do).</li>
+                                <li>Validate the total cost computation against the KMC fee schedule.</li>
+                                <li>Decide whether to <strong>Issue invoice = Yes</strong> (proceeds) or <strong>= No</strong> (holds the file).</li>
+                                <li>Generate the invoice number and pick the invoice issue / due dates.</li>
+                                <li>Print the invoice PDF (KMC Invoice display bot) so it&rsquo;s available to the applicant on their dashboard.</li>
+                            </ul>
+                            <p><strong>Status transitions available:</strong></p>
+                            <ul>
+                                <li><span class="status-badge status-validated">FILE VALIDATED</span> &rarr; KMC Payment. Use when invoice is issued and fees are confirmed.</li>
+                                <li><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span> &rarr; KMC Review (internal loop). Use when Review made a mistake in the grid or fee calculation &mdash; this does <em>not</em> go to the applicant.</li>
+                                <li><span class="status-badge status-rejected">FILE REJECT</span> &rarr; Applicant. Use when there are substantive issues that Review couldn&rsquo;t catch (e.g. ineligibility detected at this level).</li>
+                                <li><span class="status-badge status-pending">FILE PENDING</span> &mdash; default during your review.</li>
+                            </ul>
+                            <p><strong>Bots that fire at this desk:</strong> KMC REVIEW copy &mdash; sectors and activities to KMC Approval (internal copy on arrival); KMC FEES read fee and multiplier &mdash; Approval (data re-read); KMC Invoice display (document bot, on &ldquo;Print invoice&rdquo;); KMC APPROVAL send &mdash; corrected sectors and activities to KMC Review (internal, on send-back); KMC APPROVAL copy &mdash; sent back for corrections (internal flag bot).</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>KMC Payment (UserRole &middot; sort 2)</h4>
+                            <p>The finance desk. Approved files with an issued invoice arrive here. The applicant pays the invoice through the portal in one or more instalments. Your job is to confirm each instalment and validate the file when the invoice is fully paid.</p>
+                            <p><strong>What you do here:</strong></p>
+                            <ul>
+                                <li>For each instalment recorded in the &ldquo;KMC payments&rdquo; grid (Payment N&deg;, date, amount paid, remaining), click <strong>Confirm payment</strong> to mark it received.</li>
+                                <li>The &ldquo;Total remaining&rdquo; auto-recomputes after each confirmation; when it hits zero the &ldquo;Fully paid&rdquo; flag triggers.</li>
+                                <li>Capture the <strong>License N&deg;</strong>, <strong>License issued</strong> date, <strong>License renewal</strong> date (one year later), and KMC Registrar name.</li>
+                                <li>Only when &ldquo;Total remaining&rdquo; is exactly zero, click <strong>Validate application</strong> &mdash; this hands the file off to the automated KMC Registration desk.</li>
+                            </ul>
+                            <p><strong>Status transitions available:</strong></p>
+                            <ul>
+                                <li><span class="status-badge status-validated">FILE VALIDATED</span> &rarr; KMC Registration (bot). Use only when the invoice is fully paid and all licence-finalisation fields are captured.</li>
+                                <li><span class="status-badge status-corrections">SEND BACK TO CORRECTIONS</span> &rarr; Applicant. Rare &mdash; e.g. a payment-reference issue the applicant must clarify.</li>
+                                <li><span class="status-badge status-rejected">FILE REJECT</span> &rarr; Applicant. Use only for serious non-payment or fraud cases beyond your remit.</li>
+                                <li><span class="status-badge status-pending">FILE PENDING</span> &mdash; default while waiting for further instalments.</li>
+                            </ul>
+                            <p><strong>Bots that fire at this desk:</strong> KMC PAYMENTS save payment instalments &mdash; KMC Payment (data create); KMC PAYMENTS copy &mdash; amount paid (internal copy); KMC PAYMENTS copy &mdash; 1st payment date to license issued date (internal copy); FORM copy &mdash; license details to certificates (internal copy, on validate).</p>
+                            <div class="warning-box" style="margin-top: 14px;">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                    Don&rsquo;t validate early
+                                </div>
+                                <p style="margin: 0;">If you click <strong>Validate application</strong> while &ldquo;Total remaining&rdquo; is greater than zero, the KMC Registration bot chain will fail (the licence record requires a non-zero paid total). Wait until the balance is exactly zero.</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number bot">4</div>
+                        <div class="step-content">
+                            <h4>KMC Registration (BotRole &middot; sort 3)</h4>
+                            <p>The first automated desk. No human form. A chain of six data bots runs in sequence to write the licence into the registry databases and link it to the applicant&rsquo;s rights records. Runs immediately after KMC Payment validates a fully-paid file.</p>
+                            <p><strong>Bots that run, in order:</strong></p>
+                            <ol>
+                                <li><strong>NATURAL PERSONS create or update &mdash; representative</strong> &mdash; only when the application was submitted by someone other than the owner. Writes to GDB NATURAL PERSONS (6.9).</li>
+                                <li><strong>TRADING LICENSE PAYMENTS create or update</strong> &mdash; creates the invoice payment record in GDB TRADING LICENSE FEES (4.4).</li>
+                                <li><strong>TRADING LICENSES create</strong> &mdash; creates the licence row in GDB TRADING LICENSES (6.6) with the assigned licence N&deg;, dates, activities, and total fee.</li>
+                                <li><strong>RIGHTS create trading licence relations &mdash; applicant</strong> &mdash; creates the rights row linking the applicant to the new licence in GDB RELATIONS RIGHTS (5.1).</li>
+                                <li><strong>RIGHTS create trading license relations &mdash; representative</strong> &mdash; same, for the representative when applicable (skipped otherwise).</li>
+                                <li><strong>TRADING LICENSE PAYMENTS update entries with license nr</strong> &mdash; back-links the payment rows to the newly assigned licence N&deg;.</li>
+                            </ol>
+                            <p><strong>Conditional execution:</strong> bots #1 and #5 only run when the determinant &ldquo;Application for someone else&rdquo; is true. If the applicant submitted for themselves, those two are skipped.</p>
+                            <p><strong>Status transitions available:</strong></p>
+                            <ul>
+                                <li><span class="status-badge status-validated">FILE VALIDATED</span> &rarr; KMC Certificate (bot). All bots completed; licence is in the registry.</li>
+                                <li><span class="status-badge status-pending">FILE PENDING</span> &mdash; bot chain in progress (seconds).</li>
+                                <li><span class="status-badge status-bot-fail">Bot failed</span> &mdash; one of the bots returned an error. File paused for support intervention; see &sect; 5.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number bot">5</div>
+                        <div class="step-content">
+                            <h4>KMC Certificate (BotRole &middot; sort 4 &middot; end)</h4>
+                            <p>The final automated desk. A single document bot generates the signed <strong>KMC Trading License Certificate PDF</strong> and uploads it to the applicant&rsquo;s file. After this runs, the application is complete &mdash; the applicant downloads the certificate from their dashboard.</p>
+                            <p><strong>Bot that runs:</strong></p>
+                            <ul>
+                                <li><strong>KMC Certificate upload</strong> (document &middot; document_generate_and_upload) &mdash; renders the &ldquo;KMC Licensing Certificate &mdash; Trading License&rdquo; template and attaches the resulting PDF to the file.</li>
+                            </ul>
+                            <p>The certificate template covers all 13 activity-row variants (Per room, Per truck, Per machine, Per booth, Per show, Per premise, Per boat, Per cold store, Per borehole, Per billboard, Per vehicle, Per CU M&sup3;, Per plant) so the PDF renders correctly regardless of the declared activities.</p>
+                            <p><strong>Status transitions available:</strong></p>
+                            <ul>
+                                <li><span class="status-badge status-validated">FILE VALIDATED</span> &mdash; certificate uploaded, application reaches final state, applicant is notified.</li>
+                                <li><span class="status-badge status-pending">FILE PENDING</span> &mdash; PDF generation in progress (seconds).</li>
+                                <li><span class="status-badge status-bot-fail">Bot failed</span> &mdash; PDF generator error. Usually a template issue or a missing data field. Escalate to support.</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Applicant feedback loop (UserRole &middot; sort 299)</h4>
+                            <p>The Applicant role isn&rsquo;t a desk officers staff &mdash; it represents the citizen&rsquo;s side of the feedback loop. When KMC Review, KMC Approval (only for rejects), or KMC Payment sends a file back via <em>SEND BACK TO CORRECTIONS</em> or <em>FILE REJECT</em>, the file lands here.</p>
+                            <p><strong>What happens at this role:</strong></p>
+                            <ul>
+                                <li>The applicant opens the application from their portal dashboard.</li>
+                                <li>They see the officer&rsquo;s comment on a prominent banner (driven by the <code>applicantSentBackForCorrectionsKmcReview</code> determinant and the <code>kmcReviewCommentForApprovingOfficer</code> / <code>kmcApprovalCommentForApprovingOfficer</code> comment fields).</li>
+                                <li>They edit the relevant tab(s), re-upload documents if requested.</li>
+                                <li>They resubmit &mdash; which routes the file back to <strong>KMC Review</strong>.</li>
+                            </ul>
+                            <p><strong>Status transitions available:</strong></p>
+                            <ul>
+                                <li><span class="status-badge status-validated">FILE VALIDATED</span> &mdash; resubmission. File moves back to KMC Review.</li>
+                                <li><span class="status-badge status-pending">FILE PENDING</span> &mdash; default while the applicant prepares the corrections.</li>
+                            </ul>
+                            <p>No bots fire at this role &mdash; the comment / flag fields are written by the officer-desk bots when the send-back action is taken.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- ===== 5. ASSISTANCE ===== -->
+            <div class="section" id="assistance">
+                <h2>5. Assistance</h2>
+
+                <h3>Common Issues</h3>
+                <p>The table below lists the most frequent issues KMC officers encounter when processing Trading License applications, with the likely cause and the recommended action.</p>
+
                 <table class="field-table">
                     <thead>
-                        <tr><th>Situation</th><th>Escalate to</th></tr>
+                        <tr>
+                            <th>Issue</th>
+                            <th>Likely cause</th>
+                            <th>Recommended action</th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Bot failed status at KMC Registration or Certificate</td><td>Gambia Easy Business technical support, with the application reference and audit log.</td></tr>
-                        <tr><td>GDB lookup mismatch &mdash; the BR / TIN exists but doesn&rsquo;t match the applicant</td><td>RGD or GRA liaison &mdash; do not validate the file until resolved.</td></tr>
-                        <tr><td>Applicant claims overcharging on the schedule fee</td><td>KMC Trading Licenses Unit head &mdash; you can hold the file at Payment while clarification is sought.</td></tr>
-                        <tr><td>Duplicate license number suggested by Registration bot</td><td>Have the Payment officer regenerate the License N&deg; from the role form and retry.</td></tr>
-                        <tr><td>Suspected fraudulent declaration (e.g. wrong jurisdiction claimed)</td><td>Reject the file with a clear reason and refer to KMC Enforcement.</td></tr>
+                        <tr>
+                            <td>Business address not in KMC jurisdiction</td>
+                            <td>Applicant mistakenly applied to KMC when their business is in Banjul or Brikama</td>
+                            <td>At Review, use <strong>FILE REJECT</strong> with a clear note pointing the applicant to the correct municipality.</td>
+                        </tr>
+                        <tr>
+                            <td>Declared activity count is implausible (e.g. 200 rooms at a residential address)</td>
+                            <td>Data-entry error, or possible mis-declaration to lower fee</td>
+                            <td>Trigger a site inspection. Use <strong>SEND BACK TO CORRECTIONS</strong> rather than guessing; document the inspection date and zone before re-validating.</td>
+                        </tr>
+                        <tr>
+                            <td>Schedule fee mismatch between Review and Approval</td>
+                            <td>Reviewer applied the wrong schedule row, or KMC FEES bot read an outdated value</td>
+                            <td>At Approval, override the fee directly and document why in the comment. If systematic, escalate to KMC Trading Licenses Unit.</td>
+                        </tr>
+                        <tr>
+                            <td>Applicant claims overcharging on the schedule fee</td>
+                            <td>Misunderstanding of multiplier rules, or genuine schedule error</td>
+                            <td>Hold the file at Payment while clarification is sought from the KMC Trading Licenses Unit head.</td>
+                        </tr>
+                        <tr>
+                            <td>&ldquo;Bot failed&rdquo; at KMC Registration &mdash; duplicate license number</td>
+                            <td>License N&deg; collision (rare); the Payment desk regenerated the same N&deg; that&rsquo;s already in GDB TRADING LICENSES</td>
+                            <td>Have the Payment officer reopen the file, regenerate the License N&deg; on the role form, save, then retry the bot from the audit panel.</td>
+                        </tr>
+                        <tr>
+                            <td>&ldquo;Bot failed&rdquo; at KMC Certificate &mdash; PDF not generated</td>
+                            <td>Template error or missing required data field on the file</td>
+                            <td>Open the audit log to see the template error. If transient, retry. If persistent (e.g. an activity variant not covered), escalate to technical support with the audit reference.</td>
+                        </tr>
+                        <tr>
+                            <td>Payment confirmed by applicant but Payment desk shows pending</td>
+                            <td>Payment gateway delay between the portal and the KMC ledger</td>
+                            <td>Wait up to 1 hour. If still pending, verify with KMC Finance and manually confirm the instalment row if appropriate.</td>
+                        </tr>
+                        <tr>
+                            <td>GDB lookup mismatch &mdash; BR/TIN exists but doesn&rsquo;t match the applicant</td>
+                            <td>Stale RGD/GRA data, or applicant is using a business they don&rsquo;t have rights on</td>
+                            <td>Do not validate the file. Refer to RGD or GRA liaison, depending on which database the mismatch is in. Send back to corrections if the applicant needs to provide proof.</td>
+                        </tr>
                     </tbody>
                 </table>
 
-                <h3>Contact</h3>
-                <ul>
-                    <li><strong>System support:</strong> <a href="mailto:info@easybusiness.gov.gm">info@easybusiness.gov.gm</a></li>
-                    <li><strong>KMC Trading Licenses Unit:</strong> Kanifing Municipal Council offices &mdash; Trading Licenses Unit (Mon&ndash;Fri 08:00&ndash;16:00)</li>
-                    <li><strong>Applicant-facing documentation:</strong> <a href="register-trading-license.html">Register a Trading License &mdash; Part A manual</a></li>
-                </ul>
+                <h3>Support Contacts</h3>
+                <p>Use the most specific contact for the issue at hand. For application-specific data lookups (BR, TIN, NATURAL PERSONS), the GDB liaisons are the fastest path.</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Issue type</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>System / bot failures &mdash; KMC Registration or KMC Certificate</td>
+                            <td>Gambia Easy Business technical support &mdash; <a href="mailto:info@easybusiness.gov.gm">info@easybusiness.gov.gm</a> (include application reference and audit log)</td>
+                        </tr>
+                        <tr>
+                            <td>Schedule fee disputes / multiplier interpretation</td>
+                            <td>KMC Trading Licenses Unit head (Kanifing Municipal Council offices)</td>
+                        </tr>
+                        <tr>
+                            <td>Payment / instalment confirmation queries</td>
+                            <td>KMC Finance &mdash; ledger reconciliation desk</td>
+                        </tr>
+                        <tr>
+                            <td>Business Registry (BR) lookup mismatch</td>
+                            <td>RGD liaison &mdash; do not validate until confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>GRA / TIN lookup mismatch</td>
+                            <td>GRA liaison &mdash; do not validate until confirmed</td>
+                        </tr>
+                        <tr>
+                            <td>Suspected fraudulent declaration (wrong jurisdiction, falsified counts)</td>
+                            <td>Reject the file with a clear reason; refer to KMC Enforcement</td>
+                        </tr>
+                        <tr>
+                            <td>Applicant-facing documentation / portal usage</td>
+                            <td><a href="register-trading-license.html">Part A &mdash; Citizen Manual</a> &middot; <a href="https://easybusiness.gov.gm/help/">easybusiness.gov.gm/help</a></td>
+                        </tr>
+                        <tr>
+                            <td>KMC Trading Licenses Unit (in-person)</td>
+                            <td>Kanifing Municipal Council offices &mdash; Trading Licenses Unit (Mon&ndash;Fri 08:00&ndash;16:00)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tip-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="4,11 9,16 17,5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        General principles
+                    </div>
+                    <ul style="margin: 0 0 0 18px; padding: 0;">
+                        <li>Always read the previous desk&rsquo;s comment before validating &mdash; many errors are caught by following the trail upstream.</li>
+                        <li>Use <strong>SEND BACK TO CORRECTIONS</strong> in preference to <strong>FILE REJECT</strong> when the issue is fixable. Reject is for substantive ineligibility only.</li>
+                        <li>Don&rsquo;t click Validate at KMC Payment until &ldquo;Total remaining&rdquo; is exactly zero. Forwarding early triggers a bot failure at KMC Registration.</li>
+                        <li>The activity grid auto-fills via internal copy bots, but any field can be overridden. When you override, leave a comment explaining why.</li>
+                    </ul>
+                </div>
             </div>
 
         </div>
@@ -1295,37 +900,73 @@
     <!-- FOOTER -->
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-inner">
+            <div class="footer-grid">
                 <div class="footer-col">
                     <h5>Gambia Easy Business</h5>
-                    <p>Internal officer manual for the KMC Trading License service. Citizens should refer to the <a href="register-trading-license.html">Part A applicant manual</a>.</p>
+                    <p>Internal processing manual for KMC officers handling the Trading License service. Citizens should refer to the Part A applicant manual.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    </div>
                 </div>
                 <div class="footer-col">
-                    <h5>Cross-references</h5>
+                    <h5>Register a Trading License</h5>
                     <ul class="footer-links">
-                        <li><a href="register-trading-license.html">Part A &mdash; Applicant manual</a></li>
-                        <li><a href="register-sole-proprietorship-part-b.html">Sole Proprietorship &mdash; Part B</a></li>
-                        <li><a href="index.html">All Gambia manuals</a></li>
+                        <li><a href="register-trading-license.html">Part A &mdash; Citizen Manual</a></li>
+                        <li><a href="register-trading-license-part-b.html">Part B &mdash; Processing Manual</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h5>Service identification</h5>
-                    <p>Service: <strong>Register a Trading License</strong><br>
-                    Country: The Gambia<br>
-                    Service ID: <code>12e1483c&hellip;d4</code><br>
-                    Active version: v331</p>
+                    <h5>Other Manuals</h5>
+                    <ul class="footer-links">
+                        <li><a href="register-sole-proprietorship.html">Register a Sole Proprietorship</a></li>
+                        <li><a href="reserve-business-name.html">Reserve a Business Name</a></li>
+                        <li><a href="index.html">All Gambia Manuals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Kanifing, Republic of The Gambia</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@easybusiness.gov.gm</span>
+                    </div>
                 </div>
             </div>
+
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <img src="../lesotho/unctad-logo.avif" alt="UNCTAD" style="height: 28px;">
+            </div>
+
             <div class="footer-copyright">
-                Register a Trading License &mdash; Processing Manual (Part B) &mdash; Version 1.0 &mdash; Generated 2026-06-24 &nbsp;|&nbsp;
-                &copy; 2026 Gambia Easy Business, Republic of The Gambia. All rights reserved.
+                Register a Trading License &mdash; Processing Manual (Part B) &mdash; Version 1.1 &mdash; Restructured 2026-06-24 &nbsp;|&nbsp;
+                &copy; 2026 Gambia Easy Business, Republic of The Gambia. For internal use only.
             </div>
         </div>
-        <div class="manual-version">
-            <p>Manual v1.0 &mdash; Generated 2026-06-24 &mdash; Source: gambia/12e1483c-eea1-fdec-55e6-3459e4270bd4</p>
+        <footer class="manual-version">
+            <p>Manual v1.1 &mdash; Restructured 2026-06-24 to Lesotho register-business-part-b template &mdash; Source: gambia/12e1483c-eea1-fdec-55e6-3459e4270bd4</p>
             <p>Generated by /service-manual skill v3.4.0</p>
-        </div>
+        </footer>
     </footer>
+
+    <!-- TAB SWITCHING SCRIPT (from Part A) -->
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
