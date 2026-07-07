@@ -107,15 +107,30 @@
         .tab-panel.active { display: block; }
 
         /* Workflow diagram */
-        .workflow-steps { display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin-top: 32px; margin-bottom: 24px; }
-        .wf-step { display: flex; flex-direction: column; align-items: center; gap: 8px; min-width: 120px; text-align: center; }
-        .wf-circle { width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Poppins', sans-serif; font-size: 11px; font-weight: 700; text-align: center; line-height: 1.3; padding: 6px; }
-        .wf-circle.applicant { background: #F5F5F7; border: 2px solid #D1D5DB; color: #555866; }
-        .wf-circle.bot { background: #EFF6FF; border: 2px solid #93C5FD; color: #1D4ED8; }
-        .wf-circle.human { background: #F0FDF4; border: 2px solid #86EFAC; color: #166534; }
-        .wf-circle.done { background: #F0FDF4; border: 2px solid #008751; color: #008751; }
-        .wf-label { font-size: 12px; color: #555866; font-weight: 500; max-width: 100px; }
-        .wf-arrow { font-size: 20px; color: #D1D5DB; padding: 0 4px; margin-top: -20px; }
+        .workflow-steps { display: flex; align-items: flex-start; gap: 0; margin: 28px 0; flex-wrap: wrap; }
+        .wf-step { display: flex; flex-direction: column; align-items: center; gap: 8px; flex: 1; min-width: 100px; position: relative; }
+        .wf-step:not(:last-child)::after { content: ""; position: absolute; top: 22px; right: -1px; width: 50%; height: 3px; background: #E5E7EB; z-index: 0; }
+        .wf-step:not(:first-child)::before { content: ""; position: absolute; top: 22px; left: -1px; width: 50%; height: 3px; background: #E5E7EB; z-index: 0; }
+        .wf-dot { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .wf-dot svg { width: 22px; height: 22px; fill: none; stroke: #FFFFFF; stroke-width: 2; }
+        .wf-dot.applicant { background: #008751; }
+        .wf-dot.officer { background: #1a3a2a; }
+        .wf-dot.bot { background: #4A90D9; }
+        .wf-dot.done { background: #16A34A; }
+        .wf-label { font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600; color: #1F2128; text-align: center; }
+        .wf-sublabel { font-size: 11px; color: #888; text-align: center; line-height: 1.4; }
+
+        /* Timeline */
+        .timeline { position: relative; margin: 28px 0; padding-left: 36px; }
+        .timeline::before { content: ""; position: absolute; left: 13px; top: 0; bottom: 0; width: 3px; background: #E5E7EB; border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 28px; padding-left: 20px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before { content: ""; position: absolute; left: -25px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: #008751; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #008751; z-index: 1; }
+        .timeline-item.bot-step::before { background: #4A90D9; box-shadow: 0 0 0 3px #4A90D9; }
+        .timeline-item.applicant-step::before { background: #008751; box-shadow: 0 0 0 3px #008751; }
+        .timeline-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 3px; color: #1F2128; }
+        .timeline-item p { font-size: 14px; color: #555866; margin-bottom: 0; }
+        .timeline-item .tl-meta { font-size: 12px; color: #999; margin-top: 3px; }
 
         /* Status table */
         .status-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 20px 0; font-size: 14px; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; }
@@ -187,6 +202,8 @@
             .section { page-break-inside: avoid; }
             .tab-nav { display: none; }
             .tab-panel { display: block !important; }
+            .timeline::before { background: #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { background: #008751 !important; box-shadow: 0 0 0 3px #008751 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
             .site-footer { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
     </style>
@@ -303,43 +320,99 @@
 
             <div class="workflow-steps">
                 <div class="wf-step">
-                    <div class="wf-circle applicant">Client</div>
-                    <div class="wf-label">Submits &amp; pays</div>
+                    <div class="wf-dot applicant">
+                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div class="wf-label">Client</div>
+                    <div class="wf-sublabel">Submits &amp;<br>pays</div>
                 </div>
-                <div class="wf-arrow">→</div>
                 <div class="wf-step">
-                    <div class="wf-circle bot">NIPC<br>Treasury</div>
-                    <div class="wf-label">Bot — creates treasury record</div>
+                    <div class="wf-dot bot">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                    </div>
+                    <div class="wf-label">NIPC Treasury</div>
+                    <div class="wf-sublabel">Bot creates<br>treasury record</div>
                 </div>
-                <div class="wf-arrow">→</div>
                 <div class="wf-step">
-                    <div class="wf-circle human">NIPC<br>Initial Review</div>
-                    <div class="wf-label">Human — reviews application</div>
+                    <div class="wf-dot officer">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="wf-label">NIPC Initial Review</div>
+                    <div class="wf-sublabel">Officer reviews<br>application</div>
                 </div>
-                <div class="wf-arrow">→</div>
                 <div class="wf-step">
-                    <div class="wf-circle human">CAC<br>Verification</div>
-                    <div class="wf-label">Human — verifies CAC data</div>
+                    <div class="wf-dot officer">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="wf-label">CAC Verification</div>
+                    <div class="wf-sublabel">Officer verifies<br>CAC data</div>
                 </div>
-                <div class="wf-arrow">→</div>
                 <div class="wf-step">
-                    <div class="wf-circle human">NIPC<br>Approval</div>
-                    <div class="wf-label">Human — final approval</div>
+                    <div class="wf-dot officer">
+                        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </div>
+                    <div class="wf-label">NIPC Approval</div>
+                    <div class="wf-sublabel">Senior officer<br>final sign-off</div>
                 </div>
-                <div class="wf-arrow">→</div>
                 <div class="wf-step">
-                    <div class="wf-circle bot">NIPC<br>Registry</div>
-                    <div class="wf-label">Bot — records registration</div>
+                    <div class="wf-dot bot">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+                    </div>
+                    <div class="wf-label">NIPC Registry</div>
+                    <div class="wf-sublabel">Bot records<br>registration</div>
                 </div>
-                <div class="wf-arrow">→</div>
                 <div class="wf-step">
-                    <div class="wf-circle bot">NIPC<br>Certificate</div>
-                    <div class="wf-label">Bot — generates certificate</div>
+                    <div class="wf-dot bot">
+                        <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <div class="wf-label">NIPC Certificate</div>
+                    <div class="wf-sublabel">Bot generates<br>certificate</div>
                 </div>
-                <div class="wf-arrow">→</div>
                 <div class="wf-step">
-                    <div class="wf-circle done">Done</div>
-                    <div class="wf-label">Certificate available</div>
+                    <div class="wf-dot done">
+                        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="wf-label">Done</div>
+                    <div class="wf-sublabel">Certificate<br>available</div>
+                </div>
+            </div>
+
+            <h3>Full Timeline</h3>
+            <div class="timeline">
+                <div class="timeline-item applicant-step">
+                    <h4>Client Submits &amp; Pays</h4>
+                    <p>The client completes the registration form, uploads the required documents, and pays the NGN 150,000 registration fee. The application enters the back-office queue.</p>
+                    <div class="tl-meta">Triggered by client</div>
+                </div>
+                <div class="timeline-item bot-step">
+                    <h4>NIPC Treasury Bot</h4>
+                    <p>Runs immediately after payment. Creates a treasury record in the NIPC financial system to register the fee payment.</p>
+                    <div class="tl-meta">Automated &mdash; runs immediately after submission</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>NIPC Initial Review</h4>
+                    <p>An NIPC officer reviews the application data and documents for completeness and accuracy. Can validate, send back for corrections, or reject.</p>
+                    <div class="tl-meta">Human officer</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>CAC Verification</h4>
+                    <p>A CAC officer verifies the RC number, company name, and incorporation documents against the CAC registry. Can validate, send back for corrections, or reject.</p>
+                    <div class="tl-meta">Human officer</div>
+                </div>
+                <div class="timeline-item">
+                    <h4>NIPC Approval</h4>
+                    <p>A senior NIPC officer gives final sign-off and sets the official registration date. Can validate, send back for corrections, or reject.</p>
+                    <div class="tl-meta">Human officer</div>
+                </div>
+                <div class="timeline-item bot-step">
+                    <h4>NIPC Registry Bot</h4>
+                    <p>Runs automatically after approval. Records the company in the official NIPC registry database with the approved registration data.</p>
+                    <div class="tl-meta">Automated &mdash; runs immediately after approval</div>
+                </div>
+                <div class="timeline-item bot-step">
+                    <h4>NIPC Certificate Bot</h4>
+                    <p>Generates the NIPC Registration Certificate and Registration Receipt as PDFs and uploads them to the client's portal account.</p>
+                    <div class="tl-meta">Automated &mdash; runs after NIPC Registry Bot succeeds</div>
                 </div>
             </div>
 
@@ -449,7 +522,6 @@
                             <li>Memorandum of Association is present and belongs to the same company.</li>
                         </ul>
                         <p><strong>Available actions:</strong> Validate (→ CAC Verification), Request Corrections (→ Client), Reject.</p>
-                        <p><strong>Typical review time:</strong> 3–7 business days.</p>
                     </div>
                 </li>
                 <li class="step">
@@ -467,7 +539,6 @@
                             <li>The company is not already registered with NIPC (no duplicate registration).</li>
                         </ul>
                         <p><strong>Available actions:</strong> Validate (→ NIPC Approval), Request Corrections (→ Client), Reject.</p>
-                        <p><strong>Typical review time:</strong> 3–5 business days.</p>
                     </div>
                 </li>
                 <li class="step">
@@ -483,7 +554,6 @@
                             <li>Set the <strong>Certificate expiry date</strong> in accordance with NIPC policy.</li>
                         </ul>
                         <p><strong>Available actions:</strong> Validate (→ NIPC Registry), Request Corrections (→ Client), Reject.</p>
-                        <p><strong>Typical processing time:</strong> 2–4 business days.</p>
                     </div>
                 </li>
                 <li class="step">
