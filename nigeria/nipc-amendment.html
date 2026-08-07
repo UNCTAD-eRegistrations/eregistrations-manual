@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIPC Amendment - User Manual | NIPC Nigeria</title>
+    <meta name="description" content="Step-by-step user manual for the NIPC Amendment service on the Nigerian Investment Promotion Commission (NIPC) eRegistrations platform.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           NIGERIA NIPC — USER MANUAL
+           ============================================================ */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body { font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", sans-serif; font-size: 18px; line-height: 1.7; color: #555866; background: #FFFFFF; }
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: #008751; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #006640; text-decoration: underline; }
+
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #1F2128; line-height: 1.3; margin-bottom: 0.5em; }
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+        p { margin-bottom: 1em; }
+        strong { color: #1F2128; font-weight: 600; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* --- Header --- */
+        .site-header { background: #1a3a2a; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .header-title { color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 600; }
+        .header-nav { display: flex; align-items: center; gap: 32px; }
+        .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; text-decoration: none; white-space: nowrap; transition: opacity 0.2s ease; }
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+        .btn-login { background: #008751; color: #FFFFFF !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #006640; text-decoration: none !important; }
+
+        /* --- Breadcrumb --- */
+        .breadcrumb { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 14px 0; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #888; flex-wrap: wrap; }
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+        .breadcrumb-list li + li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-top: 1.5px solid #aaa; border-right: 1.5px solid #aaa; transform: rotate(45deg); flex-shrink: 0; }
+        .breadcrumb-list a { color: #008751; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* --- Hero --- */
+        .hero { background: linear-gradient(135deg, #1a3a2a 0%, #235235 100%); color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
+        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(0,135,81,0.15) 0%, transparent 70%); pointer-events: none; }
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: #4dbb8a; margin-bottom: 12px; display: block; }
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+        .hero-description { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 560px; }
+        .btn-primary { background: #008751; color: #FFFFFF; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; }
+        .btn-primary:hover { background: #006640; color: #FFFFFF; text-decoration: none; transform: translateY(-1px); }
+        .hero-image { flex-shrink: 0; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .hero-icon-circle { width: 200px; height: 200px; border-radius: 50%; background: rgba(0,135,81,0.15); border: 2px solid rgba(0,135,81,0.3); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: #4dbb8a; stroke-width: 1.5; }
+
+        /* --- TOC --- */
+        .toc { background: #F5F5F7; padding: 48px 0; border-bottom: 1px solid #E5E7EB; }
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+        .toc-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 10px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #1F2128; font-weight: 500; font-size: 16px; }
+        .toc-item:hover { border-color: #008751; box-shadow: 0 2px 8px rgba(0,135,81,0.12); text-decoration: none; color: #1F2128; }
+        .toc-number { width: 32px; height: 32px; border-radius: 50%; background: #008751; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* --- Manual Content --- */
+        .manual-content { padding: 56px 0 80px; }
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
+        .section > h2 { font-size: 32px; font-weight: 600; padding-left: 20px; border-left: 4px solid #008751; margin-bottom: 24px; line-height: 1.3; }
+        .section > h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; }
+        .section > h4 { font-size: 20px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* --- Steps --- */
+        .steps { counter-reset: step-counter; list-style: none; padding: 0; margin: 24px 0; }
+        .step { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px; padding: 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; transition: box-shadow 0.2s ease; }
+        .step:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+        .step-number { width: 40px; height: 40px; border-radius: 50%; background: #008751; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #1F2128; }
+        .step-content p { margin-bottom: 8px; font-size: 16px; }
+        .step-content p:last-child { margin-bottom: 0; }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box, .warning-box, .note-box { padding: 20px 24px; border-radius: 10px; margin: 24px 0; font-size: 16px; line-height: 1.6; }
+        .info-box { background: #F5F5F7; border-left: 4px solid #008751; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #F5A623; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .info-box .box-label { color: #008751; }
+        .warning-box .box-label { color: #D4891A; }
+        .note-box .box-label { color: #4A90D9; }
+        .box-label svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* --- Checklist --- */
+        .checklist { list-style: none; padding: 0; margin: 20px 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 14px; padding: 10px 0; border-bottom: 1px solid #F0F0F2; font-size: 16px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .check-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+        .checklist .check-icon svg { width: 24px; height: 24px; }
+
+        /* --- Field Table --- */
+        .field-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 24px 0; font-size: 15px; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; }
+        .field-table thead { background: #1a3a2a; color: #FFFFFF; }
+        .field-table th { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 14px 16px; text-align: left; white-space: nowrap; }
+        .field-table td { padding: 12px 16px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F5F5F7; }
+        .field-table .required-yes { color: #008751; font-weight: 600; }
+        .field-table .required-no { color: #999; }
+
+        /* --- Cost Table --- */
+        .cost-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 24px 0; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; font-size: 16px; }
+        .cost-table thead { background: #1a3a2a; color: #FFFFFF; }
+        .cost-table th { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 14px 16px; text-align: left; }
+        .cost-table td { padding: 14px 16px; border-bottom: 1px solid #F0F0F2; }
+        .cost-table tbody tr:last-child td { border-bottom: none; }
+        .cost-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .cost-table .amount { font-weight: 700; color: #1F2128; font-family: 'Poppins', sans-serif; }
+        .cost-table .total-row { background: #F5F5F7 !important; font-weight: 700; }
+        .cost-table .total-row td { border-top: 2px solid #1a3a2a; color: #1F2128; font-family: 'Poppins', sans-serif; }
+
+        /* --- Timeline --- */
+        .timeline { position: relative; margin: 32px 0; padding-left: 40px; }
+        .timeline::before { content: ""; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: #E5E7EB; border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 32px; padding-left: 24px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before { content: ""; position: absolute; left: -28px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #008751; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #008751; z-index: 1; }
+        .timeline-item.pending::before { background: #FFFFFF; box-shadow: 0 0 0 3px #D0D0D8; }
+        .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #1F2128; }
+        .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
+        .timeline-item .timeline-meta { font-size: 13px; color: #999; margin-top: 4px; }
+
+        /* --- Tab Group --- */
+        .tab-group { margin: 28px 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; }
+        .tab-nav { display: flex; background: #F5F5F7; border-bottom: 1px solid #E5E7EB; overflow-x: auto; gap: 0; }
+        .tab-btn { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 24px; cursor: pointer; background: transparent; border: none; border-bottom: 3px solid transparent; color: #555866; white-space: nowrap; transition: all 0.2s ease; }
+        .tab-btn:hover { color: #1F2128; background: rgba(255,255,255,0.5); }
+        .tab-btn.active { color: #008751; border-bottom-color: #008751; background: #FFFFFF; font-weight: 600; }
+        .tab-panel { display: none; padding: 24px; }
+        .tab-panel.active { display: block; }
+        .tab-panel h4 { margin-top: 0; }
+
+        /* --- Footer --- */
+        .site-footer { background: #1a3a2a; color: rgba(255,255,255,0.8); padding: 56px 0 0; font-size: 15px; }
+        .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 16px; font-weight: 600; margin-bottom: 18px; }
+        .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+        .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
+        .footer-col a:hover { color: #4dbb8a; text-decoration: none; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 14px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 14px; }
+        .footer-contact-item svg { width: 18px; height: 18px; flex-shrink: 0; stroke: #4dbb8a; fill: none; margin-top: 2px; }
+        .footer-social { display: flex; gap: 12px; margin-top: 8px; }
+        .footer-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: background 0.2s ease; }
+        .footer-social a:hover { background: #008751; }
+        .footer-social svg { width: 18px; height: 18px; fill: #FFFFFF; }
+        .footer-implemented { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+        .footer-implemented span { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); font-weight: 500; }
+        .footer-implemented img { height: 36px; width: auto; opacity: 0.9; transition: opacity 0.2s ease; }
+        .footer-copyright { text-align: center; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.45); }
+
+        /* --- Responsive --- */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 34px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-description { max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 32px; }
+            h2, .section > h2 { font-size: 26px; }
+            .header-nav { display: none; }
+            .hero { padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 28px; }
+            .step { flex-direction: column; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+            .field-table, .cost-table { font-size: 14px; }
+            .tab-btn { padding: 12px 16px; font-size: 13px; }
+        }
+
+        /* --- Print --- */
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 11pt; line-height: 1.5; color: #000; background: #FFF; }
+            .site-header { position: static; background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .header-nav .btn-login { display: none; }
+            .hero { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 32px 0; page-break-after: always; }
+            .btn-primary { display: none; }
+            .hero-image { display: none; }
+            .toc { page-break-after: always; background: #F5F5F7 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .section { page-break-inside: avoid; }
+            .section > h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .step { page-break-inside: avoid; border: 1px solid #ddd; }
+            .step-number { background: #008751 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .info-box, .warning-box, .note-box { page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .field-table, .cost-table { page-break-inside: avoid; font-size: 9pt; }
+            .field-table thead, .cost-table thead { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .tab-nav { display: none; }
+            .tab-panel { display: block !important; border-top: 1px solid #ddd; padding-top: 12px; margin-top: 8px; }
+            .tab-panel::before { content: attr(data-tab-label); font-weight: 700; font-size: 13pt; display: block; margin-bottom: 8px; }
+            .site-footer { background: #1a3a2a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
+            .footer-social { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="https://nipc.gov.ng/" title="NIPC Nigeria">
+                    <img src="nipc-logo.jpeg" alt="NIPC Logo" style="height:48px;width:auto;">
+                </a>
+            <nav class="header-nav">
+                <a href="https://nipc.gov.ng/about/">About</a>
+                <a href="https://nipc.gov.ng/contact/">Help &amp; Support</a>
+                <a href="https://bpa.gateway.nipc.gov.ng/" class="btn-login">Login | Register</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://nipc.gov.ng/">Home</a></li>
+                <li><a href="index.html">Service Manuals</a></li>
+                <li><span class="current">NIPC Amendment</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">User Manual</span>
+                    <h1>NIPC Amendment</h1>
+                    <p class="hero-description">Update your company's registered details with the Nigerian Investment Promotion Commission (NIPC) — company name, address, shareholding, capital structure, business activities, or contact person — without starting a new registration. This guide walks you through every step.</p>
+                    <a href="https://bpa.gateway.nipc.gov.ng/" class="btn-primary">Start Amendment &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M38 12H16a4 4 0 0 0-4 4v32a4 4 0 0 0 4 4h32a4 4 0 0 0 4-4V26" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M46.5 10.5a3.54 3.54 0 0 1 5 5L31 36l-7 2 2-7z" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table of Contents</h2>
+            <div class="toc-grid">
+                <a href="#section-overview" class="toc-item">
+                    <span class="toc-number">1</span>
+                    <span class="toc-label">Service Overview</span>
+                </a>
+                <a href="#section-before-you-start" class="toc-item">
+                    <span class="toc-number">2</span>
+                    <span class="toc-label">Before You Start</span>
+                </a>
+                <a href="#section-choose" class="toc-item">
+                    <span class="toc-number">3</span>
+                    <span class="toc-label">Choose What to Amend</span>
+                </a>
+                <a href="#section-requirements" class="toc-item">
+                    <span class="toc-number">4</span>
+                    <span class="toc-label">Requirements</span>
+                </a>
+                <a href="#section-fees" class="toc-item">
+                    <span class="toc-number">5</span>
+                    <span class="toc-label">Fees &amp; Costs</span>
+                </a>
+                <a href="#section-steps" class="toc-item">
+                    <span class="toc-number">6</span>
+                    <span class="toc-label">Step-by-Step Guide</span>
+                </a>
+                <a href="#section-whats-next" class="toc-item">
+                    <span class="toc-number">7</span>
+                    <span class="toc-label">After Submission</span>
+                </a>
+                <a href="#section-faq" class="toc-item">
+                    <span class="toc-number">8</span>
+                    <span class="toc-label">Frequently Asked Questions</span>
+                </a>
+                <a href="#section-contact" class="toc-item">
+                    <span class="toc-number">9</span>
+                    <span class="toc-label">Help &amp; Contact</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MANUAL CONTENT -->
+    <main class="manual-content">
+        <div class="container">
+
+            <!-- ===================== SECTION 1: OVERVIEW ===================== -->
+            <div class="section" id="section-overview">
+                <h2>1. Service Overview</h2>
+                <p>The <strong>NIPC Amendment</strong> service allows companies already registered with the Nigerian Investment Promotion Commission to update specific details on their registration record — without renewing their certificate or starting a new registration. Use this service whenever your company's registered information changes and needs to be reflected in the NIPC registry.</p>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                        Who should use this service
+                    </div>
+                    <p>Any company holding a valid, active NIPC registration that needs to update one or more registered details — for example, after a change of registered address, a share transfer, new business activities, or a change of company contact person.</p>
+                </div>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Amendment is not the same as Renewal
+                    </div>
+                    <p>An Amendment updates specific registered details but does <strong>not extend your certificate's expiry date</strong>. If your certificate is close to or past its expiry date, use the <strong>NIPC Renewal</strong> service instead — you can also complete an Amendment first and renew separately afterwards.</p>
+                </div>
+
+                <h3>What you will receive</h3>
+                <ul>
+                    <li>An updated <strong>NIPC registration record</strong> reflecting your amended details.</li>
+                    <li>An <strong>Amendment Confirmation Letter</strong> (PDF) confirming the approved changes, downloadable from your dashboard.</li>
+                    <li>Continued, uninterrupted access to your existing NIPC certificate and investment incentives.</li>
+                </ul>
+            </div>
+
+            <!-- ===================== SECTION 2: BEFORE YOU START ===================== -->
+            <div class="section" id="section-before-you-start">
+                <h2>2. Before You Start</h2>
+                <p>Prepare the following before you begin. Having everything ready allows you to complete the amendment in one session.</p>
+
+                <ul class="checklist">
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#008751"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>NIPC portal login credentials</strong> — your username and password for the NIPC eRegistrations portal.</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#008751"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Your company's NIPC registration number</strong> — used to load your existing record.</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#008751"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>A clear idea of <strong>which details need to change</strong> — see Section 3 for the available categories.</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#008751"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>The <strong>new or updated information</strong> for each item you plan to amend.</span>
+                    </li>
+                    <li>
+                        <span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#008751"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span><strong>Supporting documents</strong> in digital format evidencing the change — see Section 4.</span>
+                    </li>
+                </ul>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                        Pre-filled fields
+                    </div>
+                    <p>Your company's current registered details are pre-loaded into the amendment form. You only need to edit the fields that are changing — everything else remains as it is on file.</p>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 3: CHOOSE WHAT TO AMEND ===================== -->
+            <div class="section" id="section-choose">
+                <h2>3. Choose What to Amend</h2>
+                <p>At the start of the application, you select one or more categories of information to amend. You can combine multiple categories in a single application. Use the tabs below to understand what each category covers.</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event,'type-company-info')" data-tab="type-company-info">Company Information</button>
+                        <button class="tab-btn" onclick="switchTab(event,'type-shareholding')" data-tab="type-shareholding">Shareholding &amp; Capital</button>
+                        <button class="tab-btn" onclick="switchTab(event,'type-activities')" data-tab="type-activities">Business Activities</button>
+                    </div>
+
+                    <div class="tab-panel active" id="type-company-info" data-tab-label="Company Information">
+                        <h4>Update Company Information</h4>
+                        <p>Use this category to change your company's registered name, registered office address, phone number, email address, or company contact person.</p>
+                        <ul>
+                            <li><strong>Company Name</strong> — following a formal name change already approved by CAC.</li>
+                            <li><strong>Registered Office Address</strong> — State, City, Local Government Area, and street address.</li>
+                            <li><strong>Phone &amp; Email</strong> — official company contact details.</li>
+                            <li><strong>Company Contact Person</strong> — name, function, phone, and email.</li>
+                        </ul>
+                        <div class="warning-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                Name changes require CAC approval first
+                            </div>
+                            <p>Company name changes are only accepted if already reflected on an updated <strong>CAC Certificate of Incorporation</strong> or <strong>CAC Status Report</strong>. Complete your name change with CAC before submitting this amendment.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="type-shareholding" data-tab-label="Shareholding & Capital">
+                        <h4>Update Shareholding &amp; Capital Structure</h4>
+                        <p>Use this category when share ownership changes (share transfer, new investor, exit of a shareholder) or when your capital structure changes.</p>
+                        <ul>
+                            <li>Add, remove, or edit <strong>shareholders</strong> (Person or Company).</li>
+                            <li>Update <strong>Local Capital</strong> and <strong>Foreign Capital</strong> amounts (NGN).</li>
+                            <li>Update the <strong>Total of Shares</strong>.</li>
+                        </ul>
+                        <div class="info-box">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                                Share total validation
+                            </div>
+                            <p>The sum of all shareholders' shares must not exceed the <strong>Total of Shares</strong>. The form will warn you if exceeded, the same as during initial registration.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="type-activities" data-tab-label="Business Activities">
+                        <h4>Update Business Activities</h4>
+                        <p>Use this category to add, remove, or change your declared Sector and ISIC Activity codes, or to update your factory/production facility details.</p>
+                        <ul>
+                            <li>Add or remove <strong>business activity</strong> lines (Sector + ISIC Activity).</li>
+                            <li>Update <strong>factory/production facility</strong> address, if applicable.</li>
+                            <li>Update <strong>current or planned employee</strong> counts.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><line x1="10" y1="9" x2="10" y2="14"/><circle cx="10" cy="6.5" r="0.5" fill="currentColor"/></svg>
+                        Not sure which to choose?
+                    </div>
+                    <p>Select every category that applies to what has changed at your company. Selecting a category only adds the relevant fields, documents, and fee to your application — it does not affect unrelated data.</p>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 4: REQUIREMENTS ===================== -->
+            <div class="section" id="section-requirements">
+                <h2>4. Requirements</h2>
+                <p>The documents required depend on which categories you selected in Section 3. Click the relevant tab below.</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event,'req-company-info')" data-tab="req-company-info">Company Information</button>
+                        <button class="tab-btn" onclick="switchTab(event,'req-shareholding')" data-tab="req-shareholding">Shareholding &amp; Capital</button>
+                        <button class="tab-btn" onclick="switchTab(event,'req-activities')" data-tab="req-activities">Business Activities</button>
+                    </div>
+
+                    <div class="tab-panel active" id="req-company-info" data-tab-label="Requirements — Company Information">
+                        <h4>Documents — Company Information</h4>
+                        <table class="field-table">
+                            <thead><tr><th>Document</th><th>Required</th><th>Notes</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>Updated CAC Certificate of Incorporation or CAC Status Report</td>
+                                    <td class="required-yes">Yes*</td>
+                                    <td>Required if amending the Company Name.</td>
+                                </tr>
+                                <tr>
+                                    <td>Proof of new registered address (utility bill, lease agreement, etc.)</td>
+                                    <td class="required-yes">Yes*</td>
+                                    <td>Required if amending the Registered Office Address.</td>
+                                </tr>
+                                <tr>
+                                    <td>Letter of Authority / Power of Attorney</td>
+                                    <td class="required-yes">Yes</td>
+                                    <td>Required if a representative other than a director is submitting.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-panel" id="req-shareholding" data-tab-label="Requirements — Shareholding & Capital">
+                        <h4>Documents — Shareholding &amp; Capital</h4>
+                        <table class="field-table">
+                            <thead><tr><th>Document</th><th>Required</th><th>Notes</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>Share Transfer Instrument / Deed of Assignment</td>
+                                    <td class="required-yes">Yes*</td>
+                                    <td>Required if adding, removing, or transferring shares.</td>
+                                </tr>
+                                <tr>
+                                    <td>Updated CAC Status Report showing the new shareholding</td>
+                                    <td class="required-yes">Yes</td>
+                                    <td>Confirms the change is reflected in the CAC registry.</td>
+                                </tr>
+                                <tr>
+                                    <td>Certificate of Capital Importation (CCI)</td>
+                                    <td class="required-yes">Yes*</td>
+                                    <td>Required if increasing the declared foreign capital.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-panel" id="req-activities" data-tab-label="Requirements — Business Activities">
+                        <h4>Documents — Business Activities</h4>
+                        <table class="field-table">
+                            <thead><tr><th>Document</th><th>Required</th><th>Notes</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td>Updated Memorandum of Association</td>
+                                    <td class="required-yes">Yes*</td>
+                                    <td>Required if the change was reflected in your MEMART.</td>
+                                </tr>
+                                <tr>
+                                    <td>Evidence of a licence or permit for the added activity</td>
+                                    <td class="required-no">Optional</td>
+                                    <td>Provide if the new activity requires sector-specific approval.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <p style="font-size:14px; color:#888;">* Conditional — required depending on the categories you selected in Section 3.</p>
+            </div>
+
+            <!-- ===================== SECTION 5: FEES & COSTS ===================== -->
+            <div class="section" id="section-fees">
+                <h2>5. Fees &amp; Costs</h2>
+                <p>The amendment fee depends on which categories you select in Section 3. The total is calculated automatically and displayed in the application form before payment.</p>
+
+                <table class="cost-table">
+                    <thead>
+                        <tr><th>Amendment Category</th><th>Amount (NGN)</th><th>Notes</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Company Information (Name / Address / Contact)</td>
+                            <td class="amount">10,000</td>
+                            <td>Per application</td>
+                        </tr>
+                        <tr>
+                            <td>Shareholding &amp; Capital Structure</td>
+                            <td class="amount">20,000</td>
+                            <td>Per application</td>
+                        </tr>
+                        <tr>
+                            <td>Business Activities</td>
+                            <td class="amount">10,000</td>
+                            <td>Per application</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total if all three categories are selected</td>
+                            <td class="amount">40,000</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Non-refundable fee
+                    </div>
+                    <p>Ensure all information is accurate before paying. Amendment fees are non-refundable. After successful payment, a receipt number is generated and your application enters the review queue.</p>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 6: STEP-BY-STEP ===================== -->
+            <div class="section" id="section-steps">
+                <h2>6. Step-by-Step Guide</h2>
+                <p>The NIPC Amendment application is divided into the following stages:</p>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Log In and Open NIPC Amendment</h4>
+                            <p>Log in to the NIPC eRegistrations portal. From your dashboard, select your existing NIPC registration and choose the <strong>NIPC Amendment</strong> service. Read the introductory <strong>Guide</strong> tab, then click <strong>Next</strong>.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Select What to Amend</h4>
+                            <p>Tick the box for each category of information you need to update (see Section 3). You can select more than one — only the categories you select will appear as editable tabs later in the form, and only their fees will be included in your total.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Update Your Information</h4>
+                            <p>For each category you selected, a dedicated tab opens with your current data pre-filled. Edit only the fields that are changing.</p>
+                            <table class="field-table">
+                                <thead><tr><th>Field</th><th>Required</th><th>Description</th></tr></thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Company Name / Address / Contact</td>
+                                        <td class="required-yes">Yes*</td>
+                                        <td>Shown if <em>Company Information</em> was selected.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shareholders, Local &amp; Foreign Capital, Total Shares</td>
+                                        <td class="required-yes">Yes*</td>
+                                        <td>Shown if <em>Shareholding &amp; Capital</em> was selected.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sector, ISIC Activity, Factory Address, Employees</td>
+                                        <td class="required-yes">Yes*</td>
+                                        <td>Shown if <em>Business Activities</em> was selected.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p style="font-size:14px; color:#888;">* Only for categories selected in Step 2.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Upload Supporting Documents</h4>
+                            <p>Upload the documents required for your selected categories (see Section 4). Accepted formats: <strong>PDF, JPG, JPEG, PNG, BMP, DOC, DOCX, XLS, XLSX</strong>, maximum 5 MB per file. Once all required documents are uploaded, click <strong>Go to payment</strong>.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Pay the Amendment Fee</h4>
+                            <p>The system displays the total fee based on your selected categories (see <a href="#section-fees">Fees &amp; Costs</a>). Select your preferred payment method and complete the payment. A receipt number is generated once payment is confirmed.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Review, Sign, and Submit</h4>
+                            <p>Review every change you have entered. On the final <strong>Send</strong> page, read the declaration carefully, check the box to confirm the information is true and correct, then click <strong>Submit application</strong>.</p>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Track and Download</h4>
+                            <p>Follow your application's progress from <strong>My Dashboard</strong>. Once approved, your <strong>Amendment Confirmation Letter</strong> is available for download.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- ===================== SECTION 7: AFTER SUBMISSION ===================== -->
+            <div class="section" id="section-whats-next">
+                <h2>7. After Submission</h2>
+                <p>Once your application is submitted and payment confirmed, it enters the NIPC review workflow. Below is an overview of what happens at each stage.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Application Submitted &amp; Payment Confirmed</h4>
+                        <p>Your amendment request is received. A reference number is assigned and your file enters the review queue.</p>
+                        <div class="timeline-meta">Day 0</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>NIPC Amendment Review</h4>
+                        <p>An NIPC officer reviews the changed data and supporting documents against the categories you selected. They may validate it, send it back for corrections, or reject it with reasons.</p>
+                        <div class="timeline-meta">Processing</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>NIPC Approval</h4>
+                        <p>A senior NIPC officer gives final approval to the amended details.</p>
+                        <div class="timeline-meta">Processing</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Registry Update &amp; Confirmation Letter</h4>
+                        <p>Your company's record is updated in the NIPC registry and your <strong>Amendment Confirmation Letter</strong> is generated automatically.</p>
+                        <div class="timeline-meta">Automated</div>
+                    </div>
+                    <div class="timeline-item pending">
+                        <h4>Confirmation Available for Download</h4>
+                        <p>You receive a notification and can download your Amendment Confirmation Letter from <strong>My Dashboard</strong>.</p>
+                        <div class="timeline-meta">Final step</div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Corrections requested
+                    </div>
+                    <p>If an officer sends your application back for corrections, you will receive a notification. Log in to your dashboard, make the required changes, and resubmit. Your application will then re-enter the review process.</p>
+                </div>
+
+                <h3>Application Status Meanings</h3>
+                <p>You can check your application status at any time from <strong>My Dashboard</strong>. Here is what each status means:</p>
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Meaning</th>
+                            <th>Action Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FILE PENDING</td>
+                            <td>Your application is in the queue awaiting review by an officer</td>
+                            <td>None — wait for processing</td>
+                        </tr>
+                        <tr>
+                            <td>SEND BACK TO CORRECTIONS</td>
+                            <td>A reviewing officer has found an issue and returned the application to you</td>
+                            <td>Log in, review the officer's comments, make corrections, and resubmit</td>
+                        </tr>
+                        <tr>
+                            <td>FILE VALIDATED</td>
+                            <td>Your amendment has been approved and your NIPC record has been updated</td>
+                            <td>None — download your Amendment Confirmation Letter</td>
+                        </tr>
+                        <tr>
+                            <td>FILE REJECT</td>
+                            <td>Your amendment request has been rejected</td>
+                            <td>Check the reason provided in the portal. Contact NIPC if you need clarification</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===================== SECTION 8: FAQ ===================== -->
+            <div class="section" id="section-faq">
+                <h2>8. Frequently Asked Questions</h2>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event,'faq-general')">General</button>
+                        <button class="tab-btn" onclick="switchTab(event,'faq-documents')">Requirements</button>
+                        <button class="tab-btn" onclick="switchTab(event,'faq-payment')">Payment</button>
+                        <button class="tab-btn" onclick="switchTab(event,'faq-technical')">Technical</button>
+                    </div>
+
+                    <div class="tab-panel active" id="faq-general" data-tab-label="General FAQ">
+                        <h4>What is the difference between Amendment and Renewal?</h4>
+                        <p><strong>Amendment</strong> updates specific registered details (name, address, shareholding, activities, etc.) at any time and does not change your certificate's expiry date. <strong>Renewal</strong> extends the validity of your certificate and requires you to confirm your current investment and employment data. You may need both if your certificate is close to expiry and your details have also changed.</p>
+
+                        <h4 style="margin-top:24px;">Can I amend more than one category at a time?</h4>
+                        <p>Yes. You can select any combination of Company Information, Shareholding &amp; Capital, and Business Activities in a single application. Each selected category adds its own fields, documents, and fee to the total.</p>
+
+                        <h4 style="margin-top:24px;">My company is not yet registered with NIPC. Can I use this service?</h4>
+                        <p>No. This service is only available to companies with an <strong>existing, active NIPC registration</strong>. If you have not yet registered, use the <strong>NIPC Registration</strong> service instead.</p>
+
+                        <h4 style="margin-top:24px;">What happens after my amendment is approved?</h4>
+                        <p>Your company's record is automatically updated in the NIPC registry and an <strong>Amendment Confirmation Letter</strong> is generated. You can download it from your dashboard.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-documents" data-tab-label="Requirements FAQ">
+                        <h4>I only changed my phone number. Do I still need to upload a document?</h4>
+                        <p>No. Phone and email updates under Company Information do not require a supporting document unless the address or company name is also changing.</p>
+
+                        <h4 style="margin-top:24px;">What is a Deed of Assignment / Share Transfer Instrument?</h4>
+                        <p>It is the legal document evidencing a transfer of shares between parties. It is required whenever you amend the shareholding structure — for example, adding a new investor or removing an existing shareholder.</p>
+
+                        <h4 style="margin-top:24px;">Can I upload documents in Word or Excel format?</h4>
+                        <p>Yes. Accepted formats are: PDF, JPG, JPEG, PNG, BMP, DOC, DOCX, XLS, XLSX. Each file must not exceed <strong>5 MB</strong>. PDF is recommended for best compatibility.</p>
+
+                        <h4 style="margin-top:24px;">Do I need an updated Memorandum of Association for every activity change?</h4>
+                        <p>Only if the change to your business activities is also reflected in your company's MEMART (Memorandum and Articles of Association). Minor operational changes that do not require a MEMART amendment do not need this document.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-payment" data-tab-label="Payment FAQ">
+                        <h4>How is the amendment fee calculated?</h4>
+                        <p>The fee is the sum of the fees for each category you select: ₦10,000 for Company Information, ₦20,000 for Shareholding &amp; Capital, and ₦10,000 for Business Activities. The total is shown before you pay.</p>
+
+                        <h4 style="margin-top:24px;">Can I get a refund if my amendment is rejected?</h4>
+                        <p>Amendment fees are non-refundable. Contact the NIPC help desk with your application reference number if you believe your rejection was made in error.</p>
+
+                        <h4 style="margin-top:24px;">My payment went through but my application still shows as pending. Is this normal?</h4>
+                        <p>Yes. Payment confirmation may take a few minutes to reflect in the system. If your application is still in "pending payment" status after 30 minutes, contact the NIPC help desk with your payment confirmation reference number.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-technical" data-tab-label="Technical FAQ">
+                        <h4>Can I save my progress and come back later?</h4>
+                        <p>Yes. The portal auto-saves your in-progress application. You can return to finish at any time before submitting. Note that you must complete and submit the application in one session once you reach the payment page.</p>
+
+                        <h4 style="margin-top:24px;">Some of my current data looks out of date. Can I fix it here?</h4>
+                        <p>Yes — the amendment form loads your current record so you can correct it. Select the relevant category in Section 3 and edit the field that needs correcting.</p>
+
+                        <h4 style="margin-top:24px;">I cannot add a shareholder in the form — the button is not working. What should I do?</h4>
+                        <p>Make sure you have filled in the <strong>Total of Shares</strong> field before trying to add shareholders. If the issue persists, try refreshing the page or switching to a supported browser.</p>
+
+                        <h4 style="margin-top:24px;">What browser should I use?</h4>
+                        <p>The portal works best on <strong>Google Chrome</strong>, Mozilla Firefox, Microsoft Edge, or Safari (latest versions). Avoid Internet Explorer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== SECTION 9: HELP & CONTACT ===================== -->
+            <div class="section" id="section-contact">
+                <h2>9. Help &amp; Contact</h2>
+                <p>If you need assistance with your amendment application, you can reach the NIPC support team through the following channels:</p>
+
+                <table class="field-table">
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Details</th>
+                            <th>Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Help desk portal</td>
+                            <td><a href="https://nipc.gov.ng/contact/">nipc.gov.ng/contact</a></td>
+                            <td>24/7 (self-service)</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>info@nipc.gov.ng</td>
+                            <td>Responses within 2 business days</td>
+                        </tr>
+                        <tr>
+                            <td>Walk-in</td>
+                            <td>NIPC Offices, Area 11, Garki, Abuja, FCT</td>
+                            <td>Monday&ndash;Friday 08:00&ndash;17:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>NIPC Nigeria</h5>
+                    <p>The Nigerian Investment Promotion Commission (NIPC) is the apex institution for the promotion and coordination of investments in Nigeria.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact Details</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Area 11, Garki<br>Abuja, FCT, Nigeria</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>info@nipc.gov.ng</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Follow Us</h5>
+                    <p>Stay connected with NIPC for the latest updates on investment services.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                        <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">All Manuals</a></li>
+                        <li><a href="nipc-registration.html">NIPC Registration Manual</a></li>
+                        <li><a href="nipc-renewal.html">NIPC Renewal Manual</a></li>
+                        <li><a href="https://nipc.gov.ng/">Home</a></li>
+                        <li><a href="https://nipc.gov.ng/contact/">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-implemented">
+                <span>Implemented by</span>
+                <a href="https://unctad.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="unctad-logo.avif" alt="UNCTAD">
+                </a>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2026 Nigerian Investment Promotion Commission (NIPC), Federal Republic of Nigeria. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(e, tabId) {
+            var group = e.target.closest('.tab-group');
+            group.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+            group.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+            e.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>

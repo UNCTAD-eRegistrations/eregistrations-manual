@@ -601,7 +601,7 @@
                 </svg>
                 <input type="text" id="searchInput" placeholder="Search manuals... e.g. &quot;register business&quot;, &quot;investment&quot;" aria-label="Search service manuals" autocomplete="off">
             </div>
-            <p class="search-count" id="searchCount">Showing all 1 manual</p>
+            <p class="search-count" id="searchCount">Showing all 3 manuals</p>
         </div>
     </section>
 
@@ -622,6 +622,22 @@
                     <h4>NIPC Registration</h4>
                     <p>Register your company with the Nigerian Investment Promotion Commission to access investment incentives.</p>
                     <a href="nipc-registration.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 2. NIPC Renewal -->
+                <div class="card" data-search="nipc renewal certificate investment company nigeria">
+                    <div class="card-icon">&#128260;</div>
+                    <h4>NIPC Renewal</h4>
+                    <p>Renew your NIPC pioneer status certificate online to keep your investment registration active.</p>
+                    <a href="nipc-renewal.html" class="card-btn">View Manual &rarr;</a>
+                </div>
+
+                <!-- 3. NIPC Amendment -->
+                <div class="card" data-search="nipc amendment update change company details shareholding nigeria">
+                    <div class="card-icon">&#9999;&#65039;</div>
+                    <h4>NIPC Amendment</h4>
+                    <p>Update your registered company details — name, address, shareholding, capital, or activities — with NIPC.</p>
+                    <a href="nipc-amendment.html" class="card-btn">View Manual &rarr;</a>
                 </div>
 
                 <!-- No Results message (hidden by default) -->
@@ -749,7 +765,7 @@
                 } else {
                     noResults.style.display = 'none';
                     if (!query) {
-                        searchCount.textContent = 'Showing all 1 manual';
+                        searchCount.textContent = 'Showing all 3 manuals';
                     } else {
                         searchCount.textContent = 'Showing ' + visibleCount + ' result' + (visibleCount === 1 ? '' : 's');
                     }
