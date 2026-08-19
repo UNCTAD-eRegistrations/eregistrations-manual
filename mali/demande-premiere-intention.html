@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de première intention (AMM) - Manuel Utilisateur | DPM Mali</title>
+    <meta name="description" content="Manuel utilisateur pour la Demande de première intention d'Autorisation de Mise sur le Marché (AMM) sur la plateforme Mali Médicaments de la Direction de la Pharmacie et du Médicament (DPM).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           MALI eREGISTRATIONS — USER MANUAL
+           Service: Demande de première intention (AMM)
+           Version: v1.0
+           Updated: August 2026
+           ============================================================ */
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+        body {
+            font-family: 'Roboto', -apple-system, system-ui, "Segoe UI", "Noto Sans", sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #555866;
+            background: #FFFFFF;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: #649564; text-decoration: none; transition: color 0.2s ease; }
+        a:hover { color: #4F7850; text-decoration: underline; }
+
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; color: #333A4D; line-height: 1.3; margin-bottom: 0.5em; }
+        h1 { font-size: 48px; font-weight: 700; }
+        h2 { font-size: 36px; font-weight: 600; }
+        h3 { font-size: 32px; font-weight: 600; }
+        h4 { font-size: 24px; font-weight: 600; }
+        h5 { font-size: 18px; font-weight: 600; }
+
+        p { margin-bottom: 1em; }
+        strong { color: #333A4D; font-weight: 600; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ============================================================
+           HEADER
+           ============================================================ */
+        .site-header { background: #1F3D2E; padding: 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        .header-inner { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+        .header-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .header-logo { height: 48px; width: auto; flex-shrink: 0; }
+        .header-brand-text { display: flex; flex-direction: column; }
+        .header-brand-title { font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; line-height: 1.2; }
+        .header-brand-subtitle { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.5px; text-transform: uppercase; font-weight: 400; }
+        .header-nav { display: flex; align-items: center; gap: 32px; }
+        .header-nav a { color: #FFFFFF; font-size: 15px; font-weight: 400; text-decoration: none; white-space: nowrap; transition: opacity 0.2s ease; }
+        .header-nav a:hover { opacity: 0.85; text-decoration: none; }
+        .btn-login { background: #649564; color: #FFFFFF !important; padding: 8px 20px; border-radius: 9999px; font-weight: 500; font-size: 14px; display: inline-block; transition: background 0.2s ease; }
+        .btn-login:hover { background: #4F7850; text-decoration: none !important; }
+
+        /* ============================================================
+           BREADCRUMB
+           ============================================================ */
+        .breadcrumb { background: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 14px 0; }
+        .breadcrumb-list { list-style: none; display: flex; align-items: center; gap: 8px; font-size: 14px; color: #888; flex-wrap: wrap; }
+        .breadcrumb-list li { display: flex; align-items: center; gap: 8px; }
+        .breadcrumb-list li + li::before { content: ""; display: inline-block; width: 6px; height: 6px; border-top: 1.5px solid #aaa; border-right: 1.5px solid #aaa; transform: rotate(45deg); flex-shrink: 0; }
+        .breadcrumb-list a { color: #649564; font-weight: 400; }
+        .breadcrumb-list .current { color: #555866; font-weight: 500; }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero { background: linear-gradient(135deg, #1F3D2E 0%, #2C5940 100%); color: #FFFFFF; padding: 64px 0; position: relative; overflow: hidden; }
+        .hero::after { content: ""; position: absolute; top: 0; right: 0; bottom: 0; width: 40%; background: radial-gradient(ellipse at 70% 50%, rgba(100,149,100,0.15) 0%, transparent 70%); pointer-events: none; }
+        .hero-inner { display: flex; align-items: center; gap: 48px; }
+        .hero-content { flex: 1; min-width: 0; }
+        .hero-label { font-size: 14px; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; color: #8FCB8F; margin-bottom: 12px; display: block; }
+        .hero h1 { color: #FFFFFF; font-size: 42px; margin-bottom: 16px; line-height: 1.2; }
+        .hero-description { font-size: 18px; line-height: 1.7; color: rgba(255,255,255,0.85); margin-bottom: 28px; max-width: 560px; }
+
+        .btn-primary { background: #649564; color: #FFFFFF; padding: 14px 32px; border-radius: 9999px; font-size: 16px; font-weight: 600; font-family: 'Poppins', sans-serif; display: inline-block; text-decoration: none; transition: background 0.2s ease, transform 0.15s ease; border: none; cursor: pointer; }
+        .btn-primary:hover { background: #4F7850; color: #FFFFFF; text-decoration: none; transform: translateY(-1px); }
+
+        .hero-image { flex-shrink: 0; width: 260px; height: 260px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; }
+        .hero-icon-circle { width: 200px; height: 200px; border-radius: 50%; background: rgba(100,149,100,0.18); border: 2px solid rgba(100,149,100,0.35); display: flex; align-items: center; justify-content: center; }
+        .hero-icon-circle svg { width: 80px; height: 80px; fill: none; stroke: #8FCB8F; stroke-width: 1.5; }
+
+        /* ============================================================
+           TABLE OF CONTENTS
+           ============================================================ */
+        .toc { background: #F3F4F9; padding: 48px 0; border-bottom: 1px solid #E5E7EB; }
+        .toc h2 { font-size: 28px; margin-bottom: 24px; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+        .toc-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 10px; transition: border-color 0.2s ease, box-shadow 0.2s ease; text-decoration: none; color: #333A4D; font-weight: 500; font-size: 16px; }
+        .toc-item:hover { border-color: #649564; box-shadow: 0 2px 8px rgba(100,149,100,0.15); text-decoration: none; color: #333A4D; }
+        .toc-number { width: 32px; height: 32px; border-radius: 50%; background: #649564; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Poppins', sans-serif; }
+        .toc-label { flex: 1; line-height: 1.4; }
+
+        /* ============================================================
+           MANUAL CONTENT
+           ============================================================ */
+        .manual-content { padding: 56px 0 80px; }
+        .section { margin-bottom: 56px; scroll-margin-top: 100px; }
+        .section > h2 { font-size: 32px; font-weight: 600; padding-left: 20px; border-left: 4px solid #649564; margin-bottom: 24px; line-height: 1.3; }
+        .section > h3 { font-size: 24px; font-weight: 600; margin-top: 32px; margin-bottom: 16px; }
+        .section > h4 { font-size: 20px; font-weight: 600; margin-top: 24px; margin-bottom: 12px; }
+        .section > p, .section > ul, .section > ol { margin-bottom: 16px; }
+        .section ul, .section ol { padding-left: 24px; }
+        .section li { margin-bottom: 8px; }
+
+        /* --- Steps --- */
+        .steps { counter-reset: step-counter; list-style: none; padding: 0; margin: 24px 0; }
+        .step { display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px; padding: 20px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; transition: box-shadow 0.2s ease; }
+        .step:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+        .step-number { counter-increment: step-counter; width: 40px; height: 40px; border-radius: 50%; background: #649564; color: #FFFFFF; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+        .step-content { flex: 1; min-width: 0; }
+        .step-content h4 { font-size: 18px; font-weight: 600; margin-bottom: 6px; color: #333A4D; }
+        .step-content p { margin-bottom: 8px; font-size: 16px; }
+        .step-content p:last-child { margin-bottom: 0; }
+        .step-content ul { padding-left: 20px; margin-top: 8px; }
+        .step-content li { font-size: 16px; margin-bottom: 4px; }
+
+        /* --- Info / Warning / Note Boxes --- */
+        .info-box, .warning-box, .note-box { padding: 20px 24px; border-radius: 10px; margin: 24px 0; font-size: 16px; line-height: 1.6; position: relative; }
+        .info-box { background: #F3F4F9; border-left: 4px solid #649564; }
+        .warning-box { background: #FFF8F0; border-left: 4px solid #FF7433; }
+        .note-box { background: #F0F6FF; border-left: 4px solid #4A90D9; }
+        .info-box .box-label, .warning-box .box-label, .note-box .box-label { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .info-box .box-label { color: #4F7850; }
+        .warning-box .box-label { color: #CC5A24; }
+        .note-box .box-label { color: #4A90D9; }
+        .box-label svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+        /* --- Checklist --- */
+        .checklist { list-style: none; padding: 0; margin: 20px 0; }
+        .checklist li { display: flex; align-items: flex-start; gap: 14px; padding: 10px 0; border-bottom: 1px solid #F0F0F2; font-size: 16px; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .check-icon { width: 24px; height: 24px; flex-shrink: 0; margin-top: 2px; }
+        .checklist .check-icon svg { width: 24px; height: 24px; }
+
+        /* --- Field Table --- */
+        .field-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 24px 0; font-size: 15px; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; }
+        .field-table thead { background: #1F3D2E; color: #FFFFFF; }
+        .field-table th { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 14px 16px; text-align: left; white-space: nowrap; }
+        .field-table td { padding: 12px 16px; border-bottom: 1px solid #F0F0F2; vertical-align: top; }
+        .field-table tbody tr:last-child td { border-bottom: none; }
+        .field-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .field-table tbody tr:hover { background: #F3F4F9; }
+        .field-table .required-yes { color: #4F7850; font-weight: 600; }
+        .field-table .required-no { color: #999; }
+        .badge { display: inline-block; padding: 2px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600; font-family: 'Poppins', sans-serif; }
+        .badge-read { background: #EFF6FF; color: #3B82F6; }
+        .badge-input { background: #F0FDF4; color: #16A34A; }
+        .badge-auto { background: #FEF9C3; color: #CA8A04; }
+        .badge-module { background: #EDE9FE; color: #7C3AED; }
+
+        /* --- Cost Table --- */
+        .cost-table { width: 100%; border-collapse: separate; border-spacing: 0; margin: 24px 0; border: 1px solid #E5E7EB; border-radius: 10px; overflow: hidden; font-size: 16px; }
+        .cost-table thead { background: #1F3D2E; color: #FFFFFF; }
+        .cost-table th { font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 14px 16px; text-align: left; }
+        .cost-table td { padding: 14px 16px; border-bottom: 1px solid #F0F0F2; }
+        .cost-table tbody tr:last-child td { border-bottom: none; }
+        .cost-table tbody tr:nth-child(even) { background: #FAFAFA; }
+        .cost-table .amount { font-weight: 700; color: #333A4D; font-family: 'Poppins', sans-serif; }
+        .cost-table .total-row { background: #F3F4F9 !important; font-weight: 700; }
+        .cost-table .total-row td { border-top: 2px solid #1F3D2E; color: #333A4D; font-family: 'Poppins', sans-serif; }
+
+        /* --- Tab Group --- */
+        .tab-group { margin: 28px 0; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; }
+        .tab-nav { display: flex; background: #F3F4F9; border-bottom: 1px solid #E5E7EB; overflow-x: auto; gap: 0; }
+        .tab-btn { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 24px; cursor: pointer; background: transparent; border: none; border-bottom: 3px solid transparent; color: #555866; white-space: nowrap; transition: all 0.2s ease; }
+        .tab-btn:hover { color: #333A4D; background: rgba(255,255,255,0.5); }
+        .tab-btn.active { color: #649564; border-bottom-color: #649564; background: #FFFFFF; font-weight: 600; }
+        .tab-panel { display: none; padding: 24px; }
+        .tab-panel.active { display: block; }
+
+        /* --- Timeline --- */
+        .timeline { position: relative; margin: 32px 0; padding-left: 40px; }
+        .timeline::before { content: ""; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: #E5E7EB; border-radius: 2px; }
+        .timeline-item { position: relative; margin-bottom: 32px; padding-left: 24px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-item::before { content: ""; position: absolute; left: -28px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: #649564; border: 3px solid #FFFFFF; box-shadow: 0 0 0 3px #649564; z-index: 1; }
+        .timeline-item.pending::before { background: #FFFFFF; box-shadow: 0 0 0 3px #D0D0D8; }
+        .timeline-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 4px; color: #333A4D; }
+        .timeline-item p { font-size: 15px; color: #555866; margin-bottom: 0; }
+        .timeline-item .timeline-meta { font-size: 13px; color: #999; margin-top: 4px; }
+
+        /* --- Form Mockup Styles --- */
+        .form-mockup { background: #FAFAFA; border: 1px solid #E5E7EB; border-radius: 12px; overflow: hidden; margin: 24px 0; font-size: 14px; }
+        .form-mockup-header { background: #1F3D2E; color: #FFFFFF; padding: 12px 20px; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-mockup-body { padding: 20px; }
+        .form-row { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 12px; }
+        .form-field { display: flex; flex-direction: column; gap: 4px; }
+        .form-field label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #888; font-family: 'Poppins', sans-serif; }
+        .form-field .field-value { background: #FFFFFF; border: 1px solid #D1D5DB; border-radius: 6px; padding: 8px 12px; font-size: 14px; color: #333A4D; }
+        .form-field .field-value.readonly { background: #F3F4F9; color: #555866; }
+
+        .radio-group { display: flex; flex-direction: column; gap: 10px; padding: 4px 0; }
+        .radio-option { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border: 2px solid #E5E7EB; border-radius: 8px; cursor: pointer; font-size: 15px; color: #333A4D; background: #FFFFFF; }
+        .radio-option.selected { border-color: #649564; background: #F0FDF4; }
+        .radio-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #D1D5DB; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+        .radio-option.selected .radio-dot { border-color: #649564; }
+        .radio-option.selected .radio-dot::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #649564; }
+
+        .datagrid-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+        .datagrid-table th { background: #F3F4F9; padding: 8px 10px; text-align: left; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: #555866; border-bottom: 1px solid #E5E7EB; white-space: nowrap; }
+        .datagrid-table td { padding: 10px 10px; border-bottom: 1px solid #F0F0F2; vertical-align: middle; color: #333A4D; }
+        .datagrid-table tbody tr:last-child td { border-bottom: none; }
+        .datagrid-table tbody tr:hover { background: #F3F4F9; }
+
+        .checkbox-mock { width: 18px; height: 18px; border: 2px solid #D1D5DB; border-radius: 4px; background: #FFFFFF; display: inline-block; vertical-align: middle; }
+        .checkbox-mock.checked { background: #649564; border-color: #649564; position: relative; }
+        .checkbox-mock.checked::after { content: "✓"; color: white; font-size: 12px; position: absolute; top: -1px; left: 2px; }
+
+        /* ============================================================
+           FOOTER
+           ============================================================ */
+        .site-footer { background: #1F3D2E; color: rgba(255,255,255,0.8); padding: 56px 0 0; font-size: 15px; }
+        .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .footer-col h5 { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 16px; font-weight: 600; margin-bottom: 18px; }
+        .footer-logo { margin-bottom: 16px; }
+        .footer-logo img { height: 50px; width: auto; }
+        .footer-col p { margin-bottom: 10px; font-size: 14px; line-height: 1.6; }
+        .footer-col a { color: rgba(255,255,255,0.8); transition: color 0.2s ease; }
+        .footer-col a:hover { color: #8FCB8F; text-decoration: none; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { font-size: 14px; }
+        .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 14px; }
+        .footer-contact-item svg { width: 18px; height: 18px; flex-shrink: 0; stroke: #8FCB8F; fill: none; margin-top: 2px; }
+        .footer-implemented { padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; gap: 32px; flex-wrap: wrap; }
+        .footer-implemented span { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.5); font-weight: 500; }
+        .footer-copyright { text-align: center; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.45); }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 34px; }
+            .hero-inner { flex-direction: column; text-align: center; }
+            .hero-description { max-width: 100%; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            body { font-size: 16px; }
+            h1 { font-size: 32px; }
+            h2, .section > h2 { font-size: 26px; }
+            h3 { font-size: 22px; }
+            .header-inner { flex-direction: column; gap: 12px; padding: 10px 16px; }
+            .header-nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+            .hero { padding: 40px 0; }
+            .hero-image { display: none; }
+            .hero h1 { font-size: 28px; }
+            .step { flex-direction: column; gap: 12px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .container { padding: 0 16px; }
+            .field-table, .cost-table { font-size: 14px; }
+            .field-table th, .field-table td, .cost-table th, .cost-table td { padding: 10px 12px; }
+            .tab-btn { padding: 12px 16px; font-size: 13px; }
+            .datagrid-table { font-size: 12px; }
+            .datagrid-table th, .datagrid-table td { padding: 8px 6px; }
+            .form-row { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 24px; }
+            .footer-implemented { flex-direction: column; gap: 16px; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================================
+           PRINT STYLES
+           ============================================================ */
+        @media print {
+            @page { margin: 2cm 1.5cm; size: A4; }
+            body { font-size: 11pt; line-height: 1.5; color: #000; background: #FFF; }
+            .site-header { position: static; box-shadow: none; background: #1F3D2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .header-nav .btn-login { display: none; }
+            .hero { background: #1F3D2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 32px 0; page-break-after: always; }
+            .hero h1 { font-size: 28pt; }
+            .btn-primary { display: none; }
+            .hero-image { display: none; }
+            .toc { page-break-after: always; background: #F3F4F9 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .toc-item { break-inside: avoid; }
+            .section { page-break-inside: avoid; }
+            .section > h2 { page-break-after: avoid; border-left-color: #649564 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .step { page-break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+            .step-number { background: #649564 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .info-box, .warning-box, .note-box { page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .field-table, .cost-table { page-break-inside: avoid; font-size: 9pt; }
+            .field-table thead, .cost-table thead { background: #1F3D2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .tab-group { page-break-inside: avoid; }
+            .tab-nav { display: none; }
+            .tab-panel { display: block !important; border-top: 1px solid #ddd; padding-top: 12px; margin-top: 8px; }
+            .tab-panel::before { content: attr(data-tab-label); font-weight: 700; font-size: 13pt; display: block; margin-bottom: 8px; }
+            .timeline::before { background: #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .timeline-item::before { background: #649564 !important; box-shadow: 0 0 0 3px #649564 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .form-mockup { page-break-inside: avoid; }
+            .site-footer { background: #1F3D2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; page-break-before: always; }
+            a { color: #000; text-decoration: underline; }
+            a[href]::after { content: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="https://services.medicaments.sante.gov.ml/" class="header-brand" title="Mali Médicaments">
+                <img src="dpm-logo.png" alt="Logo DPM" class="header-logo">
+                <div class="header-brand-text">
+                    <span class="header-brand-title">Mali Médicaments</span>
+                    <span class="header-brand-subtitle">Direction de la Pharmacie et du Médicament</span>
+                </div>
+            </a>
+            <nav class="header-nav">
+                <a href="https://services.medicaments.sante.gov.ml/" class="btn-login">Se connecter</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         BREADCRUMB
+         ============================================================ -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="https://services.medicaments.sante.gov.ml/">Accueil</a></li>
+                <li><a href="index.html">Manuels Mali</a></li>
+                <li><span class="current">Demande de première intention</span></li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HERO SECTION
+         ============================================================ -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <span class="hero-label">Manuel utilisateur &mdash; Demandeur</span>
+                    <h1>Demande de première intention (AMM)</h1>
+                    <p class="hero-description">Obtenez l'Autorisation de Mise sur le Marché (AMM) obligatoire pour importer, exporter, distribuer et commercialiser un médicament au Mali. L'autorisation, valable 5 ans, se demande entièrement en ligne sur Mali Médicaments.</p>
+                    <a href="https://services.medicaments.sante.gov.ml/" class="btn-primary">Accéder au portail &rarr;</a>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-icon-circle">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="18" y="6" width="28" height="52" rx="14" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="18" y1="32" x2="46" y2="32" stroke-linecap="round"/>
+                            <path d="M10 44c0 6 4 10 10 10" stroke-linecap="round"/>
+                            <circle cx="10" cy="38" r="2.5"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         TABLE OF CONTENTS
+         ============================================================ -->
+    <section class="toc">
+        <div class="container">
+            <h2>Table des matières</h2>
+            <div class="toc-grid">
+                <a href="#overview" class="toc-item"><span class="toc-number">1</span><span class="toc-label">Aperçu du service</span></a>
+                <a href="#before-you-start" class="toc-item"><span class="toc-number">2</span><span class="toc-label">Avant de commencer</span></a>
+                <a href="#who-applies" class="toc-item"><span class="toc-number">3</span><span class="toc-label">Qui soumet la demande&nbsp;?</span></a>
+                <a href="#requirements" class="toc-item"><span class="toc-number">4</span><span class="toc-label">Documents requis (dossier CTD)</span></a>
+                <a href="#fees" class="toc-item"><span class="toc-number">5</span><span class="toc-label">Frais &amp; paiement</span></a>
+                <a href="#step-by-step" class="toc-item"><span class="toc-number">6</span><span class="toc-label">Guide étape par étape</span></a>
+                <a href="#after-submission" class="toc-item"><span class="toc-number">7</span><span class="toc-label">Après soumission</span></a>
+                <a href="#faq" class="toc-item"><span class="toc-number">8</span><span class="toc-label">Foire aux questions</span></a>
+                <a href="#contact" class="toc-item"><span class="toc-number">9</span><span class="toc-label">Aide &amp; contact</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MANUAL CONTENT
+         ============================================================ -->
+    <main class="manual-content">
+        <div class="container">
+
+            <!-- ===== 1. OVERVIEW ===== -->
+            <div class="section" id="overview">
+                <h2>1. Aperçu du service</h2>
+                <p>La <strong>Demande de première intention</strong> est la procédure par laquelle un laboratoire pharmaceutique obtient l'<strong>Autorisation de Mise sur le Marché (AMM)</strong> d'un médicament au Mali. Cette autorisation, délivrée par le <strong>Ministre de la Santé et du Développement Social (MSDS)</strong> sur avis technique de la <strong>Direction de la Pharmacie et du Médicament (DPM)</strong>, est obligatoire pour <strong>importer, exporter, distribuer et commercialiser</strong> un médicament sur le territoire malien.</p>
+                <p>L'AMM est délivrée pour une durée de <strong>5 ans</strong>. À l'approche de son expiration, le titulaire doit soumettre une demande de renouvellement distincte (non couverte par ce manuel).</p>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Qui peut utiliser ce service&nbsp;?
+                    </div>
+                    <p>Le <strong>titulaire de l'AMM</strong> (le laboratoire pharmaceutique fabricant ou exploitant le produit) ou son <strong>représentant local au Mali</strong> (bureau de représentation, délégué médical ou agence pharmaceutique mandatée). Un compte sur <strong>Mali Médicaments</strong> (services.medicaments.sante.gov.ml) est nécessaire avant de déposer une demande.</p>
+                </div>
+
+                <h3>Comment fonctionne le système</h3>
+                <p>La demande se présente sous la forme d'un <strong>dossier CTD</strong> (Common Technical Document), le format international standard utilisé pour l'enregistrement des médicaments, organisé en 5 modules. Vous remplissez les informations administratives et techniques, puis téléversez les pièces justificatives module par module. Une fois soumis et payé, le dossier suit un circuit d'instruction impliquant le contrôle qualité, un comité d'experts et la Commission nationale du médicament, avant décision finale du Ministre.</p>
+            </div>
+
+            <!-- ===== 2. BEFORE YOU START ===== -->
+            <div class="section" id="before-you-start">
+                <h2>2. Avant de commencer</h2>
+                <p>Ce dossier est technique et volumineux. Préparez l'ensemble de vos documents à l'avance pour éviter d'interrompre votre session en cours de saisie.</p>
+
+                <ul class="checklist">
+                    <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#649564"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Un compte actif sur <strong>Mali Médicaments</strong> (services.medicaments.sante.gov.ml)</span></li>
+                    <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#649564"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Les coordonnées complètes du <strong>titulaire</strong>, du <strong>fabricant principal</strong> et, le cas échéant, du <strong>bureau de représentation</strong> au Mali</span></li>
+                    <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#649564"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>La <strong>description complète du produit</strong>&nbsp;: dénomination, principe actif, forme, dosage, présentation, classe thérapeutique et prix</span></li>
+                    <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#649564"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>L'ensemble des <strong>documents des modules 1 à 5</strong> du dossier CTD, au format PDF, prêts à être téléversés (voir section 4)</span></li>
+                    <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#649564"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Des <strong>échantillons physiques</strong> du produit (modèle de vente et matières premières), à déposer auprès de la DPM après le paiement</span></li>
+                    <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#649564"/><polyline points="7,12 10.5,15.5 17,9" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Un moyen de paiement pour les <strong>frais d'enregistrement</strong>, calculés selon le type et la catégorie du produit</span></li>
+                </ul>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Préparez vos documents avant de commencer
+                    </div>
+                    <p>Le formulaire compte 8 onglets et plusieurs dizaines de pièces à téléverser. Rassemblez tous vos fichiers PDF au format et à la nomenclature attendus avant de démarrer la saisie, pour éviter d'avoir à interrompre votre session.</p>
+                </div>
+
+                <h4>Délai de traitement estimé</h4>
+                <table class="cost-table">
+                    <thead><tr><th>Étape</th><th>Délai estimé</th></tr></thead>
+                    <tbody>
+                        <tr><td>Saisie du dossier et paiement</td><td>Variable selon la complexité du dossier (plusieurs heures de préparation recommandées)</td></tr>
+                        <tr><td>Dépôt des échantillons</td><td>À effectuer physiquement auprès de la DPM après paiement</td></tr>
+                        <tr><td>Instruction technique (contrôle qualité, comité d'experts, commission nationale)</td><td>Plusieurs semaines, selon la complexité du produit et la charge de la commission</td></tr>
+                        <tr><td>Décision du Ministre et notification</td><td>Après avis favorable de la Commission nationale</td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 14px; color: #888;">Les délais réels dépendent du calendrier des sessions de la Commission nationale du médicament et de la complétude du dossier soumis. Consultez le portail pour le statut en temps réel de votre dossier.</p>
+            </div>
+
+            <!-- ===== 3. WHO APPLIES ===== -->
+            <div class="section" id="who-applies">
+                <h2>3. Qui soumet la demande&nbsp;?</h2>
+                <p>Au début du formulaire, vous devez préciser si le dossier est suivi directement par le titulaire de l'AMM ou par un bureau de représentation agissant pour son compte au Mali.</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'who-titulaire')">Titulaire direct</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'who-bureau')">Bureau de représentation</button>
+                    </div>
+                    <div class="tab-panel active" id="who-titulaire" data-tab-label="Titulaire direct">
+                        <h4>Le titulaire dépose lui-même le dossier</h4>
+                        <p>Le <strong>titulaire</strong> est le laboratoire pharmaceutique propriétaire de l'AMM &mdash; le plus souvent le fabricant ou l'exploitant du médicament, basé au Mali ou à l'étranger. Lorsque le dossier est suivi directement par le titulaire, seules ses coordonnées (nom, adresse, ville, pays, téléphone, email) sont requises dans le formulaire.</p>
+                    </div>
+                    <div class="tab-panel" id="who-bureau" data-tab-label="Bureau de représentation">
+                        <h4>Un représentant local suit le dossier pour le compte du titulaire</h4>
+                        <p>Si le titulaire n'est pas basé au Mali, il peut mandater un <strong>bureau de représentation</strong> local (agence pharmaceutique, délégué médical ou autre représentant agréé) pour suivre le dossier. Dans ce cas, le formulaire demande également les coordonnées complètes de ce bureau (nom, adresse, ville, pays, téléphone, email), en plus de celles du titulaire.</p>
+                        <div class="info-box" style="margin-top: 0;">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                Lettre de demande au Ministre
+                            </div>
+                            <p style="margin: 0;">En fin de dossier, vous choisirez également qui rédige la lettre de demande adressée au Ministre&nbsp;: un modèle proposé par la DPM (à compléter avec le nom et la fonction du signataire) ou une lettre rédigée et signée directement par le titulaire, à téléverser.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 4. REQUIREMENTS ===== -->
+            <div class="section" id="requirements">
+                <h2>4. Documents requis (dossier CTD)</h2>
+                <p>Le dossier suit la structure <strong>CTD</strong> (Common Technical Document) en 5 modules, standard international pour l'enregistrement des médicaments. Chaque module correspond à un onglet du formulaire et regroupe les pièces à téléverser au format PDF.</p>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'req-m1')">Module 1</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'req-m2')">Module 2</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'req-m3')">Module 3</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'req-m4')">Module 4</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'req-m5')">Module 5</button>
+                    </div>
+
+                    <div class="tab-panel active" id="req-m1" data-tab-label="Module 1 — Informations administratives">
+                        <h4>Module 1 &mdash; Informations administratives et description du produit</h4>
+                        <table class="field-table">
+                            <thead><tr><th>Document</th><th>Requis</th></tr></thead>
+                            <tbody>
+                                <tr><td>Table des matières du Module 1</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Notice interne ou projet de notice (en français)</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Résumé des Caractéristiques du Produit (RCP)</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>RCP du produit de référence</td><td class="required-no">Selon le cas</td></tr>
+                                <tr><td>Certificat du produit pharmaceutique</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Certificat de libre vente</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>AMM du pays d'origine</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Licence de fabrication</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Certificat de Bonnes Pratiques de Fabrication &mdash; produit fini</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Certificat de Bonnes Pratiques de Fabrication &mdash; substances actives</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Certificat d'analyse des matières premières (échantillon fourni)</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Certificat d'analyse du modèle de vente (échantillon fourni)</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Maquettes des conditionnements primaires et secondaires</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Informations sur la situation réglementaire du produit</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Attestation du PGHT (Plan de Gestion des Risques/Hygiène-Toxicologie)</td><td class="required-no">Selon le cas</td></tr>
+                                <tr><td>Résultats des études de dissolution comparée (BIOWAIVER)</td><td class="required-no">Si applicable</td></tr>
+                                <tr><td>Résumé des résultats des études de bioéquivalence (BTIF)</td><td class="required-no">Si applicable</td></tr>
+                            </tbody>
+                        </table>
+                        <p style="font-size: 14px; color: #888;">Les pièces relatives à la bioéquivalence ne sont demandées que si vous répondez « oui » à la question « Disposez-vous d'un rapport de bioéquivalence&nbsp;? » dans le formulaire.</p>
+                    </div>
+
+                    <div class="tab-panel" id="req-m2" data-tab-label="Module 2 — Résumés et Aperçus CTD">
+                        <h4>Module 2 &mdash; Résumés et Aperçus CTD</h4>
+                        <table class="field-table">
+                            <thead><tr><th>Document</th><th>Requis</th></tr></thead>
+                            <tbody>
+                                <tr><td>Table des matières du Module 2</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Partie introductive sur l'ensemble du module</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Aperçu clinique</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Aperçu non clinique</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Résumé clinique</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Résumés des études non cliniques</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Résumé des données sur la substance active (S)</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Résumé des données sur le produit fini (P)</td><td class="required-yes">Oui</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-panel" id="req-m3" data-tab-label="Module 3 — Qualité CMC">
+                        <h4>Module 3 &mdash; Qualité (CMC : Chimie, Fabrication et Contrôles)</h4>
+                        <table class="field-table">
+                            <thead><tr><th>Document</th><th>Requis</th></tr></thead>
+                            <tbody>
+                                <tr><td>Table des matières du Module 3</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Données sur la substance active (S)</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Données sur le produit fini (P)</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Références bibliographiques</td><td class="required-no">Selon le cas</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="tab-panel" id="req-m4" data-tab-label="Module 4 — Études non cliniques">
+                        <h4>Module 4 &mdash; Rapports d'études non cliniques</h4>
+                        <table class="field-table">
+                            <thead><tr><th>Document</th><th>Requis</th></tr></thead>
+                            <tbody>
+                                <tr><td>Table des matières du Module 4</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Rapports sur les études non cliniques</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Références bibliographiques</td><td class="required-no">Selon le cas</td></tr>
+                            </tbody>
+                        </table>
+                        <div class="info-box" style="margin-top: 0;">
+                            <div class="box-label">
+                                <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                                Module facultatif dans certains cas
+                            </div>
+                            <p style="margin: 0;">Le formulaire vous demande dès l'onglet « Informations administratives » si vous disposez des rapports d'études non cliniques. Répondez avec précision&nbsp;: cela conditionne les pièces attendues dans ce module.</p>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="req-m5" data-tab-label="Module 5 — Études cliniques">
+                        <h4>Module 5 &mdash; Rapports d'études cliniques</h4>
+                        <table class="field-table">
+                            <thead><tr><th>Document</th><th>Requis</th></tr></thead>
+                            <tbody>
+                                <tr><td>Table des matières du Module 5</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Rapports sur les études cliniques</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Tableau des études cliniques</td><td class="required-yes">Oui</td></tr>
+                                <tr><td>Références bibliographiques</td><td class="required-no">Selon le cas</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="warning-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                        Tous les fichiers doivent être au format PDF
+                    </div>
+                    <p>Vérifiez que chaque document correspond exactement à la pièce attendue (numéros de licence à jour, certificats non expirés) avant de le téléverser. Un document manquant ou non conforme entraînera un renvoi du dossier en correction par le service de Validation.</p>
+                </div>
+            </div>
+
+            <!-- ===== 5. FEES ===== -->
+            <div class="section" id="fees">
+                <h2>5. Frais &amp; modalités de paiement</h2>
+                <p>Les <strong>frais d'enregistrement</strong> sont calculés automatiquement par le système en fonction du <strong>type</strong> et de la <strong>catégorie du produit</strong> sélectionnés en début de formulaire. Le montant exact s'affiche dans le récapitulatif avant paiement.</p>
+
+                <h4>Deux modes de paiement</h4>
+                <table class="cost-table">
+                    <thead><tr><th>Mode</th><th>Description</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Paiement en ligne</strong></td><td>Réglez directement sur le portail Mali Médicaments au moment de la soumission du dossier.</td></tr>
+                        <tr><td><strong>Paiement à la caisse DPM (régisseur)</strong></td><td>Réglez en personne auprès du régisseur de la DPM, qui confirme le paiement dans le système avant que le dossier ne passe à l'étape suivante.</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="note-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="2" width="14" height="16" rx="2"/><line x1="7" y1="6" x2="13" y2="6"/><line x1="7" y1="10" x2="13" y2="10"/><line x1="7" y1="14" x2="10" y2="14"/></svg>
+                        Bon à savoir
+                    </div>
+                    <p>Votre dossier reste bloqué à l'étape « Paiement » (régisseur) tant que le paiement n'est pas confirmé dans le système, qu'il ait été effectué en ligne ou à la caisse. Conservez votre preuve de paiement.</p>
+                </div>
+            </div>
+
+            <!-- ===== 6. STEP-BY-STEP ===== -->
+            <div class="section" id="step-by-step">
+                <h2>6. Guide étape par étape</h2>
+                <p>Le formulaire de demande est organisé en <strong>8 onglets</strong> successifs. Complétez chaque onglet avant de passer au suivant en cliquant sur <strong>« Suivant »</strong>.</p>
+
+                <ol class="steps">
+                    <li class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Type de produit</h4>
+                            <p>Connectez-vous sur <a href="https://services.medicaments.sante.gov.ml/" target="_blank"><strong>services.medicaments.sante.gov.ml</strong></a>, cliquez sur <strong>« Nouvelle demande »</strong> puis sélectionnez <strong>« Demande de première intention »</strong>. Choisissez le <strong>type de produit</strong> et sa <strong>catégorie</strong> dans les listes déroulantes &mdash; ce choix détermine les frais et les documents attendus par la suite.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Informations administratives (Module 1)</h4>
+                            <p>Renseignez les coordonnées du <strong>titulaire</strong>, précisez si le dossier est suivi par un <strong>bureau de représentation</strong> (voir section 3), puis complétez les informations du <strong>fabricant principal</strong> (nom, n° de licence, date de délivrance, adresse, contact).</p>
+                            <p>Si d'autres fabricants interviennent dans la production, indiquez-le et ajoutez chacun d'eux via <strong>« Ajouter »</strong> dans le tableau des autres fabricants. Précisez enfin si vous disposez des rapports d'études non cliniques (Module 4).</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Description du produit (Module 1, suite)</h4>
+                            <p>Complétez la <strong>dénomination</strong>, le <strong>principe actif</strong>, la <strong>forme</strong> pharmaceutique, le <strong>dosage</strong>, la <strong>présentation</strong>, la <strong>classe thérapeutique</strong> et les <strong>prix</strong> (grossiste hors taxes, prix de revient du traitement, prix public). Indiquez le nombre d'échantillons transmis (modèle de vente et matières premières) et précisez si vous disposez d'un rapport de bioéquivalence.</p>
+                            <p>Téléversez ensuite l'ensemble des <strong>documents du Module 1</strong> listés en section 4.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Résumés et Aperçus CTD (Module 2)</h4>
+                            <p>Téléversez les documents de synthèse du <strong>Module 2</strong>&nbsp;: table des matières, résumés qualité/clinique/non clinique et aperçus clinique et non clinique.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Qualité CMC (Module 3)</h4>
+                            <p>Téléversez les données qualité du <strong>Module 3</strong>&nbsp;: table des matières, données sur la substance active et sur le produit fini, et références bibliographiques le cas échéant.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-content">
+                            <h4>Études non cliniques (Module 4)</h4>
+                            <p>Téléversez la table des matières et les rapports d'études non cliniques du <strong>Module 4</strong>, ainsi que les références bibliographiques associées.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-content">
+                            <h4>Études cliniques (Module 5)</h4>
+                            <p>Téléversez la table des matières, les rapports d'études cliniques, le tableau récapitulatif des données cliniques et les références bibliographiques du <strong>Module 5</strong>.</p>
+                        </div>
+                    </li>
+
+                    <li class="step">
+                        <div class="step-number">8</div>
+                        <div class="step-content">
+                            <h4>Demande au Ministre &amp; paiement</h4>
+                            <p>Choisissez si la <strong>lettre de demande</strong> adressée au Ministre est rédigée par la DPM (renseignez alors le prénom, nom et fonction du signataire, puis cliquez sur <strong>« Demande au ministre »</strong> pour la générer) ou si vous téléversez directement une <strong>lettre signée par le titulaire</strong>.</p>
+                            <p>Vérifiez l'ensemble du dossier puis cliquez sur <strong>« Aller au paiement »</strong>. Réglez les frais d'enregistrement en ligne ou à la caisse de la DPM (voir section 5), puis validez la soumission. Vous recevrez une confirmation avec le numéro de votre dossier.</p>
+                            <div class="warning-box" style="margin-top: 12px;">
+                                <div class="box-label">
+                                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2 L18.66 17 H1.34 Z" stroke-linejoin="round"/><line x1="10" y1="8" x2="10" y2="12"/><circle cx="10" cy="15" r="0.5" fill="currentColor"/></svg>
+                                    Paiement requis avant instruction
+                                </div>
+                                <p style="margin: 0;">Le dossier n'est transmis aux services d'instruction de la DPM qu'après confirmation du paiement. Un dossier resté en paiement incomplet reste bloqué à cette étape.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- ===== 7. AFTER SUBMISSION ===== -->
+            <div class="section" id="after-submission">
+                <h2>7. Après soumission</h2>
+                <p>Une fois soumis et payé, votre dossier suit un circuit d'instruction à plusieurs étapes. Vous pouvez suivre son avancement à tout moment en vous connectant à votre compte Mali Médicaments.</p>
+
+                <h3>Circuit de traitement</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Paiement (régisseur)</h4>
+                        <p>Le régisseur de la DPM confirme la réception du paiement (en ligne ou à la caisse) et débloque le dossier pour la suite du circuit.</p>
+                        <div class="timeline-meta">Après soumission du formulaire</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Dépôt des échantillons</h4>
+                        <p>Vous déposez physiquement les échantillons du produit (modèle de vente et matières premières) auprès de la DPM.</p>
+                        <div class="timeline-meta">À effectuer par le demandeur</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Validation du dossier</h4>
+                        <p>Un agent de la DPM vérifie la complétude et la conformité du dossier. En cas d'anomalie, le dossier peut être renvoyé au demandeur pour correction, ou rejeté.</p>
+                        <div class="timeline-meta">Instruction administrative</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Contrôle qualité &amp; Comité d'experts</h4>
+                        <p>Le laboratoire de contrôle qualité examine les échantillons et le dossier technique ; un comité d'experts évalue ensuite le produit. Une note technique de synthèse est rédigée.</p>
+                        <div class="timeline-meta">Instruction technique</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Commission nationale du médicament</h4>
+                        <p>La Commission nationale examine le dossier et rend un avis&nbsp;: accepté, ajourné (demande d'informations complémentaires) ou rejeté.</p>
+                        <div class="timeline-meta">Session de la Commission</div>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Décision du Ministre</h4>
+                        <p>Sur la base de l'avis de la Commission, le Ministre de la Santé et du Développement Social décide de l'octroi de l'AMM ou d'un renvoi en commission pour complément d'instruction.</p>
+                        <div class="timeline-meta">Orientation DPM</div>
+                    </div>
+                    <div class="timeline-item pending">
+                        <h4>Notification &amp; délivrance de l'AMM</h4>
+                        <p>La décision finale vous est notifiée. En cas d'octroi, l'AMM est enregistrée (numéro AMM et date de délivrance) et disponible dans votre espace « Vos autorisations » sur le portail, pour une durée de validité de 5 ans.</p>
+                        <div class="timeline-meta">Étape finale</div>
+                    </div>
+                </div>
+
+                <div class="info-box">
+                    <div class="box-label">
+                        <svg viewBox="0 0 20 20" fill="currentColor"><circle cx="10" cy="10" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><text x="10" y="14.5" text-anchor="middle" font-size="12" font-weight="700" fill="currentColor">i</text></svg>
+                        Renvois en correction
+                    </div>
+                    <p>À plusieurs étapes du circuit (validation, contrôle qualité, note technique, commission), le dossier peut être renvoyé au demandeur pour corrections. Vous êtes notifié par email et devez vous reconnecter pour corriger et resoumettre les éléments demandés.</p>
+                </div>
+            </div>
+
+            <!-- ===== 8. FAQ ===== -->
+            <div class="section" id="faq">
+                <h2>8. Foire aux questions</h2>
+
+                <div class="tab-group">
+                    <div class="tab-nav">
+                        <button class="tab-btn active" onclick="switchTab(event, 'faq-dossier')">Dossier &amp; documents</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-paiement')">Frais &amp; paiement</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'faq-suivi')">Suivi &amp; décision</button>
+                    </div>
+
+                    <div class="tab-panel active" id="faq-dossier" data-tab-label="Dossier & documents FAQ">
+                        <h4>Dois-je fournir tous les documents des 5 modules dès la première soumission&nbsp;?</h4>
+                        <p>Oui, le dossier CTD complet est attendu dès la demande de première intention. Certaines pièces (bioéquivalence, PGHT, références bibliographiques) ne sont demandées que si votre réponse à une question du formulaire les rend applicables.</p>
+
+                        <h4 style="margin-top: 24px;">Puis-je enregistrer mon dossier et le reprendre plus tard&nbsp;?</h4>
+                        <p>Le portail conserve votre progression tant que vous n'avez pas soumis le dossier. Il est toutefois recommandé de préparer l'ensemble de vos fichiers PDF avant de commencer, la saisie portant sur un grand nombre de pièces.</p>
+
+                        <h4 style="margin-top: 24px;">Que se passe-t-il si un document est manquant ou non conforme&nbsp;?</h4>
+                        <p>Le dossier est renvoyé pour corrections lors de l'étape de validation ou du contrôle qualité. Vous recevez une notification détaillant les éléments à corriger avant de resoumettre.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-paiement" data-tab-label="Frais & paiement FAQ">
+                        <h4>Comment connaître le montant exact des frais avant de payer&nbsp;?</h4>
+                        <p>Le montant est calculé automatiquement selon le type et la catégorie de produit sélectionnés à la première étape, et s'affiche dans le récapitulatif avant validation du paiement.</p>
+
+                        <h4 style="margin-top: 24px;">Puis-je payer en espèces&nbsp;?</h4>
+                        <p>Le paiement à la caisse de la DPM (auprès du régisseur) est possible en complément du paiement en ligne. Dans les deux cas, le paiement doit être confirmé dans le système avant que le dossier ne poursuive son instruction.</p>
+                    </div>
+
+                    <div class="tab-panel" id="faq-suivi" data-tab-label="Suivi & décision FAQ">
+                        <h4>Comment suivre l'avancement de mon dossier&nbsp;?</h4>
+                        <p>Connectez-vous à votre compte Mali Médicaments et consultez l'onglet <strong>« Vos autorisations »</strong> ou <strong>« Autres demandes »</strong> pour voir l'étape en cours de votre dossier.</p>
+
+                        <h4 style="margin-top: 24px;">Que signifie « avis ajourné » de la Commission nationale&nbsp;?</h4>
+                        <p>Un avis ajourné signifie que la Commission demande des informations ou documents complémentaires avant de se prononcer. Le dossier vous est renvoyé pour compléter les éléments demandés.</p>
+
+                        <h4 style="margin-top: 24px;">Combien de temps l'AMM est-elle valable&nbsp;?</h4>
+                        <p>L'Autorisation de Mise sur le Marché est valable <strong>5 ans</strong> à compter de sa délivrance. Une demande de renouvellement doit être introduite avant l'expiration pour maintenir le droit de commercialisation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== 9. CONTACT ===== -->
+            <div class="section" id="contact">
+                <h2>9. Aide &amp; contact</h2>
+                <p>Pour toute question relative à votre dossier ou à l'utilisation du portail, adressez-vous à la Direction de la Pharmacie et du Médicament (DPM) via le portail Mali Médicaments.</p>
+
+                <table class="field-table">
+                    <thead><tr><th>Canal</th><th>Détails</th></tr></thead>
+                    <tbody>
+                        <tr><td>Portail en ligne</td><td><a href="https://services.medicaments.sante.gov.ml/" target="_blank">services.medicaments.sante.gov.ml</a></td></tr>
+                        <tr><td>Autorité compétente</td><td>Direction de la Pharmacie et du Médicament (DPM) &mdash; Ministère de la Santé et du Développement Social (MSDS), République du Mali</td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 14px; color: #888;">Pour les coordonnées téléphoniques et l'adresse physique de la DPM, référez-vous aux informations affichées sur votre espace personnel du portail Mali Médicaments.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="dpm-logo.png" alt="Logo DPM">
+                    </div>
+                    <p>Direction de la Pharmacie et du Médicament (DPM) &mdash; Ministère de la Santé et du Développement Social, République du Mali. Plateforme officielle de demande d'Autorisation de Mise sur le Marché des médicaments.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="demande-premiere-intention.html">Demande de première intention</a></li>
+                        <li><a href="index.html">Tous les manuels</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Bamako, République du Mali</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span><a href="https://services.medicaments.sante.gov.ml/" style="color: inherit;">services.medicaments.sante.gov.ml</a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-implemented">
+                <span>Mis en œuvre par</span>
+                <img src="../lesotho/unctad-logo.avif" alt="UNCTAD" style="height: 28px;">
+            </div>
+
+            <div class="footer-copyright">
+                Demande de première intention (AMM) &mdash; Manuel Utilisateur (Demandeur) &mdash; Version 1.0 &mdash; Mise à jour Août 2026 &nbsp;|&nbsp;
+                &copy; 2026 Direction de la Pharmacie et du Médicament (DPM), République du Mali. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         TAB SWITCHING SCRIPT
+         ============================================================ -->
+    <script>
+        function switchTab(event, tabId) {
+            var group = event.target.closest('.tab-group');
+            if (!group) return;
+            var btns = group.querySelectorAll('.tab-btn');
+            var panels = group.querySelectorAll('.tab-panel');
+            btns.forEach(function(btn) { btn.classList.remove('active'); });
+            panels.forEach(function(panel) { panel.classList.remove('active'); });
+            event.target.classList.add('active');
+            var panel = group.querySelector('#' + tabId);
+            if (panel) panel.classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
