@@ -612,7 +612,7 @@ function card(k) {
       <span class="sum-main">
         <h3>${esc(k.title)}</h3>
         <span class="symptom">${esc(k.symptom)}</span>
-        <span class="tags"><span class="tag t-${k.type}">${TYPE_LABEL[k.type]}</span><span class="tag t-who">${esc(k.who)}</span></span>
+        <span class="tags"><span class="tag t-${k.type}">${TYPE_LABEL[k.type]}</span></span>
       </span>
       ${chev}
     </summary>
@@ -629,7 +629,7 @@ function card(k) {
 $("#list").innerHTML = KB.map(card).join("") + `<div class="empty" id="empty" hidden>No problem matches your search. Post the file in DBR Support with the file link, the role and the exact error text.</div>`;
 
 function haystack(k) {
-  return [k.id, k.title, k.symptom, k.services, k.who, k.type, TYPE_LABEL[k.type], ...k.errors, ...k.steps, k.note || "", k.escalate || ""].join(" ").toLowerCase();
+  return [k.id, k.title, k.symptom, k.services, k.type, TYPE_LABEL[k.type], ...k.errors, ...k.steps, k.note || "", k.escalate || ""].join(" ").toLowerCase();
 }
 const HAY = Object.fromEntries(KB.map(k => [k.id, haystack(k)]));
 
