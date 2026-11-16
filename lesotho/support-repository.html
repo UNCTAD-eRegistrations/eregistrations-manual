@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DBR Lesotho Support Repository</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Same palette and type as the OBFC "Legal & Business Names" poster:
+   navy hero band on top, white body below, teal / blue / red accents. */
+:root {
+  --navy:      #1a1860;
+  --navy-bg:   rgba(26,24,96,0.06);
+  --navy-bdr:  rgba(26,24,96,0.16);
+  --green:     #3ddba0;
+  --teal-acc:  #0d6b54;
+  --teal-bg:   rgba(13,107,84,0.07);
+  --teal-bdr:  rgba(13,107,84,0.20);
+  --teal-ink:  #0a4d3c;
+  --blue-acc:  #185FA5;
+  --blue-bg:   rgba(24,95,165,0.07);
+  --blue-bdr:  rgba(24,95,165,0.20);
+  --blue-ink:  #0a3d6b;
+  --red-acc:   #b91c1c;
+  --red-bg:    rgba(185,28,28,0.06);
+  --red-bdr:   rgba(185,28,28,0.18);
+  --red-ink:   #7f1d1d;
+  --amber-acc: #9a5b00;
+  --amber-bg:  rgba(154,91,0,0.07);
+  --gray-100:  #eeeeed;
+  --gray-200:  #d3d1c7;
+  --gray-500:  #888780;
+  --gray-600:  #6b6a64;
+  --text:      #1a1a18;
+  --muted:     var(--gray-600);
+  --gutter:    clamp(16px, 5vw, 56px);
+}
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--navy);
+  color: var(--text);
+}
+body { font-size: 15px; line-height: 1.55; }
+a { color: var(--blue-acc); }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--blue-acc); outline-offset: 2px; border-radius: 4px;
+}
+code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 0.86em; background: var(--gray-100); padding: 1px 5px; border-radius: 4px; }
+
+/* ══ TOP — NAVY ══ */
+.top { max-width: 1000px; margin: 0 auto; padding: 0 var(--gutter) 64px; }
+.nav-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  min-height: 72px; padding-block: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  margin-bottom: 56px;
+}
+.nav-brand { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.nav-logo-circle {
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.55);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.3px; color: #fff; flex-shrink: 0;
+}
+.nav-logo { font-size: 14px; font-weight: 600; color: #fff; }
+.nav-sep  { width: 1px; height: 18px; background: rgba(255,255,255,0.18); }
+.nav-sub  { font-size: 13px; color: rgba(255,255,255,0.45); }
+.nav-url  { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.38); }
+@media (max-width: 680px) { .nav-sep { display: none; } .nav-sub { flex-basis: 100%; padding-left: 54px; margin-top: -10px; } .nav-row { margin-bottom: 40px; } }
+
+.hero-eyebrow {
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--green); margin-bottom: 22px; display: block;
+}
+.hero-title { font-size: clamp(36px, 5.5vw, 58px); line-height: 1.07; letter-spacing: -0.03em; margin-bottom: 10px; text-wrap: balance; }
+.ht-light { font-weight: 300; color: rgba(255,255,255,0.42); }
+.ht-bold  { font-weight: 900; color: #fff; display: block; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(255,255,255,0.18); border-radius: 100px;
+  padding: 6px 16px; margin: 22px 0 26px;
+  font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.60);
+}
+.hero-badge-dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
+.hero-lead { font-size: 17px; line-height: 1.65; color: rgba(255,255,255,0.52); max-width: 640px; margin-top: 24px; }
+.stats { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 30px; font-size: 13px; color: rgba(255,255,255,0.45); font-variant-numeric: tabular-nums; }
+.stats b { color: #fff; font-weight: 700; }
+
+/* ══ BOTTOM — WHITE ══ */
+.bottom { background: #fff; }
+.bottom-inner { max-width: 1000px; margin: 0 auto; padding: 48px var(--gutter) 0; display: flex; flex-direction: column; gap: 56px; }
+
+.band-title {
+  font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--navy); opacity: 0.4; margin-bottom: 20px;
+}
+section { display: flex; flex-direction: column; gap: 16px; }
+.section-head { display: flex; flex-direction: column; gap: 4px; }
+.section-head h2 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; color: var(--navy); text-wrap: balance; }
+.section-head p { font-size: 14px; color: var(--gray-500); max-width: 65ch; }
+
+/* ── BEFORE YOU POST (definitions band look) ── */
+.defs-band { max-width: 1000px; margin: 0 auto; padding: 52px var(--gutter) 8px; }
+.def-item { display: flex; align-items: baseline; gap: 40px; padding: 20px 0; border-bottom: 1px solid var(--gray-100); }
+.def-item:first-of-type { border-top: 1px solid var(--gray-100); }
+.def-tag {
+  flex-shrink: 0; width: 240px; display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--navy);
+}
+.def-badge {
+  width: 22px; height: 22px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; background: var(--navy); color: #fff; flex-shrink: 0; letter-spacing: 0;
+}
+.def-text { flex: 1; min-width: 0; font-size: 14px; line-height: 1.65; color: var(--gray-600); }
+.def-text ul { padding-left: 18px; display: flex; flex-direction: column; gap: 3px; }
+@media (max-width: 680px) { .def-item { flex-direction: column; gap: 10px; } .def-tag { width: auto; } }
+
+/* ── TRIAGE TABLE ── */
+.table-scroll { overflow-x: auto; border: 1px solid var(--gray-200); border-radius: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--gray-100); vertical-align: top; }
+th { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); font-weight: 700; background: var(--navy-bg); }
+tr:last-child td { border-bottom: 0; }
+td.msg { font-weight: 600; color: var(--text); min-width: 220px; }
+td.go { min-width: 200px; }
+td.go a { white-space: nowrap; font-weight: 700; text-decoration: none; color: var(--blue-acc); }
+td.go a:hover { text-decoration: underline; }
+
+/* ── TOOLBAR ── */
+.toolbar {
+  position: sticky; top: 0; z-index: 5; background: #fff;
+  padding-block: 12px; display: flex; flex-direction: column; gap: 10px;
+  border-bottom: 1px solid var(--gray-100);
+}
+.search { position: relative; display: block; }
+.search input {
+  width: 100%; font: inherit; font-size: 15px; padding: 12px 14px 12px 42px;
+  border: 1px solid var(--gray-200); border-radius: 10px; background: #fff; color: var(--text);
+}
+.search input:focus { border-color: var(--navy); outline: none; box-shadow: 0 0 0 3px var(--navy-bg); }
+.search svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 17px; height: 17px; stroke: var(--gray-500); fill: none; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.chip {
+  font: inherit; font-size: 12px; font-weight: 600; padding: 5px 13px; border-radius: 100px;
+  border: 1px solid var(--gray-200); background: #fff; color: var(--navy); cursor: pointer;
+}
+.chip:hover { border-color: var(--navy); }
+.chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+.count { font-size: 12px; color: var(--gray-500); margin-left: auto; font-variant-numeric: tabular-nums; }
+
+/* ── PROBLEM CARDS ── */
+.list { display: flex; flex-direction: column; gap: 12px; }
+details.kb { background: #fff; border: 1px solid var(--gray-200); border-radius: 14px; scroll-margin-top: 130px; position: relative; overflow: hidden; }
+details.kb::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--navy); opacity: 0; }
+details.kb[open] { border-color: var(--navy-bdr); }
+details.kb[open]::before { opacity: 1; }
+details.kb > summary {
+  list-style: none; cursor: pointer; padding: 18px 20px;
+  display: grid; grid-template-columns: auto 1fr auto; gap: 4px 14px; align-items: start;
+}
+details.kb > summary::-webkit-details-marker { display: none; }
+.kid {
+  width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800; color: var(--navy); font-variant-numeric: tabular-nums;
+}
+.sum-main { min-width: 0; display: flex; flex-direction: column; gap: 4px; padding-top: 5px; }
+.sum-main h3 { font-size: 16px; font-weight: 700; color: var(--navy); line-height: 1.3; letter-spacing: -0.01em; }
+.sum-main .symptom { color: var(--gray-500); font-size: 13.5px; line-height: 1.5; }
+.chev { width: 18px; height: 18px; stroke: var(--gray-500); fill: none; transition: transform .15s; margin-top: 8px; }
+details[open] .chev { transform: rotate(90deg); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 4px;
+}
+.tag:not(.t-who)::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.t-Connectivity { background: var(--amber-bg); color: var(--amber-acc); }
+.t-System { background: var(--red-bg); color: var(--red-acc); }
+.t-User { background: var(--teal-bg); color: var(--teal-acc); }
+.t-Config { background: var(--blue-bg); color: var(--blue-acc); }
+.t-Rights { background: var(--navy-bg); color: var(--navy); }
+.t-who { background: var(--gray-100); color: var(--gray-600); }
+
+.body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 18px; border-top: 1px solid var(--gray-100); }
+.service { font-size: 13px; color: var(--gray-500); }
+.body .label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--navy); font-weight: 700; margin-bottom: 8px; opacity: 0.6; }
+.errs { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.errs code { display: inline-block; padding: 5px 10px; white-space: normal; font-size: 12.5px; font-weight: 500; background: var(--red-bg); color: var(--red-ink); border-radius: 6px; }
+ol.steps { list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: 10px; max-width: 72ch; }
+ol.steps li { counter-increment: step; display: grid; grid-template-columns: 26px 1fr; gap: 12px; font-size: 14px; line-height: 1.6; color: var(--text); }
+ol.steps li::before {
+  content: counter(step);
+  width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid var(--teal-acc);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800; color: var(--teal-acc); background: #fff;
+}
+.rule-box { display: flex; gap: 11px; align-items: flex-start; padding: 14px 16px; border-radius: 9px; border: 1px solid; max-width: 72ch; }
+.rule-marker { width: 4px; align-self: stretch; border-radius: 3px; flex-shrink: 0; }
+.rule-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px; }
+.rule-text { font-size: 13px; line-height: 1.55; }
+.rb-blue { background: var(--blue-bg); border-color: var(--blue-bdr); }
+.rb-blue .rule-marker { background: var(--blue-acc); }
+.rb-blue .rule-label { color: var(--blue-acc); }
+.rb-blue .rule-text { color: var(--blue-ink); }
+.rb-red { background: var(--red-bg); border-color: var(--red-bdr); }
+.rb-red .rule-marker { background: var(--red-acc); }
+.rb-red .rule-label { color: var(--red-acc); }
+.rb-red .rule-text { color: var(--red-ink); }
+.cases { display: flex; flex-wrap: wrap; gap: 6px; }
+.case { font-size: 12px; font-weight: 600; border-radius: 6px; padding: 4px 10px; display: inline-flex; gap: 6px; background: var(--gray-100); font-variant-numeric: tabular-nums; }
+.case .cid { color: var(--navy); font-weight: 800; }
+.case .st-Solved { color: var(--teal-acc); }
+.case .st-Pending, .case .st-To { color: var(--amber-acc); }
+.copy {
+  align-self: flex-start; font: inherit; font-size: 12px; font-weight: 600; padding: 7px 14px;
+  border: 1px solid var(--navy); background: #fff; color: var(--navy); border-radius: 100px; cursor: pointer;
+}
+.copy:hover { background: var(--navy); color: #fff; }
+.empty { padding: 28px; text-align: center; color: var(--gray-500); border: 1px dashed var(--gray-200); border-radius: 14px; }
+
+/* ── GOOD TO KNOW / OPEN POINTS ── */
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 680px) { .grid2 { grid-template-columns: 1fr; } }
+.fact { background: var(--teal-bg); border: 1px solid var(--teal-bdr); border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; line-height: 1.55; color: var(--teal-ink); }
+.fact b { font-size: 15px; font-weight: 700; color: var(--navy); }
+.fact .ref { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; color: var(--teal-acc); }
+.open-list { display: flex; flex-direction: column; border: 1px solid var(--gray-200); border-radius: 14px; overflow: hidden; }
+.open-item { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 14px 18px; border-bottom: 1px solid var(--gray-100); font-size: 14px; font-weight: 600; color: var(--text); }
+.open-item:last-child { border-bottom: 0; }
+.open-item .what { min-width: 0; }
+.open-item .what span { display: block; color: var(--gray-500); font-size: 13px; font-weight: 400; margin-top: 2px; }
+.owner { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; white-space: nowrap; padding: 3px 9px; border-radius: 4px; background: var(--navy-bg); color: var(--navy); align-self: start; }
+
+/* ── FOOTER ── */
+.glossary { font-size: 13px; color: var(--gray-500); line-height: 1.6; display: flex; flex-direction: column; gap: 4px; }
+.footer-bar {
+  max-width: 1000px; margin: 48px auto 0; padding: 28px var(--gutter);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  border-top: 1px solid var(--gray-100);
+}
+.footer-left  { font-size: 12.5px; color: var(--gray-500); }
+.footer-right { font-size: 12.5px; font-weight: 600; color: var(--navy); }
+@media (prefers-reduced-motion: reduce) { .chev { transition: none; } }
+</style>
+</head>
+<body>
+
+<!-- ══ TOP — NAVY ══ -->
+<div class="top">
+  <div class="nav-row">
+    <div class="nav-brand">
+      <div class="nav-logo-circle">OBFC</div>
+      <span class="nav-logo">One-Stop Business Facilitation Centre</span>
+      <div class="nav-sep"></div>
+      <span class="nav-sub">Kingdom of Lesotho</span>
+    </div>
+    <span class="nav-url">businessregistrations.gov.ls</span>
+  </div>
+
+  <span class="hero-eyebrow">Digital Business Registrations · Support team</span>
+  <h1 class="hero-title">
+    <span class="ht-light">DBR Lesotho</span>
+    <span class="ht-bold">Support Repository</span>
+  </h1>
+  <p class="hero-lead">Known issues reported on the business registration platform and how to solve them. Built from the requests raised in the DBR Support and DBR Helpdesk WhatsApp groups.</p>
+  <div class="stats">
+    <span><b>17</b> problems and solutions</span>
+    <span><b>53</b> requests reviewed</span>
+    <span>6 Oct – 13 Nov 2026</span>
+  </div>
+</div>
+
+<!-- ══ BOTTOM — WHITE ══ -->
+<div class="bottom">
+  <div class="bottom-inner">
+  <section aria-labelledby="pb-h">
+    <div class="section-head">
+      <h2 id="pb-h">Problems and solutions</h2>
+    </div>
+    <div class="toolbar">
+      <label class="search" for="q">
+        <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search: timeout, expiry date, receipt, rejected, TIN…" autocomplete="off">
+      </label>
+      <div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
+    </div>
+    <div class="list" id="list"></div>
+  </section>
+
+  <section aria-labelledby="open-h">
+    <div class="section-head">
+      <h2 id="open-h">Open points and known limitations</h2>
+      <p>Not solved yet on 13 Nov 2026. Tell applicants what to expect and do not raise them again unless something new happens.</p>
+    </div>
+    <div class="open-list" id="open"></div>
+  </section>
+
+  </div><!-- /bottom-inner -->
+
+  <div class="footer-bar">
+    <div class="glossary">
+      <span>Source: DBR Lesotho support dashboard.</span>
+      <span>GDB = registry database. RSL = Revenue Services Lesotho (TIN).</span>
+    </div>
+  </div>
+  <div class="footer-bar" style="margin-top:0">
+    <span class="footer-left">One-Stop Business Facilitation Centre &nbsp;·&nbsp; Kingdom of Lesotho</span>
+    <span class="footer-right">businessregistrations.gov.ls</span>
+  </div>
+</div>
+
+<script>
+const TYPES = ["Connectivity", "System", "User", "Config", "Rights"];
+const TYPE_LABEL = { Connectivity: "Connectivity", System: "System bug", User: "User error", Config: "Configuration", Rights: "Access rights" };
+
+const KB = [
+{
+  id: "1", type: "Connectivity", who: "Support team",
+  title: "RSL bot error or timeout",
+  symptom: "File stuck in a BOT Problem RSL role (Create TIN, Directors, TIN registration). Staff retry several times.",
+  services: "Register a business (SP and Company)",
+  errors: ["Automatic validation failed: Bot timeout!", "Error sending information to the service"],
+  steps: [
+    "Open the file in the BOT Problem RSL role and read the error in the applicant history.",
+    "'Bot timeout' or 'Error sending information to the service' means RSL did not answer. Restart the bot step and retry 2–3 times.",
+    "If a retry returns a readable error (for example 'already has a TIN'), follow the solution for that error.",
+    "If every file fails, the RSL API is down. Report it in DBR Support so UNCTAD can ask RSL to restart it.",
+    "When RSL is back, restart the stuck files from their problem role.",
+    "Companies with more than one director without a TIN used to always time out. A fix was implemented and this should no longer happen: if it does, report the file in DBR Support."
+  ],
+  escalate: "All files failing, or the same file timing out after 3 retries over a day.",
+  cases: [["S02","Solved"],["S08","Solved"],["S12","Solved"],["S13","Solved"],["H16","Solved"]]
+},
+{
+  id: "2", type: "System", who: "UNCTAD",
+  title: "eRegistrations microservice not responding",
+  symptom: "Most applications fail at Create TIN or Create natural person; TIN not auto-filled; clients do not receive documents.",
+  services: "All services",
+  errors: ["HTML-type error text in the applicant history, on many files at once"],
+  steps: [
+    "A broad HTML-type error on many files at once means the eRegistrations microservice is not responding.",
+    "Report it at once in DBR Support with one example file link. Do not retry every file.",
+    "When UNCTAD confirms the service is back, restart the stuck files from their problem role.",
+    "Files that then fail with 'already has a TIN' go back for correction (problem 3)."
+  ],
+  escalate: "Always: this needs UNCTAD.",
+  cases: [["H01","Solved"],["S03","Solved"]]
+},
+{
+  id: "3", type: "User", who: "Officer",
+  title: "Applicant already has a TIN in RSL",
+  symptom: "After retries, RSL returns a readable error saying the person is already registered for a TIN.",
+  services: "Register a business (SP and Company)",
+  errors: ["ID already has a TIN", "Bot timeout (first attempts), then the real error"],
+  steps: [
+    "Retry the bot until RSL returns a readable error.",
+    "If it says the person already has a TIN, check the TIN in RSL.",
+    "Send the file back for correction. Ask the applicant to enter the existing TIN for every director or owner.",
+    "Process the resubmitted file normally."
+  ],
+  note: "A fix now stops the system from creating a TIN for a person who already has one, whatever the applicant answers to the TIN question. Still tell applicants that declaring 'no TIN' when they have one delays approval.",
+  cases: [["S04","Solved"]]
+},
+{
+  id: "4", type: "System", who: "Support team",
+  title: "Lesotho ID already registered in RSL",
+  symptom: "File stuck in BOT Problem Create natural person, or rejected by RSL after it was pushed through.",
+  services: "Register a business (SP)",
+  errors: ["Lesotho Identification Number is already registered in another registration form"],
+  steps: [
+    "Read the error in the BOT Problem Create natural person or RSL role.",
+    "The message means the person already exists in RSL from another application.",
+    "Search for other applications with the same ID number.",
+    "If you find one, send this file back for correction with the existing TIN.",
+    "If no other application exists, report the file in DBR Support."
+  ],
+  note: "The root cause has not been fully explained yet.",
+  cases: [["S10","Solved"]]
+},
+{
+  id: "5", type: "Config", who: "Support team",
+  title: "Directors' date of birth not calculated",
+  symptom: "Company file stuck in BOT Problem RSL Directors.",
+  services: "Register a business (Company)",
+  errors: ["Date of Birth is required for registration"],
+  steps: [
+    "Open the file and check the directors grid: every date of birth must be filled.",
+    "If they are all filled, the computed date field did not render. Restart the bot step.",
+    "If it still fails, post the file link in DBR Support so the file can be unlocked."
+  ],
+  note: "A fix was published live and is being monitored. It happened again on 12 Nov 2026 on a company file (directors' TIN step). See the open points.",
+  cases: [["S17","Solved"],["S30","Pending"]]
+},
+{
+  id: "6", type: "System", who: "Support team",
+  title: "Certificate missing the registration number or activities",
+  symptom: "The Business ID certificate is generated but the registration number and the activities are empty.",
+  services: "Register a business (SP)",
+  errors: ["BOT Problem Registration", "Bot Problem RSL sole proprietorship"],
+  steps: [
+    "Check the Business ID in GDB: the registration number and activities should be there.",
+    "Open a Correction service application for this business without changing anything.",
+    "Process it to the end. The system regenerates the certificate with the number and activities and sends it to the applicant.",
+    "If the data is also missing in GDB, report the file in DBR Support."
+  ],
+  note: "The bug was fixed in the version published on 14 Oct. Only older files are affected.",
+  cases: [["S01","Solved"],["H05","Solved"],["S20","Solved"]]
+},
+{
+  id: "7", type: "System", who: "Support team (GDB)",
+  title: "Missing expiry date on the Business ID",
+  symptom: "Certificate shows no expiry date. Editing the Business ID only puts today's date. The Correction service alone does not fix it.",
+  services: "Register a business (SP)",
+  errors: [],
+  steps: [
+    "Open the Business ID record in GDB and check the expiry date field.",
+    "If it is empty, enter the expiry date in GDB. Do not use the Business ID edit screen: it only gives today's date.",
+    "Reprint the certificate through the Correction service (a new correction application).",
+    "Confirm with the officer that the new certificate shows the expiry date."
+  ],
+  cases: [["S06","Solved"],["H07","Solved"],["H10","Solved"],["S11","Solved"]]
+},
+{
+  id: "8", type: "System", who: "Support team",
+  title: "File stuck: find its role and restart it",
+  symptom: "Applicant says the application was approved but no Business ID or document arrived. Or the file does not move.",
+  services: "Register a business (SP and Company)",
+  errors: ["BOT Problem activities and business names update", "File in Create payments or a problem role"],
+  steps: [
+    "Open the file and check which role it is in (Create payments, a BOT role or a problem role).",
+    "If it is in a problem role, read the error and restart the file from that role.",
+    "Check that the Business ID and the certificate were created.",
+    "Check whether the applicant already has a Business ID from an earlier application (it has happened that the Business ID was issued months before).",
+    "If it fails again with the same error, post the file link and the error in DBR Support."
+  ],
+  cases: [["H06","Solved"],["S05","Solved"],["S07","Solved"],["H22","Solved"],["H23","Solved"]]
+},
+{
+  id: "9", type: "User", who: "Support team (GDB)",
+  title: "Rejected file: clean up entries in GDB",
+  symptom: "An officer rejected a file (often one returned from the RSL bot role). The applicant has no Business ID and the system blocks a new application.",
+  services: "Register a business (SP)",
+  errors: [],
+  steps: [
+    "A rejection is final: the old file cannot be reopened.",
+    "In GDB, find the entries created by the rejected application: Business ID, business activities and user rights.",
+    "Delete those entries.",
+    "Ask the applicant to reapply with a new application.",
+    "Remind the officer: files returned from the RSL bot role are sent back for correction, never rejected."
+  ],
+  note: "Prevention: only reject when the application must end. To fix data, always use 'send back for correction'.",
+  cases: [["S18","Solved"],["S21","Solved"],["S28","Solved"]]
+},
+{
+  id: "10", type: "User", who: "Officer + UNCTAD",
+  title: "Wrong receipt: file on the applicant side or the officer side",
+  symptom: "The receipt uploaded belongs to another business or is not the right document.",
+  services: "Register a business (Company)",
+  errors: [],
+  steps: [
+    "Check whether the file is on the applicant side or on the officer side.",
+    "If it was sent back, wait until the applicant resubmits it to the officer side.",
+    "Ask the officer to collect the correct receipt from the applicant.",
+    "Ask UNCTAD to route the file back to Validate payment and replace the receipt. This needs a developer today.",
+    "Validate the payment with the correct receipt."
+  ],
+  note: "A configuration change has been suggested so this no longer needs a developer.",
+  cases: [["S14","Pending"],["S15","Pending"]]
+},
+{
+  id: "11", type: "Config", who: "Support team",
+  title: "Wrong fee: 50% discount date",
+  symptom: "Licence or amendment fee higher than expected (for example M100 instead of M50).",
+  services: "Licences, Update business ID",
+  errors: [],
+  steps: [
+    "Check the submission date of the application, not the processing date.",
+    "Files submitted before the 50% discount date pay the full fee. Files submitted after it pay the discounted fee.",
+    "Check the scale against the fee table agreed with Licensing: application fee M50 (small) / M500 (large); licence fee M100 (small) / M3000 (large).",
+    "If the charged fee still does not match, report the file and the expected amount in DBR Support so the fee formula can be fixed."
+  ],
+  note: "The small/large industrial licence fees are still pending with MTIBD (Director of Industry).",
+  cases: [["H04","Solved"],["H18","Solved"],["H21","Pending"]]
+},
+{
+  id: "12", type: "Config", who: "Support team + Licensing",
+  title: "Wrong or obsolete activity code",
+  symptom: "Activity coded in the wrong ISIC division, code not in the catalogue, or a licensed activity paid only the registration fee.",
+  services: "Register a business (SP)",
+  errors: [],
+  steps: [
+    "Compare the activity code on the Business ID with the ISIC catalogue and the Licensing list.",
+    "If the code is wrong or no longer in the catalogue, correct the activity on the Business ID (Update service, or GDB for issued IDs).",
+    "If the activity needs a licence, check that the licence fee was charged. If not, agree with Licensing how the applicant pays it.",
+    "Send UNCTAD any code that is missing from the catalogue or wrongly marked as licensed or not licensed."
+  ],
+  note: "The sector and activity lists mixed ISIC Rev.4 and Rev.5 codes; all data were updated in November 2026. Still under review: 4679 coded instead of 4669 (wholesale of waste), waiting for Licensing.",
+  cases: [["H14","Solved"],["S27","Solved"],["S29","Pending"],["H25","Solved"]]
+},
+{
+  id: "13", type: "User", who: "Officer / applicant",
+  title: "Correct a name, address or activity after registration",
+  symptom: "Surname, address, trading name or activities need to change on an issued Business ID.",
+  services: "Correction, Update business ID",
+  errors: [],
+  steps: [
+    "Check what has to change.",
+    "Names (first, middle, surname) and address: use the Correction service.",
+    "Activities, district or town: the applicant uses the Update service.",
+    "Trading name and other changes the Correction service cannot make: post in DBR Support for a change in GDB.",
+    "Reprint the certificate after the change."
+  ],
+  cases: [["H03","Solved"]]
+},
+{
+  id: "14", type: "User", who: "Support team + UNCTAD",
+  title: "'Apply for someone else' chosen by mistake",
+  symptom: "On a returned file the mandatory Nationality field is disabled, or the business does not show on the applicant's dashboard.",
+  services: "Register a business (SP)",
+  errors: [],
+  steps: [
+    "When the applicant chose 'Apply for someone else' by mistake, the record is saved with a passport number and the business will not show on their dashboard.",
+    "Option A: send the file back for correction, then with UNCTAD change the applicant type on the applicant side (impersonating the applicant) and resubmit to the officer side.",
+    "Option B: process the file, then replace the passport number with the ID number in GDB.",
+    "Check that the business appears on the applicant's dashboard."
+  ],
+  cases: [["S23","Solved"]]
+},
+{
+  id: "15", type: "Config", who: "Support team (GDB)",
+  title: "Applicant name added to the business name",
+  symptom: "Applicant started as sole proprietor then switched to company; the company name includes their own name.",
+  services: "Register a business (Company)",
+  errors: [],
+  steps: [
+    "The fix is live from 29 Oct for new files. Only older files are affected.",
+    "In GDB, open the company's Business ID and delete the applicant's name from the business name.",
+    "Reprint the certificate through the Correction service.",
+    "Send the new certificate to the applicant."
+  ],
+  cases: [["S24","Solved"]]
+},
+{
+  id: "16", type: "Rights", who: "Support team (Keycloak)",
+  title: "Add a role to a user in Keycloak",
+  symptom: "Officer needs licence review/validation rights, district reports, Data & Reports or Statistics.",
+  services: "All services",
+  errors: [],
+  steps: [
+    "Get the user's registered email address and the district or scope they need.",
+    "In Keycloak, open the user and add the role they need (for example licence review/validation for the district, or the 'Dashboard' realm role for Data & Reports).",
+    "Keep 'default-role-ls'. Do not remove it when adding officer side access.",
+    "Do not give operators 'super_mario': it has admin rights. Wait for the statistics-only role.",
+    "Ask the user to log out and in again, and confirm the access works."
+  ],
+  note: "Access to Statistics currently requires admin rights; this is to be discussed with the OBFC director. The 'Dashboard' role also opens the applicant side, identity verification and registry data correction. A request to separate report rights from processing rights, and for stronger password rules, is open.",
+  cases: [["H17","Solved"],["H20","Solved"],["S25","Solved"]]
+},
+{
+  id: "17", type: "Config", who: "UNCTAD",
+  title: "Manual Business ID numbering range",
+  symptom: "A district office asks which Business ID numbers to use manually and where the system will start.",
+  services: "Business ID numbering",
+  errors: [],
+  steps: [
+    "The district officer posts the last manual Business ID number used.",
+    "UNCTAD gives the manual range to continue with and the number the system will start from.",
+    "Record both numbers per district, so the team can check them before asking again."
+  ],
+  note: "Ranges were given for Butha-Buthe, Mohale's Hoek, Leribe, Maseru and Qacha's Nek (21–29 Oct 2026).",
+  cases: [["H13","Solved"]]
+}
+];
+
+const OPEN = [
+  ["Directors' TIN fails for Canadian nationals", "Country-code conflict for Canada at the Create directors TIN step: RSL to confirm whether the code exists on their side. Files affected on 12 Nov 2026.", "RSL"],
+  ["Directors' date of birth sent to RSL is not calculated", "A fix was published live and is being monitored. Report any new case in DBR Support (see problem 5).", "UNCTAD"],
+  ["Certificate of Business name lists activities", "OBFC asked for the business name only, like the old certificate. UNCTAD emailed OBFC to confirm the change they want, while advising to keep the certificate as it is. Waiting for OBFC.", "OBFC"],
+  ["Industrial licence fees (small / large) still wrong", "Pending with MTIBD (Director of Industry).", "MTIBD"],
+  ["Activity 4679 coded instead of 4669 (wholesale of waste)", "4679 is no longer in the catalogue and 4669 is not marked as licensed. Waiting for Licensing to review the list.", "Licensing"],
+  ["Access to Statistics requires admin rights", "To be discussed with the OBFC director. A statistics-only role has been requested.", "OBFC"]
+];
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const anchor = id => "problem-" + id;
+
+$("#open").innerHTML = OPEN.map(([h, b, o]) => `<div class="open-item"><div class="what">${esc(h)}<span>${esc(b)}</span></div><span class="owner">${esc(o)}</span></div>`).join("");
+
+let active = "All";
+const chips = $("#chips");
+chips.innerHTML = ["All", ...TYPES].map(t => `<button class="chip" type="button" id="chip-${t}" data-t="${t}" aria-pressed="${t === active}">${t === "All" ? "All" : TYPE_LABEL[t]}</button>`).join("") + `<span class="count" id="count"></span>`;
+
+const chev = `<svg class="chev" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`;
+
+function card(k) {
+  const errs = k.errors.length ? `<div><div class="label">Messages you may see</div><div class="errs">${k.errors.map(e => `<code>${esc(e)}</code>`).join("")}</div></div>` : "";
+  const note = k.note ? `<div class="rule-box rb-blue"><div class="rule-marker"></div><div><div class="rule-label">Note</div><div class="rule-text">${esc(k.note)}</div></div></div>` : "";
+  const escl = k.escalate ? `<div class="rule-box rb-red"><div class="rule-marker"></div><div><div class="rule-label">Escalate to DBR Support when</div><div class="rule-text">${esc(k.escalate)}</div></div></div>` : "";
+  return `<details class="kb" id="${anchor(k.id)}">
+    <summary>
+      <span class="kid">${k.id}</span>
+      <span class="sum-main">
+        <h3>${esc(k.title)}</h3>
+        <span class="symptom">${esc(k.symptom)}</span>
+        <span class="tags"><span class="tag t-${k.type}">${TYPE_LABEL[k.type]}</span><span class="tag t-who">${esc(k.who)}</span></span>
+      </span>
+      ${chev}
+    </summary>
+    <div class="body">
+      <p class="service">Service: ${esc(k.services)}</p>
+      ${errs}
+      <div><div class="label">Solution</div><ol class="steps">${k.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol></div>
+      ${note}${escl}
+      <button class="copy" type="button" data-copy="${k.id}">Copy steps</button>
+    </div>
+  </details>`;
+}
+
+$("#list").innerHTML = KB.map(card).join("") + `<div class="empty" id="empty" hidden>No problem matches your search. Post the file in DBR Support with the file link, the role and the exact error text.</div>`;
+
+function haystack(k) {
+  return [k.id, k.title, k.symptom, k.services, k.who, k.type, TYPE_LABEL[k.type], ...k.errors, ...k.steps, k.note || "", k.escalate || ""].join(" ").toLowerCase();
+}
+const HAY = Object.fromEntries(KB.map(k => [k.id, haystack(k)]));
+
+function apply() {
+  const terms = $("#q").value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  let n = 0;
+  KB.forEach(k => {
+    const ok = (active === "All" || k.type === active) && terms.every(t => HAY[k.id].includes(t));
+    document.getElementById(anchor(k.id)).hidden = !ok;
+    if (ok) n++;
+  });
+  $("#empty").hidden = n > 0;
+  $("#count").textContent = `${n} of ${KB.length}`;
+}
+
+chips.addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  active = b.dataset.t;
+  chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.t === active));
+  apply();
+});
+$("#q").addEventListener("input", apply);
+
+function openFromHash() {
+  const h = location.hash.slice(1);
+  const el = h && document.getElementById(h);
+  if (el && el.classList.contains("kb")) {
+    if (el.hidden) { $("#q").value = ""; active = "All"; chips.querySelectorAll(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.t === "All")); apply(); }
+    el.open = true;
+    el.scrollIntoView({ block: "start" });
+  }
+}
+window.addEventListener("hashchange", openFromHash);
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-copy]"); if (!b) return;
+  const k = KB.find(x => x.id === b.dataset.copy);
+  const text = `Problem ${k.id}: ${k.title}\n` + k.steps.map((s, i) => `${i + 1}. ${s}`).join("\n") + (k.note ? `\nNote: ${k.note}` : "");
+  const done = () => { b.textContent = "Copied"; setTimeout(() => b.textContent = "Copy steps", 1500); };
+  try {
+    navigator.clipboard.writeText(text).then(done, () => { b.textContent = "Copy not allowed here"; });
+  } catch (_) { b.textContent = "Copy not allowed here"; }
+});
+
+apply();
+openFromHash();
+</script>
+</body>
+</html>
