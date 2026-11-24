@@ -137,24 +137,20 @@
   .ui { display: inline-block; font-size: 0.86em; font-weight: 600; color: var(--ink); background: var(--bg); border: 1px solid #D1D5DB; border-bottom-width: 2px; border-radius: 6px; padding: 0 7px; line-height: 1.6; white-space: nowrap; }
 
   /* captures */
-  figure.shot { margin: 18px 0 6px; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--bg-alt); max-width: 900px; }
-  figure.shot img { width: 100%; }
+  figure.shot { margin: 18px 0 6px; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--bg); width: fit-content; max-width: 100%; box-shadow: 0 2px 10px rgba(17,24,39,0.06); }
+  figure.shot img { width: auto; max-width: 100%; }
   figure.shot figcaption { font-size: 13px; color: var(--ink-mute); padding: 10px 16px; border-top: 1px solid var(--rule); background: var(--bg); }
   figure.shot.todo { border-style: dashed; border-color: var(--blue-mid); }
   figure.shot.todo .ph { padding: 34px 16px; text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-soft); }
 
 
-  .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 1040px; }
+  .shots { display: block; }
   .shots figure.shot { margin-top: 18px; }
   figure.shot figcaption b { color: var(--ink); font-weight: 600; }
-  figure.shot img { cursor: zoom-in; }
   .checks { list-style: none; margin-top: 16px; max-width: 820px; }
   .checks li { position: relative; padding: 6px 0 6px 32px; color: var(--ink-soft); font-size: 15px; }
   .checks li::before { content: ''; position: absolute; left: 0; top: 9px; width: 20px; height: 20px; border-radius: 50%; background: var(--green); }
   .checks li::after { content: ''; position: absolute; left: 7px; top: 12px; width: 5px; height: 10px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
-  .lightbox { position: fixed; inset: 0; background: rgba(17,24,39,0.86); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; cursor: zoom-out; }
-  .lightbox.on { display: flex; }
-  .lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
 
   /* encadrés */
   .note { margin-top: 22px; border-radius: 10px; padding: 16px 20px; border: 1px solid; border-left-width: 4px; max-width: 900px; }
@@ -197,7 +193,6 @@
     .facts { grid-template-columns: 1fr; }
   }
   @media (max-width: 720px) {
-    .shots { grid-template-columns: 1fr; gap: 0; }
     .wrap { padding: 0 16px; }
     .topnav-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
     .topnav-links { gap: 18px; flex-wrap: wrap; }
@@ -333,7 +328,7 @@
         </table>
       </div>
     </div>
-    <figure class="shot"><img src="img/keycloak/groupes-cfce.jpg" alt="Menu Groupes : CFCE Douala et ses six entités" loading="lazy"><figcaption>Menu <b>Groupes</b> → institutions → CFCE Douala : les six entités.</figcaption></figure>
+    <figure class="shot"><img src="img/keycloak/groupes-cfce.png" alt="Menu Groupes : CFCE Douala et ses six entités" loading="lazy"><figcaption>Menu <b>Groupes</b> → institutions → CFCE Douala : les six entités.</figcaption></figure>
 
     <div class="note warn">
       <h5>Un agent, un CFCE</h5>
@@ -358,10 +353,10 @@
       <li><h4>Rechercher</h4><p>Tapez l'adresse email ou une partie du nom dans <span class="ui">Chercher un utilisateur</span>, puis <span class="ui">Entrée</span>.</p></li>
       <li><h4>Ouvrir la fiche</h4><p>Cliquez sur le <strong>nom d'utilisateur</strong> (en bleu).</p></li>
     </ol>
-    <figure class="shot"><img src="img/keycloak/users-recherche.jpg" alt="Liste des utilisateurs filtrée sur une adresse" loading="lazy"><figcaption>Recherche d'un utilisateur par son email.</figcaption></figure>
+    <figure class="shot"><img src="img/keycloak/users-recherche.png" alt="Liste des utilisateurs filtrée sur une adresse" loading="lazy"><figcaption>Recherche d'un utilisateur par son email.</figcaption></figure>
 
     <p>La fiche s'ouvre sur l'onglet <span class="ui">Détails</span>. Les onglets utiles sont <span class="ui">Identifiants</span> (mot de passe), <span class="ui">Mapping de rôle</span> (le rôle <code>partb</code>) et <span class="ui">Groupes</span> (le poste). L'interrupteur <span class="ui">Actif</span> en haut à droite indique si le compte peut se connecter.</p>
-    <figure class="shot"><img src="img/keycloak/fiche-details.jpg" alt="Fiche utilisateur, onglet Détails" loading="lazy"><figcaption>La fiche d'un utilisateur : onglets en haut, interrupteur <b>Actif</b> à droite.</figcaption></figure>
+    <figure class="shot"><img src="img/keycloak/fiche-details.png" alt="Fiche utilisateur, onglet Détails" loading="lazy"><figcaption>La fiche d'un utilisateur : onglets en haut, interrupteur <b>Actif</b> à droite.</figcaption></figure>
     <div class="note tip">
       <h5>L'agent n'apparaît pas ?</h5>
       <p>Il n'a pas encore créé son compte. Demandez-lui de le faire sur <a href="https://services.easybusiness.cm">services.easybusiness.cm</a> (« Créer un compte ») avec son email professionnel, puis recommencez la recherche.</p>
@@ -379,8 +374,8 @@
       <li><h4>Cocher partb</h4><p>Dans la fenêtre, cochez <strong>uniquement</strong> <code>partb</code>, puis cliquez sur <span class="ui">Assigner</span>.</p></li>
     </ol>
     <div class="shots">
-      <figure class="shot"><img src="img/keycloak/assign-menu.jpg" alt="Menu Assigner des rôles" loading="lazy"><figcaption>① <b>Assigner des rôles</b> → <b>Rôles du domaine</b>.</figcaption></figure>
-      <figure class="shot"><img src="img/keycloak/assign-role.jpg" alt="Fenêtre d'attribution, partb coché" loading="lazy"><figcaption>② Seul <b>partb</b> est coché, puis <b>Assigner</b>.</figcaption></figure>
+      <figure class="shot"><img src="img/keycloak/assign-menu.png" alt="Menu Assigner des rôles" loading="lazy"><figcaption>① <b>Assigner des rôles</b> → <b>Rôles du domaine</b>.</figcaption></figure>
+      <figure class="shot"><img src="img/keycloak/assign-role.png" alt="Fenêtre d'attribution, partb coché" loading="lazy"><figcaption>② Seul <b>partb</b> est coché, puis <b>Assigner</b>.</figcaption></figure>
     </div>
 
     <h3 class="sub"><span class="sub-tag" style="background:var(--green-bg);color:var(--green-deep)">B</span>Ajouter l'agent à son entité</h3>
@@ -390,8 +385,8 @@
       <li><h4>Cocher l'entité et valider</h4><p>Cochez l'<strong>entité</strong> de l'agent, puis <span class="ui">Rejoindre</span>. Le chemin complet s'affiche, par exemple <code>/institutions/CFCE Douala/DGI</code>.</p></li>
     </ol>
     <div class="shots">
-      <figure class="shot"><img src="img/keycloak/join-group-cfce.jpg" alt="Liste des CFCE dans la fenêtre Rejoindre les groupes" loading="lazy"><figcaption>① Dans <b>institutions</b>, ouvrir le CFCE avec la flèche ›, sans le cocher.</figcaption></figure>
-      <figure class="shot"><img src="img/keycloak/join-group-entite.jpg" alt="Entités du CFCE Douala, DGI coché" loading="lazy"><figcaption>② Cocher l'entité (ici DGI), puis <b>Rejoindre</b>.</figcaption></figure>
+      <figure class="shot"><img src="img/keycloak/join-group-cfce.png" alt="Liste des CFCE dans la fenêtre Rejoindre les groupes" loading="lazy"><figcaption>① Dans <b>institutions</b>, ouvrir le CFCE avec la flèche ›, sans le cocher.</figcaption></figure>
+      <figure class="shot"><img src="img/keycloak/join-group-entite.png" alt="Entités du CFCE Douala, DGI coché" loading="lazy"><figcaption>② Cocher l'entité (ici DGI), puis <b>Rejoindre</b>.</figcaption></figure>
     </div>
     <div class="note danger">
       <h5>Erreur la plus fréquente</h5>
@@ -415,7 +410,7 @@
     <div class="section-eyebrow">Partie 5 · Mot de passe, blocage, email</div>
     <h2 class="section-title">Débloquer un utilisateur <span class="light">sans connaître son mot de passe.</span></h2>
     <p class="section-intro">Tout se passe dans l'onglet <span class="ui">Identifiants</span> de la fiche. Il propose deux boutons : <strong>Réinitialisation des identifiants</strong>, qui envoie un email à l'utilisateur, et le bouton qui fixe directement un mot de passe.</p>
-    <figure class="shot"><img src="img/keycloak/identifiants.jpg" alt="Onglet Identifiants" loading="lazy"><figcaption>L'onglet <b>Identifiants</b> (ici un compte sans mot de passe enregistré).</figcaption></figure>
+    <figure class="shot"><img src="img/keycloak/identifiants.png" alt="Onglet Identifiants" loading="lazy"><figcaption>L'onglet <b>Identifiants</b> (ici un compte sans mot de passe enregistré).</figcaption></figure>
 
     <h3 class="sub"><span class="sub-tag" style="background:var(--green-bg);color:var(--green-deep)">Conseillé</span>Envoyer un email de réinitialisation</h3>
     <ol class="steps green">
@@ -423,7 +418,7 @@
       <li><h4>Choisir l'action</h4><p>Dans <span class="ui">Remettre à zéro les actions</span>, choisissez <strong>Update Password</strong> pour un mot de passe oublié, ou <strong>Verify Email</strong> pour renvoyer l'email de vérification.</p></li>
       <li><h4>Envoyer</h4><p>Cliquez sur <span class="ui">Envoyer mail</span>. L'utilisateur reçoit un lien et fait le reste lui-même.</p></li>
     </ol>
-    <figure class="shot"><img src="img/keycloak/credential-reset.jpg" alt="Fenêtre Réinitialisation des identifiants, liste des actions" loading="lazy"><figcaption><b>Update Password</b> ou <b>Verify Email</b>, puis <b>Envoyer mail</b>.</figcaption></figure>
+    <figure class="shot"><img src="img/keycloak/credential-reset.png" alt="Fenêtre Réinitialisation des identifiants, liste des actions" loading="lazy"><figcaption><b>Update Password</b> ou <b>Verify Email</b>, puis <b>Envoyer mail</b>.</figcaption></figure>
     <div class="note warn">
       <h5>Avant d'envoyer</h5>
       <p>Vérifiez l'adresse dans <span class="ui">Détails</span> : une faute de frappe dans l'email est la cause la plus fréquente. Demandez aussi à l'utilisateur de regarder ses courriers indésirables.</p>
@@ -435,7 +430,7 @@
       <li><h4>Ouvrir la fenêtre</h4><p>Onglet <span class="ui">Identifiants</span> → <span class="ui">Réinitialiser le mot de passe</span> (le bouton s'appelle <span class="ui">Saisir le mot de passe</span> si le compte n'en a pas encore).</p></li>
       <li><h4>Mot de passe provisoire</h4><p>Saisissez-le deux fois et laissez <span class="ui">Temporaire</span> sur <strong>Activé</strong> : l'utilisateur en choisira un nouveau à sa prochaine connexion. Cliquez sur <span class="ui">Sauvegarder</span>.</p></li>
     </ol>
-    <figure class="shot"><img src="img/keycloak/reset-password.jpg" alt="Fenêtre de saisie du mot de passe, Temporaire activé" loading="lazy"><figcaption><b>Temporaire</b> reste activé.</figcaption></figure>
+    <figure class="shot"><img src="img/keycloak/reset-password.png" alt="Fenêtre de saisie du mot de passe, Temporaire activé" loading="lazy"><figcaption><b>Temporaire</b> reste activé.</figcaption></figure>
     <div class="note danger">
       <h5>Confidentialité</h5>
       <p>Transmettez un mot de passe provisoire de vive voix, jamais par email ni par message.</p>
@@ -455,7 +450,7 @@
       <li><h4>Fermer ses sessions</h4><p>Onglet <span class="ui">Sessions</span> (cliquez sur <span class="ui">›</span> au bout des onglets pour l'afficher) : déconnectez les sessions encore ouvertes.</p></li>
       <li><h4>Retirer ses groupes</h4><p>Onglet <span class="ui">Groupes</span> : cochez ses groupes, puis quittez-les.</p></li>
     </ol>
-    <figure class="shot"><img src="img/keycloak/actif-action.jpg" alt="Interrupteur Actif et menu Action avec Supprimer" loading="lazy"><figcaption>L'interrupteur <b>Actif</b> sert à désactiver. Le menu <b>Action → Supprimer</b> est à éviter.</figcaption></figure>
+    <figure class="shot"><img src="img/keycloak/actif-action.png" alt="Interrupteur Actif et menu Action avec Supprimer" loading="lazy"><figcaption>L'interrupteur <b>Actif</b> sert à désactiver. Le menu <b>Action → Supprimer</b> est à éviter.</figcaption></figure>
     <div class="note danger">
       <h5>Le bouton Supprimer</h5>
       <p>Il efface définitivement le compte. Ne l'utilisez jamais pour un agent qui a déjà traité des dossiers. N'utilisez pas non plus <span class="ui">Emprunter l'identité</span>.</p>
@@ -480,7 +475,7 @@
         </tbody>
       </table>
     </div>
-    <figure class="shot"><img src="img/keycloak/group-members.jpg" alt="Onglet Membres de l'entité DGI du CFCE Douala" loading="lazy"><figcaption>Onglet <b>Membres</b> d'une entité (ici vide), avec <b>Ajouter un membre</b> et <b>Inclure les utilisateurs du sous-groupe</b>.</figcaption></figure>
+    <figure class="shot"><img src="img/keycloak/group-members.png" alt="Onglet Membres de l'entité DGI du CFCE Douala" loading="lazy"><figcaption>Onglet <b>Membres</b> d'une entité (ici vide), avec <b>Ajouter un membre</b> et <b>Inclure les utilisateurs du sous-groupe</b>.</figcaption></figure>
     <div class="note tip">
       <h5>Contrôle conseillé</h5>
       <p>Une fois par mois, parcourez les membres de chaque CFCE et désactivez les comptes des agents qui ne sont plus en poste.</p>
@@ -520,15 +515,10 @@
   </div>
 </footer>
 
-<div class="lightbox" id="lb" role="dialog" aria-label="Capture agrandie"><img alt=""></div>
 
 <script>
   document.getElementById('exp').addEventListener('click', function () { document.querySelectorAll('.faq details').forEach(function (d) { d.open = true; }); });
   document.getElementById('col').addEventListener('click', function () { document.querySelectorAll('.faq details').forEach(function (d) { d.open = false; }); });
-  var lb = document.getElementById('lb'), lbi = lb.querySelector('img');
-  document.querySelectorAll('figure.shot img').forEach(function (im) { im.addEventListener('click', function () { lbi.src = im.src; lbi.alt = im.alt; lb.classList.add('on'); }); });
-  lb.addEventListener('click', function () { lb.classList.remove('on'); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('on'); });
   window.addEventListener('beforeprint', function () { document.querySelectorAll('.faq details').forEach(function (d) { d.open = true; }); });
 </script>
 </body>
