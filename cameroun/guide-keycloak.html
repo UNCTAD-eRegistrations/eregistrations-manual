@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guide Keycloak administrateurs | Easybusiness Cameroun</title>
+<meta name="description" content="Gérer les accès des agents des CFCE dans Keycloak : rôles, groupes, mots de passe, désactivation et contrôles.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #3565AE; --blue-deep: #1E3F73; --blue-soft: #4A7BC4; --blue-mid: #B9CBE8; --blue-bg: #EEF3FA;
+    --green: #3E9B47; --green-deep: #2E7D36; --green-soft: #CDEBD0; --green-bg: #F0FAF1; --green-hi: #7ED389;
+    --amber: #B45309; --amber-deep: #92400E; --amber-bg: #FFFBEB; --amber-rule: #FDE68A;
+    --red: #B91C1C; --red-bg: #FEF2F2; --red-rule: #FECACA;
+    --ink: #111827; --ink-soft: #4B5563; --ink-mute: #6B7280; --ink-light: #9CA3AF;
+    --bg: #FFFFFF; --bg-alt: #F6F7F8; --rule: #E5E7EB;
+    /* couleurs des entités */
+    --e-revision: #3565AE; --e-rccm: #1E3F73; --e-dgi: #B45309; --e-cnps: #3E9B47; --e-supervision: #6D28D9; --e-retrait: #0E7490;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: var(--blue); }
+  a:hover { color: var(--blue-deep); }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+  img { max-width: 100%; height: auto; display: block; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.86em; background: var(--blue-bg); color: var(--blue-deep); padding: 1px 6px; border-radius: 5px; white-space: nowrap; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
+
+  /* barre du haut */
+  .topnav { background: var(--blue-deep); padding: 14px 0; }
+  .topnav-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; color: #fff; }
+  .brand { display: flex; align-items: center; gap: 14px; color: #fff; text-decoration: none; }
+  .brand-mark { width: 46px; height: 46px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; flex-shrink: 0; overflow: hidden; }
+  .brand-mark img { width: 40px; height: 40px; object-fit: contain; }
+  .brand-text { font-size: 14px; font-weight: 500; line-height: 1.3; }
+  .brand-text small { display: block; font-size: 11px; font-weight: 400; opacity: 0.7; margin-top: 2px; }
+  .topnav-links { display: flex; gap: 28px; align-items: center; font-size: 14px; }
+  .topnav-links a { color: #fff; text-decoration: none; opacity: 0.9; white-space: nowrap; }
+  .topnav-links a:hover { opacity: 1; text-decoration: underline; color: #fff; }
+  .topnav-links a.nav-btn { background: var(--green); padding: 8px 18px; border-radius: 20px; font-weight: 600; opacity: 1; }
+  .topnav-links a.nav-btn:hover { background: var(--green-deep); text-decoration: none; }
+
+  /* hero */
+  .hero { background: var(--blue); color: #fff; padding: 56px 0 60px; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0 0 0 auto; width: 45%; background: linear-gradient(135deg, transparent 0%, rgba(30,63,115,0.55) 100%); pointer-events: none; }
+  .hero::after { content: ''; position: absolute; right: -80px; bottom: -120px; width: 360px; height: 360px; border-radius: 50%; border: 46px solid rgba(126,211,137,0.16); pointer-events: none; }
+  .hero-inner { position: relative; z-index: 1; }
+  .hero-bar { display: block; font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-hi); margin-bottom: 24px; line-height: 1.3; }
+  .hero-title { font-size: 50px; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 22px; }
+  .hero-title .light { font-weight: 300; color: var(--blue-mid); }
+  .hero-lede { font-size: 17.5px; line-height: 1.65; font-weight: 300; color: rgba(255,255,255,0.9); max-width: 720px; }
+  .hero-lede strong { font-weight: 600; color: #fff; }
+  .hero-meta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .hero-tag { font-size: 13px; font-weight: 500; padding: 5px 14px; border-radius: 20px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); }
+  .hero-tag b { font-weight: 600; }
+
+  /* sommaire */
+  .toc { background: var(--bg-alt); border-bottom: 1px solid var(--rule); padding: 26px 0; }
+  .toc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .toc a { display: flex; gap: 10px; align-items: center; padding: 10px 14px; background: var(--bg); border: 1px solid var(--rule); border-radius: 10px; color: var(--ink); text-decoration: none; font-size: 13.5px; font-weight: 500; line-height: 1.3; }
+  .toc a:hover { border-color: var(--blue); color: var(--blue); }
+  .toc-n { width: 26px; height: 26px; border-radius: 7px; background: var(--blue-bg); color: var(--blue); font-weight: 700; font-size: 12.5px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  /* sections */
+  main { padding-bottom: 40px; }
+  .block { padding: 88px 0 8px; scroll-margin-top: 10px; }
+  .section-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 12px; }
+  .section-title { font-size: 36px; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; text-wrap: balance; }
+  .section-title .light { font-weight: 300; color: var(--ink-light); }
+  .section-intro { margin-top: 18px; font-size: 16px; line-height: 1.7; color: var(--ink-soft); max-width: 820px; }
+  .section-intro strong, .block p strong, .block li strong { color: var(--ink); font-weight: 600; }
+  .block > p, .block > ul { color: var(--ink-soft); margin-top: 14px; max-width: 820px; }
+  .block > ul { padding-left: 22px; }
+  .sub { font-size: 20px; font-weight: 600; margin: 44px 0 4px; display: flex; align-items: center; gap: 10px; }
+  .sub-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 8px; background: var(--blue-bg); color: var(--blue); }
+
+  /* cartes « principe » */
+  .duo { display: grid; grid-template-columns: 1fr auto 1fr; gap: 18px; align-items: stretch; margin-top: 28px; }
+  .key { border-radius: 14px; padding: 22px 24px; border: 1px solid var(--rule); background: var(--bg); position: relative; overflow: hidden; }
+  .key::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; }
+  .key.k-role::before { background: var(--blue); }
+  .key.k-group::before { background: var(--green); }
+  .key-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .k-role .key-label { color: var(--blue); }
+  .k-group .key-label { color: var(--green-deep); }
+  .key h3 { font-size: 20px; margin: 6px 0 6px; }
+  .key p { font-size: 14.5px; color: var(--ink-soft); }
+  .plus { display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 300; color: var(--ink-light); }
+  .result { margin-top: 18px; border-radius: 12px; background: var(--green-bg); border: 1px solid var(--green-soft); padding: 14px 20px; font-size: 15px; color: var(--ink-soft); display: flex; gap: 12px; align-items: center; }
+  .result svg { flex-shrink: 0; }
+
+  /* infos console */
+  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 26px; }
+  .fact { border: 1px solid var(--rule); border-radius: 12px; padding: 16px 20px; background: var(--bg-alt); }
+  .fact-l { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-mute); }
+  .fact-v { font-size: 15px; font-weight: 600; margin-top: 4px; word-break: break-word; }
+  .fact-v a { text-decoration: none; }
+  .fact-s { font-size: 13px; color: var(--ink-mute); margin-top: 2px; }
+
+  /* arbre des groupes */
+  .orgmap { margin-top: 28px; display: grid; grid-template-columns: 290px 1fr; gap: 24px; align-items: start; }
+  .tree { border: 1px solid var(--rule); border-radius: 12px; padding: 18px 20px; background: var(--bg-alt); font-size: 14px; line-height: 1.5; }
+  .tree ul { list-style: none; padding-left: 18px; border-left: 2px solid var(--rule); margin: 6px 0 6px 6px; }
+  .tree li { position: relative; padding: 3px 0 3px 12px; }
+  .tree li::before { content: ''; position: absolute; left: -2px; top: 14px; width: 12px; border-top: 2px solid var(--rule); }
+  .tree .root { font-weight: 600; color: var(--ink-mute); }
+  .tree .cfce { font-weight: 600; color: var(--blue-deep); }
+  .tree .more { color: var(--ink-mute); font-style: italic; }
+  .tree .apme { color: var(--ink-mute); }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 7px; vertical-align: 0; }
+
+  /* tableau */
+  .tbl-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  th { text-align: left; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; padding: 12px 16px; border-bottom: 2px solid var(--rule); background: var(--bg-alt); }
+  td { padding: 13px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink-soft); }
+  tr:last-child td { border-bottom: none; }
+  td strong { color: var(--ink); }
+  .ent { display: inline-flex; align-items: center; gap: 7px; font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .ent::before { content: ''; width: 10px; height: 10px; border-radius: 3px; background: var(--c); }
+  .pill { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 11px; border-radius: 12px; color: #fff; background: var(--c); white-space: nowrap; }
+
+  /* étapes */
+  .steps { list-style: none; margin-top: 22px; counter-reset: s; border-left: 2px solid var(--blue-mid); margin-left: 17px; }
+  .steps > li { position: relative; padding: 0 0 22px 34px; counter-increment: s; }
+  .steps > li:last-child { padding-bottom: 4px; }
+  .steps > li::before { content: counter(s); position: absolute; left: -18px; top: -2px; width: 34px; height: 34px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 4px var(--bg); }
+  .steps.green { border-left-color: var(--green-soft); }
+  .steps.green > li::before { background: var(--green); }
+  .steps.dark { border-left-color: var(--rule); }
+  .steps.dark > li::before { background: var(--blue-deep); }
+  .steps h4 { font-size: 16.5px; font-weight: 600; line-height: 1.35; padding-top: 3px; }
+  .steps p { font-size: 15px; color: var(--ink-soft); margin-top: 4px; }
+  .ui { display: inline-block; font-size: 0.86em; font-weight: 600; color: var(--ink); background: var(--bg); border: 1px solid #D1D5DB; border-bottom-width: 2px; border-radius: 6px; padding: 0 7px; line-height: 1.6; white-space: nowrap; }
+
+  /* captures */
+  figure.shot { margin: 18px 0 6px; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--bg-alt); max-width: 900px; }
+  figure.shot img { width: 100%; }
+  figure.shot figcaption { font-size: 13px; color: var(--ink-mute); padding: 10px 16px; border-top: 1px solid var(--rule); background: var(--bg); }
+  figure.shot.todo { border-style: dashed; border-color: var(--blue-mid); }
+  figure.shot.todo .ph { padding: 34px 16px; text-align: center; font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-soft); }
+
+
+  .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 1040px; }
+  .shots figure.shot { margin-top: 18px; }
+  figure.shot figcaption b { color: var(--ink); font-weight: 600; }
+  figure.shot img { cursor: zoom-in; }
+  .checks { list-style: none; margin-top: 16px; max-width: 820px; }
+  .checks li { position: relative; padding: 6px 0 6px 32px; color: var(--ink-soft); font-size: 15px; }
+  .checks li::before { content: ''; position: absolute; left: 0; top: 9px; width: 20px; height: 20px; border-radius: 50%; background: var(--green); }
+  .checks li::after { content: ''; position: absolute; left: 7px; top: 12px; width: 5px; height: 10px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .lightbox { position: fixed; inset: 0; background: rgba(17,24,39,0.86); display: none; align-items: center; justify-content: center; padding: 24px; z-index: 50; cursor: zoom-out; }
+  .lightbox.on { display: flex; }
+  .lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+
+  /* encadrés */
+  .note { margin-top: 22px; border-radius: 10px; padding: 16px 20px; border: 1px solid; border-left-width: 4px; max-width: 900px; }
+  .note h5 { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; margin-bottom: 4px; }
+  .note p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); }
+  .note p + p { margin-top: 6px; }
+  .note.info { background: var(--blue-bg); border-color: var(--blue-mid); border-left-color: var(--blue); }
+  .note.info h5 { color: var(--blue); }
+  .note.tip { background: var(--green-bg); border-color: var(--green-soft); border-left-color: var(--green); }
+  .note.tip h5 { color: var(--green-deep); }
+  .note.warn { background: var(--amber-bg); border-color: var(--amber-rule); border-left-color: var(--amber); }
+  .note.warn h5 { color: var(--amber-deep); }
+  .note.danger { background: var(--red-bg); border-color: var(--red-rule); border-left-color: var(--red); }
+  .note.danger h5 { color: var(--red); }
+
+  /* FAQ */
+  .faq { margin-top: 26px; border-top: 1px solid var(--rule); }
+  .faq details { border-bottom: 1px solid var(--rule); }
+  .faq summary { list-style: none; cursor: pointer; padding: 18px 40px 18px 0; position: relative; display: flex; gap: 16px; align-items: center; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: ''; position: absolute; right: 8px; top: 26px; width: 10px; height: 10px; border-right: 2px solid var(--ink-mute); border-bottom: 2px solid var(--ink-mute); transform: rotate(45deg); transition: transform .2s; }
+  .faq details[open] summary::after { transform: rotate(-135deg); top: 31px; }
+  .faq summary:hover .q { color: var(--blue); }
+  .q-n { width: 34px; height: 34px; flex-shrink: 0; border-radius: 8px; background: var(--bg-alt); border: 1px solid var(--rule); color: var(--blue); font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; }
+  .q { font-size: 17px; font-weight: 600; line-height: 1.35; }
+  .a { padding: 0 0 20px 50px; font-size: 15px; color: var(--ink-soft); }
+  .a ul { padding-left: 20px; margin-top: 6px; }
+  .a li { margin: 3px 0; }
+  .faq-tools { display: flex; gap: 14px; justify-content: flex-end; margin-top: 18px; }
+  .linkbtn { font: inherit; font-size: 13px; font-weight: 500; background: none; border: none; color: var(--blue); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* pied de page */
+  footer { padding: 32px 0; font-size: 13px; color: var(--ink-mute); background: var(--bg-alt); border-top: 1px solid var(--rule); margin-top: 60px; }
+  .foot { display: flex; flex-wrap: wrap; gap: 8px 30px; justify-content: space-between; }
+  footer a { color: var(--ink-soft); }
+
+  @media (max-width: 960px) {
+    .toc-grid { grid-template-columns: repeat(2, 1fr); }
+    .orgmap { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .shots { grid-template-columns: 1fr; gap: 0; }
+    .wrap { padding: 0 16px; }
+    .topnav-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .topnav-links { gap: 18px; flex-wrap: wrap; }
+    .hero { padding: 40px 0 44px; }
+    .hero-title { font-size: 34px; }
+    .hero-bar { font-size: 12px; }
+    .section-title { font-size: 27px; }
+    .block { padding-top: 64px; }
+    .toc-grid { grid-template-columns: 1fr; }
+    .duo { grid-template-columns: 1fr; }
+    .plus { padding: 0; font-size: 24px; }
+    .a { padding-left: 0; }
+    code { white-space: normal; }
+  }
+  @media print {
+    .topnav-links, .toc, .faq-tools { display: none; }
+    .hero, .topnav, .pill, .steps > li::before, .note { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .block { padding-top: 28px; page-break-inside: auto; }
+    .faq details { break-inside: avoid; }
+    figure.shot { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap topnav-inner">
+    <a class="brand" href="https://services.easybusiness.cm">
+      <span class="brand-mark"><img src="https://login.easybusiness.cm/resources/kguis/login/cameroon/images/logo.png" alt="APME"></span>
+      <span class="brand-text">Easybusiness Cameroun<small>Agence de Promotion des PME (APME)</small></span>
+    </a>
+    <div class="topnav-links">
+      <a href="https://login.easybusiness.cm/admin/CM/console/" class="nav-btn">Console Keycloak</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="hero-bar">Guide administrateurs · comptes et accès des agents</span>
+    <h1 class="hero-title">Gérer les accès <span class="light">des agents des CFCE.</span></h1>
+    <p class="hero-lede"><strong>Un agent ne voit ses dossiers que si son compte est bien paramétré.</strong> Ce guide montre, écran par écran, comment donner un accès dans Keycloak, aider un utilisateur bloqué, désactiver un agent qui part et contrôler qui a quel accès.</p>
+    <div class="hero-meta">
+      <span class="hero-tag">Pour : <b>administrateurs fonctionnels</b></span>
+      <span class="hero-tag">Espace : <b>CM</b></span>
+      <span class="hero-tag"><b>10</b> CFCE · <b>6</b> entités</span>
+    </div>
+  </div>
+</section>
+
+<nav class="toc" aria-label="Sommaire">
+  <div class="wrap toc-grid">
+    <a href="#avant"><span class="toc-n">1</span>Avant de commencer</a>
+    <a href="#organisation"><span class="toc-n">2</span>L'organisation des groupes</a>
+    <a href="#trouver"><span class="toc-n">3</span>Trouver un utilisateur</a>
+    <a href="#acces"><span class="toc-n">4</span>Donner ses accès à un agent</a>
+    <a href="#motdepasse"><span class="toc-n">5</span>Mot de passe et blocage</a>
+    <a href="#depart"><span class="toc-n">6</span>Un agent quitte son poste</a>
+    <a href="#controle"><span class="toc-n">7</span>Qui a quel accès ?</a>
+    <a href="#faq"><span class="toc-n">8</span>Problèmes fréquents</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- 1 -->
+  <section class="block" id="avant">
+    <div class="section-eyebrow">Partie 1 · Avant de commencer</div>
+    <h2 class="section-title">Un rôle et un groupe, <span class="light">c'est tout ce qu'il faut.</span></h2>
+    <p class="section-intro">Keycloak gère <strong>les comptes et les accès</strong> de la plateforme Easybusiness. Pour qu'un agent voie les dossiers de son poste, il lui faut deux choses.</p>
+
+    <div class="duo">
+      <div class="key k-role">
+        <div class="key-label">Le rôle · l'accès</div>
+        <h3><code>partb</code></h3>
+        <p>Ouvre l'espace de traitement des dossiers (le « back-office »). C'est le même rôle pour tous les agents.</p>
+      </div>
+      <div class="plus" aria-hidden="true">+</div>
+      <div class="key k-group">
+        <div class="key-label">Le groupe · le poste</div>
+        <h3>CFCE + entité</h3>
+        <p>Dit <strong>quels</strong> dossiers l'agent reçoit, par exemple <code>CFCE Douala / DGI</code>.</p>
+      </div>
+    </div>
+    <div class="result">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E7D36" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      <span>Avec les deux, l'agent voit les dossiers de son poste. <strong>Sans l'un ou l'autre, sa liste reste vide.</strong></span>
+    </div>
+
+    <div class="facts">
+      <div class="fact"><div class="fact-l">Console</div><div class="fact-v"><a href="https://login.easybusiness.cm/admin/CM/console/">login.easybusiness.cm/admin/CM/console</a></div><div class="fact-s">Avec votre propre compte administrateur</div></div>
+      <div class="fact"><div class="fact-l">Menu de gauche</div><div class="fact-v">Utilisateurs · Groupes</div><div class="fact-s">Les deux seuls écrans dont vous avez besoin</div></div>
+      <div class="fact"><div class="fact-l">Compte de l'agent</div><div class="fact-v">Créé par l'agent lui-même</div><div class="fact-s">Sur services.easybusiness.cm, avec son email professionnel</div></div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="block" id="organisation">
+    <div class="section-eyebrow">Partie 2 · L'organisation des groupes</div>
+    <h2 class="section-title">Dix CFCE, <span class="light">six entités dans chacun.</span></h2>
+    <p class="section-intro">Les groupes reproduisent l'organisation des CFCE : <strong>Bafoussam, Bamenda, Bertoua, Douala, Ebolowa, Garoua, Limbé, Maroua, Ngaoundéré et Yaoundé</strong>. Chaque CFCE contient les mêmes six entités, une par étape du dossier.</p>
+
+    <div class="orgmap">
+      <div class="tree" aria-label="Arbre des groupes">
+        <div class="root">institutions</div>
+        <ul>
+          <li><span class="cfce">CFCE Douala</span>
+            <ul>
+              <li><span class="dot" style="background:var(--e-revision)"></span>Révision</li>
+              <li><span class="dot" style="background:var(--e-rccm)"></span>RCCM</li>
+              <li><span class="dot" style="background:var(--e-dgi)"></span>DGI</li>
+              <li><span class="dot" style="background:var(--e-cnps)"></span>CNPS</li>
+              <li><span class="dot" style="background:var(--e-supervision)"></span>Supervision</li>
+              <li><span class="dot" style="background:var(--e-retrait)"></span>Retrait</li>
+            </ul>
+          </li>
+          <li><span class="cfce">CFCE Yaoundé</span> <span class="more">idem</span></li>
+          <li><span class="more">… 8 autres CFCE, idem</span></li>
+          <li class="apme">APME <span class="more">· pas d'agent ici</span></li>
+        </ul>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Entité</th><th>Profil de l'agent</th><th>Étape traitée</th></tr></thead>
+          <tbody>
+            <tr><td><span class="ent" style="--c:var(--e-revision)">Révision</span></td><td>Agent de révision APME</td><td>Révision : première vérification du dossier</td></tr>
+            <tr><td><span class="ent" style="--c:var(--e-rccm)">RCCM</span></td><td>Greffe</td><td>Registre du commerce</td></tr>
+            <tr><td><span class="ent" style="--c:var(--e-dgi)">DGI</span></td><td>Agent des impôts</td><td>Impôts</td></tr>
+            <tr><td><span class="ent" style="--c:var(--e-cnps)">CNPS</span></td><td>Agent CNPS</td><td>Employeur <strong>et</strong> Salariés</td></tr>
+            <tr><td><span class="ent" style="--c:var(--e-supervision)">Supervision</span></td><td>Superviseur APME</td><td>Validation APME</td></tr>
+            <tr><td><span class="ent" style="--c:var(--e-retrait)">Retrait</span></td><td>Agent de remise APME</td><td>Retrait : remise des documents</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <figure class="shot"><img src="img/keycloak/groupes-cfce.jpg" alt="Menu Groupes : CFCE Douala et ses six entités" loading="lazy"><figcaption>Menu <b>Groupes</b> → institutions → CFCE Douala : les six entités.</figcaption></figure>
+
+    <div class="note warn">
+      <h5>Un agent, un CFCE</h5>
+      <p>Un agent ne reçoit <strong>que</strong> les dossiers de son CFCE : un agent placé dans <code>CFCE Yaoundé / DGI</code> ne verra jamais un dossier de Douala. Un agent qui couvre deux CFCE doit être ajouté aux deux groupes.</p>
+    </div>
+    <div class="note info">
+      <h5>Le groupe APME</h5>
+      <p>Il sert aux traitements automatiques de la plateforme. Les agents APME (révision, supervision, retrait) vont dans l'entité correspondante <strong>de leur CFCE</strong>, jamais dans « APME ».</p>
+    </div>
+    <div class="note danger">
+      <h5>Ne pas modifier les groupes</h5>
+      <p>Ne créez, ne renommez et ne supprimez aucun groupe (bouton <span class="ui">Créer un groupe</span>, menu <span class="ui">Action</span>) : ils sont reliés au paramétrage de la plateforme.</p>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="block" id="trouver">
+    <div class="section-eyebrow">Partie 3 · Trouver un utilisateur</div>
+    <h2 class="section-title">Retrouver un compte <span class="light">en trois clics.</span></h2>
+    <ol class="steps">
+      <li><h4>Ouvrir la liste des utilisateurs</h4><p>Menu de gauche : <span class="ui">Utilisateurs</span>.</p></li>
+      <li><h4>Rechercher</h4><p>Tapez l'adresse email ou une partie du nom dans <span class="ui">Chercher un utilisateur</span>, puis <span class="ui">Entrée</span>.</p></li>
+      <li><h4>Ouvrir la fiche</h4><p>Cliquez sur le <strong>nom d'utilisateur</strong> (en bleu).</p></li>
+    </ol>
+    <figure class="shot"><img src="img/keycloak/users-recherche.jpg" alt="Liste des utilisateurs filtrée sur une adresse" loading="lazy"><figcaption>Recherche d'un utilisateur par son email.</figcaption></figure>
+
+    <p>La fiche s'ouvre sur l'onglet <span class="ui">Détails</span>. Les onglets utiles sont <span class="ui">Identifiants</span> (mot de passe), <span class="ui">Mapping de rôle</span> (le rôle <code>partb</code>) et <span class="ui">Groupes</span> (le poste). L'interrupteur <span class="ui">Actif</span> en haut à droite indique si le compte peut se connecter.</p>
+    <figure class="shot"><img src="img/keycloak/fiche-details.jpg" alt="Fiche utilisateur, onglet Détails" loading="lazy"><figcaption>La fiche d'un utilisateur : onglets en haut, interrupteur <b>Actif</b> à droite.</figcaption></figure>
+    <div class="note tip">
+      <h5>L'agent n'apparaît pas ?</h5>
+      <p>Il n'a pas encore créé son compte. Demandez-lui de le faire sur <a href="https://services.easybusiness.cm">services.easybusiness.cm</a> (« Créer un compte ») avec son email professionnel, puis recommencez la recherche.</p>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="block" id="acces">
+    <div class="section-eyebrow">Partie 4 · Donner ses accès à un agent</div>
+    <h2 class="section-title">Le rôle, puis le groupe, <span class="light">puis on vérifie.</span></h2>
+
+    <h3 class="sub"><span class="sub-tag">A</span>Attribuer le rôle <code>partb</code></h3>
+    <ol class="steps">
+      <li><h4>Onglet Mapping de rôle</h4><p>Sur la fiche de l'agent, ouvrez <span class="ui">Mapping de rôle</span>, cliquez sur <span class="ui">Assigner des rôles</span>, puis choisissez <span class="ui">Rôles du domaine</span>.</p></li>
+      <li><h4>Cocher partb</h4><p>Dans la fenêtre, cochez <strong>uniquement</strong> <code>partb</code>, puis cliquez sur <span class="ui">Assigner</span>.</p></li>
+    </ol>
+    <div class="shots">
+      <figure class="shot"><img src="img/keycloak/assign-menu.jpg" alt="Menu Assigner des rôles" loading="lazy"><figcaption>① <b>Assigner des rôles</b> → <b>Rôles du domaine</b>.</figcaption></figure>
+      <figure class="shot"><img src="img/keycloak/assign-role.jpg" alt="Fenêtre d'attribution, partb coché" loading="lazy"><figcaption>② Seul <b>partb</b> est coché, puis <b>Assigner</b>.</figcaption></figure>
+    </div>
+
+    <h3 class="sub"><span class="sub-tag" style="background:var(--green-bg);color:var(--green-deep)">B</span>Ajouter l'agent à son entité</h3>
+    <ol class="steps green">
+      <li><h4>Onglet Groupes</h4><p>Ouvrez <span class="ui">Groupes</span>, puis <span class="ui">Rejoindre le groupe</span>.</p></li>
+      <li><h4>Ouvrir institutions, puis le CFCE</h4><p>Cliquez sur la flèche <span class="ui">›</span> à droite de <strong>institutions</strong>, puis sur celle du <strong>CFCE</strong> de l'agent. Les groupes s'affichent par 10 : <strong>CFCE Yaoundé est en page 2</strong> (flèche en haut à droite de la fenêtre).</p></li>
+      <li><h4>Cocher l'entité et valider</h4><p>Cochez l'<strong>entité</strong> de l'agent, puis <span class="ui">Rejoindre</span>. Le chemin complet s'affiche, par exemple <code>/institutions/CFCE Douala/DGI</code>.</p></li>
+    </ol>
+    <div class="shots">
+      <figure class="shot"><img src="img/keycloak/join-group-cfce.jpg" alt="Liste des CFCE dans la fenêtre Rejoindre les groupes" loading="lazy"><figcaption>① Dans <b>institutions</b>, ouvrir le CFCE avec la flèche ›, sans le cocher.</figcaption></figure>
+      <figure class="shot"><img src="img/keycloak/join-group-entite.jpg" alt="Entités du CFCE Douala, DGI coché" loading="lazy"><figcaption>② Cocher l'entité (ici DGI), puis <b>Rejoindre</b>.</figcaption></figure>
+    </div>
+    <div class="note danger">
+      <h5>Erreur la plus fréquente</h5>
+      <p>Cocher le <strong>CFCE</strong> au lieu de l'<strong>entité</strong>. L'agent est alors dans <code>/institutions/CFCE Douala</code> mais dans aucune entité : il ne reçoit aucun dossier. Le chemin doit toujours avoir <strong>trois niveaux</strong>.</p>
+    </div>
+    <div class="note info">
+      <h5>Autre méthode : depuis le groupe</h5>
+      <p>Menu <span class="ui">Groupes</span> → institutions → le CFCE → l'entité → onglet <span class="ui">Membres</span> → <span class="ui">Ajouter un membre</span>. Pratique pour ajouter plusieurs agents d'un coup dans la même entité.</p>
+    </div>
+
+    <h3 class="sub"><span class="sub-tag" style="background:var(--bg-alt);color:var(--ink-soft)">C</span>Vérifier</h3>
+    <ul class="checks">
+      <li>Onglet <span class="ui">Mapping de rôle</span> : <code>partb</code> apparaît dans la liste.</li>
+      <li>Onglet <span class="ui">Groupes</span> : un chemin à trois niveaux, par exemple <code>/institutions/CFCE Ngaoundéré/Révision</code>.</li>
+      <li>L'agent se <strong>déconnecte puis se reconnecte</strong> : les nouveaux accès ne sont pris en compte qu'à la connexion suivante.</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section class="block" id="motdepasse">
+    <div class="section-eyebrow">Partie 5 · Mot de passe, blocage, email</div>
+    <h2 class="section-title">Débloquer un utilisateur <span class="light">sans connaître son mot de passe.</span></h2>
+    <p class="section-intro">Tout se passe dans l'onglet <span class="ui">Identifiants</span> de la fiche. Il propose deux boutons : <strong>Réinitialisation des identifiants</strong>, qui envoie un email à l'utilisateur, et le bouton qui fixe directement un mot de passe.</p>
+    <figure class="shot"><img src="img/keycloak/identifiants.jpg" alt="Onglet Identifiants" loading="lazy"><figcaption>L'onglet <b>Identifiants</b> (ici un compte sans mot de passe enregistré).</figcaption></figure>
+
+    <h3 class="sub"><span class="sub-tag" style="background:var(--green-bg);color:var(--green-deep)">Conseillé</span>Envoyer un email de réinitialisation</h3>
+    <ol class="steps green">
+      <li><h4>Réinitialisation des identifiants</h4><p>Onglet <span class="ui">Identifiants</span> → <span class="ui">Réinitialisation des identifiants</span>.</p></li>
+      <li><h4>Choisir l'action</h4><p>Dans <span class="ui">Remettre à zéro les actions</span>, choisissez <strong>Update Password</strong> pour un mot de passe oublié, ou <strong>Verify Email</strong> pour renvoyer l'email de vérification.</p></li>
+      <li><h4>Envoyer</h4><p>Cliquez sur <span class="ui">Envoyer mail</span>. L'utilisateur reçoit un lien et fait le reste lui-même.</p></li>
+    </ol>
+    <figure class="shot"><img src="img/keycloak/credential-reset.jpg" alt="Fenêtre Réinitialisation des identifiants, liste des actions" loading="lazy"><figcaption><b>Update Password</b> ou <b>Verify Email</b>, puis <b>Envoyer mail</b>.</figcaption></figure>
+    <div class="note warn">
+      <h5>Avant d'envoyer</h5>
+      <p>Vérifiez l'adresse dans <span class="ui">Détails</span> : une faute de frappe dans l'email est la cause la plus fréquente. Demandez aussi à l'utilisateur de regarder ses courriers indésirables.</p>
+    </div>
+
+    <h3 class="sub">Fixer un mot de passe provisoire</h3>
+    <p>Si l'utilisateur ne reçoit pas les emails, vous pouvez fixer vous-même un mot de passe provisoire.</p>
+    <ol class="steps">
+      <li><h4>Ouvrir la fenêtre</h4><p>Onglet <span class="ui">Identifiants</span> → <span class="ui">Réinitialiser le mot de passe</span> (le bouton s'appelle <span class="ui">Saisir le mot de passe</span> si le compte n'en a pas encore).</p></li>
+      <li><h4>Mot de passe provisoire</h4><p>Saisissez-le deux fois et laissez <span class="ui">Temporaire</span> sur <strong>Activé</strong> : l'utilisateur en choisira un nouveau à sa prochaine connexion. Cliquez sur <span class="ui">Sauvegarder</span>.</p></li>
+    </ol>
+    <figure class="shot"><img src="img/keycloak/reset-password.jpg" alt="Fenêtre de saisie du mot de passe, Temporaire activé" loading="lazy"><figcaption><b>Temporaire</b> reste activé.</figcaption></figure>
+    <div class="note danger">
+      <h5>Confidentialité</h5>
+      <p>Transmettez un mot de passe provisoire de vive voix, jamais par email ni par message.</p>
+    </div>
+
+    <h3 class="sub">Débloquer un compte</h3>
+    <p>Après plusieurs mots de passe erronés, Keycloak peut verrouiller temporairement le compte. L'onglet <span class="ui">Détails</span> l'indique alors par un message et un interrupteur de verrouillage : désactivez-le, puis <span class="ui">Sauvegarder</span>. Vérifiez aussi que l'interrupteur <span class="ui">Actif</span>, en haut à droite, est bien activé.</p>
+  </section>
+
+  <!-- 6 -->
+  <section class="block" id="depart">
+    <div class="section-eyebrow">Partie 6 · Un agent quitte son poste</div>
+    <h2 class="section-title">Désactiver, <span class="light">ne jamais supprimer.</span></h2>
+    <p class="section-intro">On <strong>désactive</strong> le compte d'un agent qui part : l'historique des dossiers qu'il a traités reste lisible.</p>
+    <ol class="steps dark">
+      <li><h4>Désactiver le compte</h4><p>En haut à droite de la fiche, basculez l'interrupteur <span class="ui">Actif</span> sur désactivé et confirmez. L'agent ne peut plus se connecter.</p></li>
+      <li><h4>Fermer ses sessions</h4><p>Onglet <span class="ui">Sessions</span> (cliquez sur <span class="ui">›</span> au bout des onglets pour l'afficher) : déconnectez les sessions encore ouvertes.</p></li>
+      <li><h4>Retirer ses groupes</h4><p>Onglet <span class="ui">Groupes</span> : cochez ses groupes, puis quittez-les.</p></li>
+    </ol>
+    <figure class="shot"><img src="img/keycloak/actif-action.jpg" alt="Interrupteur Actif et menu Action avec Supprimer" loading="lazy"><figcaption>L'interrupteur <b>Actif</b> sert à désactiver. Le menu <b>Action → Supprimer</b> est à éviter.</figcaption></figure>
+    <div class="note danger">
+      <h5>Le bouton Supprimer</h5>
+      <p>Il efface définitivement le compte. Ne l'utilisez jamais pour un agent qui a déjà traité des dossiers. N'utilisez pas non plus <span class="ui">Emprunter l'identité</span>.</p>
+    </div>
+    <div class="note info">
+      <h5>Changement de poste</h5>
+      <p>L'agent change de CFCE ou d'entité ? Il suffit de <strong>quitter l'ancien groupe</strong> et de <strong>rejoindre le nouveau</strong> (partie 4-B). Son compte reste actif.</p>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="block" id="controle">
+    <div class="section-eyebrow">Partie 7 · Qui a quel accès ?</div>
+    <h2 class="section-title">Contrôler <span class="light">entité par entité.</span></h2>
+    <div class="tbl-wrap" style="margin-top:26px">
+      <table>
+        <thead><tr><th>Question</th><th>Où regarder</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Qui travaille dans cette entité ?</strong></td><td><span class="ui">Groupes</span> → institutions → le CFCE → l'entité → onglet <span class="ui">Membres</span></td></tr>
+          <tr><td><strong>Qui travaille dans ce CFCE ?</strong></td><td>Sur le CFCE, onglet <span class="ui">Membres</span>, puis cochez <span class="ui">Inclure les utilisateurs du sous-groupe</span></td></tr>
+          <tr><td><strong>Quels accès a cet agent ?</strong></td><td>Sa fiche : onglets <span class="ui">Groupes</span> et <span class="ui">Mapping de rôle</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <figure class="shot"><img src="img/keycloak/group-members.jpg" alt="Onglet Membres de l'entité DGI du CFCE Douala" loading="lazy"><figcaption>Onglet <b>Membres</b> d'une entité (ici vide), avec <b>Ajouter un membre</b> et <b>Inclure les utilisateurs du sous-groupe</b>.</figcaption></figure>
+    <div class="note tip">
+      <h5>Contrôle conseillé</h5>
+      <p>Une fois par mois, parcourez les membres de chaque CFCE et désactivez les comptes des agents qui ne sont plus en poste.</p>
+    </div>
+  </section>
+
+  <!-- 8 -->
+  <section class="block" id="faq">
+    <div class="section-eyebrow">Partie 8 · Problèmes fréquents</div>
+    <h2 class="section-title">Ça ne marche pas ? <span class="light">Commencez par ici.</span></h2>
+    <div class="faq-tools"><button class="linkbtn" id="exp">Tout ouvrir</button><button class="linkbtn" id="col">Tout fermer</button></div>
+    <div class="faq">
+      <details><summary><span class="q-n">1</span><span class="q">L'agent se connecte mais ne voit aucun dossier</span></summary><div class="a">
+        <p>Vérifiez dans l'ordre :</p>
+        <ul>
+          <li>il a le rôle <code>partb</code> (onglet <span class="ui">Mapping de rôle</span>) ;</li>
+          <li>il est dans une <strong>entité</strong> et pas seulement dans le CFCE : le chemin doit avoir trois niveaux ;</li>
+          <li>il s'est déconnecté puis reconnecté après la modification ;</li>
+          <li>il y a bien des dossiers en attente à son étape, dans son CFCE.</li>
+        </ul>
+      </div></details>
+      <details><summary><span class="q-n">2</span><span class="q">L'agent voit les dossiers d'une autre ville</span></summary><div class="a"><p>Il est dans le mauvais CFCE : retirez-le de ce groupe et ajoutez-le au bon (<span class="ui">Rejoindre le groupe</span>).</p></div></details>
+      <details><summary><span class="q-n">3</span><span class="q">Je ne trouve pas CFCE Yaoundé dans la liste</span></summary><div class="a"><p>La fenêtre <strong>Rejoindre le groupe</strong> affiche 10 groupes par page. Cliquez sur la flèche <span class="ui">›</span> en haut à droite de la fenêtre pour voir la page 2, ou tapez « Yaoundé » dans <span class="ui">Chercher un groupe</span>.</p></div></details>
+      <details><summary><span class="q-n">4</span><span class="q">Un agent CNPS voit les étapes « Employeur » et « Salariés »</span></summary><div class="a"><p>C'est normal : ces deux étapes sont rattachées à la même entité <code>CNPS</code>.</p></div></details>
+      <details><summary><span class="q-n">5</span><span class="q">Faut-il mettre les agents APME dans le groupe « APME » ?</span></summary><div class="a"><p>Non. Ils vont dans l'entité Révision, Supervision ou Retrait <strong>de leur CFCE</strong>. Le groupe APME est réservé aux traitements automatiques.</p></div></details>
+      <details><summary><span class="q-n">6</span><span class="q">Quels rôles ne faut-il pas donner aux agents ?</span></summary><div class="a"><p>Donnez seulement <code>partb</code>. Les autres rôles de la liste (<code>superinspector</code>, <code>sysadmin</code>, <code>super_mario</code>, <code>bot</code>, <code>Dashboard</code>, <code>Draft</code>, traduction…) sont réservés à l'équipe technique. En cas de doute, ne cochez rien et demandez.</p></div></details>
+      <details><summary><span class="q-n">7</span><span class="q">L'utilisateur ne reçoit aucun email</span></summary><div class="a"><p>Vérifiez l'adresse dans <span class="ui">Détails</span>, demandez-lui de regarder ses courriers indésirables, puis renvoyez l'email (partie 5). Si rien n'arrive, fixez un mot de passe provisoire et signalez le problème à l'équipe technique.</p></div></details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Guide Keycloak · Easybusiness Cameroun · espace CM · version du 24 novembre 2026</span>
+    <span>Plateforme eRegistrations mise en œuvre avec l'appui de la CNUCED · <a href="index.html">Tous les manuels</a></span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lb" role="dialog" aria-label="Capture agrandie"><img alt=""></div>
+
+<script>
+  document.getElementById('exp').addEventListener('click', function () { document.querySelectorAll('.faq details').forEach(function (d) { d.open = true; }); });
+  document.getElementById('col').addEventListener('click', function () { document.querySelectorAll('.faq details').forEach(function (d) { d.open = false; }); });
+  var lb = document.getElementById('lb'), lbi = lb.querySelector('img');
+  document.querySelectorAll('figure.shot img').forEach(function (im) { im.addEventListener('click', function () { lbi.src = im.src; lbi.alt = im.alt; lb.classList.add('on'); }); });
+  lb.addEventListener('click', function () { lb.classList.remove('on'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') lb.classList.remove('on'); });
+  window.addEventListener('beforeprint', function () { document.querySelectorAll('.faq details').forEach(function (d) { d.open = true; }); });
+</script>
+</body>
+</html>
